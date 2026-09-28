@@ -1,0 +1,12 @@
+reference/raw/
+reference/photos/
+reference/thumbs/
+reference/sheets/
+reference/*.pdf
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+sourcemap.json
+Packages/
+ServerPackages/
+.grok-loop/
