@@ -10,3 +10,6 @@ sourcemap.json
 Packages/
 ServerPackages/
 .grok-loop/
+reference/*.png
+reference/*.jpg
+verification/**/*.png
