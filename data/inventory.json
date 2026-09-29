@@ -1,0 +1,6286 @@
+{
+  "colorMethod": "Median RGB of a rectangular patch, or of pixels split out of a patch, on reference/photos/*.jpg. Boxes are fractions of width and height. Hex values are photographed color, including the room light. They are not paint-catalog matches. Personal names on signs are omitted.",
+  "colorSamples": [
+    {
+      "name": "wall_painted_cmu",
+      "hex": "#B2AEA8",
+      "photo": "IMG_0314",
+      "box": [
+        0.05,
+        0.38,
+        0.14,
+        0.48
+      ],
+      "std": [
+        9.3,
+        9.6,
+        10.7
+      ]
+    },
+    {
+      "name": "wall_gypsum",
+      "hex": "#C9CACF",
+      "photo": "IMG_0314",
+      "box": [
+        0.86,
+        0.32,
+        0.96,
+        0.44
+      ],
+      "std": [
+        8.3,
+        8.8,
+        10.0
+      ]
+    },
+    {
+      "name": "ceiling_act_shade",
+      "hex": "#7F7771",
+      "photo": "IMG_0314",
+      "box": [
+        0.06,
+        0.04,
+        0.16,
+        0.1
+      ],
+      "std": [
+        2.5,
+        2.7,
+        3.2
+      ],
+      "notes": "acoustic tile in shade, not the lamp"
+    },
+    {
+      "name": "ceiling_act_lit",
+      "hex": "#D3D1D3",
+      "photo": "IMG_0327",
+      "notes": "median of 94 neutral pixels with luminance 160-235 in the upper ceiling"
+    },
+    {
+      "name": "floor_terrazzo",
+      "hex": "#80766A",
+      "photo": "IMG_0314",
+      "box": [
+        0.1,
+        0.84,
+        0.22,
+        0.94
+      ],
+      "std": [
+        6.3,
+        6.4,
+        6.5
+      ],
+      "notes": "body color, avoiding the specular streak"
+    },
+    {
+      "name": "base",
+      "hex": "#C0BCB9",
+      "photo": "IMG_0314",
+      "box": [
+        0.02,
+        0.58,
+        0.08,
+        0.64
+      ],
+      "std": [
+        8.3,
+        8.4,
+        8.7
+      ]
+    },
+    {
+      "name": "floor_porcelain",
+      "hex": "#AA9F90",
+      "photo": "IMG_0316",
+      "box": [
+        0.55,
+        0.86,
+        0.68,
+        0.94
+      ],
+      "std": [
+        11.9,
+        12.2,
+        12.3
+      ]
+    },
+    {
+      "name": "floor_lobby_tile",
+      "hex": "#B4A79B",
+      "photo": "IMG_0329",
+      "box": [
+        0.04,
+        0.66,
+        0.14,
+        0.76
+      ],
+      "std": [
+        13.1,
+        12.5,
+        12.0
+      ]
+    },
+    {
+      "name": "locker_green",
+      "hex": "#313D39",
+      "photo": "IMG_0316",
+      "box": [
+        0.2,
+        0.55,
+        0.3,
+        0.68
+      ],
+      "std": [
+        17.5,
+        14.2,
+        14.4
+      ]
+    },
+    {
+      "name": "locker_beige",
+      "hex": "#8A8474",
+      "photo": "IMG_0316",
+      "box": [
+        0.04,
+        0.48,
+        0.12,
+        0.6
+      ],
+      "std": [
+        4.5,
+        4.3,
+        4.1
+      ]
+    },
+    {
+      "name": "floor_rubber",
+      "hex": "#ADA494",
+      "photo": "IMG_0318",
+      "box": [
+        0.55,
+        0.66,
+        0.64,
+        0.74
+      ],
+      "std": [
+        9.4,
+        10.1,
+        10.6
+      ]
+    },
+    {
+      "name": "carpet",
+      "hex": "#434241",
+      "photo": "IMG_0324",
+      "box": [
+        0.36,
+        0.78,
+        0.46,
+        0.9
+      ],
+      "std": [
+        19.3,
+        19.2,
+        19.1
+      ]
+    },
+    {
+      "name": "desk_wood",
+      "hex": "#7A5730",
+      "photo": "IMG_0329",
+      "box": [
+        0.74,
+        0.5,
+        0.88,
+        0.58
+      ],
+      "std": [
+        18.0,
+        11.4,
+        6.8
+      ]
+    },
+    {
+      "name": "maple",
+      "hex": "#D2BA9D",
+      "photo": "IMG_0332",
+      "box": [
+        0.42,
+        0.9,
+        0.55,
+        0.97
+      ],
+      "std": [
+        9.5,
+        10.0,
+        9.8
+      ]
+    },
+    {
+      "name": "bleacher_green",
+      "hex": "#1E231F",
+      "photo": "IMG_0332",
+      "box": [
+        0.03,
+        0.55,
+        0.08,
+        0.62
+      ],
+      "std": [
+        12.4,
+        12.1,
+        10.6
+      ]
+    },
+    {
+      "name": "bleacher_gold",
+      "hex": "#A06C20",
+      "photo": "IMG_0332",
+      "box": [
+        0.17,
+        0.55,
+        0.21,
+        0.62
+      ],
+      "std": [
+        36.1,
+        27.9,
+        16.1
+      ],
+      "notes": "median stays on the gold bay; seat gaps raise std"
+    },
+    {
+      "name": "wall_gym",
+      "hex": "#D5D3CF",
+      "photo": "IMG_0332",
+      "box": [
+        0.18,
+        0.16,
+        0.3,
+        0.22
+      ],
+      "std": [
+        36.9,
+        39.2,
+        42.4
+      ]
+    },
+    {
+      "name": "floor_green",
+      "hex": "#1C3020",
+      "photo": "IMG_0334",
+      "box": [
+        0.55,
+        0.8,
+        0.62,
+        0.86
+      ],
+      "std": [
+        55.1,
+        50.9,
+        56.7
+      ],
+      "notes": "glossy paint; median of a patch that includes reflections"
+    },
+    {
+      "name": "wall_pad",
+      "hex": "#1B201C",
+      "photo": "IMG_0333",
+      "box": [
+        0.04,
+        0.52,
+        0.12,
+        0.6
+      ],
+      "std": [
+        9.4,
+        9.8,
+        9.4
+      ]
+    },
+    {
+      "name": "brick_face",
+      "hex": "#6E5246",
+      "photo": "IMG_0349",
+      "notes": "median of reddish pixels in the sunlit brick wall, mortar excluded by a color split"
+    },
+    {
+      "name": "brick_pier_shadow",
+      "hex": "#592E20",
+      "photo": "IMG_0340",
+      "box": [
+        0.02,
+        0.15,
+        0.1,
+        0.4
+      ],
+      "std": [
+        38.8,
+        43.1,
+        38.8
+      ]
+    },
+    {
+      "name": "precast",
+      "hex": "#B8AA9C",
+      "photo": "IMG_0349",
+      "box": [
+        0.12,
+        0.3,
+        0.28,
+        0.36
+      ],
+      "std": [
+        25.7,
+        32.7,
+        40.7
+      ]
+    },
+    {
+      "name": "asphalt",
+      "hex": "#706964",
+      "photo": "IMG_0349",
+      "box": [
+        0.55,
+        0.82,
+        0.68,
+        0.92
+      ],
+      "std": [
+        14.4,
+        13.7,
+        13.2
+      ]
+    },
+    {
+      "name": "canopy",
+      "hex": "#383A3D",
+      "photo": "IMG_0368",
+      "box": [
+        0.15,
+        0.34,
+        0.45,
+        0.42
+      ],
+      "std": [
+        5.1,
+        4.7,
+        5.1
+      ]
+    },
+    {
+      "name": "concrete",
+      "hex": "#E0D3C0",
+      "photo": "IMG_0365",
+      "box": [
+        0.2,
+        0.78,
+        0.36,
+        0.88
+      ],
+      "std": [
+        16.0,
+        15.9,
+        14.9
+      ]
+    },
+    {
+      "name": "stair_wall",
+      "hex": "#D7D6D5",
+      "photo": "IMG_0341",
+      "box": [
+        0.7,
+        0.18,
+        0.84,
+        0.3
+      ],
+      "std": [
+        3.8,
+        3.5,
+        4.3
+      ]
+    },
+    {
+      "name": "stair_tread",
+      "hex": "#B8B5B0",
+      "photo": "IMG_0341",
+      "box": [
+        0.08,
+        0.22,
+        0.18,
+        0.3
+      ],
+      "std": [
+        9.5,
+        10.3,
+        12.8
+      ]
+    },
+    {
+      "name": "tile_restroom_wall",
+      "hex": "#D1C1A7",
+      "photo": "IMG_0379",
+      "box": [
+        0.04,
+        0.3,
+        0.14,
+        0.42
+      ],
+      "std": [
+        12.1,
+        12.7,
+        13.5
+      ]
+    },
+    {
+      "name": "shower_tile",
+      "hex": "#BAB1A7",
+      "photo": "IMG_0380",
+      "box": [
+        0.08,
+        0.38,
+        0.2,
+        0.5
+      ],
+      "std": [
+        13.6,
+        13.7,
+        14.0
+      ],
+      "notes": "white ceramic under warm light"
+    },
+    {
+      "name": "vestibule_floor",
+      "hex": "#C0AEA6",
+      "photo": "IMG_0340",
+      "box": [
+        0.4,
+        0.86,
+        0.55,
+        0.96
+      ],
+      "std": [
+        6.2,
+        6.3,
+        6.3
+      ]
+    },
+    {
+      "name": "mosaic_field",
+      "hex": "#A8ACA2",
+      "photo": "IMG_0340",
+      "notes": "median of the light mosaic tiles after a green-ness split"
+    },
+    {
+      "name": "logo_green",
+      "hex": "#204030",
+      "photo": "IMG_0340",
+      "notes": "median of green pixels inside the GM mosaic mark"
+    },
+    {
+      "name": "letter_green",
+      "hex": "#557C5E",
+      "photo": "IMG_0375",
+      "notes": "median of green pixels in the dimensional letters; includes highlight on the letter faces"
+    },
+    {
+      "name": "rac_letter",
+      "hex": "#C6CFD4",
+      "photo": "IMG_0368",
+      "notes": "median of pixels brighter than luminance 170 inside the RAC letter crop; glass glare included"
+    },
+    {
+      "name": "grass",
+      "hex": "#4D542F",
+      "photo": "IMG_0364",
+      "box": [
+        0.15,
+        0.72,
+        0.35,
+        0.86
+      ],
+      "std": [
+        19.0,
+        18.8,
+        18.8
+      ]
+    },
+    {
+      "name": "metal_panel",
+      "hex": "#868D95",
+      "photo": "IMG_0359",
+      "box": [
+        0.05,
+        0.42,
+        0.28,
+        0.52
+      ],
+      "std": [
+        34.9,
+        35.6,
+        36.4
+      ],
+      "notes": "ribbed panel, high variance"
+    },
+    {
+      "name": "door_grey",
+      "hex": "#4C5156",
+      "photo": "IMG_0378",
+      "box": [
+        0.04,
+        0.5,
+        0.14,
+        0.62
+      ],
+      "std": [
+        28.8,
+        27.6,
+        26.5
+      ]
+    },
+    {
+      "name": "floor_locker",
+      "hex": "#A49685",
+      "photo": "IMG_0378",
+      "box": [
+        0.04,
+        0.86,
+        0.16,
+        0.96
+      ],
+      "std": [
+        31.8,
+        28.7,
+        24.5
+      ]
+    },
+    {
+      "name": "dedication_wall",
+      "hex": "#E8D2BC",
+      "photo": "IMG_0375",
+      "box": [
+        0.2,
+        0.06,
+        0.4,
+        0.12
+      ],
+      "std": [
+        26.6,
+        22.2,
+        25.2
+      ]
+    }
+  ],
+  "photos": {
+    "IMG_0314": {
+      "room": "corridor_cmu",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "long straight corridor",
+        "painted CMU left",
+        "smooth painted wall right",
+        "glossy terrazzo",
+        "2x4 troffers",
+        "doors both sides in the distance",
+        "supply diffuser"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 5,
+          "where": "center of the ceiling, receding",
+          "notes": "count is fixtures clearly in this frame"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "both walls toward the far end",
+          "notes": "wood and hollow-metal leaves, not all legible"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ],
+      "notes": "Camera at one end looking down the hall. Compass unknown."
+    },
+    "IMG_0315": {
+      "room": "corridor_cmu",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "same terrazzo corridor as IMG_0314 from the opposite end",
+        "CMU now on the right",
+        "pair of dark double doors at the far end",
+        "device high on the right wall"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling centerline"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far end of the corridor",
+          "notes": "dark leaves with narrow vertical lights"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "left wall"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "above the far doors"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "right wall, mid-height"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0316": {
+      "room": "corridor_fitness",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "porcelain tile corridor",
+        "glass storefront into the fitness center on the right",
+        "green metal lockers along the left",
+        "framed boards above the lockers"
+      ],
+      "props": [
+        {
+          "kind": "locker_bank_metal",
+          "count": 1,
+          "where": "left wall",
+          "notes": "beige end panel plus about 12 green single-tier doors in frame; row continues"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 3,
+          "where": "foreground left, in front of the lockers",
+          "notes": "blue slim bins"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "far end and left wall"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "mid-corridor ceiling"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 3,
+          "where": "wall above the lockers"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3",
+        "locker_green": "#313D39",
+        "locker_beige": "#8A8474"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0318": {
+      "room": "fitness_center",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "view from the lobby side through a black-framed opening",
+        "rubber floor with a dark lane",
+        "window wall",
+        "mirrors",
+        "columns",
+        "linear ceiling lights"
+      ],
+      "props": [
+        {
+          "kind": "power_rack",
+          "count": 3,
+          "where": "left side and deep in the room",
+          "notes": "black racks; more continue out of frame"
+        },
+        {
+          "kind": "lifting_platform",
+          "count": 2,
+          "where": "under the racks",
+          "notes": "wood center inlay"
+        },
+        {
+          "kind": "cable_machine",
+          "count": 2,
+          "where": "mid-room, left of the column"
+        },
+        {
+          "kind": "dumbbell_rack",
+          "count": 2,
+          "where": "along the right-hand window wall",
+          "notes": "tiered pairs"
+        },
+        {
+          "kind": "plate_tree",
+          "count": 2,
+          "where": "beside the racks"
+        },
+        {
+          "kind": "adjustable_bench",
+          "count": 1,
+          "where": "near the cable station"
+        },
+        {
+          "kind": "flat_bench",
+          "count": 1,
+          "where": "foreground right edge"
+        },
+        {
+          "kind": "wall_mirror",
+          "count": 1,
+          "where": "right wall, floor to ceiling"
+        },
+        {
+          "kind": "wall_tv",
+          "count": 1,
+          "where": "on the column face, mid-room"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "at the column base",
+          "notes": "grey rectangular bin"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "at the column",
+          "notes": "black mat"
+        },
+        {
+          "kind": "sanitizer_caddy",
+          "count": 1,
+          "where": "floor by the dumbbell racks",
+          "notes": "spray bottles in a bin"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling, one close and one deep"
+        },
+        {
+          "kind": "linear_led",
+          "count": 6,
+          "where": "ceiling, parallel to the windows"
+        },
+        {
+          "kind": "strength_machine",
+          "count": 2,
+          "where": "background between racks",
+          "notes": "selectorized or plate-loaded; model not readable"
+        }
+      ],
+      "finishes": {
+        "floor": "tan rubber tile with a black rubber lane",
+        "walls": "painted gypsum and mirrors",
+        "ceiling": "white soffit with linear LEDs"
+      },
+      "colors": {
+        "floor": "#ADA494",
+        "wall": "#C9CACF",
+        "ceiling_warm": "#A19177"
+      },
+      "signage": [
+        "EXIT"
+      ],
+      "notes": "Warm ceiling hex is the photographed soffit, which reads white in person."
+    },
+    "IMG_0319": {
+      "room": "corridor_tile_junction",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "wide porcelain-tile hall",
+        "brown walk-off mats",
+        "columns",
+        "wood doors",
+        "glass sidelights",
+        "clock on a column"
+      ],
+      "props": [
+        {
+          "kind": "floor_mat",
+          "count": 2,
+          "where": "foreground and mid-hall",
+          "notes": "brown walk-off mats"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "foreground edge and beside a column"
+        },
+        {
+          "kind": "wall_clock",
+          "count": 1,
+          "where": "face of the center-left column"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "left and right walls",
+          "notes": "one leaf is wood; one has a green vision panel"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling, two directions"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling grid"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "column face"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0320": {
+      "room": "basketball_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "camera is in the tile corridor",
+        "white double doors with vision panels into a maple-floor gym",
+        "sidelight",
+        "green wall pads inside",
+        "ceiling hoop inside"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "corridor wall",
+          "notes": "white leaves, silver hardware, two vision lites each"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 2,
+          "where": "inside the gym, seen through the glass",
+          "notes": "at least two goals"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "far wall inside the gym",
+          "notes": "dark green lower pads, white wall above"
+        }
+      ],
+      "finishes": {
+        "floor": "corridor porcelain; gym beyond is maple",
+        "walls": "painted gypsum at the door",
+        "ceiling": "corridor acoustic tile"
+      },
+      "colors": {
+        "floor_maple": "#D2BA9D",
+        "wall_pad": "#1B201C",
+        "door": "#C9CACF"
+      },
+      "signage": [],
+      "notes": "Not the competition gym: no green border, no bleachers, lower ceiling."
+    },
+    "IMG_0321": {
+      "room": "basketball_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "closer view of the same white gym doors",
+        "maple court with black lines",
+        "green pads",
+        "hoop"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "same opening as IMG_0320"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "centered beyond the doors",
+          "notes": "second goal is at the edge of the sidelight"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "far wall"
+        }
+      ],
+      "finishes": {
+        "floor": "maple inside, porcelain in the corridor",
+        "walls": "painted, green pad band",
+        "ceiling": "light-colored gym ceiling, not the competition-gym joists"
+      },
+      "colors": {
+        "floor_maple": "#D2BA9D",
+        "wall_pad": "#1B201C"
+      },
+      "signage": []
+    },
+    "IMG_0322": {
+      "room": "basketball_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "tile corridor",
+        "large four-lite window into the same basketball gym",
+        "hoop and maple floor",
+        "partial second window to the right"
+      ],
+      "props": [
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "seen through the window"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "far gym wall"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "around the corner to the right",
+          "notes": "blue bin, partly in frame"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3",
+        "floor_maple": "#D2BA9D"
+      },
+      "signage": []
+    },
+    "IMG_0323": {
+      "room": "office_reception",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "reception counter",
+        "mail sorter",
+        "round clock",
+        "wood doors",
+        "carpet",
+        "2x4 troffers"
+      ],
+      "props": [
+        {
+          "kind": "office_desk",
+          "count": 1,
+          "where": "foreground",
+          "notes": "white transaction top, wood front"
+        },
+        {
+          "kind": "mail_slots",
+          "count": 1,
+          "where": "against the back wall",
+          "notes": "grey metal sorter, many small pigeonholes"
+        },
+        {
+          "kind": "wall_clock",
+          "count": 1,
+          "where": "left wall"
+        },
+        {
+          "kind": "office_chair",
+          "count": 2,
+          "where": "at the counter",
+          "notes": "black task chairs"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "left wall and back wall",
+          "notes": "oak-finish leaves"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "room_sign",
+          "count": 2,
+          "where": "beside the doors"
+        }
+      ],
+      "finishes": {
+        "floor": "dark patterned carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#C9CACF",
+        "door_wood": "#7A5730"
+      },
+      "signage": [],
+      "notes": "Small objects on the counter are supplies, not furnishings."
+    },
+    "IMG_0324": {
+      "room": "office_suite",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "carpeted office corridor",
+        "wood doors with glass sidelights",
+        "cubicle run on the right",
+        "room plaque"
+      ],
+      "props": [
+        {
+          "kind": "cubicle",
+          "count": 4,
+          "where": "right wall",
+          "notes": "grey fabric panels; run continues"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "both sides and the far end",
+          "notes": "oak leaves"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 4,
+          "where": "left wall"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "right jamb",
+          "notes": "number 1122; Break Room was readable on the thumb above the number"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "dark grey patterned carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#C9CACF",
+        "door_wood": "#7A5730"
+      },
+      "signage": [
+        "Break Room",
+        "1122"
+      ]
+    },
+    "IMG_0325": {
+      "room": "office_suite",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "open cubicle bay",
+        "carpet",
+        "wood doors in the background",
+        "column"
+      ],
+      "props": [
+        {
+          "kind": "cubicle",
+          "count": 8,
+          "where": "both sides of the bay",
+          "notes": "beige fabric, dark top caps; at least eight stations in frame"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 8,
+          "where": "ceiling"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "far wall",
+          "notes": "wood"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 2,
+          "where": "far wall"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "dark carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#D7D6D5"
+      },
+      "signage": []
+    },
+    "IMG_0326": {
+      "room": "office_suite",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "edge of the cubicle bay",
+        "carpeted corridor back to wood doors",
+        "small folding table"
+      ],
+      "props": [
+        {
+          "kind": "cubicle",
+          "count": 2,
+          "where": "right foreground"
+        },
+        {
+          "kind": "folding_table",
+          "count": 1,
+          "where": "mid-corridor against the cubicles",
+          "notes": "small black table"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "far wall",
+          "notes": "wood"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far ceiling"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "left wall"
+        }
+      ],
+      "finishes": {
+        "floor": "dark carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#C9CACF"
+      },
+      "signage": []
+    },
+    "IMG_0327": {
+      "room": "office_suite",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "cubicles in the foreground",
+        "wood doors",
+        "framed pictures on the far wall",
+        "return-air grille"
+      ],
+      "props": [
+        {
+          "kind": "cubicle",
+          "count": 6,
+          "where": "foreground and mid-room"
+        },
+        {
+          "kind": "office_chair",
+          "count": 2,
+          "where": "inside stations",
+          "notes": "only the ones whose backs are visible"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "far and left walls"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 4,
+          "where": "far wall above the cubicles"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "left ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "dark carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#D7D6D5",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": []
+    },
+    "IMG_0328": {
+      "room": "fitness_center",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "through the black mullion storefront",
+        "Hammer Strength half rack on a wood platform",
+        "mirrors",
+        "rubber floor",
+        "window wall",
+        "more racks deep in the room"
+      ],
+      "props": [
+        {
+          "kind": "power_rack",
+          "count": 4,
+          "where": "row along the mirror wall",
+          "notes": "Hammer Strength; more racks further back"
+        },
+        {
+          "kind": "lifting_platform",
+          "count": 2,
+          "where": "under the near racks",
+          "notes": "maple-colored insert, black border"
+        },
+        {
+          "kind": "plate_tree",
+          "count": 2,
+          "where": "loaded on the rack uprights and a tree at the left"
+        },
+        {
+          "kind": "dumbbell_rack",
+          "count": 1,
+          "where": "deep left, reflected in the mirror"
+        },
+        {
+          "kind": "cable_machine",
+          "count": 1,
+          "where": "mid-background"
+        },
+        {
+          "kind": "treadmill",
+          "count": 1,
+          "where": "foreground right corner",
+          "notes": "deck only, brand mark Hammer Strength"
+        },
+        {
+          "kind": "wall_mirror",
+          "count": 1,
+          "where": "left wall"
+        },
+        {
+          "kind": "wall_tv",
+          "count": 1,
+          "where": "far wall under the window head"
+        },
+        {
+          "kind": "linear_led",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "strength_machine",
+          "count": 2,
+          "where": "right background near the windows"
+        }
+      ],
+      "finishes": {
+        "floor": "tan rubber with a black lane and wood platform inserts",
+        "walls": "painted, full-height mirror",
+        "ceiling": "white with linear lights"
+      },
+      "colors": {
+        "floor": "#ADA494",
+        "platform_wood": "#D2BA9D",
+        "wall": "#C9CACF"
+      },
+      "signage": [],
+      "notes": "Shot through the storefront mullions. Racks in this frame are the same floor as IMG_0318."
+    },
+    "IMG_0329": {
+      "room": "lobby",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "double-height not fully in frame",
+        "porcelain tile",
+        "wood-clad desk end",
+        "seating beyond",
+        "exterior doors",
+        "stair beyond the seating"
+      ],
+      "props": [
+        {
+          "kind": "front_desk",
+          "count": 1,
+          "where": "right",
+          "notes": "light wood volume; the long desk continues into IMG_0369"
+        },
+        {
+          "kind": "dining_table",
+          "count": 4,
+          "where": "far side, in front of the glass",
+          "notes": "dark rectangular tops"
+        },
+        {
+          "kind": "dining_chair",
+          "count": 12,
+          "where": "around those tables",
+          "notes": "dark chairs, some with metal frames"
+        },
+        {
+          "kind": "wall_tv",
+          "count": 1,
+          "where": "far wall left of the stair"
+        },
+        {
+          "kind": "vending_machine",
+          "count": 1,
+          "where": "beside the stair",
+          "notes": "lit glass-front machine"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "by the desk and at the left edge",
+          "notes": "one grey, one blue"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "left wall to the exterior"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "ceiling left"
+        },
+        {
+          "kind": "linear_led",
+          "count": 2,
+          "where": "deeper ceiling over the seating"
+        }
+      ],
+      "finishes": {
+        "floor": "large porcelain tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile under a soffit, taller volume beyond"
+      },
+      "colors": {
+        "floor": "#B4A79B",
+        "wall": "#D7D6D5",
+        "desk_wood": "#7A5730",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0330": {
+      "room": "lobby",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "curtain wall to the trees",
+        "porcelain tile",
+        "built-in wood planter",
+        "exterior doors",
+        "column with cabinets"
+      ],
+      "props": [
+        {
+          "kind": "planter_bench",
+          "count": 1,
+          "where": "along the curtain wall",
+          "notes": "light wood box, dark stone or water fill"
+        },
+        {
+          "kind": "dining_chair",
+          "count": 3,
+          "where": "just past the planter",
+          "notes": "light chairs, partial"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "center and right, to the outside"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "right of center",
+          "notes": "large blue bin"
+        },
+        {
+          "kind": "aed_cabinet",
+          "count": 1,
+          "where": "column",
+          "notes": "white cabinet with a red mark"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "soffit"
+        },
+        {
+          "kind": "downlight",
+          "count": 3,
+          "where": "soffit"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "right ceiling, red"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "mullion at the left glass"
+        }
+      ],
+      "finishes": {
+        "floor": "large porcelain tile",
+        "walls": "painted gypsum and curtain wall",
+        "ceiling": "white soffit and acoustic tile"
+      },
+      "colors": {
+        "floor": "#B4A79B",
+        "wall": "#D7D6D5",
+        "desk_wood": "#7A5730",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT",
+        "AED"
+      ]
+    },
+    "IMG_0331": {
+      "room": "corridor_hall_of_fame",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "long wide porcelain corridor",
+        "green dimensional letters",
+        "four slat record boards",
+        "glass display cases on the right",
+        "brick pier",
+        "green kiosk"
+      ],
+      "props": [
+        {
+          "kind": "hall_of_fame_board",
+          "count": 4,
+          "where": "left wall",
+          "notes": "green frames, horizontal slats"
+        },
+        {
+          "kind": "display_case",
+          "count": 6,
+          "where": "right wall",
+          "notes": "wood base, glass top, in a row"
+        },
+        {
+          "kind": "rental_kiosk",
+          "count": 1,
+          "where": "right, in front of the brick",
+          "notes": "tall green Mason Recreation unit"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "beside the kiosk",
+          "notes": "blue"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "left wall and far end"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 1,
+          "where": "left wall, mid-corridor"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 8,
+          "where": "two rows down the ceiling"
+        },
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "left wall",
+          "notes": "green letters, left edge cropped"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3",
+        "letter_green": "#557C5E"
+      },
+      "signage": [
+        "HALL OF FAME",
+        "EXIT"
+      ],
+      "notes": "Left edge of the wall text is out of frame, so a word may precede HALL OF FAME. Names on the slat boards are not readable and are omitted."
+    },
+    "IMG_0332": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "maple floor",
+        "telescopic bleachers, dark green with gold vertical bays",
+        "white painted walls",
+        "steel joists",
+        "clerestory window",
+        "banner high on the right"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "near sideline",
+          "notes": "one telescopic bank; gold stripes are bays of the same bank, not separate banks"
+        },
+        {
+          "kind": "banner",
+          "count": 1,
+          "where": "high on the right wall"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 2,
+          "where": "only the near structure is in frame"
+        }
+      ],
+      "finishes": {
+        "floor": "maple hardwood",
+        "walls": "painted masonry or gypsum, white",
+        "ceiling": "exposed painted steel joists"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20",
+        "wall": "#D5D3CF"
+      },
+      "signage": []
+    },
+    "IMG_0333": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "full width of the court",
+        "maple with white lines",
+        "green border at the right",
+        "bleachers left",
+        "championship banners",
+        "US flag",
+        "ceiling hoop",
+        "clerestory windows",
+        "linear LED high-bays"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "left wall"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "center, retracted structure and backboard"
+        },
+        {
+          "kind": "banner",
+          "count": 3,
+          "where": "hung from the joists and low on the right wall",
+          "notes": "two championship banners plus one retired-jersey banner"
+        },
+        {
+          "kind": "flag",
+          "count": 1,
+          "where": "right of the banners",
+          "notes": "United States flag"
+        },
+        {
+          "kind": "volleyball_standard",
+          "count": 2,
+          "where": "net is down or out of the near court; standards visible at the hoop"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "far wall, dark green band"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "far wall under the pads",
+          "notes": "two pairs"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 16,
+          "where": "rows on the joists",
+          "notes": "linear LED; count is fixtures in this frame"
+        }
+      ],
+      "finishes": {
+        "floor": "maple with a dark green painted border",
+        "walls": "white above a green pad band",
+        "ceiling": "exposed steel joists, white"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "floor_green": "#1C3020",
+        "wall_pad": "#1B201C",
+        "wall": "#D5D3CF",
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20"
+      },
+      "signage": [
+        "NCAA WOMEN'S VOLLEYBALL",
+        "CAA WOMEN'S VOLLEYBALL CHAMPIONS",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "2002",
+        "2003",
+        "2009",
+        "retired jersey banner number 8, 1985-1988 (name omitted)"
+      ]
+    },
+    "IMG_0334": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "green painted border with court lettering",
+        "center logo",
+        "volleyball net",
+        "second net further down",
+        "retractable hoops",
+        "scoreboard",
+        "bleachers at the right",
+        "clerestory"
+      ],
+      "props": [
+        {
+          "kind": "volleyball_standard",
+          "count": 4,
+          "where": "two nets",
+          "notes": "near net plus one farther down the gym"
+        },
+        {
+          "kind": "referee_stand",
+          "count": 1,
+          "where": "beside the near net"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 3,
+          "where": "retracted over the courts"
+        },
+        {
+          "kind": "scoreboard",
+          "count": 2,
+          "where": "far wall and a smaller board to the right"
+        },
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "right wall"
+        },
+        {
+          "kind": "banner",
+          "count": 2,
+          "where": "far wall between the windows"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 20,
+          "where": "ceiling grid",
+          "notes": "linear LEDs plus a few round fixtures"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "far wall under the scoreboard"
+        }
+      ],
+      "finishes": {
+        "floor": "maple center, dark green painted border and keys",
+        "walls": "white with green pads",
+        "ceiling": "exposed joists"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "floor_green": "#1C3020",
+        "bleacher_gold": "#A06C20",
+        "wall": "#D5D3CF"
+      },
+      "signage": [
+        "PATRIOTS",
+        "HOME",
+        "GUEST"
+      ],
+      "notes": "Green-floor hex is the median of a glossy patch, so reflections widened the sample."
+    },
+    "IMG_0335": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "corner at the viewing-window wall",
+        "green pads",
+        "upper windows into a corridor",
+        "maple and green floor",
+        "bleachers in the distance"
+      ],
+      "props": [
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "lower wall under the windows",
+          "notes": "dark green, about door height"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "right edge"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "at the pad wall",
+          "notes": "one blue, one grey"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "far structure"
+        },
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "far left"
+        }
+      ],
+      "finishes": {
+        "floor": "maple and green border",
+        "walls": "white above green pads",
+        "ceiling": "exposed joists"
+      },
+      "colors": {
+        "floor_green": "#1C3020",
+        "wall_pad": "#1B201C",
+        "floor": "#D2BA9D"
+      },
+      "signage": [],
+      "notes": "A step ladder in the corner is temporary and is not a permanent prop."
+    },
+    "IMG_0336": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "length of the court toward the viewing windows",
+        "green border lettering",
+        "two pairs of doors",
+        "scoreboard",
+        "pads",
+        "retracted hoop"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "under the second-floor windows"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "continuous green band"
+        },
+        {
+          "kind": "scoreboard",
+          "count": 1,
+          "where": "above the windows",
+          "notes": "HOME / GUEST"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 2,
+          "where": "overhead structure"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "by the doors"
+        },
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "far left"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 12,
+          "where": "joists"
+        }
+      ],
+      "finishes": {
+        "floor": "maple with green border",
+        "walls": "white, green pads",
+        "ceiling": "exposed steel joists and duct"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "floor_green": "#1C3020",
+        "wall_pad": "#1B201C"
+      },
+      "signage": [
+        "HOME",
+        "GUEST"
+      ],
+      "notes": "Step ladder near the windows is temporary."
+    },
+    "IMG_0337_f000": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "video frame",
+        "green floor foreground",
+        "viewing windows",
+        "scoreboard",
+        "pads",
+        "doors"
+      ],
+      "props": [
+        {
+          "kind": "scoreboard",
+          "count": 1,
+          "where": "above the right windows"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "under the windows"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "right"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "left of the doors"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 8,
+          "where": "overhead"
+        }
+      ],
+      "finishes": {
+        "floor": "maple and green border",
+        "walls": "white and green pad",
+        "ceiling": "exposed structure"
+      },
+      "colors": {
+        "floor_green": "#1C3020",
+        "floor": "#D2BA9D"
+      },
+      "signage": [
+        "HOME"
+      ],
+      "notes": "Step ladder is temporary."
+    },
+    "IMG_0337_f001": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "video frame looking down the court",
+        "bleachers at the far end",
+        "maple floor",
+        "hoop structure"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "far end"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "overhead"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 8,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "maple",
+        "walls": "white",
+        "ceiling": "exposed joists"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20"
+      },
+      "signage": []
+    },
+    "IMG_0337_f002": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "center court logo",
+        "volleyball net",
+        "green border",
+        "bleacher wall",
+        "clerestory windows"
+      ],
+      "props": [
+        {
+          "kind": "volleyball_standard",
+          "count": 2,
+          "where": "one net across the near court"
+        },
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "far wall",
+          "notes": "green field with gold vertical bays"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 14,
+          "where": "ceiling"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "overhead, mostly out of the top of frame"
+        }
+      ],
+      "finishes": {
+        "floor": "maple center, green border, center logo",
+        "walls": "white above bleachers",
+        "ceiling": "exposed joists"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "floor_green": "#1C3020",
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20"
+      },
+      "signage": [],
+      "notes": "Center mark is a green and gold GM-style logo. Gold of the logo was not isolated cleanly; bleacher gold is the measured gold."
+    },
+    "IMG_0337_f003": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "end wall",
+        "retracted hoop",
+        "scoreboard",
+        "two pairs of doors",
+        "green pads",
+        "banner edges"
+      ],
+      "props": [
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "folded up under the structure"
+        },
+        {
+          "kind": "scoreboard",
+          "count": 1,
+          "where": "on the wall"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "under the pads"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "green band"
+        },
+        {
+          "kind": "banner",
+          "count": 2,
+          "where": "right edge"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "by the doors"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 10,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "maple and green",
+        "walls": "white and green pad",
+        "ceiling": "exposed joists"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "wall_pad": "#1B201C"
+      },
+      "signage": []
+    },
+    "IMG_0337_f004": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "banner wall",
+        "US flag",
+        "hoop",
+        "green pads",
+        "two pairs of doors"
+      ],
+      "props": [
+        {
+          "kind": "banner",
+          "count": 3,
+          "where": "upper wall and a lower jersey banner"
+        },
+        {
+          "kind": "flag",
+          "count": 1,
+          "where": "right of the banners"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "in front of the flag"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "below the flag"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "under the pad"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "at the pad"
+        }
+      ],
+      "finishes": {
+        "floor": "maple",
+        "walls": "white",
+        "ceiling": "joists, partly in frame"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "wall": "#D5D3CF",
+        "wall_pad": "#1B201C"
+      },
+      "signage": [
+        "NCAA WOMEN'S VOLLEYBALL",
+        "CAA WOMEN'S VOLLEYBALL CHAMPIONS",
+        "retired jersey banner number 8, 1985-1988 (name omitted)"
+      ]
+    },
+    "IMG_0337_f005": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "close video frame of telescopic bleachers",
+        "green seats",
+        "gold aisle bay",
+        "silver seat undersides"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "fills the frame"
+        }
+      ],
+      "finishes": {
+        "floor": "maple at the bottom edge",
+        "walls": "hidden by bleachers",
+        "ceiling": "not in frame"
+      },
+      "colors": {
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20",
+        "floor": "#D2BA9D"
+      },
+      "signage": []
+    },
+    "IMG_0337_f006": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "closer bleacher face",
+        "about fourteen to sixteen nested rows",
+        "gold bay between green sections"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "fills the frame",
+          "notes": "closed telescopic sections; row count is the nested faces in this frame"
+        }
+      ],
+      "finishes": {
+        "floor": "maple sliver",
+        "walls": "white block above the bleachers",
+        "ceiling": "not in frame"
+      },
+      "colors": {
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20",
+        "wall": "#D5D3CF"
+      },
+      "signage": []
+    },
+    "IMG_0337_f007": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "long run of closed green bleachers",
+        "gold section at the right end",
+        "white wall and joist above"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "along the wall"
+        }
+      ],
+      "finishes": {
+        "floor": "maple",
+        "walls": "white",
+        "ceiling": "joist edge only"
+      },
+      "colors": {
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20",
+        "floor": "#D2BA9D"
+      },
+      "signage": []
+    },
+    "IMG_0337_f008": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "corner of the maple court",
+        "end of a bleacher bank",
+        "white wall",
+        "high window or opening"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "right edge"
+        }
+      ],
+      "finishes": {
+        "floor": "maple",
+        "walls": "white",
+        "ceiling": "high, mostly out of frame"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "wall": "#D5D3CF",
+        "bleacher_gold": "#A06C20"
+      },
+      "signage": []
+    },
+    "IMG_0337_f009": {
+      "room": "competition_gym",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "double doors under the viewing glass",
+        "scoreboard",
+        "green floor corner",
+        "white court lines"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "center wall"
+        },
+        {
+          "kind": "scoreboard",
+          "count": 1,
+          "where": "above the glass"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "flanking the doors"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "left of the doors"
+        }
+      ],
+      "finishes": {
+        "floor": "maple with green corner",
+        "walls": "white and green pad",
+        "ceiling": "high, windows to the upper corridor"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "floor_green": "#1C3020",
+        "wall_pad": "#1B201C"
+      },
+      "signage": [
+        "HOME",
+        "GUEST"
+      ]
+    },
+    "IMG_0338": {
+      "room": "corridor_tile_spine",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "long porcelain corridor seen from a doorway",
+        "blue bin at the left",
+        "display cases far left",
+        "exterior light at the far end"
+      ],
+      "props": [
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "left wall",
+          "notes": "blue"
+        },
+        {
+          "kind": "display_case",
+          "count": 3,
+          "where": "left wall, receding"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far end"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0339": {
+      "room": "corridor_vending",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "glossy terrazzo",
+        "Coca-Cola vendor at the left",
+        "brick pier at the right",
+        "stair in the center distance",
+        "grey doors"
+      ],
+      "props": [
+        {
+          "kind": "vending_machine",
+          "count": 1,
+          "where": "left wall",
+          "notes": "red Coca-Cola glass-front"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "left and center",
+          "notes": "grey metal"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "above the stair and mid-hall"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "wall by the stair"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo",
+        "walls": "painted gypsum and a red brick pier",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#C9CACF",
+        "brick": "#6E5246"
+      },
+      "signage": [
+        "EXIT",
+        "Coca-Cola"
+      ]
+    },
+    "IMG_0340": {
+      "room": "volleyball_vestibule",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "opening in a brick pier",
+        "green-and-white mosaic wall",
+        "GM logo",
+        "dimensional volleyball lettering",
+        "speckled floor",
+        "door to the right"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "mosaic wall",
+          "notes": "green letters with a light outline"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "right of the mosaic",
+          "notes": "grey leaf"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "beside that door",
+          "notes": "dedication line; personal name omitted"
+        }
+      ],
+      "finishes": {
+        "floor": "speckled vinyl or terrazzo, light",
+        "walls": "small mosaic tile, brick pier outside the opening",
+        "ceiling": "gypsum, low"
+      },
+      "colors": {
+        "floor": "#C0AEA6",
+        "mosaic_field": "#A8ACA2",
+        "logo_green": "#204030",
+        "brick": "#592E20"
+      },
+      "signage": [
+        "GM",
+        "HOME OF GMU VOLLEYBALL"
+      ],
+      "notes": "First letters of the wall text sit at the frame edge and read as HOME OF GMU VOLLEYBALL. The door transom is a personal dedication; the name is omitted. Interior brick hex is a shadowed pier, darker than the sunlit exterior brick."
+    },
+    "IMG_0341": {
+      "room": "stair_enclosed",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "straight flight of concrete stairs",
+        "metal handrails both sides",
+        "painted walls",
+        "acoustic tile at the upper landing",
+        "linear fixture on the left"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling at the top landing"
+        },
+        {
+          "kind": "linear_led",
+          "count": 1,
+          "where": "left wall, angled with the stair"
+        }
+      ],
+      "finishes": {
+        "floor": "sealed concrete treads and landings",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile at the upper run"
+      },
+      "colors": {
+        "stair_tread": "#B8B5B0",
+        "wall": "#D7D6D5"
+      },
+      "signage": [
+        "EXIT"
+      ],
+      "notes": "Riser count is not a full story in one frame. Tread hex is the lit nosing, not the shadowed riser."
+    },
+    "IMG_0342": {
+      "room": "concourse",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "wide hall",
+        "terrazzo on the left, tan sheet or tile inset on the right",
+        "glass cases",
+        "two black scanner stands",
+        "brick pier",
+        "exterior doors at the end"
+      ],
+      "props": [
+        {
+          "kind": "display_case",
+          "count": 4,
+          "where": "left wall"
+        },
+        {
+          "kind": "body_scanner",
+          "count": 2,
+          "where": "right wall",
+          "notes": "tall black stadiometer-style stands"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far glass doors"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "side walls"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "by the scanners"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "left, in front of a door"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo changing to a tan resilient inset",
+        "walls": "painted gypsum and brick",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5",
+        "brick": "#6E5246"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0343": {
+      "room": "corridor_l2_balcony",
+      "level": 2,
+      "looking": "?",
+      "features": [
+        "upper corridor open to the lobby",
+        "metal guardrail with a wood handrail",
+        "glossy terrazzo",
+        "chairs along the left",
+        "glass at the far end"
+      ],
+      "props": [
+        {
+          "kind": "dining_chair",
+          "count": 6,
+          "where": "left, against the wall past the rail",
+          "notes": "loose chairs, not fixed"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "left, near the chairs"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "mid ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "left wall, wood"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5",
+        "handrail_wood": "#837A62"
+      },
+      "signage": [
+        "EXIT"
+      ],
+      "notes": "Handrail hex is a small patch and includes some floor reflection."
+    },
+    "IMG_0344": {
+      "room": "corridor_l2_gym",
+      "level": 2,
+      "looking": "?",
+      "features": [
+        "upper corridor",
+        "full-height glass into the competition gym",
+        "maple and green floor below",
+        "bleachers, banners, flag, hoops, scoreboard all visible through the glass"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 1,
+          "where": "corridor ceiling, close"
+        },
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "inside the gym, left",
+          "notes": "seen from above"
+        },
+        {
+          "kind": "banner",
+          "count": 3,
+          "where": "gym wall"
+        },
+        {
+          "kind": "flag",
+          "count": 1,
+          "where": "gym wall"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 2,
+          "where": "gym"
+        },
+        {
+          "kind": "scoreboard",
+          "count": 1,
+          "where": "right gym wall"
+        },
+        {
+          "kind": "volleyball_standard",
+          "count": 2,
+          "where": "net on the green floor"
+        }
+      ],
+      "finishes": {
+        "floor": "polished hard floor in the corridor",
+        "walls": "painted, with a black curtain-wall frame",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "floor_green": "#1C3020",
+        "floor_maple": "#D2BA9D"
+      },
+      "signage": [
+        "HOME",
+        "GUEST"
+      ],
+      "notes": "Corridor props are only the ceiling fixture. Gym props are the room beyond the glass, also counted on the gym."
+    },
+    "IMG_0345": {
+      "room": "corridor_l2_gym",
+      "level": 2,
+      "looking": "?",
+      "features": [
+        "long upper corridor",
+        "continuous glass into the competition gym on the right",
+        "terrazzo",
+        "far lobby daylight"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 8,
+          "where": "corridor ceiling"
+        },
+        {
+          "kind": "bleacher_bank",
+          "count": 1,
+          "where": "inside the gym"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 1,
+          "where": "inside the gym"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "corridor ceiling"
+        },
+        {
+          "kind": "dining_chair",
+          "count": 2,
+          "where": "far left, at the end of the corridor"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo",
+        "walls": "painted gypsum and curtain wall",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5"
+      },
+      "signage": []
+    },
+    "IMG_0346": {
+      "room": "corridor_cmu",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "narrow terrazzo corridor",
+        "recessed metal cabinet on the left",
+        "wood door on the right",
+        "double doors at the far end"
+      ],
+      "props": [
+        {
+          "kind": "fire_extinguisher_cabinet",
+          "count": 1,
+          "where": "left wall",
+          "notes": "recessed grey cabinet; contents not readable"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "right wall and left distance",
+          "notes": "one oak leaf"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far end"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far ceiling"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "above the cabinet"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0347": {
+      "room": "corridor_alcove",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "doorway into a short terrazzo hall",
+        "upholstered bench",
+        "bulletin board",
+        "double doors with a mat"
+      ],
+      "props": [
+        {
+          "kind": "upholstered_bench",
+          "count": 1,
+          "where": "left wall",
+          "notes": "green vinyl top, wood legs"
+        },
+        {
+          "kind": "bulletin_board",
+          "count": 1,
+          "where": "above the bench"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far end"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "at the far doors"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "above the far doors"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "EXIT"
+      ]
+    },
+    "IMG_0348": {
+      "room": "corridor_cage",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "terrazzo corridor ending at double doors",
+        "transom sign",
+        "brown mat",
+        "wood doors along the left",
+        "grey door on the right"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "end wall",
+          "notes": "grey leaves, vertical pulls"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "in front of the double doors",
+          "notes": "brown"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "left wall",
+          "notes": "oak and grey"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "right wall",
+          "notes": "grey"
+        },
+        {
+          "kind": "room_sign",
+          "count": 2,
+          "where": "beside the side doors"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [
+        "Cage Gym"
+      ],
+      "notes": "Interior of the Cage Gym is not in any photo."
+    },
+    "IMG_0349": {
+      "room": "service_yard",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "asphalt service court",
+        "red brick wall",
+        "precast band",
+        "sunshade fins",
+        "fenced ramp",
+        "green dumpster"
+      ],
+      "props": [
+        {
+          "kind": "dumpster",
+          "count": 1,
+          "where": "right foreground",
+          "notes": "dark green; the face in frame is in shadow"
+        },
+        {
+          "kind": "chain_link_fence",
+          "count": 1,
+          "where": "around the depressed ramp"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "under the canopy at the back wall",
+          "notes": "dark glass"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt",
+        "walls": "red brick, precast concrete band, metal sunshade fins",
+        "ceiling": "none; sky"
+      },
+      "colors": {
+        "brick": "#6E5246",
+        "precast": "#B8AA9C",
+        "asphalt": "#706964"
+      },
+      "signage": [],
+      "notes": "Dumpster body was too shadowed for a clean green hex."
+    },
+    "IMG_0350": {
+      "room": "service_yard",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "brick gym wall",
+        "clerestory under a precast overhang",
+        "sunshade fins",
+        "chain-link above a concrete wall",
+        "lawn"
+      ],
+      "props": [
+        {
+          "kind": "chain_link_fence",
+          "count": 1,
+          "where": "right, on a concrete knee wall"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt and lawn",
+        "walls": "brick and precast",
+        "ceiling": "none"
+      },
+      "colors": {
+        "brick": "#6E5246",
+        "precast": "#B8AA9C",
+        "grass": "#4D542F"
+      },
+      "signage": []
+    },
+    "IMG_0351": {
+      "room": "loading_dock",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "brick wall",
+        "brown roll-up door",
+        "swing door",
+        "asphalt with yellow hatch marks",
+        "precast and sunshade fins above",
+        "pines"
+      ],
+      "props": [
+        {
+          "kind": "overhead_door",
+          "count": 1,
+          "where": "center of the wall",
+          "notes": "brown roll-up"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "right of the roll-up",
+          "notes": "brown metal"
+        },
+        {
+          "kind": "room_sign",
+          "count": 3,
+          "where": "left of the dock door",
+          "notes": "small regulatory signs, text not readable at this size"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt",
+        "walls": "red brick",
+        "ceiling": "none"
+      },
+      "colors": {
+        "brick": "#6E5246",
+        "precast": "#B8AA9C",
+        "asphalt": "#706964"
+      },
+      "signage": [],
+      "notes": "Parked vehicles are not furnishings."
+    },
+    "IMG_0352": {
+      "room": "campus_brick",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "lawn",
+        "walk",
+        "brick building corner",
+        "overcast sky",
+        "a light pole"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn and concrete walk",
+        "walls": "brick in the distance",
+        "ceiling": "none"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "brick": "#6E5246"
+      },
+      "signage": []
+    },
+    "IMG_0353": {
+      "room": "campus_brick",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "trees in the foreground",
+        "low brick building beyond",
+        "lawn"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn",
+        "walls": "brick, distant",
+        "ceiling": "none"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "brick": "#6E5246"
+      },
+      "signage": []
+    },
+    "IMG_0354": {
+      "room": "campus_east",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "rock swale in the foreground",
+        "lawn",
+        "walk",
+        "grey metal-panel building",
+        "brick base",
+        "pines"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn, concrete walk, riprap swale",
+        "walls": "grey standing-seam metal panel over a brick base",
+        "ceiling": "none"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "metal_panel": "#868D95",
+        "brick": "#6E5246"
+      },
+      "signage": []
+    },
+    "IMG_0355": {
+      "room": "campus_east",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "same rock swale and metal-panel elevation from a few steps over",
+        "walk",
+        "trees"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn and riprap",
+        "walls": "metal panel and brick base",
+        "ceiling": "none"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "metal_panel": "#868D95"
+      },
+      "signage": []
+    },
+    "IMG_0356": {
+      "room": "campus_road",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "two-lane campus road",
+        "curb and gutter",
+        "trees",
+        "building mass in the distance",
+        "overcast"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "asphalt",
+        "walls": "none in the near field",
+        "ceiling": "none"
+      },
+      "colors": {
+        "asphalt": "#706964",
+        "grass": "#4D542F"
+      },
+      "signage": []
+    },
+    "IMG_0357": {
+      "room": "campus_road",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "marked crosswalk",
+        "sidewalk",
+        "trees",
+        "road"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "asphalt and concrete sidewalk",
+        "walls": "none",
+        "ceiling": "none"
+      },
+      "colors": {
+        "asphalt": "#706964",
+        "concrete": "#E0D3C0"
+      },
+      "signage": []
+    },
+    "IMG_0358": {
+      "room": "campus_east",
+      "level": 1,
+      "looking": "W",
+      "features": [
+        "east-side metal-panel volume",
+        "wood-tone panel band at a lower wing",
+        "drive",
+        "road with a yellow line",
+        "lawn and trees"
+      ],
+      "props": [
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "at the wood-tone base",
+          "notes": "blue-grey leaves, distant"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt road and concrete drive",
+        "walls": "grey vertical metal panel, wood-look panel, brick at the corner",
+        "ceiling": "none"
+      },
+      "colors": {
+        "metal_panel": "#868D95",
+        "asphalt": "#706964",
+        "grass": "#4D542F"
+      },
+      "signage": [],
+      "notes": "Looking is W if this is the east facade called out in the spec. Metal-panel hex has high variance from the ribs."
+    },
+    "IMG_0359": {
+      "room": "campus_east",
+      "level": 1,
+      "looking": "W",
+      "features": [
+        "long grey metal wall",
+        "wood-tone entry bay",
+        "lawn",
+        "road with a bike-lane mark",
+        "lamp posts"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "wood-tone bay",
+          "notes": "blue doors"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt with a bike lane, lawn",
+        "walls": "standing-seam metal panel",
+        "ceiling": "none"
+      },
+      "colors": {
+        "metal_panel": "#868D95",
+        "asphalt": "#706964",
+        "grass": "#4D542F"
+      },
+      "signage": []
+    },
+    "IMG_0360": {
+      "room": "campus_road",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "road curve",
+        "brick building beyond trees",
+        "lawn",
+        "sidewalk"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "asphalt and lawn",
+        "walls": "distant brick",
+        "ceiling": "none"
+      },
+      "colors": {
+        "asphalt": "#706964",
+        "brick": "#6E5246",
+        "grass": "#4D542F"
+      },
+      "signage": []
+    },
+    "IMG_0361": {
+      "room": "campus_brick",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "mown lawn",
+        "concrete walk",
+        "trees",
+        "brick building with a precast top"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn and sidewalk",
+        "walls": "brick",
+        "ceiling": "none"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "brick": "#6E5246",
+        "concrete": "#E0D3C0"
+      },
+      "signage": []
+    },
+    "IMG_0362": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "approach to the entrance canopy",
+        "brick and metal-fin wall at the left",
+        "dark canopy",
+        "curtain wall",
+        "lawn and sidewalk"
+      ],
+      "props": [
+        {
+          "kind": "bike_rack",
+          "count": 1,
+          "where": "not clearly in this frame",
+          "notes": "bikes are clearer in IMG_0364"
+        }
+      ],
+      "finishes": {
+        "floor": "lawn and concrete walk",
+        "walls": "brick, metal fins, dark metal canopy, glass",
+        "ceiling": "canopy soffit"
+      },
+      "colors": {
+        "canopy": "#383A3D",
+        "brick": "#6E5246",
+        "grass": "#4D542F",
+        "concrete": "#E0D3C0"
+      },
+      "signage": []
+    },
+    "IMG_0363": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "canopy corner",
+        "curtain wall",
+        "lawn",
+        "planting bed"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn",
+        "walls": "glass and dark metal",
+        "ceiling": "canopy"
+      },
+      "colors": {
+        "canopy": "#383A3D",
+        "grass": "#4D542F"
+      },
+      "signage": []
+    },
+    "IMG_0364": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "wide lawn",
+        "dark cantilevered canopy",
+        "two-story curtain wall",
+        "entry stairs at the right",
+        "bike racks",
+        "planting bed"
+      ],
+      "props": [
+        {
+          "kind": "bike_rack",
+          "count": 2,
+          "where": "at the right, beside the stair",
+          "notes": "about eight bikes"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "under the glass, yellow-framed leaves at the left bay"
+        }
+      ],
+      "finishes": {
+        "floor": "lawn",
+        "walls": "curtain wall under a dark metal canopy",
+        "ceiling": "canopy soffit"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "canopy": "#383A3D"
+      },
+      "signage": []
+    },
+    "IMG_0365": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "concrete stair and ramp rails up to the doors",
+        "dark canopy on round columns",
+        "curtain wall",
+        "planting"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 3,
+          "where": "across the curtain wall",
+          "notes": "several entrance pairs"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "on the upper landing, right"
+        }
+      ],
+      "finishes": {
+        "floor": "concrete walk and stair",
+        "walls": "glass, dark metal canopy, grey columns",
+        "ceiling": "canopy"
+      },
+      "colors": {
+        "concrete": "#E0D3C0",
+        "canopy": "#383A3D"
+      },
+      "signage": []
+    },
+    "IMG_0366": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "canopy from the drive",
+        "vertical RAC letters on the glass",
+        "concrete stair",
+        "red hydrant",
+        "low concrete planter"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "on the curtain wall",
+          "notes": "vertical RAC"
+        },
+        {
+          "kind": "fire_hydrant",
+          "count": 1,
+          "where": "at the curb"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "under the canopy"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt drive and concrete walk",
+        "walls": "glass and dark canopy",
+        "ceiling": "canopy"
+      },
+      "colors": {
+        "canopy": "#383A3D",
+        "concrete": "#E0D3C0",
+        "rac_letter": "#C6CFD4",
+        "asphalt": "#706964"
+      },
+      "signage": [
+        "RAC"
+      ],
+      "notes": "Letter hex is the bright pixels on the glass, so it includes glare."
+    },
+    "IMG_0367": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "side of the canopy",
+        "curtain wall",
+        "concrete base wall",
+        "road",
+        "lawn"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "glass",
+          "notes": "RAC, partly turned away"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "at the building base"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt and lawn",
+        "walls": "glass and dark metal",
+        "ceiling": "canopy"
+      },
+      "colors": {
+        "canopy": "#383A3D",
+        "asphalt": "#706964",
+        "grass": "#4D542F"
+      },
+      "signage": [
+        "RAC"
+      ]
+    },
+    "IMG_0368": {
+      "room": "main_entrance",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "head-on canopy",
+        "vertical RAC sign",
+        "curtain wall",
+        "stairs",
+        "hydrant",
+        "hedge in a concrete planter"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "right-hand glass",
+          "notes": "RAC, stacked"
+        },
+        {
+          "kind": "fire_hydrant",
+          "count": 1,
+          "where": "left of the stair"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "center, under the canopy"
+        }
+      ],
+      "finishes": {
+        "floor": "concrete stair and asphalt",
+        "walls": "curtain wall, dark canopy, brick wing at the far left",
+        "ceiling": "canopy soffit"
+      },
+      "colors": {
+        "canopy": "#383A3D",
+        "rac_letter": "#C6CFD4",
+        "concrete": "#E0D3C0",
+        "brick": "#6E5246"
+      },
+      "signage": [
+        "RAC"
+      ]
+    },
+    "IMG_0369": {
+      "room": "lobby",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "front desk in the foreground",
+        "fitness center behind glass",
+        "second-floor balcony with a metal rail",
+        "porcelain tile",
+        "tall ceiling with linear lights and downlights",
+        "curtain wall at the right"
+      ],
+      "props": [
+        {
+          "kind": "front_desk",
+          "count": 1,
+          "where": "across the foreground",
+          "notes": "long desk, wood top, frosted front panels"
+        },
+        {
+          "kind": "power_rack",
+          "count": 4,
+          "where": "fitness floor behind the desk",
+          "notes": "visible through the opening; same room as IMG_0318"
+        },
+        {
+          "kind": "stair_climber",
+          "count": 1,
+          "where": "right edge of the fitness floor"
+        },
+        {
+          "kind": "wall_tv",
+          "count": 2,
+          "where": "inside the fitness floor"
+        },
+        {
+          "kind": "banner",
+          "count": 1,
+          "where": "hung in the upper volume"
+        },
+        {
+          "kind": "wall_clock",
+          "count": 1,
+          "where": "on the upper back wall"
+        },
+        {
+          "kind": "downlight",
+          "count": 6,
+          "where": "high ceiling"
+        },
+        {
+          "kind": "linear_led",
+          "count": 8,
+          "where": "upper ceiling and the balcony soffit"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "foreground",
+          "notes": "dark entrance mat"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "upper wall"
+        }
+      ],
+      "finishes": {
+        "floor": "large porcelain tile",
+        "walls": "painted gypsum, glass to the fitness floor, curtain wall",
+        "ceiling": "high white plane above the balcony"
+      },
+      "colors": {
+        "floor": "#B4A79B",
+        "wall": "#D7D6D5",
+        "desk_wood": "#7A5730",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": [],
+      "notes": "Fitness equipment here is the same room as IMG_0318 and IMG_0328, not a second gym."
+    },
+    "IMG_0370": {
+      "room": "lobby",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "standing just inside the entrance",
+        "porcelain tile",
+        "dark entrance mat",
+        "balcony rail",
+        "wood desk at the right",
+        "curtain wall at the left"
+      ],
+      "props": [
+        {
+          "kind": "front_desk",
+          "count": 1,
+          "where": "right",
+          "notes": "wood-clad, same desk"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 2,
+          "where": "at the threshold and further in",
+          "notes": "dark ribbed mats"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "left, the entrance doors"
+        },
+        {
+          "kind": "linear_led",
+          "count": 4,
+          "where": "high ceiling"
+        },
+        {
+          "kind": "downlight",
+          "count": 2,
+          "where": "soffit"
+        }
+      ],
+      "finishes": {
+        "floor": "porcelain tile",
+        "walls": "painted, curtain wall",
+        "ceiling": "high flat ceiling above the balcony"
+      },
+      "colors": {
+        "floor": "#B4A79B",
+        "wall": "#D7D6D5",
+        "desk_wood": "#7A5730",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": []
+    },
+    "IMG_0371": {
+      "room": "stair_lobby",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "open stair in the lobby",
+        "tile treads",
+        "metal handrail",
+        "glass guard at the top",
+        "framed poster board on the landing"
+      ],
+      "props": [
+        {
+          "kind": "bulletin_board",
+          "count": 1,
+          "where": "landing wall",
+          "notes": "wood frame, grid of posters"
+        },
+        {
+          "kind": "downlight",
+          "count": 1,
+          "where": "upper ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "tile treads",
+        "walls": "painted gypsum and a tile wainscot on the left",
+        "ceiling": "open to the upper lobby"
+      },
+      "colors": {
+        "stair_tread": "#B8B5B0",
+        "wall": "#D7D6D5"
+      },
+      "signage": [],
+      "notes": "Poster text is not legible and is omitted."
+    },
+    "IMG_0372": {
+      "room": "corridor_brick_locker",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "brick pier",
+        "opening into a white room with a mosaic glimpse",
+        "projecting room sign",
+        "green rental kiosk"
+      ],
+      "props": [
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "projecting from the wall",
+          "notes": "green panel, white letters"
+        },
+        {
+          "kind": "rental_kiosk",
+          "count": 1,
+          "where": "right of the sign",
+          "notes": "GM / Mason Recreation"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "porcelain tile",
+        "walls": "red brick and painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "brick": "#6E5246",
+        "letter_green": "#557C5E"
+      },
+      "signage": [
+        "Men's Locker Room",
+        "GM",
+        "University Life",
+        "MASON RECREATION",
+        "George Mason University"
+      ],
+      "notes": "Kiosk side text includes the fragments FREE and RENT. The green cabinet color was not isolated from the lettering."
+    },
+    "IMG_0373": {
+      "room": "corridor_brick_locker",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "brick wall",
+        "grey door in a painted opening",
+        "three blue bins"
+      ],
+      "props": [
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "left opening",
+          "notes": "grey, with a small green sign"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 3,
+          "where": "against the brick",
+          "notes": "blue, wheeled"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "on the door"
+        }
+      ],
+      "finishes": {
+        "floor": "porcelain tile",
+        "walls": "brick and painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "brick": "#6E5246"
+      },
+      "signage": []
+    },
+    "IMG_0374": {
+      "room": "corridor_locker_approach",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "narrow glossy terrazzo corridor",
+        "painted walls",
+        "a door or panel at the far end",
+        "troffers"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "far end"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "signage": []
+    },
+    "IMG_0375": {
+      "room": "volleyball_locker_room",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "door into the locker room",
+        "green dimensional letters above the frame",
+        "room plaque",
+        "ceramic tile floor inside",
+        "glass-door cooler just inside"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "wall above the door",
+          "notes": "green; dedication line omitted"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "left of the frame"
+        },
+        {
+          "kind": "glass_door_cooler",
+          "count": 1,
+          "where": "just inside, facing the door",
+          "notes": "two-door merchandiser"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "the entry door",
+          "notes": "held open"
+        }
+      ],
+      "finishes": {
+        "floor": "small ceramic tile inside the door",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile inside"
+      },
+      "colors": {
+        "letter_green": "#557C5E",
+        "wall": "#E8D2BC",
+        "floor": "#A49685"
+      },
+      "signage": [
+        "LOCKER ROOM",
+        "Men's Volleyball Locker Room",
+        "1210"
+      ],
+      "notes": "Wall hex #E8D2BC is that painted wall."
+    },
+    "IMG_0376": {
+      "room": "corridor_locker_approach",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "terrazzo corridor",
+        "grey door with a closer and a pull",
+        "opening back into a brighter hall",
+        "can light"
+      ],
+      "props": [
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "right door and a far door in the side hall",
+          "notes": "grey metal"
+        },
+        {
+          "kind": "downlight",
+          "count": 1,
+          "where": "ceiling of this short leg"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "in the adjoining hall"
+        }
+      ],
+      "finishes": {
+        "floor": "speckled terrazzo",
+        "walls": "painted gypsum",
+        "ceiling": "gypsum with a can light, acoustic tile beyond"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5",
+        "door": "#4C5156"
+      },
+      "signage": []
+    },
+    "IMG_0377": {
+      "room": "volleyball_locker_room",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "wood lockers",
+        "ceramic tile floor",
+        "all-american board",
+        "GM volleyball mark",
+        "ball cart",
+        "laundry bins",
+        "shower entrance",
+        "stool"
+      ],
+      "props": [
+        {
+          "kind": "locker_bank_wood",
+          "count": 2,
+          "where": "left and right walls",
+          "notes": "open wood cubbies with hooks"
+        },
+        {
+          "kind": "ball_cart",
+          "count": 1,
+          "where": "foreground",
+          "notes": "black rolling cart of volleyballs"
+        },
+        {
+          "kind": "laundry_bin",
+          "count": 2,
+          "where": "center",
+          "notes": "one green, one red"
+        },
+        {
+          "kind": "stool",
+          "count": 2,
+          "where": "near the bins and the right lockers",
+          "notes": "wood"
+        },
+        {
+          "kind": "shower_stall",
+          "count": 1,
+          "where": "center background",
+          "notes": "curtain track, tile inside"
+        },
+        {
+          "kind": "wire_basket",
+          "count": 1,
+          "where": "by the shower",
+          "notes": "rolling wire cart"
+        },
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "right wall",
+          "notes": "GM over VOLLEYBALL"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling"
+        },
+        {
+          "kind": "coat_hook",
+          "count": 8,
+          "where": "inside the visible cubbies",
+          "notes": "hooks, not a full count of every stall"
+        }
+      ],
+      "finishes": {
+        "floor": "small square ceramic tile",
+        "walls": "painted gypsum and wood lockers",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#A49685",
+        "logo_green": "#204030"
+      },
+      "signage": [
+        "GM",
+        "VOLLEYBALL",
+        "NCAA ALL-AMERICANS",
+        "NAIA ALL-AMERICANS"
+      ],
+      "notes": "Names listed on the all-american board are omitted."
+    },
+    "IMG_0378": {
+      "room": "volleyball_locker_room",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "grey door with GM and VOLLEYBALL",
+        "wood locker run",
+        "ceramic tile",
+        "ball cart",
+        "shoes on top of lockers"
+      ],
+      "props": [
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "left",
+          "notes": "grey, closer, kick plate"
+        },
+        {
+          "kind": "locker_bank_wood",
+          "count": 1,
+          "where": "center and right",
+          "notes": "about eight open stalls in frame"
+        },
+        {
+          "kind": "ball_cart",
+          "count": 1,
+          "where": "foreground"
+        },
+        {
+          "kind": "shoe_shelf",
+          "count": 1,
+          "where": "tops of the lockers",
+          "notes": "shoes stored on the locker tops"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "stool",
+          "count": 1,
+          "where": "left edge"
+        }
+      ],
+      "finishes": {
+        "floor": "small ceramic tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#A49685",
+        "door": "#4C5156",
+        "logo_green": "#204030"
+      },
+      "signage": [
+        "GM",
+        "VOLLEYBALL"
+      ],
+      "notes": "Locker-wood pixels were too mixed with gear for a clean hex."
+    },
+    "IMG_0379": {
+      "room": "volleyball_restroom",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "single urinal",
+        "beige wall tile",
+        "grey partition",
+        "ceramic floor",
+        "instruction card on the partition"
+      ],
+      "props": [
+        {
+          "kind": "urinal",
+          "count": 1,
+          "where": "on the tiled wall"
+        },
+        {
+          "kind": "toilet_partition",
+          "count": 1,
+          "where": "right",
+          "notes": "grey, floor-mounted style"
+        }
+      ],
+      "finishes": {
+        "floor": "small ceramic tile, darker beige",
+        "walls": "4-inch beige ceramic, painted gypsum above",
+        "ceiling": "painted, with a surface-mounted light"
+      },
+      "colors": {
+        "wall_tile": "#D1C1A7",
+        "floor": "#6F604B",
+        "partition": "#898478"
+      },
+      "signage": [],
+      "notes": "Floor hex is darker because the floor is in shadow. A ball and a red bin in the foreground are loose items, not fixtures."
+    },
+    "IMG_0380": {
+      "room": "volleyball_showers",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "two shower stalls",
+        "white textured ceramic surround",
+        "white bases",
+        "curtain rod",
+        "can lights",
+        "grab bar"
+      ],
+      "props": [
+        {
+          "kind": "shower_stall",
+          "count": 2,
+          "where": "side by side",
+          "notes": "low curb, white base"
+        },
+        {
+          "kind": "shower_curtain",
+          "count": 2,
+          "where": "on a shared rod",
+          "notes": "green and gold fabric"
+        },
+        {
+          "kind": "grab_bar",
+          "count": 1,
+          "where": "in the right stall"
+        },
+        {
+          "kind": "downlight",
+          "count": 2,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "white shower base",
+        "walls": "white textured ceramic",
+        "ceiling": "painted gypsum"
+      },
+      "colors": {
+        "shower_tile": "#BAB1A7",
+        "wall": "#D7D6D5"
+      },
+      "signage": [],
+      "notes": "Tile hex is white ceramic photographed under warm light, not a beige glaze."
+    },
+    "IMG_0381": {
+      "room": "volleyball_showers",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "shower interior",
+        "textured white tile",
+        "fixed head and hose",
+        "grab bar",
+        "black soap dish",
+        "curtain"
+      ],
+      "props": [
+        {
+          "kind": "shower_stall",
+          "count": 1,
+          "where": "this stall",
+          "notes": "same room as IMG_0380"
+        },
+        {
+          "kind": "grab_bar",
+          "count": 2,
+          "where": "side wall and front",
+          "notes": "one horizontal, one angled"
+        },
+        {
+          "kind": "soap_dispenser",
+          "count": 1,
+          "where": "right wall",
+          "notes": "black dish"
+        },
+        {
+          "kind": "shower_curtain",
+          "count": 1,
+          "where": "front rod"
+        },
+        {
+          "kind": "downlight",
+          "count": 2,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "white base",
+        "walls": "white textured ceramic",
+        "ceiling": "painted gypsum"
+      },
+      "colors": {
+        "shower_tile": "#BAB1A7"
+      },
+      "signage": []
+    },
+    "IMG_0382": {
+      "room": "volleyball_locker_room",
+      "level": 1,
+      "looking": "?",
+      "features": [
+        "sink counter at the left",
+        "ceramic tile floor and a tile wainscot",
+        "wood stool",
+        "grey partition",
+        "wire cart",
+        "lockers and the GM door deeper in"
+      ],
+      "props": [
+        {
+          "kind": "sink_counter",
+          "count": 1,
+          "where": "left wall",
+          "notes": "solid surface, beige tile backsplash"
+        },
+        {
+          "kind": "stool",
+          "count": 1,
+          "where": "by the sink",
+          "notes": "wood"
+        },
+        {
+          "kind": "toilet_partition",
+          "count": 1,
+          "where": "right",
+          "notes": "grey"
+        },
+        {
+          "kind": "wire_basket",
+          "count": 1,
+          "where": "foreground right"
+        },
+        {
+          "kind": "locker_bank_wood",
+          "count": 1,
+          "where": "background"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "background",
+          "notes": "grey GM door"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 1,
+          "where": "wall by the sink"
+        }
+      ],
+      "finishes": {
+        "floor": "small ceramic tile",
+        "walls": "beige tile wainscot, painted above",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#A49685",
+        "wall_tile": "#D1C1A7",
+        "door": "#4C5156"
+      },
+      "signage": [
+        "GM",
+        "VOLLEYBALL"
+      ]
+    },
+    "Screenshot_2026-09-28_174301": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Title and code sheet. No furniture shown."
+    },
+    "Screenshot_2026-09-28_174325": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Code and egress notes. No furniture shown."
+    },
+    "Screenshot_2026-09-28_174338": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Small-scale occupancy and egress diagrams labeled level 1 and level 2. Room names are not readable at this sheet size."
+    },
+    "Screenshot_2026-09-28_174411": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "LEVEL 2 FINAL CONDITIONS",
+        "LEVEL 1 INTERIM LIFE SAFETY PLAN",
+        "CONSTRUCTION ZONE"
+      ],
+      "notes": "Life-safety plans. Level 2 final shows two basketball courts in the addition. Level 1 interim shows one basketball court, a hatched construction zone, and a bank of four smaller courts. Existing RAC rooms outside the addition are not labeled on this sheet."
+    },
+    "Screenshot_2026-09-28_174518": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Another life-safety sheet from the same set, plans plus notes. Individual room names are below the resolution of the contact sheet."
+    },
+    "Screenshot_2026-09-28_174529": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "LEVEL 2 INTERIM LIFE SAFETY PLAN",
+        "LEVEL 1 INTERIM LIFE SAFETY PLAN"
+      ],
+      "notes": "Interim life-safety plans, same addition. Level 2 and level 1 court layouts match IMG sheet 174411. Existing building interiors are not photographed here."
+    },
+    "Screenshot_2026-09-28_174541": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Structural or roof framing sheet of the addition, purple framing lines. Not a finish photo."
+    },
+    "Screenshot_2026-09-28_174552": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Schedules and enlarged details. No readable furniture schedule was extracted."
+    },
+    "Screenshot_2026-09-28_174603": {
+      "room": "architect_drawing",
+      "level": 0,
+      "looking": "?",
+      "features": [
+        "not a photograph of a room",
+        "Perkins&Will working drawing for the Basketball & Academic Performance Center (RAC Addition)"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "signage": [
+        "George Mason University",
+        "RAC Addition"
+      ],
+      "notes": "Schedules and details on the same drawing set. No room finish was read off the sheet."
+    }
+  },
+  "rooms": {
+    "corridor_cmu": {
+      "name": "Terrazzo corridor, painted CMU",
+      "level": 1,
+      "photos": [
+        "IMG_0314",
+        "IMG_0315",
+        "IMG_0346"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 5,
+          "where": "down the ceiling"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "both walls"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "end of the hall"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "above the far doors"
+        },
+        {
+          "kind": "fire_extinguisher_cabinet",
+          "count": 1,
+          "where": "IMG_0346"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "side wall"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "IMG_0314 and IMG_0315 are the two directions of one hall (CMU switches sides). IMG_0346 is the same finish family and may be the same hall. Ceiling about 10 ft: a 7 ft door head with roughly 2.5 to 3 ft of wall and grid above it. Floor hex is the unlit terrazzo body, not the specular streak."
+    },
+    "corridor_fitness": {
+      "name": "Corridor outside the fitness center",
+      "level": 1,
+      "photos": [
+        "IMG_0316"
+      ],
+      "props": [
+        {
+          "kind": "locker_bank_metal",
+          "count": 1,
+          "where": "left wall",
+          "notes": "about 12 green doors visible"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 3,
+          "where": "in front of the lockers"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "mid-hall"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "far end"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 3,
+          "where": "above the lockers"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3",
+        "locker_green": "#313D39",
+        "locker_beige": "#8A8474"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Porcelain, not terrazzo. Glass on the right is the fitness center. Ceiling grid matches the other 10 ft corridors."
+    },
+    "fitness_center": {
+      "name": "Fitness center",
+      "level": 1,
+      "photos": [
+        "IMG_0318",
+        "IMG_0328",
+        "IMG_0369"
+      ],
+      "props": [
+        {
+          "kind": "power_rack",
+          "count": 6,
+          "where": "rows on the rubber floor",
+          "notes": "Hammer Strength; at least four in one row plus racks deeper in. Room continues out of frame"
+        },
+        {
+          "kind": "lifting_platform",
+          "count": 3,
+          "where": "under the racks",
+          "notes": "wood insert"
+        },
+        {
+          "kind": "dumbbell_rack",
+          "count": 2,
+          "where": "along the window wall"
+        },
+        {
+          "kind": "cable_machine",
+          "count": 2,
+          "where": "mid-floor"
+        },
+        {
+          "kind": "plate_tree",
+          "count": 3,
+          "where": "at the racks"
+        },
+        {
+          "kind": "treadmill",
+          "count": 1,
+          "where": "foreground of IMG_0328",
+          "notes": "more cardio is likely; only one deck is clearly a treadmill"
+        },
+        {
+          "kind": "stair_climber",
+          "count": 1,
+          "where": "right edge in IMG_0369"
+        },
+        {
+          "kind": "adjustable_bench",
+          "count": 1,
+          "where": "near the cables"
+        },
+        {
+          "kind": "flat_bench",
+          "count": 1,
+          "where": "IMG_0318 foreground"
+        },
+        {
+          "kind": "strength_machine",
+          "count": 3,
+          "where": "background",
+          "notes": "selectorized pieces, models not identified"
+        },
+        {
+          "kind": "wall_mirror",
+          "count": 1,
+          "where": "one full wall"
+        },
+        {
+          "kind": "wall_tv",
+          "count": 2,
+          "where": "on columns and the far wall"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "at a column"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 2,
+          "where": "black mats at columns and platforms"
+        },
+        {
+          "kind": "sanitizer_caddy",
+          "count": 1,
+          "where": "by the dumbbells"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "linear_led",
+          "count": 8,
+          "where": "ceiling parallel to the windows"
+        }
+      ],
+      "finishes": {
+        "floor": "tan rubber tile, black rubber lane, wood platform inserts",
+        "walls": "painted gypsum and full-height mirrors",
+        "ceiling": "white soffit with linear LEDs"
+      },
+      "colors": {
+        "floor": "#ADA494",
+        "platform_wood": "#D2BA9D",
+        "wall": "#C9CACF"
+      },
+      "ceilingHeightEstimateFt": 12,
+      "evidence": "Seen only from the lobby storefront, never walked. Counts are the minimum distinct pieces across IMG_0318, IMG_0328, and the fitness floor in IMG_0369. Ceiling looks like a single tall story, about 12 ft, under the lobby balcony. No kettlebells, bikes, rowers, or a water fountain are readable."
+    },
+    "corridor_tile_junction": {
+      "name": "Tile corridor junction",
+      "level": 1,
+      "photos": [
+        "IMG_0319"
+      ],
+      "props": [
+        {
+          "kind": "floor_mat",
+          "count": 2,
+          "where": "on the porcelain"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "column and foreground"
+        },
+        {
+          "kind": "wall_clock",
+          "count": 1,
+          "where": "on a column"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "around the junction"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "column"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Wide tile hall, separate from the double-height lobby. Ceiling grid about 10 ft."
+    },
+    "basketball_gym": {
+      "name": "Basketball gym (through corridor doors)",
+      "level": 1,
+      "photos": [
+        "IMG_0320",
+        "IMG_0321",
+        "IMG_0322"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "corridor entry",
+          "notes": "white, vision panels"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 2,
+          "where": "on the court"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 1,
+          "where": "far wall",
+          "notes": "dark green lower band"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "corridor side of IMG_0322"
+        }
+      ],
+      "finishes": {
+        "floor": "maple, black lines, no green border in these frames",
+        "walls": "white above green pads",
+        "ceiling": "light ceiling, much lower than the competition gym"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "wall_pad": "#1B201C"
+      },
+      "ceilingHeightEstimateFt": 24,
+      "evidence": "A different room from the competition gym: no bleachers, no green painted border, and a lower ceiling beyond ordinary corridor doors. Camera never enters. 24 ft is a weak estimate from the 10 ft rim sitting well below a ceiling that is not the competition-gym joist bay. Compass unknown."
+    },
+    "office_reception": {
+      "name": "Office reception",
+      "level": 1,
+      "photos": [
+        "IMG_0323"
+      ],
+      "props": [
+        {
+          "kind": "office_desk",
+          "count": 1,
+          "where": "reception counter"
+        },
+        {
+          "kind": "mail_slots",
+          "count": 1,
+          "where": "back wall"
+        },
+        {
+          "kind": "wall_clock",
+          "count": 1,
+          "where": "side wall"
+        },
+        {
+          "kind": "office_chair",
+          "count": 2,
+          "where": "at the counter"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "side and back"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "room_sign",
+          "count": 2,
+          "where": "at the doors"
+        }
+      ],
+      "finishes": {
+        "floor": "dark patterned carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#C9CACF"
+      },
+      "ceilingHeightEstimateFt": 9,
+      "evidence": "Typical office proportion: door head close under a 2x4 grid, estimated 9 ft. Level is not proven; no window or stair is in frame, so level 1 is a default."
+    },
+    "office_suite": {
+      "name": "Office suite",
+      "level": 1,
+      "photos": [
+        "IMG_0324",
+        "IMG_0325",
+        "IMG_0326",
+        "IMG_0327"
+      ],
+      "props": [
+        {
+          "kind": "cubicle",
+          "count": 8,
+          "where": "open bay",
+          "notes": "at least eight stations; the bay continues"
+        },
+        {
+          "kind": "office_chair",
+          "count": 2,
+          "where": "inside stations",
+          "notes": "only clearly visible chairs"
+        },
+        {
+          "kind": "door_single",
+          "count": 4,
+          "where": "perimeter",
+          "notes": "oak"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 8,
+          "where": "ceiling"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 4,
+          "where": "far wall and corridor"
+        },
+        {
+          "kind": "folding_table",
+          "count": 1,
+          "where": "IMG_0326"
+        },
+        {
+          "kind": "room_sign",
+          "count": 2,
+          "where": "including Break Room 1122"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "corridor ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "dark patterned carpet tile",
+        "walls": "painted gypsum",
+        "ceiling": "2x4 acoustic grid"
+      },
+      "colors": {
+        "carpet": "#434241",
+        "wall": "#D7D6D5",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 9,
+      "evidence": "Same suite as the reception photo. Private offices are shut. Break room interior was not entered. Lit ceiling sample #D3D1D3 comes from IMG_0327."
+    },
+    "lobby": {
+      "name": "Main lobby",
+      "level": 1,
+      "photos": [
+        "IMG_0329",
+        "IMG_0330",
+        "IMG_0369",
+        "IMG_0370"
+      ],
+      "props": [
+        {
+          "kind": "front_desk",
+          "count": 1,
+          "where": "center-right",
+          "notes": "long wood top; frosted front in IMG_0369, wood end in IMG_0329"
+        },
+        {
+          "kind": "dining_table",
+          "count": 4,
+          "where": "far seating by the glass"
+        },
+        {
+          "kind": "dining_chair",
+          "count": 12,
+          "where": "around those tables"
+        },
+        {
+          "kind": "planter_bench",
+          "count": 1,
+          "where": "along the curtain wall in IMG_0330"
+        },
+        {
+          "kind": "wall_tv",
+          "count": 1,
+          "where": "far wall"
+        },
+        {
+          "kind": "vending_machine",
+          "count": 1,
+          "where": "by the lobby stair"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "desk and curtain wall"
+        },
+        {
+          "kind": "door_double",
+          "count": 3,
+          "where": "entrance and side exits"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 2,
+          "where": "at the entrance"
+        },
+        {
+          "kind": "aed_cabinet",
+          "count": 1,
+          "where": "column in IMG_0330"
+        },
+        {
+          "kind": "security_camera",
+          "count": 2,
+          "where": "soffits"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "downlight",
+          "count": 6,
+          "where": "high ceiling"
+        },
+        {
+          "kind": "linear_led",
+          "count": 8,
+          "where": "upper ceiling and balcony soffit"
+        },
+        {
+          "kind": "banner",
+          "count": 1,
+          "where": "upper volume in IMG_0369"
+        },
+        {
+          "kind": "wall_clock",
+          "count": 1,
+          "where": "upper back wall"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile",
+        "walls": "painted gypsum, two-story curtain wall",
+        "ceiling": "high flat ceiling above a second-floor balcony"
+      },
+      "colors": {
+        "floor": "#B4A79B",
+        "wall": "#D7D6D5",
+        "desk_wood": "#7A5730",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 26,
+      "evidence": "Double-height room. The balcony rail is one story up and the ceiling continues above that rail by roughly another story of linear lights (IMG_0369, IMG_0370). 26 ft is the midpoint of a 24 to 28 ft visual range, not a surveyed height. Fitness equipment visible behind the desk is inventoried on fitness_center, not here."
+    },
+    "corridor_hall_of_fame": {
+      "name": "Hall of fame corridor",
+      "level": 1,
+      "photos": [
+        "IMG_0331"
+      ],
+      "props": [
+        {
+          "kind": "hall_of_fame_board",
+          "count": 4,
+          "where": "left wall"
+        },
+        {
+          "kind": "display_case",
+          "count": 6,
+          "where": "right wall"
+        },
+        {
+          "kind": "rental_kiosk",
+          "count": 1,
+          "where": "at the brick pier"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "by the kiosk"
+        },
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "left wall"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "left and far"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 8,
+          "where": "two ceiling rows"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 1,
+          "where": "mid left"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far end"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3",
+        "letter_green": "#557C5E"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Wide tile spine. May connect to corridor_tile_spine and the concourse; photographed as its own stretch because of the record boards."
+    },
+    "competition_gym": {
+      "name": "Competition gym",
+      "level": 1,
+      "photos": [
+        "IMG_0332",
+        "IMG_0333",
+        "IMG_0334",
+        "IMG_0335",
+        "IMG_0336",
+        "IMG_0337_f000",
+        "IMG_0337_f001",
+        "IMG_0337_f002",
+        "IMG_0337_f003",
+        "IMG_0337_f004",
+        "IMG_0337_f005",
+        "IMG_0337_f006",
+        "IMG_0337_f007",
+        "IMG_0337_f008",
+        "IMG_0337_f009"
+      ],
+      "props": [
+        {
+          "kind": "bleacher_bank",
+          "count": 2,
+          "where": "one near sideline and one at the far end",
+          "notes": "green telescopic seats with gold vertical bays; nested rows about 14 to 16 in IMG_0337_f006"
+        },
+        {
+          "kind": "basketball_hoop_ceiling",
+          "count": 3,
+          "where": "retractable, over the main court and cross courts",
+          "notes": "three structures are distinguishable; more may be folded into the joists"
+        },
+        {
+          "kind": "volleyball_standard",
+          "count": 4,
+          "where": "two nets"
+        },
+        {
+          "kind": "referee_stand",
+          "count": 1,
+          "where": "at the near net"
+        },
+        {
+          "kind": "wall_pad",
+          "count": 4,
+          "where": "lower perimeter",
+          "notes": "dark green, about 6 ft, seen on the window wall and the end walls"
+        },
+        {
+          "kind": "scoreboard",
+          "count": 2,
+          "where": "above the viewing windows and on an end wall"
+        },
+        {
+          "kind": "banner",
+          "count": 4,
+          "where": "joists and walls",
+          "notes": "NCAA, CAA, retired jersey, plus one high banner in IMG_0332"
+        },
+        {
+          "kind": "flag",
+          "count": 1,
+          "where": "end wall",
+          "notes": "United States"
+        },
+        {
+          "kind": "door_double",
+          "count": 2,
+          "where": "under the viewing windows"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 2,
+          "where": "at the pad wall"
+        },
+        {
+          "kind": "high_bay_light",
+          "count": 20,
+          "where": "on the joists",
+          "notes": "linear LED rows; one frame shows on the order of twenty, and the grid continues"
+        }
+      ],
+      "finishes": {
+        "floor": "maple with a dark green painted border, white athletic lines, center logo, PATRIOTS on the green",
+        "walls": "white above green pads, clerestory windows, second-floor viewing glass",
+        "ceiling": "exposed painted steel joists"
+      },
+      "colors": {
+        "floor": "#D2BA9D",
+        "floor_green": "#1C3020",
+        "bleacher_green": "#1E231F",
+        "bleacher_gold": "#A06C20",
+        "wall_pad": "#1B201C",
+        "wall": "#D5D3CF",
+        "logo_green": "#204030"
+      },
+      "ceilingHeightEstimateFt": 30,
+      "evidence": "Height is scaled from the green pad band, which matches the nearby 7 ft doors and is about 6 ft. In IMG_0336 and IMG_0337_f000 that band is roughly one fifth of the floor-to-joist wall, so the joist soffit is about 30 ft. Range 28 to 34 ft. IMG_0344 and IMG_0345 are the level-2 corridor looking in, not a second gym. Step ladders in several frames are temporary. IMG_0344 and IMG_0345 look into this gym from level 2 and are filed on corridor_l2_gym."
+    },
+    "corridor_tile_spine": {
+      "name": "Tile spine corridor",
+      "level": 1,
+      "photos": [
+        "IMG_0338"
+      ],
+      "props": [
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "left"
+        },
+        {
+          "kind": "display_case",
+          "count": 3,
+          "where": "left wall"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far end"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "large-format porcelain tile, light grey-beige, narrow grout",
+        "walls": "painted gypsum, grey base",
+        "ceiling": "white acoustic tile, mix of 2x4 troffers"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "wall": "#C9CACF",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "May be the far end of the hall-of-fame corridor. Kept separate because the record boards are not in this frame."
+    },
+    "corridor_vending": {
+      "name": "Vending and stair corridor",
+      "level": 1,
+      "photos": [
+        "IMG_0339"
+      ],
+      "props": [
+        {
+          "kind": "vending_machine",
+          "count": 1,
+          "where": "left wall"
+        },
+        {
+          "kind": "door_single",
+          "count": 3,
+          "where": "grey metal"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "at the stair and mid-hall"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "thermostat",
+          "count": 1,
+          "where": "by the stair"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo",
+        "walls": "painted gypsum with a brick pier",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#C9CACF",
+        "brick": "#6E5246"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Finish changes to terrazzo beside a brick pier and an open stair. The stair itself is not fully shown."
+    },
+    "volleyball_vestibule": {
+      "name": "Volleyball mosaic vestibule",
+      "level": 1,
+      "photos": [
+        "IMG_0340"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "mosaic wall"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "beside the mosaic"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "dedication plaque; name omitted"
+        }
+      ],
+      "finishes": {
+        "floor": "light speckled resilient or terrazzo",
+        "walls": "green and off-white mosaic, brick surround",
+        "ceiling": "low gypsum"
+      },
+      "colors": {
+        "floor": "#C0AEA6",
+        "mosaic_field": "#A8ACA2",
+        "logo_green": "#204030",
+        "brick": "#592E20"
+      },
+      "ceilingHeightEstimateFt": 9,
+      "evidence": "Small room at the brick opening. Ceiling is just above the door, about 9 ft. Mosaic field hex is the median of the mixed small tiles; the GM fill is separately #204030."
+    },
+    "stair_enclosed": {
+      "name": "Enclosed stair",
+      "level": 1,
+      "photos": [
+        "IMG_0341"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "upper landing"
+        },
+        {
+          "kind": "linear_led",
+          "count": 1,
+          "where": "side wall"
+        }
+      ],
+      "finishes": {
+        "floor": "concrete treads",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile over the upper flight"
+      },
+      "colors": {
+        "stair_tread": "#B8B5B0",
+        "wall": "#D7D6D5"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "One straight flight. Headroom at the upper landing matches the 10 ft corridors. Which stair core this is, and the riser count for a full story, are not resolved."
+    },
+    "concourse": {
+      "name": "Main concourse",
+      "level": 1,
+      "photos": [
+        "IMG_0342"
+      ],
+      "props": [
+        {
+          "kind": "display_case",
+          "count": 4,
+          "where": "left wall"
+        },
+        {
+          "kind": "body_scanner",
+          "count": 2,
+          "where": "right wall"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far glass"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "sides"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "by the scanners"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "at a side door"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "terrazzo with a tan resilient inset",
+        "walls": "painted gypsum and brick",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5",
+        "brick": "#6E5246"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Wide hall, likely the lobby approach. Tan inset was not given its own clean patch."
+    },
+    "corridor_l2_balcony": {
+      "name": "Level 2 balcony corridor",
+      "level": 2,
+      "photos": [
+        "IMG_0343"
+      ],
+      "props": [
+        {
+          "kind": "dining_chair",
+          "count": 6,
+          "where": "along the rail wall"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "with the chairs"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 6,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 2,
+          "where": "ceiling"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "left wall"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo",
+        "walls": "painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Open to the lobby on the rail side, so this floor is level 2. Its own ceiling is a normal 10 ft grid above the balcony."
+    },
+    "corridor_l2_gym": {
+      "name": "Level 2 competition-gym viewing corridor",
+      "level": 2,
+      "photos": [
+        "IMG_0344",
+        "IMG_0345"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 8,
+          "where": "corridor ceiling"
+        },
+        {
+          "kind": "security_camera",
+          "count": 1,
+          "where": "ceiling"
+        },
+        {
+          "kind": "dining_chair",
+          "count": 2,
+          "where": "far end of IMG_0345"
+        }
+      ],
+      "finishes": {
+        "floor": "polished terrazzo",
+        "walls": "painted gypsum and a black-framed window wall",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall": "#D7D6D5"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Looks down into the competition gym, so the camera is on level 2. Gym equipment seen through the glass is counted on competition_gym."
+    },
+    "corridor_alcove": {
+      "name": "Corridor alcove",
+      "level": 1,
+      "photos": [
+        "IMG_0347"
+      ],
+      "props": [
+        {
+          "kind": "upholstered_bench",
+          "count": 1,
+          "where": "side wall"
+        },
+        {
+          "kind": "bulletin_board",
+          "count": 1,
+          "where": "above the bench"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "far end"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "at those doors"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling"
+        },
+        {
+          "kind": "exit_sign",
+          "count": 1,
+          "where": "far ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Short terrazzo leg off a larger corridor. Same 10 ft grid."
+    },
+    "corridor_cage": {
+      "name": "Corridor at the Cage Gym doors",
+      "level": 1,
+      "photos": [
+        "IMG_0348"
+      ],
+      "props": [
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "end wall",
+          "notes": "Cage Gym"
+        },
+        {
+          "kind": "floor_mat",
+          "count": 1,
+          "where": "at the Cage doors"
+        },
+        {
+          "kind": "door_single",
+          "count": 5,
+          "where": "both side walls"
+        },
+        {
+          "kind": "room_sign",
+          "count": 2,
+          "where": "side doors"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Ends at the Cage Gym. The gym interior is not photographed. Same terrazzo and 10 ft ceiling as corridor_cmu; it may be that hall's end."
+    },
+    "service_yard": {
+      "name": "Service yard",
+      "level": 1,
+      "photos": [
+        "IMG_0349",
+        "IMG_0350"
+      ],
+      "props": [
+        {
+          "kind": "dumpster",
+          "count": 1,
+          "where": "IMG_0349"
+        },
+        {
+          "kind": "chain_link_fence",
+          "count": 1,
+          "where": "around the ramp"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "back wall under a small canopy"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt",
+        "walls": "red brick, precast band, metal sunshade fins",
+        "ceiling": "none"
+      },
+      "colors": {
+        "brick": "#6E5246",
+        "precast": "#B8AA9C",
+        "asphalt": "#706964"
+      },
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "South or west brick facade with the finned clerestory. No interior. Outdoor, so ceiling height is 0."
+    },
+    "loading_dock": {
+      "name": "Loading dock",
+      "level": 1,
+      "photos": [
+        "IMG_0351"
+      ],
+      "props": [
+        {
+          "kind": "overhead_door",
+          "count": 1,
+          "where": "brick wall"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "beside the roll-up"
+        },
+        {
+          "kind": "room_sign",
+          "count": 3,
+          "where": "small signs, text not read"
+        }
+      ],
+      "finishes": {
+        "floor": "asphalt with yellow hatch",
+        "walls": "brick, precast, sunshade fins",
+        "ceiling": "none"
+      },
+      "colors": {
+        "brick": "#6E5246",
+        "precast": "#B8AA9C",
+        "asphalt": "#706964"
+      },
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "Same brick volume as the service yard, at the dock doors."
+    },
+    "campus_brick": {
+      "name": "Campus lawn at the brick facade",
+      "level": 1,
+      "photos": [
+        "IMG_0352",
+        "IMG_0353",
+        "IMG_0361"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "lawn and concrete walks",
+        "walls": "distant red brick",
+        "ceiling": "none"
+      },
+      "colors": {
+        "grass": "#4D542F",
+        "brick": "#6E5246",
+        "concrete": "#E0D3C0"
+      },
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "Context shots. No furnishings. Fins and the precast band are clearer in the service-yard photos."
+    },
+    "campus_east": {
+      "name": "East metal-panel grounds",
+      "level": 1,
+      "photos": [
+        "IMG_0354",
+        "IMG_0355",
+        "IMG_0358",
+        "IMG_0359"
+      ],
+      "props": [
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "at the wood-tone base in IMG_0358"
+        },
+        {
+          "kind": "door_double",
+          "count": 1,
+          "where": "IMG_0359 entry bay"
+        }
+      ],
+      "finishes": {
+        "floor": "lawn, concrete walks, riprap swale, asphalt road",
+        "walls": "grey standing-seam metal panel, wood-tone band, brick base",
+        "ceiling": "none"
+      },
+      "colors": {
+        "metal_panel": "#868D95",
+        "grass": "#4D542F",
+        "brick": "#6E5246",
+        "asphalt": "#706964"
+      },
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "Spec calls the metal-panel additions the east side. These four photos are that elevation plus the rock swale. No construction fence close-up of the northwest Cage addition."
+    },
+    "campus_road": {
+      "name": "Campus roads",
+      "level": 1,
+      "photos": [
+        "IMG_0356",
+        "IMG_0357",
+        "IMG_0360"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "asphalt, concrete sidewalk, marked crosswalk",
+        "walls": "none",
+        "ceiling": "none"
+      },
+      "colors": {
+        "asphalt": "#706964",
+        "concrete": "#E0D3C0",
+        "grass": "#4D542F"
+      },
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "Approach roads. A bike-lane symbol is clearer in IMG_0359 than in these three."
+    },
+    "main_entrance": {
+      "name": "Main entrance",
+      "level": 1,
+      "photos": [
+        "IMG_0362",
+        "IMG_0363",
+        "IMG_0364",
+        "IMG_0365",
+        "IMG_0366",
+        "IMG_0367",
+        "IMG_0368"
+      ],
+      "props": [
+        {
+          "kind": "dimensional_letter",
+          "count": 1,
+          "where": "curtain wall",
+          "notes": "vertical RAC"
+        },
+        {
+          "kind": "bike_rack",
+          "count": 2,
+          "where": "beside the entry stair",
+          "notes": "about eight bikes in IMG_0364"
+        },
+        {
+          "kind": "door_double",
+          "count": 3,
+          "where": "under the canopy"
+        },
+        {
+          "kind": "fire_hydrant",
+          "count": 1,
+          "where": "at the curb"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 1,
+          "where": "upper landing"
+        }
+      ],
+      "finishes": {
+        "floor": "concrete stairs, walks, and a ramp; lawn in front",
+        "walls": "two-story curtain wall, dark metal canopy, grey columns, brick wing",
+        "ceiling": "canopy soffit, no interior ceiling"
+      },
+      "colors": {
+        "canopy": "#383A3D",
+        "concrete": "#E0D3C0",
+        "rac_letter": "#C6CFD4",
+        "grass": "#4D542F",
+        "brick": "#6E5246"
+      },
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "Spec places this entrance on the southeast. Photos look at the building, so a cardinal look-direction is not a single letter. Canopy underside #383A3D. Concrete #E0D3C0."
+    },
+    "stair_lobby": {
+      "name": "Lobby stair",
+      "level": 1,
+      "photos": [
+        "IMG_0371"
+      ],
+      "props": [
+        {
+          "kind": "bulletin_board",
+          "count": 1,
+          "where": "intermediate landing"
+        },
+        {
+          "kind": "downlight",
+          "count": 1,
+          "where": "upper ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "tile treads",
+        "walls": "painted gypsum with a tile wainscot",
+        "ceiling": "open into the lobby volume"
+      },
+      "colors": {
+        "stair_tread": "#B8B5B0",
+        "wall": "#D7D6D5"
+      },
+      "ceilingHeightEstimateFt": 26,
+      "evidence": "This stair is inside the lobby, so it shares the lobby's tall volume. The upper landing has a glass guard. Riser count for the full story was not taken."
+    },
+    "corridor_brick_locker": {
+      "name": "Brick corridor at the locker entries",
+      "level": 1,
+      "photos": [
+        "IMG_0372",
+        "IMG_0373"
+      ],
+      "props": [
+        {
+          "kind": "room_sign",
+          "count": 2,
+          "where": "Men's Locker Room blade and a door sign"
+        },
+        {
+          "kind": "rental_kiosk",
+          "count": 1,
+          "where": "IMG_0372"
+        },
+        {
+          "kind": "door_single",
+          "count": 1,
+          "where": "IMG_0373"
+        },
+        {
+          "kind": "trash_bin",
+          "count": 3,
+          "where": "against the brick"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 2,
+          "where": "ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "porcelain tile",
+        "walls": "red brick piers and painted gypsum",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#AA9F90",
+        "brick": "#6E5246",
+        "letter_green": "#557C5E"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Public men's locker room is signed and not entered. Mosaic visible through one opening is the volleyball vestibule or a similar tiled room."
+    },
+    "corridor_locker_approach": {
+      "name": "Terrazzo approach to the locker rooms",
+      "level": 1,
+      "photos": [
+        "IMG_0374",
+        "IMG_0376"
+      ],
+      "props": [
+        {
+          "kind": "troffer_2x4",
+          "count": 4,
+          "where": "ceiling"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "grey metal"
+        },
+        {
+          "kind": "downlight",
+          "count": 1,
+          "where": "IMG_0376"
+        }
+      ],
+      "finishes": {
+        "floor": "polished speckled terrazzo, glossy",
+        "walls": "painted CMU on one side, smooth painted gypsum on the other, grey vinyl base",
+        "ceiling": "white 2x4 acoustic tile with lay-in troffers"
+      },
+      "colors": {
+        "floor": "#80766A",
+        "wall_cmu": "#B2AEA8",
+        "wall_gypsum": "#C9CACF",
+        "base": "#C0BCB9",
+        "ceiling_shade": "#7F7771",
+        "ceiling_lit": "#D3D1D3"
+      },
+      "ceilingHeightEstimateFt": 10,
+      "evidence": "Plain terrazzo legs next to the locker entries. Same 10 ft ceiling family."
+    },
+    "volleyball_locker_room": {
+      "name": "Volleyball locker room",
+      "level": 1,
+      "photos": [
+        "IMG_0375",
+        "IMG_0377",
+        "IMG_0378",
+        "IMG_0382"
+      ],
+      "props": [
+        {
+          "kind": "locker_bank_wood",
+          "count": 2,
+          "where": "both side walls",
+          "notes": "open cubbies; about eight stalls visible in one run"
+        },
+        {
+          "kind": "ball_cart",
+          "count": 1,
+          "where": "aisle"
+        },
+        {
+          "kind": "laundry_bin",
+          "count": 2,
+          "where": "center aisle"
+        },
+        {
+          "kind": "stool",
+          "count": 2,
+          "where": "aisle and at the sink"
+        },
+        {
+          "kind": "glass_door_cooler",
+          "count": 1,
+          "where": "inside the entry"
+        },
+        {
+          "kind": "sink_counter",
+          "count": 1,
+          "where": "IMG_0382"
+        },
+        {
+          "kind": "shower_stall",
+          "count": 1,
+          "where": "opening at the back of IMG_0377",
+          "notes": "the stall count is on volleyball_showers"
+        },
+        {
+          "kind": "wire_basket",
+          "count": 1,
+          "where": "aisle"
+        },
+        {
+          "kind": "shoe_shelf",
+          "count": 1,
+          "where": "tops of the wood lockers"
+        },
+        {
+          "kind": "coat_hook",
+          "count": 8,
+          "where": "in the visible cubbies"
+        },
+        {
+          "kind": "door_single",
+          "count": 2,
+          "where": "entry and the grey GM door"
+        },
+        {
+          "kind": "dimensional_letter",
+          "count": 2,
+          "where": "above the entry and on the end wall"
+        },
+        {
+          "kind": "room_sign",
+          "count": 1,
+          "where": "1210"
+        },
+        {
+          "kind": "troffer_2x4",
+          "count": 3,
+          "where": "ceiling"
+        },
+        {
+          "kind": "framed_picture",
+          "count": 1,
+          "where": "by the sink"
+        },
+        {
+          "kind": "toilet_partition",
+          "count": 1,
+          "where": "IMG_0382",
+          "notes": "restroom opening is also IMG_0379"
+        }
+      ],
+      "finishes": {
+        "floor": "small square ceramic tile",
+        "walls": "painted gypsum, wood lockers, beige tile wainscot at the sink",
+        "ceiling": "acoustic tile"
+      },
+      "colors": {
+        "floor": "#A49685",
+        "wall_tile": "#D1C1A7",
+        "door": "#4C5156",
+        "letter_green": "#557C5E",
+        "logo_green": "#204030"
+      },
+      "ceilingHeightEstimateFt": 9,
+      "evidence": "Door plaque 1210, Men's Volleyball Locker Room. Dedication above the door names a person; that name is omitted. Ceiling is a standard office-height grid, about 9 ft. Showers and the urinal room are separate records."
+    },
+    "volleyball_restroom": {
+      "name": "Volleyball locker restroom",
+      "level": 1,
+      "photos": [
+        "IMG_0379"
+      ],
+      "props": [
+        {
+          "kind": "urinal",
+          "count": 1,
+          "where": "tiled wall"
+        },
+        {
+          "kind": "toilet_partition",
+          "count": 1,
+          "where": "right side"
+        }
+      ],
+      "finishes": {
+        "floor": "small ceramic tile",
+        "walls": "beige 4-inch ceramic, painted above",
+        "ceiling": "painted gypsum"
+      },
+      "colors": {
+        "wall_tile": "#D1C1A7",
+        "floor": "#6F604B"
+      },
+      "ceilingHeightEstimateFt": 9,
+      "evidence": "A single corner, not a full restroom survey. No sinks in this frame (the sink is out in the locker aisle, IMG_0382). Floor sample is shadowed."
+    },
+    "volleyball_showers": {
+      "name": "Volleyball showers",
+      "level": 1,
+      "photos": [
+        "IMG_0380",
+        "IMG_0381"
+      ],
+      "props": [
+        {
+          "kind": "shower_stall",
+          "count": 2,
+          "where": "side by side"
+        },
+        {
+          "kind": "shower_curtain",
+          "count": 2,
+          "where": "shared rod"
+        },
+        {
+          "kind": "grab_bar",
+          "count": 2,
+          "where": "inside the stalls"
+        },
+        {
+          "kind": "soap_dispenser",
+          "count": 1,
+          "where": "side wall"
+        },
+        {
+          "kind": "downlight",
+          "count": 2,
+          "where": "hard ceiling"
+        }
+      ],
+      "finishes": {
+        "floor": "white receptor",
+        "walls": "white textured ceramic",
+        "ceiling": "painted gypsum with can lights"
+      },
+      "colors": {
+        "shower_tile": "#BAB1A7"
+      },
+      "ceilingHeightEstimateFt": 8,
+      "evidence": "Hard lid is visibly lower than the locker-room grid. 8 ft is the estimate from a shower head and curtain rod under a low ceiling. Tile hex #BAB1A7 is white ceramic under warm downlights."
+    },
+    "architect_drawing": {
+      "name": "RAC Addition drawings",
+      "level": 0,
+      "photos": [
+        "Screenshot_2026-09-28_174301",
+        "Screenshot_2026-09-28_174325",
+        "Screenshot_2026-09-28_174338",
+        "Screenshot_2026-09-28_174411",
+        "Screenshot_2026-09-28_174518",
+        "Screenshot_2026-09-28_174529",
+        "Screenshot_2026-09-28_174541",
+        "Screenshot_2026-09-28_174552",
+        "Screenshot_2026-09-28_174603"
+      ],
+      "props": [],
+      "finishes": {
+        "floor": "n/a",
+        "walls": "n/a",
+        "ceiling": "n/a"
+      },
+      "colors": {},
+      "ceilingHeightEstimateFt": 0,
+      "evidence": "Perkins&Will sheets for the Basketball & Academic Performance Center, the RAC Addition, not finish photos. Readable plan content: a hatched construction zone, a level-1 basketball court, four smaller courts, and two level-2 basketball courts. Those rooms are future or under construction and are not in the walk-through photos."
+    }
+  },
+  "missingKinds": [
+    "floor_mat",
+    "security_camera",
+    "aed_cabinet",
+    "display_case",
+    "hall_of_fame_board",
+    "sanitizer_caddy",
+    "body_scanner",
+    "rental_kiosk",
+    "linear_led",
+    "dining_table",
+    "dining_chair",
+    "planter_bench",
+    "ball_cart",
+    "stool",
+    "glass_door_cooler",
+    "shower_curtain",
+    "grab_bar",
+    "room_sign",
+    "dimensional_letter",
+    "framed_picture",
+    "thermostat",
+    "bike_rack",
+    "dumpster",
+    "fire_hydrant",
+    "overhead_door",
+    "chain_link_fence",
+    "upholstered_bench",
+    "strength_machine",
+    "referee_stand",
+    "folding_table",
+    "soap_dispenser",
+    "laundry_bin",
+    "wire_basket",
+    "shoe_shelf",
+    "coat_hook"
+  ]
+}
