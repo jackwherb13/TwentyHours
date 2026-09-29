@@ -1,0 +1,7 @@
+{
+  "sourceLines": 67,
+  "samples": 8304,
+  "medianDifferenceFt": 0.09589982860723012,
+  "p95AbsoluteDifferenceFt": 0.8806872874678019,
+  "method": "Excluded building pad + 8 ft collar; compared LiDAR ground with official county even-elevation contours"
+}

@@ -1,0 +1,83 @@
+Built verification/exterior/shared_builder_output.rbxm from blueprint_interim
+Part counts by category:
+  Ceilings     668
+  Columns      0
+  Facade       85
+  Floors       26
+  Props        3833
+  Roofs        85
+  Stairs       0
+  Walls        1325
+Total: 6022 parts; build time: 0.600 s
+Geometry QA: complete RAC (including props)
+degenerate   0
+doorBlocked  0
+floating     1
+   RAC.Props.1.PowerRack.Cup-1  bottom at y=3.53
+zfight       61
+   RAC.Props.1.BleacherBank.Nose13_6  /  RAC.Props.1.BleacherBank.Nose13_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose12_6  /  RAC.Props.1.BleacherBank.Nose12_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose11_6  /  RAC.Props.1.BleacherBank.Nose11_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose10_6  /  RAC.Props.1.BleacherBank.Nose10_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose9_6  /  RAC.Props.1.BleacherBank.Nose9_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose8_6  /  RAC.Props.1.BleacherBank.Nose8_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose7_6  /  RAC.Props.1.BleacherBank.Nose7_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose6_6  /  RAC.Props.1.BleacherBank.Nose6_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose5_6  /  RAC.Props.1.BleacherBank.Nose5_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose4_6  /  RAC.Props.1.BleacherBank.Nose4_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose3_6  /  RAC.Props.1.BleacherBank.Nose3_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose2_6  /  RAC.Props.1.BleacherBank.Nose2_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose1_6  /  RAC.Props.1.BleacherBank.Nose1_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose0_6  /  RAC.Props.1.BleacherBank.Nose0_1  (axis X, 0.8 sqft)
+   RAC.Levels.1.Walls.w049.WallSegment  /  RAC.Site.Facade.Facade_10.Skin.CladdingPanel  (axis Z, 2.0 sqft)
+   RAC.Props.1.BleacherBank.Nose13_1  /  RAC.Props.1.BleacherBank.Nose13_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose12_1  /  RAC.Props.1.BleacherBank.Nose12_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose11_1  /  RAC.Props.1.BleacherBank.Nose11_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose10_1  /  RAC.Props.1.BleacherBank.Nose10_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose9_1  /  RAC.Props.1.BleacherBank.Nose9_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose8_1  /  RAC.Props.1.BleacherBank.Nose8_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose7_1  /  RAC.Props.1.BleacherBank.Nose7_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose6_1  /  RAC.Props.1.BleacherBank.Nose6_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose5_1  /  RAC.Props.1.BleacherBank.Nose5_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose4_1  /  RAC.Props.1.BleacherBank.Nose4_6  (axis Z, 0.8 sqft)
+intersect    0
+gap          11
+   RAC.Levels.1.Walls.w061.WallSegment  <->  RAC.Levels.1.Walls.w003.WallSegment  gap 0.33 ft
+   RAC.Levels.1.Walls.w059.WallSegment  <->  RAC.Levels.1.Walls.w058.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w058.WallSegment  <->  RAC.Levels.1.Walls.w057.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w056.WallSegment  <->  RAC.Levels.1.Walls.w055.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w054.WallSegment  <->  RAC.Levels.1.Walls.w053.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w050.WallSegment  <->  RAC.Levels.1.Walls.w049.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w047.WallSegment  <->  RAC.Levels.1.Walls.w046.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w046.WallSegment  <->  RAC.Levels.1.Walls.w045.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w044.WallSegment  <->  RAC.Levels.1.Walls.w043.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w038.WallSegment  <->  RAC.Levels.1.Walls.w037.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w037.WallSegment  <->  RAC.Levels.1.Walls.w014.WallSegment  gap 0.33 ft
+6022 parts checked, 73 issues
+Checking building separately; RAC.Props issues do not fail this command.
+degenerate   0
+doorBlocked  0
+floating     0
+zfight       5
+   RAC.Levels.1.Walls.w049.WallSegment  /  RAC.Site.Facade.Facade_10.Skin.CladdingPanel  (axis Z, 2.0 sqft)
+   RAC.Levels.1.Walls.w044.WallSegment  /  RAC.Site.Facade.Facade_22.Skin.CladdingPanel  (axis Z, 2.0 sqft)
+   RAC.Levels.1.Walls.w045.WallSegment  /  RAC.Site.Facade.Facade_10.Skin.CladdingPanel  (axis Z, 2.0 sqft)
+   RAC.Levels.1.Walls.w061.WallSegment  /  RAC.Site.Facade.Facade_8.Skin.CladdingPanel  (axis Z, 2.7 sqft)
+   RAC.Levels.1.Walls.w054.WallSegment  /  RAC.Site.Facade.Facade_24.Skin.CladdingPanel  (axis Z, 2.0 sqft)
+intersect    0
+gap          11
+   RAC.Levels.1.Walls.w061.WallSegment  <->  RAC.Levels.1.Walls.w003.WallSegment  gap 0.33 ft
+   RAC.Levels.1.Walls.w059.WallSegment  <->  RAC.Levels.1.Walls.w058.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w058.WallSegment  <->  RAC.Levels.1.Walls.w057.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w056.WallSegment  <->  RAC.Levels.1.Walls.w055.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w054.WallSegment  <->  RAC.Levels.1.Walls.w053.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w050.WallSegment  <->  RAC.Levels.1.Walls.w049.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w047.WallSegment  <->  RAC.Levels.1.Walls.w046.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w046.WallSegment  <->  RAC.Levels.1.Walls.w045.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w044.WallSegment  <->  RAC.Levels.1.Walls.w043.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w038.WallSegment  <->  RAC.Levels.1.Walls.w037.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w037.WallSegment  <->  RAC.Levels.1.Walls.w014.WallSegment  gap 0.33 ft
+2189 parts checked, 16 issues
+
+FAIL Building geometry QA failed.
+Build + QA elapsed: 2.767 s

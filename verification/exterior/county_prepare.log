@@ -1,0 +1,2 @@
+Contour cross-check {'sourceLines': 67, 'samples': 8304, 'medianDifferenceFt': 0.09517999400983967, 'p95AbsoluteDifferenceFt': 0.8826680950409097, 'method': 'Excluded building pad + 8 ft collar; compared LiDAR ground with official county even-elevation contours'}
+County model: 2281 surface patches, 623 curb segments, 33 stripes, 117 trees

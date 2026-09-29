@@ -1,0 +1,18 @@
+degenerate   0
+doorBlocked  0
+floating     0
+zfight       0
+intersect    0
+gap          11
+   RAC.Levels.1.Walls.w061.WallSegment  <->  RAC.Levels.1.Walls.w003.WallSegment  gap 0.33 ft
+   RAC.Levels.1.Walls.w059.WallSegment  <->  RAC.Levels.1.Walls.w058.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w058.WallSegment  <->  RAC.Levels.1.Walls.w057.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w056.WallSegment  <->  RAC.Levels.1.Walls.w055.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w054.WallSegment  <->  RAC.Levels.1.Walls.w053.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w050.WallSegment  <->  RAC.Levels.1.Walls.w049.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w047.WallSegment  <->  RAC.Levels.1.Walls.w046.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w046.WallSegment  <->  RAC.Levels.1.Walls.w045.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w044.WallSegment  <->  RAC.Levels.1.Walls.w043.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w038.WallSegment  <->  RAC.Levels.1.Walls.w037.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w037.WallSegment  <->  RAC.Levels.1.Walls.w014.WallSegment  gap 0.33 ft
+2019 parts checked, 11 issues

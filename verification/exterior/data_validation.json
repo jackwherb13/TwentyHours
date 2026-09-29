@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": [
+    "1m DEM provenance",
+    "90000 finite 4ft cells",
+    "all building pads flat",
+    "geographic anchor and inverse transform",
+    "source citations on routes/trees/roofs",
+    "facade dimensions"
+  ],
+  "terrainDataSha256": "942fb8caeb64d1874d256e48ec56a750265faec0b0ca6f092d2b8c1eb49b1ff4",
+  "sourceDEMBytes": 372037578,
+  "boundsFt": [
+    -792,
+    -648,
+    408,
+    552
+  ]
+}

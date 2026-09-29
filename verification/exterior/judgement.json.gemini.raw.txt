@@ -1,0 +1,120 @@
+{
+  "results": [
+    {
+      "image": "IMG_0352.jpg",
+      "layout": 2,
+      "proportions": 3,
+      "materials": 3,
+      "props": 1,
+      "lighting": 3,
+      "overall": 2,
+      "problems": [
+        "Building volumes: the upper volume of the racquetball/court wing should be clad in vertical corrugated silver-grey metal siding over a red brick base; build shows an unbroken red brick wall with an incorrect horizontal clerestory slot.",
+        "Sunken entrance: missing the depressed pedestrian ramp/stairway with black pipe handrails and concrete retaining walls that leads down to the lower entrance doors.",
+        "Sidewalk and terrain grading: reference has a distinct concrete walkway traversing a mounded grass hill; build has flat/undulating grey ground with scattered polygon grass tufts covering paved areas.",
+        "Site fixtures: missing the tall perforated metal signpost in the foreground, exterior light poles along the walkway, downspouts, and entrance signage.",
+        "Foliage: reference features tall natural deciduous trees and dense shrubs flanking the building; build uses stylized concentric-disc and cone trees placed erratically, including appearing atop the roofline.",
+        "Sky and lighting: reference is overcast diffuse daylight; build has intense clear blue sky with harsh direct sun shadows."
+      ]
+    },
+    {
+      "image": "IMG_0358.jpg",
+      "layout": 3,
+      "proportions": 3,
+      "materials": 2,
+      "props": 2,
+      "lighting": 3,
+      "overall": 2,
+      "problems": [
+        "Building facade: the upper two-thirds of the building volume should be clad in vertical corrugated silver-grey metal panels with an angled fascia line; build shows a flat red brick wall with a ribbon window.",
+        "Roadway and access drive: foreground should feature a multi-lane asphalt road with painted yellow centerline and white edge markings, concrete curbs, and an asphalt driveway curving up to the building; build has unmarked grey ground and an inaccurate black pipe fence.",
+        "Service doors: base of the building should have dark metal double service doors flush with the brick wall; build has two undersized, generic blue-tinted window openings.",
+        "Topography and landscape: missing the rock rip-rap drainage swale on the left embankment and natural perimeter trees; foreground is dominated by a single oversized tiered-disc tree.",
+        "Sky and lighting: reference has an overcast, cloud-filled sky; build has an intense clear blue sky."
+      ]
+    },
+    {
+      "image": "IMG_0364.jpg",
+      "layout": 4,
+      "proportions": 4,
+      "materials": 4,
+      "props": 2,
+      "lighting": 4,
+      "overall": 3,
+      "problems": [
+        "Entrance canopy: should be a slender, sharp-edged cantilever clad in charcoal composite panels with a large open rectangular skylight cutout and supported by angled silver/grey composite pylons; build is a solid, thick jet-black block on vertical black posts with no skylight.",
+        "Facade construction: the main entrance facade should be a continuous multi-story glass curtain wall; build erroneously inserts heavy red brick pilasters/columns flanking the entrance doors.",
+        "Landscape bed: left foreground should feature an elevated mulched planting bed with red/maroon shrubs, ornamental grasses, and concrete curbing; build replaces it with jagged, bare grey terrain blocks.",
+        "Bike parking: missing the row of black hoop bike racks and parked bicycles along the base of the stairs.",
+        "Stairs and handrails: reference has a wide, uniform grand staircase with regularly spaced continuous handrail runs; build has misaligned, fragmented stair tiers and discontinuous, floating railing segments.",
+        "Interior visibility: reference glass is highly transparent showing the brightly lit interior gym, mezzanine floor, and structural trusses; build glass is dark and opaque."
+      ]
+    },
+    {
+      "image": "IMG_0365.jpg",
+      "layout": 4,
+      "proportions": 4,
+      "materials": 3,
+      "props": 2,
+      "lighting": 4,
+      "overall": 3,
+      "problems": [
+        "Canopy ceiling and skylight: underside of canopy should feature charcoal composite paneling with perimeter downlights and a large central rectangular skylight opening; build has a solid flat black soffit with no cutout and two pin lights.",
+        "Canopy support columns: should be angled/canted steel pylons clad in silver-metallic architectural panels; build uses plain vertical black rectangular posts.",
+        "Main facade material: reference entrance is entirely glass curtain wall framing; build incorrectly places thick red brick walls and brick pilasters around the entrance doors.",
+        "Handrails and stairs: stairs in build have uneven treads and inconsistent run depths, and handrails consist of broken, floating vertical posts and disjointed pipe segments instead of continuous handrails mounted to uniform risers.",
+        "Entrance doors and vestibule: reference has a multi-portal commercial glass entrance with automatic sliding doors; build has a small, generic opaque framed door.",
+        "Signage: 'RAC' lettering in build is small, vertical text on a brick pillar; real RAC lettering is large bold white capital letters set against the upper glass/spandrel facade."
+      ]
+    },
+    {
+      "image": "IMG_0368.jpg",
+      "layout": 4,
+      "proportions": 3,
+      "materials": 3,
+      "props": 2,
+      "lighting": 4,
+      "overall": 3,
+      "problems": [
+        "Signage: 'RAC' lettering in reference consists of massive white architectural block letters stacked vertically across the two-story glass curtain wall bay; build has small, thin decals applied to a narrow brick column.",
+        "Entrance wall composition: reference is a continuous glass curtain wall with interior mezzanine and structural columns visible; build places heavy red brick columns and walls into the entryway.",
+        "Canopy and skylight: missing the central rectangular skylight aperture; canopy underside is solid flat black instead of finished grey composite panels with recessed perimeter downlights.",
+        "Foreground site elements: missing the yellow-painted asphalt curb, concrete sidewalk expansion joints, and red fire hydrant at the curb edge.",
+        "Stairs, planter wall, and railings: concrete retaining wall/planter is mispositioned relative to the stairs; railings are broken into floating, unanchored posts; steps have inconsistent run and rise."
+      ]
+    },
+    {
+      "image": "WEB_entrance_2.jpg",
+      "layout": 4,
+      "proportions": 4,
+      "materials": 3,
+      "props": 2,
+      "lighting": 2,
+      "overall": 3,
+      "problems": [
+        "Lighting and ambiance: reference shows twilight with warm, glowing interior light emanating through the facade; build is set in harsh midday sun with a completely dark, unlit interior.",
+        "Interior visibility and props: reference shows vibrant interior activity with two levels of cardio fitness equipment (treadmills/ellipticals) and illuminated ceiling grids; build interior is dark and empty.",
+        "Canopy design: canopy lacks the central rectangular skylight opening, the tapered edge profile, and the angled silver pylon supports, showing instead a solid black rectangular slab with vertical black posts.",
+        "Facade materials: reference is an expansive, uninterrupted glass curtain wall running the length of the entrance and gym wing; build interrupts the facade with brick walls and brick entry pillars.",
+        "Stairs and railings: entry staircase has uneven steps and fragmented, floating handrail segments rather than uniform broad steps with clean, continuous pipe railings and integrated step lighting."
+      ]
+    },
+    {
+      "image": "WEB_entrance_left_pole.jpg",
+      "layout": 2,
+      "proportions": 2,
+      "materials": 3,
+      "props": 1,
+      "lighting": 4,
+      "overall": 2,
+      "problems": [
+        "Building massing and layout: reference features an articulated two-story brick wing, a projecting dark grey composite metal panel volume with large picture windows, and the entrance canopy receding in the distance; build shows a flat brick facade with two identical window grids.",
+        "Site and driveway: foreground should feature an asphalt access drive with marked parking stalls, concrete curbs, sidewalk, bollard lights, and landscaped beds; build shows an empty, uniform tiled concrete ground plane.",
+        "Fenestration: reference has discrete punched rectangular windows on the brick wing and a projecting glass bay; build has full-height generic curtain wall bays embedded in brick.",
+        "Exterior fixtures: missing concrete retaining walls, exterior steps with pipe handrails, illuminated bollards, and parking signage.",
+        "Camera position / orientation: the build camera appears misplaced or facing an incorrect section of the model, failing to capture the perspective down the facade toward the entrance canopy."
+      ]
+    }
+  ]
+}
+

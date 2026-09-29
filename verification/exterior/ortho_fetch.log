@@ -1,0 +1,2 @@
+CONTOURS 34 properties [{'_symbol': 0}, {'_label_class': 0, '_name': '460'}, {'_label_class': 0, '_name': '455'}, {'_label_class': 0, '_name': '405'}]
+FAIL HTTPError('504 Server Error: Gateway Time-out for url: https://imagery.nationalmap.gov/arcgis/rest/directories/imagery_output/USGSNAIPPlus_ImageServer/_ags_19175c39_b218_4710_9f17_568d6126a3fe.tif')

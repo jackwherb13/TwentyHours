@@ -1,0 +1,12 @@
+{
+  "frame": "Architect building frame. South RAC door (l1_w065) is the origin. +X east, +Z south. Lidar grid shifted so this origin is the geographic entrance.",
+  "stations": {
+    "IMG_0364": { "camera": [-22, -4, 62], "look": [0, 12, 4] },
+    "IMG_0365": { "camera": [0, -4, 48], "look": [0, 10, 2] },
+    "IMG_0368": { "camera": [18, -3, 40], "look": [-4, 8, 6] },
+    "IMG_0352": { "camera": [-170, 6, 130], "look": [-210, 18, 30] },
+    "IMG_0358": { "camera": [-140, 22, -400], "look": [-180, 28, -160] },
+    "WEB_entrance_2": { "camera": [-18, -2, 58], "look": [6, 18, 8] },
+    "WEB_entrance_left_pole": { "camera": [70, 2, -80], "look": [8, 16, -90] }
+  }
+}

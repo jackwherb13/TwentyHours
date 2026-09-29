@@ -1,0 +1,196 @@
+{
+  "floorDatumFtNAVD88": 437.92408076682665,
+  "source": "2022 USGS LAZ, classified roof returns / unclassified fallback, mapped to interim room polygons",
+  "roofs": [
+    {
+      "id": "competition_gym",
+      "count": 16229,
+      "roofMedianFt": 33.73,
+      "roofP10Ft": 33.38,
+      "roofP90Ft": 34.05,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 1,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "south_gym",
+      "count": 8604,
+      "roofMedianFt": 40.24,
+      "roofP10Ft": 39.64,
+      "roofP90Ft": 40.76,
+      "edgeReturnCandidateFt": 43.11,
+      "edgeCount": 157,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "cage_construction",
+      "count": 16454,
+      "roofMedianFt": 45.78,
+      "roofP10Ft": 45.18,
+      "roofP90Ft": 46.38,
+      "edgeReturnCandidateFt": 46.4,
+      "edgeCount": 75,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "main_corridor",
+      "count": 5912,
+      "roofMedianFt": 25.96,
+      "roofP10Ft": 25.69,
+      "roofP90Ft": 26.37,
+      "edgeReturnCandidateFt": 30.63,
+      "edgeCount": 47,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "lobby",
+      "count": 6081,
+      "roofMedianFt": 25.54,
+      "roofP10Ft": 25.11,
+      "roofP90Ft": 25.88,
+      "edgeReturnCandidateFt": 26.38,
+      "edgeCount": 92,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "office_wing",
+      "count": 4318,
+      "roofMedianFt": 25.34,
+      "roofP10Ft": 25.08,
+      "roofP90Ft": 25.73,
+      "edgeReturnCandidateFt": 29.59,
+      "edgeCount": 145,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "east_support",
+      "count": 2388,
+      "roofMedianFt": 25.49,
+      "roofP10Ft": 25.1,
+      "roofP90Ft": 25.93,
+      "edgeReturnCandidateFt": 26.12,
+      "edgeCount": 106,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "weight_room",
+      "count": 1962,
+      "roofMedianFt": 24.48,
+      "roofP10Ft": 24.36,
+      "roofP90Ft": 24.72,
+      "edgeReturnCandidateFt": 26.36,
+      "edgeCount": 72,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "locker_men",
+      "count": 1113,
+      "roofMedianFt": 24.44,
+      "roofP10Ft": 24.38,
+      "roofP90Ft": 24.55,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 7,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "locker_women",
+      "count": 1117,
+      "roofMedianFt": 24.46,
+      "roofP10Ft": 24.37,
+      "roofP90Ft": 24.63,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 21,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "volleyball_locker",
+      "count": 1375,
+      "roofMedianFt": 24.46,
+      "roofP10Ft": 24.36,
+      "roofP90Ft": 24.55,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 6,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "restrooms",
+      "count": 1692,
+      "roofMedianFt": 24.37,
+      "roofP10Ft": 24.28,
+      "roofP90Ft": 24.45,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 17,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "racquetball_1",
+      "count": 280,
+      "roofMedianFt": 36.69,
+      "roofP10Ft": 36.51,
+      "roofP90Ft": 36.91,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 9,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "racquetball_2",
+      "count": 322,
+      "roofMedianFt": 36.76,
+      "roofP10Ft": 36.56,
+      "roofP90Ft": 36.99,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 10,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "racquetball_3",
+      "count": 363,
+      "roofMedianFt": 36.76,
+      "roofP10Ft": 36.6,
+      "roofP90Ft": 37.01,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 14,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "racquetball_4",
+      "count": 444,
+      "roofMedianFt": 36.77,
+      "roofP10Ft": 36.56,
+      "roofP90Ft": 37.14,
+      "edgeReturnCandidateFt": 38.49,
+      "edgeCount": 50,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "west_restrooms",
+      "count": 421,
+      "roofMedianFt": 28.2,
+      "roofP10Ft": 27.75,
+      "roofP90Ft": 28.65,
+      "edgeReturnCandidateFt": 31.37,
+      "edgeCount": 31,
+      "status": "measured roof; parapet candidate only"
+    },
+    {
+      "id": "south_lobby",
+      "count": 1428,
+      "roofMedianFt": 25.57,
+      "roofP10Ft": 25.17,
+      "roofP90Ft": 25.84,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 20,
+      "status": "measured roof; parapet unresolved"
+    },
+    {
+      "id": "entrance_vestibule",
+      "count": 1222,
+      "roofMedianFt": 25.73,
+      "roofP10Ft": 25.3,
+      "roofP90Ft": 25.94,
+      "edgeReturnCandidateFt": null,
+      "edgeCount": 21,
+      "status": "measured roof; parapet unresolved"
+    }
+  ]
+}

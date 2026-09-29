@@ -1,0 +1,33 @@
+{
+  "sourceResolutionM": "classified USGS 2022 LAZ ground returns",
+  "grid": {
+    "x0": -592,
+    "z0": -448,
+    "nx": 200,
+    "nz": 200,
+    "step": 4,
+    "cellCenters": true
+  },
+  "floorDatumFtNAVD88": 437.92408076682665,
+  "floorDatumMethod": "classified ground 30 ft south of corrected south entrance + 10 assumed 7-inch risers; not surveyed threshold",
+  "heightMinFt": -31.91,
+  "heightMaxFt": 28.84,
+  "trueNorthDeg": 10.43,
+  "heightEncoding": {
+    "bits": 16,
+    "minFt": -40,
+    "maxFt": 40,
+    "decode": "minFt + pixel/65535*(maxFt-minFt)",
+    "rowDirection": "+Z",
+    "origin": "upper-left pixel edge [x0,z0]",
+    "pixelSizeFt": 4
+  },
+  "classification": "VGIN RGB brown/grass heuristic plus county road/sidewalk polygons; photo-derived rock swale overrides. Vegetation shadows and mulch/soil remain uncertain.",
+  "highSideExit": "Measured high-side slope preserved. Exact exit coordinates not supplied; no doorway grade-match claim.",
+  "sourceCounts": {
+    "Roadways_and_Bridges": 1,
+    "Driveways_and_Parking_Lots": 23,
+    "Buildings": 2,
+    "2023_Countywide_Impervious": 66
+  }
+}

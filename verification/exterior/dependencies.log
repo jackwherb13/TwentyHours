@@ -1,0 +1,43 @@
+Collecting laspy
+  Downloading laspy-2.7.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting lazrs
+  Downloading lazrs-0.8.2-cp313-cp313-win_amd64.whl.metadata (99 bytes)
+Collecting pyproj
+  Downloading pyproj-3.8.0-cp313-cp313-win_amd64.whl.metadata (40 kB)
+Collecting rasterio
+  Downloading rasterio-1.5.1-cp313-cp313-win_amd64.whl.metadata (8.9 kB)
+Collecting shapely
+  Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl.metadata (7.1 kB)
+Collecting scipy
+  Downloading scipy-1.18.1-cp313-cp313-win_amd64.whl.metadata (61 kB)
+Collecting numpy (from laspy)
+  Using cached numpy-2.5.3-cp313-cp313-win_amd64.whl.metadata (6.6 kB)
+Collecting certifi (from pyproj)
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting affine (from rasterio)
+  Downloading affine-3.0.1-py3-none-any.whl.metadata (4.5 kB)
+Collecting attrs (from rasterio)
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting click!=8.2.*,>=4.0 (from rasterio)
+  Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting pyparsing>=3.0 (from rasterio)
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Downloading laspy-2.7.0-py3-none-any.whl (86 kB)
+Downloading lazrs-0.8.2-cp313-cp313-win_amd64.whl (432 kB)
+Downloading pyproj-3.8.0-cp313-cp313-win_amd64.whl (6.7 MB)
+   ---------------------------------------- 6.7/6.7 MB 27.5 MB/s  0:00:00
+Downloading rasterio-1.5.1-cp313-cp313-win_amd64.whl (30.6 MB)
+   ---------------------------------------- 30.6/30.6 MB 28.0 MB/s  0:00:01
+Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl (1.7 MB)
+   ---------------------------------------- 1.7/1.7 MB 16.0 MB/s  0:00:00
+Downloading scipy-1.18.1-cp313-cp313-win_amd64.whl (36.6 MB)
+   ---------------------------------------- 36.6/36.6 MB 20.6 MB/s  0:00:01
+Using cached numpy-2.5.3-cp313-cp313-win_amd64.whl (12.6 MB)
+Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading affine-3.0.1-py3-none-any.whl (10 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Installing collected packages: lazrs, pyparsing, numpy, click, certifi, attrs, shapely, scipy, pyproj, laspy, affine, rasterio
+
+Successfully installed affine-3.0.1 attrs-26.1.0 certifi-2026.7.22 click-8.5.0 laspy-2.7.0 lazrs-0.8.2 numpy-2.5.3 pyparsing-3.3.3 pyproj-3.8.0 rasterio-1.5.1 scipy-1.18.1 shapely-2.1.2

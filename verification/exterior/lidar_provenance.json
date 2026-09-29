@@ -1,0 +1,54 @@
+{
+  "source": {
+    "title": "USGS Lidar Point Cloud VA_NorthernVA_B22 w1820n6987",
+    "moreInfo": "Lidar (Light detection and ranging) discrete-return point cloud data are available in the American Society for Photogrammetry and Remote Sensing (ASPRS) LAS format. The LAS format is a standardized binary format for storing 3-dimensional point cloud data and point attributes along with header information and variable length records specific to the data. Millions of data points are stored as a 3-dimensional data cloud as a series of x (longitude), y (latitude) and z (elevation) points. A few older projects in this collection are in ASCII format. Please refer to http://www.asprs.org/Committee-General/LASer-LAS-File-Format-Exchange-Activities.html for additional information. This data set is a LAZ (compressed LAS) format file containing [...]",
+    "sourceId": "6736bd15d34e282e7505cdea",
+    "sourceName": "ScienceBase",
+    "sourceOriginId": null,
+    "sourceOriginName": "gda",
+    "metaUrl": "https://www.sciencebase.gov/catalog/item/6736bd15d34e282e7505cdea",
+    "vendorMetaUrl": "https://prd-tnm.s3.amazonaws.com/index.html?prefix=StagedProducts/Elevation/metadata/VA_NorthernVA_B22/VA_NorthernVA_1_B22",
+    "publicationDate": "2024-11-13",
+    "lastUpdated": "2024-11-14T20:16:39.509-07:00",
+    "dateCreated": "2024-11-14T20:16:37.510-07:00",
+    "sizeInBytes": 87398859,
+    "extent": "Varies",
+    "format": "LAZ",
+    "downloadURL": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/VA_NorthernVA_B22/VA_NorthernVA_1_B22/LAZ/USGS_LPC_VA_NorthernVA_B22_w1820n6987.laz",
+    "downloadURLRaster": null,
+    "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/LPC/Projects/VA_NorthernVA_B22/VA_NorthernVA_1_B22/browse/USGS_LPC_VA_NorthernVA_B22_w1820n6987.jpg",
+    "downloadLazURL": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/VA_NorthernVA_B22/VA_NorthernVA_1_B22/LAZ/USGS_LPC_VA_NorthernVA_B22_w1820n6987.laz",
+    "urls": {
+      "LAZ": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/VA_NorthernVA_B22/VA_NorthernVA_1_B22/LAZ/USGS_LPC_VA_NorthernVA_B22_w1820n6987.laz"
+    },
+    "datasets": [],
+    "boundingBox": {
+      "minX": -77.3167131412,
+      "maxX": -77.3060462711,
+      "minY": 38.828543151,
+      "maxY": 38.836886417
+    },
+    "bestFitIndex": 0.0,
+    "body": "Lidar (Light detection and ranging) discrete-return point cloud data are available in the American Society for Photogrammetry and Remote Sensing (ASPRS) LAS format. The LAS format is a standardized binary format for storing 3-dimensional point cloud data and point attributes along with header information and variable length records specific to the data. Millions of data points are stored as a 3-dimensional data cloud as a series of x (longitude), y (latitude) and z (elevation) points. A few older projects in this collection are in ASCII format. Please refer to http://www.asprs.org/Committee-General/LASer-LAS-File-Format-Exchange-Activities.html for additional information. This data set is a LAZ (compressed LAS) format file containing lidar point cloud data. Compression to an LAZ file was done with the LAStools 'laszip' program and can be unzipped with the same free program (laszip.org).",
+    "processingUrl": "processingUrl",
+    "modificationInfo": "2024-11-14"
+  },
+  "pointCount": 13714201,
+  "wkt": "COMPD_CS[\"NAD83(2011) / Virginia North (ftUS) + NAVD88 height - Geoid18 (ftUS)\",PROJCS[\"NAD83(2011) / Virginia North (ftUS)\",GEOGCS[\"NAD83(2011)\",DATUM[\"D_NAD_1983_2011\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1116\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"6318\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"standard_parallel_1\",39.2],PARAMETER[\"standard_parallel_2\",38.03333333333333],PARAMETER[\"latitude_of_origin\",37.66666666666666],PARAMETER[\"central_meridian\",-78.5],PARAMETER[\"false_easting\",11482916.667],PARAMETER[\"false_northing\",6561666.667],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH],AUTHORITY[\"EPSG\",\"6593\"]],VERT_CS[\"NAVD88 height - Geoid18 (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Up\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+  "nativeUnits": "US survey feet horizontal + vertical NAVD88 Geoid18",
+  "usedHorizontalCRS": "EPSG:6593",
+  "nativeBounds": [
+    11820703.679231962,
+    6987266.491912947,
+    11821674.352863058,
+    6988233.119649228
+  ],
+  "croppedPoints": 1036186,
+  "classCounts": {
+    "1": 358772,
+    "2": 599551,
+    "6": 76701,
+    "7": 785,
+    "18": 377
+  }
+}

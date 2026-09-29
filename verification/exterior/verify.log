@@ -1,0 +1,132 @@
+PASS  stylua --check
+PASS  selene
+PASS  rojo build
+PASS  blueprint geometry
+PASS  blueprint schema
+PASS  test build.spec.luau
+PASS  test props.spec.luau
+PASS  prop geometry (z-fight, slivers, floating)
+FAIL  building geometry (intersections, gaps, blocked doors)
+degenerate   0
+doorBlocked  7
+   level1 door on w_0024 @8.0 blocked by RAC.Levels.1.Walls.w054.WallSegment
+   level1 door on w_0026 @15.0 blocked by RAC.Levels.1.Walls.w044.WallSegment
+   level1 door on w_0058 @59.0 blocked by RAC.Props.1.BleacherBank.Carriage
+   level1 door on w_0071 @18.0 blocked by RAC.Levels.1.Walls.w033.WallSegment
+   level1 door on w_0098 @14.0 blocked by RAC.Levels.1.Walls.w063.Opening_1.Glass
+   level2 door on w_0020 @15.0 blocked by RAC.Levels.1.Walls.w044.WallSegment
+   level2 door on w_0020 @15.0 blocked by RAC.Levels.1.Walls.w044.Opening_4.Glass
+floating     1
+   RAC.Props.1.PowerRack.Cup-1  bottom at y=3.53
+zfight       61
+   RAC.Props.1.BleacherBank.Nose13_6  /  RAC.Props.1.BleacherBank.Nose13_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose12_6  /  RAC.Props.1.BleacherBank.Nose12_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose11_6  /  RAC.Props.1.BleacherBank.Nose11_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose10_6  /  RAC.Props.1.BleacherBank.Nose10_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose9_6  /  RAC.Props.1.BleacherBank.Nose9_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose8_6  /  RAC.Props.1.BleacherBank.Nose8_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose7_6  /  RAC.Props.1.BleacherBank.Nose7_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose6_6  /  RAC.Props.1.BleacherBank.Nose6_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose5_6  /  RAC.Props.1.BleacherBank.Nose5_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose4_6  /  RAC.Props.1.BleacherBank.Nose4_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose3_6  /  RAC.Props.1.BleacherBank.Nose3_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose2_6  /  RAC.Props.1.BleacherBank.Nose2_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose1_6  /  RAC.Props.1.BleacherBank.Nose1_1  (axis X, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose0_6  /  RAC.Props.1.BleacherBank.Nose0_1  (axis X, 0.8 sqft)
+   RAC.Levels.1.Walls.w049.WallSegment  /  RAC.Site.Facade.Facade_10.Skin.CladdingPanel  (axis Z, 2.0 sqft)
+   RAC.Props.1.BleacherBank.Nose13_1  /  RAC.Props.1.BleacherBank.Nose13_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose12_1  /  RAC.Props.1.BleacherBank.Nose12_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose11_1  /  RAC.Props.1.BleacherBank.Nose11_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose10_1  /  RAC.Props.1.BleacherBank.Nose10_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose9_1  /  RAC.Props.1.BleacherBank.Nose9_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose8_1  /  RAC.Props.1.BleacherBank.Nose8_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose7_1  /  RAC.Props.1.BleacherBank.Nose7_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose6_1  /  RAC.Props.1.BleacherBank.Nose6_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose5_1  /  RAC.Props.1.BleacherBank.Nose5_6  (axis Z, 0.8 sqft)
+   RAC.Props.1.BleacherBank.Nose4_1  /  RAC.Props.1.BleacherBank.Nose4_6  (axis Z, 0.8 sqft)
+intersect    0
+gap          11
+   RAC.Levels.1.Walls.w061.WallSegment  <->  RAC.Levels.1.Walls.w003.WallSegment  gap 0.33 ft
+   RAC.Levels.1.Walls.w059.WallSegment  <->  RAC.Levels.1.Walls.w058.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w058.WallSegment  <->  RAC.Levels.1.Walls.w057.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w056.WallSegment  <->  RAC.Levels.1.Walls.w055.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w054.WallSegment  <->  RAC.Levels.1.Walls.w053.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w050.WallSegment  <->  RAC.Levels.1.Walls.w049.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w047.WallSegment  <->  RAC.Levels.1.Walls.w046.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w046.WallSegment  <->  RAC.Levels.1.Walls.w045.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w044.WallSegment  <->  RAC.Levels.1.Walls.w043.WallSegment  gap 1.33 ft
+   RAC.Levels.1.Walls.w038.WallSegment  <->  RAC.Levels.1.Walls.w037.WallSegment  gap 0.67 ft
+   RAC.Levels.1.Walls.w037.WallSegment  <->  RAC.Levels.1.Walls.w014.WallSegment  gap 0.33 ft
+6022 parts checked, 80 issues
+
+FAIL  luau-lsp analyze
+[INFO] Loading definitions file: @roblox - tools/globalTypes.d.luau
+[WARN] client does not allow didChangeWatchedFiles registration - automatic updating on sourcemap changes disabled
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](4,37): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](5,39): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](6,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](7,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](8,41): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](9,42): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](10,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](11,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](12,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](13,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](14,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](15,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](16,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](4,37): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](5,39): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](6,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](7,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](8,41): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](9,42): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](10,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](11,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](12,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](13,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](14,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](15,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](16,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](4,37): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](5,39): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](6,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](7,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](8,41): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](9,42): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](10,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](11,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](12,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](13,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](14,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](15,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](16,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](4,37): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](5,39): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](6,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](7,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](8,41): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](9,42): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](10,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](11,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](12,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](13,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](14,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](15,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](16,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](4,37): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](5,39): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](6,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](7,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](8,41): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](9,42): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](10,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](11,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](12,32): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](13,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](14,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](15,31): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+c:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\src\ReplicatedStorage\RAC\Site\Primitives.luau [game/ReplicatedStorage/RAC/Site/Primitives](16,33): TypeError: Expected this to be 'Enum.Material', but got 'Color3'
+
+
+VERIFY FAILED: building geometry (intersections, gaps, blocked doors), luau-lsp analyze

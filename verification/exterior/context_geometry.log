@@ -1,0 +1,57 @@
+degenerate   0
+doorBlocked  0
+floating     51
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=11.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=9.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=31.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=29.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=27.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=25.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=23.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=21.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=19.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=17.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=15.98
+   SiteContext.ExteriorDetails.MetalPanelJoint  bottom at y=13.98
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.34
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.59
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.75
+   SiteContext.Landscape.Riprap.Rock  bottom at y=1.02
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.68
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.44
+   SiteContext.Landscape.Riprap.Rock  bottom at y=1.51
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.96
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.63
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.62
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.89
+   SiteContext.Landscape.Riprap.Rock  bottom at y=1.45
+   SiteContext.Landscape.Riprap.Rock  bottom at y=0.94
+zfight       153
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_735455570.PavementSlab  (axis Y, 21.7 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_1380267697.PavementSlab  (axis Y, 55.2 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_735455567.PavementSlab  (axis Y, 14.7 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_228869036.PavementSlab  (axis Y, 16.9 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_735455568.PavementSlab  (axis Y, 4.9 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_676803821.PavementSlab  (axis Y, 15.8 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_735455569.PavementSlab  (axis Y, 48.6 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_228869036.PavementSlab  (axis Y, 1.4 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_228869036.PavementSlab  (axis Y, 1.5 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_1380267696.PavementSlab  (axis Y, 1.4 sqft)
+   SiteContext.GroundSlabs.osm_1545049579.LotSlab  /  SiteContext.GroundSlabs.east_front_walk.PavementSlab  (axis Y, 25.2 sqft)
+   SiteContext.GroundSlabs.osm_115014142.LotSlab  /  SiteContext.GroundSlabs.osm_240049304.CurbSlab  (axis Y, 2.4 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_735455567.PavementSlab  (axis Y, 48.8 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.RoadMarkings.BikeLaneStripeSlab  (axis Y, 7.9 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_735455567.PavementSlab  (axis Y, 20.4 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.RoadMarkings.BikeLaneStripeSlab  (axis Y, 13.0 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_736423530.PavementSlab  (axis Y, 20.4 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_736423530.PavementSlab  (axis Y, 23.0 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_735455567.PavementSlab  (axis Y, 23.0 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_735455567.PavementSlab  (axis Y, 7.1 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_735455569.PavementSlab  (axis Y, 27.0 sqft)
+   SiteContext.RoadMarkings.CenterStripeSlab  /  SiteContext.GroundSlabs.osm_131599019.PavementSlab  (axis Y, 30.2 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_228869036.PavementSlab  (axis Y, 27.9 sqft)
+   SiteContext.GroundSlabs.osm_665260727.PavementSlab  /  SiteContext.GroundSlabs.osm_574933538.PavementSlab  (axis Y, 59.5 sqft)
+   SiteContext.RoadMarkings.BikeLaneStripeSlab  /  SiteContext.GroundSlabs.osm_192653316.CurbSlab  (axis Y, 1.6 sqft)
+intersect    0
+gap          0
+10193 parts checked, 204 issues

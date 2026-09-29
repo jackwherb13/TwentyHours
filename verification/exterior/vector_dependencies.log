@@ -1,0 +1,12 @@
+Collecting mapbox-vector-tile
+  Downloading mapbox_vector_tile-2.2.0-py3-none-any.whl.metadata (16 kB)
+Collecting protobuf
+  Using cached protobuf-7.36.2-cp310-abi3-win_amd64.whl.metadata (595 bytes)
+Collecting pyclipper
+  Downloading pyclipper-1.4.0-cp313-cp313-win_amd64.whl.metadata (8.8 kB)
+Downloading mapbox_vector_tile-2.2.0-py3-none-any.whl (23 kB)
+Using cached protobuf-7.36.2-cp310-abi3-win_amd64.whl (456 kB)
+Downloading pyclipper-1.4.0-cp313-cp313-win_amd64.whl (104 kB)
+Installing collected packages: pyclipper, protobuf, mapbox-vector-tile
+
+Successfully installed mapbox-vector-tile-2.2.0 protobuf-7.36.2 pyclipper-1.4.0
