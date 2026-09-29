@@ -1,0 +1,41 @@
+[
+  {
+    "name": "gm_logo",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "pass": true
+  },
+  {
+    "name": "volleyball_wordmark",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "pass": true
+  },
+  {
+    "name": "locker_room_sign",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGB",
+    "alpha_extrema": [
+      255,
+      255
+    ],
+    "pass": true
+  }
+]

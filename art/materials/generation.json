@@ -1,0 +1,62 @@
+[
+  {
+    "name": "maple_court",
+    "prompt": "Use case: photorealistic-natural. Asset: seamless tileable square 1024x1024 PNG game albedo texture, maple_court.png. Orthographic straight overhead full bleed light pale honey maple gym court strip flooring. A 4 foot square repeat with sixteen narrow parallel 3-inch strips, long delicate natural grain, subtle individual plank color variation and staggered end joints. Reference observations: RAC gym pale cream maple, restrained amber varnish, polished finish. Uniform diffuse illumination, glossy varnished material but NO baked reflections, shadows, perspective, lines, logos, people, border or text. Opposite edges must match seamlessly in both axes. Save PNG output.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-135a1bc0-0f71-4e79-9380-56c4368c9e97.png"
+  },
+  {
+    "name": "terrazzo_corridor",
+    "prompt": "Use case: photorealistic-natural. Asset: terrazzo_corridor.png, seamless tileable 1024x1024 PNG albedo. Light warm grey-beige terrazzo, dense tiny irregular cream, taupe and grey stone chips, evenly distributed, no grout lines. RAC corridor reference observations: subtle speckled polished institutional terrazzo. 4 foot square. Orthographic full bleed top down photographic material scan, uniform neutral diffuse illumination. No perspective, light gradients, baked reflections, shadows, objects, people, words, borders or watermark. Continuous wraparound opposite edges in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-5fae248b-9aab-4aff-a878-549181e0b5f7.png"
+  },
+  {
+    "name": "porcelain_tile_12x24",
+    "prompt": "Use case: photorealistic-natural. Asset: porcelain_tile_12x24.png, seamless tileable 1024x1024 PNG albedo. Warm light grey large format porcelain floor tile, quiet cloudy limestone-like texture. EXACT layout: 4 rows each one foot high, 2 tiles each two feet wide in a 4 foot square, alternate rows staggered half tile running bond. Thin pale grey 1/8 inch grout, matching opposite edges. Orthographic full bleed top down photographic material scan, uniform neutral diffuse illumination. No perspective, light gradients, baked reflections, shadows, objects, people, words, borders or watermark. Continuous wraparound opposite edges in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-9651788e-98e9-467a-af43-211bdae2677d.png"
+  },
+  {
+    "name": "carpet_tile_office",
+    "prompt": "Use case: photorealistic-natural. Asset: carpet_tile_office.png, seamless tileable 1024x1024 PNG albedo. Charcoal blue-grey commercial carpet tile, fine low loop woven fibers and subtle broken linear multi-tone grey mottling. 4 foot square with four 24-inch carpet squares alternating pile direction, very subtle seams. Orthographic full bleed top down photographic material scan, uniform neutral diffuse illumination. No perspective, light gradients, baked reflections, shadows, objects, people, words, borders or watermark. Continuous wraparound opposite edges in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-fbcfe146-8ddb-4561-9fd7-292c6156ae75.png"
+  },
+  {
+    "name": "painted_cmu",
+    "prompt": "Use case: photorealistic-natural. Asset: painted_cmu.png, seamless tileable 1024x1024 PNG albedo. Off-white painted concrete masonry blocks, subtle orange peel paint and tiny pores. Exact 4 foot square: SIX courses of 8 inch tall by 16 inch wide blocks, THREE blocks per row, alternate rows offset half block. Thin shallow painted mortar joints, no deep shadows. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-87c6729c-6c3f-4c9f-acf9-daefcafe571f.png"
+  },
+  {
+    "name": "brick_red",
+    "prompt": "Use case: photorealistic-natural. Asset: brick_red.png, seamless tileable 1024x1024 PNG albedo. Muted red-brown fired clay brick running bond, varied russet umber and clay tones, pale warm grey mortar. Exact 2 foot square: NINE courses of nominal 8 inch long by 2 2/3 inch tall bricks, THREE bricks per row, alternate courses offset half brick. Fine rough clay pores, restrained natural color differences. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-fa842ad7-ddfe-474c-a443-964266db38a0.png"
+  },
+  {
+    "name": "acoustic_ceiling_2x2",
+    "prompt": "Use case: photorealistic-natural. Asset: acoustic_ceiling_2x2.png, seamless tileable 1024x1024 PNG albedo. One white 2 foot by 2 foot fissured mineral fiber acoustic ceiling tile, fine irregular tiny grey pinholes and short fissures scattered naturally. Flat white surface, NO metal grid and NO border, no large dark marks. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-523daf9d-4bd7-439c-9bde-1858f9a00851.png"
+  },
+  {
+    "name": "rubber_gym_floor",
+    "prompt": "Use case: photorealistic-natural. Asset: rubber_gym_floor.png, seamless tileable 1024x1024 PNG albedo. Black charcoal gym rubber floor with sparse extremely fine grey and beige recycled flecks, matte dense rubber granules. Four 24 inch square tiles in a 4 foot square, barely perceptible straight tile joints. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-d0f6b789-88ef-4759-b8bd-64ab187006d8.png"
+  },
+  {
+    "name": "sealed_concrete",
+    "prompt": "Use case: photorealistic-natural. Asset: sealed_concrete.png, seamless tileable 1024x1024 PNG albedo. Light neutral warm grey sealed concrete, subtle fine mineral pores and gentle trowel mottling, smooth institutional utility floor. 4 foot square, no joints, cracks, stains, footprints or strong swirls. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-c843c57d-bd48-4706-8837-2a2df6707885.png"
+  },
+  {
+    "name": "metal_panel_grey",
+    "prompt": "Use case: photorealistic-natural. Asset: metal_panel_grey.png, seamless tileable 1024x1024 PNG albedo. Neutral medium grey coated metal architectural cladding with straight thin horizontal ribs at 6 inch intervals, EXACTLY EIGHT evenly spaced horizontal ribs in a four foot square, fine painted metal microtexture. Subtle narrow rib definition, no bolts or vertical joints. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-13b4c42b-5e9e-446b-ab77-40e0ad78b98a.png"
+  },
+  {
+    "name": "ceramic_wall_tile",
+    "prompt": "Use case: photorealistic-natural. Asset: ceramic_wall_tile.png, seamless tileable 1024x1024 PNG albedo. Off-white warm white glazed ceramic wall tiles, EXACT six by six grid of 4 inch square tiles in a two foot square. Thin warm light grey grout, restrained tiny glaze variation. No reflections. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-ac26cfeb-9f81-4490-9c45-ea0e1768b00c.png"
+  },
+  {
+    "name": "mosaic_green",
+    "prompt": "Use case: photorealistic-natural. Asset: mosaic_green.png, seamless tileable 1024x1024 PNG albedo. Small square glass mosaic tiles, muted forest green, pale sage green and warm white random mix matching an institutional volleyball entry accent wall. EXACT 24 by 24 grid of one inch square tesserae in a two foot square. Thin ivory grout. No letters or logo. Orthographic full bleed photographic material scan, uniform neutral diffuse illumination. No perspective, gradients, baked reflections, objects, people, words or watermark. Match opposite edges seamlessly in both axes.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-cf011879-8c7a-458e-8606-b5e79ced0d59.png"
+  }
+]

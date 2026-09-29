@@ -1,0 +1,68 @@
+FAIL  stylua --check
+Diff in src\ReplicatedStorage\RAC\Build\Facade.luau:
+67  67   | 			}
+68  68   | 			Walls.build(
+69  69   | 				group,
+70       |-				{ level = 0, elevation = face.base, rooms = {}, walls = { skin }, columns = {}, stairs = {}, voids = {}, props = {} }
+    70   |+				{
+    71   |+					level = 0,
+    72   |+					elevation = face.base,
+    73   |+					rooms = {},
+    74   |+					walls = { skin },
+    75   |+					columns = {},
+    76   |+					stairs = {},
+    77   |+					voids = {},
+    78   |+					props = {},
+    79   |+				}
+71  80   | 			)
+72  81   | 			for _, part in group:GetDescendants() do
+73  82   | 				if part:IsA("BasePart") then
+
+FAIL  selene
+warning[unused_variable]: counterTop is assigned a value, but never used
+   ┌─ src\ReplicatedStorage\RAC\Props\FrontDesk.luau:42:8
+   │
+42 │     local counterTop = b:box(
+   │           ^^^^^^^^^^
+
+warning[unused_variable]: panel is assigned a value, but never used
+   ┌─ src\ReplicatedStorage\RAC\Props\FrontDesk.luau:88:9
+   │
+88 │         local panel = b:box(
+   │               ^^^^^
+
+warning[unused_variable]: lidY is assigned a value, but never used
+   ┌─ src\ReplicatedStorage\RAC\Props\TrashBin.luau:25:8
+   │
+25 │     local lidY = bodyH + lidH / 2
+   │           ^^^^
+
+warning[unused_variable]: C is assigned a value, but never used
+   ┌─ src\ReplicatedStorage\RAC\Props\ExitSign.luau:18:8
+   │
+18 │     local C = Kit.Color
+   │           ^
+
+warning[unused_variable]: h is assigned a value, but never used
+   ┌─ src\ReplicatedStorage\RAC\Props\RecycleBin.luau:23:11
+   │
+23 │     local w, h, d = 2.0, 3.2, 2.2
+   │              ^
+
+warning[unused_variable]: lidY is assigned a value, but never used
+    ┌─ src\ReplicatedStorage\RAC\Props\RecycleBin.luau:150:8
+    │
+150 │     local lidY = bodyH + lidH / 2
+    │           ^^^^
+
+Results:
+0 errors
+6 warnings
+0 parse errors
+
+PASS  rojo build
+PASS  test build.spec.luau
+PASS  test props.spec.luau
+PASS  luau-lsp analyze
+
+VERIFY FAILED: stylua --check, selene

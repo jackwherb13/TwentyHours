@@ -1,0 +1,17 @@
+[
+  {
+    "name": "gm_logo",
+    "prompt": "Clean up this existing interlocking GM athletic monogram while preserving the letter shapes and arrangement. Perfect crisp smooth antialiased edges, solid flat Mason green #006633 and uniform gold #FFCC33 outline. Remove all stray colored pixels, speckles, edge distress and mottling. True fully transparent background and letter counters. 1024x1024 PNG clean vector-style logo. No people or other text.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-cd83eda7-05ec-4060-8e4f-7a99166112ee.png"
+  },
+  {
+    "name": "volleyball_wordmark",
+    "prompt": "Use case: logo-brand. Asset: volleyball_wordmark.png for RAC Roblox branding. Exact text \"VOLLEYBALL\", single horizontal line of bold collegiate athletic block letters, Mason green #006633. Clean flat vector style, strong squared slab lettering, perfectly legible, generous transparent padding. No outlines, no other words, no people, photos, shadows, gradients or watermark. True transparent alpha background, 1024x1024 PNG.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-a45904ee-f74c-44d2-9f9a-b78cdacd85b7.png"
+  },
+  {
+    "name": "locker_room_sign",
+    "prompt": "Edit this locker room sign only. Keep exact three-line white text VOLLEYBALL / LOCKER / ROOM and thin white rectangular border. Replace the entire background with perfectly flat opaque Mason green #006633, remove all texture, halo, discoloration, transparency and edge distress. Every background pixel must be opaque solid green. Flat vector-style 1024x1024 PNG sign, sharp white lettering, no shadows or gradients.",
+    "source": "C:\\Users\\dnage\\.codex\\generated_images\\01a0eab9-5876-7080-98a4-a7a4250025a7\\exec-0c67bb05-11c0-4efa-92d6-b790e1560458.png"
+  }
+]

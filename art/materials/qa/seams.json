@@ -1,0 +1,338 @@
+[
+  {
+    "name": "maple_court",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 7.187932014465332,
+      "vertical_mae": 4.017543792724609,
+      "horizontal_p95": 18.0,
+      "vertical_p95": 12.0,
+      "interior_x_mae": 4.945384502410889,
+      "interior_y_mae": 1.682443380355835
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 5.029730319976807,
+      "interior_y_mae": 1.7028570175170898,
+      "repair_band_max_line_mae": [
+        4.542643229166667,
+        3.9446614583333335
+      ],
+      "interior_max_line_mae": [
+        5.926106770833333,
+        79.77018229166667
+      ]
+    }
+  },
+  {
+    "name": "terrazzo_corridor",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 14.6578950881958,
+      "vertical_mae": 16.417064666748047,
+      "horizontal_p95": 44.0,
+      "vertical_p95": 49.95000076293945,
+      "interior_x_mae": 10.30488395690918,
+      "interior_y_mae": 10.174237251281738
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 11.639632225036621,
+      "interior_y_mae": 11.582902908325195,
+      "repair_band_max_line_mae": [
+        13.435221354166666,
+        13.244140625
+      ],
+      "interior_max_line_mae": [
+        14.117838541666666,
+        14.103515625
+      ]
+    }
+  },
+  {
+    "name": "porcelain_tile_12x24",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 8.108186721801758,
+      "vertical_mae": 4.93833065032959,
+      "horizontal_p95": 20.0,
+      "vertical_p95": 13.0,
+      "interior_x_mae": 5.842867851257324,
+      "interior_y_mae": 6.464633941650391
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 5.900172233581543,
+      "interior_y_mae": 6.578339576721191,
+      "repair_band_max_line_mae": [
+        54.3037109375,
+        6.346354166666667
+      ],
+      "interior_max_line_mae": [
+        69.048828125,
+        41.115234375
+      ]
+    }
+  },
+  {
+    "name": "carpet_tile_office",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 26.22780418395996,
+      "vertical_mae": 21.747739791870117,
+      "horizontal_p95": 71.0,
+      "vertical_p95": 59.0,
+      "interior_x_mae": 19.47092628479004,
+      "interior_y_mae": 19.794723510742188
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 21.676759719848633,
+      "interior_y_mae": 22.163536071777344,
+      "repair_band_max_line_mae": [
+        27.1640625,
+        26.400065104166668
+      ],
+      "interior_max_line_mae": [
+        29.869140625,
+        28.3525390625
+      ]
+    }
+  },
+  {
+    "name": "painted_cmu",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 11.83067512512207,
+      "vertical_mae": 4.686071395874023,
+      "horizontal_p95": 35.0,
+      "vertical_p95": 13.0,
+      "interior_x_mae": 6.575519561767578,
+      "interior_y_mae": 9.106925964355469
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 6.802661418914795,
+      "interior_y_mae": 9.520524978637695,
+      "repair_band_max_line_mae": [
+        51.067708333333336,
+        9.124674479166666
+      ],
+      "interior_max_line_mae": [
+        44.365559895833336,
+        10.285481770833334
+      ]
+    }
+  },
+  {
+    "name": "brick_red",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 15.463979721069336,
+      "vertical_mae": 18.337852478027344,
+      "horizontal_p95": 45.0,
+      "vertical_p95": 46.0,
+      "interior_x_mae": 8.476129531860352,
+      "interior_y_mae": 10.968067169189453
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 8.943623542785645,
+      "interior_y_mae": 11.082354545593262,
+      "repair_band_max_line_mae": [
+        32.717122395833336,
+        14.669596354166666
+      ],
+      "interior_max_line_mae": [
+        35.43359375,
+        18.588216145833332
+      ]
+    }
+  },
+  {
+    "name": "acoustic_ceiling_2x2",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 14.069377899169922,
+      "vertical_mae": 10.51754379272461,
+      "horizontal_p95": 71.0,
+      "vertical_p95": 50.0,
+      "interior_x_mae": 6.730061054229736,
+      "interior_y_mae": 6.5543389320373535
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 7.680103778839111,
+      "interior_y_mae": 7.5666584968566895,
+      "repair_band_max_line_mae": [
+        9.334635416666666,
+        9.882161458333334
+      ],
+      "interior_max_line_mae": [
+        10.6640625,
+        11.0048828125
+      ]
+    }
+  },
+  {
+    "name": "rubber_gym_floor",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 22.591707229614258,
+      "vertical_mae": 19.46996307373047,
+      "horizontal_p95": 69.0,
+      "vertical_p95": 55.95000076293945,
+      "interior_x_mae": 13.760479927062988,
+      "interior_y_mae": 13.84682846069336
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 15.421326637268066,
+      "interior_y_mae": 15.54510498046875,
+      "repair_band_max_line_mae": [
+        18.777669270833332,
+        18.23046875
+      ],
+      "interior_max_line_mae": [
+        34.9111328125,
+        31.900716145833332
+      ]
+    }
+  },
+  {
+    "name": "sealed_concrete",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 7.801169395446777,
+      "vertical_mae": 8.715311050415039,
+      "horizontal_p95": 20.0,
+      "vertical_p95": 22.0,
+      "interior_x_mae": 7.989238262176514,
+      "interior_y_mae": 7.96304988861084
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 8.154289245605469,
+      "interior_y_mae": 8.140557289123535,
+      "repair_band_max_line_mae": [
+        9.126302083333334,
+        8.801432291666666
+      ],
+      "interior_max_line_mae": [
+        9.668294270833334,
+        9.706705729166666
+      ]
+    }
+  },
+  {
+    "name": "metal_panel_grey",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 4.549973487854004,
+      "vertical_mae": 8.02977180480957,
+      "horizontal_p95": 11.0,
+      "vertical_p95": 17.0,
+      "interior_x_mae": 3.9126315116882324,
+      "interior_y_mae": 6.304220676422119
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 3.8465278148651123,
+      "interior_y_mae": 6.386560916900635,
+      "repair_band_max_line_mae": [
+        6.793294270833333,
+        4.482096354166667
+      ],
+      "interior_max_line_mae": [
+        42.613606770833336,
+        4.5947265625
+      ]
+    }
+  },
+  {
+    "name": "ceramic_wall_tile",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 5.62333869934082,
+      "vertical_mae": 6.24827241897583,
+      "horizontal_p95": 14.0,
+      "vertical_p95": 15.0,
+      "interior_x_mae": 1.5687353610992432,
+      "interior_y_mae": 1.3829783201217651
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 1.821408987045288,
+      "interior_y_mae": 1.6103435754776,
+      "repair_band_max_line_mae": [
+        39.594401041666664,
+        41.514973958333336
+      ],
+      "interior_max_line_mae": [
+        51.530598958333336,
+        53.260091145833336
+      ]
+    }
+  },
+  {
+    "name": "mosaic_green",
+    "pass": true,
+    "before": {
+      "horizontal_mae": 56.2666130065918,
+      "vertical_mae": 76.34662628173828,
+      "horizontal_p95": 89.0,
+      "vertical_p95": 158.0,
+      "interior_x_mae": 7.572257041931152,
+      "interior_y_mae": 7.822524070739746
+    },
+    "after": {
+      "horizontal_mae": 0.0,
+      "vertical_mae": 0.0,
+      "horizontal_p95": 0.0,
+      "vertical_p95": 0.0,
+      "interior_x_mae": 8.57367992401123,
+      "interior_y_mae": 8.919108390808105,
+      "repair_band_max_line_mae": [
+        51.947916666666664,
+        59.227864583333336
+      ],
+      "interior_max_line_mae": [
+        92.4208984375,
+        90.68359375
+      ]
+    }
+  }
+]
