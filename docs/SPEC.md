@@ -39,3 +39,10 @@ Survive a late-night "20 hour week" practice in the RAC. **Coach** (fictional) p
 
 ## Out of scope for now
 Monetization, data saving, lobbies/matchmaking, public publishing.
+
+## Realism standard (applies to every build milestone)
+- Every room is furnished like the real one: nothing empty or placeholder. Doors have frames, hardware and signage;
+  walls have base trim, fire extinguisher cabinets, exit signs, thermostats, outlets and bulletin boards where the photos show them.
+- Real-world scale for every object (1 stud = 1 ft). Prefer fewer, better props over many low-effort ones.
+- Materials: MaterialVariants with correct color + roughness; no default grey plastic anywhere visible.
+- Lighting: fixtures are actual light sources (SurfaceLight/SpotLight) placed where the ceiling fixtures are.

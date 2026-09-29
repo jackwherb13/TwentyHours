@@ -65,6 +65,8 @@ exactly ``STATUS: DONE`` or ``STATUS: BLOCKED: <reason>``.
 MILESTONE:
 $($m.Text)
 "@
+	$reviewFile = "docs/reviews/$id.md"
+	if (Test-Path $reviewFile) { $prompt += "`n`nMANAGER REVIEW (must be addressed; takes priority over your earlier choices):`n" + (Get-Content $reviewFile -Raw) }
 	$attempt = 0
 	$passed = $false
 	while ($attempt -lt $MaxAttempts -and -not $passed) {
@@ -86,10 +88,13 @@ You are an independent AUDITOR (not the builder). Do not modify any files or the
 into verification/$id/audit/. Judge milestone $id strictly against its Done-when list below and AGENTS.md.
 Inspect: git diff HEAD --stat and the changed files, verification/$id/REPORT.md, the screenshots it cites (open them and
 compare with the reference photos), and the live Studio place via read-only MCP calls (get_console_output, search_game_tree,
-inspect_instance, screen_capture). Be skeptical: a claim without evidence is a FAIL. Return PASS only if every item is met.
+inspect_instance, screen_capture). Be skeptical: a claim without evidence is a FAIL. Return PASS only if every item is met, including every point in the manager review below (if present).
 
 MILESTONE:
 $($m.Text)
+
+MANAGER REVIEW:
+$(if (Test-Path "docs/reviews/$id.md") { Get-Content "docs/reviews/$id.md" -Raw } else { "(none)" })
 "@ $null "$id.audit$attempt" $auditSchema
 		$verdict = $null
 		try { $verdict = ($audit.text | ConvertFrom-Json) } catch {}

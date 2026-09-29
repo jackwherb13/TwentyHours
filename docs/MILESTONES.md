@@ -39,7 +39,17 @@ Each milestone's **Done when** list is the acceptance test. Work only inside the
     wall pads (green, 6 ft), steel joists + LED high-bays, clerestory windows, banners/flag/scoreboards, viewing windows.
   - **Done when:** photo-match on IMG_0332–0337 + video frames scores PASS in verification/M3/REPORT.md.
 
-- [ ] M4 Lobby, entrance, front desk, balcony, fitness center (IMG_0318, 0328–0330, 0364–0370)
+- [ ] M4 Lobby, entrance, front desk, balcony, fitness center + weight rooms (IMG_0318, 0328–0330, 0364–0370)
+      - Fitness center / weight rooms must look like a real, fully stocked university rec gym, matching the photos:
+        rows of squat/power racks with plate storage and barbells, Olympic lifting platforms (wood inset), adjustable and
+        flat benches, dumbbell racks (5–100 lb pairs, tiered), kettlebell racks, cable crossover / functional trainers,
+        selectorized strength machines (leg press, lat pulldown, chest press, leg ext/curl, row), cardio rows (treadmills,
+        ellipticals, stair climbers, bikes, rowers) facing the windows/TVs, rubber floor tiles with turf strip where shown,
+        mirrors on walls, wall TVs, water fountain/bottle filler, sanitizer stations, trash/recycle bins, fans, signage.
+      - Use Creator Store models (insert_asset/search_asset) only when they look realistic at 1 stud = 1 ft; otherwise build
+        detailed part/mesh models. Scale everything to real dimensions (e.g. power rack ~4×4×7.5 ft, treadmill ~6.5×3 ft).
+        Instance repeated equipment from one template. Record every asset id + source in blueprint/assets.json.
+      - Realism bar: side-by-side screenshots vs IMG_0318, 0328 and 0369 must read as the same room at a glance.
 - [ ] M5 Corridors, stairs, offices, locker rooms, restrooms, brick accent walls (IMG_0314–0316, 0319–0327, 0331, 0338–0348, 0371–0382)
       - Volleyball locker room gets Mason branding like the real one: the green "GM" logo + "VOLLEYBALL" on the door and wall
         (IMG_0378), the green/white mosaic tile wall with the GM logo (IMG_0340), and the "NCAA ALL-AMERICANS" board (IMG_0377,
