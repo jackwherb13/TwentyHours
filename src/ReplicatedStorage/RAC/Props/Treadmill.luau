@@ -24,6 +24,7 @@ function Treadmill.build(cf: CFrame, opts: { [string]: any }?): Model
 	local steel = C.SteelBlack
 	local accent = optNum(opts, "accent", 1, 0, 1) >= 0.5
 
+	b:box("Plinth", Vector3.new(2.15, 0.42, 4.7), Kit.at(0, 0.21, 0.45), steel, Enum.Material.Metal, true)
 	b:box("Deck", Vector3.new(2.55, 0.18, 5.15), Kit.at(0, 0.42, 0.45), steel, Enum.Material.Metal, true)
 	b:box("Belt", Vector3.new(1.75, 0.06, 4.85), Kit.at(0, 0.54, 0.4), C.RubberBlack, Enum.Material.Rubber, true)
 	for i = 0, 4 do

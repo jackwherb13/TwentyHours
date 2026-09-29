@@ -245,10 +245,11 @@ function Exterior.build(parent: Instance, site: any)
 	local coverWest = if e.coverWest ~= nil then e.coverWest else e.x - e.canopyWidth / 2
 	local coverEast = if e.coverEast ~= nil then e.coverEast else e.x + e.canopyWidth / 2
 	local zWest, zEast = e.x - coverWest, e.x - coverEast
-	local thick = 0.4
+	-- 0.3 ft soffit everywhere; the wedge adds 1.2 ft at the glass and dies out at the lip (1.5 → 0.3).
 	local soffit = 23.1
-	-- Knife edge at the outer lip, 0.4 ft at the glass. A gap over the doors is the skylight well.
-	local function spanWedge(z0: number, z1: number)
+	local tip = 0.3
+	local rise = 1.2
+	local function spanCanopy(z0: number, z1: number)
 		if z1 < z0 then
 			z0, z1 = z1, z0
 		end
@@ -256,12 +257,29 @@ function Exterior.build(parent: Instance, site: any)
 		if length < 2 then
 			return
 		end
+		local midZ = (z0 + z1) / 2
+		local plate = P.box(
+			canopy,
+			"CanopySoffit",
+			Vector3.new(length, tip, depth),
+			CFrame.fromMatrix(
+				Vector3.new(depth / 2 + 0.35, soffit + tip / 2, midZ),
+				Vector3.new(0, 0, 1),
+				Vector3.new(0, 1, 0),
+				Vector3.new(-1, 0, 0)
+			),
+			"dark",
+			true
+		)
+		plate.Material = Enum.Material.SmoothPlastic
+		plate.Color = Color3.fromRGB(28, 30, 32)
+		plate.Reflectance = 0
 		canopyWedge(
 			canopy,
 			"TaperedCanopy",
-			Vector3.new(length, thick, depth),
+			Vector3.new(length, rise, depth),
 			CFrame.fromMatrix(
-				Vector3.new(depth / 2 + 0.35, soffit + thick / 2, (z0 + z1) / 2),
+				Vector3.new(depth / 2 + 0.35, soffit + tip + rise / 2, midZ),
 				Vector3.new(0, 0, 1),
 				Vector3.new(0, 1, 0),
 				Vector3.new(-1, 0, 0)
@@ -269,37 +287,54 @@ function Exterior.build(parent: Instance, site: any)
 		)
 	end
 	local lo, hi = math.min(zWest, zEast), math.max(zWest, zEast)
-	spanWedge(lo, -9)
-	spanWedge(9, hi)
+	spanCanopy(lo, -9)
+	spanCanopy(9, hi)
 	-- East return over the corner glass. Yaw -90 maps local -Z to world +X, so the tip points east.
 	local projection = math.max(12, e.returnCanopyDepth)
 	local cornerX = if e.glassCorner then e.glassCorner[1] else e.x + width / 2
 	local cornerLocalZ = e.x - cornerX
+	local cornerPlate = P.box(
+		canopy,
+		"CanopySoffit",
+		Vector3.new(28, tip, projection),
+		CFrame.fromMatrix(
+			Vector3.new(-6, soffit + tip / 2, cornerLocalZ - projection / 2),
+			Vector3.new(1, 0, 0),
+			Vector3.new(0, 1, 0),
+			Vector3.new(0, 0, 1)
+		),
+		"dark",
+		true
+	)
+	cornerPlate.Material = Enum.Material.SmoothPlastic
+	cornerPlate.Color = Color3.fromRGB(28, 30, 32)
+	cornerPlate.Reflectance = 0
 	canopyWedge(
 		canopy,
 		"CornerCanopy",
-		Vector3.new(28, thick, projection),
+		Vector3.new(28, rise, projection),
 		CFrame.fromMatrix(
-			Vector3.new(-6, soffit + thick / 2, cornerLocalZ - projection / 2),
+			Vector3.new(-6, soffit + tip + rise / 2, cornerLocalZ - projection / 2),
 			Vector3.new(1, 0, 0),
 			Vector3.new(0, 1, 0),
 			Vector3.new(0, 0, 1)
 		)
 	)
-	-- Two light-grey square tubes under the glass, not a row of black cylinders.
-	local columnHeight = soffit - 0.16
+	-- Slender round posts. The 1.7 ft black cylinders read as columns through the soffit.
+	local columnHeight = soffit - 0.12
 	for _, offset in { -16, 16 } do
-		local column = P.box(
+		local column = P.pole(
 			canopy,
 			"SupportColumn",
-			Vector3.new(1.45, columnHeight, 1.45),
-			CFrame.new(8.5, 0.08 + columnHeight / 2, offset),
+			Vector3.new(8.5, 0.08, offset),
+			columnHeight,
+			0.38,
 			"metal",
 			true
 		)
 		column.Material = Enum.Material.SmoothPlastic
-		column.Color = Color3.fromRGB(176, 180, 184)
-		column.Reflectance = 0.05
+		column.Color = Color3.fromRGB(78, 80, 82)
+		column.Reflectance = 0
 	end
 	local function soffitLamp(lx: number, lz: number)
 		local bulb = P.box(
@@ -317,13 +352,10 @@ function Exterior.build(parent: Instance, site: any)
 		light.Color = Color3.fromRGB(255, 236, 210)
 		light.Parent = bulb
 	end
-	for lz = lo + 4, -12, 10 do
-		soffitLamp(depth * 0.32, lz)
-		soffitLamp(depth * 0.68, lz)
-	end
-	for lz = 12, hi - 4, 10 do
-		soffitLamp(depth * 0.32, lz)
-		soffitLamp(depth * 0.68, lz)
+	for _, lz in { -24, -40, 20, 48, 76 } do
+		if lz > lo + 3 and lz < hi - 3 and math.abs(lz) > 10 then
+			soffitLamp(depth * 0.45, lz)
+		end
 	end
 
 	-- Opaque white letters on the south curtain wall, just outside the glass.

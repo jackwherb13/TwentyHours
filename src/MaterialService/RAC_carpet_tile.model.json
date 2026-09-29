@@ -1,0 +1,9 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Fabric",
+    "ColorMap": "rbxassetid://112971278288310",
+    "StudsPerTile": 4,
+    "Name": "RAC_carpet_tile"
+  }
+}

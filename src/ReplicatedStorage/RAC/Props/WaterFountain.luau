@@ -61,6 +61,7 @@ function WaterFountain.build(cf: CFrame, opts: { [string]: any }?): Model
 	-- Adult basin on the left (rim ~40 in), accessible basin on the right (rim ~34 in).
 	basin(b, "Hi", -0.7, 3.35)
 	basin(b, "Lo", 0.75, 2.85)
+	b:box("Pedestal", Vector3.new(2.4, 1.8, 0.5), Kit.at(0.05, 0.9, -0.05), STEEL, Enum.Material.Metal, true)
 	b:box("Apron", Vector3.new(2.7, 0.7, 0.55), Kit.at(0.05, 2.15, -0.05), STEEL, Enum.Material.Metal, true)
 	b:box("TrapL", Vector3.new(0.12, 2.025, 0.12), Kit.at(-0.7, 1.0125, -0.12), C.Chrome, Enum.Material.Metal)
 	b:box("TrapR", Vector3.new(0.12, 1.95, 0.12), Kit.at(0.75, 0.975, -0.12), C.Chrome, Enum.Material.Metal)

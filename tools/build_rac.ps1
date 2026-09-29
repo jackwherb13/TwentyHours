@@ -13,6 +13,9 @@ $status = 1
 Push-Location $root
 try {
     $env:Path = "$env:USERPROFILE\.rokit\bin;" + $env:Path
+    & python tools/check_walkthrough.py
+    if ($LASTEXITCODE -ne 0) { throw 'Walkthrough check failed.' }
+
     & lune run tools/build_rac.luau $Blueprint $Output
     if ($LASTEXITCODE -ne 0) { throw 'RAC build failed.' }
 

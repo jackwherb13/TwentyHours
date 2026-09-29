@@ -85,13 +85,15 @@ function FrontDesk.build(cf: CFrame, opts: { [string]: any }?): Model
 	for i = 1, numBays do
 		local x = -totalLength / 2 + (i - 0.5) * bayWidth
 		-- Frosted front panel
-		b:box(
+		local panel = b:box(
 			`FrostedPanel_{i}`,
 			Vector3.new(panelWidth, panelHeight, 0.08),
 			Kit.at(x, 0.45 + panelHeight / 2, frontFaceZ),
 			FrostedGlass,
-			Enum.Material.Glass
+			Enum.Material.Glass,
+			true
 		)
+		panel.Transparency = 0.45
 		-- Backlit glow behind panel
 		local glow = b:box(
 			`PanelGlow_{i}`,
@@ -117,11 +119,12 @@ function FrontDesk.build(cf: CFrame, opts: { [string]: any }?): Model
 
 	-- Clerk knee-wall divider supporting the counter
 	b:box(
-		"KneeWall",
+		"KneePanel",
 		Vector3.new(totalLength - 0.3, counterHeight - 0.2, 0.2),
 		Kit.at(0, (counterHeight - 0.2) / 2, frontFaceZ + 1.1),
 		Bronze,
-		Enum.Material.SmoothPlastic
+		Enum.Material.SmoothPlastic,
+		true
 	)
 
 	-- Left and right desk end panels / gables

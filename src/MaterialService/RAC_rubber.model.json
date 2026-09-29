@@ -1,0 +1,9 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Rubber",
+    "ColorMap": "rbxassetid://77770454739238",
+    "StudsPerTile": 4,
+    "Name": "RAC_rubber"
+  }
+}

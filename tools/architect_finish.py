@@ -165,15 +165,433 @@ def add_room(level, rid, name, kind, poly, floor, ceiling, ceiling_type, finish)
     return body
 
 
+def edge_span(poly_a, poly_b, tol=0.08):
+    """Longest collinear overlap of two axis-aligned polygons."""
+    best = 0.0
+    loop_a = list(poly_a) + [poly_a[0]]
+    loop_b = list(poly_b) + [poly_b[0]]
+    for a0, a1 in zip(loop_a, loop_a[1:]):
+        horiz = abs(a0[1] - a1[1]) <= tol
+        vert = abs(a0[0] - a1[0]) <= tol
+        if not horiz and not vert:
+            continue
+        for b0, b1 in zip(loop_b, loop_b[1:]):
+            if horiz and abs(b0[1] - b1[1]) <= tol and abs(a0[1] - b0[1]) <= tol:
+                lo = max(min(a0[0], a1[0]), min(b0[0], b1[0]))
+                hi = min(max(a0[0], a1[0]), max(b0[0], b1[0]))
+                best = max(best, hi - lo)
+            elif vert and abs(b0[0] - b1[0]) <= tol and abs(a0[0] - b0[0]) <= tol:
+                lo = max(min(a0[1], a1[1]), min(b0[1], b1[1]))
+                hi = min(max(a0[1], a1[1]), max(b0[1], b1[1]))
+                best = max(best, hi - lo)
+    return best
+
+
+def prune_connections(level):
+    byid = {room["id"]: room for room in level["rooms"]}
+    kept = []
+    for conn in level["connections"]:
+        a, b = conn["rooms"]
+        if a not in byid or b not in byid:
+            continue
+        span = edge_span(byid[a]["polygon"], byid[b]["polygon"])
+        if span < 3:
+            continue
+        width = conn.get("width", 3.5)
+        if width != "full" and width > span - 0.25:
+            conn["width"] = max(3, round((span - 0.5) * 2) / 2)
+            if conn["width"] > span:
+                continue
+        kept.append(conn)
+    level["connections"] = kept
+
+
+def apply_round2(layout):
+    """Round-2 walk: stair west of the gym hall, one left hall, 20x20 bay, courts on the overlook."""
+    level1 = layout["levels"][0]
+    level2 = layout["levels"][1]
+    # 20x20 clear bay, with a north alcove so the 22 ft desk can end 10 ft from the glass.
+    set_poly(
+        level1,
+        "lobby",
+        ccw(
+            [
+                [10.0, 0.0],
+                [10.0, -20.0],
+                [-1.0, -20.0],
+                [-1.0, -34.0],
+                [-8.0, -34.0],
+                [-8.0, -20.0],
+                [-10.0, -20.0],
+                [-10.0, 0.0],
+            ]
+        ),
+    )
+    set_room(level1, "lobby", ceilingHeight=32, ceilingType="gypsum", floorMaterial="porcelain_tile")
+    set_poly(
+        level1,
+        "south_vestibule",
+        ccw([[-10.0, 0.0], [-10.0, -16.0], [-97.0, -16.0], [-97.0, 0.0]]),
+    )
+    set_room(level1, "south_vestibule", ceilingHeight=32, ceilingType="gypsum", floorMaterial="porcelain_tile")
+    set_poly(
+        level1,
+        "glazed_recreation",
+        ccw([[-5.0, -80.0], [10.0, -80.0], [10.0, -20.0], [-1.0, -20.0], [-1.0, -34.0], [-5.0, -34.0]]),
+    )
+    set_room(level1, "glazed_recreation", ceilingHeight=32, ceilingType="gypsum")
+    set_poly(
+        level1,
+        "fitness_annex",
+        ccw(
+            [
+                [-42.5, -48.0],
+                [-5.0, -48.0],
+                [-5.0, -34.0],
+                [-8.0, -34.0],
+                [-8.0, -28.0],
+                [-10.0, -28.0],
+                [-10.0, -16.0],
+                [-42.5, -16.0],
+            ]
+        ),
+    )
+    # Old stair footprint becomes corridor so the floor under the moved landing stays.
+    set_poly(
+        level1,
+        "corridor_wide",
+        ccw(
+            [
+                [-66.5, -80.0],
+                [-5.0, -80.0],
+                [-5.0, -48.0],
+                [-42.5, -48.0],
+                [-42.5, -28.0],
+                [-66.5, -28.0],
+            ]
+        ),
+    )
+    stair_poly = ccw([[-97.0, -52.0], [-78.5, -52.0], [-78.5, -16.0], [-97.0, -16.0]])
+    set_poly(level1, "stair_main", stair_poly)
+    set_poly(level2, "stair_main", [list(p) for p in stair_poly])
+    set_room(level1, "stair_main", ceilingType="none", ceilingHeight=32)
+    set_room(level2, "stair_main", ceilingType="none", ceilingHeight=12)
+    set_poly(level1, "corridor_south_link", ccw([[-97.0, -62.0], [-78.5, -62.0], [-78.5, -52.0], [-97.0, -52.0]]))
+    set_poly(level1, "corridor_entry_south", ccw([[-78.5, -80.0], [-66.5, -80.0], [-66.5, -16.0], [-78.5, -16.0]]))
+    # Court paint ends near z=-184.5. Keep that slab in the gym, then the thin link, then the foyer.
+    set_poly(level1, "competition_gym", ccw([[-193.5, -279.5], [-78.5, -279.5], [-78.5, -186.0], [-193.5, -186.0]]))
+    set_room(level1, "competition_gym", floorMaterial="maple", ceilingHeight=32.5)
+    set_poly(level1, "thin_link", ccw([[-193.5, -186.0], [-78.5, -186.0], [-78.5, -170.0], [-193.5, -170.0]]))
+    set_room(level1, "thin_link", floorMaterial="terrazzo", ceilingHeight=12, ceilingType="act_2x4", type="corridor")
+    add_room(
+        level1,
+        "gym_foyer",
+        "Volleyball Gym Entry",
+        "gym",
+        [
+            [-193.5, -170.0],
+            [-78.5, -170.0],
+            [-78.5, -92.5],
+            [-110.0, -92.5],
+            [-110.0, -132.5],
+            [-193.5, -132.5],
+        ],
+        floor="maple",
+        ceiling=32.5,
+        ceiling_type="none",
+        finish="painted_cmu",
+    )
+    set_poly(
+        level1,
+        "corridor_gym_east",
+        ccw([[-78.5, -188.0], [-66.5, -188.0], [-66.5, -132.5], [-78.5, -132.5]]),
+    )
+    set_poly(level1, "fitness_north", ccw([[-66.5, -195.5], [10.0, -195.5], [10.0, -154.5], [-66.5, -154.5]]))
+    set_room(level1, "corridor_gym_east", floorMaterial="terrazzo", ceilingHeight=12, ceilingType="act_2x4")
+    # Nutrition vestibule just south of the thin-link junction, on the west side of the athletic hall.
+    set_poly(
+        level1,
+        "nutrition_vestibule",
+        ccw([[-215.5, -170.0], [-205.5, -170.0], [-205.5, -160.0], [-215.5, -160.0]]),
+    )
+    set_room(level1, "nutrition_vestibule", type="support", floorMaterial="porcelain_tile", ceilingHeight=9, ceilingType="act_2x2")
+    set_poly(
+        level1,
+        "locker_volleyball",
+        ccw([[-225.0, -160.0], [-205.5, -160.0], [-205.5, -140.0], [-225.0, -140.0]]),
+    )
+    set_poly(level1, "training_store", ccw([[-225.0, -180.0], [-205.5, -180.0], [-205.5, -170.0], [-225.0, -170.0]]))
+    set_poly(
+        level1,
+        "volleyball_washroom",
+        ccw([[-193.5, -102.5], [-173.5, -102.5], [-173.5, -92.5], [-193.5, -92.5]]),
+    )
+    set_poly(
+        level1,
+        "cage_lower_reserved",
+        ccw([[-351.5, -220.0], [-225.0, -220.0], [-225.0, -140.0], [-351.5, -140.0]]),
+    )
+    add_room(
+        level1,
+        "corridor_locker_west",
+        "Locker Hall",
+        "corridor",
+        [[-305.0, -140.0], [-205.5, -140.0], [-205.5, -112.0], [-305.0, -112.0]],
+        floor="terrazzo",
+        ceiling=10,
+        ceiling_type="act_2x2",
+        finish="painted_cmu",
+    )
+    # Level 2: one northbound hall, gym glass then racquetball on the left.
+    set_poly(
+        level2,
+        "corridor_l2_overlook",
+        ccw([[-78.5, -330.0], [-64.5, -330.0], [-64.5, -80.0], [-78.5, -80.0]]),
+    )
+    set_room(
+        level2,
+        "corridor_l2_overlook",
+        floorMaterial="terrazzo",
+        ceilingHeight=10,
+        ceilingType="act_2x2",
+        wallFinish="painted_cmu",
+    )
+    set_poly(level2, "office_ne_1", ccw([[-64.5, -279.5], [-53.0, -279.5], [-53.0, -262.0], [-64.5, -262.0]]))
+    set_poly(level2, "racquetball_2", ccw([[-98.5, -319.5], [-78.5, -319.5], [-78.5, -279.5], [-98.5, -279.5]]))
+    set_poly(level2, "racquetball_1", ccw([[-118.5, -319.5], [-98.5, -319.5], [-98.5, -279.5], [-118.5, -279.5]]))
+    # Offices leave the overlook's west wall. The strip is open to the maple gym below.
+    set_poly(level2, "team_offices", ccw([[-135.0, -132.5], [-110.0, -132.5], [-110.0, -92.5], [-135.0, -92.5]]))
+    set_poly(
+        level2,
+        "void_competition",
+        ccw(
+            [
+                [-193.5, -279.5],
+                [-78.5, -279.5],
+                [-78.5, -92.5],
+                [-110.0, -92.5],
+                [-110.0, -132.5],
+                [-193.5, -132.5],
+            ]
+        ),
+    )
+    set_poly(level1, "locker_general_m", ccw([[-131.5, -124.5], [-122.0, -124.5], [-122.0, -92.5], [-131.5, -92.5]]))
+    set_poly(level1, "storage_athletic", ccw([[-122.0, -124.5], [-110.0, -124.5], [-110.0, -92.5], [-122.0, -92.5]]))
+    set_room(level2, "racquetball_1", ceilingHeight=16.5, type="racquetball")
+    set_room(level2, "racquetball_2", ceilingHeight=16.5, type="racquetball")
+    set_poly(level2, "main_stair_landing", ccw([[-78.5, -80.0], [-64.5, -80.0], [-64.5, -40.0], [-78.5, -40.0]]))
+    set_poly(
+        level2,
+        "balcony",
+        ccw([[-64.5, -80.0], [-5.0, -80.0], [-5.0, -48.0], [-42.5, -48.0], [-42.5, -76.0], [-64.5, -76.0]]),
+    )
+    void_lobby = ccw(
+        [
+            [10.0, 0.0],
+            [10.0, -80.0],
+            [-5.0, -80.0],
+            [-5.0, -34.0],
+            [-8.0, -34.0],
+            [-8.0, -20.0],
+            [-10.0, -20.0],
+            [-10.0, -16.0],
+            [-97.0, -16.0],
+            [-97.0, 0.0],
+        ]
+    )
+    set_poly(level2, "void_lobby", void_lobby)
+    for void in level2["voids"]:
+        if void["id"] == "void_lobby":
+            void["polygon"] = [list(p) for p in void_lobby]
+    run_ns = 12 / 17
+    # East edge stays at x=-80.5 so treads clear the hall opening (probe reaches ~0.64 ft past x=-78.5).
+    # The west flight is 10 ft so it still fits inside the room edge at x=-97.
+    run_ew = 10 / 17
+    main_a = [[-86.5, -34.0], [-80.5, -34.0], [-80.5, -22.0], [-86.5, -22.0]]
+    main_land = [[-86.5, -40.0], [-80.5, -40.0], [-80.5, -34.0], [-86.5, -34.0]]
+    main_b = [[-96.5, -40.0], [-86.5, -40.0], [-86.5, -34.0], [-96.5, -34.0]]
+    flight_voids = {
+        "stair_main_opening": main_a,
+        "stair_main_upper": main_b,
+        "stair_main_landing": main_land,
+    }
+    for void in level2["voids"]:
+        if void["id"] in flight_voids:
+            void["polygon"] = [list(p) for p in flight_voids[void["id"]]]
+    for stair in level1["stairs"]:
+        if stair["id"] != "stair_main":
+            continue
+        stair["polygon"] = [list(p) for p in stair_poly]
+        stair["direction"] = [0, -1]
+        stair["width"] = 8
+        stair["flights"] = [
+            flight("main_a", main_a, [0, -1], 0, 6, run_ns),
+            flight("main_b", main_b, [-1, 0], 10, 6, run_ew),
+        ]
+        stair["landings"] = [landing("main_turn", main_land, 10)]
+    drop_pairs(
+        level1,
+        [
+            ("lobby", "fitness_annex"),
+            ("corridor_wide", "coach_suite"),
+            ("south_vestibule", "corridor_south_link"),
+            ("competition_gym", "corridor_gym_east"),
+            ("thin_link", "corridor_entry_link"),
+            ("locker_volleyball", "volleyball_washroom"),
+        ],
+    )
+    drop_pairs(level2, [("corridor_l2", "racquetball_1"), ("corridor_l2", "racquetball_2")])
+    ensure_connection(level1, "lobby", "south_vestibule", 12, "opening")
+    ensure_connection(level1, "lobby", "glazed_recreation", 6, "opening")
+    ensure_connection(level1, "south_vestibule", "stair_main", 12, "opening", head=12)
+    ensure_connection(level1, "south_vestibule", "corridor_entry_south", 10, "opening")
+    ensure_connection(level1, "corridor_entry_south", "stair_main", 16, "opening", head=12)
+    ensure_connection(level1, "corridor_south_link", "stair_main", 8, "opening")
+    ensure_connection(level1, "corridor_entry_south", "corridor_south_link", 8, "opening")
+    ensure_connection(level1, "corridor_entry_south", "corridor_entry_link", 10, "opening")
+    ensure_connection(level1, "corridor_entry_link", "corridor_gym_east", 10, "opening")
+    ensure_connection(level1, "gym_foyer", "thin_link", "full", "opening", head=12)
+    ensure_connection(level1, "thin_link", "competition_gym", "full", "opening", head=16)
+    ensure_connection(level1, "thin_link", "athletic_corridor", 6, "opening")
+    ensure_connection(level1, "thin_link", "corridor_gym_east", 8, "opening")
+    ensure_connection(
+        level1,
+        "athletic_corridor",
+        "nutrition_vestibule",
+        3.5,
+        "door",
+        keypadCode="15234",
+        label="NUTRITION VESTIBULE",
+    )
+    ensure_connection(level1, "nutrition_vestibule", "locker_volleyball", 3.5, "door")
+    ensure_connection(level1, "athletic_corridor", "corridor_locker_west", 8, "opening")
+    ensure_connection(level1, "corridor_locker_west", "stair_second", 8, "opening")
+    ensure_connection(level1, "athletic_corridor", "volleyball_washroom", 3.5, "door")
+    ensure_connection(level1, "glazed_recreation", "coach_suite", 4, "door")
+    ensure_connection(level1, "restroom_ne_w", "fitness_north", 4, "door")
+    ensure_connection(level1, "restroom_ne_m", "fitness_north", 4, "door")
+    ensure_connection(level1, "restroom_ne_w", "restroom_ne_m", 3.5, "door")
+    ensure_connection(level1, "corridor_main", "locker_general_w", 4, "door")
+    ensure_connection(level1, "locker_general_w", "locker_general_m", 3.5, "door")
+    ensure_connection(level2, "stair_main", "main_stair_landing", 8, "opening")
+    ensure_connection(level2, "main_stair_landing", "balcony", 3, "opening")
+    ensure_connection(level2, "main_stair_landing", "corridor_l2_overlook", 10, "opening")
+    ensure_connection(level2, "corridor_l2_overlook", "racquetball_2", 4, "door", label="RACQUETBALL")
+    ensure_connection(level2, "racquetball_2", "racquetball_1", 4, "door")
+    ensure_connection(level2, "corridor_l2_overlook", "corridor_l2", 10, "opening")
+    prune_connections(level1)
+    prune_connections(level2)
+    # South glass splits at the lobby / vestibule corner. The entry door is on the 20 ft bay.
+    def south_or_entry_east(aperture):
+        a, b = aperture.get("a"), aperture.get("b")
+        if not a or not b:
+            return False
+        if abs(a[1]) < 0.01 and abs(b[1]) < 0.01 and min(a[0], b[0]) < 12:
+            return True
+        if abs(a[0] - 10) < 0.01 and abs(b[0] - 10) < 0.01 and max(a[1], b[1]) > -90:
+            return True
+        if abs(a[0] + 78.5) < 0.01 and abs(b[0] + 78.5) < 0.01 and min(a[1], b[1]) < -130:
+            return True
+        return False
+
+    level1["apertures"] = [a for a in level1.get("apertures", []) if not south_or_entry_east(a)]
+    level1["apertures"].extend(
+        [
+            {
+                "a": [-97.0, 0.0],
+                "b": [-10.0, 0.0],
+                "height": 32.5,
+                "openings": [{"center": 43.5, "width": 80, "kind": "curtainwall", "sill": 0, "head": 30}],
+            },
+            {
+                "a": [-10.0, 0.0],
+                "b": [10.0, 0.0],
+                "height": 32.5,
+                "openings": [
+                    {"center": 1.5, "width": 2, "kind": "curtainwall", "sill": 0, "head": 30},
+                    {"center": 6, "width": 6, "kind": "door", "sill": 0, "head": 8},
+                    {"center": 14.5, "width": 9, "kind": "curtainwall", "sill": 0, "head": 30},
+                ],
+            },
+            {
+                "a": [10.0, -80.0],
+                "b": [10.0, -20.0],
+                "height": 32.5,
+                "openings": [{"center": 30, "width": 52, "kind": "curtainwall", "sill": 0, "head": 30}],
+            },
+            {
+                "a": [10.0, -20.0],
+                "b": [10.0, 0.0],
+                "height": 32.5,
+                "openings": [{"center": 10, "width": 16, "kind": "curtainwall", "sill": 0, "head": 30}],
+            },
+            {
+                "a": [-78.5, -170.0],
+                "b": [-78.5, -132.5],
+                "openings": [
+                    {"center": 18, "width": 6, "kind": "door"},
+                    {"center": 28, "width": 6, "kind": "door"},
+                ],
+            },
+        ]
+    )
+    detail = load("stair_details.json")
+    for stair in detail["stairs"]:
+        if stair["id"] != "stair_main":
+            continue
+        stair["flights"] = [
+            {
+                "id": "main_a",
+                "polygon": main_a,
+                "direction": [0, -1],
+                "risers": 17,
+                "run": run_ns,
+                "baseElevation": 0,
+                "topElevation": 10,
+            },
+            {
+                "id": "main_b",
+                "polygon": main_b,
+                "direction": [-1, 0],
+                "risers": 17,
+                "run": run_ew,
+                "baseElevation": 10,
+                "topElevation": 20,
+            },
+        ]
+        stair["landings"] = [{"id": "main_turn", "polygon": main_land, "elevation": 10}]
+        stair["turn"] = "left"
+    save("stair_details.json", detail)
+
+
 def apply_review(layout):
     """User review 01:40: stair setback, left hall to the gym, cardio rail, coaches suite."""
     level1 = layout["levels"][0]
     level2 = layout["levels"][1]
     # Double-height entry. The left hallway is the glass strip; the stair sits north of it.
-    set_poly(level1, "lobby", [[-10.0, -28.0], [10.0, -28.0], [10.0, 0.0], [-10.0, 0.0]])
+    set_poly(
+        level1,
+        "lobby",
+        [[-10.0, -28.0], [10.0, -28.0], [10.0, 0.0], [-18.0, 0.0], [-18.0, -16.0], [-10.0, -16.0]],
+    )
     set_room(level1, "lobby", ceilingHeight=32, ceilingType="gypsum")
     set_poly(level1, "glazed_recreation", [[-5.0, -80.0], [10.0, -80.0], [10.0, -28.0], [-5.0, -28.0]])
-    set_poly(level1, "south_vestibule", ccw([[-97.0, -16.0], [-10.0, -16.0], [-10.0, 0.0], [-97.0, 0.0]]))
+    set_poly(
+        level1,
+        "south_vestibule",
+        ccw(
+            [
+                [-97.0, 0.0],
+                [-97.0, -16.0],
+                [-66.5, -16.0],
+                [-66.5, -28.0],
+                [-42.5, -28.0],
+                [-42.5, -16.0],
+                [-18.0, -16.0],
+                [-18.0, 0.0],
+            ]
+        ),
+    )
     set_room(level1, "south_vestibule", ceilingHeight=32, ceilingType="gypsum", floorMaterial="porcelain_tile")
     set_poly(
         level1,
@@ -182,17 +600,21 @@ def apply_review(layout):
     )
     set_poly(level1, "corridor_entry_south", ccw([[-78.5, -80.0], [-66.5, -80.0], [-66.5, -16.0], [-78.5, -16.0]]))
     set_room(level1, "corridor_entry_south", type="corridor", floorMaterial="terrazzo", ceilingHeight=12, ceilingType="act_2x4")
-    set_poly(level1, "corridor_wide", ccw([[-66.5, -80.0], [-5.0, -80.0], [-5.0, -48.0], [-66.5, -48.0]]))
+    set_poly(
+        level1,
+        "corridor_wide",
+        ccw([[-66.5, -80.0], [-5.0, -80.0], [-5.0, -48.0], [-42.5, -48.0], [-42.5, -60.0], [-66.5, -60.0]]),
+    )
     set_poly(level1, "corridor_south_link", ccw([[-97.0, -62.0], [-78.5, -62.0], [-78.5, -16.0], [-97.0, -16.0]]))
     set_poly(level1, "weight_room", ccw([[-66.5, -124.0], [-40.0, -124.0], [-40.0, -80.0], [-66.5, -80.0]]))
     set_poly(level1, "fitness_center", ccw([[-66.5, -154.5], [-5.0, -154.5], [-5.0, -124.0], [-66.5, -124.0]]))
     set_poly(level1, "lobby_north", ccw([[-5.0, -154.5], [10.0, -154.5], [10.0, -124.0], [-5.0, -124.0]]))
-    stair_poly = ccw([[-66.5, -48.0], [-42.5, -48.0], [-42.5, -16.0], [-66.5, -16.0]])
+    stair_poly = ccw([[-66.5, -60.0], [-42.5, -60.0], [-42.5, -28.0], [-66.5, -28.0]])
     set_poly(level1, "stair_main", stair_poly)
     set_poly(level2, "stair_main", [list(p) for p in stair_poly])
     set_room(level1, "stair_main", ceilingType="none", ceilingHeight=32)
     set_room(level2, "stair_main", ceilingType="none", ceilingHeight=12)
-    set_poly(level2, "main_stair_landing", ccw([[-66.5, -64.0], [-42.5, -64.0], [-42.5, -48.0], [-66.5, -48.0]]))
+    set_poly(level2, "main_stair_landing", ccw([[-66.5, -76.0], [-42.5, -76.0], [-42.5, -60.0], [-66.5, -60.0]]))
     set_poly(
         level2,
         "balcony",
@@ -202,8 +624,8 @@ def apply_review(layout):
                 [-5.0, -80.0],
                 [-5.0, -48.0],
                 [-42.5, -48.0],
-                [-42.5, -64.0],
-                [-66.5, -64.0],
+                [-42.5, -76.0],
+                [-66.5, -76.0],
                 [-66.5, -48.0],
                 [-78.5, -48.0],
             ]
@@ -237,8 +659,10 @@ def apply_review(layout):
         ],
     )
     drop_pairs(level2, [("balcony", "stair_main"), ("main_stair_landing", "cardio_south")])
-    ensure_connection(level1, "south_vestibule", "corridor_south_link", 8, "opening")
-    ensure_connection(level1, "corridor_entry_south", "corridor_south_link", 8, "opening")
+    ensure_connection(level1, "south_vestibule", "corridor_south_link", 16, "opening")
+    ensure_connection(level1, "corridor_entry_south", "corridor_south_link", 36, "opening")
+    ensure_connection(level1, "lobby", "fitness_annex", 10, "opening")
+    ensure_connection(level1, "corridor_entry_south", "corridor_wide", 16, "opening")
     ensure_connection(level2, "balcony", "cardio_south", 8, "opening")
     ensure_connection(level1, "lobby", "south_vestibule", 12, "opening")
     ensure_connection(level1, "lobby", "glazed_recreation", 10, "opening")
@@ -273,7 +697,7 @@ def apply_review(layout):
     set_room(
         level2,
         "corridor_l2_overlook",
-        floorMaterial="sealed_concrete",
+        floorMaterial="terrazzo",
         ceilingHeight=10,
         ceilingType="act_2x2",
         wallFinish="painted_cmu",
@@ -298,27 +722,33 @@ def apply_review(layout):
     ensure_connection(level2, "corridor_l2_overlook", "fitness_north", 6, "door")
     ensure_connection(level2, "corridor_l2_overlook", "office_ne_reception", 3.5, "door")
     ensure_connection(level2, "corridor_l2_overlook", "office_ne_1", 3.5, "door")
-    # A 20 ft opening on the 20 ft shared edge lands inside both crossing walls.
+    # Leave jambs at the tee so the crossing wall is outside the door probe.
     for conn in level1["connections"]:
         if set(conn["rooms"]) == {"glazed_recreation", "fitness_annex"} and conn.get("type") == "opening":
-            conn["width"] = 18
-    # The left hall is one room, so the south glass is one run instead of three room faces.
-    old_south = {
-        ((-42.5, 0.0), (-10.0, 0.0)),
-        ((-78.5, 0.0), (-42.5, 0.0)),
-        ((-97.0, 0.0), (-78.5, 0.0)),
-    }
-    level1["apertures"] = [
-        a
-        for a in level1.get("apertures", [])
-        if (tuple(a.get("a", [])), tuple(a.get("b", []))) not in old_south
-    ]
+            conn["width"] = 10
+    # South glass follows the vestibule (to x=-18) and the widened lobby.
+    def south_glass(aperture):
+        a, b = aperture.get("a"), aperture.get("b")
+        return bool(a and b and abs(a[1]) < 0.01 and abs(b[1]) < 0.01 and min(a[0], b[0]) < 10)
+    level1["apertures"] = [a for a in level1.get("apertures", []) if not south_glass(a)]
     level1["apertures"].append(
         {
             "a": [-97.0, 0.0],
-            "b": [-10.0, 0.0],
+            "b": [-18.0, 0.0],
             "height": 32.5,
-            "openings": [{"center": 43.5, "width": 80, "kind": "curtainwall", "sill": 0, "head": 30}],
+            "openings": [{"center": 39.5, "width": 74, "kind": "curtainwall", "sill": 0, "head": 30}],
+        }
+    )
+    level1["apertures"].append(
+        {
+            "a": [-18.0, 0.0],
+            "b": [10.0, 0.0],
+            "height": 32.5,
+            "openings": [
+                {"center": 5.5, "width": 9, "kind": "curtainwall", "sill": 0, "head": 30},
+                {"center": 14, "width": 6, "kind": "door", "sill": 0, "head": 8},
+                {"center": 22.5, "width": 9, "kind": "curtainwall", "sill": 0, "head": 30},
+            ],
         }
     )
     # The old single east-glass run crossed the coaches' suite. Keep glass on the double-height bays only.
@@ -350,6 +780,10 @@ def apply_review(layout):
             [10.0, 0.0],
             [-97.0, 0.0],
             [-97.0, -16.0],
+            [-66.5, -16.0],
+            [-66.5, -28.0],
+            [-42.5, -28.0],
+            [-42.5, -16.0],
             [-10.0, -16.0],
             [-10.0, -28.0],
             [-5.0, -28.0],
@@ -361,9 +795,9 @@ def apply_review(layout):
             void["polygon"] = [list(p) for p in void_lobby]
     # Floor holes follow the flights only, so landings keep a slab.
     flight_voids = {
-        "stair_main_opening": [[-66.0, -24.0], [-50.0, -24.0], [-50.0, -17.0], [-66.0, -17.0]],
-        "stair_main_upper": [[-50.0, -40.0], [-43.0, -40.0], [-43.0, -24.0], [-50.0, -24.0]],
-        "stair_main_landing": [[-50.0, -24.0], [-43.0, -24.0], [-43.0, -17.0], [-50.0, -17.0]],
+        "stair_main_opening": [[-66.0, -36.0], [-50.0, -36.0], [-50.0, -29.0], [-66.0, -29.0]],
+        "stair_main_upper": [[-50.0, -52.0], [-43.0, -52.0], [-43.0, -36.0], [-50.0, -36.0]],
+        "stair_main_landing": [[-50.0, -36.0], [-43.0, -36.0], [-43.0, -29.0], [-50.0, -29.0]],
         "stair_second_opening": [[-320.0, -111.0], [-305.5, -111.0], [-305.5, -105.0], [-320.0, -105.0]],
         "stair_second_upper": [[-339.5, -111.0], [-325.0, -111.0], [-325.0, -105.0], [-339.5, -105.0]],
         "stair_west_opening": [[-354.0, -78.0], [-348.0, -78.0], [-348.0, -62.0], [-354.0, -62.0]],
@@ -393,10 +827,10 @@ def apply_review(layout):
         if stair["id"] == "stair_main":
             # East edge stops at x=-43 so the top tread clears the wall face at x=-42.835.
             stair["flights"] = [
-                flight("main_a", [[-66.0, -24.0], [-50.0, -24.0], [-50.0, -17.0], [-66.0, -17.0]], [1, 0], 0, 7),
-                flight("main_b", [[-50.0, -40.0], [-43.0, -40.0], [-43.0, -24.0], [-50.0, -24.0]], [0, -1], 10, 7),
+                flight("main_a", [[-66.0, -36.0], [-50.0, -36.0], [-50.0, -29.0], [-66.0, -29.0]], [1, 0], 0, 7),
+                flight("main_b", [[-50.0, -52.0], [-43.0, -52.0], [-43.0, -36.0], [-50.0, -36.0]], [0, -1], 10, 7),
             ]
-            stair["landings"] = [landing("main_turn", [[-50.0, -24.0], [-43.0, -24.0], [-43.0, -17.0], [-50.0, -17.0]], 10)]
+            stair["landings"] = [landing("main_turn", [[-50.0, -36.0], [-43.0, -36.0], [-43.0, -29.0], [-50.0, -29.0]], 10)]
             stair["polygon"] = [list(p) for p in stair_poly]
         elif stair["id"] == "stair_second":
             stair["flights"] = [
@@ -410,6 +844,7 @@ def apply_review(layout):
                 flight("west_b", [[-354.0, -54.0], [-348.0, -54.0], [-348.0, -38.0], [-354.0, -38.0]], [0, 1], 10, 6),
             ]
             stair["landings"] = [landing("west_turn", [[-354.0, -62.0], [-348.0, -62.0], [-348.0, -54.0], [-354.0, -54.0]], 10)]
+    apply_round2(layout)
     furnish(layout)
 
 
@@ -429,11 +864,11 @@ def furnish(layout):
     """Purposeful furniture. Priority rooms are placed by hand; every other occupied room gets a fit-out."""
     level1, level2 = layout["levels"]
     props1 = [
-        prop_at("reception_desk", "front_desk", -6, -16, 270, "lobby", length=22, bays=5),
-        prop_at("ping_pong_1", "ping_pong_table", -32, -8, 0, "south_vestibule"),
-        prop_at("ping_pong_2", "ping_pong_table", -52, -8, 0, "south_vestibule"),
-        prop_at("vending_1", "vending_machine", -74, -3, 0, "south_vestibule"),
-        prop_at("vending_2", "vending_machine", -88, -3, 0, "south_vestibule"),
+        prop_at("reception_desk", "front_desk", -6, -21, 270, "lobby", length=22, bays=5, depth=6),
+        prop_at("ping_pong_1", "ping_pong_table", -36, -4, 90, "south_vestibule"),
+        prop_at("ping_pong_2", "ping_pong_table", -58, -4, 90, "south_vestibule"),
+        prop_at("vending_1", "vending_machine", -80, -3, 0, "south_vestibule"),
+        prop_at("vending_2", "vending_machine", -92, -3, 0, "south_vestibule"),
         prop_at("hall_trash", "trash_bin", -20, -4, 0, "south_vestibule"),
         prop_at("trophy_main", "trophy_case", -72, -100, 0, "corridor_entry_link"),
         prop_at("jersey_1", "jersey_frame", -68, -110, 90, "corridor_entry_link"),
@@ -458,40 +893,86 @@ def furnish(layout):
         prop_at("fit_climb_1", "stair_climber", -40, -140, 0, "fitness_center"),
         prop_at("fit_bike_1", "upright_bike", -30, -140, 90, "fitness_center"),
         prop_at("fit_ell_1", "elliptical", -20, -140, 90, "fitness_center"),
-        prop_at("cube_1", "cubicle", -20, -96, 0, "coach_suite"),
-        prop_at("cube_2", "cubicle", -10, -96, 0, "coach_suite"),
-        prop_at("cube_3", "cubicle", -20, -106, 180, "coach_suite"),
-        prop_at("cube_4", "cubicle", -10, -106, 180, "coach_suite"),
+        prop_at("cube_1", "cubicle", -22, -88, 0, "coach_suite"),
+        prop_at("cube_2", "cubicle", -14, -88, 0, "coach_suite"),
+        prop_at("cube_3", "cubicle", -6, -88, 0, "coach_suite"),
+        prop_at("cube_4", "cubicle", -22, -100, 180, "coach_suite"),
+        prop_at("cube_5", "cubicle", -14, -100, 180, "coach_suite"),
+        prop_at("cube_6", "cubicle", -6, -100, 180, "coach_suite"),
+        prop_at("suite_desk_n", "office_desk", -16, -108, 180, "coach_suite"),
+        prop_at("suite_chair_n", "office_chair", -16, -104, 180, "coach_suite"),
+        prop_at("suite_desk_e", "office_desk", -2, -96, 90, "coach_suite"),
+        prop_at("suite_chair_e", "office_chair", -6, -96, 90, "coach_suite"),
+        prop_at("suite_reception", "office_desk", -16, -90, 0, "coach_suite"),
+        prop_at("suite_reception_chair", "office_chair", -16, -86, 0, "coach_suite"),
         prop_at("suite_board", "bulletin_board", -4, -90, 90, "coach_suite"),
-        prop_at("suite_mail", "mail_slots", 0, -100, 90, "coach_suite"),
+        prop_at("suite_mail", "mail_slots", 0, -104, 90, "coach_suite"),
         prop_at("suite_clock", "wall_clock", -14, -84, 180, "coach_suite"),
-        prop_at("head_desk", "office_desk", -34, -90, 0, "coach_head"),
-        prop_at("head_chair", "office_chair", -34, -86, 0, "coach_head"),
+        prop_at("head_desk", "office_desk", -34, -88, 0, "coach_head"),
+        prop_at("head_chair", "office_chair", -34, -84, 0, "coach_head"),
+        prop_at("west_desk", "office_desk", -34, -104, 0, "coach_west"),
+        prop_at("west_chair", "office_chair", -34, -100, 0, "coach_west"),
+        prop_at("westn_desk", "office_desk", -34, -118, 0, "coach_west_n"),
+        prop_at("westn_chair", "office_chair", -34, -114, 0, "coach_west_n"),
+        prop_at("north_desk", "office_desk", -13, -118, 180, "coach_north"),
+        prop_at("north_chair", "office_chair", -13, -114, 180, "coach_north"),
+        prop_at("easts_desk", "office_desk", 6, -88, 90, "coach_east_s"),
+        prop_at("easts_chair", "office_chair", 7.2, -88, 90, "coach_east_s"),
+        prop_at("eastm_desk", "office_desk", 6, -104, 90, "coach_east_m"),
+        prop_at("eastm_chair", "office_chair", 7.2, -104, 90, "coach_east_m"),
+        prop_at("eastn_desk", "office_desk", 6, -118, 90, "coach_east_n"),
+        prop_at("eastn_chair", "office_chair", 3, -118, 90, "coach_east_n"),
         prop_at("head_plate", "nameplate", -26.5, -88, 270, "coach_suite", text="HEAD COACH"),
         prop_at("train_t1", "training_table", -230, -72, 90, "training_room"),
         prop_at("train_t2", "training_table", -230, -84, 90, "training_room"),
         prop_at("train_t3", "training_table", -218, -72, 90, "training_room"),
         prop_at("train_t4", "training_table", -218, -84, 90, "training_room"),
-        prop_at("train_ice", "ice_machine", -210, -88, 0, "training_room"),
-        prop_at("train_cab_1", "supply_cabinet", -232, -78, 90, "training_room"),
-        prop_at("train_cab_2", "supply_cabinet", -232, -68, 90, "training_room"),
-        prop_at("train_desk", "office_desk", -214, -66, 180, "training_room"),
-        prop_at("train_chair", "office_chair", -214, -69, 180, "training_room"),
+        prop_at("train_ice", "ice_machine", -228, -89, 180, "training_room"),
+        prop_at("train_plate", "nameplate", -214, -64, 180, "training_room", text="ATHLETIC TRAINING"),
+        prop_at("train_cab_1", "supply_cabinet", -234, -80, 90, "training_room"),
+        prop_at("train_cab_2", "supply_cabinet", -234, -72, 90, "training_room"),
+        prop_at("train_cab_3", "supply_cabinet", -222, -89, 180, "training_room"),
+        prop_at("train_desk", "office_desk", -210, -66, 0, "training_room"),
+        prop_at("train_chair", "office_chair", -210, -69, 0, "training_room"),
         prop_at("train_board", "bulletin_board", -222, -64, 180, "training_room"),
-        prop_at("train_trash", "trash_bin", -208, -66, 0, "training_room"),
-        prop_at("vb_net", "volleyball_standard", -136, -206, 0, "competition_gym"),
-        prop_at("vb_bleach_s", "bleacher_bank", -160, -140, 0, "competition_gym", length=28, rows=8),
-        prop_at("vb_bleach_n", "bleacher_bank", -136, -270, 180, "competition_gym", length=28, rows=8),
-        prop_at("vb_score", "scoreboard", -100, -200, 90, "competition_gym"),
-        prop_at("vb_banner_1", "banner", -120, -150, 0, "competition_gym"),
-        prop_at("vb_banner_2", "banner", -150, -150, 0, "competition_gym"),
-        prop_at("vb_cart", "ball_cart", -100, -160, 0, "competition_gym"),
-        prop_at("vb_fountain", "water_fountain", -90, -170, 90, "competition_gym"),
-        prop_at("vb_trash", "trash_bin", -90, -180, 0, "competition_gym"),
-        prop_at("nutri_fridge", "industrial_fridge", -188.5, -97.5, 0, "nutrition_vestibule"),
-        prop_at("lock_bank_1", "locker_bank_wood", -180, -118, 0, "locker_volleyball"),
-        prop_at("lock_bank_2", "locker_bank_metal", -168, -118, 0, "locker_volleyball"),
-        prop_at("lock_bench", "bench_locker", -174, -110, 0, "locker_volleyball"),
+        prop_at("train_bike", "upright_bike", -208, -78, 270, "training_room"),
+        prop_at("train_climb", "stair_climber", -208, -86, 270, "training_room"),
+        prop_at("train_fountain", "water_fountain", -208, -70, 270, "training_room"),
+        prop_at("train_trash", "trash_bin", -214, -66, 0, "training_room"),
+        prop_at("train_recycle", "recycle_bin", -216, -66, 0, "training_room"),
+        prop_at("vb_net", "volleyball_standard", -136, -206, 90, "competition_gym"),
+        prop_at("vb_bleach_e", "bleacher_bank", -86, -206, 90, "competition_gym", length=60, rows=8),
+        prop_at("vb_bleach_w", "bleacher_bank", -186, -206, 270, "competition_gym", length=60, rows=8),
+        prop_at("vb_pad_n", "wall_pad", -136, -276, 180, "competition_gym", length=40),
+        prop_at("vb_pad_s", "wall_pad", -150, -184, 0, "competition_gym", length=36),
+        prop_at("vb_schedule", "bulletin_board", -100, -160, 90, "gym_foyer"),
+        prop_at("vb_cart_3", "ball_cart", -120, -150, 0, "gym_foyer"),
+        prop_at("vb_cart_4", "ball_cart", -150, -148, 0, "gym_foyer"),
+        prop_at("vb_bags", "supply_cabinet", -170, -148, 0, "gym_foyer"),
+        prop_at("vb_towel", "supply_cabinet", -180, -148, 180, "gym_foyer"),
+        prop_at("vb_pad_e", "wall_pad", -82, -160, 90, "competition_gym", length=20),
+        prop_at("vb_pad_w", "wall_pad", -190, -160, 270, "competition_gym", length=20),
+        prop_at("vb_score", "scoreboard", -90, -206, 90, "competition_gym"),
+        prop_at("vb_banner_1", "banner", -120, -142, 0, "competition_gym"),
+        prop_at("vb_banner_2", "banner", -150, -142, 0, "competition_gym"),
+        prop_at("vb_banner_3", "banner", -136, -272, 180, "competition_gym"),
+        prop_at("vb_flag", "flag", -84, -148, 90, "competition_gym"),
+        prop_at("vb_cart_1", "ball_cart", -108, -158, 0, "competition_gym"),
+        prop_at("vb_cart_2", "ball_cart", -116, -158, 0, "competition_gym"),
+        prop_at("vb_fountain", "water_fountain", -84, -172, 90, "competition_gym"),
+        prop_at("vb_trash", "trash_bin", -96, -168, 0, "competition_gym"),
+        prop_at(
+            "nutri_fridge",
+            "industrial_fridge",
+            -212,
+            -165,
+            270,
+            "nutrition_vestibule",
+            sign="MATT CORSON NUTRITION STATION",
+        ),
+        prop_at("lock_bank_1", "locker_bank_wood", -216, -156, 0, "locker_volleyball"),
+        prop_at("lock_bank_2", "locker_bank_metal", -210, -156, 0, "locker_volleyball"),
+        prop_at("lock_bench", "bench_locker", -214, -148, 0, "locker_volleyball"),
     ]
     props2 = [
         prop_at("l2_bike_1", "upright_bike", -36, -22, 180, "cardio_south"),
@@ -504,6 +985,10 @@ def furnish(layout):
         prop_at("l2_tread_3", "treadmill", -16, -96, 270, "cardio_gallery"),
         prop_at("l2_climb_1", "stair_climber", -24, -120, 270, "cardio_gallery"),
         prop_at("l2_row_1", "rower", -30, -100, 0, "cardio_gallery"),
+        prop_at("bball_sign", "nameplate", -345, -128, 180, "basketball_approach", text="BASKETBALL — OFF LIMITS"),
+        prop_at("grade_sign", "nameplate", -348, -110, 270, "basketball_approach", text="LEVEL 2 EXIT AT GRADE"),
+        prop_at("l2_hall_trash", "trash_bin", -70, -200, 0, "corridor_l2_overlook"),
+        prop_at("l2_hall_board", "bulletin_board", -66, -240, 90, "corridor_l2_overlook"),
     ]
     placed = {p["room"] for p in props1}
     placed2 = {p["room"] for p in props2}
@@ -731,6 +1216,33 @@ def seal_joints(walls):
     for wall in walls:
         dedupe_openings(wall)
     return walls
+
+
+def match_stacked_faces(upper, lower):
+    """Keep an upper wall as thick as the wall under it.
+
+    A thicker upper wall notches the walls that tee into it by half that
+    thickness. The wall below was thinned to 0.28 ft, so the notch stops
+    short of its face and the geometry check reports a gap.
+    """
+    changed = 0
+    for wall in upper:
+        ax = axis_of(wall)
+        if ax is None or wall.get("thickness", 0) <= 0.28:
+            continue
+        a0, a1 = span_of(wall, ax)
+        line = wall["a"][1 - ax]
+        for under in lower:
+            if axis_of(under) != ax or abs(under["a"][1 - ax] - line) > 0.05:
+                continue
+            b0, b1 = span_of(under, ax)
+            if min(a1, b1) - max(a0, b0) < 1:
+                continue
+            if under["thickness"] + 0.01 < wall["thickness"]:
+                wall["thickness"] = under["thickness"]
+                changed += 1
+                break
+    return changed
 
 
 def extend_past_rail(upper, lower):
@@ -1024,7 +1536,7 @@ def add_overlook_glass(level):
         if abs(a[0] - b[0]) > 0.01 or abs(a[0] + 78.5) > 0.01:
             continue
         z0, z1 = sorted((a[1], b[1]))
-        lo, hi = max(z0, -262.0), min(z1, -132.5)
+        lo, hi = max(z0, -279.5), min(z1, -92.5)
         if hi - lo < 8:
             continue
         length = abs(b[1] - a[1])
@@ -1122,6 +1634,19 @@ def split_for_guard(walls, a, b):
     return out
 
 
+def add_court_glass(level):
+    """Glass back wall of the racquetball courts on the west side of the overlook."""
+    for wall in level["walls"]:
+        a, b = wall["a"], wall["b"]
+        if abs(a[0] - b[0]) > 0.01 or abs(a[0] + 78.5) > 0.01:
+            continue
+        z0, z1 = sorted((a[1], b[1]))
+        if min(z1, -279.5) - max(z0, -319.5) < 8:
+            continue
+        wall["material"] = "glass"
+        wall["thickness"] = 0.25
+
+
 def add_coach_storefront(level):
     """Glass wall and glass door on the south face of the coaches' suite."""
     for wall in level["walls"]:
@@ -1200,6 +1725,71 @@ def add_coach_storefront(level):
         wall["openings"] = outside + openings
 
 
+FOOTPRINT = [
+    [-97, 0],
+    [-97, 47],
+    [-236.5, 47],
+    [-236.5, -34],
+    [-357.5, -34],
+    [-357.5, -81.5],
+    [-346.5, -81.5],
+    [-346.5, -87],
+    [-351.5, -87],
+    [-351.5, -220],
+    [-225, -220],
+    [-225, -180],
+    [-193.5, -180],
+    [-193.5, -279.5],
+    [-4.5, -279.5],
+    [-4.5, -195.5],
+    [10, -195.5],
+    [10, 0],
+]
+
+
+def write_carve():
+    """Air-fill every compiled room and wall. The site script calls Carve.apply after voxels."""
+    rooms = []
+    walls = []
+    for name in ("level1", "level2"):
+        level = load(f"{name}.json")
+        elev = float(level["elevation"])
+        for room in level["rooms"]:
+            ceil = float(room.get("ceilingHeight") or 12)
+            y1 = elev + ceil
+            poly = ",".join("{%g,%g}" % (p[0], p[1]) for p in room["polygon"])
+            rooms.append("\t\t{y0=-1,y1=%g,polygon={%s}}," % (round(y1, 2), poly))
+        for wall in level["walls"]:
+            y1 = elev + float(wall.get("height") or 12)
+            walls.append(
+                "\t\t{ax=%g,az=%g,bx=%g,bz=%g,thickness=%g,y0=-1,y1=%g},"
+                % (
+                    wall["a"][0],
+                    wall["a"][1],
+                    wall["b"][0],
+                    wall["b"][1],
+                    wall.get("thickness") or 0.67,
+                    round(y1, 2),
+                )
+            )
+    foot = ",".join("{%g,%g}" % (p[0], p[1]) for p in FOOTPRINT)
+    text = (
+        "--!strict\n"
+        "-- Generated from blueprint room polygons, walls, and the site footprint.\n"
+        "return {\n"
+        "\trooms = {\n"
+        + "\n".join(rooms)
+        + "\n\t},\n\twalls = {\n"
+        + "\n".join(walls)
+        + "\n\t},\n\tfootprint = {"
+        + foot
+        + "},\n}\n"
+    )
+    path = ROOT / "src" / "ReplicatedStorage" / "RAC" / "Site" / "CarveData.luau"
+    path.write_text(text, encoding="utf-8")
+    print("carve rooms", len(rooms), "walls", len(walls))
+
+
 def main():
     layout = load("architect_layout.json")
     prepare_layout(layout)
@@ -1223,12 +1813,21 @@ def main():
         else:
             raise_level2_stair_walls(level)
             add_overlook_glass(level)
+            add_court_glass(level)
+            print("stacked faces", match_stacked_faces(level["walls"], levels["level1"][0]["walls"]))
             for guard_a, guard_b in GUARD_SPANS:
                 level["walls"] = split_for_guard(level["walls"], guard_a, guard_b)
         if name == "level1":
             add_coach_storefront(level)
         avoid_roof_faces(level, site["roofs"])
         lift_flush_ceilings(level)
+        if name == "level2":
+            level["guards"] = [
+                {"id": "gallery_guard_1", "a": [-5.0, -154.5], "b": [-5.0, -28.0], "kind": "horizontal_rail"},
+                {"id": "gallery_guard_2", "a": [-10.0, -28.0], "b": [-5.0, -28.0], "kind": "horizontal_rail"},
+                {"id": "gallery_guard_3", "a": [-10.0, -28.0], "b": [-10.0, -16.0], "kind": "horizontal_rail"},
+                {"id": "cardio_rail", "a": [-42.5, -16.0], "b": [-10.0, -16.0], "kind": "horizontal_rail"},
+            ]
         retag(level, prefix)
         # Openings must sit on the wall. Drop any that the split clipped to nothing useful.
         for wall in level["walls"]:
@@ -1244,6 +1843,7 @@ def main():
             wall["openings"] = kept
         save(f"{name}.json", level)
         print(name, "walls", len(level["walls"]))
+    write_carve()
 
 
 if __name__ == "__main__":

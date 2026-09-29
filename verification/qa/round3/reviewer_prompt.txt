@@ -1,0 +1,81 @@
+You are an independent QA REVIEWER for a 1:1 Roblox recreation of GMU's RAC. You did NOT build it; your job is to find everything that is wrong
+before the user sees it. Do NOT edit blueprint/, src/, or the RAC model. You may use the Roblox_Studio MCP in the place 'TwentyHours.rbxl' (never
+'Jay test') to move the camera, playtest, use character_navigation and screen_capture. Save all evidence under verification/qa/round3/. Use subagents for offline analysis.
+Read first: AGENTS.md, docs/WALKTHROUGH.md (AUTHORITATIVE), docs/SPEC.md, docs/ARCHITECT_NOTES.md, verification/exterior/ROOF_HEIGHTS.md, and verification/qa/round3/build.txt,
+verification/qa/round3/blueprint_check.txt (automated check output: every FAIL line there is at least a major issue).
+Review three ways:
+A. ROUTE WALK: follow docs/WALKTHROUGH.md step by step as a player (playtest + character_navigation, or camera at eye height 5.5 ft if navigation
+   fails). At EVERY step screen_capture to verification/qa/round3/route/stepNN.png and state what should be visible and whether it is (e.g. "L2 hallway: volleyball gym
+   visible on the LEFT through glass"). Any step that is missing, in the wrong order, on the wrong side, or not physically walkable = critical.
+B. EXTERIOR: capture from the camera positions of the exterior photos (IMG_0349-0368, WEB_entrance_1/2, WEB_entrance_left_pole; stations in
+   blueprint/photo_stations.json), make pairs with python tools/side_by_side.py into verification/qa/round3/pairs/, and compare: entrance stairs/ramp, canopy shape,
+   glass wrap, facade materials, roads/roundabout sitting on the real ground (compare with verification/exterior/terrain_grid.json / lidar), trees.
+C. BUILDING SENSE: does it function as a real building? Stairs connect floors with real risers (<= 7.75 in) and landings, every upper floor is
+   supported, railings at every drop/void edge, every door leads somewhere, windows face outside or into gyms intentionally, no floating/stray/
+   pointless elements, no rooms without access, lighting present, nothing clipping.
+The user's own complaints (must each be explicitly re-checked; still broken = critical):
+USER REVIEW of the current build in Studio (2026-09-28 23:45). These are REQUIRED fixes, higher priority than anything else:
+1. The Level 2 hallway with the gym OVERLOOK does not really exist. Build it: a real Level 2 corridor you can walk, with glass windows on the LEFT
+   (walking away from the entrance glass) looking down into the volleyball/competition gym, as in IMG_0344/0345 and WEB_vb_gym_overlook.
+2. The interior stairs do not match the walkthrough: main stair = TWO flights, first flight up to a small square landing, turn LEFT, second
+   flight up to Level 2 (+20 ft); the second stair (down, opposite direction) is on the right after the racquetball courts; the stair up near the
+   volleyball locker room leads to the basketball door + Level 2 exit. Every stair must actually connect the two floors with sane risers/landings.
+3. The exterior stairs up to the RAC entrance are wrong: match WEB_entrance_1/2 and IMG_0364-0368 (wide concrete stair + handrails + ramp).
+4. The roundabout / road is too LOW relative to the building - roads/hardscape must sit on the real ground surface from the lidar.
+5. The black overhang (canopy) over the entrance glass is wrong - match WEB_entrance_2 / WEB_entrance_left_pole: a thin dark wedge-shaped
+   cantilever over the glass, with the glass wrapping the corner.
+6. There are weird/stray elements - remove anything that has no real-world counterpart.
+7. Trees look unnatural - use normal-looking trees (trunk + layered canopy / pines as in the photos), not odd shapes.
+8. It must function as a real building beyond the photos: circulation that makes sense, rooms you can enter, floors that are supported,
+   railings at every drop, no dead ends or pointless spaces.
+Keep the earlier correction: main entrance on the SOUTH smaller glass section.
+9. RECEPTION DESK (user, 23:47): it is IN the front entry room you walk into, BIGGER than modeled, its long axis PERPENDICULAR to the entrance
+   window, and it has a counter within it (a raised transaction counter on top of / inside a larger desk enclosure - staff stand inside it).
+   Match IMG_0369 (long counter with frosted panels, white top). Size it as a real rec-center control desk (~20-25 ft long).
+
+# User review of the live build (2026-09-29 01:40) — REQUIRED fixes (QA re-checks every item each round)
+
+## Structure / interior (architect)
+1. **Main staircase is too close to the entrance window.** Move it back into the building. It also **starts the other way**: the FIRST flight
+   runs **along/against the wall**, up to the small square landing, then turns LEFT for the second flight to Level 2.
+2. **Missing hallway immediately LEFT of the main door.** Right as you enter, a hallway goes to the left and must run **all the way down and
+   connect to the (volleyball/competition) gym**. (This is the wide hallway along the glass wrap with ping-pong/vending described in
+   docs/WALKTHROUGH.md — it must actually exist, be continuous, and reach the gym doors.)
+3. **Level 2 railing where the workout machines are:** the Level 2 area with cardio/workout machines along the open edge needs a proper
+   guardrail (horizontal-rail style, IMG_0343/0369/0370, WEB_entrance_from_level2).
+4. **Coaches' office suite:** enter the main door, go **straight past the workout equipment (on your right)** → a **bigger office area with many
+   offices** — an open **cubicle space** with private offices around it; its **entrance is interior glass** (glass wall + glass door). One private
+   office is the **head coach's office** (nameplate "HEAD COACH"; do not use a real person's name). Match IMG_0323–0327 (reception, cubicles,
+   carpet, offices).
+5. **Interiors must be fully built out and make sense** — every room furnished for its purpose, nothing empty, no rooms that make no sense.
+   The building "has no life": add lived-in detail (team bags, balls in carts, water bottles, posters/schedules, whiteboards, towels, equipment
+   in use positions, trash bins, signage) where photos/logic support it. Priority: **our volleyball gym** and the **athletic trainer's office /
+   training room** (green tables, taping stations, ice machine, supply cabinets, rehab equipment, whiteboard, desk).
+6. Keep iterating the interior against the photos until it matches **at least 90 %** (judges ≥ 8/10 on every interior station).
+
+## Exterior (exterior)
+7. **Parking lots:** all the roads/drive aisles actually connect into the lots with entrances/exits, drive aisles, stall striping, curbs, islands,
+   light poles, signs, ramps — the "little features". **No grass inside parking lots** (terrain under lots must be asphalt).
+8. Everything else from docs/reviews/USER-2026-09-28-2345.md still applies.
+
+# Manager findings from the architect's verification screenshots (2026-09-29 02:30) — treat as REQUIRED, same as user items
+
+Screens: verification/M1/user0140/*.png
+1. **Materials are not applied.** The competition/volleyball gym floor renders grey-white instead of bright glossy maple with the Mason-green apron
+   and gold lines; corridors, lobby, walls all read as flat grey plaster. The builder must actually apply src/ReplicatedStorage/RAC/Materials.luau +
+   art/materials textures (MaterialVariants or Textures/SurfaceAppearance with correct studsPerTile) per room floorMaterial / wallFinish.
+   Verify with close-up screenshots of each material.
+2. **Grass/terrain inside the building** (hall-north.png: grass tufts in a corridor). Terrain must be cleared under the whole footprint
+   (and under every slab/void) and grass decoration disabled there. No terrain may poke through any floor.
+3. **Lighting inside is wrong**: some spaces nearly black (stair-from-hall.png), others flat. Place the real fixtures (high bays, troffers,
+   downlights) with sensible brightness; Future lighting; no pitch-black interiors in daytime.
+4. **Rooms still read as empty / scattered props** (coaches.png). Layouts must be arranged like a real space (cubicle rows, desks against
+   walls, chairs at desks), not scattered objects.
+5. **7 floating prop parts** (Level 2 water fountain, treadmill) — fix.
+
+Report EVERY problem with severity (critical = wrong vs walkthrough/photos or non-functional; major = clearly unrealistic/illogical; minor =
+cosmetic), owner (architect = anything in or of the building structure/interior; exterior = terrain, roads, parking, trees, facades, canopy,
+entrance stairs), area, issue, evidence (screenshot path + what you measured), and a concrete fix. Be strict and specific.
+Do the FULL review first (expect 60-200 tool calls). Only at the very end, write verification/qa/round3/ISSUES_REVIEW.json exactly in this JSON format
+{"issues":[{"severity":"critical|major|minor","owner":"architect|exterior","area":"...","issue":"...","evidence":"...","fix":"..."}],"summary":"..."}
+and a readable verification/qa/round3/REVIEW.md. A review with no screenshots under verification/qa/round3/route/ and verification/qa/round3/pairs/ is invalid.

@@ -24,6 +24,16 @@ end
 
 local function isHung(path: string): boolean
 	local p = lower(path)
+	-- These fixtures stand on the floor. A deck, apron, or cabinet in the name is not a ceiling.
+	if string.find(p, ".props.", 1, true) then
+		if string.find(p, "treadmill", 1, true)
+			or string.find(p, "waterfountain", 1, true)
+			or string.find(p, "frontdesk", 1, true)
+			or string.find(p, "pingpongtable", 1, true)
+		then
+			return false
+		end
+	end
 	for _, k in HUNG do
 		if string.find(p, k, 1, true) then
 			return true

@@ -22,6 +22,28 @@ function IceMachine.build(cf: CFrame, _opts: { [string]: any }?): Model
 		true
 	)
 	b:box("Vent", Vector3.new(1.6, 0.35, 0.04), Kit.at(0, 2.5, -1.1), dark, Enum.Material.Metal, false)
+	local iceSign = b:box(
+		"IceSign",
+		Vector3.new(1.3, 0.32, 0.02),
+		Kit.at(0, 2.85, -1.12),
+		Color3.fromRGB(0, 82, 45),
+		Enum.Material.SmoothPlastic,
+		false
+	)
+	local gui = Instance.new("SurfaceGui")
+	gui.Name = "Sign"
+	gui.Face = Enum.NormalId.Front
+	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+	gui.PixelsPerStud = 48
+	gui.LightInfluence = 0
+	gui.Parent = iceSign
+	local label = Instance.new("TextLabel")
+	label.BackgroundTransparency = 1
+	label.Size = UDim2.fromScale(1, 1)
+	label.Text = "ICE"
+	label.TextColor3 = Color3.fromRGB(255, 204, 0)
+	label.TextScaled = true
+	label.Parent = gui
 	return b:done()
 end
 

@@ -13,8 +13,8 @@ export type MaterialDefinition = {
 
 local definitions: { [string]: MaterialDefinition } = {
 	maple = {
-		base = Enum.Material.Wood,
-		color = Color3.fromRGB(227, 202, 157),
+		base = Enum.Material.WoodPlanks,
+		color = Color3.fromRGB(216, 185, 138),
 		texture = "art/materials/maple_court.png",
 		studsPerTile = 4,
 		roughness = 0.18,
@@ -22,7 +22,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	terrazzo = {
 		base = Enum.Material.Concrete,
-		color = Color3.fromRGB(191, 187, 175),
+		color = Color3.fromRGB(184, 176, 164),
 		texture = "art/materials/terrazzo_corridor.png",
 		studsPerTile = 4,
 		roughness = 0.25,
@@ -30,7 +30,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	porcelain_tile = {
 		base = Enum.Material.Marble,
-		color = Color3.fromRGB(193, 189, 179),
+		color = Color3.fromRGB(175, 167, 156),
 		texture = "art/materials/porcelain_tile_12x24.png",
 		studsPerTile = 4,
 		roughness = 0.32,
@@ -38,7 +38,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	carpet_tile = {
 		base = Enum.Material.Fabric,
-		color = Color3.fromRGB(57, 65, 72),
+		color = Color3.fromRGB(68, 70, 74),
 		texture = "art/materials/carpet_tile_office.png",
 		studsPerTile = 4,
 		roughness = 0.95,
@@ -70,7 +70,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	vinyl = {
 		base = Enum.Material.SmoothPlastic,
-		color = Color3.fromRGB(191, 187, 175),
+		color = Color3.fromRGB(184, 176, 164),
 		texture = "art/materials/terrazzo_corridor.png",
 		studsPerTile = 4,
 		roughness = 0.4,
@@ -78,7 +78,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	painted_cmu = {
 		base = Enum.Material.Concrete,
-		color = Color3.fromRGB(229, 228, 217),
+		color = Color3.fromRGB(232, 230, 224),
 		texture = "art/materials/painted_cmu.png",
 		studsPerTile = 4,
 		roughness = 0.7,
@@ -184,15 +184,12 @@ local function apply(part: BasePart, key: string)
 	-- Scalar metadata for the Studio PBR workflow; Roblox needs a roughness map.
 	part:SetAttribute("RACRoughness", definition.roughness)
 	-- Maple court boards are finished gloss. Other floors stay matte.
-	part.Reflectance = if key == "maple" then 0.22 else 0
-
-	local variantName = ensureVariant(key)
-	if variantName == nil then
-		return
+	part.Reflectance = if key == "maple" then 0.28 else 0
+	-- Rojo syncs RAC_* into MaterialService. Naming the variant here is enough;
+	-- creating one from a play script lacks the Plugin capability.
+	if definition.assetId ~= nil and definition.assetId ~= "" then
+		part.MaterialVariant = "RAC_" .. key
 	end
-	-- Albedo is already colored. White avoids applying the fallback tint twice.
-	part.Color = Color3.new(1, 1, 1)
-	part.MaterialVariant = variantName
 end
 
 -- Entries remain mutable so the Studio owner can supply uploaded asset IDs.

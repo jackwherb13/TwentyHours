@@ -1,0 +1,23 @@
+Built places/build.rbxm from blueprint
+Part counts by category:
+  Ceilings     2450
+  Columns      12
+  Facade       37
+  Floors       134
+  Lights       8846
+  Props        8773
+  Roofs        49
+  SiteContext  2883
+  Stairs       297
+  Walls        4216
+Total: 27697 parts; build time: 9.633 s
+Geometry QA: complete RAC (including props)
+degenerate   0
+doorBlocked  0
+floating     0
+zfight       0
+intersect    0
+gap          0
+27697 parts checked, 0 issues
+PASS complete RAC geometry.
+Build + QA elapsed: 12.040 s

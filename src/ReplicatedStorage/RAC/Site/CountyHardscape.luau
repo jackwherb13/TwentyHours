@@ -87,13 +87,14 @@ function County.build(parent: Instance, site: any)
 		end
 		-- Shift off the pavement edge so a vertical face is not coplanar with the slab.
 		local ox, oz = -dz / length * 0.35, dx / length * 0.35
+		-- 6 in curb. Slab top is the lidar sample + 0.08, so the curb center sits 0.25 ft above that.
 		table.insert(dress, P.beam(
 			curbs,
 			"Curb",
-			Vector3.new(a[1] + ox, H.height(a[1], a[2]) + 0.47, a[2] + oz),
-			Vector3.new(b[1] + ox, H.height(b[1], b[2]) + 0.47, b[2] + oz),
-			0.42,
-			0.36,
+			Vector3.new(a[1] + ox, H.height(a[1], a[2]) + 0.33, a[2] + oz),
+			Vector3.new(b[1] + ox, H.height(b[1], b[2]) + 0.33, b[2] + oz),
+			0.5,
+			0.5,
 			"concrete",
 			true
 		))
@@ -106,16 +107,88 @@ function County.build(parent: Instance, site: any)
 			continue
 		end
 		local color = if mark.color == "yellow" then "yellow" else "white"
+		local stripeW = mark.width or 0.333
+		if stripeW < 0.8 then
+			stripeW = 0.333
+		end
 		table.insert(dress, P.beam(
 			paint,
 			"StallStripe",
 			Vector3.new(a[1], H.height(a[1], a[2]) + 0.163, a[2]),
 			Vector3.new(b[1], H.height(b[1], b[2]) + 0.163, b[2]),
-			math.clamp(mark.width or 0.3, 0.12, 2.2),
+			math.clamp(stripeW, 0.12, 2.2),
 			0.04,
 			color,
 			false
 		))
+	end
+	-- 9 x 18 ft stalls and a 24 ft aisle on large asphalt patches. Planimetric paint is kept above.
+	local stallCount = 0
+	local function addStripe(ax: number, az: number, bx: number, bz: number)
+		if stallCount >= 320 then
+			return
+		end
+		local mx, mz = (ax + bx) / 2, (az + bz) / 2
+		if not grounded(mx, mz) then
+			return
+		end
+		stallCount += 1
+		table.insert(dress, P.beam(
+			paint,
+			"StallStripe",
+			Vector3.new(ax, H.height(ax, az) + 0.17, az),
+			Vector3.new(bx, H.height(bx, bz) + 0.17, bz),
+			0.333,
+			0.04,
+			"white",
+			false
+		))
+	end
+	-- County patches are small cells, not one rectangle per lot. Stripe the largest cells first.
+	local ranked = {}
+	for _, q in source.patches do
+		if q.material == "asphalt" then
+			table.insert(ranked, q)
+		end
+	end
+	table.sort(ranked, function(a, b)
+		return a.w * a.d > b.w * b.d
+	end)
+	for _, q in ranked do
+		if stallCount >= 320 then
+			break
+		end
+		local cx, cz = q.x + q.w / 2, q.z + q.d / 2
+		local hy = H.height(cx, cz)
+		if onBuilding(site, cx, cz) or inEntrance(cx, cz) or hy > 8 then
+			continue
+		end
+		local alongX = q.w >= q.d
+		local length = if alongX then q.w else q.d
+		local depth = if alongX then q.d else q.w
+		if length < 18 or depth < 8 then
+			continue
+		end
+		local stallDepth = math.min(18, depth - 1)
+		local rows = math.clamp(math.floor((depth + 24) / 42), 1, 2)
+		for row = 0, rows - 1 do
+			local band = row * 42
+			if band + stallDepth > depth - 0.5 then
+				break
+			end
+			local n = math.min(math.floor((length - 2) / 9), 10)
+			for i = 0, n do
+				local t = 1 + i * 9
+				if t > length - 1 then
+					break
+				end
+				if alongX then
+					addStripe(q.x + t, q.z + band + 0.5, q.x + t, q.z + band + 0.5 + stallDepth)
+				else
+					addStripe(q.x + band + 0.5, q.z + t, q.x + band + 0.5 + stallDepth, q.z + t)
+				end
+			end
+		end
 	end
 	-- The geometry check uses AABBs. A sloped slab's box can share a face with a curb
 	-- even when the meshes do not. Nudge the thinner part until the faces separate.

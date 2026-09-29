@@ -242,6 +242,22 @@ function IndustrialFridge.build(cf: CFrame, opts: { [string]: any }?): Model
 	-- Center text banner: "MATT CORSON NUTRITION STATION" (or opts.sign)
 	local signText = if opts and opts.sign then tostring(opts.sign) else "MATT CORSON NUTRITION STATION"
 	local signCleanName = string.gsub(signText, "[^%w_]", "")
+	local signGui = Instance.new("SurfaceGui")
+	signGui.Name = "Sign"
+	signGui.Face = Enum.NormalId.Front
+	signGui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+	signGui.PixelsPerStud = 40
+	signGui.LightInfluence = 0
+	signGui.Parent = signFace
+	local signLabel = Instance.new("TextLabel")
+	signLabel.Name = "Label"
+	signLabel.BackgroundTransparency = 1
+	signLabel.Size = UDim2.fromScale(1, 1)
+	signLabel.Text = signText
+	signLabel.TextColor3 = MasonGold
+	signLabel.TextScaled = true
+	signLabel.TextWrapped = true
+	signLabel.Parent = signGui
 	b:box(
 		`SignTextBannerGold_{signCleanName}`,
 		Vector3.new(signW - 0.4, 0.28, 0.015),

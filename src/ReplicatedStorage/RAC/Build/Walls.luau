@@ -74,7 +74,7 @@ end
 -- Guard walls are the short glass segments the blueprint compiler emits. A solid
 -- glass panel is not the balcony rail in the photos.
 local function buildHorizontalRail(group: Folder, cf: CFrame, length: number)
-	local postCount = math.max(2, math.ceil(length / 4))
+	local postCount = math.max(2, math.ceil(length / 3))
 	local span = math.max(length - 0.4, 0.5)
 	local x0 = (length - span) / 2
 	for i = 0, postCount do
@@ -91,7 +91,8 @@ local function buildHorizontalRail(group: Folder, cf: CFrame, length: number)
 			true
 		)
 	end
-	Parts.box(group, "RailCap", Vector3.new(span, 0.18, 0.28), cf * CFrame.new(length / 2, 3.35, 0), "maple", true)
+	local cap = Parts.box(group, "RailCap", Vector3.new(span, 0.22, 0.32), cf * CFrame.new(length / 2, 3.35, 0), "metal_panel", true)
+	cap.Color = Color3.fromRGB(42, 44, 46)
 end
 
 local function doorNotice(parent: Instance, doorCF: CFrame, opening: any, thickness: number)

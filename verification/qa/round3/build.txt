@@ -1,0 +1,50 @@
+Walkthrough check: PASS; 0 failures
+Built places/build.rbxm from blueprint
+Part counts by category:
+  Ceilings     2509
+  Columns      12
+  Facade       37
+  Floors       150
+  Lighting     24655
+  Props        8896
+  Roofs        49
+  SiteContext  2554
+  Stairs       293
+  Walls        4207
+Total: 43362 parts; build time: 18.448 s
+Geometry QA: complete RAC (including props)
+degenerate   0
+doorBlocked  7
+   level1 door on l1_w075 @1.0 blocked by RAC.Props.1.BleacherBank.Skirt
+   level1 door on l1_w075 @1.0 blocked by RAC.Props.1.BleacherBank.Carriage
+   level1 door on l1_w111 @1.0 blocked by RAC.Props.1.WallPad.Panel0
+   level1 door on l1_w111 @1.0 blocked by RAC.Props.1.WaterFountain.Apron
+   level1 door on l1_w111 @1.0 blocked by RAC.Props.1.WaterFountain.BackB
+   level1 door on l1_w111 @1.0 blocked by RAC.Props.1.WaterFountain.BackA
+   level1 door on l1_w111 @1.0 blocked by RAC.Props.1.WallPad.Panel9
+floating     10
+   RAC.Props.2.Treadmill.HandrailDrop1  bottom at y=22.72
+   RAC.Props.2.Treadmill.HandrailDrop-1  bottom at y=22.72
+   RAC.Props.1.Treadmill.HandrailDrop1  bottom at y=2.72
+   RAC.Props.1.Treadmill.HandrailDrop-1  bottom at y=2.72
+   RAC.Props.1.PingPongTable.NetClamp_Rail_Knob_1  bottom at y=2.18
+   RAC.Props.1.PingPongTable.NetClamp_Rail_Knob_-1  bottom at y=2.18
+   RAC.Props.1.PingPongTable.FoldingRail_1_1  bottom at y=0.58
+   RAC.Props.1.PingPongTable.FoldingRail_-1_1  bottom at y=0.58
+   RAC.Props.1.PingPongTable.FoldingRail_1_-1  bottom at y=0.58
+   RAC.Props.1.PingPongTable.FoldingRail_-1_-1  bottom at y=0.58
+zfight       0
+intersect    0
+gap          0
+43363 parts checked, 17 issues
+Checking building separately; RAC.Props issues do not fail this command.
+degenerate   0
+doorBlocked  0
+floating     0
+zfight       0
+intersect    0
+gap          0
+31913 parts checked, 0 issues
+
+PASS building geometry; full-model QA has issues involving RAC.Props.
+Build + QA elapsed: 25.844 s

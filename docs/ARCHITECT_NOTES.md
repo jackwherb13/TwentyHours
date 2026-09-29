@@ -1,6 +1,6 @@
 # RAC structure — architect notes
 
-Status: Levels 1 and 2 are a walkable structure. Rooms have a purpose fit-out. No real people, jersey names, or photographed faces. The 01:40 photo-match judges were not re-run.
+Status: Levels 1 and 2 are a walkable structure. Rooms have a purpose fit-out. No real people, jersey names, or photographed faces. Round-2 screenshots are in verification/qa/round2/. Photo-match judges were not re-run.
 
 The main entrance is the smaller south glass front, under the dark canopy. The long east curtain wall is glazing, not the entrance. Level 2 is at +20 ft.
 
@@ -8,8 +8,8 @@ The main entrance is the smaller south glass front, under the dark canopy. The l
 
 Walking north is away from the south glass. Left and right are from that direction of travel.
 
-1. South threshold into the double-height lobby. The 22 ft reception desk is on the west side of that room, long axis north–south, counter facing east. Staff stand inside the enclosure.
-2. Immediately left of the main door, `south_vestibule` is the glass hallway. It runs west along the south glass, with ping-pong and vending, then continues north through `corridor_entry_south` and `corridor_entry_link` to the competition gym doors. The main stair is set back from that glass. The first flight runs east along the hall wall to a square landing at +10, then turns left, and the second flight runs north to Level 2.
+1. South threshold into the double-height lobby. The reception desk is a 20 ft staff enclosure on the west side, long axis north–south, frosted public face toward the east. Its south end is about 8 ft inside the glass. The lobby's north wall is at z = −28, and that depth is what stays clear of the wall and of the cardio ceiling above.
+2. Immediately left of the main door, `south_vestibule` is the glass hallway. It runs west along the south glass, with ping-pong and vending, then continues north through `corridor_entry_south` and `corridor_entry_link` to the competition gym doors. The north leg beside the gym stays 12 ft wide: the gym's east wall and the stair's west wall fix that width. The main stair volume is z = −60 to −28. The first flight's south edge is 29 ft north of the glass. It runs east along the hall wall to a square landing at +10, then turns left, and the second flight runs north to Level 2.
 3. Straight in from the desk, the workout machines are on the right in the east glazed bay. A glass storefront at the north end of that bay opens into the coaches' suite: an open cubicle room with private offices around it. The head coach's door carries a nameplate that reads HEAD COACH.
 4. The public hall along the east side of the competition gym has the gym doors on the left. The trophy case is on the right where the hall narrows. A doorless link continues into the north–south athletic corridor.
 5. Left off that corridor is the training room. At the end, keypad 15234 opens a square vestibule with only the nutrition fridge, then a door on the left into the volleyball locker room. The sign is generic. The keypad and the fridge name are fictional.
@@ -27,22 +27,21 @@ The Level 2 route the checker walks is `main_stair_landing → balcony → corri
 - Left-hand gym and left-hand racquetball. Resolved by the north turn described above. The competition gym stays x = −193.5 to −78.5. Its east–west court length is not reduced.
 - Lidar roofs near 25 ft cannot cover a floor at 20 ft. Gym and racquetball roofs follow the lidar. Other occupied roofs are 33.2 ft. See `blueprint/HEIGHTS.md`.
 - Racquetball ceiling is 16.5 ft under a 36.7 ft roof. The clear height and the roof are both recorded. They are not the same number.
-- The 22 ft desk does not also sit 10 ft off the glass. The lobby is 28 ft deep and the north opening is in the middle of that wall. The desk is on the west side, clear of that opening.
-- Exterior entry stairs, the roundabout elevation, and the trees belong to the site and landscape files. This pass does not build them. `Exterior.luau` is not what `build_rac` places, because the site record has no nested `site` object for that builder.
+- The reception desk is the 20 ft enclosure in item 1, with its south end about 8 ft inside the glass.
+- Site context in the built model includes the entry canopy, the RAC letters, the trees, and the exterior rails. Geometry QA counts those parts.
 - `tools/overlay.py` still registers OSM at the old entrance pixel (672, 336). Footprint IoU against OSM is not a check of this plan.
 
 ## Questions
 
-- Is the north turn along the gym, then west to the racquetball courts, the walk you remember?
 - Should `stair_west` stay as a third egress, or is it one of the stray pieces?
 - Is the racquetball room 16.5 ft clear, or should that ceiling rise to the structure at 36.7?
 - The south gym wing runs to z = +47, past the entrance line. Should that wing stay?
 
 ## What the builder has to know
 
-`Stairs.luau` builds `flights` and `landings` when those fields are present, and the old straight flight when they are not. `Build.luau` passes `length` and `bays` through to the front desk. `Roofs.luau` adds a steel wedge under a canopy, inset 0.15 ft at each end so the wedge does not share a face with a wall. Those three files are the only source edits. `validate_blueprint.luau`, `check_geometry.luau`, `architect_build.py`, `architect_route_check.py`, and `Exterior.luau` were not edited.
+`Stairs.luau` builds `flights` and `landings` when those fields are present, and the old straight flight when they are not. `Build.luau` passes `length`, `bays`, and `depth` through to the front desk. `Roofs.luau` adds a steel wedge under a canopy, inset 0.15 ft at each end so the wedge does not share a face with a wall. `Materials.apply` paints floors and walls from the uploaded ColorMaps. `Lights.build` places high-bays, 2×4 troffers, and downlights. `Court.build` paints the maple court, the green apron, and the gold lines. Play uses the same RAC model and spawns at `LobbySpawn` inside the south lobby, facing north. `validate_blueprint.luau`, `check_geometry.luau`, `architect_build.py`, `architect_route_check.py`, and `Exterior.luau` were not edited.
 
-Joint stems that meet on a through-wall are 0.28 ft thick so the geometry check does not call the joint a gap and the door leaf does not land on its kickplate. Balcony rails stay 3.5 ft glass. The overlook glass is a curtain wall on x = −78.5 from about z = −261 to −133.5, head 9.5, mullions at 5 ft. There is no guard across that glass.
+Joint stems that meet on a through-wall are 0.28 ft thick so the geometry check does not call the joint a gap and the door leaf does not land on its kickplate. Gallery and cardio edges listed in `level2.json` `guards` are horizontal rails. The overlook glass is a curtain wall on x = −78.5 from about z = −261 to −133.5, head 9.5, mullions at 5 ft. There is no guard across that glass.
 
 ## Detail briefs
 

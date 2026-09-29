@@ -62,7 +62,8 @@ function Facade.build(parent: Instance, site: Blueprint.Site, levels: { Blueprin
 			-- Resolve outside from the footprint, independent of segment winding.
 			local middle = cf:PointToWorldSpace(Vector3.new(length / 2, 0, 0.01))
 			local sign = if Geometry.contains(site.footprint, middle.X, middle.Z) then -1 else 1
-			local shift = cf:VectorToWorldSpace(Vector3.new(0, 0, sign * (backing + 0.075)))
+			-- 0.065 ft clear of the wall face. A flush skin shares that face and z-fights.
+			local shift = cf:VectorToWorldSpace(Vector3.new(0, 0, sign * (backing + 0.14)))
 			local skin: Blueprint.Wall = {
 				id = "Skin",
 				a = { face.a[1] + shift.X, face.a[2] + shift.Z },

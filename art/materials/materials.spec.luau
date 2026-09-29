@@ -18,11 +18,11 @@ local materials = luau.load(fs.readFile("src/ReplicatedStorage/RAC/Materials.lua
 local part = roblox.Instance.new("Part")
 part.Transparency = 0.25
 part.Anchored = true
+local withAsset = 0
 for key, definition in materials do
-	if key == "apply" then
+	if key == "apply" or key == "install" then
 		continue
 	end
-	assert(definition.assetId == nil)
 	assert(definition.studsPerTile > 0)
 	assert(definition.roughness >= 0 and definition.roughness <= 1)
 	if definition.texture then
@@ -31,23 +31,29 @@ for key, definition in materials do
 	materials.apply(part, key)
 	assert(part.Material == definition.base)
 	assert(part.Color == definition.color)
-	assert(part.MaterialVariant == "")
 	assert(part:GetAttribute("RACMaterial") == key)
+	if definition.assetId ~= nil then
+		withAsset += 1
+		assert(part.MaterialVariant == "RAC_" .. key)
+		assert(part.Color ~= roblox.Color3.new(1, 1, 1))
+	else
+		assert(part.MaterialVariant == "")
+	end
 end
 assert(part.Transparency == 0.25 and part.Anchored)
-assert(#service:GetChildren() == 0)
+assert(#service:GetChildren() == withAsset)
 local previous = part.Material
 assert(not pcall(materials.apply, part, "unknown_material"))
 assert(part.Material == previous)
-materials.maple.assetId = "rbxassetid://123456789"
 materials.apply(part, "maple")
 materials.apply(part, "maple")
-assert(#service:GetChildren() == 1, "repeated apply must reuse variant")
+assert(#service:GetChildren() == withAsset, "repeated apply must reuse variant")
 assert(part.MaterialVariant == "RAC_maple")
 local variant = service:FindFirstChild("RAC_maple")
 assert(variant.ColorMap == materials.maple.assetId)
 assert(variant.StudsPerTile == materials.maple.studsPerTile)
-assert(part.Color == roblox.Color3.new(1, 1, 1))
+assert(variant.BaseMaterial == roblox.Enum.Material.WoodPlanks)
+assert(part.Color == roblox.Color3.fromRGB(216, 185, 138))
 materials.apply(part, "glass")
 assert(part.MaterialVariant == "" and part:GetAttribute("RACTexturePath") == nil)
-print("PASS Materials: entries, local files, fallback, unknown key, idempotent variants, metadata cleanup")
+print("PASS Materials: tinted variants, local files, fallback, unknown key, idempotent variants")

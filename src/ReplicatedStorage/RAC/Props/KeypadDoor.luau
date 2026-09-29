@@ -145,14 +145,14 @@ function KeypadDoor.build(cf: CFrame, opts: { [string]: any }?): Model
 	b:box(
 		"KickPlate_Front",
 		Vector3.new(doorW - 0.08, 0.83, 0.015),
-		Kit.at(0, 0.42, doorZ - doorThick / 2 - 0.008),
+		Kit.at(0, 0.42, doorZ - doorThick / 2 - 0.03),
 		KickplateSilver,
 		Enum.Material.Metal
 	)
 	b:box(
 		"KickPlate_Back",
 		Vector3.new(doorW - 0.08, 0.83, 0.015),
-		Kit.at(0, 0.42, doorZ + doorThick / 2 + 0.008),
+		Kit.at(0, 0.42, doorZ + doorThick / 2 + 0.03),
 		KickplateSilver,
 		Enum.Material.Metal
 	)

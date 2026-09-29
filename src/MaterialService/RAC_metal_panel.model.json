@@ -1,0 +1,9 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Metal",
+    "ColorMap": "rbxassetid://74124851272829",
+    "StudsPerTile": 4,
+    "Name": "RAC_metal_panel"
+  }
+}

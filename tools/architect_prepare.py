@@ -50,7 +50,7 @@ def main():
             a,b,w,*typ=row
             v=dict(rooms=[a,b],width=w,type=typ[0] if typ else 'door')
             if b=='nutrition_vestibule':v.update(keypadCode='15234',label='NUTRITION VESTIBULE')
-            if b=='cage_gym':v['label']='BASKETBALL - OFF LIMITS'
+            if b=='cage_gym':v['label']='BASKETBALL — OFF LIMITS'
             l['connections'].append(v)
         l['apertures']=[{k:copy.deepcopy(v) for k,v in a.items() if k!='level'} for a in c['apertures'] if a['level']==l['level']]
         l['guards']=[dict(id=f'gallery_guard_{i}',a=g['a'],b=g['b']) for i,g in enumerate(c.get('guards',[]),1) if g['level']==l['level']]

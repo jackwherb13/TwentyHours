@@ -1,0 +1,327 @@
+{
+  "grok": {
+    "results": [
+      {
+        "image": "IMG_0349.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 4,
+        "props": 2,
+        "lighting": 5,
+        "overall": 2,
+        "problems": [
+          "Roblox camera is at the front plaza/canopy, not the rear service courtyard: match the photo ΓÇö enclosed brick court, covered walk to a pair of doors, chimney mass on the right, asphalt pad.",
+          "Missing black pipe-rail fence on a low concrete retaining wall along the left court edge.",
+          "Missing beige precast/CMU upper band with yellow roof pipes above the brick wall.",
+          "Missing tall red-brick chimney/tower filling the right foreground.",
+          "Missing green dumpster against the chimney.",
+          "Ground should be stained asphalt with leaf debris, not a grey tiled plaza with tufts of grass.",
+          "Doors should be a small pair under a brick soffit at the back of the court, not a full glass lobby."
+        ]
+      },
+      {
+        "image": "IMG_0364.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 4,
+        "props": 3,
+        "lighting": 5,
+        "overall": 4,
+        "problems": [
+          "Camera is under the canopy on the plaza; photo is from the lawn looking at the glazed face ΓÇö pull back onto the grass and include the full dark soffit.",
+          "Columns should be light-grey rectangular steel, not fat black cylinders plus tan brick piers.",
+          "Curtain wall should read as continuous dark-tinted glass with a dark metal roof; brick piers and white double doors break that.",
+          "Foreground should be a mounded lawn with a low planting bed of red/yellow annuals and ornamental grasses, not a hedge box on a white planter.",
+          "Missing bike cluster at the stair landing.",
+          "RAC lettering on the glass is too faint and wrongly placed for this angle; it should not dominate the left lawn view.",
+          "Canopy soffit in the photo is a deep dark plane; the build shows a bright interior ceiling grid."
+        ]
+      },
+      {
+        "image": "IMG_0365.jpg",
+        "layout": 6,
+        "proportions": 6,
+        "materials": 5,
+        "props": 5,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "Support columns should be light-grey rectangular tubes matching the fascia, not round black posts.",
+          "Entry doors should be dark-framed glass storefront, not a solid white pair set in a brick wall.",
+          "Left planter should be a low concrete seat-wall with mixed shrubs (burgundy/green), not a long lime-green hedge.",
+          "Stair run in the photo is one short flight (~8ΓÇô10 treads) with three rail lines; the build has a longer, shallower multi-flight plaza.",
+          "Soffit lights should be a dense grid of small cans under a dark ceiling; the build has a few sparse squares.",
+          "Missing blue trash/recycle bins at the door.",
+          "RAC letters on glass are too small/ghosted; photo has no large RAC in this framing."
+        ]
+      },
+      {
+        "image": "IMG_0366.jpg",
+        "layout": 3,
+        "proportions": 4,
+        "materials": 4,
+        "props": 3,
+        "lighting": 5,
+        "overall": 3,
+        "problems": [
+          "Photo is a street-level 3/4 of the long dark-canopy glass bar with a curved curb; the build is looking straight into the lobby under the canopy ΓÇö match the sidewalk/road camera.",
+          "Missing asphalt drive, concrete curb, and sidewalk wrapping the stairs.",
+          "Missing red fire hydrant at the bottom of the stair.",
+          "Stairs should be a compact flight against a concrete cheek wall, not a wide tiled plaza with multiple rail runs.",
+          "Hedge should sit on a low grey concrete wall beside the stair, not a white planter box on the plaza.",
+          "Facade should be a long dark soffit over a continuous glass wall; tan brick towers and white doors are wrong for this elevation.",
+          "Missing trash can at the far sidewalk."
+        ]
+      },
+      {
+        "image": "IMG_0367.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 4,
+        "props": 2,
+        "lighting": 4,
+        "overall": 2,
+        "problems": [
+          "Photo is the long side elevation from the road (glass box, dark cladding, trees, parking); the Roblox still is the front plaza ΓÇö re-shoot from the drive looking along the glass flank.",
+          "Missing two-story dark-tinted curtain wall with a dark metal cap and a grey masonry end.",
+          "Missing concrete sidewalk, asphalt road, and grass verge in the foreground.",
+          "Missing parking stall and vehicle at the far right.",
+          "Missing mature trees tight against the right end of the building.",
+          "Build incorrectly shows interior stairs, hedge planter, and RAC glass from the entrance."
+        ]
+      },
+      {
+        "image": "IMG_0368.jpg",
+        "layout": 5,
+        "proportions": 5,
+        "materials": 5,
+        "props": 4,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "Columns should be light-grey rectangular, flush with the dark soffit, not round black.",
+          "RAC signage should be large, bold, white stacked letters on the right glass bay; the buildΓÇÖs letters are faint, smaller, and centered in a brick bay.",
+          "Hedge should sit on a long grey concrete planter in front of the glass, not a short lime strip to the left of brick.",
+          "Missing red hydrant at the left stair/curb.",
+          "Missing asphalt street and concrete curb in the foreground.",
+          "Doors should be dark glass storefront under the soffit, not white doors in a brick mass.",
+          "Left bay in the photo is open to a brick side wall; the build fills it with glass and interior."
+        ]
+      },
+      {
+        "image": "WEB_entrance_1.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 5,
+        "props": 3,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "Photo is an axial approach on a cracked concrete walk with a lamp, lawn, and trees; the build is already under the canopy ΓÇö pull the camera back onto the walk.",
+          "Missing black globe lamp post on the left lawn.",
+          "Missing lawn panels and trees flanking the walk; plaza tile should not start until the stairs.",
+          "Columns should be light-grey rectangles, not black cylinders plus tan brick.",
+          "Missing bikes at the left landing and small blue/colored yard signs.",
+          "Foreground stairs should be worn concrete with a single pipe rail on the right cheek, not a tiled multi-rail plaza.",
+          "Glazing should read as a dark glass box under a dark roof; interior brick/white doors are too prominent."
+        ]
+      },
+      {
+        "image": "WEB_entrance_2.jpg",
+        "layout": 6,
+        "proportions": 6,
+        "materials": 5,
+        "props": 5,
+        "lighting": 4,
+        "overall": 5,
+        "problems": [
+          "Facade should be a continuous glass curtain under a single dark cantilever with two grey rectangular columns; tan brick piers and white doors interrupt the glass.",
+          "Columns should be light-grey square tubes, not black cylinders.",
+          "Night/dusk photo shows warm interior fluorescent grids filling the whole glass; the build is a bright empty lobby.",
+          "Missing dense interior lighting and visible gym/equipment through the glass.",
+          "Stair should be a single centered flight with rails, not a wide multi-run plaza.",
+          "Roof soffit should be a continuous dark plane wrapping the glass; the buildΓÇÖs soffit is too high/short and exposes sky.",
+          "RAC lettering should not appear as faint stacked type on a brick bay in this view."
+        ]
+      },
+      {
+        "image": "WEB_entrance_left_pole.jpg",
+        "layout": 5,
+        "proportions": 5,
+        "materials": 5,
+        "props": 4,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "Camera is too close and under/beside the glass; photo is from the parking lane looking along the full side elevation.",
+          "Missing dark-grey metal-panel bay that splits the curtain wall from the brick wing.",
+          "Brick wing should have punched rectangular windows in two stories, not a solid glass/brick continuation.",
+          "Missing parking lot with blue accessible stall stripes and a curb in the foreground.",
+          "Missing pair of stainless bollard lights and a bench at the side stair.",
+          "Side stair/rail should sit against the brick, with a small tree in front of the brick; the buildΓÇÖs giant grass cylinder/tree is in the wrong place.",
+          "Interior ping-pong tables are visible through glass in the build; the photoΓÇÖs glass is reflective and does not show rec tables at this bay.",
+          "Lamp post in the build is a thin grey stick in the grass; the photo has no lamp in that position ΓÇö the street is open."
+        ]
+      }
+    ]
+  },
+  "gemini": {
+    "results": [
+      {
+        "image": "IMG_0349.jpg",
+        "layout": 1,
+        "proportions": 1,
+        "materials": 2,
+        "props": 1,
+        "lighting": 3,
+        "overall": 1,
+        "problems": [
+          "Camera viewpoint: Camera is stationed far out in an open field/plaza facing the wrong facade, rather than inside the enclosed service court alcove.",
+          "Service wing architecture: Missing the single-story brick wing topped with a precast concrete overhanging fascia and angled structural concrete corbels/brackets.",
+          "Ground surface: Ground in build has 3D grass growing through light grey paver tiles; should be continuous dark weathered asphalt pavement with pine needle debris.",
+          "Areaway pit & fence: Missing the sunken concrete areaway/lightwell on the left enclosed by a black chain-link security fence.",
+          "Service doors: Missing the recessed double service doors with concrete overhang and exterior wall pack light in the alcove corner.",
+          "Dumpster prop: Missing the large dark green commercial front-load dumpster stationed against the projecting brick corner."
+        ]
+      },
+      {
+        "image": "IMG_0364.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Camera viewpoint: Camera is placed on the entrance steps facing the center pier instead of back on the southwest lawn looking across the berm up at the canopy flare.",
+          "Entrance canopy geometry: Build canopy is a flat, blocky black slab; should be an aerodynamic upward-raking dark charcoal wedge with knife-edge fascia and an open central skylight well.",
+          "Entrance facade & doors: Build places a solid peach/tan brick tower with an opaque white door in the center; the real RAC entrance is an open two-story glass curtain wall with commercial glass doors recessed under the canopy.",
+          "Support column: Build uses a basic cylindrical black post; should be a substantial faceted, tapered structural steel box column clad in metallic silver/grey.",
+          "Site landscaping & berm: Foreground is overexposed white tiles instead of a sloping green grass berm with mulch beds and red barberry/ornamental shrubs.",
+          "Site fixtures & foliage: Missing the black hoop bike racks with bicycles on the terrace and mature deciduous trees framing the right side of the canopy."
+        ]
+      },
+      {
+        "image": "IMG_0365.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 3,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "Entrance facade & doors: Build incorrectly erects a central tan brick tower with an opaque white double door; the real entrance is an uninterrupted glass curtain wall with recessed glazed aluminum double doors.",
+          "Canopy skylight oculus: Real canopy features a large open rectangular skylight well cut through the center over the stair walkway; build canopy is a solid black ceiling with small square ceiling lights.",
+          "Support columns: Build has plain round black columns; real RAC has massive faceted, tapered steel box columns clad in light metallic silver panels.",
+          "Stair handrails: Handrails in the build are chaotically placed across the treads with inconsistent heights and angles; should be clean, evenly spaced dark grey pipe handrail runs dividing the monumental stair.",
+          "Retaining wall & planting: Left cheek wall in build is a white stucco box topped with a manicured green hedge; real wall is smooth board-formed grey concrete retaining a bed of dark red shrubs and ornamental grasses.",
+          "Paving & finishes: Stairs in the build are washed out, glowing white/cream tiles; should be weathered cast concrete slabs with visible expansion joints and textured tread edges.",
+          "Canopy underside & signage: Canopy soffit in build is pitch black; real soffit has light grey modular panels with recessed downlights. Vertical white 'RAC' lettering is faint and recessed instead of bold white vinyl on the front curtain wall."
+        ]
+      },
+      {
+        "image": "IMG_0366.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Camera viewpoint: Camera is positioned up on the central stairs looking at the door, rather than at the street curb looking obliquely across the roadway, hydrant, and retaining wall.",
+          "Roadway & curb: Missing the foreground asphalt drop-off drive, yellow/concrete curb gutter, and sidewalk apron.",
+          "Fire hydrant prop: Missing the standard red cast-iron municipal fire hydrant located on the sidewalk at the curb.",
+          "Retaining wall: Missing the board-formed grey concrete retaining wall that bounds the driveway and frames the lower steps.",
+          "RAC architectural signage: 'R A C' letters should be large, opaque white sans-serif letters stacked vertically across the full height of the exterior corner glass pane; build has faint, low-contrast letters placed deep inside.",
+          "Facade composition: Build incorrectly features a solid tan brick core and white door instead of an all-glass curtain wall lobby with commercial glass entry doors.",
+          "Canopy & columns: Build lacks the canopy skylight well and uses thin cylindrical black poles instead of faceted architectural columns."
+        ]
+      },
+      {
+        "image": "IMG_0367.jpg",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 2,
+        "props": 1,
+        "lighting": 3,
+        "overall": 1,
+        "problems": [
+          "Camera viewpoint: Camera is placed on the entrance stairs looking at a door, completely missing the roadway viewpoint looking northwest along the fitness wing.",
+          "Fitness center wing: The entire long two-story glass pavilion with its dark horizontal metal spandrel bands and continuous curtain wall is absent from this view.",
+          "Driveway & parking: Missing the asphalt roadway, concrete curb, and painted white/blue parking stall striping.",
+          "Site landscaping: Missing the roadside grass verge, foundation planter walls, and the backdrop of mature deciduous trees.",
+          "Entrance architecture: Build depicts a tan brick tower with white doors where an expansive glass atrium and sweeping cantilevered wedge canopy should be."
+        ]
+      },
+      {
+        "image": "IMG_0368.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Camera viewpoint: Camera is positioned up on the entrance stairs rather than at the street edge, omitting the foreground street, curb, and retaining wall face.",
+          "Site infrastructure: Missing the foreground asphalt street, concrete curb, and the red fire hydrant on the sidewalk.",
+          "Retaining wall & planting: Missing the stepped concrete cheek/retaining wall with joint lines and the top-mounted shrub hedge.",
+          "Signage: 'RAC' signage should be bold, high-contrast white lettering stacked vertically on the curtain wall corner pane; build text is faint and poorly positioned.",
+          "Entrance architecture: Build incorrectly uses an opaque tan brick tower with a solid white door instead of a continuous glass curtain wall with commercial glass doors.",
+          "Canopy design: Canopy lacks the rectangular skylight cutout, finished light grey soffit panels, and uses round black posts instead of faceted metallic steel columns."
+        ]
+      },
+      {
+        "image": "WEB_entrance_1.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Camera viewpoint: Camera is positioned up on the entrance stairs instead of far back along the axial concrete approach walkway.",
+          "Full building massing: View fails to capture the overall composition of the sweeping dark wedge canopy spanning over the two-story glass atrium and connecting to the left brick wing.",
+          "Approach walkway & lower steps: Missing the foreground concrete sidewalk, lower transition steps, and flanking grass embankments.",
+          "Site lighting & props: Missing the dark bronze cylindrical pedestrian pole light, lawn signs, and bike racks with bicycles.",
+          "Entrance facade: Build shows a solid tan brick tower and white doors instead of the full two-story glass curtain wall and recessed entry doors.",
+          "Canopy structure: Build uses basic round black columns and a flat black slab; real canopy has an upward flare, skylight cutout, and massive faceted silver/grey columns."
+        ]
+      },
+      {
+        "image": "WEB_entrance_2.jpg",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 2,
+        "props": 1,
+        "lighting": 1,
+        "overall": 1,
+        "problems": [
+          "Camera viewpoint: Camera is positioned close on the stairs facing a door rather than a pulled-back diagonal perspective capturing the full entrance plaza and fitness wing.",
+          "Time of day & lighting: Reference is an illuminated twilight/dusk scene with glowing warm interior lighting; build is rendered under harsh flat daylight with blown-out white surfaces.",
+          "Interior program & fitness equipment: Upper mezzanine in real building is densely furnished with illuminated cardio machines (treadmills, ellipticals); build interior is vacant.",
+          "Facade transparency & materials: Build features an opaque tan brick tower with a solid white door; real RAC entrance is an open two-story glass curtain wall with transparent vestibules.",
+          "Canopy illumination & oculus: Canopy lacks the lit central skylight cutout, underside paneling, and downlighting fixtures.",
+          "Plaza stairs & lighting: Real stairs have integrated low-voltage step/wall lights and dark handrails; build has overexposed white tiles and erratic handrail placement."
+        ]
+      },
+      {
+        "image": "WEB_entrance_left_pole.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "Camera viewpoint: Camera is placed right against the building glass on an unpaved grass lawn instead of back in the asphalt parking lot looking along the drive.",
+          "Facade architecture & materials: The foreground wing in the build is 100% glass curtain wall; the real building has a dark charcoal composite metal panel volume transitioning into a red brick facade with punched rectangular windows.",
+          "Interior room program: Build shows ping-pong tables inside behind floor-to-ceiling glass; this wing is not an open glass table-tennis room.",
+          "Parking lot & site infrastructure: Missing the asphalt parking lot, blue ADA parking markings, concrete curb, sidewalk, bollard lights, and bench.",
+          "Sky & lighting: Sky rendering in build has an unnatural black void in the upper hemisphere over a pale blue horizon.",
+          "Site landscaping: Build has wild 3D grass growing directly against the foundation; should be paved parking stalls, concrete sidewalk, and landscaped mulch beds."
+        ]
+      }
+    ]
+  },
+  "gpt": null
+}

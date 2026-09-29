@@ -1,0 +1,9 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Concrete",
+    "ColorMap": "rbxassetid://82792157361684",
+    "StudsPerTile": 4,
+    "Name": "RAC_terrazzo"
+  }
+}

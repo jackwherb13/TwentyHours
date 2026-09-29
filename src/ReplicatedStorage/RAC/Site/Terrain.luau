@@ -1,6 +1,7 @@
 --!strict
 -- Edit-mode only. Replaces voxels only inside this site's bounded region.
 local Heightfield = require(script.Parent.Heightfield)
+local Carve = require(script.Parent.Carve)
 local TerrainBuilder = {}
 function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 	local d = Heightfield.data
@@ -101,6 +102,7 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 		plate.Transparency = 1
 		plate.CanCollide = false
 	end
-	return { columns = d.nx * d.nz, voxels = count, yMin = d.yMin, yMax = d.yMax }
+	local carved = Carve.apply(terrain)
+	return { columns = d.nx * d.nz, voxels = count, carved = carved, yMin = d.yMin, yMax = d.yMax }
 end
 return TerrainBuilder

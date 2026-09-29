@@ -2,6 +2,11 @@
   "name": "TwentyHours",
   "tree": {
     "$className": "DataModel",
+    "MaterialService": {
+      "$className": "MaterialService",
+      "$ignoreUnknownInstances": true,
+      "$path": "src/MaterialService"
+    },
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
       "$ignoreUnknownInstances": true,

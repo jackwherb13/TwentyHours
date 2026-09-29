@@ -18,8 +18,31 @@ local function crown(parent: Instance, center: Vector3, diameter: number, squash
 	part.Parent = parent
 end
 
+-- WedgePart tip is local -Z at the bottom. A +90° X turn stands that tip up so six wedges read as one cone.
+local function coneTier(parent: Instance, apex: Vector3, radius: number, height: number, color: Color3, spin: number)
+	local sy, sz = radius, height
+	local sx = 2 * radius * math.sin(math.pi / 6) * 1.45
+	for i = 0, 5 do
+		local yaw = spin + i * math.pi / 3
+		local rot = CFrame.Angles(0, yaw, 0) * CFrame.Angles(math.rad(90), 0, 0)
+		local tip = Vector3.new(0, -sy / 2, -sz / 2)
+		local wedge = Instance.new("WedgePart")
+		wedge.Name = "Crown"
+		wedge.Size = Vector3.new(math.max(1.2, sx), sy, sz)
+		wedge.CFrame = CFrame.new(apex - rot:VectorToWorldSpace(tip)) * rot
+		wedge.Material = Enum.Material.SmoothPlastic
+		wedge.Color = color
+		wedge.Anchored = true
+		wedge.CanCollide = false
+		wedge.Parent = parent
+	end
+end
+
 local function tree(parent: Instance, item: any, index: number)
 	local p, height, radius = item.at, item.height, item.radius
+	local scale = 0.8 + ((index * 13) % 5) * 0.1
+	height *= scale
+	radius *= scale
 	local y = H.height(p[1], p[2])
 	local model = Instance.new("Model")
 	model.Name = `Tree_{index}`
@@ -29,35 +52,44 @@ local function tree(parent: Instance, item: any, index: number)
 	P.pole(model, "Trunk", Vector3.new(p[1], y, p[2]), trunkH, trunkR, "bark", true)
 	local crownH = math.max(6, height - trunkH * 0.55)
 	local base = y + trunkH * 0.72
+	local spin = math.rad((index * 47) % 360)
 	if pine then
-		local color = Color3.fromRGB(32, 58, 38)
-		for i = 1, 5 do
-			local t = (i - 0.35) / 5
-			local scale = 1.05 - t * 0.88
-			local jx = ((i * 5 + index) % 5 - 2) * radius * 0.06
-			local jz = ((i * 3 + index) % 5 - 2) * radius * 0.05
-			crown(
-				model,
-				Vector3.new(p[1] + jx, base + t * crownH, p[2] + jz),
-				radius * 2 * scale,
-				0.72,
-				color
-			)
+		local color = ({
+			Color3.fromRGB(28, 52, 34),
+			Color3.fromRGB(36, 64, 40),
+			Color3.fromRGB(24, 46, 30),
+		})[(index % 3) + 1]
+		for tier = 1, 3 do
+			local t = (tier - 1) / 3
+			local tierH = crownH * 0.48
+			local tierR = radius * (1.05 - t * 0.62)
+			local apex = Vector3.new(p[1], base + t * crownH * 0.78 + tierH, p[2])
+			coneTier(model, apex, math.max(2.2, tierR), tierH, color, spin + tier)
 		end
 	else
-		local color = Color3.fromRGB(58, 86, 44)
+		local color = ({
+			Color3.fromRGB(58, 86, 44),
+			Color3.fromRGB(42, 70, 34),
+			Color3.fromRGB(74, 102, 52),
+		})[(index % 3) + 1]
 		local blobs = {
-			{ 0, 0.42, 0, 1 },
-			{ 0.36, 0.62, 0.18, 0.74 },
-			{ -0.4, 0.36, 0.16, 0.8 },
-			{ 0.1, 0.74, -0.34, 0.62 },
-			{ -0.22, 0.58, -0.3, 0.68 },
-			{ 0.24, 0.28, 0.38, 0.58 },
+			{ 0, 0.48, 0, 1 },
+			{ 0.38, 0.66, 0.2, 0.72 },
+			{ -0.42, 0.4, 0.14, 0.78 },
+			{ 0.12, 0.78, -0.36, 0.6 },
+			{ -0.2, 0.58, -0.32, 0.66 },
 		}
+		local c, s = math.cos(spin), math.sin(spin)
 		for i, blob in blobs do
-			local jx = blob[1] * radius + ((index + i) % 3 - 1) * 0.4
-			local jz = blob[3] * radius
-			crown(model, Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz), radius * 2 * blob[4], 0.86, color)
+			local ox, oz = blob[1] * radius, blob[3] * radius
+			local jx, jz = ox * c - oz * s, ox * s + oz * c
+			crown(
+				model,
+				Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz),
+				radius * 2 * blob[4],
+				0.82,
+				color
+			)
 		end
 	end
 	model.Parent = parent
@@ -71,6 +103,30 @@ function Landscape.build(parent: Instance, site: any, props: any)
 		local at = item.at
 		local dx, dz = at[1] - entrance.x, at[2] - entrance.z
 		if dx * dx + dz * dz < 42 * 42 and at[2] > entrance.z - 8 then
+			continue
+		end
+		local pads = site.terrain and site.terrain.padPolygons
+		local blocked = false
+		if pads then
+			local reach = (item.radius or 8) + 2
+			for _, polygon in pads do
+				if G.contains(polygon, at[1], at[2]) then
+					blocked = true
+					break
+				end
+				for k = 0, 7 do
+					local a = k * math.pi / 4
+					if G.contains(polygon, at[1] + math.cos(a) * reach, at[2] + math.sin(a) * reach) then
+						blocked = true
+						break
+					end
+				end
+				if blocked then
+					break
+				end
+			end
+		end
+		if blocked then
 			continue
 		end
 		tree(trees, item, i)

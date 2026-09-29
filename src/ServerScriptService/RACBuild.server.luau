@@ -9,11 +9,13 @@ local function lighting()
 		Lighting.Technology = Enum.Technology.Future
 	end)
 	Lighting.ClockTime = 14
-	Lighting.Brightness = 2.2
-	Lighting.EnvironmentDiffuseScale = 0.45
-	Lighting.EnvironmentSpecularScale = 0.35
-	Lighting.Ambient = Color3.fromRGB(150, 152, 148)
-	Lighting.OutdoorAmbient = Color3.fromRGB(180, 184, 180)
+	Lighting.Brightness = 1.2
+	Lighting.EnvironmentDiffuseScale = 0.35
+	Lighting.EnvironmentSpecularScale = 0.25
+	Lighting.ExposureCompensation = 0
+	-- Interiors are lit by fixtures. Outdoor sun still lights the site.
+	Lighting.Ambient = Color3.fromRGB(40, 40, 42)
+	Lighting.OutdoorAmbient = Color3.fromRGB(110, 112, 108)
 	Lighting.GlobalShadows = true
 end
 
@@ -25,18 +27,12 @@ end
 
 local function clearInteriorTerrain()
 	local terrain = workspace.Terrain
-	local boxes = {
-		-- Training room, including the ceiling where grass was showing.
-		{ Vector3.new(-221, 8, -77), Vector3.new(40, 18, 40) },
-		-- Left hall from the south glass to the gym doors.
-		{ Vector3.new(-80, 8, -70), Vector3.new(50, 20, 150) },
-		-- South lobby and the glass bay.
-		{ Vector3.new(-20, 8, -14), Vector3.new(40, 36, 36) },
-	}
-	for _, box in boxes do
-		pcall(function()
-			terrain:FillBlock(CFrame.new(box[1]), box[2], Enum.Material.Air)
-		end)
+	local ok, err = pcall(function()
+		local Carve = require(game:GetService("ReplicatedStorage").RAC.Site.Carve)
+		print("Interior terrain carve blocks:", Carve.apply(terrain))
+	end)
+	if not ok then
+		warn("Interior terrain carve failed: " .. tostring(err))
 	end
 end
 

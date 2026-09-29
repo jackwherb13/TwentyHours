@@ -209,7 +209,8 @@ def check_connectivity(name):
 		fails.append(f"{name}: room {rid} is not reachable through any door from {'the entrance' if name == 'level1' else 'a stair'}")
 	if name == "level1" and not edges["OUTSIDE"]:
 		fails.append("level1: no exterior doors - building has no entrance")
-	print(f"{name}: {len(seen) - (1 if name == 'level1' else 0)}/{len(rooms)} rooms reachable, {dead} dead doors")
+	outside = 1 if "OUTSIDE" in seen else 0
+	print(f"{name}: {len(seen) - outside}/{len(rooms)} rooms reachable, {dead} dead doors")
 
 
 def check_stairs():
