@@ -6,8 +6,8 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 ## Main entrance (Level 1)
 - The whole entrance front is **glass that wraps around the corner of the building**, not one flat side, under the
   **black modern cantilevered overhang** (WEB_entrance_1, WEB_entrance_2, WEB_entrance_left_pole, IMG_0364–0368).
-- Walk in → an **open, double-height space about 20 × 20 ft** with **no second floor above it**.
-- About **10 ft inside**, a **big front desk runs perpendicular to the window wall** (IMG_0369: long counter, frosted panels).
+- Walk in → an **open, double-height space** with **no second floor above it**. (SUPERSEDED 2026-09-29 19:05: it is NOT 20 x 20 - see "Lobby is one open space" at the end.)
+- A **big front desk runs perpendicular to the window wall**. (SUPERSEDED 2026-09-29 19:05: it is NOT 10 ft inside, and the frosted-panel counter in IMG_0369 is NOT the desk - see the end.)
 - Past the desk: **large stairs** going up to Level 2.
 - **Level 2 is set back about 15 ft from the glass**: a double-height strip runs along the whole glass front, and the
   Level 2 floor/balcony edge (horizontal-rail guardrail, IMG_0343, 0369, 0370, WEB_entrance_from_level2) sits ~15 ft inside.
@@ -24,8 +24,8 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 
 ## Consequences for the build
 - Level 2 floor plate stops ~15 ft short of the entrance glass along the entire glass front (void strip there).
-- The ~20 × 20 ft entry zone is fully double height.
-- Front desk orientation: long axis perpendicular to the glass, ~10 ft from it.
+- The entry zone is fully double height (superseded size - see the end).
+- Front desk orientation: long axis perpendicular to the glass (distance superseded - see the end).
 - Squash courts (2) are on Level 2, off the overlook hallway, on the left when walking away from the entrance.
 - Terrain: continuous slope from the low main-entrance side up to the Level 2 exit side (no retaining-wall cliff unless photos show one).
 - Unknowns: ask the manager (who asks the user) rather than inventing — list questions in your report.
@@ -110,3 +110,19 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 - **Volleyball/competition gym bleachers**: on **BOTH long sides**, **RETRACTED** (closed/stacked against the walls), not pulled out.
 - **Parking**: there are **multiple lots** around the RAC. Identify every lot, its layout and markings from GMU Parking Services maps, Fairfax County
   planimetrics and the aerial imagery; build all of them as they really look.
+
+
+## Lobby is one open space (user, 2026-09-29 19:05) - AUTHORITATIVE, supersedes every earlier lobby size/desk distance
+User, looking at the Studio build: "the lobby is much more open, look at the reference images, it's a completely open space and the desk is a
+lot further back." Manager's reading of the photos (IMG_0370, IMG_0369, reference/web/rooms/lobby-main/ewingcole_*, reference/web/rooms/reception-desk/ewingcole_*):
+- The lobby is ONE open hall - no walled sub-rooms, no vestibule box, no partitions between the entrance, lounge, desk, stair and the glass hall.
+  Only structural columns (tan stacked-tile / light stone cladding) stand in it.
+- Zone 1, the double-height strip along the curtain wall (entrance doors = revolving door + paired glass doors in the glass): a lounge.
+  White square cafe tables with brown bentwood chairs, and round upholstered poufs (yellow, blue, lime) lined up along the glass. Tile floor.
+- A long, knee-high blonde-wood planter/bench with green plants separates the lounge from the desk.
+- Zone 2, the reception desk: behind the planter, UNDER the Level 2 balcony edge (you see the balcony's white fascia and horizontal rail above
+  the desk). Blonde wood slat front, white top, green panel. Its near end is well inside - roughly 25-30 ft from the entrance glass, not 10 ft.
+  From the entrance door (IMG_0370) the desk is on the RIGHT, running away from you; the main stair rises behind it (stair core clad in tan
+  stacked tile, not red brick) and the long hallway continues straight ahead with trophy cases.
+- The long low counter with frosted/pink panels in IMG_0369 is a ledge in front of the fitness floor, NOT the reception desk.
+- Level 2 above: the balcony edge (horizontal-bar rail, blonde wood cap) runs parallel to the glass; the cardio floor with treadmills is behind it.

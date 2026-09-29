@@ -20,3 +20,10 @@
 18:35 round 1 - build
 18:38 round 1 - reviewer
 18:52 QA paused by manager: Studio signed out (agent-launched second Studio wiped the saved login); resumes once the user signs in and the place is open
+18:54 Studio back with 20 Hour Weeks open; QA resumed
+18:54 round 1 - build
+18:56 round 1 - reviewer
+19:07 QA stopped by manager: user says the lobby is still wrong (must be one open space, desk much further back); architect fixes lobby first, then QA restarts
+19:07 round 1 - reviewer wrote no ISSUES_REVIEW.json
+19:07 round 1 - reviewer produced only 2 screenshots: review invalid, retrying the round
+19:07 round 1 - build

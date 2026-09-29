@@ -69,7 +69,7 @@ All specifications are cross-tagged with their source of truth:
   - Glass: Full-height two-story exterior curtain wall along south/east perimeter (photo, walkthrough).
   - Structural Piers: Two rectangular structural columns clad in light-tan horizontally stacked split-face stone/masonry veneer (`Color3.fromRGB(195, 185, 170)`) located directly behind front desk (photo).
 - **Ceiling & Height:**
-  - Double-Height Atrium: ~20 × 20 ft clear open volume rising 22.0 ft to ceiling deck (walkthrough, photo).
+  - Double-Height Atrium: one large open hall (NOT 20 x 20 - user 2026-09-29 19:05), double-height strip along the glass rising 22.0 ft to the ceiling deck (walkthrough, photo).
   - Mezzanine Setback: Level 2 cardio floor is set back **15.0 ft** from the exterior glass curtain wall, forming a continuous double-height light slot (walkthrough, photo).
   - Mezzanine Soffit: Smooth painted drywall underside of Level 2 at 10.5 ft AFF with recessed circular pot lights (photo).
 - **Lighting:**
@@ -96,7 +96,7 @@ All specifications are cross-tagged with their source of truth:
 
 ### Concrete Builder Specification
 - **Orientation & Dimensions:**
-  - Placement: Located ~10 ft inside the main entrance, with its long axis running **perpendicular to the south window wall** (walkthrough, photo).
+  - Placement: Behind the lounge and planter, UNDER the Level 2 balcony edge, near end ~25-30 ft from the entrance glass (user 2026-09-29 19:05; NOT 10 ft), with its long axis running **perpendicular to the south window wall** (walkthrough, photo).
   - Overall Size: ~22 ft long × 10 ft wide U-shaped curved counter enclosure; staff area inside (walkthrough, photo).
   - Counter Height: Transaction top at 42" (3.5 studs) AFF; inner staff work desktop at 30" (2.5 studs) AFF (photo, IBC standard).
 - **Materials & Colors:**
