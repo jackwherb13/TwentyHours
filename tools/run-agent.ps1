@@ -5,7 +5,9 @@ param(
 	[Parameter(Mandatory)] [ValidateSet('grok', 'codex', 'agy')] [string]$Tool,
 	[Parameter(Mandatory)] [string]$Name,
 	[Parameter(Mandatory)] [string]$PromptFile,
-	[int]$MaxTurns = 200
+	[int]$MaxTurns = 200,
+	[string]$Model,
+	[string]$Effort
 )
 $root = Split-Path $PSScriptRoot -Parent
 Set-Location $root
@@ -24,7 +26,10 @@ switch ($Tool) {
 		try { (Get-Content "$out.json" -Raw | ConvertFrom-Json).text | Out-File $out -Encoding utf8 } catch { Copy-Item "$out.json" $out }
 	}
 	'codex' {
-		$prompt | codex exec --skip-git-repo-check --dangerously-bypass-approvals-and-sandbox -C $root - 2>"$out.err" |
+		$cx = @()
+		if ($Model) { $cx += @('-m', $Model) }
+		if ($Effort) { $cx += @('-c', "model_reasoning_effort=`"$Effort`"") }
+		$prompt | codex exec --skip-git-repo-check --dangerously-bypass-approvals-and-sandbox -C $root @cx - 2>"$out.err" |
 			Out-File $out -Encoding utf8
 	}
 	'agy' {

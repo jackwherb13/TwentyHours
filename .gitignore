@@ -15,3 +15,4 @@ reference/*.jpg
 verification/**/*.png
 places/*.rbxm
 verification/judge-test/
+reference/web/
