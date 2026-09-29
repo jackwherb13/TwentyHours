@@ -5,14 +5,18 @@ Last updated: 2026-09-29 10:15
 
 Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail) - lobby-open job, 08:44
 
+Doc map: [INDEX.md](INDEX.md). How to land changes: [../CONTRIBUTING.md](../CONTRIBUTING.md).
+
 ## Pipeline (in order)
-1. Structure QA loop (`tools/qa-loop.ps1`) — independent Grok reviewer walks docs/WALKTHROUGH.md in Studio + exterior photo pairs +
-   building-sense + verify gate → fixers (architect-grok, exterior-grok) → repeat. **Gen 2, round 2 running.**
-2. Realism chains (`tools/realism-loop.ps1`): interior (9 passes, `docs/passes/interior.md`) and exterior (6 passes, `docs/passes/exterior.md`),
-   each pass reviewed + judged (≥ 8) — **parked until structure QA passes/finishes**.
-3. Life chain (cars, traffic, Mason shuttle, people; `docs/passes/life.md`) — **parked until both realism chains finish**.
+
+| # | Phase | Driver | State |
+|---|---|---|---|
+| 1 | Structure QA | `tools/qa-loop.ps1` — independent Grok reviewer walks `docs/WALKTHROUGH.md` in Studio + exterior photo pairs + building-sense + verify gate → fixers (architect-grok, exterior-grok) → repeat | **Gen 2, round 2 running** |
+| 2 | Realism chains | `tools/realism-loop.ps1`: interior (9 passes, `docs/passes/interior.md`) and exterior (6 passes, `docs/passes/exterior.md`), each pass reviewed + judged (≥ 8) | **Parked until structure QA passes** |
+| 3 | Life chain | cars, traffic, Mason shuttle, people (`docs/passes/life.md`) | **Parked until both realism chains finish** |
 
 ## Running now
+
 | Agent | Job | Owns |
 |---|---|---|
 | QA reviewer (Grok) | round 2 review | read-only |
@@ -27,6 +31,7 @@ Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail)
 | game-integration (Grok) | zone/door/spawn tags, patrol points, pathfinding checks across the building | Build/Tags.luau, NavCheck |
 
 ## Done (verified, committed)
+
 - Toolchain, Rojo live sync into places/TwentyHours.rbxl, verify gate (lint, types, tests, blueprint logic, geometry, stairs)
 - Blueprint from walkthrough + drawings + site plan + lidar: south glass entrance, glass hall with ping-pong to the gym, 2-flight main stair
   (left turn) to L2 at +20 ft, L2 overlook with gym on the left, racquetball, second stair, BASKETBALL — OFF LIMITS, L2 exit at grade,
@@ -35,6 +40,7 @@ Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail)
 - Exterior: terrain from lidar, entrance stair/ramp, thin canopy, trees, basic hardscape
 
 ## Open issues (tracked by QA every round)
+
 - User reviews: docs/reviews/USER-*.md (all re-checked each round)
 - Interior lighting too dark in gym/training/coaches; maple should be brighter/glossier
 - Parking lot layout + road/lot markings (site-markings working on it); roads/lots vs floor grade
