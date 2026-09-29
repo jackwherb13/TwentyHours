@@ -1,85 +1,15 @@
 --!strict
--- Offline loader deliberately uses a plain environment (GETIMPORT ignores metatable globals).
 local fs = require("@lune/fs")
-local luau = require("@lune/luau")
 local process = require("@lune/process")
 local roblox = require("@lune/roblox")
 local serde = require("@lune/serde")
 local ROOT = "src/ReplicatedStorage/RAC"
 local FIXTURE = "tests/fixtures/mini"
-local env = {
-	Instance = roblox.Instance,
-	Vector3 = roblox.Vector3,
-	Vector2 = roblox.Vector2,
-	CFrame = roblox.CFrame,
-	Color3 = roblox.Color3,
-	BrickColor = roblox.BrickColor,
-	Enum = roblox.Enum,
-	UDim2 = roblox.UDim2,
-	UDim = roblox.UDim,
-	NumberRange = roblox.NumberRange,
-	NumberSequence = roblox.NumberSequence,
-	ColorSequence = roblox.ColorSequence,
-	math = math,
-	string = string,
-	table = table,
-	ipairs = ipairs,
-	pairs = pairs,
-	type = type,
-	typeof = typeof,
-	tostring = tostring,
-	tonumber = tonumber,
-	error = error,
-	assert = assert,
-	pcall = pcall,
-	select = select,
-	setmetatable = setmetatable,
-	getmetatable = getmetatable,
-	unpack = table.unpack,
-	print = print,
-}
 local warnings = {}
-env.warn = function(message)
+local loader = require("./lib/loader").new(function(message)
 	table.insert(warnings, message)
-end
-local function node(path)
-	return setmetatable({ __path = path }, {
-		__index = function(_, key)
-			if key == "Parent" then
-				return node(string.match(path, "^(.*)/[^/]+$"))
-			end
-			if key == "FindFirstChild" then
-				return function(_, name)
-					local child = path .. "/" .. name
-					if fs.isDir(child) or fs.isFile(child .. ".luau") then
-						return node(child)
-					end
-					return nil
-				end
-			end
-			if key == "IsA" then
-				return function(_, class)
-					return class == "ModuleScript" and fs.isFile(path .. ".luau")
-				end
-			end
-			return node(path .. "/" .. key)
-		end,
-	})
-end
-local cache = {}
-local function load(path)
-	if cache[path] then
-		return cache[path]
-	end
-	local e = table.clone(env)
-	e.script = node(path)
-	e.require = function(ref)
-		return load(ref.__path)
-	end
-	local fn = luau.load(luau.compile(fs.readFile(path .. ".luau")), { debugName = path, environment = e })
-	cache[path] = fn()
-	return cache[path]
-end
+end)
+local load, node = loader.load, loader.node
 local function json(name)
 	return serde.decode("json", fs.readFile(FIXTURE .. "/" .. name .. ".json"))
 end
