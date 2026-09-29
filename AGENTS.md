@@ -55,6 +55,8 @@ visually faithful to the real building. Gameplay is intentionally simple for now
 - Geometry QA on the built parts: `lune run tools/check_geometry.luau places/build.rbxm blueprint` - intersecting walls,
   z-fighting coplanar faces, floating parts, degenerate/sliver parts (< 0.01 ft), small wall gaps, walls blocking doors.
   Must report 0 issues. Props get the same check via places/props_preview.rbxm (runs in verify.ps1).
+- A texture change is not done until it is uploaded: `python tools/check_uploads.py` (in verify.ps1) fails while any
+  `art/materials/pbr/*` map differs from its uploaded version. Upload, update the ids, then `--record <material>`.
 - Use the Studio MCP only for what needs a real render or physics: screen_capture from photo stations, playtests,
   character_navigation walkthroughs, uploading textures.
 

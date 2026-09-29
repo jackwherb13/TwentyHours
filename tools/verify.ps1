@@ -44,6 +44,9 @@ if (Test-Path art/materials/materials.spec.luau) {
 if (Test-Path tools/check_materials.luau) {
 	Step 'material template' { lune run tools/check_materials.luau }
 }
+if (Test-Path art/materials/assets.json) {
+	Step 'PBR maps uploaded (disk == Roblox asset)' { python tools/check_uploads.py }
+}
 if ((Test-Path tools/check_perf.luau) -and (Test-Path places/build.rbxm)) {
 	Step 'perf budgets and walkable surfaces' { lune run tools/check_perf.luau places/build.rbxm blueprint }
 }
