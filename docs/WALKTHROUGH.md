@@ -59,3 +59,10 @@ If a drawing seems to contradict it, follow this document and note the conflict 
   keep the ORDER of things along the route exactly as described and flag the ambiguity in your report.
 - Prop kinds needed that are not in the schema yet: training_table (green padded treatment table), ping_pong_table, trophy_case,
   jersey_frame, industrial_fridge, keypad_door (door_single with a keypad), squash_court (glass back wall).
+
+## Answers to the architect's questions (user, 2026-09-28 23:00)
+1. Main stairs: NOT three switchbacks. It is **two flights with one landing**: one flight up to a small square landing, then turn **LEFT**
+   and the second flight goes up to Level 2. (Supersedes "three switchbacks" above.)
+2. **Level 2 is about 20 ft above Level 1** ("a big gap") -> floor-to-floor ~20 ft; stair riser count ~34 at ~7 in (split across the two flights).
+3. The courts are **racquetball courts on Level 2**, past the gym overlook, on the **left**. There are no racquetball courts on Level 1.
+   (The earlier "2 squash courts" = these racquetball courts; model them as racquetball, 40x20 ft.)
