@@ -47,3 +47,15 @@ If a drawing seems to contradict it, follow this document and note the conflict 
    **left** into the **volleyball locker room** (IMG_0377, 0378).
 6. Past the locker room, **straight down the hall**: **stairs up to Level 2**. At the top of those stairs, on the **left**: the **basketball
    (OFF LIMITS) door**, then the **Level 2 exit** (at grade, building on a slope). This is how the Level 1 route connects back to the Level 2 route.
+
+## Entrance-left area and training room (user, 2026-09-28 22:50)
+- Just inside the entrance, to the **left** is a **thinner hallway**.
+- **Behind the front desk** is an **open area with weight machines** (selectorized machines), then a **partition**, then **squat racks**
+  (power racks) beyond it. This is the open fitness floor seen in WEB_entrance_from_level2 / IMG_0318 / IMG_0328.
+- To the **left** of that is the **long hallway** that ends at the **training room**: athletic training room with **green treatment
+  tables** (padded taping/treatment tables), typical training-room fit-out (taping stations, ice machine, rehab equipment, cabinets).
+- Reconcile with the Level 1 route above: the long hallway to the training room is the same corridor system that passes the
+  ping-pong/vending area, the switchback stairs, the trophy cabinet and the volleyball gym doors. If geometry forces a choice,
+  keep the ORDER of things along the route exactly as described and flag the ambiguity in your report.
+- Prop kinds needed that are not in the schema yet: training_table (green padded treatment table), ping_pong_table, trophy_case,
+  jersey_frame, industrial_fridge, keypad_door (door_single with a keypad), squash_court (glass back wall).
