@@ -71,12 +71,15 @@ files: $dir/NOTES.md, $dir/build$r.txt, reference photos (reference/sheets, thum
 docs/WALKTHROUGH.md (authoritative), photos, lidar/planimetric data. Make side-by-side pairs with python tools/side_by_side.py into $dir/pairs$r/.
 Also flag anything that makes no sense as a real building/site, anything floating/clipping/stray, and budget overruns.
 Severity: critical = wrong vs walkthrough/photos or broken; major = clearly unrealistic or illogical; minor = polish.
+Do the FULL review first. Only at the very end write $dir/ISSUES_REVIEW$r.json in this JSON format
+{"issues":[{"severity":"critical|major|minor","area":"...","issue":"...","evidence":"...","fix":"..."}],"summary":"..."} and $dir/REVIEW$r.md.
+A review without screenshots in $dir/pairs$r/ is invalid.
 $lockRule
 "@ | Out-File "$dir/review$r.prompt.txt" -Encoding utf8
-		& $grok --prompt-file "$dir/review$r.prompt.txt" --cwd $root --output-format json --always-approve --max-turns 250 --json-schema $schema 2>"$dir/review$r.err" |
+		& $grok --prompt-file "$dir/review$r.prompt.txt" --cwd $root --output-format json --always-approve --max-turns 300 2>"$dir/review$r.err" |
 			Out-File "$dir/review$r.json" -Encoding utf8
 		$issues = @()
-		try { $issues = @((((Get-Content "$dir/review$r.json" -Raw | ConvertFrom-Json).text) | ConvertFrom-Json).issues) } catch { Log "pass $n review $r unparsable" }
+		try { $issues = @((Get-Content "$dir/ISSUES_REVIEW$r.json" -Raw | ConvertFrom-Json).issues) } catch { Log "pass $n review $r wrote no ISSUES_REVIEW json"; $issues = @([pscustomobject]@{ severity = 'major'; area = 'review'; issue = 'reviewer produced no issue file - rerun review'; evidence = ''; fix = 'n/a' }) }
 		$pairs = @(Get-ChildItem "$dir/pairs$r" -Filter *.jpg -ErrorAction SilentlyContinue | ForEach-Object FullName)
 		if ($pairs.Count) {
 			pwsh -NoProfile -File tools/judge.ps1 -Images ($pairs -join ',') -Out "$dir/judgement$r.json" -MinScore $MinScore 2>&1 | Out-File "$dir/judge$r.txt" -Encoding utf8

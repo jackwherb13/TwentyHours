@@ -25,6 +25,7 @@ function Wait-Agents([string[]]$names) {
 
 $schema = '{"type":"object","properties":{"issues":{"type":"array","items":{"type":"object","properties":{"severity":{"type":"string","enum":["critical","major","minor"]},"owner":{"type":"string","enum":["architect","exterior"]},"area":{"type":"string"},"issue":{"type":"string"},"evidence":{"type":"string"},"fix":{"type":"string"}},"required":["severity","owner","area","issue","evidence","fix"]}},"summary":{"type":"string"}},"required":["issues","summary"]}'
 
+$invalid = 0
 Wait-Agents @('architect-grok', 'exterior-grok')
 for ($round = 1; $round -le $Rounds; $round++) {
 	$dir = "verification/qa/round$round"
@@ -55,12 +56,22 @@ $userReviews
 Report EVERY problem with severity (critical = wrong vs walkthrough/photos or non-functional; major = clearly unrealistic/illogical; minor =
 cosmetic), owner (architect = anything in or of the building structure/interior; exterior = terrain, roads, parking, trees, facades, canopy,
 entrance stairs), area, issue, evidence (screenshot path + what you measured), and a concrete fix. Be strict and specific.
+Do the FULL review first (expect 60-200 tool calls). Only at the very end, write $dir/ISSUES_REVIEW.json exactly in this JSON format
+{"issues":[{"severity":"critical|major|minor","owner":"architect|exterior","area":"...","issue":"...","evidence":"...","fix":"..."}],"summary":"..."}
+and a readable $dir/REVIEW.md. A review with no screenshots under $dir/route/ and $dir/pairs/ is invalid.
 "@ | Out-File "$dir/reviewer_prompt.txt" -Encoding utf8
 	Log "round $round - reviewer"
-	& "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file "$dir/reviewer_prompt.txt" --cwd $root --output-format json --always-approve --max-turns 250 --json-schema $schema 2>"$dir/reviewer.err" |
+	& "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file "$dir/reviewer_prompt.txt" --cwd $root --output-format json --always-approve --max-turns 300 2>"$dir/reviewer.err" |
 		Out-File "$dir/reviewer.json" -Encoding utf8
 	$issues = @()
-	try { $issues = @((((Get-Content "$dir/reviewer.json" -Raw | ConvertFrom-Json).text) | ConvertFrom-Json).issues) } catch { Log "round $round - reviewer output unparsable" }
+	try { $issues = @((Get-Content "$dir/ISSUES_REVIEW.json" -Raw | ConvertFrom-Json).issues) } catch { Log "round $round - reviewer wrote no ISSUES_REVIEW.json" }
+	$shots = @(Get-ChildItem "$dir/route", "$dir/pairs" -Recurse -File -ErrorAction SilentlyContinue).Count
+	if ($shots -lt 5) {
+		Log "round $round - reviewer produced only $shots screenshots: review invalid, retrying the round"
+		if (++$invalid -gt 2) { Log "round $round - reviewer failed 3 times; stopping QA loop"; break }
+		$round--
+		continue
+	}
 
 	$pairs = @(Get-ChildItem "$dir/pairs" -Filter *.jpg -ErrorAction SilentlyContinue | ForEach-Object FullName)
 	if ($pairs.Count) {
