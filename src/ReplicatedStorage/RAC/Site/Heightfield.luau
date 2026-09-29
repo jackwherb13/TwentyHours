@@ -34,7 +34,10 @@ local function insidePad(x: number, z: number): boolean
 		local j = #poly
 		for i, point in poly do
 			local b = poly[j]
-			if (point[2] > z) ~= (b[2] > z) and x < (b[1] - point[1]) * (z - point[2]) / (b[2] - point[2]) + point[1] then
+			if
+				(point[2] > z) ~= (b[2] > z)
+				and x < (b[1] - point[1]) * (z - point[2]) / (b[2] - point[2]) + point[1]
+			then
 				inside = not inside
 			end
 			j = i
