@@ -41,6 +41,11 @@ visually faithful to the real building. Gameplay is intentionally simple for now
   `verification/<milestone>/<photo>.png`, and compared against `reference/photos/<photo>.jpg`. Record a
   pass/fail + notes per station in `verification/<milestone>/REPORT.md`.
 
+## Which Studio to use (IMPORTANT)
+- The live place is the Studio window titled `...\places\TwentyHours.rbxl`. The Roblox_Studio MCP `list_roblox_studios` reports it as
+  **"Place1"** (unpublished place name). That is the ONLY studio to use; it is Rojo-connected and shows the latest build.rbxm.
+- Never open, save-as, or work in other place files or temp copies (e.g. `%TEMP%\rac_round4.rbxl`); screenshots from copies are stale and invalid.
+
 ## Fast iteration pipeline (no Studio GUI, no manual import)
 - Build OFFLINE with Lune into `places/build.rbxm` (the whole RAC model). `rojo serve preview.project.json --port 34872`
   is running and the TwentyHours Studio place is connected, so Studio shows the new build within seconds of the file
