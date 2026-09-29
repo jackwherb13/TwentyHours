@@ -212,9 +212,42 @@ def check_connectivity(name):
 	print(f"{name}: {len(seen) - (1 if name == 'level1' else 0)}/{len(rooms)} rooms reachable, {dead} dead doors")
 
 
+def check_stairs():
+	"""Stairs must physically connect their levels with code-legal steps (rise <= 7.75 in, run >= 10 in)."""
+	elev = {}
+	for n, lv in ((1, "level1"), (2, "level2")):
+		p = BP / f"{lv}.json"
+		if p.exists():
+			elev[n] = json.loads(p.read_text()).get("elevation", 0)
+	stairs = []
+	for lv in ("level1", "level2"):
+		p = BP / f"{lv}.json"
+		if p.exists():
+			stairs += json.loads(p.read_text()).get("stairs", [])
+	seen = set()
+	for s in stairs:
+		if s.get("id") in seen:
+			continue
+		seen.add(s.get("id"))
+		a, b = s.get("fromLevel"), s.get("toLevel")
+		if a not in elev or b not in elev:
+			fails.append(f"stairs: {s.get('id')} connects unknown levels {a}->{b}")
+			continue
+		need = abs(elev[b] - elev[a])
+		rise, run, n = s.get("rise", 0), s.get("run", 0), s.get("risers", 0)
+		if rise > 0.646 + 1e-6:
+			fails.append(f"stairs: {s.get('id')} riser {rise * 12:.1f} in > 7.75 in")
+		if run < 0.833 - 1e-6:
+			fails.append(f"stairs: {s.get('id')} tread {run * 12:.1f} in < 10 in")
+		if n and rise and abs(n * rise - need) > 0.5 and not s.get("partial"):
+			fails.append(f"stairs: {s.get('id')} climbs {n * rise:.1f} ft but levels {a}->{b} are {need:.1f} ft apart")
+	print(f"stairs: {len(seen)} checked")
+
+
 for level in ("level1", "level2"):
 	check_level(level)
 	check_connectivity(level)
+check_stairs()
 if not (BP / "site.json").exists():
 	fails.append("site: missing site.json")
 elif "trueNorthDeg" not in json.loads((BP / "site.json").read_text()):

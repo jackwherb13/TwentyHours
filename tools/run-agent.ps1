@@ -22,7 +22,9 @@ $prompt = Get-Content $PromptFile -Raw
 
 switch ($Tool) {
 	'grok' {
-		& "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file $PromptFile --cwd $root --output-format json --always-approve --max-turns $MaxTurns 2>"$out.err" |
+		$ga = @('--prompt-file', $PromptFile, '--cwd', $root, '--output-format', 'json', '--always-approve', '--max-turns', $MaxTurns)
+		if ($Resume) { $ga += @('--resume', $Resume) }
+		& "$env:USERPROFILE\.grok\bin\grok.exe" @ga 2>"$out.err" |
 			Out-File "$out.json" -Encoding utf8
 		try { (Get-Content "$out.json" -Raw | ConvertFrom-Json).text | Out-File $out -Encoding utf8 } catch { Copy-Item "$out.json" $out }
 	}
