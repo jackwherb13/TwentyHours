@@ -82,3 +82,7 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 - Level 2 cardio/workout-machine area along the open edge has a guardrail.
 - Straight ahead from the main door, past the workout equipment on the RIGHT: the coaches' office suite - interior glass entrance, open cubicle
   space with private offices around it (one is the head coach's office, nameplate "HEAD COACH").
+
+## Open lobby (user, 2026-09-29 08:30)
+- Level 2 above the lobby: OPEN cardio area - rows of treadmills, a punching bag, guardrail at the open edge - NO brick partition.
+- Level 1 lobby: open, not partitioned off; flows into the glass hall and the fitness area; desk stands in it.
