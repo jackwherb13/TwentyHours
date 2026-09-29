@@ -75,3 +75,10 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 
 ## Reception desk (user, 2026-09-28 23:47)
 - In the front entry room, bigger than modeled, long axis perpendicular to the entrance window, with a raised counter within the desk enclosure (staff inside). ~20-25 ft long. IMG_0369.
+
+## More from the user (2026-09-29 01:40)
+- Main stair: set back from the entrance window; FIRST flight runs along the wall -> small square landing -> turn LEFT -> second flight to L2.
+- Immediately LEFT of the main door: a hallway that runs all the way down and connects to the volleyball/competition gym.
+- Level 2 cardio/workout-machine area along the open edge has a guardrail.
+- Straight ahead from the main door, past the workout equipment on the RIGHT: the coaches' office suite - interior glass entrance, open cubicle
+  space with private offices around it (one is the head coach's office, nameplate "HEAD COACH").
