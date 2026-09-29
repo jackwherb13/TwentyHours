@@ -118,6 +118,43 @@ def overlook_facts(level2):
     return fails
 
 
+def review_0140(levels):
+    """01:40 review: stair setback and along-wall run, left hall, cardio rail, glass coaches suite."""
+    fails = []
+    stair = next(s for s in levels[0]["stairs"] if s["id"] == "stair_main")
+    if max(p[1] for p in stair["polygon"]) > -14:
+        fails.append("main stair still meets the entrance glass")
+    flight = (stair.get("flights") or [{}])[0]
+    direction = flight.get("direction") or [0, 0]
+    if abs(direction[0]) < 0.9:
+        fails.append("first flight does not run along the wall")
+    hall = next(r for r in levels[0]["rooms"] if r["id"] == "south_vestibule")
+    xs = [p[0] for p in hall["polygon"]]
+    if min(xs) > -90 or max(xs) < -12:
+        fails.append("left hallway does not run along the glass from the door")
+    ids = {r["id"] for r in levels[0]["rooms"]}
+    if "coach_suite" not in ids or "coach_head" not in ids:
+        fails.append("coaches suite is missing")
+    glass = 0.0
+    for wall in levels[0]["walls"]:
+        if abs(wall["a"][1] + 80) > 0.05 or abs(wall["b"][1] + 80) > 0.05:
+            continue
+        for opening in wall["openings"]:
+            if opening.get("type") == "curtainwall":
+                glass += opening["width"]
+    if glass < 12:
+        fails.append("coaches suite glass entrance is missing")
+    rail = 0.0
+    for wall in levels[1]["walls"]:
+        if wall.get("material") != "glass" or wall.get("height", 99) > 4:
+            continue
+        if abs(wall["a"][1] + 16) < 0.05 and abs(wall["b"][1] + 16) < 0.05:
+            rail += abs(wall["a"][0] - wall["b"][0])
+    if rail < 20:
+        fails.append("cardio edge guardrail is missing")
+    return fails
+
+
 def main():
     levels = [read("level1.json"), read("level2.json")]
     fails = []
@@ -125,6 +162,7 @@ def main():
         fails.append("Level 2 elevation is not 20")
     fails.extend(stair_facts(levels[0]))
     fails.extend(overlook_facts(levels[1]))
+    fails.extend(review_0140(levels))
     graph = graph_of(levels)
     for route in read("walkthrough_routes.json")["routes"]:
         stitched = []

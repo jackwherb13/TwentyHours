@@ -18,6 +18,12 @@ if process.args[3] == "--check-building" then
 	if props then
 		props:Destroy()
 	end
+	-- Draped site context is terrain dressing. Building QA covers walls, facade and roofs.
+	local siteFolder = roots[1]:FindFirstChild("Site")
+	local context = siteFolder and siteFolder:FindFirstChild("Context")
+	if context then
+		context:Destroy()
+	end
 	local temporary = output .. ".building-qa-" .. tostring(os.clock()) .. ".rbxm"
 	local ok, result = pcall(function()
 		fs.writeFile(temporary, roblox.serializeModel(roots))
@@ -40,12 +46,18 @@ local function json(name: string): any
 	assert(fs.isFile(path), "Missing blueprint file: " .. path)
 	return serde.decode("json", fs.readFile(path))
 end
+local loader = Loader.new()
 local data = { site = json("site"), levels = { json("level1"), json("level2") } }
-local Build = Loader.new().load("src/ReplicatedStorage/RAC/Build/Build")
+-- Site-owned glass overrides. Does not rewrite level JSON on disk.
+data = loader.load("src/ReplicatedStorage/RAC/Site/Prepare").apply(data)
+local Build = loader.load("src/ReplicatedStorage/RAC/Build/Build")
 local parent = roblox.Instance.new("Folder")
 local stats = Build.build(parent, data)
 local model = parent:FindFirstChild("RAC")
 assert(model, "Build.build did not produce RAC")
+local siteParts = loader.load("src/ReplicatedStorage/RAC/Site/Builder").build(model, data.site)
+stats.parts += siteParts
+stats.byCategory.SiteContext = siteParts
 local directory = string.match(string.gsub(output, "\\", "/"), "^(.*)/[^/]+$")
 if directory and directory ~= "" then
 	fs.writeDir(directory)

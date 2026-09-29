@@ -1,6 +1,6 @@
 # RAC structure — architect notes
 
-Status: Levels 1 and 2 are a walkable structure. Props and finishes inside rooms are specified below and are not all built yet. No real people, jersey names, or photographed faces.
+Status: Levels 1 and 2 are a walkable structure. Rooms have a purpose fit-out. No real people, jersey names, or photographed faces. The 01:40 photo-match judges were not re-run.
 
 The main entrance is the smaller south glass front, under the dark canopy. The long east curtain wall is glazing, not the entrance. Level 2 is at +20 ft.
 
@@ -9,12 +9,13 @@ The main entrance is the smaller south glass front, under the dark canopy. The l
 Walking north is away from the south glass. Left and right are from that direction of travel.
 
 1. South threshold into the double-height lobby. The 22 ft reception desk is on the west side of that room, long axis north–south, counter facing east. Staff stand inside the enclosure.
-2. North out of the lobby into the glazed recreation hall (ping-pong and vending on the left, glass still on the south). The main stair is on the left: one flight north, square landing at +10, turn left, second flight west to Level 2.
-3. The public hall then turns north along the east side of the competition gym. Gym doors are on the left. The trophy case is on the right where the hall narrows. A doorless link continues into the north–south athletic corridor.
-4. Left off that corridor is the training room. At the end, keypad 15234 opens a square vestibule with only the nutrition fridge, then a door on the left into the volleyball locker room. The sign is generic. The keypad and the fridge name are fictional.
-5. Past the locker, the second stair is reached through the west link. It is two straight flights with a mid landing. Up is west.
-6. On Level 2, leave the main stair onto the landing, then the balcony, then the overlook corridor. Walk north, away from the entrance glass. Floor-to-ceiling glass is on the left, looking down into the competition gym. At the south end of that corridor, turn onto the east–west Level 2 hall and walk west. Racquetball courts are on the left. The second stair, going down, is on the right. Then the basketball door signed BASKETBALL - OFF LIMITS, then the Level 2 exit at grade.
-7. A third stair, `stair_west`, connects the office corridor to Level 2. It is egress, not a walkthrough stop.
+2. Immediately left of the main door, `south_vestibule` is the glass hallway. It runs west along the south glass, with ping-pong and vending, then continues north through `corridor_entry_south` and `corridor_entry_link` to the competition gym doors. The main stair is set back from that glass. The first flight runs east along the hall wall to a square landing at +10, then turns left, and the second flight runs north to Level 2.
+3. Straight in from the desk, the workout machines are on the right in the east glazed bay. A glass storefront at the north end of that bay opens into the coaches' suite: an open cubicle room with private offices around it. The head coach's door carries a nameplate that reads HEAD COACH.
+4. The public hall along the east side of the competition gym has the gym doors on the left. The trophy case is on the right where the hall narrows. A doorless link continues into the north–south athletic corridor.
+5. Left off that corridor is the training room. At the end, keypad 15234 opens a square vestibule with only the nutrition fridge, then a door on the left into the volleyball locker room. The sign is generic. The keypad and the fridge name are fictional.
+6. Past the locker, the second stair is reached through the west link. It is two straight flights with a mid landing. Up is west.
+7. On Level 2, leave the main stair onto the landing, then the balcony, then the overlook corridor. The cardio floor's open south edge, at z = −16, is a horizontal rail. Walk north, away from the entrance glass. Floor-to-ceiling glass is on the left, looking down into the competition gym. At the south end of that corridor, turn onto the east–west Level 2 hall and walk west. Racquetball courts are on the left. The second stair, going down, is on the right. Then the basketball door signed BASKETBALL - OFF LIMITS, then the Level 2 exit at grade.
+8. A third stair, `stair_west`, connects the office corridor to Level 2. It is egress, not a walkthrough stop.
 
 The Level 2 route the checker walks is `main_stair_landing → balcony → corridor_l2_overlook → corridor_l2 → racquetball → stair_second → basketball_approach → cage_gym → HIGH_EXIT`. The turn from the overlook onto `corridor_l2` is required. One straight line cannot keep both the gym and the racquetball courts on the left without cutting the competition gym.
 
@@ -51,16 +52,16 @@ Walkthrough rooms, beyond the table:
 
 - `lobby` — 20 × 28, ceiling 32 gypsum. Desk `reception_desk` at (−6, −16), rotation 270, length 22, 5 bays. Frosted panels, white transaction top, bronze frame, clerk surface inside. IMG_0369. South curtain wall to head 30.
 - `south_vestibule`, `glazed_recreation`, `glazed_recreation_west` — double-height, glass on the south, ping-pong and vending in the recreation hall. IMG_0331.
-- `stair_main` — two flights, left turn, landing at +10. Sealed concrete, wall rails. IMG_0371.
+- `stair_main` — two flights, left turn, landing at +10. First flight runs east along the hall wall, set back from the south glass. Second flight runs north. Sealed concrete, wall rails. IMG_0371.
 - `corridor_l2_overlook` — sealed concrete, 10 ft 2×2 tile. Black-mullion glass on the west, one horizontal mullion near rail height, looking onto the wood court. IMG_0344, IMG_0345, WEB_vb_gym_overlook.
-- `balcony` and the gallery guards — horizontal-rail glass at the 15 ft setback. IMG_0343. Do not run a guard across the stair at z = −15.
+- `balcony` and the gallery guards — horizontal rails, including the cardio edge at z = −16. IMG_0343. Do not run a guard across the stair.
 - `racquetball_1`, `racquetball_2` — 40 × 20, Level 2 only, ceiling 16.5. No courts on Level 1.
 - `competition_gym` — maple, ceiling 32.5, roof 33.7. Court about 94 × 50. Green keys visible from the overlook.
 - `cage_gym` — door label `BASKETBALL - OFF LIMITS`. Ceiling 24.5, roof 45.8.
 - `basketball_approach` — door label `LEVEL 2 EXIT AT GRADE`.
 - `nutrition_vestibule` — keypad 15234, one glass-door fridge signed `MATT CORSON NUTRITION STATION`. Both are fictional.
 - `locker_volleyball` — generic locker sign. No dedication.
-- `training_room` — athletic training. Green treatment tables are a later prop pass.
+- `training_room` — athletic training. Green treatment tables, ice machine, supply cabinets, desk, and a board.
 - `addition` — construction only. One north gate labeled `CONSTRUCTION`. No finished interior.
 
 Every other room uses the row below. Fixture, prop, and signage passes should follow the room type and must not add a named person.

@@ -251,20 +251,20 @@
       "type": "stair",
       "polygon": [
         [
-          -78.5,
-          -32.0
+          -66.5,
+          -48.0
         ],
         [
           -42.5,
-          -32.0
+          -48.0
         ],
         [
           -42.5,
-          0.0
+          -16.0
         ],
         [
-          -78.5,
-          0.0
+          -66.5,
+          -16.0
         ]
       ],
       "floorMaterial": "sealed_concrete",
@@ -314,11 +314,11 @@
         ],
         [
           -10.0,
-          -15.0
+          -16.0
         ],
         [
           -42.5,
-          -15.0
+          -16.0
         ]
       ],
       "floorMaterial": "rubber",
@@ -332,20 +332,20 @@
       "type": "corridor",
       "polygon": [
         [
-          -78.5,
-          -48.0
+          -66.5,
+          -64.0
+        ],
+        [
+          -42.5,
+          -64.0
         ],
         [
           -42.5,
           -48.0
         ],
         [
-          -42.5,
-          -32.0
-        ],
-        [
-          -78.5,
-          -32.0
+          -66.5,
+          -48.0
         ]
       ],
       "floorMaterial": "terrazzo",
@@ -924,11 +924,11 @@
         ],
         [
           -97.0,
-          -15.0
+          -16.0
         ],
         [
           -10.0,
-          -15.0
+          -16.0
         ],
         [
           -10.0,
@@ -959,6 +959,22 @@
         ],
         [
           -5.0,
+          -48.0
+        ],
+        [
+          -42.5,
+          -48.0
+        ],
+        [
+          -42.5,
+          -64.0
+        ],
+        [
+          -66.5,
+          -64.0
+        ],
+        [
+          -66.5,
           -48.0
         ],
         [
@@ -1197,64 +1213,36 @@
       "id": "l2_w009",
       "a": [
         -42.5,
-        -48.0
+        -64.0
       ],
       "b": [
         -42.5,
-        -15.0
+        -16.0
       ],
-      "thickness": 0.28,
+      "thickness": 0.67,
       "height": 12.5,
       "material": "painted_cmu",
       "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 3.0,
-          "width": 10.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "main_stair_landing",
-            "cardio_south"
-          ]
-        }
-      ]
+      "openings": []
     },
     {
       "id": "l2_w010",
       "a": [
-        -42.5,
-        -15.0
+        -66.5,
+        -48.0
       ],
       "b": [
-        -42.5,
-        0.0
+        -66.5,
+        -16.0
       ],
       "thickness": 0.28,
-      "height": 12,
+      "height": 12.5,
       "material": "brick",
       "exterior": true,
       "openings": []
     },
     {
       "id": "l2_w011",
-      "a": [
-        -78.5,
-        -32.0
-      ],
-      "b": [
-        -78.5,
-        0.0
-      ],
-      "thickness": 0.28,
-      "height": 12,
-      "material": "brick",
-      "exterior": true,
-      "openings": []
-    },
-    {
-      "id": "l2_w012",
       "a": [
         -5.0,
         -154.5
@@ -1270,35 +1258,51 @@
       "openings": []
     },
     {
-      "id": "l2_w013",
       "a": [
         -10.0,
         -48.0
       ],
       "b": [
         -10.0,
-        -14.5
+        -28.0
       ],
       "thickness": 1.0,
       "height": 12.5,
       "material": "brick",
       "exterior": true,
-      "openings": []
+      "openings": [],
+      "id": "l2_w012"
+    },
+    {
+      "a": [
+        -10.0,
+        -28.0
+      ],
+      "b": [
+        -10.0,
+        -15.5
+      ],
+      "thickness": 0.25,
+      "height": 3.5,
+      "material": "glass",
+      "exterior": false,
+      "openings": [],
+      "id": "l2_w013"
     },
     {
       "id": "l2_w014",
       "a": [
-        -78.5,
-        -80.0
+        -66.5,
+        -64.0
       ],
       "b": [
-        -78.5,
-        -32.0
+        -66.5,
+        -48.0
       ],
       "thickness": 0.28,
       "height": 12.5,
-      "material": "brick",
-      "exterior": true,
+      "material": "painted_cmu",
+      "exterior": false,
       "openings": []
     },
     {
@@ -1624,7 +1628,7 @@
         -34.0
       ],
       "thickness": 1.0,
-      "height": 12,
+      "height": 12.5,
       "material": "brick",
       "exterior": true,
       "openings": []
@@ -1686,7 +1690,7 @@
         -92.5
       ],
       "thickness": 0.28,
-      "height": 12,
+      "height": 12.5,
       "material": "brick",
       "exterior": true,
       "openings": [
@@ -1738,6 +1742,22 @@
       "id": "l2_w038",
       "a": [
         -78.5,
+        -80.0
+      ],
+      "b": [
+        -78.5,
+        -48.0
+      ],
+      "thickness": 0.28,
+      "height": 12.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l2_w039",
+      "a": [
+        -78.5,
         -279.5
       ],
       "b": [
@@ -1778,7 +1798,7 @@
           ]
         }
       ],
-      "id": "l2_w039"
+      "id": "l2_w040"
     },
     {
       "a": [
@@ -1794,10 +1814,10 @@
       "material": "gypsum",
       "exterior": false,
       "openings": [],
-      "id": "l2_w040"
+      "id": "l2_w041"
     },
     {
-      "id": "l2_w041",
+      "id": "l2_w042",
       "a": [
         -28.0,
         -237.0
@@ -1827,7 +1847,7 @@
       ]
     },
     {
-      "id": "l2_w042",
+      "id": "l2_w043",
       "a": [
         -28.0,
         -212.0
@@ -1843,7 +1863,7 @@
       "openings": []
     },
     {
-      "id": "l2_w043",
+      "id": "l2_w044",
       "a": [
         -64.5,
         -224.0
@@ -1873,7 +1893,7 @@
       ]
     },
     {
-      "id": "l2_w044",
+      "id": "l2_w045",
       "a": [
         -64.5,
         -212.0
@@ -1903,7 +1923,7 @@
       ]
     },
     {
-      "id": "l2_w045",
+      "id": "l2_w046",
       "a": [
         -64.5,
         -195.5
@@ -1916,27 +1936,27 @@
       "height": 12.5,
       "material": "painted_cmu",
       "exterior": false,
-      "openings": []
-    },
-    {
-      "id": "l2_w046",
-      "a": [
-        -4.5,
-        -195.5
-      ],
-      "b": [
-        10.0,
-        -195.5
-      ],
-      "thickness": 0.28,
-      "height": 12.5,
-      "material": "brick",
-      "exterior": true,
       "openings": []
     },
     {
       "id": "l2_w047",
       "a": [
+        -4.5,
+        -195.5
+      ],
+      "b": [
+        10.0,
+        -195.5
+      ],
+      "thickness": 0.28,
+      "height": 12.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l2_w048",
+      "a": [
         -64.5,
         -154.5
       ],
@@ -1951,7 +1971,7 @@
       "openings": []
     },
     {
-      "id": "l2_w048",
+      "id": "l2_w049",
       "a": [
         -5.0,
         -154.5
@@ -1967,24 +1987,23 @@
       "openings": []
     },
     {
-      "id": "l2_w049",
       "a": [
-        -78.5,
-        -32.0
+        -66.5,
+        -48.0
       ],
       "b": [
         -42.5,
-        -32.0
+        -48.0
       ],
-      "thickness": 0.67,
+      "thickness": 0.28,
       "height": 12.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": [
         {
           "type": "opening",
-          "offset": 4.0,
-          "width": 28.0,
+          "offset": 7.0,
+          "width": 10.0,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -1992,26 +2011,55 @@
             "main_stair_landing"
           ]
         }
-      ]
+      ],
+      "id": "l2_w050"
     },
     {
-      "id": "l2_w050",
       "a": [
-        -78.5,
-        0.0
+        -42.5,
+        -48.0
+      ],
+      "b": [
+        -10.0,
+        -48.0
+      ],
+      "thickness": 0.28,
+      "height": 12.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 12.0,
+          "width": 8.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "balcony",
+            "cardio_south"
+          ]
+        }
+      ],
+      "id": "l2_w051"
+    },
+    {
+      "id": "l2_w052",
+      "a": [
+        -66.5,
+        -16.0
       ],
       "b": [
         -42.5,
-        0.0
+        -16.0
       ],
-      "thickness": 1.0,
-      "height": 12,
+      "thickness": 0.28,
+      "height": 12.5,
       "material": "brick",
       "exterior": true,
       "openings": []
     },
     {
-      "id": "l2_w051",
+      "id": "l2_w053",
       "a": [
         -78.5,
         -80.0
@@ -2050,53 +2098,14 @@
       ]
     },
     {
-      "id": "l2_w052",
-      "a": [
-        -78.5,
-        -48.0
-      ],
-      "b": [
-        -10.0,
-        -48.0
-      ],
-      "thickness": 0.28,
-      "height": 12.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 6.0,
-          "width": 24.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "main_stair_landing",
-            "balcony"
-          ]
-        },
-        {
-          "type": "opening",
-          "offset": 46.0,
-          "width": 12.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "balcony",
-            "cardio_south"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "l2_w053",
+      "id": "l2_w054",
       "a": [
         -42.5,
-        -15.0
+        -16.0
       ],
       "b": [
         -10.0,
-        -15.0
+        -16.0
       ],
       "thickness": 0.25,
       "height": 3.5,
@@ -2105,7 +2114,35 @@
       "openings": []
     },
     {
-      "id": "l2_w054",
+      "id": "l2_w055",
+      "a": [
+        -66.5,
+        -64.0
+      ],
+      "b": [
+        -42.5,
+        -64.0
+      ],
+      "thickness": 0.67,
+      "height": 12.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 6.0,
+          "width": 12.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "main_stair_landing",
+            "balcony"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2_w056",
       "a": [
         -193.5,
         -132.5
@@ -2121,7 +2158,7 @@
       "openings": []
     },
     {
-      "id": "l2_w055",
+      "id": "l2_w057",
       "a": [
         -225.0,
         -92.5
@@ -2162,7 +2199,7 @@
       ]
     },
     {
-      "id": "l2_w056",
+      "id": "l2_w058",
       "a": [
         -135.0,
         -92.5
@@ -2192,7 +2229,7 @@
       ]
     },
     {
-      "id": "l2_w057",
+      "id": "l2_w059",
       "a": [
         -345.0,
         -92.5
@@ -2233,7 +2270,7 @@
       ]
     },
     {
-      "id": "l2_w058",
+      "id": "l2_w060",
       "a": [
         -305.0,
         -92.5
@@ -2249,7 +2286,7 @@
       "openings": []
     },
     {
-      "id": "l2_w059",
+      "id": "l2_w061",
       "a": [
         -345.0,
         -80.0
@@ -2292,7 +2329,7 @@
       ]
     },
     {
-      "id": "l2_w060",
+      "id": "l2_w062",
       "a": [
         -305.0,
         -80.0
@@ -2320,7 +2357,7 @@
       ]
     },
     {
-      "id": "l2_w061",
+      "id": "l2_w063",
       "a": [
         -285.0,
         -80.0
@@ -2363,7 +2400,7 @@
       ]
     },
     {
-      "id": "l2_w062",
+      "id": "l2_w064",
       "a": [
         -245.0,
         -80.0
@@ -2379,7 +2416,7 @@
       "openings": []
     },
     {
-      "id": "l2_w063",
+      "id": "l2_w065",
       "a": [
         -351.5,
         -132.5
@@ -2410,7 +2447,7 @@
       ]
     },
     {
-      "id": "l2_w064",
+      "id": "l2_w066",
       "a": [
         -225.0,
         -180.0
@@ -2426,7 +2463,7 @@
       "openings": []
     },
     {
-      "id": "l2_w065",
+      "id": "l2_w067",
       "a": [
         -285.0,
         -40.0
@@ -2442,7 +2479,7 @@
       "openings": []
     },
     {
-      "id": "l2_w066",
+      "id": "l2_w068",
       "a": [
         -345.0,
         -48.0
@@ -2458,7 +2495,7 @@
       "openings": []
     },
     {
-      "id": "l2_w067",
+      "id": "l2_w069",
       "a": [
         -305.0,
         -48.0
@@ -2486,39 +2523,39 @@
       ]
     },
     {
-      "id": "l2_w068",
-      "a": [
-        -357.5,
-        -80.0
-      ],
-      "b": [
-        -345.0,
-        -80.0
-      ],
-      "thickness": 0.28,
-      "height": 12,
-      "material": "brick",
-      "exterior": true,
-      "openings": []
-    },
-    {
-      "id": "l2_w069",
-      "a": [
-        -357.5,
-        -34.0
-      ],
-      "b": [
-        -345.0,
-        -34.0
-      ],
-      "thickness": 0.28,
-      "height": 12,
-      "material": "brick",
-      "exterior": true,
-      "openings": []
-    },
-    {
       "id": "l2_w070",
+      "a": [
+        -357.5,
+        -80.0
+      ],
+      "b": [
+        -345.0,
+        -80.0
+      ],
+      "thickness": 0.28,
+      "height": 12.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l2_w071",
+      "a": [
+        -357.5,
+        -34.0
+      ],
+      "b": [
+        -345.0,
+        -34.0
+      ],
+      "thickness": 0.28,
+      "height": 12.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l2_w072",
       "a": [
         -245.0,
         -40.0
@@ -2534,7 +2571,7 @@
       "openings": []
     },
     {
-      "id": "l2_w071",
+      "id": "l2_w073",
       "a": [
         -345.0,
         -34.0
@@ -2550,7 +2587,7 @@
       "openings": []
     },
     {
-      "id": "l2_w072",
+      "id": "l2_w074",
       "a": [
         -351.5,
         -92.5
@@ -2566,7 +2603,7 @@
       "openings": []
     },
     {
-      "id": "l2_w073",
+      "id": "l2_w075",
       "a": [
         -351.5,
         -220.0
@@ -2582,7 +2619,23 @@
       "openings": []
     },
     {
-      "id": "l2_w074",
+      "id": "l2_w076",
+      "a": [
+        -78.5,
+        -48.0
+      ],
+      "b": [
+        -66.5,
+        -48.0
+      ],
+      "thickness": 0.28,
+      "height": 12.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l2_w077",
       "a": [
         -10.0,
         -48.0
@@ -2831,11 +2884,11 @@
         ],
         [
           -97.0,
-          -15.0
+          -16.0
         ],
         [
           -10.0,
-          -15.0
+          -16.0
         ],
         [
           -10.0,
@@ -2851,20 +2904,20 @@
       "id": "stair_main_opening",
       "polygon": [
         [
-          -54.0,
+          -66.0,
+          -24.0
+        ],
+        [
+          -50.0,
+          -24.0
+        ],
+        [
+          -50.0,
           -17.0
         ],
         [
-          -46.0,
+          -66.0,
           -17.0
-        ],
-        [
-          -46.0,
-          -1.0
-        ],
-        [
-          -54.0,
-          -1.0
         ]
       ]
     },
@@ -2914,20 +2967,20 @@
       "id": "stair_main_upper",
       "polygon": [
         [
-          -70.0,
-          -25.0
+          -50.0,
+          -40.0
         ],
         [
-          -54.0,
-          -25.0
+          -43.0,
+          -40.0
         ],
         [
-          -54.0,
-          -17.0
+          -43.0,
+          -24.0
         ],
         [
-          -70.0,
-          -17.0
+          -50.0,
+          -24.0
         ]
       ]
     },
@@ -2972,7 +3025,509 @@
           -38.0
         ]
       ]
+    },
+    {
+      "id": "stair_main_landing",
+      "polygon": [
+        [
+          -50.0,
+          -24.0
+        ],
+        [
+          -43.0,
+          -24.0
+        ],
+        [
+          -43.0,
+          -17.0
+        ],
+        [
+          -50.0,
+          -17.0
+        ]
+      ]
     }
   ],
-  "props": []
+  "props": [
+    {
+      "id": "l2_bike_1",
+      "kind": "upright_bike",
+      "at": [
+        -36.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_bike_2",
+      "kind": "upright_bike",
+      "at": [
+        -28.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_bike_3",
+      "kind": "upright_bike",
+      "at": [
+        -20.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_ell_1",
+      "kind": "elliptical",
+      "at": [
+        -32.0,
+        -32.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_ell_2",
+      "kind": "elliptical",
+      "at": [
+        -22.0,
+        -32.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_tread_1",
+      "kind": "treadmill",
+      "at": [
+        -16.0,
+        -120.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_2",
+      "kind": "treadmill",
+      "at": [
+        -16.0,
+        -108.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_3",
+      "kind": "treadmill",
+      "at": [
+        -16.0,
+        -96.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_climb_1",
+      "kind": "stair_climber",
+      "at": [
+        -24.0,
+        -120.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_row_1",
+      "kind": "rower",
+      "at": [
+        -30.0,
+        -100.0
+      ],
+      "rotation": 0,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "office_ne_1_fit",
+      "kind": "office_desk",
+      "at": [
+        -66.0,
+        -271.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_1"
+    },
+    {
+      "id": "office_ne_1_chair",
+      "kind": "office_chair",
+      "at": [
+        -66.0,
+        -268.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_1"
+    },
+    {
+      "id": "office_ne_2_fit",
+      "kind": "office_desk",
+      "at": [
+        -40.5,
+        -271.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_2"
+    },
+    {
+      "id": "office_ne_2_chair",
+      "kind": "office_chair",
+      "at": [
+        -40.5,
+        -268.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_2"
+    },
+    {
+      "id": "office_ne_3_fit",
+      "kind": "office_desk",
+      "at": [
+        -16.0,
+        -271.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_3"
+    },
+    {
+      "id": "office_ne_3_chair",
+      "kind": "office_chair",
+      "at": [
+        -16.0,
+        -268.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_3"
+    },
+    {
+      "id": "office_ne_4_fit",
+      "kind": "office_desk",
+      "at": [
+        -16.0,
+        -249.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_4"
+    },
+    {
+      "id": "office_ne_4_chair",
+      "kind": "office_chair",
+      "at": [
+        -16.0,
+        -246.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_4"
+    },
+    {
+      "id": "office_ne_5_fit",
+      "kind": "office_desk",
+      "at": [
+        -16.0,
+        -224.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_5"
+    },
+    {
+      "id": "office_ne_5_chair",
+      "kind": "office_chair",
+      "at": [
+        -16.0,
+        -221.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_5"
+    },
+    {
+      "id": "office_ne_reception_fit",
+      "kind": "office_desk",
+      "at": [
+        -46.0,
+        -243.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_reception"
+    },
+    {
+      "id": "office_ne_reception_chair",
+      "kind": "office_chair",
+      "at": [
+        -46.0,
+        -240.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_reception"
+    },
+    {
+      "id": "restroom_ne_w_fit",
+      "kind": "toilet_partition",
+      "at": [
+        -56.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_w"
+    },
+    {
+      "id": "restroom_ne_w_sink",
+      "kind": "sink_counter",
+      "at": [
+        -53.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_w"
+    },
+    {
+      "id": "restroom_ne_m_fit",
+      "kind": "toilet_partition",
+      "at": [
+        -26.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_m"
+    },
+    {
+      "id": "restroom_ne_m_sink",
+      "kind": "sink_counter",
+      "at": [
+        -23.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_m"
+    },
+    {
+      "id": "fitness_north_fit",
+      "kind": "treadmill",
+      "at": [
+        -27.0,
+        -175.0
+      ],
+      "rotation": 0,
+      "room": "fitness_north"
+    },
+    {
+      "id": "main_stair_landing_fit",
+      "kind": "trash_bin",
+      "at": [
+        -54.5,
+        -56.0
+      ],
+      "rotation": 0,
+      "room": "main_stair_landing"
+    },
+    {
+      "id": "corridor_l2_overlook_fit",
+      "kind": "trash_bin",
+      "at": [
+        -71.5,
+        -171.0
+      ],
+      "rotation": 0,
+      "room": "corridor_l2_overlook"
+    },
+    {
+      "id": "team_meeting_fit",
+      "kind": "bulletin_board",
+      "at": [
+        -164.0,
+        -112.5
+      ],
+      "rotation": 0,
+      "room": "team_meeting"
+    },
+    {
+      "id": "team_offices_fit",
+      "kind": "office_desk",
+      "at": [
+        -107.0,
+        -112.5
+      ],
+      "rotation": 0,
+      "room": "team_offices"
+    },
+    {
+      "id": "team_offices_chair",
+      "kind": "office_chair",
+      "at": [
+        -107.0,
+        -109.5
+      ],
+      "rotation": 0,
+      "room": "team_offices"
+    },
+    {
+      "id": "corridor_l2_fit",
+      "kind": "trash_bin",
+      "at": [
+        -212.0,
+        -86.0
+      ],
+      "rotation": 0,
+      "room": "corridor_l2"
+    },
+    {
+      "id": "athletic_upper_fit",
+      "kind": "trash_bin",
+      "at": [
+        -199.5,
+        -136.0
+      ],
+      "rotation": 0,
+      "room": "athletic_upper"
+    },
+    {
+      "id": "upper_store_fit",
+      "kind": "supply_cabinet",
+      "at": [
+        -215.0,
+        -136.0
+      ],
+      "rotation": 0,
+      "room": "upper_store"
+    },
+    {
+      "id": "racquetball_1_fit",
+      "kind": "water_fountain",
+      "at": [
+        -275.0,
+        -60.0
+      ],
+      "rotation": 0,
+      "room": "racquetball_1"
+    },
+    {
+      "id": "racquetball_2_fit",
+      "kind": "water_fountain",
+      "at": [
+        -255.0,
+        -60.0
+      ],
+      "rotation": 0,
+      "room": "racquetball_2"
+    },
+    {
+      "id": "office_l2_w1_fit",
+      "kind": "office_desk",
+      "at": [
+        -315.0,
+        -64.0
+      ],
+      "rotation": 0,
+      "room": "office_l2_w1"
+    },
+    {
+      "id": "office_l2_w1_chair",
+      "kind": "office_chair",
+      "at": [
+        -315.0,
+        -61.0
+      ],
+      "rotation": 0,
+      "room": "office_l2_w1"
+    },
+    {
+      "id": "office_l2_w2_fit",
+      "kind": "office_desk",
+      "at": [
+        -335.0,
+        -64.0
+      ],
+      "rotation": 0,
+      "room": "office_l2_w2"
+    },
+    {
+      "id": "office_l2_w2_chair",
+      "kind": "office_chair",
+      "at": [
+        -335.0,
+        -61.0
+      ],
+      "rotation": 0,
+      "room": "office_l2_w2"
+    },
+    {
+      "id": "court_gallery_fit",
+      "kind": "trash_bin",
+      "at": [
+        -295.0,
+        -64.0
+      ],
+      "rotation": 0,
+      "room": "court_gallery"
+    },
+    {
+      "id": "upper_service_fit",
+      "kind": "trash_bin",
+      "at": [
+        -315.0,
+        -41.0
+      ],
+      "rotation": 0,
+      "room": "upper_service"
+    },
+    {
+      "id": "basketball_approach_fit",
+      "kind": "trash_bin",
+      "at": [
+        -345.5,
+        -112.5
+      ],
+      "rotation": 0,
+      "room": "basketball_approach"
+    },
+    {
+      "id": "corridor_ne_fit",
+      "kind": "trash_bin",
+      "at": [
+        -46.0,
+        -218.0
+      ],
+      "rotation": 0,
+      "room": "corridor_ne"
+    },
+    {
+      "id": "cage_gym_fit",
+      "kind": "basketball_hoop_ceiling",
+      "at": [
+        -288.0,
+        -156.0
+      ],
+      "rotation": 0,
+      "room": "cage_gym"
+    },
+    {
+      "id": "cage_gym_board",
+      "kind": "scoreboard",
+      "at": [
+        -280.0,
+        -156.0
+      ],
+      "rotation": 90,
+      "room": "cage_gym"
+    },
+    {
+      "id": "balcony_fit",
+      "kind": "trash_bin",
+      "at": [
+        -42.0,
+        -64.0
+      ],
+      "rotation": 0,
+      "room": "balcony"
+    }
+  ]
 }

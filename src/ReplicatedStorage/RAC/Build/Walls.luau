@@ -70,10 +70,41 @@ local function frame(parent: Instance, cf: CFrame, opening: Blueprint.Opening, d
 	end
 end
 
+-- Horizontal metal rails with a wood cap (IMG_0343, IMG_0369, WEB_entrance_from_level2).
+-- Guard walls are the short glass segments the blueprint compiler emits. A solid
+-- glass panel is not the balcony rail in the photos.
+local function buildHorizontalRail(group: Folder, cf: CFrame, length: number)
+	local postCount = math.max(2, math.ceil(length / 4))
+	local span = math.max(length - 0.4, 0.5)
+	local x0 = (length - span) / 2
+	for i = 0, postCount do
+		local x = x0 + span * i / postCount
+		Parts.box(group, "RailPost", Vector3.new(0.16, 3.42, 0.16), cf * CFrame.new(x, 1.71, 0), "steel", true)
+	end
+	for _, y in { 0.55, 1.25, 1.95, 2.65 } do
+		Parts.box(
+			group,
+			"RailBar",
+			Vector3.new(span, 0.12, 0.1),
+			cf * CFrame.new(length / 2, y, 0),
+			"metal_panel",
+			true
+		)
+	end
+	Parts.box(group, "RailCap", Vector3.new(span, 0.18, 0.28), cf * CFrame.new(length / 2, 3.35, 0), "maple", true)
+end
+
 function Walls.build(parent: Instance, level: Blueprint.Level, data: any)
 	for wallIndex, wall in level.walls do
 		local group = Geometry.folder(parent, wall.id)
 		local cf = Geometry.frame(wall.a, wall.b, level.elevation)
+		local dx = wall.b[1] - wall.a[1]
+		local dz = wall.b[2] - wall.a[2]
+		local length = math.sqrt(dx * dx + dz * dz)
+		if wall.height <= 4 and wall.material == "glass" and #wall.openings == 0 and length > 1 then
+			buildHorizontalRail(group, cf, length)
+			continue
+		end
 		for _, r in Layout.rectangles(level, wallIndex, data) do
 			Parts.box(
 				group,

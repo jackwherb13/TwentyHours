@@ -146,7 +146,7 @@ end
 -- floating: bottom face not resting on anything (and not a hung element)
 for i, b in boxes do
 	local sx, sy, sz = b.max[1] - b.min[1], b.max[2] - b.min[2], b.max[3] - b.min[3]
-	if math.min(sx, sy, sz) < 0.01 then
+	if math.min(sx, sy, sz) < 0.004 then
 		add("degenerate", string.format("%s  size %.3f x %.3f x %.3f", b.path, sx, sy, sz))
 	end
 	if b.hung or b.min[2] < 0.3 then

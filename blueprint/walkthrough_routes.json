@@ -7,15 +7,14 @@
         "LOW_ENTRANCE",
         "1:lobby",
         "1:south_vestibule",
-        "1:fitness_annex",
-        "1:corridor_entry_south",
         "1:stair_main",
+        "1:south_vestibule",
         "1:corridor_entry_south",
-        "1:corridor_wide",
+        "1:corridor_entry_link",
         "1:corridor_gym_east",
         "1:competition_gym",
         "1:corridor_gym_east",
-        "1:fitness_north",
+        "1:corridor_entry_link",
         "1:thin_link",
         "1:athletic_corridor",
         "1:training_room",
@@ -58,10 +57,9 @@
       "id": "Desk fitness route",
       "rooms": [
         "1:lobby",
-        "1:south_vestibule",
-        "1:fitness_annex",
-        "1:fitness_center",
-        "1:weight_room"
+        "1:glazed_recreation",
+        "1:coach_suite",
+        "1:coach_head"
       ]
     }
   ]

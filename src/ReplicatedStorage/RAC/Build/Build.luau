@@ -62,11 +62,10 @@ function Build.build(parent: Instance, raw: any): Stats
 				* CFrame.Angles(0, math.rad(prop.rotation), 0)
 			local opts: { [string]: any } = { room = prop.room }
 			local extra = prop :: any
-			if extra.length ~= nil then
-				opts.length = extra.length
-			end
-			if extra.bays ~= nil then
-				opts.bays = extra.bays
+			for _, key in { "length", "bays", "rows", "text" } do
+				if extra[key] ~= nil then
+					opts[key] = extra[key]
+				end
 			end
 			local instance = PropRegistry.build(prop.kind, cf, opts)
 			instance:SetAttribute("BlueprintId", prop.id)

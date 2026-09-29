@@ -341,11 +341,11 @@
         ],
         [
           10.0,
-          -80.0
+          -124.0
         ],
         [
           -5.0,
-          -80.0
+          -124.0
         ]
       ],
       "floorMaterial": "porcelain_tile",
@@ -368,11 +368,11 @@
         ],
         [
           -5.0,
-          -120.0
+          -124.0
         ],
         [
           -66.5,
-          -120.0
+          -124.0
         ]
       ],
       "floorMaterial": "rubber",
@@ -387,14 +387,14 @@
       "polygon": [
         [
           -66.5,
-          -120.0
+          -124.0
         ],
         [
-          -5.0,
-          -120.0
+          -40.0,
+          -124.0
         ],
         [
-          -5.0,
+          -40.0,
           -80.0
         ],
         [
@@ -494,20 +494,20 @@
       "type": "stair",
       "polygon": [
         [
-          -78.5,
-          -32.0
+          -66.5,
+          -48.0
         ],
         [
           -42.5,
-          -32.0
+          -48.0
         ],
         [
           -42.5,
-          0.0
+          -16.0
         ],
         [
-          -78.5,
-          0.0
+          -66.5,
+          -16.0
         ]
       ],
       "floorMaterial": "sealed_concrete",
@@ -538,11 +538,11 @@
         ],
         [
           -10.0,
-          -20.0
+          -16.0
         ],
         [
           -42.5,
-          -20.0
+          -16.0
         ]
       ],
       "floorMaterial": "rubber",
@@ -556,19 +556,19 @@
       "type": "lobby",
       "polygon": [
         [
-          -42.5,
-          -15.0
+          -97.0,
+          -16.0
         ],
         [
           -10.0,
-          -15.0
+          -16.0
         ],
         [
           -10.0,
           0.0
         ],
         [
-          -42.5,
+          -97.0,
           0.0
         ]
       ],
@@ -580,55 +580,28 @@
     {
       "id": "corridor_entry_south",
       "name": "Corridor Entry South",
-      "type": "lobby",
+      "type": "corridor",
       "polygon": [
         [
           -78.5,
-          -48.0
+          -80.0
         ],
         [
-          -42.5,
-          -48.0
+          -66.5,
+          -80.0
         ],
         [
-          -42.5,
-          -32.0
+          -66.5,
+          -16.0
         ],
         [
           -78.5,
-          -32.0
+          -16.0
         ]
       ],
-      "floorMaterial": "porcelain_tile",
+      "floorMaterial": "terrazzo",
       "ceilingHeight": 12,
       "ceilingType": "act_2x4",
-      "wallFinish": "gypsum"
-    },
-    {
-      "id": "glazed_recreation_west",
-      "name": "Glazed Recreation West",
-      "type": "lobby",
-      "polygon": [
-        [
-          -97.0,
-          -15.0
-        ],
-        [
-          -78.5,
-          -15.0
-        ],
-        [
-          -78.5,
-          0.0
-        ],
-        [
-          -97.0,
-          0.0
-        ]
-      ],
-      "floorMaterial": "porcelain_tile",
-      "ceilingHeight": 32,
-      "ceilingType": "gypsum",
       "wallFinish": "gypsum"
     },
     {
@@ -646,11 +619,11 @@
         ],
         [
           -78.5,
-          -15.0
+          -16.0
         ],
         [
           -97.0,
-          -15.0
+          -16.0
         ]
       ],
       "floorMaterial": "terrazzo",
@@ -1344,7 +1317,7 @@
       "type": "lobby",
       "polygon": [
         [
-          -78.5,
+          -66.5,
           -80.0
         ],
         [
@@ -1356,7 +1329,7 @@
           -48.0
         ],
         [
-          -78.5,
+          -66.5,
           -48.0
         ]
       ],
@@ -1366,30 +1339,219 @@
       "wallFinish": "gypsum"
     },
     {
-      "id": "vestibule_inner",
-      "name": "Vestibule Inner",
-      "type": "lobby",
+      "id": "coach_head",
+      "name": "Head Coach",
+      "type": "office",
       "polygon": [
         [
-          -42.5,
-          -20.0
+          -40.0,
+          -96.0
         ],
         [
-          -10.0,
-          -20.0
+          -28.0,
+          -96.0
         ],
         [
-          -10.0,
-          -15.0
+          -28.0,
+          -80.0
         ],
         [
-          -42.5,
-          -15.0
+          -40.0,
+          -80.0
         ]
       ],
-      "floorMaterial": "porcelain_tile",
-      "ceilingHeight": 12,
-      "ceilingType": "act_2x4",
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_west",
+      "name": "Coach Office West",
+      "type": "office",
+      "polygon": [
+        [
+          -40.0,
+          -112.0
+        ],
+        [
+          -28.0,
+          -112.0
+        ],
+        [
+          -28.0,
+          -96.0
+        ],
+        [
+          -40.0,
+          -96.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_west_n",
+      "name": "Coach Office West North",
+      "type": "office",
+      "polygon": [
+        [
+          -40.0,
+          -124.0
+        ],
+        [
+          -28.0,
+          -124.0
+        ],
+        [
+          -28.0,
+          -112.0
+        ],
+        [
+          -40.0,
+          -112.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_suite",
+      "name": "Coaches Suite",
+      "type": "office",
+      "polygon": [
+        [
+          -28.0,
+          -112.0
+        ],
+        [
+          2.0,
+          -112.0
+        ],
+        [
+          2.0,
+          -80.0
+        ],
+        [
+          -28.0,
+          -80.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_north",
+      "name": "Coach Office North",
+      "type": "office",
+      "polygon": [
+        [
+          -28.0,
+          -124.0
+        ],
+        [
+          2.0,
+          -124.0
+        ],
+        [
+          2.0,
+          -112.0
+        ],
+        [
+          -28.0,
+          -112.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_east_s",
+      "name": "Coach Office East",
+      "type": "office",
+      "polygon": [
+        [
+          2.0,
+          -96.0
+        ],
+        [
+          10.0,
+          -96.0
+        ],
+        [
+          10.0,
+          -80.0
+        ],
+        [
+          2.0,
+          -80.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_east_m",
+      "name": "Coach Office East Middle",
+      "type": "office",
+      "polygon": [
+        [
+          2.0,
+          -112.0
+        ],
+        [
+          10.0,
+          -112.0
+        ],
+        [
+          10.0,
+          -96.0
+        ],
+        [
+          2.0,
+          -96.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
+      "wallFinish": "gypsum"
+    },
+    {
+      "id": "coach_east_n",
+      "name": "Coach Office East North",
+      "type": "office",
+      "polygon": [
+        [
+          2.0,
+          -124.0
+        ],
+        [
+          10.0,
+          -124.0
+        ],
+        [
+          10.0,
+          -112.0
+        ],
+        [
+          2.0,
+          -112.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9.5,
+      "ceilingType": "act_2x2",
       "wallFinish": "gypsum"
     }
   ],
@@ -1494,7 +1656,7 @@
       "openings": [
         {
           "type": "door",
-          "offset": 20.5,
+          "offset": 20.0,
           "width": 6.0,
           "sill": 0,
           "head": 7,
@@ -1726,7 +1888,7 @@
       "id": "l1_w016",
       "a": [
         10.0,
-        -154.5
+        -80.0
       ],
       "b": [
         10.0,
@@ -1739,15 +1901,7 @@
       "openings": [
         {
           "type": "curtainwall",
-          "offset": 1.0,
-          "width": 72.0,
-          "sill": 0,
-          "head": 30,
-          "mullionSpacing": 5
-        },
-        {
-          "type": "curtainwall",
-          "offset": 76.5,
+          "offset": 2.0,
           "width": 48.0,
           "sill": 0,
           "head": 30,
@@ -1755,7 +1909,7 @@
         },
         {
           "type": "curtainwall",
-          "offset": 128.5,
+          "offset": 54.0,
           "width": 24.0,
           "sill": 0,
           "head": 30,
@@ -1780,18 +1934,7 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 9.0,
-          "width": 3.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "lobby",
-            "vestibule_inner"
-          ]
-        },
-        {
-          "type": "opening",
-          "offset": 14.5,
+          "offset": 14.0,
           "width": 12.0,
           "sill": 0,
           "head": 9,
@@ -1805,12 +1948,28 @@
     {
       "id": "l1_w018",
       "a": [
+        10.0,
+        -154.5
+      ],
+      "b": [
+        10.0,
+        -124.0
+      ],
+      "thickness": 0.28,
+      "height": 32.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l1_w019",
+      "a": [
         -5.0,
         -154.5
       ],
       "b": [
         -5.0,
-        -28.0
+        -124.0
       ],
       "thickness": 0.67,
       "height": 32.5,
@@ -1819,7 +1978,7 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 5.0,
+          "offset": 3.0,
           "width": 24.0,
           "sill": 0,
           "head": 9,
@@ -1827,49 +1986,69 @@
             "lobby_north",
             "fitness_center"
           ]
-        },
-        {
-          "type": "opening",
-          "offset": 84.5,
-          "width": 12.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "glazed_recreation",
-            "corridor_wide"
-          ]
-        },
-        {
-          "type": "opening",
-          "offset": 107.5,
-          "width": 18.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "glazed_recreation",
-            "fitness_annex"
-          ]
         }
       ]
     },
     {
-      "id": "l1_w019",
+      "id": "l1_w020",
       "a": [
         -66.5,
         -154.5
       ],
       "b": [
         -66.5,
-        -80.0
+        -48.0
       ],
-      "thickness": 0.67,
+      "thickness": 0.28,
       "height": 19.5,
       "material": "painted_cmu",
       "exterior": false,
-      "openings": []
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 75.5,
+          "width": 30.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "corridor_entry_south",
+            "corridor_wide"
+          ]
+        }
+      ]
     },
     {
-      "id": "l1_w020",
+      "id": "l1_w021",
+      "a": [
+        -40.0,
+        -124.0
+      ],
+      "b": [
+        -40.0,
+        -80.0
+      ],
+      "thickness": 0.5,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 4.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_west_n",
+            "weight_room"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l1_w022",
       "a": [
         -78.5,
         -132.5
@@ -1910,85 +2089,40 @@
       ]
     },
     {
-      "id": "l1_w021",
-      "a": [
-        -42.5,
-        -32.0
-      ],
-      "b": [
-        -42.5,
-        0.0
-      ],
-      "thickness": 0.28,
-      "height": 32.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 20.5,
-          "width": 8.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "south_vestibule",
-            "stair_main"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "l1_w022",
-      "a": [
-        -78.5,
-        -32.0
-      ],
-      "b": [
-        -78.5,
-        0.0
-      ],
-      "thickness": 0.28,
-      "height": 32.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 21.5,
-          "width": 6.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "glazed_recreation_west",
-            "stair_main"
-          ]
-        }
-      ]
-    },
-    {
       "id": "l1_w023",
       "a": [
-        -42.5,
-        -48.0
+        -5.0,
+        -80.0
       ],
       "b": [
-        -42.5,
-        -32.0
+        -5.0,
+        -28.0
       ],
-      "thickness": 0.28,
-      "height": 19.5,
+      "thickness": 0.67,
+      "height": 32.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": [
         {
           "type": "opening",
-          "offset": 2.0,
+          "offset": 10.0,
           "width": 12.0,
           "sill": 0,
           "head": 9,
           "connection": [
-            "fitness_annex",
-            "corridor_entry_south"
+            "glazed_recreation",
+            "corridor_wide"
+          ]
+        },
+        {
+          "type": "opening",
+          "offset": 33.0,
+          "width": 18.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "glazed_recreation",
+            "fitness_annex"
           ]
         }
       ]
@@ -1996,12 +2130,72 @@
     {
       "id": "l1_w024",
       "a": [
+        -42.5,
+        -48.0
+      ],
+      "b": [
+        -42.5,
+        -16.0
+      ],
+      "thickness": 0.67,
+      "height": 32.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l1_w025",
+      "a": [
+        -66.5,
+        -48.0
+      ],
+      "b": [
+        -66.5,
+        -16.0
+      ],
+      "thickness": 0.28,
+      "height": 32.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 12.0,
+          "width": 8.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "corridor_entry_south",
+            "stair_main"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l1_w026",
+      "a": [
+        -78.5,
+        -80.0
+      ],
+      "b": [
+        -78.5,
+        -62.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l1_w027",
+      "a": [
         -78.5,
         -62.0
       ],
       "b": [
         -78.5,
-        -32.0
+        -16.0
       ],
       "thickness": 0.28,
       "height": 19.5,
@@ -2010,19 +2204,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 2.0,
-          "width": 10.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "corridor_south_link",
-            "corridor_wide"
-          ]
-        },
-        {
-          "type": "opening",
-          "offset": 17.0,
-          "width": 10.0,
+          "offset": 19.0,
+          "width": 8.0,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -2033,7 +2216,7 @@
       ]
     },
     {
-      "id": "l1_w025",
+      "id": "l1_w028",
       "a": [
         -193.5,
         -132.5
@@ -2087,7 +2270,7 @@
       ]
     },
     {
-      "id": "l1_w026",
+      "id": "l1_w029",
       "a": [
         -205.5,
         -180.0
@@ -2130,7 +2313,7 @@
       ]
     },
     {
-      "id": "l1_w027",
+      "id": "l1_w030",
       "a": [
         -205.5,
         -80.0
@@ -2146,7 +2329,7 @@
       "openings": []
     },
     {
-      "id": "l1_w028",
+      "id": "l1_w031",
       "a": [
         -236.5,
         -92.5
@@ -2187,7 +2370,7 @@
       ]
     },
     {
-      "id": "l1_w029",
+      "id": "l1_w032",
       "a": [
         -183.5,
         -102.5
@@ -2203,72 +2386,72 @@
       "openings": []
     },
     {
-      "id": "l1_w030",
-      "a": [
-        -159.5,
-        -124.5
-      ],
-      "b": [
-        -159.5,
-        -92.5
-      ],
-      "thickness": 0.67,
-      "height": 19.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": []
-    },
-    {
-      "id": "l1_w031",
-      "a": [
-        -131.5,
-        -124.5
-      ],
-      "b": [
-        -131.5,
-        -92.5
-      ],
-      "thickness": 0.67,
-      "height": 19.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": []
-    },
-    {
-      "id": "l1_w032",
-      "a": [
-        -103.5,
-        -124.5
-      ],
-      "b": [
-        -103.5,
-        -92.5
-      ],
-      "thickness": 0.67,
-      "height": 19.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": []
-    },
-    {
       "id": "l1_w033",
       "a": [
-        -97.0,
-        -80.0
+        -159.5,
+        -124.5
       ],
       "b": [
-        -97.0,
-        -62.0
+        -159.5,
+        -92.5
       ],
-      "thickness": 0.28,
+      "thickness": 0.67,
       "height": 19.5,
-      "material": "brick",
-      "exterior": true,
+      "material": "painted_cmu",
+      "exterior": false,
       "openings": []
     },
     {
       "id": "l1_w034",
       "a": [
+        -131.5,
+        -124.5
+      ],
+      "b": [
+        -131.5,
+        -92.5
+      ],
+      "thickness": 0.67,
+      "height": 19.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l1_w035",
+      "a": [
+        -103.5,
+        -124.5
+      ],
+      "b": [
+        -103.5,
+        -92.5
+      ],
+      "thickness": 0.67,
+      "height": 19.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l1_w036",
+      "a": [
+        -97.0,
+        -80.0
+      ],
+      "b": [
+        -97.0,
+        -62.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "l1_w037",
+      "a": [
         -193.5,
         -80.0
       ],
@@ -2283,7 +2466,7 @@
       "openings": []
     },
     {
-      "id": "l1_w035",
+      "id": "l1_w038",
       "a": [
         -305.0,
         -132.5
@@ -2299,7 +2482,7 @@
       "openings": []
     },
     {
-      "id": "l1_w036",
+      "id": "l1_w039",
       "a": [
         -339.5,
         -132.5
@@ -2315,7 +2498,7 @@
       "openings": []
     },
     {
-      "id": "l1_w037",
+      "id": "l1_w040",
       "a": [
         -225.0,
         -180.0
@@ -2331,7 +2514,7 @@
       "openings": []
     },
     {
-      "id": "l1_w038",
+      "id": "l1_w041",
       "a": [
         -346.5,
         -92.5
@@ -2347,7 +2530,7 @@
       "openings": []
     },
     {
-      "id": "l1_w039",
+      "id": "l1_w042",
       "a": [
         -269.5,
         -80.0
@@ -2375,7 +2558,7 @@
       ]
     },
     {
-      "id": "l1_w040",
+      "id": "l1_w043",
       "a": [
         -345.0,
         -80.0
@@ -2405,7 +2588,7 @@
       ]
     },
     {
-      "id": "l1_w041",
+      "id": "l1_w044",
       "a": [
         -345.0,
         -70.0
@@ -2421,7 +2604,7 @@
       "openings": []
     },
     {
-      "id": "l1_w042",
+      "id": "l1_w045",
       "a": [
         -357.5,
         -80.0
@@ -2447,7 +2630,7 @@
       ]
     },
     {
-      "id": "l1_w043",
+      "id": "l1_w046",
       "a": [
         -317.0,
         -70.0
@@ -2463,7 +2646,7 @@
       "openings": []
     },
     {
-      "id": "l1_w044",
+      "id": "l1_w047",
       "a": [
         -293.0,
         -70.0
@@ -2479,7 +2662,7 @@
       "openings": []
     },
     {
-      "id": "l1_w045",
+      "id": "l1_w048",
       "a": [
         -269.5,
         -70.0
@@ -2495,14 +2678,100 @@
       "openings": []
     },
     {
-      "id": "l1_w046",
+      "id": "l1_w049",
       "a": [
-        -78.5,
-        -80.0
+        -28.0,
+        -124.0
       ],
       "b": [
-        -78.5,
-        -62.0
+        -28.0,
+        -80.0
+      ],
+      "thickness": 0.5,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 18.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_suite",
+            "coach_west"
+          ]
+        },
+        {
+          "type": "door",
+          "offset": 34.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_suite",
+            "coach_head"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l1_w050",
+      "a": [
+        2.0,
+        -124.0
+      ],
+      "b": [
+        2.0,
+        -80.0
+      ],
+      "thickness": 0.5,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 18.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_suite",
+            "coach_east_m"
+          ]
+        },
+        {
+          "type": "door",
+          "offset": 34.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_suite",
+            "coach_east_s"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l1_w051",
+      "a": [
+        10.0,
+        -124.0
+      ],
+      "b": [
+        10.0,
+        -80.0
       ],
       "thickness": 0.28,
       "height": 19.5,
@@ -2511,7 +2780,7 @@
       "openings": []
     },
     {
-      "id": "l1_w047",
+      "id": "l1_w052",
       "a": [
         -193.5,
         -279.5
@@ -2553,7 +2822,7 @@
       ]
     },
     {
-      "id": "l1_w048",
+      "id": "l1_w053",
       "a": [
         -193.5,
         -132.5
@@ -2569,7 +2838,7 @@
       "openings": []
     },
     {
-      "id": "l1_w049",
+      "id": "l1_w054",
       "a": [
         -236.5,
         -62.0
@@ -2585,7 +2854,7 @@
       "openings": []
     },
     {
-      "id": "l1_w050",
+      "id": "l1_w055",
       "a": [
         -205.5,
         -62.0
@@ -2601,7 +2870,7 @@
       "openings": []
     },
     {
-      "id": "l1_w051",
+      "id": "l1_w056",
       "a": [
         -193.5,
         -62.0
@@ -2617,7 +2886,7 @@
       "openings": []
     },
     {
-      "id": "l1_w052",
+      "id": "l1_w057",
       "a": [
         -236.5,
         47.0
@@ -2659,7 +2928,7 @@
       ]
     },
     {
-      "id": "l1_w053",
+      "id": "l1_w058",
       "a": [
         -78.5,
         -279.5
@@ -2702,7 +2971,7 @@
           ]
         }
       ],
-      "id": "l1_w054"
+      "id": "l1_w059"
     },
     {
       "a": [
@@ -2718,10 +2987,10 @@
       "material": "gypsum",
       "exterior": false,
       "openings": [],
-      "id": "l1_w055"
+      "id": "l1_w060"
     },
     {
-      "id": "l1_w056",
+      "id": "l1_w061",
       "a": [
         -28.0,
         -237.0
@@ -2751,7 +3020,7 @@
       ]
     },
     {
-      "id": "l1_w057",
+      "id": "l1_w062",
       "a": [
         -28.0,
         -212.0
@@ -2767,7 +3036,7 @@
       "openings": []
     },
     {
-      "id": "l1_w058",
+      "id": "l1_w063",
       "a": [
         -66.5,
         -224.0
@@ -2797,7 +3066,7 @@
       ]
     },
     {
-      "id": "l1_w059",
+      "id": "l1_w064",
       "a": [
         -70.5,
         -212.0
@@ -2827,7 +3096,7 @@
       ]
     },
     {
-      "id": "l1_w060",
+      "id": "l1_w065",
       "a": [
         -78.5,
         -195.5
@@ -2857,7 +3126,7 @@
       ]
     },
     {
-      "id": "l1_w061",
+      "id": "l1_w066",
       "a": [
         -4.5,
         -195.5
@@ -2873,7 +3142,7 @@
       "openings": []
     },
     {
-      "id": "l1_w062",
+      "id": "l1_w067",
       "a": [
         -78.5,
         -154.5
@@ -2914,7 +3183,7 @@
       ]
     },
     {
-      "id": "l1_w063",
+      "id": "l1_w068",
       "a": [
         -5.0,
         -154.5
@@ -2930,7 +3199,7 @@
       "openings": []
     },
     {
-      "id": "l1_w064",
+      "id": "l1_w069",
       "a": [
         -10.0,
         -28.0
@@ -2946,8 +3215,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 6.5,
-          "width": 12.0,
+          "offset": 7.5,
+          "width": 10.0,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -2958,7 +3227,7 @@
       ]
     },
     {
-      "id": "l1_w065",
+      "id": "l1_w070",
       "a": [
         -97.0,
         0.0
@@ -2974,24 +3243,8 @@
       "openings": [
         {
           "type": "curtainwall",
-          "offset": 1.0,
-          "width": 16.5,
-          "sill": 0,
-          "head": 30,
-          "mullionSpacing": 5
-        },
-        {
-          "type": "curtainwall",
-          "offset": 19.5,
-          "width": 34.0,
-          "sill": 0,
-          "head": 30,
-          "mullionSpacing": 5
-        },
-        {
-          "type": "curtainwall",
-          "offset": 55.5,
-          "width": 30.0,
+          "offset": 3.5,
+          "width": 80.0,
           "sill": 0,
           "head": 30,
           "mullionSpacing": 5
@@ -3032,52 +3285,54 @@
       ]
     },
     {
-      "id": "l1_w066",
+      "id": "l1_w071",
       "a": [
         -5.0,
-        -80.0
+        -124.0
       ],
       "b": [
         10.0,
-        -80.0
+        -124.0
       ],
       "thickness": 0.28,
       "height": 32.5,
-      "material": "painted_cmu",
+      "material": "gypsum",
       "exterior": false,
       "openings": [
         {
-          "type": "opening",
-          "offset": 1.5,
-          "width": 12.0,
+          "type": "door",
+          "offset": 2.0,
+          "width": 3.5,
           "sill": 0,
-          "head": 9,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
           "connection": [
-            "glazed_recreation",
+            "coach_north",
             "lobby_north"
           ]
         }
       ]
     },
     {
-      "id": "l1_w067",
+      "id": "l1_w072",
       "a": [
         -66.5,
-        -120.0
+        -124.0
       ],
       "b": [
-        -5.0,
-        -120.0
+        -40.0,
+        -124.0
       ],
-      "thickness": 0.67,
+      "thickness": 0.28,
       "height": 19.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": [
         {
           "type": "opening",
-          "offset": 27.0,
-          "width": 8.0,
+          "offset": 10.0,
+          "width": 6.0,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -3088,13 +3343,28 @@
       ]
     },
     {
-      "id": "l1_w068",
+      "id": "l1_w073",
+      "a": [
+        -40.0,
+        -124.0
+      ],
+      "b": [
+        -5.0,
+        -124.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": []
+    },
+    {
       "a": [
         -78.5,
         -80.0
       ],
       "b": [
-        -5.0,
+        -66.5,
         -80.0
       ],
       "thickness": 0.28,
@@ -3104,19 +3374,36 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 1.0,
-          "width": 10.0,
+          "offset": 2.0,
+          "width": 8.0,
           "sill": 0,
           "head": 9,
           "connection": [
-            "corridor_wide",
+            "corridor_entry_south",
             "corridor_entry_link"
           ]
-        },
+        }
+      ],
+      "id": "l1_w074"
+    },
+    {
+      "a": [
+        -66.5,
+        -80.0
+      ],
+      "b": [
+        -40.0,
+        -80.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
         {
           "type": "opening",
-          "offset": 35.0,
-          "width": 16.0,
+          "offset": 9.0,
+          "width": 8.0,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -3124,10 +3411,11 @@
             "corridor_wide"
           ]
         }
-      ]
+      ],
+      "id": "l1_w075"
     },
     {
-      "id": "l1_w069",
+      "id": "l1_w076",
       "a": [
         -78.5,
         -132.5
@@ -3143,8 +3431,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 1.0,
-          "width": 10.0,
+          "offset": 2.0,
+          "width": 8.0,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -3155,14 +3443,68 @@
       ]
     },
     {
-      "id": "l1_w070",
+      "id": "l1_w077",
       "a": [
-        -78.5,
-        -32.0
+        -5.0,
+        -80.0
+      ],
+      "b": [
+        10.0,
+        -80.0
+      ],
+      "thickness": 0.28,
+      "height": 32.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 1.5,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "glazed_recreation",
+            "coach_suite"
+          ]
+        },
+        {
+          "type": "curtainwall",
+          "offset": 5.5,
+          "width": 9.5,
+          "sill": 0,
+          "head": 9,
+          "mullionSpacing": 4
+        }
+      ]
+    },
+    {
+      "id": "l1_w078",
+      "a": [
+        -66.5,
+        -48.0
       ],
       "b": [
         -42.5,
-        -32.0
+        -48.0
+      ],
+      "thickness": 0.28,
+      "height": 32.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l1_w079",
+      "a": [
+        -97.0,
+        -16.0
+      ],
+      "b": [
+        -10.0,
+        -16.0
       ],
       "thickness": 0.67,
       "height": 32.5,
@@ -3171,46 +3513,68 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 14.0,
+          "offset": 5.0,
           "width": 8.0,
           "sill": 0,
           "head": 9,
           "connection": [
-            "corridor_entry_south",
+            "south_vestibule",
+            "corridor_south_link"
+          ]
+        },
+        {
+          "type": "opening",
+          "offset": 20.5,
+          "width": 8.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "south_vestibule",
+            "corridor_entry_south"
+          ]
+        },
+        {
+          "type": "opening",
+          "offset": 34.5,
+          "width": 16.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "south_vestibule",
             "stair_main"
+          ]
+        },
+        {
+          "type": "opening",
+          "offset": 64.5,
+          "width": 12.0,
+          "sill": 0,
+          "head": 9,
+          "connection": [
+            "south_vestibule",
+            "fitness_annex"
           ]
         }
       ]
     },
     {
-      "id": "l1_w071",
+      "id": "l1_w080",
       "a": [
-        -78.5,
+        -42.5,
         -48.0
       ],
       "b": [
         -5.0,
         -48.0
       ],
-      "thickness": 0.67,
+      "thickness": 0.28,
       "height": 19.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": [
         {
           "type": "opening",
-          "offset": 3.0,
-          "width": 30.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "corridor_entry_south",
-            "corridor_wide"
-          ]
-        },
-        {
-          "type": "opening",
-          "offset": 43.0,
+          "offset": 7.0,
           "width": 24.0,
           "sill": 0,
           "head": 9,
@@ -3222,91 +3586,7 @@
       ]
     },
     {
-      "id": "l1_w072",
-      "a": [
-        -42.5,
-        -20.0
-      ],
-      "b": [
-        -10.0,
-        -20.0
-      ],
-      "thickness": 0.67,
-      "height": 19.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 2.0,
-          "width": 28.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "vestibule_inner",
-            "fitness_annex"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "l1_w073",
-      "a": [
-        -42.5,
-        -15.0
-      ],
-      "b": [
-        -10.0,
-        -15.0
-      ],
-      "thickness": 0.67,
-      "height": 32.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 2.0,
-          "width": 28.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "south_vestibule",
-            "vestibule_inner"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "l1_w074",
-      "a": [
-        -97.0,
-        -15.0
-      ],
-      "b": [
-        -78.5,
-        -15.0
-      ],
-      "thickness": 0.67,
-      "height": 32.5,
-      "material": "painted_cmu",
-      "exterior": false,
-      "openings": [
-        {
-          "type": "opening",
-          "offset": 4.0,
-          "width": 10.0,
-          "sill": 0,
-          "head": 9,
-          "connection": [
-            "corridor_south_link",
-            "glazed_recreation_west"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "l1_w075",
+      "id": "l1_w081",
       "a": [
         -97.0,
         -62.0
@@ -3322,7 +3602,7 @@
       "openings": []
     },
     {
-      "id": "l1_w076",
+      "id": "l1_w082",
       "a": [
         -193.5,
         -124.5
@@ -3365,7 +3645,7 @@
       ]
     },
     {
-      "id": "l1_w077",
+      "id": "l1_w083",
       "a": [
         -225.0,
         -180.0
@@ -3381,7 +3661,7 @@
       "openings": []
     },
     {
-      "id": "l1_w078",
+      "id": "l1_w084",
       "a": [
         -205.5,
         -80.0
@@ -3397,7 +3677,7 @@
       "openings": []
     },
     {
-      "id": "l1_w079",
+      "id": "l1_w085",
       "a": [
         -305.0,
         -92.5
@@ -3428,7 +3708,7 @@
       ]
     },
     {
-      "id": "l1_w080",
+      "id": "l1_w086",
       "a": [
         -225.0,
         -92.5
@@ -3444,7 +3724,7 @@
       "openings": []
     },
     {
-      "id": "l1_w081",
+      "id": "l1_w087",
       "a": [
         -193.5,
         -102.5
@@ -3487,7 +3767,7 @@
       ]
     },
     {
-      "id": "l1_w082",
+      "id": "l1_w088",
       "a": [
         -193.5,
         -92.5
@@ -3517,7 +3797,7 @@
       ]
     },
     {
-      "id": "l1_w083",
+      "id": "l1_w089",
       "a": [
         -193.5,
         -80.0
@@ -3547,7 +3827,7 @@
       ]
     },
     {
-      "id": "l1_w084",
+      "id": "l1_w090",
       "a": [
         -97.0,
         -80.0
@@ -3563,7 +3843,7 @@
       "openings": []
     },
     {
-      "id": "l1_w085",
+      "id": "l1_w091",
       "a": [
         -339.5,
         -132.5
@@ -3579,7 +3859,7 @@
       "openings": []
     },
     {
-      "id": "l1_w086",
+      "id": "l1_w092",
       "a": [
         -339.5,
         -92.5
@@ -3609,7 +3889,7 @@
       ]
     },
     {
-      "id": "l1_w087",
+      "id": "l1_w093",
       "a": [
         -346.5,
         -92.5
@@ -3625,7 +3905,7 @@
       "openings": []
     },
     {
-      "id": "l1_w088",
+      "id": "l1_w094",
       "a": [
         -345.0,
         -80.0
@@ -3653,7 +3933,7 @@
       ]
     },
     {
-      "id": "l1_w089",
+      "id": "l1_w095",
       "a": [
         -345.0,
         -70.0
@@ -3709,7 +3989,7 @@
       ]
     },
     {
-      "id": "l1_w090",
+      "id": "l1_w096",
       "a": [
         -357.5,
         -80.0
@@ -3725,7 +4005,7 @@
       "openings": []
     },
     {
-      "id": "l1_w091",
+      "id": "l1_w097",
       "a": [
         -357.5,
         -34.0
@@ -3741,7 +4021,7 @@
       "openings": []
     },
     {
-      "id": "l1_w092",
+      "id": "l1_w098",
       "a": [
         -345.0,
         -34.0
@@ -3757,7 +4037,7 @@
       "openings": []
     },
     {
-      "id": "l1_w093",
+      "id": "l1_w099",
       "a": [
         -269.5,
         -62.0
@@ -3787,6 +4067,209 @@
       ]
     },
     {
+      "id": "l1_w100",
+      "a": [
+        -40.0,
+        -80.0
+      ],
+      "b": [
+        -5.0,
+        -80.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "curtainwall",
+          "offset": 0.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 9,
+          "mullionSpacing": 4
+        },
+        {
+          "type": "door",
+          "offset": 4.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "corridor_wide",
+            "coach_head"
+          ]
+        },
+        {
+          "type": "curtainwall",
+          "offset": 7.5,
+          "width": 13.0,
+          "sill": 0,
+          "head": 9,
+          "mullionSpacing": 4
+        },
+        {
+          "type": "door",
+          "offset": 20.5,
+          "width": 6.0,
+          "sill": 0,
+          "head": 7,
+          "leaves": 2,
+          "tag": "RACDoor",
+          "connection": [
+            "corridor_wide",
+            "coach_suite"
+          ]
+        },
+        {
+          "type": "curtainwall",
+          "offset": 26.5,
+          "width": 8.5,
+          "sill": 0,
+          "head": 9,
+          "mullionSpacing": 4
+        }
+      ]
+    },
+    {
+      "id": "l1_w101",
+      "a": [
+        -40.0,
+        -96.0
+      ],
+      "b": [
+        -28.0,
+        -96.0
+      ],
+      "thickness": 0.5,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "a": [
+        -40.0,
+        -112.0
+      ],
+      "b": [
+        -28.0,
+        -112.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 4.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_west",
+            "coach_west_n"
+          ]
+        }
+      ],
+      "id": "l1_w102"
+    },
+    {
+      "a": [
+        -28.0,
+        -112.0
+      ],
+      "b": [
+        2.0,
+        -112.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 13.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_suite",
+            "coach_north"
+          ]
+        }
+      ],
+      "id": "l1_w103"
+    },
+    {
+      "a": [
+        2.0,
+        -112.0
+      ],
+      "b": [
+        10.0,
+        -112.0
+      ],
+      "thickness": 0.28,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 2.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_east_m",
+            "coach_east_n"
+          ]
+        }
+      ],
+      "id": "l1_w104"
+    },
+    {
+      "id": "l1_w105",
+      "a": [
+        2.0,
+        -96.0
+      ],
+      "b": [
+        10.0,
+        -96.0
+      ],
+      "thickness": 0.5,
+      "height": 19.5,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 2.0,
+          "width": 3.5,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "coach_east_s",
+            "coach_east_m"
+          ]
+        }
+      ]
+    },
+    {
       "a": [
         -379.0,
         -301.0
@@ -3811,7 +4294,7 @@
           "label": "CONSTRUCTION"
         }
       ],
-      "id": "l1_w094"
+      "id": "l1_w106"
     }
   ],
   "columns": [
@@ -3893,20 +4376,20 @@
       "id": "stair_main",
       "polygon": [
         [
-          -78.5,
-          -32.0
+          -66.5,
+          -48.0
         ],
         [
           -42.5,
-          -32.0
+          -48.0
         ],
         [
           -42.5,
-          0.0
+          -16.0
         ],
         [
-          -78.5,
-          0.0
+          -66.5,
+          -16.0
         ]
       ],
       "fromLevel": 1,
@@ -3924,20 +4407,50 @@
           "id": "main_a",
           "polygon": [
             [
-              -54.0,
+              -66.0,
+              -24.0
+            ],
+            [
+              -50.0,
+              -24.0
+            ],
+            [
+              -50.0,
               -17.0
             ],
             [
-              -46.0,
+              -66.0,
               -17.0
+            ]
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "risers": 17,
+          "rise": 0.5882352941176471,
+          "run": 0.9411764705882353,
+          "width": 7,
+          "baseElevation": 0
+        },
+        {
+          "id": "main_b",
+          "polygon": [
+            [
+              -50.0,
+              -40.0
             ],
             [
-              -46.0,
-              -1.0
+              -43.0,
+              -40.0
             ],
             [
-              -54.0,
-              -1.0
+              -43.0,
+              -24.0
+            ],
+            [
+              -50.0,
+              -24.0
             ]
           ],
           "direction": [
@@ -3947,37 +4460,7 @@
           "risers": 17,
           "rise": 0.5882352941176471,
           "run": 0.9411764705882353,
-          "width": 8,
-          "baseElevation": 0
-        },
-        {
-          "id": "main_b",
-          "polygon": [
-            [
-              -70.0,
-              -25.0
-            ],
-            [
-              -54.0,
-              -25.0
-            ],
-            [
-              -54.0,
-              -17.0
-            ],
-            [
-              -70.0,
-              -17.0
-            ]
-          ],
-          "direction": [
-            -1,
-            0
-          ],
-          "risers": 17,
-          "rise": 0.5882352941176471,
-          "run": 0.9411764705882353,
-          "width": 8,
+          "width": 7,
           "baseElevation": 10
         }
       ],
@@ -3986,19 +4469,19 @@
           "id": "main_turn",
           "polygon": [
             [
-              -54.0,
-              -25.0
+              -50.0,
+              -24.0
             ],
             [
-              -46.0,
-              -25.0
+              -43.0,
+              -24.0
             ],
             [
-              -46.0,
+              -43.0,
               -17.0
             ],
             [
-              -54.0,
+              -50.0,
               -17.0
             ]
           ],
@@ -4254,6 +4737,1221 @@
       "room": "lobby",
       "length": 22,
       "bays": 5
+    },
+    {
+      "id": "ping_pong_1",
+      "kind": "ping_pong_table",
+      "at": [
+        -32.0,
+        -8.0
+      ],
+      "rotation": 0,
+      "room": "south_vestibule"
+    },
+    {
+      "id": "ping_pong_2",
+      "kind": "ping_pong_table",
+      "at": [
+        -52.0,
+        -8.0
+      ],
+      "rotation": 0,
+      "room": "south_vestibule"
+    },
+    {
+      "id": "vending_1",
+      "kind": "vending_machine",
+      "at": [
+        -74.0,
+        -3.0
+      ],
+      "rotation": 0,
+      "room": "south_vestibule"
+    },
+    {
+      "id": "vending_2",
+      "kind": "vending_machine",
+      "at": [
+        -88.0,
+        -3.0
+      ],
+      "rotation": 0,
+      "room": "south_vestibule"
+    },
+    {
+      "id": "hall_trash",
+      "kind": "trash_bin",
+      "at": [
+        -20.0,
+        -4.0
+      ],
+      "rotation": 0,
+      "room": "south_vestibule"
+    },
+    {
+      "id": "trophy_main",
+      "kind": "trophy_case",
+      "at": [
+        -72.0,
+        -100.0
+      ],
+      "rotation": 0,
+      "room": "corridor_entry_link"
+    },
+    {
+      "id": "jersey_1",
+      "kind": "jersey_frame",
+      "at": [
+        -68.0,
+        -110.0
+      ],
+      "rotation": 90,
+      "room": "corridor_entry_link"
+    },
+    {
+      "id": "jersey_2",
+      "kind": "jersey_frame",
+      "at": [
+        -68.0,
+        -90.0
+      ],
+      "rotation": 90,
+      "room": "corridor_entry_link"
+    },
+    {
+      "id": "cardio_t1",
+      "kind": "treadmill",
+      "at": [
+        6.0,
+        -40.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "cardio_t2",
+      "kind": "treadmill",
+      "at": [
+        6.0,
+        -50.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "cardio_t3",
+      "kind": "treadmill",
+      "at": [
+        6.0,
+        -60.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "cardio_t4",
+      "kind": "treadmill",
+      "at": [
+        6.0,
+        -70.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "cardio_b1",
+      "kind": "upright_bike",
+      "at": [
+        -1.0,
+        -44.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "cardio_b2",
+      "kind": "upright_bike",
+      "at": [
+        -1.0,
+        -54.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "cardio_e1",
+      "kind": "elliptical",
+      "at": [
+        -1.0,
+        -66.0
+      ],
+      "rotation": 90,
+      "room": "glazed_recreation"
+    },
+    {
+      "id": "annex_chest",
+      "kind": "chest_press",
+      "at": [
+        -30.0,
+        -24.0
+      ],
+      "rotation": 0,
+      "room": "fitness_annex"
+    },
+    {
+      "id": "annex_lat",
+      "kind": "lat_pulldown",
+      "at": [
+        -20.0,
+        -24.0
+      ],
+      "rotation": 0,
+      "room": "fitness_annex"
+    },
+    {
+      "id": "annex_leg",
+      "kind": "leg_press",
+      "at": [
+        -30.0,
+        -36.0
+      ],
+      "rotation": 0,
+      "room": "fitness_annex"
+    },
+    {
+      "id": "annex_cable",
+      "kind": "cable_machine",
+      "at": [
+        -18.0,
+        -40.0
+      ],
+      "rotation": 180,
+      "room": "fitness_annex"
+    },
+    {
+      "id": "rack_1",
+      "kind": "power_rack",
+      "at": [
+        -58.0,
+        -96.0
+      ],
+      "rotation": 0,
+      "room": "weight_room"
+    },
+    {
+      "id": "rack_2",
+      "kind": "power_rack",
+      "at": [
+        -48.0,
+        -96.0
+      ],
+      "rotation": 0,
+      "room": "weight_room"
+    },
+    {
+      "id": "platform_1",
+      "kind": "lifting_platform",
+      "at": [
+        -58.0,
+        -110.0
+      ],
+      "rotation": 0,
+      "room": "weight_room"
+    },
+    {
+      "id": "bench_1",
+      "kind": "flat_bench",
+      "at": [
+        -48.0,
+        -110.0
+      ],
+      "rotation": 0,
+      "room": "weight_room"
+    },
+    {
+      "id": "dumbbells",
+      "kind": "dumbbell_rack",
+      "at": [
+        -50.0,
+        -88.0
+      ],
+      "rotation": 90,
+      "room": "weight_room"
+    },
+    {
+      "id": "fit_row_1",
+      "kind": "rower",
+      "at": [
+        -50.0,
+        -136.0
+      ],
+      "rotation": 0,
+      "room": "fitness_center"
+    },
+    {
+      "id": "fit_climb_1",
+      "kind": "stair_climber",
+      "at": [
+        -40.0,
+        -140.0
+      ],
+      "rotation": 0,
+      "room": "fitness_center"
+    },
+    {
+      "id": "fit_bike_1",
+      "kind": "upright_bike",
+      "at": [
+        -30.0,
+        -140.0
+      ],
+      "rotation": 90,
+      "room": "fitness_center"
+    },
+    {
+      "id": "fit_ell_1",
+      "kind": "elliptical",
+      "at": [
+        -20.0,
+        -140.0
+      ],
+      "rotation": 90,
+      "room": "fitness_center"
+    },
+    {
+      "id": "cube_1",
+      "kind": "cubicle",
+      "at": [
+        -20.0,
+        -96.0
+      ],
+      "rotation": 0,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_2",
+      "kind": "cubicle",
+      "at": [
+        -10.0,
+        -96.0
+      ],
+      "rotation": 0,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_3",
+      "kind": "cubicle",
+      "at": [
+        -20.0,
+        -106.0
+      ],
+      "rotation": 180,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_4",
+      "kind": "cubicle",
+      "at": [
+        -10.0,
+        -106.0
+      ],
+      "rotation": 180,
+      "room": "coach_suite"
+    },
+    {
+      "id": "suite_board",
+      "kind": "bulletin_board",
+      "at": [
+        -4.0,
+        -90.0
+      ],
+      "rotation": 90,
+      "room": "coach_suite"
+    },
+    {
+      "id": "suite_mail",
+      "kind": "mail_slots",
+      "at": [
+        0.0,
+        -100.0
+      ],
+      "rotation": 90,
+      "room": "coach_suite"
+    },
+    {
+      "id": "suite_clock",
+      "kind": "wall_clock",
+      "at": [
+        -14.0,
+        -84.0
+      ],
+      "rotation": 180,
+      "room": "coach_suite"
+    },
+    {
+      "id": "head_desk",
+      "kind": "office_desk",
+      "at": [
+        -34.0,
+        -90.0
+      ],
+      "rotation": 0,
+      "room": "coach_head"
+    },
+    {
+      "id": "head_chair",
+      "kind": "office_chair",
+      "at": [
+        -34.0,
+        -86.0
+      ],
+      "rotation": 0,
+      "room": "coach_head"
+    },
+    {
+      "id": "head_plate",
+      "kind": "nameplate",
+      "at": [
+        -26.5,
+        -88.0
+      ],
+      "rotation": 270,
+      "room": "coach_suite",
+      "text": "HEAD COACH"
+    },
+    {
+      "id": "train_t1",
+      "kind": "training_table",
+      "at": [
+        -230.0,
+        -72.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_t2",
+      "kind": "training_table",
+      "at": [
+        -230.0,
+        -84.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_t3",
+      "kind": "training_table",
+      "at": [
+        -218.0,
+        -72.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_t4",
+      "kind": "training_table",
+      "at": [
+        -218.0,
+        -84.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_ice",
+      "kind": "ice_machine",
+      "at": [
+        -210.0,
+        -88.0
+      ],
+      "rotation": 0,
+      "room": "training_room"
+    },
+    {
+      "id": "train_cab_1",
+      "kind": "supply_cabinet",
+      "at": [
+        -232.0,
+        -78.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_cab_2",
+      "kind": "supply_cabinet",
+      "at": [
+        -232.0,
+        -68.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_desk",
+      "kind": "office_desk",
+      "at": [
+        -214.0,
+        -66.0
+      ],
+      "rotation": 180,
+      "room": "training_room"
+    },
+    {
+      "id": "train_chair",
+      "kind": "office_chair",
+      "at": [
+        -214.0,
+        -69.0
+      ],
+      "rotation": 180,
+      "room": "training_room"
+    },
+    {
+      "id": "train_board",
+      "kind": "bulletin_board",
+      "at": [
+        -222.0,
+        -64.0
+      ],
+      "rotation": 180,
+      "room": "training_room"
+    },
+    {
+      "id": "train_trash",
+      "kind": "trash_bin",
+      "at": [
+        -208.0,
+        -66.0
+      ],
+      "rotation": 0,
+      "room": "training_room"
+    },
+    {
+      "id": "vb_net",
+      "kind": "volleyball_standard",
+      "at": [
+        -136.0,
+        -206.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_bleach_s",
+      "kind": "bleacher_bank",
+      "at": [
+        -160.0,
+        -140.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym",
+      "length": 28,
+      "rows": 8
+    },
+    {
+      "id": "vb_bleach_n",
+      "kind": "bleacher_bank",
+      "at": [
+        -136.0,
+        -270.0
+      ],
+      "rotation": 180,
+      "room": "competition_gym",
+      "length": 28,
+      "rows": 8
+    },
+    {
+      "id": "vb_score",
+      "kind": "scoreboard",
+      "at": [
+        -100.0,
+        -200.0
+      ],
+      "rotation": 90,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_banner_1",
+      "kind": "banner",
+      "at": [
+        -120.0,
+        -150.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_banner_2",
+      "kind": "banner",
+      "at": [
+        -150.0,
+        -150.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_cart",
+      "kind": "ball_cart",
+      "at": [
+        -100.0,
+        -160.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_fountain",
+      "kind": "water_fountain",
+      "at": [
+        -90.0,
+        -170.0
+      ],
+      "rotation": 90,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_trash",
+      "kind": "trash_bin",
+      "at": [
+        -90.0,
+        -180.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "nutri_fridge",
+      "kind": "industrial_fridge",
+      "at": [
+        -188.5,
+        -97.5
+      ],
+      "rotation": 0,
+      "room": "nutrition_vestibule"
+    },
+    {
+      "id": "lock_bank_1",
+      "kind": "locker_bank_wood",
+      "at": [
+        -180.0,
+        -118.0
+      ],
+      "rotation": 0,
+      "room": "locker_volleyball"
+    },
+    {
+      "id": "lock_bank_2",
+      "kind": "locker_bank_metal",
+      "at": [
+        -168.0,
+        -118.0
+      ],
+      "rotation": 0,
+      "room": "locker_volleyball"
+    },
+    {
+      "id": "lock_bench",
+      "kind": "bench_locker",
+      "at": [
+        -174.0,
+        -110.0
+      ],
+      "rotation": 0,
+      "room": "locker_volleyball"
+    },
+    {
+      "id": "south_gym_fit",
+      "kind": "basketball_hoop_ceiling",
+      "at": [
+        -167.0,
+        -7.5
+      ],
+      "rotation": 0,
+      "room": "south_gym"
+    },
+    {
+      "id": "south_gym_board",
+      "kind": "scoreboard",
+      "at": [
+        -159.0,
+        -7.5
+      ],
+      "rotation": 90,
+      "room": "south_gym"
+    },
+    {
+      "id": "office_ne_1_fit",
+      "kind": "office_desk",
+      "at": [
+        -66.0,
+        -271.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_1"
+    },
+    {
+      "id": "office_ne_1_chair",
+      "kind": "office_chair",
+      "at": [
+        -66.0,
+        -268.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_1"
+    },
+    {
+      "id": "office_ne_2_fit",
+      "kind": "office_desk",
+      "at": [
+        -40.5,
+        -271.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_2"
+    },
+    {
+      "id": "office_ne_2_chair",
+      "kind": "office_chair",
+      "at": [
+        -40.5,
+        -268.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_2"
+    },
+    {
+      "id": "office_ne_3_fit",
+      "kind": "office_desk",
+      "at": [
+        -16.0,
+        -271.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_3"
+    },
+    {
+      "id": "office_ne_3_chair",
+      "kind": "office_chair",
+      "at": [
+        -16.0,
+        -268.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_3"
+    },
+    {
+      "id": "office_ne_4_fit",
+      "kind": "office_desk",
+      "at": [
+        -16.0,
+        -249.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_4"
+    },
+    {
+      "id": "office_ne_4_chair",
+      "kind": "office_chair",
+      "at": [
+        -16.0,
+        -246.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_4"
+    },
+    {
+      "id": "office_ne_5_fit",
+      "kind": "office_desk",
+      "at": [
+        -16.0,
+        -224.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_5"
+    },
+    {
+      "id": "office_ne_5_chair",
+      "kind": "office_chair",
+      "at": [
+        -16.0,
+        -221.5
+      ],
+      "rotation": 0,
+      "room": "office_ne_5"
+    },
+    {
+      "id": "office_ne_reception_fit",
+      "kind": "office_desk",
+      "at": [
+        -47.0,
+        -243.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_reception"
+    },
+    {
+      "id": "office_ne_reception_chair",
+      "kind": "office_chair",
+      "at": [
+        -47.0,
+        -240.0
+      ],
+      "rotation": 0,
+      "room": "office_ne_reception"
+    },
+    {
+      "id": "restroom_ne_w_fit",
+      "kind": "toilet_partition",
+      "at": [
+        -59.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_w"
+    },
+    {
+      "id": "restroom_ne_w_sink",
+      "kind": "sink_counter",
+      "at": [
+        -56.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_w"
+    },
+    {
+      "id": "restroom_ne_m_fit",
+      "kind": "toilet_partition",
+      "at": [
+        -26.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_m"
+    },
+    {
+      "id": "restroom_ne_m_sink",
+      "kind": "sink_counter",
+      "at": [
+        -23.0,
+        -204.0
+      ],
+      "rotation": 0,
+      "room": "restroom_ne_m"
+    },
+    {
+      "id": "fitness_north_fit",
+      "kind": "treadmill",
+      "at": [
+        -34.0,
+        -175.0
+      ],
+      "rotation": 0,
+      "room": "fitness_north"
+    },
+    {
+      "id": "lobby_north_fit",
+      "kind": "trash_bin",
+      "at": [
+        2.5,
+        -139.0
+      ],
+      "rotation": 0,
+      "room": "lobby_north"
+    },
+    {
+      "id": "corridor_gym_east_fit",
+      "kind": "trash_bin",
+      "at": [
+        -72.5,
+        -143.5
+      ],
+      "rotation": 0,
+      "room": "corridor_gym_east"
+    },
+    {
+      "id": "corridor_entry_south_fit",
+      "kind": "trash_bin",
+      "at": [
+        -72.5,
+        -48.0
+      ],
+      "rotation": 0,
+      "room": "corridor_entry_south"
+    },
+    {
+      "id": "corridor_south_link_fit",
+      "kind": "trash_bin",
+      "at": [
+        -88.0,
+        -39.0
+      ],
+      "rotation": 0,
+      "room": "corridor_south_link"
+    },
+    {
+      "id": "thin_link_fit",
+      "kind": "trash_bin",
+      "at": [
+        -136.0,
+        -128.5
+      ],
+      "rotation": 0,
+      "room": "thin_link"
+    },
+    {
+      "id": "athletic_corridor_fit",
+      "kind": "trash_bin",
+      "at": [
+        -199.5,
+        -130.0
+      ],
+      "rotation": 0,
+      "room": "athletic_corridor"
+    },
+    {
+      "id": "volleyball_washroom_fit",
+      "kind": "toilet_partition",
+      "at": [
+        -171.5,
+        -97.5
+      ],
+      "rotation": 0,
+      "room": "volleyball_washroom"
+    },
+    {
+      "id": "volleyball_washroom_sink",
+      "kind": "sink_counter",
+      "at": [
+        -168.5,
+        -97.5
+      ],
+      "rotation": 0,
+      "room": "volleyball_washroom"
+    },
+    {
+      "id": "locker_general_w_fit",
+      "kind": "locker_bank_metal",
+      "at": [
+        -145.5,
+        -108.5
+      ],
+      "rotation": 0,
+      "room": "locker_general_w"
+    },
+    {
+      "id": "locker_general_w_bench",
+      "kind": "bench_locker",
+      "at": [
+        -145.5,
+        -104.5
+      ],
+      "rotation": 0,
+      "room": "locker_general_w"
+    },
+    {
+      "id": "locker_general_m_fit",
+      "kind": "locker_bank_metal",
+      "at": [
+        -117.5,
+        -108.5
+      ],
+      "rotation": 0,
+      "room": "locker_general_m"
+    },
+    {
+      "id": "locker_general_m_bench",
+      "kind": "bench_locker",
+      "at": [
+        -117.5,
+        -104.5
+      ],
+      "rotation": 0,
+      "room": "locker_general_m"
+    },
+    {
+      "id": "storage_athletic_fit",
+      "kind": "supply_cabinet",
+      "at": [
+        -91.0,
+        -108.5
+      ],
+      "rotation": 0,
+      "room": "storage_athletic"
+    },
+    {
+      "id": "corridor_main_fit",
+      "kind": "trash_bin",
+      "at": [
+        -136.0,
+        -86.0
+      ],
+      "rotation": 0,
+      "room": "corridor_main"
+    },
+    {
+      "id": "team_support_fit",
+      "kind": "bulletin_board",
+      "at": [
+        -145.0,
+        -71.0
+      ],
+      "rotation": 0,
+      "room": "team_support"
+    },
+    {
+      "id": "training_store_fit",
+      "kind": "supply_cabinet",
+      "at": [
+        -215.0,
+        -136.0
+      ],
+      "rotation": 0,
+      "room": "training_store"
+    },
+    {
+      "id": "west_link_fit",
+      "kind": "trash_bin",
+      "at": [
+        -291.5,
+        -86.0
+      ],
+      "rotation": 0,
+      "room": "west_link"
+    },
+    {
+      "id": "corridor_office_fit",
+      "kind": "trash_bin",
+      "at": [
+        -307.0,
+        -75.0
+      ],
+      "rotation": 0,
+      "room": "corridor_office"
+    },
+    {
+      "id": "office_w1_fit",
+      "kind": "office_desk",
+      "at": [
+        -331.0,
+        -52.0
+      ],
+      "rotation": 0,
+      "room": "office_w1"
+    },
+    {
+      "id": "office_w1_chair",
+      "kind": "office_chair",
+      "at": [
+        -331.0,
+        -49.0
+      ],
+      "rotation": 0,
+      "room": "office_w1"
+    },
+    {
+      "id": "office_w2_fit",
+      "kind": "office_desk",
+      "at": [
+        -305.0,
+        -52.0
+      ],
+      "rotation": 0,
+      "room": "office_w2"
+    },
+    {
+      "id": "office_w2_chair",
+      "kind": "office_chair",
+      "at": [
+        -305.0,
+        -49.0
+      ],
+      "rotation": 0,
+      "room": "office_w2"
+    },
+    {
+      "id": "office_w3_fit",
+      "kind": "office_desk",
+      "at": [
+        -281.0,
+        -52.0
+      ],
+      "rotation": 0,
+      "room": "office_w3"
+    },
+    {
+      "id": "office_w3_chair",
+      "kind": "office_chair",
+      "at": [
+        -281.0,
+        -49.0
+      ],
+      "rotation": 0,
+      "room": "office_w3"
+    },
+    {
+      "id": "mechanical_sw_fit",
+      "kind": "supply_cabinet",
+      "at": [
+        -253.0,
+        -48.0
+      ],
+      "rotation": 0,
+      "room": "mechanical_sw"
+    },
+    {
+      "id": "corridor_service_fit",
+      "kind": "trash_bin",
+      "at": [
+        -253.0,
+        -71.0
+      ],
+      "rotation": 0,
+      "room": "corridor_service"
+    },
+    {
+      "id": "corridor_ne_fit",
+      "kind": "trash_bin",
+      "at": [
+        -53.0,
+        -229.0
+      ],
+      "rotation": 0,
+      "room": "corridor_ne"
+    },
+    {
+      "id": "corridor_wide_fit",
+      "kind": "trash_bin",
+      "at": [
+        -36.0,
+        -64.0
+      ],
+      "rotation": 0,
+      "room": "corridor_wide"
+    },
+    {
+      "id": "coach_west_fit",
+      "kind": "office_desk",
+      "at": [
+        -34.0,
+        -104.0
+      ],
+      "rotation": 0,
+      "room": "coach_west"
+    },
+    {
+      "id": "coach_west_chair",
+      "kind": "office_chair",
+      "at": [
+        -34.0,
+        -101.0
+      ],
+      "rotation": 0,
+      "room": "coach_west"
+    },
+    {
+      "id": "coach_west_n_fit",
+      "kind": "office_desk",
+      "at": [
+        -34.0,
+        -118.0
+      ],
+      "rotation": 0,
+      "room": "coach_west_n"
+    },
+    {
+      "id": "coach_west_n_chair",
+      "kind": "office_chair",
+      "at": [
+        -34.0,
+        -115.0
+      ],
+      "rotation": 0,
+      "room": "coach_west_n"
+    },
+    {
+      "id": "coach_north_fit",
+      "kind": "office_desk",
+      "at": [
+        -13.0,
+        -118.0
+      ],
+      "rotation": 0,
+      "room": "coach_north"
+    },
+    {
+      "id": "coach_north_chair",
+      "kind": "office_chair",
+      "at": [
+        -13.0,
+        -115.0
+      ],
+      "rotation": 0,
+      "room": "coach_north"
+    },
+    {
+      "id": "coach_east_s_fit",
+      "kind": "office_desk",
+      "at": [
+        6.0,
+        -88.0
+      ],
+      "rotation": 0,
+      "room": "coach_east_s"
+    },
+    {
+      "id": "coach_east_s_chair",
+      "kind": "office_chair",
+      "at": [
+        6.0,
+        -85.0
+      ],
+      "rotation": 0,
+      "room": "coach_east_s"
+    },
+    {
+      "id": "coach_east_m_fit",
+      "kind": "office_desk",
+      "at": [
+        6.0,
+        -104.0
+      ],
+      "rotation": 0,
+      "room": "coach_east_m"
+    },
+    {
+      "id": "coach_east_m_chair",
+      "kind": "office_chair",
+      "at": [
+        6.0,
+        -101.0
+      ],
+      "rotation": 0,
+      "room": "coach_east_m"
+    },
+    {
+      "id": "coach_east_n_fit",
+      "kind": "office_desk",
+      "at": [
+        6.0,
+        -118.0
+      ],
+      "rotation": 0,
+      "room": "coach_east_n"
+    },
+    {
+      "id": "coach_east_n_chair",
+      "kind": "office_chair",
+      "at": [
+        6.0,
+        -115.0
+      ],
+      "rotation": 0,
+      "room": "coach_east_n"
     }
   ]
 }
