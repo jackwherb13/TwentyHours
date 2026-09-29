@@ -13,8 +13,132 @@ local CounterWhite = Color3.fromRGB(245, 245, 242)
 local FrostedGlass = Color3.fromRGB(215, 225, 228)
 local DeskGrey = Color3.fromRGB(210, 210, 205)
 local DarkMetal = Color3.fromRGB(40, 42, 45)
+local MasonGreen = Color3.fromRGB(0, 110, 52)
+local MasonGold = Color3.fromRGB(235, 185, 45)
+
+local function buildU(cf: CFrame, opts: { [string]: any }?): Model
+	local b = Kit.new("FrontDesk", cf)
+	local length = (opts and opts.length) or 12
+	local depth = (opts and opts.depth) or 6
+	local counterH = 3.6
+	local frontZ = -depth / 2 + 0.55
+	local armX = length / 2 - 0.35
+	b:box(
+		"FrontCounter",
+		Vector3.new(length, 0.16, 1.15),
+		Kit.at(0, counterH, frontZ),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	b:box(
+		"FrontPanel",
+		Vector3.new(length - 0.2, counterH - 0.2, 0.12),
+		Kit.at(0, counterH / 2, frontZ - 0.45),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	b:box(
+		"LeftReturn",
+		Vector3.new(0.7, counterH, depth - 1.4),
+		Kit.at(-armX, counterH / 2, 0.3),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	b:box(
+		"RightReturn",
+		Vector3.new(0.7, counterH, depth - 1.4),
+		Kit.at(armX, counterH / 2, 0.3),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	b:box(
+		"LeftTop",
+		Vector3.new(0.85, 0.16, depth - 1.2),
+		Kit.at(-armX, counterH, 0.3),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	b:box(
+		"RightTop",
+		Vector3.new(0.85, 0.16, depth - 1.2),
+		Kit.at(armX, counterH, 0.3),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	local mark = b:box(
+		"MarkPlate",
+		Vector3.new(2.4, 1.1, 0.08),
+		Kit.at(0, 2.05, frontZ - 0.52),
+		MasonGreen,
+		Enum.Material.SmoothPlastic,
+		false
+	)
+	local gui = Instance.new("SurfaceGui")
+	gui.Name = "Logo"
+	gui.Face = Enum.NormalId.Front
+	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+	gui.PixelsPerStud = 64
+	gui.LightInfluence = 0.15
+	gui.Parent = mark
+	local label = Instance.new("TextLabel")
+	label.Size = UDim2.fromScale(1, 1)
+	label.BackgroundTransparency = 1
+	label.Text = "GM"
+	label.TextColor3 = MasonGold
+	label.TextScaled = true
+	label.Parent = gui
+	-- Staff counter fills the open well. Stations and screens stack on it; each bottom meets the piece under it.
+	local topY = 2.46
+	b:box(
+		"StaffModesty",
+		Vector3.new(length - 3.4, 2.4, 0.16),
+		Kit.at(0, 1.2, 0.2),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	b:box(
+		"StaffTop",
+		Vector3.new(length - 2.2, 0.12, 2.2),
+		Kit.at(0, topY, 0.2),
+		CounterWhite,
+		Enum.Material.SmoothPlastic,
+		true
+	)
+	local stationBottom = topY + 0.06 - 0.02
+	local stationH = 0.08
+	local screenH = 0.7
+	for index, x in { -length * 0.28, -length * 0.1, length * 0.08, length * 0.26 } do
+		b:box(
+			`Station_{index}`,
+			Vector3.new(1.4, stationH, 0.7),
+			Kit.at(x, stationBottom + stationH / 2, 0.2),
+			CounterWhite,
+			Enum.Material.SmoothPlastic,
+			true
+		)
+		b:box(
+			`Screen_{index}`,
+			Vector3.new(1.1, screenH, 0.5),
+			Kit.at(x, stationBottom + stationH + screenH / 2 - 0.01, 0.05),
+			DarkMetal,
+			Enum.Material.SmoothPlastic,
+			false
+		)
+	end
+	return b:done()
+end
 
 function FrontDesk.build(cf: CFrame, opts: { [string]: any }?): Model
+	if opts ~= nil and opts.shape == "u" then
+		return buildU(cf, opts)
+	end
 	local b = Kit.new("FrontDesk", cf)
 	local C = Kit.Color
 

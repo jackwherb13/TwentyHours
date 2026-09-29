@@ -81,11 +81,12 @@ if void:
 desk = next((p for p in l1["props"] if p["id"] == "reception_desk"), None)
 check(desk is not None, "missing reception desk")
 if desk:
-    length = desk.get("length", 16)
-    south = desk["at"][1] + length / 2
-    check(abs(south - (-10)) <= 1, f"desk south end z={south} is not 10 ft from the glass")
-    check(20 <= length <= 25, f"desk length {length} is outside 20-25 ft")
-    check(desk["rotation"] == 270, f"desk rotation {desk['rotation']} does not run north-south")
+    # 09:35: U-shaped counter in the main room. Supersedes the 20-25 ft north-south bar.
+    check(desk.get("shape") == "u", "desk is not the U-shaped main-room counter")
+    check(desk.get("length", 0) >= 10, f"desk length {desk.get('length')} is under 10 ft")
+    check(desk.get("room") == "lobby", "desk is not in the lobby")
+    ax, az = desk["at"]
+    check(-10 <= ax <= 10 and -16 <= az <= -6, f"desk at {desk['at']} is outside the open entry")
 
 trophy = next(p for p in l1["props"] if p["id"] == "trophy_main")
 doors = []

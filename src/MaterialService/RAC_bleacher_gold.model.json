@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "SmoothPlastic",
     "StudsPerTile": 4,
-    "Name": "RAC_bleacher_gold"
+    "Name": "RAC_bleacher_gold",
+    "ColorMap": "rbxassetid://99197829933984",
+    "NormalMap": "rbxassetid://133238565681457",
+    "RoughnessMap": "rbxassetid://83553921069270"
   }
 }

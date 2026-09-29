@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "SmoothPlastic",
     "StudsPerTile": 4,
-    "Name": "RAC_door_paint"
+    "Name": "RAC_door_paint",
+    "ColorMap": "rbxassetid://132359873076815",
+    "NormalMap": "rbxassetid://133238565681457",
+    "RoughnessMap": "rbxassetid://83553921069270"
   }
 }

@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "Metal",
     "StudsPerTile": 4,
-    "Name": "RAC_steel"
+    "Name": "RAC_steel",
+    "ColorMap": "rbxassetid://84929693401011",
+    "NormalMap": "rbxassetid://130950894419275",
+    "RoughnessMap": "rbxassetid://74843447803064"
   }
 }

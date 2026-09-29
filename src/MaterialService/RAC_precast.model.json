@@ -2,8 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "Concrete",
-    "ColorMap": "rbxassetid://132402981008958",
+    "ColorMap": "rbxassetid://99575888977265",
     "StudsPerTile": 8,
-    "Name": "RAC_precast"
+    "Name": "RAC_precast",
+    "NormalMap": "rbxassetid://126520269594823",
+    "RoughnessMap": "rbxassetid://123287511894336"
   }
 }

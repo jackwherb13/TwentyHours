@@ -2,8 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "Concrete",
-    "ColorMap": "rbxassetid://82792157361684",
+    "ColorMap": "rbxassetid://104770104075728",
     "StudsPerTile": 6,
-    "Name": "RAC_terrazzo"
+    "Name": "RAC_terrazzo",
+    "NormalMap": "rbxassetid://137724133031138",
+    "RoughnessMap": "rbxassetid://105749773553007"
   }
 }

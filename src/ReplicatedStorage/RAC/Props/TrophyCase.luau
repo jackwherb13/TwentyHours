@@ -116,7 +116,8 @@ function TrophyCase.build(cf: CFrame, opts: { [string]: any }?): Model
 	b:box(
 		"BackMirrorWall",
 		Vector3.new(length - 0.1, glassH, 0.04),
-		Kit.at(0, glassCenterY, d / 2 - 0.03),
+		-- 0.05 ft further in than the carcass so the mirror misses the corridor wall by under 0.05 ft.
+		Kit.at(0, glassCenterY, d / 2 - 0.08),
 		GlassColor,
 		Enum.Material.Glass,
 		true

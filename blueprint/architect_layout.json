@@ -39,18 +39,34 @@
           "polygon": [
             [
               -236.5,
+              -62.0
+            ],
+            [
+              -97.0,
+              -62.0
+            ],
+            [
+              -97.0,
+              -40.0
+            ],
+            [
+              -130.0,
+              -40.0
+            ],
+            [
+              -130.0,
+              -16.0
+            ],
+            [
+              -97.0,
+              -16.0
+            ],
+            [
+              -97.0,
               47.0
             ],
             [
               -236.5,
-              -62.0
-            ],
-            [
-              -97.0,
-              -62.0
-            ],
-            [
-              -97.0,
               47.0
             ]
           ],
@@ -325,11 +341,11 @@
             ],
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ],
             [
               10.0,
@@ -414,6 +430,14 @@
             ],
             [
               -40.0,
+              -88.0
+            ],
+            [
+              -44.0,
+              -88.0
+            ],
+            [
+              -44.0,
               -80.0
             ],
             [
@@ -514,7 +538,7 @@
           "polygon": [
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               2.0,
@@ -534,7 +558,7 @@
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -926,19 +950,19 @@
           "type": "support",
           "polygon": [
             [
-              -193.5,
+              -205.5,
               -80.0
             ],
             [
-              -97.0,
+              -78.5,
               -80.0
             ],
             [
-              -97.0,
+              -78.5,
               -62.0
             ],
             [
-              -193.5,
+              -205.5,
               -62.0
             ]
           ],
@@ -1367,8 +1391,16 @@
               -80.0
             ],
             [
-              -40.0,
+              -36.0,
               -80.0
+            ],
+            [
+              -36.0,
+              -88.0
+            ],
+            [
+              -40.0,
+              -88.0
             ]
           ],
           "floorMaterial": "carpet_tile",
@@ -1617,6 +1649,87 @@
           "floorMaterial": "terrazzo",
           "ceilingHeight": 10,
           "ceilingType": "act_2x2",
+          "wallFinish": "painted_cmu"
+        },
+        {
+          "id": "public_locker",
+          "name": "Public Lockers",
+          "type": "locker",
+          "polygon": [
+            [
+              -130.0,
+              -40.0
+            ],
+            [
+              -97.0,
+              -40.0
+            ],
+            [
+              -97.0,
+              -16.0
+            ],
+            [
+              -130.0,
+              -16.0
+            ]
+          ],
+          "floorMaterial": "porcelain_tile",
+          "ceilingHeight": 10,
+          "ceilingType": "act_2x2",
+          "wallFinish": "gypsum"
+        },
+        {
+          "id": "elevator",
+          "name": "Elevator",
+          "type": "support",
+          "polygon": [
+            [
+              -44.0,
+              -88.0
+            ],
+            [
+              -36.0,
+              -88.0
+            ],
+            [
+              -36.0,
+              -80.0
+            ],
+            [
+              -44.0,
+              -80.0
+            ]
+          ],
+          "floorMaterial": "porcelain_tile",
+          "ceilingHeight": 10,
+          "ceilingType": "act_2x2",
+          "wallFinish": "gypsum"
+        },
+        {
+          "id": "service_yard",
+          "name": "Service Yard",
+          "type": "mechanical",
+          "polygon": [
+            [
+              -236.5,
+              -214.0
+            ],
+            [
+              -193.5,
+              -214.0
+            ],
+            [
+              -193.5,
+              -186.0
+            ],
+            [
+              -236.5,
+              -186.0
+            ]
+          ],
+          "floorMaterial": "sealed_concrete",
+          "ceilingHeight": 12,
+          "ceilingType": "none",
           "wallFinish": "painted_cmu"
         }
       ],
@@ -1877,7 +1990,7 @@
             "corridor_entry_south",
             "corridor_wide"
           ],
-          "width": 16,
+          "width": 8,
           "type": "opening"
         },
         {
@@ -2086,17 +2199,57 @@
             "team_support",
             "south_gym"
           ],
-          "width": 6,
+          "width": 8,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "training_room",
+            "training_store"
+          ],
+          "width": 3.5,
           "type": "door"
         },
         {
           "rooms": [
-            "lobby",
-            "stair_main"
+            "team_support",
+            "athletic_corridor"
           ],
-          "width": "full",
-          "type": "opening",
-          "head": 12
+          "width": 5,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "team_support",
+            "corridor_entry_south"
+          ],
+          "width": 6,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "elevator",
+            "weight_room"
+          ],
+          "width": 3.5,
+          "type": "door"
+        },
+        {
+          "rooms": [
+            "elevator",
+            "coach_head"
+          ],
+          "width": 3.5,
+          "type": "door"
+        },
+        {
+          "rooms": [
+            "elevator",
+            "corridor_wide"
+          ],
+          "width": 3.5,
+          "type": "door",
+          "label": "ELEVATOR"
         },
         {
           "rooms": [
@@ -2124,6 +2277,15 @@
           "width": "full",
           "type": "opening",
           "head": 10
+        },
+        {
+          "rooms": [
+            "public_locker",
+            "corridor_south_link"
+          ],
+          "width": 4,
+          "type": "door",
+          "label": "LOCKERS"
         }
       ],
       "apertures": [
@@ -2199,6 +2361,42 @@
               "center": 8,
               "width": 4,
               "kind": "door"
+            }
+          ]
+        },
+        {
+          "a": [
+            2.0,
+            -16.5
+          ],
+          "b": [
+            10.0,
+            -16.5
+          ],
+          "openings": [
+            {
+              "center": 4.0,
+              "width": 6,
+              "kind": "opening",
+              "head": 12
+            }
+          ]
+        },
+        {
+          "a": [
+            2.0,
+            -16.5
+          ],
+          "b": [
+            10.0,
+            -16.5
+          ],
+          "openings": [
+            {
+              "center": 4.0,
+              "width": 6,
+              "kind": "opening",
+              "head": 12
             }
           ]
         },
@@ -2301,7 +2499,7 @@
         {
           "a": [
             10.0,
-            -18.5
+            -16.5
           ],
           "b": [
             10.0,
@@ -2310,11 +2508,29 @@
           "height": 32.5,
           "openings": [
             {
-              "center": 9.0,
-              "width": 16,
+              "center": 8.0,
+              "width": 14,
               "kind": "curtainwall",
               "sill": 0,
               "head": 30
+            }
+          ]
+        },
+        {
+          "a": [
+            2.0,
+            -16.5
+          ],
+          "b": [
+            10.0,
+            -16.5
+          ],
+          "openings": [
+            {
+              "center": 4.0,
+              "width": 6,
+              "kind": "opening",
+              "head": 12
             }
           ]
         }
@@ -2325,7 +2541,7 @@
           "polygon": [
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               2.0,
@@ -2345,7 +2561,7 @@
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ]
           ],
           "fromLevel": 1,
@@ -2782,14 +2998,74 @@
           "id": "reception_desk",
           "kind": "front_desk",
           "at": [
-            -6.0,
-            -21.0
+            -2.0,
+            -12.0
           ],
-          "rotation": 270,
+          "rotation": 180,
           "room": "lobby",
-          "length": 22,
-          "bays": 5,
-          "depth": 8
+          "length": 12,
+          "depth": 6,
+          "shape": "u"
+        },
+        {
+          "id": "desk_chair_1",
+          "kind": "office_chair",
+          "at": [
+            -5.0,
+            -12.0
+          ],
+          "rotation": 180,
+          "room": "lobby"
+        },
+        {
+          "id": "desk_chair_2",
+          "kind": "office_chair",
+          "at": [
+            -2.5,
+            -12.0
+          ],
+          "rotation": 180,
+          "room": "lobby"
+        },
+        {
+          "id": "desk_chair_3",
+          "kind": "office_chair",
+          "at": [
+            0.5,
+            -12.0
+          ],
+          "rotation": 180,
+          "room": "lobby"
+        },
+        {
+          "id": "desk_chair_4",
+          "kind": "office_chair",
+          "at": [
+            -3.5,
+            -13.5
+          ],
+          "rotation": 180,
+          "room": "lobby"
+        },
+        {
+          "id": "lost_found",
+          "kind": "supply_cabinet",
+          "at": [
+            -4.0,
+            -13.5
+          ],
+          "rotation": 180,
+          "room": "lobby"
+        },
+        {
+          "id": "ball_rental",
+          "kind": "ball_cart",
+          "at": [
+            0.5,
+            -13.5
+          ],
+          "rotation": 0,
+          "room": "lobby"
         },
         {
           "id": "ping_pong_1",
@@ -3285,8 +3561,8 @@
           "id": "head_desk",
           "kind": "office_desk",
           "at": [
-            -34.0,
-            -88.0
+            -31.0,
+            -91.0
           ],
           "rotation": 0,
           "room": "coach_head"
@@ -3295,11 +3571,126 @@
           "id": "head_chair",
           "kind": "office_chair",
           "at": [
-            -34.0,
-            -84.0
+            -31.0,
+            -93.5
           ],
           "rotation": 0,
           "room": "coach_head"
+        },
+        {
+          "id": "stair_west_exit",
+          "kind": "exit_sign",
+          "at": [
+            -342.0,
+            -75.0
+          ],
+          "rotation": 90,
+          "room": "corridor_office"
+        },
+        {
+          "id": "locker_sign",
+          "kind": "nameplate",
+          "at": [
+            -94.0,
+            -28.0
+          ],
+          "rotation": 90,
+          "room": "corridor_south_link",
+          "text": "LOCKERS"
+        },
+        {
+          "id": "elev_sign",
+          "kind": "nameplate",
+          "at": [
+            -40.0,
+            -84.0
+          ],
+          "rotation": 0,
+          "room": "elevator",
+          "text": "ELEVATOR"
+        },
+        {
+          "id": "pub_lock_n",
+          "kind": "locker_bank_metal",
+          "at": [
+            -116.0,
+            -38.5
+          ],
+          "rotation": 180,
+          "room": "public_locker",
+          "count": 10
+        },
+        {
+          "id": "pub_stalls",
+          "kind": "toilet_partition",
+          "at": [
+            -113.0,
+            -19.5
+          ],
+          "rotation": 0,
+          "room": "public_locker",
+          "stalls": 5
+        },
+        {
+          "id": "pub_sinks",
+          "kind": "sink_counter",
+          "at": [
+            -113.0,
+            -25.0
+          ],
+          "rotation": 180,
+          "room": "public_locker",
+          "sinks": 4
+        },
+        {
+          "id": "pub_shower_1",
+          "kind": "shower_stall",
+          "at": [
+            -126.0,
+            -26.0
+          ],
+          "rotation": 270,
+          "room": "public_locker"
+        },
+        {
+          "id": "pub_shower_2",
+          "kind": "shower_stall",
+          "at": [
+            -126.0,
+            -31.0
+          ],
+          "rotation": 270,
+          "room": "public_locker"
+        },
+        {
+          "id": "pub_shower_3",
+          "kind": "shower_stall",
+          "at": [
+            -126.0,
+            -36.0
+          ],
+          "rotation": 270,
+          "room": "public_locker"
+        },
+        {
+          "id": "dumpster_1",
+          "kind": "dumpster",
+          "at": [
+            -220.0,
+            -200.0
+          ],
+          "rotation": 0,
+          "room": "service_yard"
+        },
+        {
+          "id": "dumpster_2",
+          "kind": "dumpster",
+          "at": [
+            -210.0,
+            -200.0
+          ],
+          "rotation": 0,
+          "room": "service_yard"
         },
         {
           "id": "west_desk",
@@ -4083,16 +4474,6 @@
           "room": "corridor_entry_south"
         },
         {
-          "id": "corridor_south_link_fit",
-          "kind": "trash_bin",
-          "at": [
-            -88.0,
-            -35.0
-          ],
-          "rotation": 0,
-          "room": "corridor_south_link"
-        },
-        {
           "id": "athletic_corridor_fit",
           "kind": "trash_bin",
           "at": [
@@ -4186,7 +4567,7 @@
           "id": "team_support_fit",
           "kind": "bulletin_board",
           "at": [
-            -145.0,
+            -142.0,
             -71.0
           ],
           "rotation": 0,
@@ -4211,16 +4592,6 @@
           ],
           "rotation": 0,
           "room": "west_link"
-        },
-        {
-          "id": "corridor_office_fit",
-          "kind": "trash_bin",
-          "at": [
-            -307.0,
-            -75.0
-          ],
-          "rotation": 0,
-          "room": "corridor_office"
         },
         {
           "id": "office_w1_fit",
@@ -4589,7 +4960,7 @@
           "polygon": [
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               2.0,
@@ -4609,7 +4980,7 @@
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -4632,6 +5003,22 @@
             ],
             [
               -5.0,
+              -80.0
+            ],
+            [
+              -36.0,
+              -80.0
+            ],
+            [
+              -36.0,
+              -88.0
+            ],
+            [
+              -44.0,
+              -88.0
+            ],
+            [
+              -44.0,
               -80.0
             ],
             [
@@ -4785,7 +5172,7 @@
           "type": "corridor",
           "polygon": [
             [
-              -345.0,
+              -359.5,
               -92.5
             ],
             [
@@ -4797,7 +5184,7 @@
               -80.0
             ],
             [
-              -345.0,
+              -359.5,
               -80.0
             ]
           ],
@@ -4912,7 +5299,7 @@
           "floorMaterial": "maple",
           "ceilingHeight": 16.5,
           "ceilingType": "gypsum",
-          "wallFinish": "painted_cmu"
+          "wallFinish": "gypsum"
         },
         {
           "id": "racquetball_2",
@@ -4939,7 +5326,7 @@
           "floorMaterial": "maple",
           "ceilingHeight": 16.5,
           "ceilingType": "gypsum",
-          "wallFinish": "painted_cmu"
+          "wallFinish": "gypsum"
         },
         {
           "id": "office_l2_w1",
@@ -5172,18 +5559,34 @@
           "polygon": [
             [
               -236.5,
+              -62.0
+            ],
+            [
+              -97.0,
+              -62.0
+            ],
+            [
+              -97.0,
+              -40.0
+            ],
+            [
+              -130.0,
+              -40.0
+            ],
+            [
+              -130.0,
+              -16.0
+            ],
+            [
+              -97.0,
+              -16.0
+            ],
+            [
+              -97.0,
               47.0
             ],
             [
               -236.5,
-              -62.0
-            ],
-            [
-              -97.0,
-              -62.0
-            ],
-            [
-              -97.0,
               47.0
             ]
           ],
@@ -5281,11 +5684,11 @@
             ],
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ],
             [
               10.0,
@@ -5358,6 +5761,33 @@
           "ceilingHeight": 10,
           "ceilingType": "none",
           "wallFinish": "painted_cmu"
+        },
+        {
+          "id": "elevator",
+          "name": "Elevator",
+          "type": "support",
+          "polygon": [
+            [
+              -44.0,
+              -88.0
+            ],
+            [
+              -36.0,
+              -88.0
+            ],
+            [
+              -36.0,
+              -80.0
+            ],
+            [
+              -44.0,
+              -80.0
+            ]
+          ],
+          "floorMaterial": "porcelain_tile",
+          "ceilingHeight": 10,
+          "ceilingType": "act_2x2",
+          "wallFinish": "gypsum"
         }
       ],
       "connections": [
@@ -5495,7 +5925,7 @@
             "basketball_approach",
             "cage_gym"
           ],
-          "width": 6,
+          "width": 4,
           "type": "door",
           "label": "BASKETBALL \u2014 OFF LIMITS"
         },
@@ -5566,6 +5996,32 @@
         },
         {
           "rooms": [
+            "elevator",
+            "cardio_gallery"
+          ],
+          "width": 3.5,
+          "type": "door"
+        },
+        {
+          "rooms": [
+            "elevator",
+            "balcony"
+          ],
+          "width": 3.5,
+          "type": "door",
+          "label": "ELEVATOR"
+        },
+        {
+          "rooms": [
+            "corridor_l2",
+            "basketball_approach"
+          ],
+          "width": 4,
+          "type": "door",
+          "label": "BASKETBALL \u2014 OFF LIMITS"
+        },
+        {
+          "rooms": [
             "corridor_l2_overlook",
             "fitness_north"
           ],
@@ -5627,7 +6083,7 @@
           "polygon": [
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               2.0,
@@ -5647,7 +6103,7 @@
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ]
           ],
           "fromLevel": 1,
@@ -5935,18 +6391,34 @@
           "polygon": [
             [
               -236.5,
+              -62.0
+            ],
+            [
+              -97.0,
+              -62.0
+            ],
+            [
+              -97.0,
+              -40.0
+            ],
+            [
+              -130.0,
+              -40.0
+            ],
+            [
+              -130.0,
+              -16.0
+            ],
+            [
+              -97.0,
+              -16.0
+            ],
+            [
+              -97.0,
               47.0
             ],
             [
               -236.5,
-              -62.0
-            ],
-            [
-              -97.0,
-              -62.0
-            ],
-            [
-              -97.0,
               47.0
             ]
           ]
@@ -5976,11 +6448,11 @@
             ],
             [
               2.0,
-              -18.5
+              -16.5
             ],
             [
               10.0,
-              -18.5
+              -16.5
             ],
             [
               10.0,
@@ -6216,6 +6688,88 @@
           ],
           "rotation": 180,
           "room": "cardio_south"
+        },
+        {
+          "id": "l2_weights",
+          "kind": "dumbbell_rack",
+          "at": [
+            -40.5,
+            -42.0
+          ],
+          "rotation": 90,
+          "room": "cardio_south"
+        },
+        {
+          "id": "l2_tv_1",
+          "kind": "wall_tv",
+          "at": [
+            -32.0,
+            -46.5
+          ],
+          "rotation": 180,
+          "room": "cardio_south"
+        },
+        {
+          "id": "l2_tv_2",
+          "kind": "wall_tv",
+          "at": [
+            -22.0,
+            -46.5
+          ],
+          "rotation": 180,
+          "room": "cardio_south"
+        },
+        {
+          "id": "l2_bench_1",
+          "kind": "flat_bench",
+          "at": [
+            -28.0,
+            -44.0
+          ],
+          "rotation": 90,
+          "room": "cardio_south"
+        },
+        {
+          "id": "l2_bench_2",
+          "kind": "flat_bench",
+          "at": [
+            -18.0,
+            -44.0
+          ],
+          "rotation": 90,
+          "room": "cardio_south"
+        },
+        {
+          "id": "l2_exit_plate",
+          "kind": "nameplate",
+          "at": [
+            -354.0,
+            -86.0
+          ],
+          "rotation": 90,
+          "room": "corridor_l2",
+          "text": "EXIT"
+        },
+        {
+          "id": "l2_exit_sign",
+          "kind": "exit_sign",
+          "at": [
+            -356.0,
+            -86.0
+          ],
+          "rotation": 90,
+          "room": "corridor_l2"
+        },
+        {
+          "id": "l2_elev_sign",
+          "kind": "nameplate",
+          "at": [
+            -40.0,
+            -84.0
+          ],
+          "rotation": 0,
+          "room": "elevator",
+          "text": "ELEVATOR"
         },
         {
           "id": "l2_climb_1",
@@ -6488,16 +7042,6 @@
           ],
           "rotation": 0,
           "room": "team_offices"
-        },
-        {
-          "id": "corridor_l2_fit",
-          "kind": "trash_bin",
-          "at": [
-            -212.0,
-            -86.0
-          ],
-          "rotation": 0,
-          "room": "corridor_l2"
         },
         {
           "id": "athletic_upper_fit",

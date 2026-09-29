@@ -180,36 +180,46 @@ def main():
         (-100, 192),
         (-40, 193),
         (20, 194),
+        (55, 180),
+        (82, 158),
     ]
-    road_bundle(feats, patriot, src, half=8, yellow=0.5)
+    road_bundle(feats, patriot, src, half=7, yellow=0.5)
 
-    # Campus Drive on the paved lanes, west of the teardrop, then north to the fields.
+    # Campus Drive: shift east onto the asphalt (was in the west verge).
     campus_w = [
-        (-450, -360),
-        (-465, -280),
-        (-475, -220),
-        (-478, -180),
-        (-477, -140),
-        (-476, -90),
-        (-475, -40),
-        (-474, 10),
-        (-472, 55),
-        (-470, 100),
-        (-466, 135),
+        (-438, -360),
+        (-453, -280),
+        (-463, -220),
+        (-466, -180),
+        (-465, -140),
+        (-464, -90),
+        (-463, -40),
+        (-462, 10),
+        (-460, 55),
+        (-458, 100),
+        (-454, 135),
     ]
-    road_bundle(feats, campus_w, src, half=8, yellow=0.5)
-    # Patriot Circle already crosses this T; a second yellow return z-fought the bundle.
-    # Teardrop east bypass omitted: it shared Y-faces with the main Campus Drive bundle.
+    road_bundle(feats, campus_w, src, half=7, yellow=0.5)
+    # East lane around the teardrop (yellow only to avoid edge z-fight).
+    feats.append(
+        polyline(
+            "bike_lane",
+            "yellow",
+            0.333,
+            [(-448, -192), (-432, -168), (-428, -148), (-440, -128)],
+            src,
+        )
+    )
 
-    # Mason Pond Dr: east-northeast on the asphalt, not into the woods.
-    pond = [(220, 140), (280, 138), (350, 140), (430, 146), (520, 154), (590, 160)]
-    road_bundle(feats, pond, src, half=9, yellow=0.5)
+    # Mason Pond Dr follows the south-bending asphalt, not a straight ENE chord.
+    pond = [(220, 144), (280, 148), (350, 158), (430, 172), (510, 188)]
+    road_bundle(feats, pond, src, half=8, yellow=0.5)
 
-    # Roundabout: island curb, truck apron, outer curb at the circulating edge.
-    cx, cz = 145.0, 145.0
-    feats.append(polyline("island", "concrete", 1.2, circle_pts(cx, cz, 38, 40), src))
-    feats.append(polyline("white_edge", "white", 0.333, circle_pts(cx, cz, 48, 40), src))
-    feats.append(polyline("dashed_white", "white", 0.333, circle_pts(cx, cz, 68, 40), src))
+    # Inner planted island only (not the circulating disk). Outer white = curb.
+    cx, cz = 147.0, 147.0
+    feats.append(polyline("island", "concrete", 1.2, circle_pts(cx, cz, 30, 36), src))
+    feats.append(polyline("white_edge", "white", 0.333, circle_pts(cx, cz, 36, 36), src))
+    feats.append(polyline("dashed_white", "white", 0.333, circle_pts(cx, cz, 58, 36), src))
     feats.append(triangle(142, 98, math.pi, 28, 12))
     feats.append(triangle(98, 146, math.pi / 2, 28, 12))
     feats.append(triangle(134, 192, 0.0, 28, 12))
@@ -218,8 +228,9 @@ def main():
     feats += zebra(90, 136, 98, 156, bar=2.4, gap=2.0, span=16)
     feats += zebra(110, 186, 140, 194, bar=2.4, gap=2.0, span=16)
     feats += zebra(194, 126, 210, 148, bar=2.4, gap=2.0, span=16)
-    feats += zebra(-470, -38, -458, -36, bar=2.0, gap=2.0, span=8)
-    feats += zebra(-478, 186, -450, 189, bar=2.0, gap=2.0, span=10)
+    feats += zebra(-462, -58, -452, -56, bar=2.0, gap=2.0, span=8)
+    feats += zebra(-468, -178, -452, -176, bar=2.0, gap=2.0, span=8)
+    feats += zebra(-466, 186, -440, 189, bar=2.0, gap=2.0, span=10)
 
     feats += shark_teeth(124, 102, 158, 106, toward_sign=1, n=5, depth=2.0)
     feats += shark_teeth(102, 132, 106, 156, toward_sign=1, n=5, depth=2.0)
@@ -233,29 +244,23 @@ def main():
     feats += stall_row(58, 28, 5, 9, 18, heading="s")
     feats.append(accessible_symbol(62.5, 37))
 
-    # One concrete walk from Campus Dr crosswalk to the RAC west court.
-    feats.append(
-        polyline("symbol", "white", 0.5, [(-456, -36), (-438, -22), (-418, -6), (-398, 10)], src)
-    )
-
-    # Mechanical yard on the tan pad, west gate opening (gap in the west edge).
+    # Equipment yard tight to the dark gym roof (small tan pad, not the shrub bed).
     feats.append(
         polyline(
             "white_edge",
             "white",
             0.4,
-            [(-352, 44), (-318, 46), (-314, 74), (-350, 76)],
+            [(-328, 30), (-304, 32), (-300, 50), (-326, 52), (-328, 30)],
             src,
         )
     )
 
-    feats.append(
-        polyline("bike_lane", "yellow", 0.333, [(88, 72), (58, 8), (46, -60), (52, -140)], src)
-    )
+    # East driveway throat only — do not continue into the woods.
+    feats.append(polyline("bike_lane", "yellow", 0.333, [(88, 70), (62, 28), (55, 12)], src))
 
     # --- Banister / Lot K: stall paint and islands from 25-ft lot grid ---
     pitch = 9.0
-    x_lot = -402.0  # ~1.5 ft extra west so cars sit in bays
+    x_lot = -405.0
     n_full = 47
 
     def skips(*ranges):
@@ -275,10 +280,6 @@ def main():
     skip_d = skips((-242, -205), (-210, -175), (-20, 16))
     feats += stall_row(x_lot, 436, n_full, pitch, 18, "s", skip_d)
     feats += stall_row(x_lot, 460, n_full, pitch, 18, "s", skip_d)
-    for z in range(276, 472, 9):
-        if 340 < z < 390:
-            continue
-        feats.append(polyline("stall", "white", 0.333, [(26, z), (42, z)], src))
 
     def rect(x, z, w, d):
         return polyline(
@@ -291,12 +292,12 @@ def main():
 
     # Island boxes sized to mulch/curb, not canopy drip.
     # Pads ~2 stalls wide × stall depth, on the mulch.
-    feats.append(rect(-256, 306, 28, 18))
-    feats.append(rect(-192, 304, 32, 18))  # dirt pad
-    feats.append(rect(-44, 306, 26, 18))
-    feats.append(rect(-236, 426, 24, 16))
-    feats.append(rect(-162, 428, 24, 16))
-    feats.append(rect(-12, 428, 22, 16))
+    feats.append(rect(-254, 306, 30, 20))
+    feats.append(rect(-178, 304, 34, 20))
+    feats.append(rect(-38, 306, 28, 20))
+    feats.append(rect(-234, 424, 28, 20))
+    feats.append(rect(-168, 426, 28, 20))
+    feats.append(rect(-10, 426, 26, 20))
 
     # ADA: ISA + 8 ft hatched access aisle at the NE corner.
     feats.append(accessible_symbol(-8, 281))

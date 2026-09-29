@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "SmoothPlastic",
     "StudsPerTile": 4,
-    "Name": "RAC_sign_paint"
+    "Name": "RAC_sign_paint",
+    "ColorMap": "rbxassetid://130095255286681",
+    "NormalMap": "rbxassetid://85560496249540",
+    "RoughnessMap": "rbxassetid://128889279786109"
   }
 }

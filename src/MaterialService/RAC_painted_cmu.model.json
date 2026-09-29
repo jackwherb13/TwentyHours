@@ -2,8 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "Concrete",
-    "ColorMap": "rbxassetid://127160626359077",
+    "ColorMap": "rbxassetid://92941580594969",
     "StudsPerTile": 8,
-    "Name": "RAC_painted_cmu"
+    "Name": "RAC_painted_cmu",
+    "NormalMap": "rbxassetid://74529868373378",
+    "RoughnessMap": "rbxassetid://125304131314342"
   }
 }

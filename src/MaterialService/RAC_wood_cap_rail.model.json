@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "Wood",
     "StudsPerTile": 4,
-    "Name": "RAC_wood_cap_rail"
+    "Name": "RAC_wood_cap_rail",
+    "ColorMap": "rbxassetid://74187080825041",
+    "NormalMap": "rbxassetid://87900524753415",
+    "RoughnessMap": "rbxassetid://122408873463919"
   }
 }

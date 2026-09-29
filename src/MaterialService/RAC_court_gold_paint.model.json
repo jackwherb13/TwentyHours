@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "SmoothPlastic",
     "StudsPerTile": 8,
-    "Name": "RAC_court_gold_paint"
+    "Name": "RAC_court_gold_paint",
+    "ColorMap": "rbxassetid://75766146048217",
+    "NormalMap": "rbxassetid://133238565681457",
+    "RoughnessMap": "rbxassetid://113811037210637"
   }
 }

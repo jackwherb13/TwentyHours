@@ -2,8 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "CeramicTiles",
-    "ColorMap": "rbxassetid://100222343892181",
+    "ColorMap": "rbxassetid://84618014660326",
     "StudsPerTile": 2,
-    "Name": "RAC_ceramic_tile"
+    "Name": "RAC_ceramic_tile",
+    "NormalMap": "rbxassetid://109023032528121",
+    "RoughnessMap": "rbxassetid://121074020038747"
   }
 }

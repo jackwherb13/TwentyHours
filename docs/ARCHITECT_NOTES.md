@@ -1,43 +1,48 @@
 # RAC structure — architect notes
 
-Status: Levels 1 and 2 are a walkable structure. Rooms have a purpose fit-out. No real people, jersey names, or photographed faces. Round-2 screenshots are in verification/qa/round2/. Photo-match judges were not re-run.
+Status: Levels 1 and 2 are a walkable structure. There is no third floor. Rooms have a purpose fit-out. No real people, jersey names, or photographed faces. Round-2 screenshots are in verification/qa/round2/. Photo-match judges were not re-run.
 
-The main entrance is the smaller south glass front, under the dark canopy. The long east curtain wall is glazing, not the entrance. Level 2 is at +20 ft.
+The main entrance is the smaller south glass front, under the dark canopy. The long east curtain wall is glazing, not the entrance. Level 2 is at +20 ft. The 2026-09-29 09:35 answers in `docs/WALKTHROUGH.md` win where an older paragraph below still names a coordinate.
 
 ## Circulation
 
-Walking north is away from the south glass. Left and right are from that direction of travel.
+Walking north is away from the south glass. Left is west. Right, in this plan, is the workout path (the glass is the east limit, so the right hallway cannot continue past x = 10).
 
-1. South threshold into the double-height lobby (the 20 × 20 at x = −10…10, z = 0…−20, plus a narrow north neck). The reception desk is a 20 ft staff enclosure in that 20 × 20, at (−4, −15), rotation 270 so the long axis is north–south (perpendicular to the south glass), depth 6, five frosted bays, white transaction top. Its south end is about 10 ft inside the glass. Staff stand inside the enclosure.
-2. Immediately left of the main door, `south_vestibule` is the glass hallway. It runs west along the south glass, with ping-pong and vending, then continues north through `corridor_entry_south` and `corridor_entry_link` to the competition gym doors. The north leg beside the gym stays 12 ft wide. The main stair volume is x = −112…−78.5, z = −52…−28 (south edge 28 ft from the glass). The first flight runs east along the south wall of that volume (17 risers, 0.917 ft going, 8 ft wide) to an 8 × 8 landing at +10, then turns left; the second flight runs north to Level 2. Walls on the south and west of the well are solid so the avatar cannot clip through. A notch was cut from `south_gym` for the extra stair width west of x = −97.
-3. Straight in from the desk, the workout machines are on the right in the east glazed bay. A glass storefront at the north end of that bay opens into the coaches' suite: an open cubicle room with private offices around it. The head coach's door carries a nameplate that reads HEAD COACH.
-4. The public hall along the east side of the competition gym has the gym doors on the left. The trophy case is on the right where the hall narrows. A doorless link continues into the north–south athletic corridor.
-5. Left off that corridor is the training room. At the end, keypad 15234 opens a square vestibule with only the nutrition fridge, then a door on the left into the volleyball locker room. The sign is generic. The keypad and the fridge name are fictional.
-6. Past the locker, the second stair is reached through the west link. It is two straight flights with a mid landing. Up is west.
-7. On Level 2, leave the main stair onto the landing, then the balcony, then the overlook corridor (`sealed_concrete`, 2×2 ACT). The cardio floor's open south edge, at z = −16, is a horizontal rail. Walk north, away from the entrance glass. Floor-to-ceiling glass is on the left, looking down into the competition gym. At the south end of that corridor, turn west onto `corridor_l2`. Walking west: racquetball courts on the LEFT (south of the hall, `racquetball_2` at x = −265…−225 then `racquetball_1` at x = −305…−265, each 40 × 20, z = −80…−60), then `stair_second` on the RIGHT (north, x = −339.5…−305), then the basketball door signed BASKETBALL - OFF LIMITS, then the Level 2 exit at grade. The old north-of-gym court bays are `void_north_bay`.
-8. A third stair, `stair_west`, connects the office corridor to Level 2. It is egress, not a walkthrough stop.
+1. South threshold into the double-height lobby (the open 20 × 20 at x = −10…10, z = 0…−20, plus the stair notch). The reception desk is the long white U in that room, at (−2, −12), rotation 180, length 12, depth 6. The GM mark is on the south face. Four stations sit inside the U, with a lost-and-found cabinet and a ball cart. The south door and the stair threshold stay clear of the counter.
+2. The main stair is inside that same 20 × 20, set back from the glass. Flight `main_a` runs north along the east side (x = 2…10, z = −33…−18.5, 17 risers). The 8 × 8 landing is at +10. Flight `main_b` turns left and runs west, and its top meets the Level 2 door at x = −12.5, elevation +20. Rise is 20/34 ft, run is 14.5/17 ft, width 8. Gemini's west-well coordinates (x = −112…−78.5) are the old well. The lobby stair replaced them on purpose. x = −12.5 is still the Level 2 arrival.
+3. Immediately left of the main door, `south_vestibule` is the glass hallway. It runs west along the south glass, with ping-pong and vending, then turns north through `corridor_south_link` and `corridor_entry_south`. That path is still an L. Public lockers are off `corridor_south_link` (lockers on the right as you enter, five stalls on the left, sinks across from the stalls, showers ahead). The volleyball locker with keypad 15234 stays deep in the athletic suite.
+4. Straight ahead through the workout (`fitness_annex`, `corridor_wide`, the squat racks in `weight_room`) is the right-hand path. The coaches' suite is past the squat racks, on the right. The elevator is the 8 × 8 between the squat room and the head coach's office. Linn gym (`south_gym`) is reached from that workout hall through `team_support`, and `team_support` also opens into the athletic corridor. The head coach's door carries a nameplate that reads HEAD COACH.
+5. The public hall along the east side of the competition gym has the gym doors on the left. The trophy case is on the right where the hall narrows. A doorless link continues into the north–south athletic corridor. `thin_link` is an 8 ft hall, not a 113 ft opening.
+6. Training is north of the nutrition vestibule, which is north of the volleyball locker. Order, walking south: training, nutrition, locker, west hall, second stair. The training store door is on the shared wall with training. Keypad 15234 and the fridge name are fictional.
+7. The second stair is two flights with an 8 × 8 mid landing. The Level 2 door is 3 ft wide and lands on the upper landing, west of the upper-flight void.
+8. On Level 2, leave the main stair onto the landing, then the balcony, then the overlook. The overlook ends at z = −279.5. It is still a turn: the overlook runs north–south at x = −78.5…−64.5, and `corridor_l2` runs east–west from that corner. Walking west after the turn: both racquetball courts on the left (south), light wood floors, white walls, glass on the hall side; then `stair_second` on the right; then the basketball door signed BASKETBALL — OFF LIMITS; then the grade exit on the west wall at x = −359.5. The basketball gym is entered on Level 2. `cage_lower_reserved` stays construction, with no public door.
+9. `stair_west` is the third stair. It is enclosed, with a door from `corridor_office` and an exit sign. It is not an open well. There is no third floor and no juice bar.
+10. Level 2 cardio (`cardio_south`) is open to the lobby, with a rail at z = −16, 3.5 ft high. TVs are on the north wall, free weights are along the west wall (perpendicular to the south glass), and two benches sit in the room.
+11. The service yard is west of the volleyball gym, x = −236.5…−193.5, z = −214…−186, with two dumpsters and a SERVICE door.
 
-The Level 2 route the checker walks is `main_stair_landing → balcony → corridor_l2_overlook → corridor_l2 → racquetball → stair_second → basketball_approach → cage_gym → HIGH_EXIT`. The turn from the overlook onto `corridor_l2` is required. One straight line cannot keep both the gym and the racquetball courts on the left without cutting the competition gym.
+The Level 2 route the checker walks is `main_stair_landing → balcony → corridor_l2_overlook → corridor_l2 → racquetball → stair_second → basketball_approach → cage_gym → HIGH_EXIT`. The turn from the overlook onto `corridor_l2` remains. One straight line cannot keep both the gym and the racquetball courts on the left without cutting the competition gym.
 
 ## Conflicts and resolutions
 
-- Floor-to-floor. The curtain-wall reading and `validate_blueprint.luau` say 16 ft. The stair count says 20 ft. The stair count is the one in the build. The schema check still fails on 16 and should be ignored until its owner changes it.
+- Floor-to-floor. Level 2 stays at +20 ft. The stair rise is 20/34 ft.
 - Entrance. An earlier fit put the entrance on the east curtain wall. The 23:20 correction puts it on the south glass, x = −97 to 10 at z = 0. The east wall stays at x = 10, full height, with no entrance door.
 - Main stair. "Three switchbacks" was replaced by two flights, one landing, turn left.
 - Left-hand gym and left-hand racquetball. Resolved by the north turn described above. The competition gym stays x = −193.5 to −78.5. Its east–west court length is not reduced.
 - Lidar roofs near 25 ft cannot cover a floor at 20 ft. Gym and racquetball roofs follow the lidar. Other occupied roofs are 33.2 ft. See `blueprint/HEIGHTS.md`.
 - Racquetball ceiling is 16.5 ft under a 36.7 ft roof. The clear height and the roof are both recorded. They are not the same number.
-- The reception desk is the 20 ft enclosure in item 1, south end about 10 ft inside the glass, long axis N–S.
-- Main stair going is 0.917 ft (~11 in) on both flights (17 + 17), landing 8 ft square. Parent `run` matches.
+- The reception desk is the U in item 1. The older 20 ft north–south bar at (−4, −15), rotation 270, is retired.
+- Main stair run is 14.5/17 ft (about 10.2 in) on both flights (17 + 17), landing 8 ft square. The old 0.917 ft going belonged to the west well.
 - Racquetball is on the south side of `corridor_l2`, immediately before `stair_second`. `walkthrough_routes.json` is not owned here; the route agent still needs listed rooms to sit on that hall.
 - Site context in the built model includes the entry canopy, the RAC letters, the trees, and the exterior rails. Geometry QA counts those parts.
 - `tools/overlay.py` still registers OSM at the old entrance pixel (672, 336). Footprint IoU against OSM is not a check of this plan.
 
-## Questions
+## Questions answered 2026-09-29 09:35
 
-- Should `stair_west` stay as a third egress, or is it one of the stray pieces?
-- Is the racquetball room 16.5 ft clear, or should that ceiling rise to the structure at 36.7?
-- The south gym wing runs to z = +47, past the entrance line. Should that wing stay?
+- `stair_west` stays. It is the enclosed third stair, with a door and an exit sign.
+- Racquetball ceilings stay 16.5 ft. Floors are maple. Walls are gypsum. The hall-side wall is glass.
+- Linn gym stays, notched for the public locker, and connects to the workout hall and the athletic corridor.
+- No third floor. No juice bar. The cage has no public door on Level 1.
+- The room-size table below is an earlier fit. Do not quote it as current area. Gemini's addition rectangle and the 10120 sq ft cage figure were not recomputed; overlap on both levels is 0. `l1_w105` and `l1_w106` in that review were painted CMU, not brick.
 
 ## What the builder has to know
 
@@ -51,12 +56,12 @@ Finishes already stored on each room are the ones to build. Lighting is recessed
 
 Walkthrough rooms, beyond the table:
 
-- `lobby` — 20 × 20 entry plus north neck. Ceiling 32 gypsum. Desk `reception_desk` at (−4, −15), rotation 270, length 20, 5 bays, depth 6. Frosted panels, white transaction top, bronze frame, clerk surface inside. IMG_0369. South curtain wall to head 30.
+- `lobby` — open 20 × 20 plus the stair notch. Ceiling 32 gypsum. Desk `reception_desk` at (−2, −12), rotation 180, shape U, length 12, depth 6. White counter, GM mark on the south face. South curtain wall to head 30.
 - `south_vestibule`, `glazed_recreation`, `glazed_recreation_west` — double-height, glass on the south, ping-pong and vending in the recreation hall. IMG_0331.
-- `stair_main` — two flights, left turn, 8 × 8 landing at +10. First flight east (z = −28…−36, x = −112…−96.5), second flight north (z = −36…−51.5). Sealed concrete. IMG_0371.
+- `stair_main` — two flights, left turn, 8 × 8 landing at +10, inside the lobby 20 × 20. First flight north (x = 2…10, z = −33…−18.5), second flight west, top at x = −12.5. Sealed concrete. IMG_0371.
 - `corridor_l2_overlook` — sealed concrete, 10 ft 2×2 tile. Black-mullion glass on the west, one horizontal mullion near rail height, looking onto the wood court. IMG_0344, IMG_0345, WEB_vb_gym_overlook.
 - `balcony` and the gallery guards — horizontal rails, including the cardio edge at z = −16. IMG_0343. Do not run a guard across the stair.
-- `racquetball_1`, `racquetball_2` — 40 × 20, Level 2 only, ceiling 16.5, south of `corridor_l2` just east of `stair_second`. No courts on Level 1.
+- `racquetball_1`, `racquetball_2` — 40 × 20, Level 2 only, ceiling 16.5, maple floor, gypsum walls, glass on the hall side at z = −80. South of `corridor_l2`, then the down stair. No courts on Level 1.
 - `competition_gym` — maple, ceiling 32.5, roof 33.7. Court about 94 × 50. Green keys visible from the overlook.
 - `cage_gym` — door label `BASKETBALL - OFF LIMITS`. Ceiling 24.5, roof 45.8.
 - `basketball_approach` — door label `LEVEL 2 EXIT AT GRADE`.

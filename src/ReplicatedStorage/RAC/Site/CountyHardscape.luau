@@ -190,7 +190,8 @@ function County.build(parent: Instance, site: any)
 				local long = math.max(merged.x1 - merged.x0, merged.z1 - merged.z0)
 				if long <= 240 and fillOf(merged) >= 0.38 then
 					host = field
-					field.x0, field.z0, field.x1, field.z1, field.area = merged.x0, merged.z0, merged.x1, merged.z1, merged.area
+					field.x0, field.z0, field.x1, field.z1, field.area =
+						merged.x0, merged.z0, merged.x1, merged.z1, merged.area
 					break
 				end
 			end
@@ -270,7 +271,8 @@ function County.build(parent: Instance, site: any)
 			)
 			stall.Color = Color3.fromRGB(35, 78, 150)
 			stall.Material = Enum.Material.SmoothPlastic
-			local sign = P.pole(poles, "LotSign", Vector3.new(field.x0 + 1.2, hy2, field.z0 + 1.2), 8, 0.12, "dark", false)
+			local sign =
+				P.pole(poles, "LotSign", Vector3.new(field.x0 + 1.2, hy2, field.z0 + 1.2), 8, 0.12, "dark", false)
 			local board = P.box(
 				poles,
 				"LotSign",

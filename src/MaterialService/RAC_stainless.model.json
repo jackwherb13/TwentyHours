@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "Metal",
     "StudsPerTile": 2,
-    "Name": "RAC_stainless"
+    "Name": "RAC_stainless",
+    "ColorMap": "rbxassetid://72990424519590",
+    "NormalMap": "rbxassetid://123915024152896",
+    "RoughnessMap": "rbxassetid://110299002240225"
   }
 }

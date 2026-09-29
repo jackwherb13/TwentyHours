@@ -3,6 +3,9 @@
   "properties": {
     "BaseMaterial": "Grass",
     "StudsPerTile": 4,
-    "Name": "RAC_turf"
+    "Name": "RAC_turf",
+    "ColorMap": "rbxassetid://104411270562423",
+    "NormalMap": "rbxassetid://114625498002373",
+    "RoughnessMap": "rbxassetid://116745525431241"
   }
 }

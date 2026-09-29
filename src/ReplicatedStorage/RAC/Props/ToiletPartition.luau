@@ -31,7 +31,7 @@ end
 function ToiletPartition.build(cf: CFrame, opts: { [string]: any }?): Model
 	local b = Kit.new("ToiletPartition", cf)
 	local C = Kit.Color
-	local n = math.floor(optNum(opts, "stalls", DEFAULT_N, 1, 4) + 0.5)
+	local n = math.floor(optNum(opts, "stalls", DEFAULT_N, 1, 6) + 0.5)
 	local length = n * STALL_W + 0.2
 	local y0 = GAP
 
