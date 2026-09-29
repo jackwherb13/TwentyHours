@@ -71,7 +71,8 @@ function Loader.new(warningHandler: ((any) -> ())?)
 				end
 				if key == "IsA" then
 					return function(_, class)
-						return class == "ModuleScript" and (fs.isFile(path .. ".luau") or fs.isFile(path .. "/init.luau"))
+						return class == "ModuleScript"
+							and (fs.isFile(path .. ".luau") or fs.isFile(path .. "/init.luau"))
 					end
 				end
 				return node(path .. "/" .. key)
