@@ -19,12 +19,6 @@ local function lighting()
 	Lighting.GlobalShadows = true
 end
 
-local function streamingOff()
-	pcall(function()
-		workspace.StreamingEnabled = false
-	end)
-end
-
 local function clearInteriorTerrain()
 	local terrain = workspace.Terrain
 	local ok, err = pcall(function()
@@ -37,7 +31,6 @@ local function clearInteriorTerrain()
 end
 
 lighting()
-streamingOff()
 clearInteriorTerrain()
 
 local Players = game:GetService("Players")

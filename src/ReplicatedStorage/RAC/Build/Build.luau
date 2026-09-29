@@ -36,7 +36,7 @@ function Build.build(parent: Instance, raw: any): Stats
 	local stats: Stats = { parts = 0, byCategory = {} }
 	local function count(folder: Instance, category: string)
 		local n = 0
-		for _, item in folder:GetDescendants() do
+		local function tally(item: Instance)
 			if item:IsA("BasePart") then
 				item.Anchored = true
 				if item:IsA("MeshPart") then
@@ -44,6 +44,10 @@ function Build.build(parent: Instance, raw: any): Stats
 				end
 				n += 1
 			end
+		end
+		tally(folder)
+		for _, item in folder:GetDescendants() do
+			tally(item)
 		end
 		stats.parts += n
 		stats.byCategory[category] = (stats.byCategory[category] or 0) + n
@@ -54,8 +58,12 @@ function Build.build(parent: Instance, raw: any): Stats
 		local root = Geometry.folder(levels, tostring(level.level))
 		local floors = Geometry.folder(root, "Floors")
 		Floors.build(floors, level, data.site)
-		Court.build(floors, level)
 		count(floors, "Floors")
+		Court.build(root, level)
+		local courtFolder = root:FindFirstChild("Court")
+		if courtFolder then
+			count(courtFolder, "Court")
+		end
 		local walls = Geometry.folder(root, "Walls")
 		Walls.build(walls, level, data)
 		count(walls, "Walls")
@@ -149,6 +157,7 @@ function Build.build(parent: Instance, raw: any): Stats
 	spawn.Material = Enum.Material.SmoothPlastic
 	spawn.Color = Color3.fromRGB(196, 192, 180)
 	spawn.Parent = model
+	count(spawn, "Spawn")
 	local site = Geometry.folder(model, "Site")
 	local facade = Geometry.folder(site, "Facade")
 	Facade.build(facade, data.site, data.levels)

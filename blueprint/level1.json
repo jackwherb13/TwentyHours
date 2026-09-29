@@ -6277,7 +6277,7 @@
       "kind": "bleacher_bank",
       "at": [
         -86.0,
-        -206.0
+        -226.0
       ],
       "rotation": 90,
       "room": "competition_gym",
@@ -6289,7 +6289,7 @@
       "kind": "bleacher_bank",
       "at": [
         -186.0,
-        -206.0
+        -226.0
       ],
       "rotation": 270,
       "room": "competition_gym",
@@ -6312,7 +6312,7 @@
       "kind": "wall_pad",
       "at": [
         -150.0,
-        -184.0
+        -190.0
       ],
       "rotation": 0,
       "room": "competition_gym",
@@ -6373,22 +6373,22 @@
       "kind": "wall_pad",
       "at": [
         -82.0,
-        -160.0
+        -155.0
       ],
       "rotation": 90,
       "room": "competition_gym",
-      "length": 20
+      "length": 12
     },
     {
       "id": "vb_pad_w",
       "kind": "wall_pad",
       "at": [
         -190.0,
-        -160.0
+        -155.0
       ],
       "rotation": 270,
       "room": "competition_gym",
-      "length": 20
+      "length": 12
     },
     {
       "id": "vb_score",
@@ -6465,7 +6465,7 @@
       "kind": "water_fountain",
       "at": [
         -84.0,
-        -172.0
+        -190.0
       ],
       "rotation": 90,
       "room": "competition_gym"

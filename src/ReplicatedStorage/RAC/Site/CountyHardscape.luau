@@ -26,9 +26,7 @@ function County.build(parent: Instance, site: any)
 		if not e then
 			return false
 		end
-		return math.abs(x - e.x) < e.width / 2 + 18
-			and z > e.z - 2
-			and z < e.z + e.landingDepth + 12 * e.run + 36
+		return math.abs(x - e.x) < e.width / 2 + 18 and z > e.z - 2 and z < e.z + e.landingDepth + 12 * e.run + 36
 	end
 	for _, q in source.patches do
 		local x, z = q.x + q.w / 2, q.z + q.d / 2
@@ -47,15 +45,18 @@ function County.build(parent: Instance, site: any)
 		-- Top face sits on the lidar sample. A negative offset buried Patriot Circle.
 		local centerY = hy + 0.08 - up.Y * thickness / 2
 		local slabName = if q.material == "asphalt" then "LotSlab" else "PavementSlab"
-		table.insert(slabs, P.box(
-			ground,
-			slabName,
-			-- Inset so an asphalt lot and a concrete walk do not share a face.
-			Vector3.new(math.max(0.5, q.w - 0.2), thickness, math.max(0.5, q.d - 0.2)),
-			CFrame.fromMatrix(Vector3.new(x, centerY, z), right, up, back),
-			q.material,
-			true
-		))
+		table.insert(
+			slabs,
+			P.box(
+				ground,
+				slabName,
+				-- Inset so an asphalt lot and a concrete walk do not share a face.
+				Vector3.new(math.max(0.5, q.w - 0.2), thickness, math.max(0.5, q.d - 0.2)),
+				CFrame.fromMatrix(Vector3.new(x, centerY, z), right, up, back),
+				q.material,
+				true
+			)
+		)
 	end
 	-- Curbs and stall paint sit above the slab top. Shared Y faces within 0.005 ft
 	-- are flagged as z-fights, and roof-height lidar must not grow a curb into a door.
@@ -68,7 +69,12 @@ function County.build(parent: Instance, site: any)
 			return false
 		end
 		local e = site.entrance
-		if e and math.abs(x - e.x) < e.width / 2 + 10 and z > e.z - 1 and z < e.z + e.landingDepth + e.risers * e.run + 28 then
+		if
+			e
+			and math.abs(x - e.x) < e.width / 2 + 10
+			and z > e.z - 1
+			and z < e.z + e.landingDepth + e.risers * e.run + 28
+		then
 			return false
 		end
 		return true
@@ -88,16 +94,19 @@ function County.build(parent: Instance, site: any)
 		-- Shift off the pavement edge so a vertical face is not coplanar with the slab.
 		local ox, oz = -dz / length * 0.35, dx / length * 0.35
 		-- 6 in curb. Slab top is the lidar sample + 0.08, so the curb center sits 0.25 ft above that.
-		table.insert(dress, P.beam(
-			curbs,
-			"Curb",
-			Vector3.new(a[1] + ox, H.height(a[1], a[2]) + 0.33, a[2] + oz),
-			Vector3.new(b[1] + ox, H.height(b[1], b[2]) + 0.33, b[2] + oz),
-			0.5,
-			0.5,
-			"concrete",
-			true
-		))
+		table.insert(
+			dress,
+			P.beam(
+				curbs,
+				"Curb",
+				Vector3.new(a[1] + ox, H.height(a[1], a[2]) + 0.33, a[2] + oz),
+				Vector3.new(b[1] + ox, H.height(b[1], b[2]) + 0.33, b[2] + oz),
+				0.5,
+				0.5,
+				"concrete",
+				true
+			)
+		)
 	end
 	local paint = P.folder(ground, "Markings")
 	for _, mark in source.markings or {} do
@@ -111,16 +120,19 @@ function County.build(parent: Instance, site: any)
 		if stripeW < 0.8 then
 			stripeW = 0.333
 		end
-		table.insert(dress, P.beam(
-			paint,
-			"StallStripe",
-			Vector3.new(a[1], H.height(a[1], a[2]) + 0.163, a[2]),
-			Vector3.new(b[1], H.height(b[1], b[2]) + 0.163, b[2]),
-			math.clamp(stripeW, 0.12, 2.2),
-			0.04,
-			color,
-			false
-		))
+		table.insert(
+			dress,
+			P.beam(
+				paint,
+				"StallStripe",
+				Vector3.new(a[1], H.height(a[1], a[2]) + 0.163, a[2]),
+				Vector3.new(b[1], H.height(b[1], b[2]) + 0.163, b[2]),
+				math.clamp(stripeW, 0.12, 2.2),
+				0.04,
+				color,
+				false
+			)
+		)
 	end
 	-- 9 x 18 ft stalls and a 24 ft aisle on large asphalt patches. Planimetric paint is kept above.
 	local stallCount = 0
@@ -133,16 +145,19 @@ function County.build(parent: Instance, site: any)
 			return
 		end
 		stallCount += 1
-		table.insert(dress, P.beam(
-			paint,
-			"StallStripe",
-			Vector3.new(ax, H.height(ax, az) + 0.17, az),
-			Vector3.new(bx, H.height(bx, bz) + 0.17, bz),
-			0.333,
-			0.04,
-			"white",
-			false
-		))
+		table.insert(
+			dress,
+			P.beam(
+				paint,
+				"StallStripe",
+				Vector3.new(ax, H.height(ax, az) + 0.17, az),
+				Vector3.new(bx, H.height(bx, bz) + 0.17, bz),
+				0.333,
+				0.04,
+				"white",
+				false
+			)
+		)
 	end
 	-- County patches are small cells, not one rectangle per lot. Stripe the largest cells first.
 	local ranked = {}
@@ -206,7 +221,10 @@ function County.build(parent: Instance, site: any)
 		local oy = math.min(aMax[2], bMax[2]) - math.max(aMin[2], bMin[2])
 		local oz = math.min(aMax[3], bMax[3]) - math.max(aMin[3], bMin[3])
 		local function axis(o1: number, o2: number, a0: number, a1: number, b0: number, b1: number): boolean
-			return o1 > 0.25 and o2 > 0.25 and o1 * o2 > 0.5 and (math.abs(a1 - b1) < 0.005 or math.abs(a0 - b0) < 0.005)
+			return o1 > 0.25
+				and o2 > 0.25
+				and o1 * o2 > 0.5
+				and (math.abs(a1 - b1) < 0.005 or math.abs(a0 - b0) < 0.005)
 		end
 		return axis(oy, oz, aMin[1], aMax[1], bMin[1], bMax[1])
 			or axis(ox, oz, aMin[2], aMax[2], bMin[2], bMax[2])

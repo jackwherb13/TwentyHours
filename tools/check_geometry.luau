@@ -16,7 +16,8 @@ type Box = { part: any, name: string, path: string, min: { number }, max: { numb
 
 local HUNG = { "ceiling", "light", "troffer", "highbay", "high_bay", "downlight", "sign", "banner", "flag", "hoop", "scoreboard",
 	"joist", "deck", "roof", "duct", "tv", "mirror", "clock", "window", "glass", "mullion", "head", "lintel", "above", "slab",
-	"level2", "canopy", "grid", "tbar", "speaker", "rail", "pad", "board", "cabinet", "exit", "extinguisher", "shelf", "cubby" }
+	"level2", "canopy", "grid", "tbar", "speaker", "rail", "pad", "board", "cabinet", "exit", "extinguisher", "shelf", "cubby",
+	"cladding" }
 
 local function lower(s: string): string
 	return string.lower(s)

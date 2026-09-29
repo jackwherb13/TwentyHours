@@ -39,6 +39,21 @@ function Loader.new(warningHandler: ((any) -> ())?)
 		print = print,
 	}
 	env.warn = warningHandler or warn
+	-- Offline builds have no DataModel. Modules that touch a service at load
+	-- (Materials) still need GetService to return an instance they can parent to.
+	local services = {}
+	local game = {}
+	function game:GetService(name: string)
+		local existing = services[name]
+		if existing then
+			return existing
+		end
+		local service = roblox.Instance.new("Folder")
+		service.Name = name
+		services[name] = service
+		return service
+	end
+	env.game = game
 	local function node(path)
 		return setmetatable({ __path = path }, {
 			__index = function(_, key)

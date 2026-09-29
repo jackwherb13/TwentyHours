@@ -216,11 +216,10 @@ function PingPongTable.build(cf: CFrame, opts: { [string]: any }?): Model
 				true
 			)
 			-- Diagonal chrome folding brace rail
-			b:cyl(
+			b:box(
 				`FoldingRail_{sx}_{sz}`,
-				2.8,
-				0.04,
-				Kit.at(lx * 0.7, 1.4, sz * 2.1) * CFrame.Angles(0, 0, math.rad(sz * -35)),
+				Vector3.new(0.04, 2.2, 0.04),
+				Kit.at(lx * 0.7, 1.18, sz * 2.1),
 				HardwareChrome,
 				Enum.Material.Metal
 			)
@@ -259,12 +258,12 @@ function PingPongTable.build(cf: CFrame, opts: { [string]: any }?): Model
 
 	-- Net clamp posts on left (-X) and right (+X)
 	for _, sx in { -1, 1 } do
-		local px = sx * (netTotalW / 2 - 0.08)
+		local px = sx * (tableW / 2 + 0.04)
 		-- Clamp bracket gripping table edge
 		b:box(
 			`NetClampBody_{sx}`,
-			Vector3.new(0.14, 0.35, 0.22),
-			Kit.at(px, tableH - 0.08, 0),
+			Vector3.new(0.18, 0.16, 0.22),
+			Kit.at(px, tableH - 0.02, 0),
 			SteelBlack,
 			Enum.Material.Metal
 		)
@@ -273,7 +272,7 @@ function PingPongTable.build(cf: CFrame, opts: { [string]: any }?): Model
 			`NetClamp_Rail_Knob_{sx}`,
 			0.08,
 			0.1,
-			Kit.vertical(px, tableH - 0.28, 0),
+			Kit.vertical(px, tableH - 0.08, 0),
 			HardwareChrome,
 			Enum.Material.Metal
 		)

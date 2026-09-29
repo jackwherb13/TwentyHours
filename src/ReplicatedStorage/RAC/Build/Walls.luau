@@ -91,7 +91,14 @@ local function buildHorizontalRail(group: Folder, cf: CFrame, length: number)
 			true
 		)
 	end
-	local cap = Parts.box(group, "RailCap", Vector3.new(span, 0.22, 0.32), cf * CFrame.new(length / 2, 3.35, 0), "metal_panel", true)
+	local cap = Parts.box(
+		group,
+		"RailCap",
+		Vector3.new(span, 0.22, 0.32),
+		cf * CFrame.new(length / 2, 3.35, 0),
+		"metal_panel",
+		true
+	)
 	cap.Color = Color3.fromRGB(42, 44, 46)
 end
 
@@ -162,12 +169,14 @@ local function onGuard(level: Blueprint.Level, wall: Blueprint.Wall): boolean
 			continue
 		end
 		if horizontal and math.abs(ga[2] - gb[2]) < 0.05 and math.abs(az - ga[2]) < 0.08 then
-			local overlap = math.min(math.max(ax, bx), math.max(ga[1], gb[1])) - math.max(math.min(ax, bx), math.min(ga[1], gb[1]))
+			local overlap = math.min(math.max(ax, bx), math.max(ga[1], gb[1]))
+				- math.max(math.min(ax, bx), math.min(ga[1], gb[1]))
 			if overlap > math.abs(bx - ax) * 0.75 and overlap > 1 then
 				return true
 			end
 		elseif vertical and math.abs(ga[1] - gb[1]) < 0.05 and math.abs(ax - ga[1]) < 0.08 then
-			local overlap = math.min(math.max(az, bz), math.max(ga[2], gb[2])) - math.max(math.min(az, bz), math.min(ga[2], gb[2]))
+			local overlap = math.min(math.max(az, bz), math.max(ga[2], gb[2]))
+				- math.max(math.min(az, bz), math.min(ga[2], gb[2]))
 			if overlap > math.abs(bz - az) * 0.75 and overlap > 1 then
 				return true
 			end

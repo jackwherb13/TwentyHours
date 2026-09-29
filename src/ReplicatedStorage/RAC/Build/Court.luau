@@ -17,7 +17,16 @@ local APRON = 8
 local ATTACK = 9.84
 local LINE = 0.45
 
-local function paint(parent: Instance, name: string, x: number, z: number, w: number, d: number, y: number, color: Color3)
+local function paint(
+	parent: Instance,
+	name: string,
+	x: number,
+	z: number,
+	w: number,
+	d: number,
+	y: number,
+	color: Color3
+)
 	local part = Parts.box(parent, name, Vector3.new(w, 0.02, d), CFrame.new(x, y, z), "maple", false)
 	part.Color = color
 	part.Material = Enum.Material.SmoothPlastic
@@ -38,7 +47,6 @@ function Court.build(parent: Instance, level: Blueprint.Level)
 	local yLine = level.elevation + 0.05
 	local innerW = HALF_W * 2
 	local innerL = HALF_L * 2
-	local outerW = innerW + APRON * 2
 	local outerL = innerL + APRON * 2
 	-- Frame only. The maple slab stays visible inside the lines.
 	paint(group, "ApronWest", CX - HALF_W - APRON / 2, CZ, APRON, outerL, yGreen, GREEN)

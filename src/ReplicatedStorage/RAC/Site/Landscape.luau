@@ -80,16 +80,10 @@ local function tree(parent: Instance, item: any, index: number)
 			{ -0.2, 0.58, -0.32, 0.66 },
 		}
 		local c, s = math.cos(spin), math.sin(spin)
-		for i, blob in blobs do
+		for _, blob in blobs do
 			local ox, oz = blob[1] * radius, blob[3] * radius
 			local jx, jz = ox * c - oz * s, ox * s + oz * c
-			crown(
-				model,
-				Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz),
-				radius * 2 * blob[4],
-				0.82,
-				color
-			)
+			crown(model, Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz), radius * 2 * blob[4], 0.82, color)
 		end
 	end
 	model.Parent = parent

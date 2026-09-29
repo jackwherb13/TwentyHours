@@ -71,8 +71,8 @@ function Treadmill.build(cf: CFrame, opts: { [string]: any }?): Model
 			true
 		)
 		b:box(`Upright{s}b`, Vector3.new(0.16, 1.6, 0.16), Kit.at(s * 1.32, 3.2, -1.85), steel, Enum.Material.Metal)
-		b:cyl(`Hand{s}`, 2.6, 0.1, Kit.alongZ(s * 1.32, 3.15, -0.4), steel, Enum.Material.Metal)
-		b:cyl(`HandrailDrop{s}`, 0.45, 0.09, Kit.vertical(s * 1.32, 2.95, 0.85), steel, Enum.Material.Metal)
+		b:cyl(`Hand{s}`, 2.95, 0.1, Kit.alongZ(s * 1.32, 3.15, -0.55), steel, Enum.Material.Metal)
+		b:box(`HandrailDrop{s}`, Vector3.new(0.09, 2.7, 0.09), Kit.at(s * 1.32, 1.4, 0.85), steel, Enum.Material.Metal)
 		b:box(
 			`Contact{s}`,
 			Vector3.new(0.22, 0.1, 0.28),

@@ -19,14 +19,7 @@ local function bounds(poly: Blueprint.Polygon): (number, number, number, number)
 	return x0, x1, z0, z1
 end
 
-local function scatter(
-	parent: Instance,
-	room: Blueprint.Room,
-	kind: string,
-	y: number,
-	spacing: number,
-	limit: number
-)
+local function scatter(parent: Instance, room: Blueprint.Room, kind: string, y: number, spacing: number, limit: number)
 	local x0, x1, z0, z1 = bounds(room.polygon)
 	local placed = 0
 	local x = x0 + spacing * 0.5
@@ -46,37 +39,40 @@ local function scatter(
 	end
 end
 
+local function fixtures(folder: Instance, room: Blueprint.Room, roomType: string, floorY: number, ceilY: number)
+	if roomType == "gym" or room.id == "cage_gym" then
+		scatter(folder, room, "high_bay_light", ceilY - 4, 28, 12)
+	elseif roomType == "stair" then
+		scatter(folder, room, "downlight", floorY + 11, 9, 6)
+		scatter(folder, room, "downlight", floorY + 22, 10, 4)
+	elseif roomType == "lobby" or room.id == "south_vestibule" or room.ceilingHeight >= 24 then
+		scatter(folder, room, "downlight", floorY + 11, 14, 10)
+		if room.ceilingHeight >= 24 then
+			scatter(folder, room, "downlight", math.min(ceilY - 1, floorY + 26), 16, 6)
+		end
+	elseif roomType == "corridor" then
+		scatter(folder, room, "troffer_2x4", ceilY - 0.5, 18, 8)
+	elseif room.ceilingType ~= "none" then
+		scatter(folder, room, "troffer_2x2", ceilY - 0.45, 12, 4)
+	end
+end
+
 function Lights.build(parent: Instance, level: Blueprint.Level)
 	local folder = Instance.new("Folder")
 	folder.Name = "Lights"
 	folder.Parent = parent
 	for _, room in level.rooms do
-		if room.type == "void" or room.type == "construction" then
+		local roomType: string = room.type
+		if roomType == "void" or roomType == "construction" then
 			continue
 		end
 		local x0, x1, z0, z1 = bounds(room.polygon)
-		if math.min(x1 - x0, z1 - z0) < 6 and room.type ~= "stair" then
+		local tooNarrow = math.min(x1 - x0, z1 - z0) < 6
+		if tooNarrow and roomType ~= "stair" then
 			continue
 		end
 		local floorY = level.elevation
-		local ceilY = floorY + room.ceilingHeight
-		if room.type == "gym" or room.id == "cage_gym" then
-			scatter(folder, room, "high_bay_light", ceilY - 4, 28, 12)
-		elseif room.type == "stair" then
-			scatter(folder, room, "downlight", floorY + 11, 9, 6)
-			scatter(folder, room, "downlight", floorY + 22, 10, 4)
-		elseif room.type == "lobby" or room.id == "south_vestibule" or room.ceilingHeight >= 24 then
-			scatter(folder, room, "downlight", floorY + 11, 14, 10)
-			if room.ceilingHeight >= 24 then
-				scatter(folder, room, "downlight", math.min(ceilY - 1, floorY + 26), 16, 6)
-			end
-		elseif room.type == "corridor" then
-			scatter(folder, room, "troffer_2x4", ceilY - 0.5, 18, 8)
-		elseif room.ceilingType == "none" then
-			continue
-		else
-			scatter(folder, room, "troffer_2x2", ceilY - 0.45, 12, 4)
-		end
+		fixtures(folder, room, roomType, floorY, floorY + room.ceilingHeight)
 	end
 end
 

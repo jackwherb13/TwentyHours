@@ -149,15 +149,9 @@ function Exterior.build(parent: Instance, site: any)
 	for i = 0, 4 do
 		local lx = 2 + (apronX - 4) * i / 4
 		local along = (lx - 0.6) / math.max(apronX - 0.6, 1)
-		local wallCenter = 1.7 + (-drop) * along
+		local wallCenter = 1.7 + -drop * along
 		local finish = if i % 2 == 0 then "shrub" else "barberry"
-		P.box(
-			entrance,
-			"CheekShrub",
-			Vector3.new(2.6, 1.35, 1.4),
-			CFrame.new(lx, wallCenter + 2.35, cheekZ),
-			finish
-		)
+		P.box(entrance, "CheekShrub", Vector3.new(2.6, 1.35, 1.4), CFrame.new(lx, wallCenter + 2.35, cheekZ), finish)
 	end
 
 	-- East ramp, 1:12, the right-hand run in WEB_entrance_1 / IMG_0365. Stems carry it where the lidar slope is steeper.
@@ -248,7 +242,7 @@ function Exterior.build(parent: Instance, site: any)
 	-- 0.3 ft soffit everywhere; the wedge adds 1.2 ft at the glass and dies out at the lip (1.5 → 0.3).
 	local soffit = 23.1
 	local tip = 0.3
-	local rise = 1.2
+	local canopyRise = 1.2
 	local function spanCanopy(z0: number, z1: number)
 		if z1 < z0 then
 			z0, z1 = z1, z0
@@ -277,9 +271,9 @@ function Exterior.build(parent: Instance, site: any)
 		canopyWedge(
 			canopy,
 			"TaperedCanopy",
-			Vector3.new(length, rise, depth),
+			Vector3.new(length, canopyRise, depth),
 			CFrame.fromMatrix(
-				Vector3.new(depth / 2 + 0.35, soffit + tip + rise / 2, midZ),
+				Vector3.new(depth / 2 + 0.35, soffit + tip + canopyRise / 2, midZ),
 				Vector3.new(0, 0, 1),
 				Vector3.new(0, 1, 0),
 				Vector3.new(-1, 0, 0)
@@ -323,27 +317,15 @@ function Exterior.build(parent: Instance, site: any)
 	-- Slender round posts. The 1.7 ft black cylinders read as columns through the soffit.
 	local columnHeight = soffit - 0.12
 	for _, offset in { -16, 16 } do
-		local column = P.pole(
-			canopy,
-			"SupportColumn",
-			Vector3.new(8.5, 0.08, offset),
-			columnHeight,
-			0.38,
-			"metal",
-			true
-		)
+		local column =
+			P.pole(canopy, "SupportColumn", Vector3.new(8.5, 0.08, offset), columnHeight, 0.38, "metal", true)
 		column.Material = Enum.Material.SmoothPlastic
 		column.Color = Color3.fromRGB(78, 80, 82)
 		column.Reflectance = 0
 	end
 	local function soffitLamp(lx: number, lz: number)
-		local bulb = P.box(
-			canopy,
-			"SoffitLamp",
-			Vector3.new(0.45, 0.08, 0.45),
-			CFrame.new(lx, soffit - 0.12, lz),
-			"metal"
-		)
+		local bulb =
+			P.box(canopy, "SoffitLamp", Vector3.new(0.45, 0.08, 0.45), CFrame.new(lx, soffit - 0.12, lz), "metal")
 		bulb.Material = Enum.Material.Neon
 		bulb.Color = Color3.fromRGB(255, 236, 210)
 		local light = Instance.new("PointLight")
@@ -384,7 +366,13 @@ function Exterior.build(parent: Instance, site: any)
 	local hydrant = P.pole(entrance, "Hydrant", hydrantAt, 2.15, 0.28, "metal", true)
 	hydrant.Color = Color3.fromRGB(176, 36, 32)
 	hydrant.Material = Enum.Material.SmoothPlastic
-	local cap = P.box(entrance, "HydrantCap", Vector3.new(0.62, 0.22, 0.62), CFrame.new(hydrantAt + Vector3.new(0, 2.32, 0)), "metal")
+	local cap = P.box(
+		entrance,
+		"HydrantCap",
+		Vector3.new(0.62, 0.22, 0.62),
+		CFrame.new(hydrantAt + Vector3.new(0, 2.32, 0)),
+		"metal"
+	)
 	cap.Color = Color3.fromRGB(40, 40, 42)
 	cap.Material = Enum.Material.Metal
 	for _, side in { -1, 1 } do

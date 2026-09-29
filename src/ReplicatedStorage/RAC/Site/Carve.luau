@@ -9,11 +9,7 @@ local function fill(terrain: Terrain, x: number, z: number, w: number, d: number
 	if w < 0.8 or d < 0.8 or y1 - y0 < 1 then
 		return 0
 	end
-	terrain:FillBlock(
-		CFrame.new(x + w / 2, (y0 + y1) / 2, z + d / 2),
-		Vector3.new(w, y1 - y0, d),
-		Enum.Material.Air
-	)
+	terrain:FillBlock(CFrame.new(x + w / 2, (y0 + y1) / 2, z + d / 2), Vector3.new(w, y1 - y0, d), Enum.Material.Air)
 	return 1
 end
 
