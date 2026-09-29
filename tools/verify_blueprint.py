@@ -110,12 +110,12 @@ def check_level(name):
 		zb = [p[1] for p in pb]
 		if max(xa) <= min(xb) or max(xb) <= min(xa) or max(za) <= min(zb) or max(zb) <= min(za):
 			continue
-		if convex(pb):
-			ov = area(clip(pa, pb)) if len(clip(pa, pb)) > 2 else 0
-		elif convex(pa):
-			ov = area(clip(pb, pa)) if len(clip(pb, pa)) > 2 else 0
-		else:
-			ov = 0
+		try:
+			from shapely.geometry import Polygon
+
+			ov = Polygon(pa).buffer(0).intersection(Polygon(pb).buffer(0)).area
+		except ImportError:
+			ov = area(clip(pa, pb)) if convex(pb) and len(clip(pa, pb)) > 2 else 0
 		if ov > OVERLAP_TOL_SQFT:
 			n_ov += 1
 			if n_ov <= 15:
