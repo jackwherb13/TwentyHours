@@ -1,102 +1,84 @@
-# QA round 1 — independent review (TwentyHours.rbxl)
+# QA round 1 — RAC 1:1 (independent review)
 
-Place: `places/TwentyHours.rbxl` (Studio listed as Place1; Workspace parent is TwentyHours.rbxl). Jay test was not used. No edits to `blueprint/`, `src/`, or the RAC model.
+Place: **TwentyHours.rbxl** (Workspace parent). Edit + playtest. No edits to `blueprint/`, `src/`, or the RAC model.
 
-**Verdict: do not ship.** Circulation bones of the walkthrough exist. Almost every user/manager required visual fix is still broken.
+Automated: `verification/qa/round1/build.txt` — **6 FAIL** (walkthrough). `blueprint_check.txt` — L1 57/58 reachable (construction excluded), L2 32/32, 3 stairs.
 
-Automated: `blueprint_check.txt` has **0 FAIL lines**. `build.txt`: 14714 parts, geometry QA 0 issues, **SiteContext 0**. `verify_blueprint.py` L2 **33/32** reachable.
+Live model (execute_luau): 7366 level parts, 8840 props, 5194 site, 966 lights, 33237 parts in play.
 
 ---
 
 ## A. Route walk (`docs/WALKTHROUGH.md`)
 
-Eye-height camera (Play character_navigation reached lobby coords, but Play rendering is not the Edit building — see issues). Captures: `verification/qa/round1/route/`.
+Captures: `verification/qa/round1/route/stepNN_*.png`. Eye height ~5.5 ft unless noted. Playtest: `character_navigation` to the glazed hall, competition gym, and L2 overlook all **succeeded**. Console: `Infinite yield` on `CoachVillainRemotes`.
 
-| Step | Should see | Seen | File |
-| --- | --- | --- | --- |
-| 01 Approach south glass | Wrap glass, dark wedge canopy, wide stairs+ramp, trees | Glass wrap yes. Thick grey slab canopy. No wide stairs. Grass in plaza. | `step01.png` |
-| 02 Canopy / door | Thin dark cantilever, glass wrapping corner, RAC sign | Grey slab; small white door on brick bay; one-step stoop | `step02.png` |
-| 03–04 Enter lobby | 20×20 double height; 20–25 ft desk ~10 ft in, perpendicular, staff well | Double-height void yes. Thin west-side counter, not an enclosure | `step04.png` |
-| 05 Left hall | Wide hall left of door, glass wrap, ping-pong/vending, continuous to gym | Hall + ping-pong + vending exist. Grass through floor. Stair on right of westbound view | `step05.png` |
-| 06–07 Main stair | Two flights, square landing, turn LEFT, +20 ft, set back from glass | Two flights + left/north second flight. Still in the glass bay. Dim | `step06.png`, `step07.png` (stale buffer on some hashes) |
-| 08 L2 overlook | Walk away from entrance; gym **LEFT** through glass | **Yes** — glass on left, court below (grey). Corridor is real and walkable | `step08.png`, `step15.png` |
-| 09 Gym floor | Maple, green apron, gold lines, bleachers, banners | Grey empty floor, net, scraps of green pads | `step09.png` |
-| 10 Coaches | Straight past workout (right); glass suite; cubicles | Glass storefront yes; empty | `step10.png` |
-| 11 Training | Green tables, ice, cabinets, rehab | Tables only | `step11.png` |
-| 12–13 Play | Walk the building | HUD “939 parts”; grey outdoor field | `step12_playtest_spawn.png`, `step13_playtest_fp.png` |
-
-**Critical route failures:** exterior stairs missing; canopy wrong; desk wrong; grass blocking the left hall as a real interior; Play mode not the RAC; gym not recognizable.
-
-**Not a miss:** L2 overlook corridor **does exist** (user 23:45 #1 is no longer “hallway does not exist”). Gym is on the left walking north.
+| Step | Should see | Result |
+|---|---|---|
+| 01 South entrance | Wide concrete stair, ramp, thin black wedge canopy, glass wrap, south smaller glass is the door | **Fail.** Tiled plaza, thick black slab canopy, small door in brick pier, blob trees. `step01_entrance.png` |
+| 02 Walk in | 20×20 double-height, desk ~10 ft in, long axis ⊥ glass | **Fail volume.** Desk exists (frosted, white top, ~22 ft N–S). A CMU wall fills the room; lobby slab 7×14. `step02_lobby.png` |
+| 03 Immediate LEFT hall | Wide hall, glass wrap on left, ping-pong + vending, continues to gym | **Partial.** West glazed hall with ping-pong and a red vending unit. Then an L north to the gym. `step03_left_hall.png` |
+| 04–05 Main stair | Two flights, small square landing, turn LEFT, +20 ft, set back, first flight along the wall | **Partial.** Live treads: first flight **north** at x=−83.5, z=−22→−34; landing 6×6 at +10; second **west** to +20. Risers 7.06 in. Width **6 ft**. JSON still says east then north. `step04_stair.png` |
+| 06 Gym hall | Narrows; trophy/jerseys on RIGHT; gym doors on LEFT | **Partial.** White gym doors on the left. No trophy case. Brick dead-end. `step06_gym_hall.png` |
+| 07 Competition gym | Maple, green apron, gold lines, lived-in | **Fail.** Dark; floor grey/teal tiles. Playtest: teal court, character clips bleachers. `step07_gym.png`, `materials/gym_maple_close.png` |
+| 08 L2 overlook | Walkable hall, **glass LEFT** into volleyball gym | **Exists and walkable.** Glass on left. View through glass is blown-out white/teal, not maple. `step08_l2_overlook.png`, `step12_play_l2_overlook.png` |
+| 09 After overlook | Racquetball on LEFT; second stair DOWN on RIGHT | Live `racquetball_1` slab at (−108.5, 19.75, −299.5) 20×40 (past gym). JSON still at z=−80 (FAIL). Second stair treads west along z=−108, L1 x=−306 → L2 x=−339. |
+| 10 Training / locker | Green tables, ice, rehab; keypad 15234; fridge; locker left | Training tables present, **room nearly black**. Ice/whiteboard not readable. `step10_training.png` |
+| 11 Straight → coaches | Workout on RIGHT, glass suite, cubicles, HEAD COACH | Glass door + cubicle rows exist. Floor reads tile. Empty. `step11_coaches.png` |
+| Cardio L2 rail | Horizontal rail at open edge | **Present.** `step09_cardio_rail.png` |
 
 ---
 
 ## B. Exterior
 
-Pairs in `verification/qa/round1/pairs/` via `tools/side_by_side.py`.
+Pairs: `verification/qa/round1/pairs/WEB_entrance_1.jpg`, `WEB_entrance_2.jpg`, `IMG_0358.jpg`, `IMG_0364.jpg` (real | build). Builds from Studio camera stations in `blueprint/photo_stations.json`.
 
-| Pair | Result |
-| --- | --- |
-| `WEB_entrance_1.jpg` | No wide stair/ramp; no trees; canopy slab |
-| `WEB_entrance_2.jpg` | Canopy is a thick grey bar, not a thin dark wedge; no RAC blade sign |
-| `WEB_entrance_left_pole.jpg` | Same; no pole/trees |
-| `IMG_0364.jpg` / `IMG_0368.jpg` | Stairs/ramp/handrails missing |
-| `IMG_0344.jpg` | Overlook glass exists; court grey/empty |
-| `WEB_vb_gym_interior.jpg` | Not maple |
-| `aerial_site.png` | No parking, no roundabout, grass in hardscape, no trees |
-
-Roads: `RAC.Site` = Facade + Roofs only. Lidar terrain exists around the building; lots are not asphalt.
+- **Entrance / canopy / stairs:** still wrong vs WEB_entrance_1/2 and IMG_0364–0368.
+- **Roads:** IMG_0358 is a grey plaza and faceted terrain, no two-lane asphalt.
+- **Parking:** `building/parking_aerial.png` — grass inside lots.
+- **Trees:** stacked discs + cones.
+- **South smaller glass as main door:** origin is south (correct). Brick pier still owns the door.
 
 ---
 
 ## C. Building sense
 
-| Check | Status |
-| --- | --- |
-| Stairs connect with risers ≤7.75 in | L1 main: 34 risers × 0.588 ft = **7.06 in**, two flights, landing +10. Pass on numbers |
-| Upper floors supported | L2 slabs present; gym void under overlook |
-| Rails at drops | Cardio south edge has horizontal rails (`step16_cardio_rail.png`) |
-| Doors lead somewhere | Blueprint 0 dead doors |
-| Windows | South/east glass; gym overlook intentional |
-| Floating | Disk QA 0; live props look scattered |
-| Rooms without access | 56/56 L1; L2 33/32 count bug |
-| Lighting | Fail — 34 lights, black stair |
-| Clipping / grass | Fail — terrain through floors |
+- Stairs **do** connect L1↔L2 with 34 × 7.06 in risers and landings (main, second, west).
+- L2 overlook is a real corridor.
+- Terrain **under** the building at y=0 (raycast grid).
+- Lighting: gym/training black; lobby/offices blown white.
+- Materials: variants exist (`RAC_maple` etc.) but the gym does not look like maple.
+- Collision: avatar in bleachers.
+- Guards: cardio rail yes; other voids incomplete.
 
 ---
 
-## User / manager re-check (required)
+## User / manager required items (re-check)
 
-| Item | Still broken? | Sev |
-| --- | --- | --- |
-| 23:45 #1 L2 gym overlook hall | Hall **exists**; gym left. Court still wrong | critical (materials) |
-| 23:45 #2 interior stairs match walkthrough | Topology yes; too close to glass | critical |
-| 23:45 #3 exterior stairs | Yes broken | critical |
-| 23:45 #4 roads/roundabout low | No roads built | critical |
-| 23:45 #5 canopy wedge | Yes broken | critical |
-| 23:45 #6 stray elements | Scattered gym/fitness | major |
-| 23:45 #7 trees | None | major |
-| 23:45 #8 real building | Circulation skeleton only | critical |
-| South smaller glass entrance | Kept | — |
-| 23:47 reception desk | Yes broken | critical |
-| 01:40 #1 stair back + first flight along wall | Flight direction ok; still in glass | critical |
-| 01:40 #2 hall left to gym | Partial (dogleg + grass) | major |
-| 01:40 #3 L2 cardio rail | **Mostly fixed** visually | minor (JSON risk) |
-| 01:40 #4 coaches suite | Glass yes; empty | major |
-| 01:40 #5 interiors / gym / AT room | Yes broken | critical |
-| 01:40 #6 90% photos | Fail | major |
-| 01:40 #7 parking lots | Missing | critical |
-| Mgr materials | Grey gym | critical |
-| Mgr grass in building | Yes | critical |
-| Mgr lighting | Yes | critical |
-| Mgr empty/scattered | Yes | major |
-| Mgr 7 floating | **Not reproduced** on `places/build.rbxm` | — |
+| Item | Status |
+|---|---|
+| L2 gym-overlook hall | Built and walkable; view through glass still wrong |
+| Main stair two flights / left / +20 | Live geometry matches; 6 ft wide; JSON FAIL |
+| Exterior stairs/ramp | Still plaza |
+| Roads on lidar | Still wrong |
+| Thin wedge canopy | Still thick black slab |
+| Stray elements | RAC letters, giant poster, bleacher clip |
+| Trees | Still discs |
+| Functions as a building | Circulation improved; dark/empty/terrain remain |
+| South entrance | Yes, small glass |
+| Reception desk 20–25 ft ⊥ glass | Live desk OK; lobby wall hides it; JSON FAIL |
+| Stair set back / first flight along wall | ~22 ft setback; first flight north |
+| Hall left of door to gym | Exists as L, not one straight run |
+| L2 cardio rail | Present |
+| Coaches suite | Present, empty |
+| Lived-in interiors / 90% photos | Fail |
+| Parking lots / no grass | Fail |
+| Materials applied | Fail (gym) |
+| Terrain/grass indoors | Fail (terrain at y=0) |
+| Lighting | Fail (gym, training) |
+| 7 floating props | Not fully re-counted this round |
 
 ---
 
-## Owners
+## Verdict
 
-- **architect:** materials, lighting, desk, stair setback, gym/training/coaches fit-out, grass carve is shared with exterior but interiors are architect’s floor plates.
-- **exterior:** stairs/ramp, canopy, roads, parking, trees, terrain under footprint.
-
-Full issue list: `ISSUES_REVIEW.json`. Offline notes: `offline_blueprint.md`, `offline_materials.md`.
+**Do not show this to the user as done.** Highest-priority remaining: maple gym, interior light, terrain carve, canopy, entrance stair, roads/parking grade, trees. Full issue list: `ISSUES_REVIEW.json`.

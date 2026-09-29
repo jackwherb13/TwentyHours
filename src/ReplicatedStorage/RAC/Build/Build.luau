@@ -59,7 +59,7 @@ function Build.build(parent: Instance, raw: any): Stats
 	for _, level in data.levels do
 		local root = Geometry.folder(levels, tostring(level.level))
 		local floors = Geometry.folder(root, "Floors")
-		Floors.build(floors, level, data.site)
+		Floors.build(floors, level, data.site, data)
 		count(floors, "Floors")
 		Court.build(root, level)
 		local courtFolder = root:FindFirstChild("Court")
@@ -93,7 +93,24 @@ function Build.build(parent: Instance, raw: any): Stats
 			local cf = CFrame.new(prop.at[1], propY, prop.at[2]) * CFrame.Angles(0, math.rad(prop.rotation), 0)
 			local opts: { [string]: any } = { room = prop.room }
 			local extra = prop :: any
-			for _, key in { "length", "bays", "rows", "text", "depth", "sign", "shape", "stalls", "count", "sinks" } do
+			for _, key in
+				{
+					"length",
+					"bays",
+					"rows",
+					"text",
+					"depth",
+					"sign",
+					"shape",
+					"stalls",
+					"count",
+					"sinks",
+					"width",
+					"height",
+					"backPad",
+					"rearPad",
+				}
+			do
 				if extra[key] ~= nil then
 					opts[key] = extra[key]
 				end
@@ -176,6 +193,29 @@ function Build.build(parent: Instance, raw: any): Stats
 	count(facade, "Facade")
 	local roofs = Geometry.folder(site, "Roofs")
 	Roofs.build(roofs, data.site)
+	-- Cap the east curtain where the double-height lobby meets the sky.
+	local fascia = Instance.new("Part")
+	fascia.Name = "EntryFascia"
+	fascia.Size = Vector3.new(1.6, 2.4, 24.5)
+	-- Bottom sits above the gypsum ceiling (top 32.15) so the two faces do not z-fight.
+	fascia.CFrame = CFrame.new(10.5, 33.45, -11.5)
+	fascia.Anchored = true
+	fascia.CanCollide = true
+	fascia.CanQuery = true
+	fascia.Material = Enum.Material.Concrete
+	fascia.Color = Color3.fromRGB(210, 206, 200)
+	fascia.Parent = roofs
+	-- Walk-out grade at the Level 2 west door. Top is finished floor +20.
+	local grade = Instance.new("Part")
+	grade.Name = "GradeFill"
+	grade.Size = Vector3.new(12, 20.2, 16)
+	grade.CFrame = CFrame.new(-366.2, 9.9, -86)
+	grade.Anchored = true
+	grade.CanCollide = true
+	grade.CanQuery = true
+	grade.Material = Enum.Material.Concrete
+	grade.Color = Color3.fromRGB(168, 166, 158)
+	grade.Parent = roofs
 	count(roofs, "Roofs")
 	Perf.apply(model)
 	local beforeTags = stats.parts

@@ -1,15 +1,22 @@
+Walkthrough check: PASS; 0 failures
+[RAC Perf] parts 18988->18988 collide 4136->3393 touch 18988->3613 query 18988->7055 shadow 10935->8786 groups 39
+Site ground kept off the floor plates: 87
 Built places/build.rbxm from blueprint
 Part counts by category:
-  Ceilings     2424
+  Ceilings     2779
   Columns      12
-  Facade       37
-  Floors       122
-  Props        7550
-  Roofs        51
-  SiteContext  0
-  Stairs       297
-  Walls        4221
-Total: 14714 parts; build time: 2.188 s
+  Court        206
+  Facade       39
+  Floors       138
+  Lighting     334
+  Props        10463
+  Roofs        53
+  SiteContext  5812
+  Spawn        1
+  Stairs       296
+  Tags         160
+  Walls        4667
+Total: 24960 parts; build time: 76.587 s
 Geometry QA: complete RAC (including props)
 degenerate   0
 doorBlocked  0
@@ -17,6 +24,6 @@ floating     0
 zfight       0
 intersect    0
 gap          0
-14714 parts checked, 0 issues
+24800 parts checked, 0 issues
 PASS complete RAC geometry.
-Build + QA elapsed: 5.114 s
+Build + QA elapsed: 79.490 s

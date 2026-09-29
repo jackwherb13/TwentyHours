@@ -148,13 +148,13 @@
       "id": "IMG_0323",
       "file": "reference/photos/IMG_0323.jpg",
       "position": [
-        -315,
-        5.2,
-        -12
+        -305,
+        5.4,
+        -58
       ],
       "look": [
         0.0,
-        0.0,
+        -0.05,
         1.0
       ],
       "fovVertical": 55,
@@ -508,18 +508,18 @@
       "id": "IMG_0344",
       "file": "reference/photos/IMG_0344.jpg",
       "position": [
-        -145,
-        5.2,
-        -162
+        -110,
+        5.8,
+        -180
       ],
       "look": [
-        0.0,
-        0.287,
-        0.958
+        -0.27,
+        0.02,
+        -0.96
       ],
       "fovVertical": 55,
-      "room": "competition_gym",
-      "note": "up at joists and the clerestory | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "room": "thin_link",
+      "note": "hallway through the south gym glass at the maple court, hoops, and bleachers",
       "confidence": "estimated"
     },
     {
@@ -868,14 +868,14 @@
       "id": "IMG_0364",
       "file": "reference/photos/IMG_0364.jpg",
       "position": [
-        -78,
-        1.5,
-        48
+        -62,
+        2.5,
+        46
       ],
       "look": [
-        0.62,
-        0.18,
-        -0.76
+        0.45,
+        0.22,
+        -0.86
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -941,12 +941,12 @@
       "file": "reference/photos/IMG_0368.jpg",
       "position": [
         -41,
-        -0.5,
-        58
+        -1.2,
+        64
       ],
       "look": [
         0.0,
-        0.2,
+        0.28,
         -1.0
       ],
       "fovVertical": 55,
@@ -958,14 +958,14 @@
       "id": "IMG_0369",
       "file": "reference/photos/IMG_0369.jpg",
       "position": [
-        -10.0,
-        5.2,
-        0.0
+        -2.0,
+        5.6,
+        -4.0
       ],
       "look": [
         0.0,
-        0.1,
-        0.995
+        0.05,
+        -1.0
       ],
       "fovVertical": 55,
       "room": "lobby",
@@ -1391,12 +1391,12 @@
       "file": "reference/photos/WEB_entrance_1.jpg",
       "position": [
         -41,
-        0.5,
-        44
+        1.5,
+        52
       ],
       "look": [
         0,
-        0.28,
+        0.22,
         -1
       ],
       "fovVertical": 55,
@@ -1408,14 +1408,14 @@
       "id": "WEB_entrance_2",
       "file": "reference/photos/WEB_entrance_2.jpg",
       "position": [
-        22,
-        3.0,
-        64
+        -41,
+        2.2,
+        70
       ],
       "look": [
-        -0.78,
-        0.08,
-        -0.62
+        0,
+        0.12,
+        -1
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1426,14 +1426,14 @@
       "id": "WEB_entrance_left_pole",
       "file": "reference/photos/WEB_entrance_left_pole.jpg",
       "position": [
-        52,
-        3.0,
-        30
+        78,
+        6,
+        42
       ],
       "look": [
-        -0.7,
-        0.12,
-        -0.7
+        -0.82,
+        0.06,
+        -0.57
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1480,14 +1480,14 @@
       "id": "WEB_vb_gym_overlook",
       "file": "reference/photos/WEB_vb_gym_overlook.jpg",
       "position": [
-        -82.5,
-        25.2,
-        -73.5
+        -136,
+        7,
+        -210
       ],
       "look": [
-        -1,
-        -0.2,
-        0
+        0,
+        0.04,
+        -1
       ],
       "fovVertical": 55,
       "room": "corridor_l2_overlook",

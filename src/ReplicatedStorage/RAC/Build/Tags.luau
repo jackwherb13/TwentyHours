@@ -30,8 +30,14 @@ local KEY_ROOMS = {
 }
 
 local function addTag(inst: Instance, tag: string)
+	inst:SetAttribute("RAC_Tag_" .. tag, true)
+	if tag == "Zone" then
+		inst:SetAttribute("RAC_Zone", true)
+	end
 	pcall(function()
 		CollectionService:AddTag(inst, tag)
+	end)
+	pcall(function()
 		inst:AddTag(tag)
 	end)
 end
@@ -100,6 +106,63 @@ local function prepareLeaves(model: Model)
 			end
 			ensurePrompt(inst)
 		end
+	end
+end
+
+-- A solid OffLimits leaf stays closed for the player. PathfindingService does not
+-- walk through a PassThrough modifier on that leaf, so a link bridges the opening.
+-- Marker parts carry the attachments. Lune does not keep Attachment.WorldPosition,
+-- and both ends parented to the leaf collapse to one point.
+local function bridgeOffLimits(door: Model, mid: CFrame, wall: Blueprint.Wall, elevation: number)
+	local dx = wall.b[1] - wall.a[1]
+	local dz = wall.b[2] - wall.a[2]
+	local length = math.sqrt(dx * dx + dz * dz)
+	if length < 0.01 then
+		return
+	end
+	local nx, nz = -dz / length, dx / length
+	local cx, cz = mid.Position.X, mid.Position.Z
+	local y = elevation + 5
+
+	local function linkMarker(name: string, x: number, z: number): Attachment
+		local part = Instance.new("Part")
+		part.Name = name
+		part.Size = Vector3.new(1, 1, 1)
+		part.Anchored = true
+		part.CanCollide = false
+		part.CanQuery = false
+		part.CanTouch = false
+		part.Transparency = 1
+		part.CastShadow = false
+		part.CFrame = CFrame.new(x, y, z)
+		part.Parent = door
+		local att = Instance.new("Attachment")
+		att.Name = name .. "Att"
+		att.Parent = part
+		return att
+	end
+
+	local near = linkMarker("DoorLinkNear", cx + nx * 4.5, cz + nz * 4.5)
+	local far = linkMarker("DoorLinkFar", cx - nx * 4.5, cz - nz * 4.5)
+	door:SetAttribute("RAC_DoorLink", true)
+	local existingLink = door:FindFirstChild("DoorLink")
+	local link = if existingLink and existingLink:IsA("Instance") then existingLink else nil
+	if link == nil then
+		local ok, created = pcall(function()
+			return Instance.new("PathfindingLink")
+		end)
+		if ok and typeof(created) == "Instance" then
+			created.Name = "DoorLink"
+			created.Parent = door
+			link = created
+		end
+	end
+	if link then
+		local anyLink = link :: any
+		anyLink.Attachment0 = near
+		anyLink.Attachment1 = far
+		anyLink.IsBidirectional = true
+		anyLink.Label = "Door"
 	end
 end
 
@@ -235,6 +298,23 @@ function Tags.apply(rac: Model, data: Blueprint.Data): Folder
 				end
 				prepareLeaves(door)
 				passThrough(door, "Door")
+				-- Closed leaves block the walk. The basketball door stays solid for the player
+				-- and gets a PassThrough modifier on the leaf so agents can still be tested.
+				if door:GetAttribute("OffLimits") == true then
+					for _, leaf in door:GetDescendants() do
+						if leaf:IsA("BasePart") and leaf.CanCollide then
+							passThrough(leaf, "Door")
+						end
+					end
+					bridgeOffLimits(door, mid, wall, level.elevation)
+				else
+					for _, leaf in door:GetDescendants() do
+						if leaf:IsA("BasePart") and (leaf.Name == "Door" or string.sub(leaf.Name, 1, 5) == "Door") then
+							leaf.CanCollide = false
+							leaf:SetAttribute("RAC_ClearOpening", true)
+						end
+					end
+				end
 			end
 		end
 	end
@@ -331,6 +411,83 @@ function Tags.apply(rac: Model, data: Blueprint.Data): Folder
 		end
 	end
 	patrol:SetAttribute("Count", n)
+
+	if levelsFolder then
+		for _, levelFolder in levelsFolder:GetChildren() do
+			local stairs = levelFolder:FindFirstChild("Stairs")
+			if not stairs then
+				continue
+			end
+			for _, stair in stairs:GetChildren() do
+				local lowPart: BasePart? = nil
+				local highPart: BasePart? = nil
+				local lowY, highY = math.huge, -math.huge
+				for _, d in stair:GetDescendants() do
+					if not d:IsA("BasePart") then
+						continue
+					end
+					local partName = string.lower(d.Name)
+					local walk = string.find(partName, "tread", 1, true) ~= nil
+						or string.find(partName, "landing", 1, true) ~= nil
+						or string.find(partName, "bridge", 1, true) ~= nil
+						or string.find(partName, "turn", 1, true) ~= nil
+						or string.find(partName, "threshold", 1, true) ~= nil
+						or string.find(partName, "slab", 1, true) ~= nil
+						or string.find(partName, "ramp", 1, true) ~= nil
+					if walk then
+						d.CanCollide = true
+						d.CanQuery = true
+						-- Lune's Part has no Position getter. CFrame is the authored pose.
+						local y = d.CFrame.Position.Y
+						if y < lowY then
+							lowY = y
+							lowPart = d
+						end
+						if y > highY then
+							highY = y
+							highPart = d
+						end
+					end
+				end
+				if lowPart and highPart and lowPart ~= highPart and highY - lowY > 4 then
+					local function attach(part: BasePart, name: string, world: Vector3): Attachment
+						local existing = part:FindFirstChild(name)
+						local att = if existing and existing:IsA("Attachment")
+							then existing
+							else Instance.new("Attachment")
+						att.Name = name
+						att.Parent = part
+						att.WorldPosition = world
+						return att
+					end
+					local bottom = lowPart :: BasePart
+					local top = highPart :: BasePart
+					local a0 = attach(bottom, "StairLinkBottom", bottom.CFrame.Position + Vector3.new(0, 3, 0))
+					local a1 = attach(top, "StairLinkTop", top.CFrame.Position + Vector3.new(0, 3, 0))
+					stair:SetAttribute("RAC_StairLink", true)
+					local existingLink = stair:FindFirstChild("StairLink")
+					local link = if existingLink and existingLink:IsA("Instance") then existingLink else nil
+					if link == nil then
+						local ok, created = pcall(function()
+							return Instance.new("PathfindingLink")
+						end)
+						if ok and typeof(created) == "Instance" then
+							created.Name = "StairLink"
+							created.Parent = stair
+							link = created
+						end
+					end
+					if link then
+						local anyLink = link :: any
+						anyLink.Attachment0 = a0
+						anyLink.Attachment1 = a1
+						anyLink.IsBidirectional = true
+						anyLink.Label = "Stairs"
+					end
+				end
+			end
+		end
+	end
 
 	rac:SetAttribute("NavCheck", false)
 	return zones

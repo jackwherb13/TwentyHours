@@ -24,14 +24,19 @@ local function onAsphalt(x: number, z: number): boolean
 	return paved >= 2
 end
 
-local function ball(parent: Instance, name: string, size: number, cf: CFrame, finish: string)
-	local part = P.box(parent, name, Vector3.new(size, size, size), cf, finish)
-	part.Shape = Enum.PartType.Ball
-	part.CanCollide = false
-	return part
+local function leafWedge(parent: Instance, cf: CFrame, size: Vector3, pine: boolean)
+	local wedge = Instance.new("WedgePart")
+	wedge.Name = "Crown"
+	wedge.Size = size
+	wedge.CFrame = cf
+	wedge.Anchored = true
+	wedge.CanCollide = false
+	wedge.Material = Enum.Material.SmoothPlastic
+	wedge.Color = if pine then Color3.fromRGB(28, 58, 36) else Color3.fromRGB(54, 86, 42)
+	wedge.Parent = parent
 end
 
--- Trunk plus a cluster of crowns. The birch mesh read as a faceted tropical blob.
+-- Trunk plus layered wedges. Stacked balls read as lollipops.
 local function tree(parent: Instance, item: any, index: number)
 	local p = item.at
 	local scale = 0.85 + ((index * 13) % 5) * 0.08
@@ -44,39 +49,45 @@ local function tree(parent: Instance, item: any, index: number)
 	local trunk = P.pole(model, "Trunk", Vector3.new(p[1], y, p[2]), trunkH, trunkW / 2, "bark", false)
 	trunk.Color = Color3.fromRGB(92, 74, 56)
 	local yaw = math.rad((index * 47) % 360)
+	-- Tip of a WedgePart is local -Z. Pitch that tip up so the crown is a cone, not a stack of plates.
+	local function crown(origin: Vector3, face: number, tilt: number, size: Vector3)
+		leafWedge(
+			model,
+			CFrame.new(origin)
+				* CFrame.Angles(0, face, 0)
+				* CFrame.Angles(tilt, 0, 0)
+				* CFrame.new(0, 0, -size.Z * 0.32),
+			size,
+			pine
+		)
+	end
 	if pine then
-		local layers = 5
-		for i = 1, layers do
-			local t = (i - 0.15) / layers
-			local radius = height * (0.34 - 0.22 * t)
-			local disc = P.box(
-				model,
-				"Crown",
-				Vector3.new(1.5, radius * 2, radius * 2),
-				CFrame.new(p[1], y + trunkH * 0.42 + t * height * 0.62, p[2]) * CFrame.Angles(0, 0, math.pi / 2),
-				"pine"
-			)
-			disc.Shape = Enum.PartType.Cylinder
-			disc.CanCollide = false
+		for layer = 0, 2 do
+			local t = layer / 2
+			local len = height * (0.42 - 0.2 * t)
+			local cy = y + trunkH * 0.28 + t * height * 0.52
+			for k = 0, 2 do
+				crown(
+					Vector3.new(p[1], cy, p[2]),
+					yaw + layer * 0.7 + k * math.pi * 2 / 3,
+					math.rad(60),
+					Vector3.new(len * 0.78, len * 0.22, len)
+				)
+			end
 		end
 	else
-		local crown = height * 0.42
-		local centerY = y + trunkH + crown * 0.28
-		ball(model, "Crown", crown, CFrame.new(p[1], centerY, p[2]), "leaf")
-		for i = 1, 4 do
-			local a = yaw + i * 1.5
-			local reach = crown * (0.28 + (i % 3) * 0.06)
-			ball(
-				model,
-				"Crown",
-				crown * (0.62 + (i % 2) * 0.12),
-				CFrame.new(
-					p[1] + math.cos(a) * reach,
-					centerY + ((i % 3) - 1) * crown * 0.18,
-					p[2] + math.sin(a) * reach
-				),
-				if i % 2 == 0 then "leaf" else "shrub"
-			)
+		local crownR = height * 0.42
+		for tier = 0, 1 do
+			local len = crownR * (1.2 - 0.38 * tier)
+			local cy = y + trunkH * 0.78 + tier * crownR * 0.55
+			for k = 0, 4 do
+				crown(
+					Vector3.new(p[1], cy, p[2]),
+					yaw + tier * 0.55 + k * math.pi * 2 / 5,
+					math.rad(32 + tier * 10),
+					Vector3.new(len * 0.62, len * 0.34, len)
+				)
+			end
 		end
 	end
 end

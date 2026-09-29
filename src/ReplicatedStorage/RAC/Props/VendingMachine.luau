@@ -15,11 +15,12 @@ local DisplayGreen = Color3.fromRGB(50, 220, 90)
 local CanWhite = Color3.fromRGB(240, 240, 245)
 local DrinkBlue = Color3.fromRGB(20, 80, 190)
 
-function VendingMachine.build(cf: CFrame, _opts: { [string]: any }?): Model
+function VendingMachine.build(cf: CFrame, opts: { [string]: any }?): Model
 	local b = Kit.new("VendingMachine", cf)
 	local C = Kit.Color
 
 	local w, h, d = 3.5, 6.0, 3.0
+	local rearPad = if opts and type(opts.rearPad) == "number" then opts.rearPad else 0
 	local segH = h / 3
 	local frontZ = -d / 2
 	local rearZ = d / 2 - 0.05
@@ -71,8 +72,8 @@ function VendingMachine.build(cf: CFrame, _opts: { [string]: any }?): Model
 		-- Rear black wall
 		b:box(
 			`RearWall_{seg}`,
-			Vector3.new(w - 0.16, segH, 0.06),
-			Kit.at(0, sy, rearZ),
+			Vector3.new(w - 0.16, segH, 0.06 + rearPad),
+			Kit.at(0, sy, rearZ + rearPad / 2),
 			CabinetBlack,
 			Enum.Material.Metal
 		)

@@ -19,7 +19,7 @@ function Parts.box(parent: Instance, name: string, size: Vector3, cf: CFrame, fi
 	part.BottomSurface = Enum.SurfaceType.Smooth
 	Materials.apply(part, key)
 	if key == "glass" then
-		part.Transparency = 0.6
+		part.Transparency = 0.78
 	end
 	part.Parent = parent
 	return part

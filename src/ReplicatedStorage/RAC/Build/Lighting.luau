@@ -8,8 +8,12 @@ local Geometry = require(script.Parent.Geometry)
 local Lighting = {}
 
 local function tagNormal(light: Instance)
+	light:SetAttribute("RAC_Light", "NormalLight")
 	pcall(function()
 		game:GetService("CollectionService"):AddTag(light, "NormalLight")
+	end)
+	pcall(function()
+		light:AddTag("NormalLight")
 	end)
 end
 
@@ -113,7 +117,13 @@ local function fixtures(zone: Instance, room: Blueprint.Room, roomType: string, 
 		scatter(zone, room, "high_bay_light", floorY + 22, 28, gridBudget(room, 28, 16))
 	elseif roomType == "stair" then
 		scatter(zone, room, "downlight", floorY + 10, 14, gridBudget(room, 14, 6))
-	elseif room.id == "training_room" or room.id == "coach_suite" or room.id == "corridor_entry_link" then
+	elseif
+		room.id == "office_w2"
+		or room.id == "training_room"
+		or room.id == "coach_suite"
+		or room.id == "coach_head"
+		or room.id == "corridor_entry_link"
+	then
 		scatter(zone, room, "troffer_2x4", ceilY - 0.5, 16, gridBudget(room, 16, 6))
 	elseif roomType == "lobby" or room.id == "south_vestibule" then
 		scatter(zone, room, "downlight", math.min(ceilY - 2, floorY + 12), 18, gridBudget(room, 18, 4))

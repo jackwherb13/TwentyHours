@@ -19,14 +19,16 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 		if m ~= 1 then
 			return m
 		end
-		-- Close grass fingers inside lots: a grass cell ringed by asphalt becomes asphalt.
+		-- Close grass inside lots. A cell with several asphalt neighbors is pavement.
 		local paved = 0
-		for _, o in { { 4, 0 }, { -4, 0 }, { 0, 4 }, { 0, -4 } } do
-			if rawMaterial(x + o[1], z + o[2]) == 2 then
-				paved += 1
+		for _, dist in { 4, 8, 12 } do
+			for _, o in { { dist, 0 }, { -dist, 0 }, { 0, dist }, { 0, -dist } } do
+				if rawMaterial(x + o[1], z + o[2]) == 2 then
+					paved += 1
+				end
 			end
 		end
-		if paved >= 2 then
+		if paved >= 3 then
 			return 2
 		end
 		return m
@@ -82,8 +84,13 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 						local z = origin.Z + (iz - 0.5) * resolution
 						local h = Heightfield.height(x, z)
 						local material = materialAt(x, z)
-						-- Concrete under the slab and on the south stair. Lawn beside the flight stays grass.
-						if insidePad(x, z) or (x > -70 and x < -12 and z > -1 and z < 32) then
+						-- Concrete under the slab, on the south stair, and on the stair walk.
+						-- Grass blades were coming through the approach slabs. Lawn beside the flight stays grass.
+						if
+							insidePad(x, z)
+							or (x > -104 and x < 18 and z > -1 and z < 40)
+							or (x > -68 and x < -14 and z >= 40 and z < 92)
+						then
 							material = 3
 						elseif x > -224 and x < -96 and z > 46 and z < 86 and material == 1 then
 							-- Service court along the south brick wall. Grass blades were growing through the pad.

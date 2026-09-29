@@ -6,12 +6,22 @@
 local PathfindingService = game:GetService("PathfindingService")
 local CollectionService = game:GetService("CollectionService")
 
-if script:GetAttribute("Enabled") ~= true then
-	local rac = workspace:FindFirstChild("RAC")
-	if rac == nil or rac:GetAttribute("NavCheck") ~= true then
-		return
-	end
-end
+-- Rectangle centers land inside the desk, a floor hole, or a stall. These are
+-- the walkable hips used once the matching Zone exists.
+local SAMPLE = {
+	lobby = Vector3.new(0, 5, -3),
+	competition_gym = Vector3.new(-136, 5, -232.8),
+	south_gym = Vector3.new(-166.8, 5, -7.5),
+	fitness_center = Vector3.new(-35.8, 5, -139.2),
+	training_room = Vector3.new(-221, 5, -165),
+	locker_volleyball = Vector3.new(-210, 5, -128),
+	public_locker = Vector3.new(-110, 5, -22),
+	racquetball_1 = Vector3.new(-285, 25, -70),
+	basketball_approach = Vector3.new(-347.5, 25, -112.5),
+	cage_gym = Vector3.new(-288.2, 25, -156.2),
+	stair_main_L1 = Vector3.new(6, 5, -24.2),
+	stair_main_L2 = Vector3.new(-16, 25, -44),
+}
 
 local KEY = {
 	"lobby",
@@ -24,32 +34,51 @@ local KEY = {
 	"racquetball_1",
 	"basketball_approach",
 	"cage_gym",
-	"stair_main",
+	"stair_main_L1",
+	"stair_main_L2",
 }
 
-local function hip(part: BasePart): Vector3
-	return part.Position + Vector3.new(0, 3, 0)
+local function enabled(): boolean
+	if script:GetAttribute("Enabled") == true then
+		return true
+	end
+	local rac = workspace:FindFirstChild("RAC")
+	return rac ~= nil and rac:GetAttribute("NavCheck") == true
 end
 
-local function rooms(): { [string]: Vector3 }
-	local found: { [string]: Vector3 } = {}
+local function zonesPresent(): { [string]: boolean }
+	local found: { [string]: boolean } = {}
 	for _, inst in CollectionService:GetTagged("Zone") do
 		local id = inst:GetAttribute("id")
-		if type(id) == "string" and table.find(KEY, id) and inst:IsA("BasePart") then
-			if not found[id] then
-				found[id] = hip(inst)
-			end
+		if type(id) ~= "string" then
+			continue
+		end
+		local key = id
+		if id == "stair_main" then
+			key = if inst:GetAttribute("level") == 2 then "stair_main_L2" else "stair_main_L1"
+		end
+		if SAMPLE[key] then
+			found[key] = true
 		end
 	end
 	return found
 end
 
-task.defer(function()
-	task.wait(1)
-	local pts = rooms()
+-- Tags.apply bakes NavCheck=false. A play session can flip it true before this deadline.
+task.spawn(function()
+	local deadline = os.clock() + 8
+	while not enabled() and os.clock() < deadline do
+		task.wait(0.25)
+	end
+	if not enabled() then
+		return
+	end
+	local present = zonesPresent()
+	local pts: { [string]: Vector3 } = {}
 	local names = {}
 	for _, id in KEY do
-		if pts[id] then
+		if present[id] then
+			pts[id] = SAMPLE[id]
 			table.insert(names, id)
 		else
 			warn("[NavCheck] missing zone " .. id)

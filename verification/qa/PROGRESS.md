@@ -1,16 +1,15 @@
-02:25 round 1 - build
-02:25 round 1 - reviewer
-02:25 round 1 - 1 issues (1 critical/major)
-02:25 round 1 - fixers: architect-grok
-02:38 round 2 - build
-02:38 round 2 - reviewer
-02:39 round 1 - build
-02:39 round 1 - reviewer
-02:56 round 1 - 34 issues (32 critical/major)
-02:56 round 1 - fixers: architect-grok, exterior-grok
-03:48 round 2 - build
-03:48 round 2 - reviewer
-04:08 round 2 - 41 issues (39 critical/major)
-04:08 round 2 - fixers: architect-grok, exterior-grok
-06:06 round 3 - build
-06:07 round 3 - reviewer
+06:33 round 1 - build
+06:33 round 1 - reviewer
+07:01 round 1 - 28 issues (26 critical/major)
+07:01 round 1 - fixers: architect-grok, exterior-grok
+08:21 round 2 - build
+08:22 round 2 - reviewer
+08:38 round 2 - 43 issues (40 critical/major)
+08:38 round 2 - fixers: architect-grok, exterior-grok
+10:32 round 3 - build
+10:34 round 3 - reviewer
+10:53 round 3 - 43 issues (41 critical/major)
+10:53 round 3 - fixers: architect-grok, exterior-grok
+10:53 restarting QA loop with Grok reasoning effort xhigh (fixers from round 3 still running)
+13:13 round 1 - build
+13:14 round 1 - reviewer

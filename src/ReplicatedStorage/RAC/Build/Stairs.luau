@@ -104,7 +104,33 @@ local function buildRun(group: Folder, flight: any)
 	end
 end
 
-local function buildLanding(group: Folder, landing: any, flights: { any })
+-- A rail on the stair-room boundary sits in the wall or in the exit door.
+local function edgeOnRoom(poly: any, ax: number, az: number, bx: number, bz: number): boolean
+	if type(poly) ~= "table" then
+		return false
+	end
+	local function near(x: number, z: number): boolean
+		local n = #poly
+		for i = 1, n do
+			local p = poly[i]
+			local q = poly[(i % n) + 1]
+			local ex, ez = q[1] - p[1], q[2] - p[2]
+			local len2 = ex * ex + ez * ez
+			if len2 > 1e-6 then
+				local t = math.clamp(((x - p[1]) * ex + (z - p[2]) * ez) / len2, 0, 1)
+				local dx = x - (p[1] + ex * t)
+				local dz = z - (p[2] + ez * t)
+				if dx * dx + dz * dz <= 0.04 then
+					return true
+				end
+			end
+		end
+		return false
+	end
+	return near(ax, az) and near(bx, bz)
+end
+
+local function buildLanding(group: Folder, landing: any, flights: { any }, roomPoly: any)
 	local x0, x1 = math.huge, -math.huge
 	local z0, z1 = math.huge, -math.huge
 	for _, point in landing.polygon do
@@ -135,7 +161,7 @@ local function buildLanding(group: Folder, landing: any, flights: { any })
 				break
 			end
 		end
-		if meetsFlight then
+		if meetsFlight or edgeOnRoom(roomPoly, edge[1], edge[2], edge[3], edge[4]) then
 			continue
 		end
 		local length = math.max(math.abs(edge[3] - edge[1]), math.abs(edge[4] - edge[2]))
@@ -173,7 +199,7 @@ function Stairs.build(parent: Instance, level: Blueprint.Level, data: Blueprint.
 			local landings = (stair :: any).landings
 			if type(landings) == "table" then
 				for _, landing in landings do
-					buildLanding(group, landing, flights)
+					buildLanding(group, landing, flights, stair.polygon)
 				end
 			end
 			continue

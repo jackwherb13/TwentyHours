@@ -177,20 +177,30 @@ end
 
 -- Interior brick is only the locker-corridor accent/portals (IMG_0339, 0340, 0372, 0373).
 -- Envelope walls stay brick on the exterior skin (Facade); the body uses the room finish.
+local function lockerAccent(x: number, z: number): boolean
+	return x >= -250 and x <= -190 and z >= -150 and z <= -95
+end
+
 local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): string
-	if wall.material == "glass" then
+	if wall.material == "glass" or wall.material == "metal_panel" or wall.material == "precast" then
 		return wall.material
-	end
-	if not wall.exterior and wall.material == "brick" then
-		return "brick"
 	end
 	local mx = (wall.a[1] + wall.b[1]) / 2
 	local mz = (wall.a[2] + wall.b[2]) / 2
+	if wall.material == "brick" and lockerAccent(mx, mz) then
+		return "brick"
+	end
 	local dx = wall.b[1] - wall.a[1]
 	local dz = wall.b[2] - wall.a[2]
 	local length = math.sqrt(dx * dx + dz * dz)
 	if length < 0.01 then
+		if wall.exterior and wall.material == "brick" then
+			return "brick"
+		end
 		if wall.exterior then
+			return "painted_cmu"
+		end
+		if wall.material == "brick" then
 			return "painted_cmu"
 		end
 		return wall.material
@@ -207,6 +217,7 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 	end
 	local chosen: string? = nil
 	local chosenRank = 0
+	local entryGypsum = false
 	for _, sign in { -1, 1 } do
 		local x = mx + nx * sign * (wall.thickness / 2 + 0.8)
 		local z = mz + nz * sign * (wall.thickness / 2 + 0.8)
@@ -218,13 +229,28 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 					chosen = finish
 					chosenRank = r
 				end
+				if
+					finish == "gypsum"
+					and not wall.exterior
+					and (room.id == "lobby" or room.id == "south_vestibule" or room.id == "corridor_south_link")
+				then
+					entryGypsum = true
+				end
 			end
 		end
 	end
-	if chosen then
+	-- The stair well shares a wall with the lobby. CMU bond reads as interior brick
+	-- from the entry. Those faces are gypsum; the envelope stays brick.
+	if entryGypsum then
+		return "gypsum"
+	end
+	if chosen and chosen ~= "brick" then
 		return chosen
 	end
-	if wall.exterior then
+	if wall.exterior and wall.material == "brick" and chosen == nil then
+		return "brick"
+	end
+	if wall.material == "brick" or wall.exterior then
 		return "painted_cmu"
 	end
 	return wall.material

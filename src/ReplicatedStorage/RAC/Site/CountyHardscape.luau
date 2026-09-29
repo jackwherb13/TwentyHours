@@ -299,6 +299,16 @@ function County.build(parent: Instance, site: any)
 			)
 			table.insert(slabs, tongue)
 		end
+		for _, side in { -1, 1 } do
+			local ax = if side < 0 then field.x0 - 16 else field.x1 + 16
+			local az = (field.z0 + field.z1) / 2
+			if not onBuilding(site, ax, az) and not inEntrance(ax, az) and grounded(ax, az) then
+				local ay = H.height(ax, az)
+				local link =
+					P.box(ground, "LotAisle", Vector3.new(28, 0.4, 22), CFrame.new(ax, ay + 0.16, az), "asphalt", true)
+				table.insert(slabs, link)
+			end
+		end
 		if islandN < 24 and span >= 36 and length >= 54 then
 			local count = math.clamp(math.floor(length / 72), 1, 3)
 			for k = 1, count do

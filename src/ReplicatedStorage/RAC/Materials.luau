@@ -43,7 +43,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	terrazzo = {
 		base = Enum.Material.Concrete,
-		color = Color3.fromRGB(188, 178, 166),
+		color = Color3.fromRGB(214, 210, 202),
 		texture = "art/materials/pbr/terrazzo_color.png",
 		normal = "art/materials/pbr/terrazzo_normal.png",
 		roughnessMap = "art/materials/pbr/terrazzo_roughness.png",
@@ -55,7 +55,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	porcelain_tile = {
 		base = Enum.Material.Marble,
-		color = Color3.fromRGB(186, 174, 160),
+		color = Color3.fromRGB(226, 223, 216),
 		texture = "art/materials/pbr/porcelain_tile_color.png",
 		normal = "art/materials/pbr/porcelain_tile_normal.png",
 		roughnessMap = "art/materials/pbr/porcelain_tile_roughness.png",
@@ -199,7 +199,7 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	metal_panel = {
 		base = Enum.Material.Metal,
-		color = Color3.fromRGB(145, 150, 153),
+		color = Color3.fromRGB(82, 86, 90),
 		texture = "art/materials/pbr/metal_panel_color.png",
 		normal = "art/materials/pbr/metal_panel_normal.png",
 		roughnessMap = "art/materials/pbr/metal_panel_roughness.png",

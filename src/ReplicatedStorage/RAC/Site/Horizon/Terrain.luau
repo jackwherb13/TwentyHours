@@ -18,7 +18,7 @@ local materials = {
 }
 
 function TerrainBuilder.build(terrain: Terrain): { [string]: number }
-	local resolution = 4
+	local resolution = 16
 	local function materialAt(x: number, z: number): number
 		local u = math.clamp((x - Data.x0) / Data.step - 0.5, 0, Data.nx - 1.001)
 		local v = math.clamp((z - Data.z0) / Data.step - 0.5, 0, Data.nz - 1.001)

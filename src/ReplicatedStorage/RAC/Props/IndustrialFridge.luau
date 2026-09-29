@@ -92,7 +92,7 @@ function IndustrialFridge.build(cf: CFrame, opts: { [string]: any }?): Model
 		local sy = bodyBaseY + wallThick + (seg - 0.5) * backSegH
 		for _, sx in { -1, 1 } do
 			b:box(
-				`CabinetBackWall_{sx}_{seg}`,
+				`CabinetBack_{sx}_{seg}`,
 				Vector3.new(backW, backSegH, wallThick),
 				Kit.at(sx * (backW / 2), sy, d / 2 - wallThick / 2),
 				CabinetWhite,
@@ -113,7 +113,7 @@ function IndustrialFridge.build(cf: CFrame, opts: { [string]: any }?): Model
 			local cz = -wallThick / 2 + sz * (halfD / 2)
 			for _, sx in { -1, 1 } do
 				b:box(
-					`CabinetSideWall_{sx}_{seg}_{sz}`,
+					`CabinetSide_{sx}_{seg}_{sz}`,
 					Vector3.new(wallThick, segH, halfD),
 					Kit.at(sx * (w / 2 - wallThick / 2), sy, cz),
 					CabinetWhite,

@@ -1,0 +1,346 @@
+[
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "Level 2 gym overlook",
+    "issue": "The Level 2 overlook hallway exists, but the glass does not look down into the volleyball/competition gym. Through the curtain you see a grey CMU void and a second balcony with rubber floor, not maple court, green apron, gold lines, or retracted bleachers (IMG_0344/0345, WEB_vb_gym_overlook). Walkthrough: walking away from the entrance, gym on the LEFT through glass.",
+    "evidence": "verification/qa/round3/route/step08.png (copied from round5/overlook.png) and step09.png (overlook_glass.png); pairs/WEB_vb_gym_overlook.jpg. Live execute_luau at (-71,24,-180): 14x250 concrete Slab at y=19.8, transoms, no maple court in view.",
+    "fix": "Put the competition gym volume immediately west of corridor_l2_overlook (x=-193.5..-78.5). West wall of the overlook must be the gym curtain (head ~9.5 ft) looking onto maple + green apron. Remove the false CMU room/balcony behind that glass."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "stairs / navigation",
+    "issue": "Nobody can walk upstairs. PathfindingService: every L1→L2 pair is NoPath (lobby → stair_main_L2, racquetball_1, basketball_approach, cage_gym). character_navigation stuck at stair_main L1 (HRP y=2.97). Zone tags=0 so NavCheck never samples rooms.",
+    "evidence": "verification/navigation/REPORT.md 2026-09-29: pass=58 fail=74; readiness REPORT walk table. Play console: [NavCheck] missing zone for all KEY ids; CollectionService Zone=0. Live Edit: Zone=0 still.",
+    "fix": "Keep CanCollide+CanQuery on treads, landings, slabs, ramps, thresholds. Add PathfindingModifier/Link on both stairs. Run Tags.luau so Zone parts serialize in build.rbxm. Re-run the 132-pair matrix until every key room is bidirectional."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "main stair vs entrance",
+    "issue": "Main stair is still too close to the entrance glass. First flight sits in the 20x20 lobby (main_a x=2..10, z=-18.5..-33), immediately beside the east glass, not set back ~15 ft with Level 2 stopping short of the glass. User 01:40: move it back; first flight along the wall, then LEFT.",
+    "evidence": "verification/qa/round3/route/step02.png (lobby): stair fills the right side of the entry next to the curtain. blueprint/level1.json stair_main flights. MCP lobby shot from (0,5.5,-2) shows east glass and brick, stair well in the same room as the desk.",
+    "fix": "Pull the well off the south glass so a ~15 ft double-height strip remains. First flight along an interior wall to an 8x8 landing at +10, turn LEFT, second flight to L2 at +20 with a level door."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "reception desk",
+    "issue": "Desk is a short U (length 12 ft at (-2,-12), rotation 180) with a tiny green GM plate. User 09:35/23:47: long white modern U, ~20-25 ft, 3-4 staff, lost-and-found and ball racks behind, GM logo on the front, standing in the main room. Frosted panels from IMG_0369 are missing.",
+    "evidence": "blueprint/level1.json reception_desk length=12. route/step02.png; pairs/IMG_0369.jpg. Live ClerkDeskSurface SmoothPlastic.",
+    "fix": "Rebuild as a 20-25 ft white U with raised transaction counter, frosted front panels, large GM mark, four stations, lost-and-found cabinet and ball racks inside the enclosure."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "training room access",
+    "issue": "Athletic training room is on the door graph but is not walkable: character_navigation and PathfindingService fail every L1 path into/out of training_room (stuck in athletic_corridor at -199.4,-133.7).",
+    "evidence": "verification/readiness/REPORT.md walk_stuck_training_room; navigation REPORT section B.",
+    "fix": "Clear colliding props/door leaves on the training door (l1_w050). Confirm a 3.5+ ft clear opening and CanQuery on the floor. Walk lobby → training_room both ways."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "stair_second L2 door",
+    "issue": "Level 2 door into stair_second is at z=-92.5 (l2_w072 offset 8.5, x=-343..-340.5) while the +20 ft top landing second_top is at z=-111..-105. Opening the door from L2 still drops into a void/well rather than a level landing.",
+    "evidence": "blueprint/level2.json walls l2_w072 vs stairs stair_second second_top. Offline blueprint audit.",
+    "fix": "Move second_top (and top of second_b) north to z≈-92.5 under the door, or add a +20 slab from the door to the landing. Door width 3-4 ft, west of the upper-flight void."
+  },
+  {
+    "severity": "critical",
+    "owner": "exterior",
+    "area": "entrance canopy",
+    "issue": "Canopy is still a huge slab, not a thin dark wedge over wrapping glass. Live TaperedCanopy 107 x 1.5 x 24 ft at y=31.7, CanopySoffit 107 x 0.4 x 24 at y=30.7.",
+    "evidence": "MCP screen_capture step01_entrance (camera -41,8,44): thick white soffit, RAC letters on glass. execute_luau canopy sizes. pairs/WEB_entrance_2.jpg, WEB_entrance_1.jpg, WEB_entrance_left_pole.jpg.",
+    "fix": "Replace with a 1-2 ft thick dark wedge cantilevered over the south glass only, soffit just above curtain-wall head, glass wrapping the corner as in WEB_entrance_2."
+  },
+  {
+    "severity": "critical",
+    "owner": "exterior",
+    "area": "entrance stairs / roads / lidar",
+    "issue": "Exterior stair treads sit below L1 (y=-0.88..-4.38). Roads/roundabout still read low; from L2 cardio the plaza and trees sit in a depression with sky under the glass. Hardscape is not on the lidar surface.",
+    "evidence": "execute_luau: 7 exterior StairTread y=-4.38..-0.88. route/step10.png (cardio_rail) looking out: pavement and lollipop trees well below the sill. pairs/IMG_0364.jpg. User item 4.",
+    "fix": "Rebuild approach stair, ramp, plaza, and roads on verification/exterior/terrain_grid.json so L1 threshold meets grade and the west L2 exit meets high-side grade."
+  },
+  {
+    "severity": "critical",
+    "owner": "exterior",
+    "area": "trees",
+    "issue": "Trees are stacked spherical canopies / lollipops, not trunk + layered deciduous or pines from the photos. 111 tree-named parts.",
+    "evidence": "MCP step01_entrance and lobby/cardio shots; execute_luau trees=111. User item 7.",
+    "fix": "Replace with trunk+canopy / pine meshes on lidar ground outside the footprint only."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "LightingController",
+    "issue": "workspace.RAC.Lighting does not exist. LightingController infinite-yields. Edit: 1030 Light instances exist as descendants but not under RAC.Lighting.",
+    "evidence": "Play console Infinite yield Workspace.RAC:WaitForChild(\"Lighting\"). execute_luau lighting=false, lights=1030. readiness REPORT.",
+    "fix": "Folder the fixtures at workspace.RAC.Lighting (or retarget LightingController). Future lighting, no black interiors at daytime."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "Zone tags",
+    "issue": "CollectionService Zone count is 0 in Edit and Play. Tags.luau is not surviving on the live model.",
+    "evidence": "execute_luau zone=0. NavCheck missing zone for every KEY room.",
+    "fix": "Apply CollectionService tags on zone parts in the built rbxm after Perf so they serialize; verify count > 0 in Play."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "basketball OFF LIMITS",
+    "issue": "Cage door is signed only BASKETBALL, not BASKETBALL — OFF LIMITS. Pathfinding treats cage_gym as fully isolated.",
+    "evidence": "route/step13.png (basketball_sign.png). navigation REPORT section C.",
+    "fix": "Sign exactly BASKETBALL — OFF LIMITS. Keep the door locked for the player; give AI a PassThrough modifier if needed for tests."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "stray / gym air",
+    "issue": "Competition gym has large floating olive/green mesh blobs in the volume. Racquetball court contains a water fountain inside the playing box. Service dumpsters sit in an interior CMU room, not a west exterior yard.",
+    "evidence": "verification/qa/round3/building/gym_court.png (from round4/gym_court.png). route/step12.png fountain inside racquetball. round5/service_yard.png dumpsters indoors. User items 6 and 09:35 #12.",
+    "fix": "Delete airborne meshes. Keep fountains in the hall, not on the court. Place dumpsters in an open service yard west of the volleyball gym with a SERVICE door."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "materials",
+    "issue": "Materials.apply errors: Unknown RAC material racquetball_wood. Lobby/halls read as brown/grey plaster; gym maple exists in close-up but the space is underexposed and corridors are not terrazzo/porcelain as specified.",
+    "evidence": "Studio console ReplicatedStorage.RAC.Materials:177. maple_close.png vs route/step02.png brown lobby slab. Manager 02:30 #1.",
+    "fix": "Register racquetball_wood (or map to maple). Apply Materials.luau + art/materials with correct studsPerTile on every room floor/wall. Close-up proof per finish."
+  },
+  {
+    "severity": "critical",
+    "owner": "architect",
+    "area": "interior brick",
+    "issue": "Interior still shows large brick faces (lobby chimney/piers, east glass jambs). User 08:40: keep brick only at volleyball-locker accent portals (IMG_0339/0340/0372/0373).",
+    "evidence": "MCP lobby/stair captures; round4/entrance_letters.png red brick wall behind glass. Exterior-flagged brick walls l1_w036/038/040, l2_w008/010/014.",
+    "fix": "Paint those faces painted_cmu/gypsum. Keep brick on the true envelope and the locker-corridor accents only."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "L2 cardio",
+    "issue": "Guardrail and treadmills/TVs/benches exist, but l2_w064 still boxes cardio_south from the south balcony; no hanging heavy bag; machines are sparse/scattered vs rows.",
+    "evidence": "route/step10.png, cardio_equipment.png. blueprint l2_w064 solid at z=-48. User 08:30 #1 and 09:35 #11.",
+    "fix": "Remove l2_w064. Open cardio to the lobby rail. Rows of treadmills, heavy bag on a stand/ceiling mount, free weights on the wall perpendicular to the south glass."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "coaches suite",
+    "issue": "Glass suite and cubicle carpet exist but the space is dark, empty of desks/chairs in use, and no HEAD COACH nameplate is visible.",
+    "evidence": "route/step17.png (head_coach.png). User 01:40 #4, manager 02:30 #4.",
+    "fix": "Cubicle rows, desks against walls, chairs at desks, glass entry, nameplate HEAD COACH (no real person). Light the suite."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "lived-in interiors",
+    "issue": "Training room has green tables and a couple of cabinets but no whiteboard, desk, tape mess, ice signage, or rehab clutter. Gym is dark with little team gear. Overlook hall is an empty beige tube with one trash can.",
+    "evidence": "route/step11.png training; gym_court.png; step08.png. User 01:40 #5.",
+    "fix": "Furnish to photo: training (tape, ice machine labeled, whiteboard, desk); gym (ball carts, bags, retracted bleachers both longs); halls (trophy/jerseys, vending, signs)."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "public lockers",
+    "issue": "Layout is close (stalls left, lockers right, showers ahead) but stall count is not ~5 as specified; sinks sit on a glass-railed island rather than across from stalls.",
+    "evidence": "route/step15.png. blueprint pub_stalls one toilet_partition. User 09:35 #9.",
+    "fix": "Five stalls on the left, sinks across from them, lockers on the right, showers straight ahead."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "L2 grade exit",
+    "issue": "West hall is a blank CMU corridor. Exit sign exists; there is no LEVEL 2 EXIT AT GRADE door label, and terrain meeting that door was not demonstrated.",
+    "evidence": "route/step14.png grade_exit.png. User walkthrough L2 step 5.",
+    "fix": "Labeled exterior pair on the west wall, ground at +20 outside, walkable from basketball_approach."
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "parking lots",
+    "issue": "Lots are schematic: lollipop trees, missing connected drive aisles/stalls/islands/light poles as on GMU maps; grass still reads in paved areas from L2. site.json has no parking geometry.",
+    "evidence": "cardio_rail looking out; blueprint/site.json has no lots. User 01:40 #7, 08:40 #2, 09:40 parking.",
+    "fix": "Build every RAC-adjacent lot from parking maps + aerial: asphalt under stalls, striping, curbs, islands, lights, signs, ramps, connected entries."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "performance",
+    "issue": "Play AverageFPS ~41, memory ~5056 MB, ~32.5k parts. Target ≥60 FPS and memory well under 2 GB on this laptop.",
+    "evidence": "verification/readiness/REPORT.md table. Playtest 10:21 #4.",
+    "fix": "Cut horizon voxels, unused lights, oversized textures; instance props; re-measure in Play."
+  },
+  {
+    "severity": "major",
+    "owner": "architect",
+    "area": "photo match",
+    "issue": "Interior/exterior stations remain far below the 90% / judges ≥8/10 bar. Overlook vs WEB_vb_gym_overlook and lobby vs IMG_0369 fail on sight.",
+    "evidence": "pairs/WEB_vb_gym_overlook.jpg, IMG_0369.jpg, WEB_entrance_*.jpg. User 01:40 #6.",
+    "fix": "Iterate stations until both judges score ≥8 on every interior station in the walkthrough set."
+  },
+  {
+    "severity": "minor",
+    "owner": "architect",
+    "area": "thin_link / stair_second size",
+    "issue": "thin_link end openings are 6 ft (notes 8). stair_second flight width 6, mid landing 5x6 (notes 8x8).",
+    "evidence": "blueprint/level1.json l1_w031/l1_w045; level1/level2 stair_second.",
+    "fix": "Widen end openings to 8 ft; stair_second flights/landing to 8 ft."
+  },
+  {
+    "severity": "minor",
+    "owner": "architect",
+    "area": "sky leak",
+    "issue": "Blue sky shows at the lobby ceiling/east-wall junction (missing fascia/roof edge).",
+    "evidence": "MCP lobby capture from (0,5.5,-2).",
+    "fix": "Close the double-height envelope at the east curtain head with fascia/roof."
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] IMG_0323.jpg: overall 1 (layout 1, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] IMG_0344.jpg: overall 2 (layout 4, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] IMG_0364.jpg: overall 2 (layout 3, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] IMG_0368.jpg: overall 3 (layout 4, materials 3, props 2)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] IMG_0369.jpg: overall 2 (layout 2, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] WEB_entrance_1.jpg: overall 1 (layout 1, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] WEB_entrance_2.jpg: overall 3 (layout 4, materials 3, props 2)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] WEB_entrance_left_pole.jpg: overall 1 (layout 2, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [gemini] WEB_vb_gym_overlook.jpg: overall 2 (layout 3, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] IMG_0323.jpg: overall 1 (layout 1, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] IMG_0344.jpg: overall 4 (layout 5, materials 4, props 3)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] IMG_0364.jpg: overall 3 (layout 4, materials 3, props 2)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] IMG_0368.jpg: overall 4 (layout 5, materials 3, props 3)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] IMG_0369.jpg: overall 3 (layout 3, materials 4, props 2)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] WEB_entrance_1.jpg: overall 1 (layout 1, materials 2, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] WEB_entrance_2.jpg: overall 3 (layout 4, materials 3, props 4)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] WEB_entrance_left_pole.jpg: overall 2 (layout 2, materials 3, props 2)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  },
+  {
+    "severity": "major",
+    "owner": "exterior",
+    "area": "photo match",
+    "issue": "FAIL [grok] WEB_vb_gym_overlook.jpg: overall 2 (layout 2, materials 3, props 1)",
+    "evidence": "verification/qa/round3/judge.txt",
+    "fix": "see judge problems"
+  }
+]

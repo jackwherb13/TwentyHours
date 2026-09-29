@@ -12,7 +12,7 @@ local function canopyWedge(parent: Instance, name: string, size: Vector3, cf: CF
 	wedge.CFrame = cf
 	-- Matte charcoal. Neon read as a glowing slab and washed out in the sun.
 	wedge.Material = Enum.Material.SmoothPlastic
-	wedge.Color = Color3.fromRGB(12, 12, 14)
+	wedge.Color = Color3.fromRGB(20, 22, 24)
 	wedge.Reflectance = 0
 	wedge.Anchored = true
 	wedge.CanCollide = true
@@ -48,10 +48,8 @@ function Exterior.build(parent: Instance, site: any)
 		local world = frame:PointToWorldSpace(Vector3.new(lx, 0, lz))
 		return H.height(world.X, world.Z)
 	end
-	-- Foot of the flight is one landing plus the treads south of the glass. Count risers from that lidar sample.
-	local probeX = e.landingDepth + e.risers * run + 4
-	-- Top of the flight is the glass threshold (L1). The toe sits on the raised south walk, not in a pit.
-	local n = math.clamp(math.round(-groundAt(probeX, 0) / rise), 4, 7)
+	-- Seven risers from the L1 sill. Heightfield drops the same 7*(7/12) ft to the toe.
+	local n = 7
 	local drop = n * rise
 	local function walkY(lx: number): number
 		if lx <= e.landingDepth then
@@ -128,7 +126,7 @@ function Exterior.build(parent: Instance, site: any)
 			local height = at.Y - foot
 			if height > 0.4 then
 				local post = P.pole(entrance, "RailPost", Vector3.new(at.X, foot, at.Z), height, 0.08, "metal")
-				post.Color = Color3.fromRGB(58, 62, 66)
+				post.Color = Color3.fromRGB(176, 180, 184)
 			end
 		end
 	end
@@ -160,9 +158,9 @@ function Exterior.build(parent: Instance, site: any)
 		clump.CanCollide = false
 	end
 
-	-- East ramp, 1:12, the right-hand run in WEB_entrance_1 / IMG_0365. Stems carry it where the lidar slope is steeper.
+	-- West ramp, 1:12, off the frontal cameras. Stems carry it where the slope is steeper.
 	local rampWidth = 5.2
-	local rampZ = -width / 2 - 1.4 - rampWidth / 2
+	local rampZ = width / 2 + 1.4 + rampWidth / 2
 	local rampStartX = e.landingDepth
 	local bestLen = drop * 12
 	local bestErr = math.huge
@@ -174,12 +172,12 @@ function Exterior.build(parent: Instance, site: any)
 		end
 	end
 	local y1 = -bestLen / 12
-	local padNear = -width / 2 + 1.5
-	local padFar = rampZ - rampWidth / 2
+	local padNear = width / 2 + 0.4
+	local padFar = rampZ - rampWidth / 2 - 0.25
 	P.box(
 		entrance,
 		"RampLandingSlab",
-		Vector3.new(e.landingDepth - 0.6, rise, padNear - padFar),
+		Vector3.new(e.landingDepth - 0.6, rise, padFar - padNear),
 		CFrame.new(0.6 + (e.landingDepth - 0.6) / 2, -rise / 2, (padNear + padFar) / 2),
 		"concrete",
 		true
@@ -218,7 +216,7 @@ function Exterior.build(parent: Instance, site: any)
 			local foot = rampFoot(at.X)
 			if at.Y - foot > 0.4 then
 				local post = P.pole(entrance, "RampRailPost", Vector3.new(at.X, foot, at.Z), at.Y - foot, 0.08, "metal")
-				post.Color = Color3.fromRGB(58, 62, 66)
+				post.Color = Color3.fromRGB(176, 180, 184)
 			end
 		end
 	end
@@ -240,14 +238,13 @@ function Exterior.build(parent: Instance, site: any)
 	end
 
 	local canopy = P.folder(entrance, "Canopy")
-	-- Small canopy over the south door. The glass hall to the west stays open.
-	local depth = 8
-	local southWest, southEast = -14, 14
-	local zWest, zEast = e.x - southWest, e.x - southEast
-	-- Curtain head is 30 ft. The soffit sits just above it.
-	local soffit = 30.5
-	local tip = 0.4
-	local canopyRise = 1.55
+	-- Thin dark wedge over the south curtain wall only. World X maps to local Z by e.x - worldX.
+	local depth = 18
+	local soffit = 30.55
+	local tip = 0.35
+	local canopyRise = 1.4
+	local zGlassWest = e.x - -96
+	local zGlassEast = e.x - 8
 	local function spanCanopy(z0: number, z1: number)
 		if z1 < z0 then
 			z0, z1 = z1, z0
@@ -271,7 +268,7 @@ function Exterior.build(parent: Instance, site: any)
 			true
 		)
 		plate.Material = Enum.Material.SmoothPlastic
-		plate.Color = Color3.fromRGB(14, 14, 16)
+		plate.Color = Color3.fromRGB(22, 24, 26)
 		plate.Reflectance = 0
 		canopyWedge(
 			canopy,
@@ -285,65 +282,127 @@ function Exterior.build(parent: Instance, site: any)
 			)
 		)
 	end
-	local lo, hi = math.min(zWest, zEast), math.max(zWest, zEast)
+	local lo, hi = math.min(zGlassWest, zGlassEast), math.max(zGlassWest, zGlassEast)
 	spanCanopy(lo, hi)
-	-- Dark square piers, one on the door and one at the east end of the south glass.
-	local columnHeight = soffit - 0.2
-	local eastColumnZ = e.x - southEast
-	for _, at in { Vector3.new(depth - 3, 0, 0), Vector3.new(depth - 3, 0, eastColumnZ + 2.2) } do
-		local column = P.box(
-			canopy,
-			"SupportColumn",
-			Vector3.new(2.4, columnHeight, 2.4),
-			CFrame.new(at.X, columnHeight / 2 + 0.06, at.Z),
-			"dark",
-			true
-		)
+	-- Two round grey pipes in the glass plane, flanking the entrance doors.
+	for _, lz in { 16, -16 } do
+		local column = P.pole(canopy, "SupportColumn", Vector3.new(0.55, 0.02, lz), soffit - 0.08, 0.7, "metal", true)
 		column.Material = Enum.Material.SmoothPlastic
-		column.Color = Color3.fromRGB(16, 16, 18)
-		column.Reflectance = 0
+		column.Color = Color3.fromRGB(118, 122, 126)
+		column.Reflectance = 0.04
 	end
-	-- A few dark recesses, not a white neon ceiling.
-	for lz = lo + 8, hi - 8, 14 do
-		for _, lx in { depth * 0.35, depth * 0.7 } do
-			local mark =
-				P.box(canopy, "SoffitMark", Vector3.new(0.35, 0.04, 0.35), CFrame.new(lx, soffit - 0.04, lz), "dark")
-			mark.Color = Color3.fromRGB(18, 18, 18)
-			mark.Material = Enum.Material.SmoothPlastic
-		end
+	-- Discrete warm downlights. The housings stay matte charcoal, not a white grid.
+	for lz = lo + 10, hi - 10, 16 do
+		local mark = P.box(
+			canopy,
+			"SoffitLight",
+			Vector3.new(0.7, 0.08, 0.7),
+			CFrame.new(depth * 0.42, soffit - 0.05, lz),
+			"dark"
+		)
+		mark.Color = Color3.fromRGB(18, 18, 20)
+		mark.Material = Enum.Material.SmoothPlastic
+		mark.CanCollide = false
+		local lamp = Instance.new("PointLight")
+		lamp.Brightness = 0.35
+		lamp.Range = 16
+		lamp.Color = Color3.fromRGB(255, 214, 170)
+		lamp.Parent = mark
 	end
 	-- Red shrubs along the west glass. The east side is a concrete planter, not a bed on the treads.
 	for i = 2, 4 do
 		local bed = P.box(entrance, "EntryBed", Vector3.new(2.6, 1.5, 4.2), CFrame.new(2.2, 0.75, i * 5.4), "barberry")
 		bed.CanCollide = false
 	end
+	local planterZ = -width / 2 - 9
 	local planter =
-		P.box(entrance, "PlanterWall", Vector3.new(3.4, 2.7, 16), CFrame.new(7.5, 1.35, -16), "concrete", true)
+		P.box(entrance, "PlanterWall", Vector3.new(3.6, 2.8, 18), CFrame.new(8, 1.4, planterZ), "concrete", true)
 	planter.Color = Color3.fromRGB(168, 166, 158)
-	local hedge = P.box(entrance, "PlanterHedge", Vector3.new(2.6, 1.6, 14.4), CFrame.new(7.5, 3.2, -16), "shrub")
+	local hedge = P.box(entrance, "PlanterHedge", Vector3.new(2.8, 1.7, 16), CFrame.new(8, 3.3, planterZ), "shrub")
 	hedge.CanCollide = false
-	-- Red hydrant at the west curb of the stair toe (IMG_0368), off the landing.
-	local hydrantAt = Vector3.new(apronX + 1.2, -drop, width / 2 + 2.6)
-	local barrel = P.pole(entrance, "Hydrant", hydrantAt, 2.15, 0.32, "metal", false)
-	barrel.Color = Color3.fromRGB(168, 32, 28)
+	-- Full-size hydrant at the east curb of the stair toe, on the walk not the landing.
+	local hydrantAt = Vector3.new(apronX + 4, -drop, -width / 2 - 3.2)
+	local barrel = P.pole(entrance, "Hydrant", hydrantAt, 3.05, 0.38, "metal", false)
+	barrel.Color = Color3.fromRGB(176, 32, 28)
 	barrel.Material = Enum.Material.SmoothPlastic
 	local cap = P.box(
 		entrance,
 		"HydrantCap",
-		Vector3.new(0.7, 0.28, 0.7),
-		CFrame.new(hydrantAt.X, -drop + 2.25, hydrantAt.Z),
+		Vector3.new(0.85, 0.32, 0.85),
+		CFrame.new(hydrantAt.X, -drop + 3.15, hydrantAt.Z),
 		"metal",
 		false
 	)
-	cap.Color = Color3.fromRGB(168, 32, 28)
+	cap.Color = Color3.fromRGB(186, 188, 190)
 	cap.Material = Enum.Material.SmoothPlastic
+	for _, side in { -0.55, 0.55 } do
+		local nozzle = P.box(
+			entrance,
+			"HydrantCap",
+			Vector3.new(0.55, 0.22, 0.22),
+			CFrame.new(hydrantAt.X, -drop + 1.7, hydrantAt.Z + side),
+			"metal",
+			false
+		)
+		nozzle.Color = Color3.fromRGB(186, 188, 190)
+	end
+	-- Clear glass leaves in the curtain, south of the mullions.
+	for _, side in { -1.55, 1.55 } do
+		local leaf =
+			P.box(entrance, "EntranceDoor", Vector3.new(0.1, 8.4, 2.85), CFrame.new(0.85, 4.25, side), "glass", false)
+		leaf.Transparency = 0.55
+		leaf.Color = Color3.fromRGB(176, 198, 196)
+		leaf.Reflectance = 0.06
+	end
+	P.box(entrance, "EntranceDoor", Vector3.new(0.16, 8.6, 0.16), CFrame.new(0.9, 4.3, 0), "metal", false)
+	-- Grade wings so the glass meets L1 outside the stair width.
+	local function collar(z0: number, z1: number)
+		if z1 < z0 then
+			z0, z1 = z1, z0
+		end
+		local length = z1 - z0
+		if length < 3 then
+			return
+		end
+		local slab = P.box(
+			entrance,
+			"GradeCollarSlab",
+			Vector3.new(12, 0.4, length - 0.4),
+			CFrame.new(6, -0.22, (z0 + z1) / 2),
+			"concrete",
+			true
+		)
+		slab.Color = Color3.fromRGB(148, 146, 138)
+	end
+	collar(22.6, zGlassWest - 0.6)
+	collar(zGlassEast + 0.6, -22.6)
+	local lampY = groundAt(22, 20)
+	local walkLamp = P.pole(entrance, "LightPole", Vector3.new(22, lampY, 20), 14, 0.16, "dark", true)
+	walkLamp.Color = Color3.fromRGB(48, 50, 52)
+	local globe =
+		P.box(entrance, "LightGlobe", Vector3.new(1.1, 0.6, 1.1), CFrame.new(22, lampY + 14.4, 20), "metal", false)
+	globe.Material = Enum.Material.SmoothPlastic
+	globe.Color = Color3.fromRGB(255, 236, 200)
 
-	-- Photo-placed hoop racks east of the ramp, not the west lawn pipes.
+	-- Hoop racks on the east lawn and one bay at the west toe.
 	for i = 0, 3 do
 		local z = -width / 2 - 8 - i * 2.4
-		pipe(entrance, "BikeRack", Vector3.new(6.2, 0.35, z), Vector3.new(6.2, 2.1, z))
-		pipe(entrance, "BikeRack", Vector3.new(5.4, 0.35, z), Vector3.new(7.0, 0.35, z))
+		pipe(entrance, "BikeRack", Vector3.new(8, 0.35, z), Vector3.new(8, 2.1, z))
+		pipe(entrance, "BikeRack", Vector3.new(7.2, 0.35, z), Vector3.new(8.8, 0.35, z))
 	end
+	local rackY = -drop + 0.35
+	pipe(
+		entrance,
+		"BikeRack",
+		Vector3.new(apronX - 1, rackY, width / 2 + 5),
+		Vector3.new(apronX - 1, rackY + 1.7, width / 2 + 5)
+	)
+	pipe(
+		entrance,
+		"BikeRack",
+		Vector3.new(apronX - 1.8, rackY, width / 2 + 5),
+		Vector3.new(apronX - 0.2, rackY, width / 2 + 5)
+	)
 
 	-- Vertical white RAC letters on the east glass, each about 4 ft (IMG_0368).
 	local letters = P.folder(entrance, "RACLetterSign")
@@ -352,13 +411,13 @@ function Exterior.build(parent: Instance, site: any)
 		A = { "01110", "10001", "10001", "11111", "10001", "10001", "10001" },
 		C = { "01110", "10001", "10000", "10000", "10000", "10001", "01110" },
 	}
-	local cell = 0.58
+	local cell = 0.82
 	local order = { "R", "A", "C" }
 	local letterH = 7 * cell
-	local gap = 0.45
-	local letterZ = -30
+	local gap = 0.55
+	local letterZ = -24
 	for index, ch in order do
-		local top = 23.5 - (index - 1) * (letterH + gap)
+		local top = 24.2 - (index - 1) * (letterH + gap)
 		local rows = glyphs[ch]
 		for row, bits in rows do
 			for col = 1, 5 do
@@ -386,6 +445,7 @@ function Exterior.build(parent: Instance, site: any)
 				or item.Name == "ApproachSlab"
 				or string.sub(item.Name, 1, 10) == "StairTread"
 				or string.sub(item.Name, 1, 4) == "Ramp"
+				or item.Name == "GradeCollarSlab"
 			then
 				item.Color = Color3.fromRGB(148, 146, 138)
 			end

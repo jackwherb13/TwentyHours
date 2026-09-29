@@ -54,27 +54,53 @@ function Heightfield.height(x: number, z: number): number
 	if insidePad(x, z) then
 		return -0.4
 	end
-	local h = bilinear(x, z)
-	local skirt = false
-	for _, dist in { 8, 16 } do
+	local raw = bilinear(x, z)
+	-- West L2 doors (l2_w040 at x=-351.5, l2_w023 at x=-359.5). Raw lidar is +22 to +27,
+	-- which buries a sill at y=20. Land on the sill, then climb back to the hillside.
+	local function westPad(doorX: number, z0: number, z1: number): number?
+		if z < z0 or z > z1 or x > doorX + 1.5 or x < doorX - 40 then
+			return nil
+		end
+		local dist = doorX - x
+		if dist <= 16 then
+			return 20
+		end
+		local t = math.clamp((dist - 16) / 24, 0, 1)
+		return 20 * (1 - t) + raw * t
+	end
+	local west = westPad(-351.5, -116, -88) or westPad(-359.5, -100, -72)
+	if west then
+		return west
+	end
+	local h = raw
+	for _, dist in { 8, 18 } do
+		local hit = false
 		for k = 0, 7 do
 			local a = k * math.pi / 4
 			if insidePad(x + math.cos(a) * dist, z + math.sin(a) * dist) then
-				h = math.max(h, if dist == 8 then -0.8 else -2.0)
-				skirt = true
+				h = math.max(h, if dist == 8 then -0.1 else -0.8)
+				hit = true
 				break
 			end
 		end
-		if skirt then
+		if hit then
 			break
 		end
 	end
-	-- South door lidar is about -3 ft and the circle is -7 to -12. The stair lands on a
-	-- short concrete walk, then the drive falls back toward the surveyed circle.
-	if x > -70 and x < -12 and z > -1 and z < 32 then
-		h = math.max(h, -4.15)
-	elseif x > -100 and x < 30 and z >= 32 and z < 84 then
-		h = math.max(h, -4.15 - (z - 32) * 0.12)
+	-- South glass. The sill is L1. Seven risers (7 * 7/12) reach the toe at z≈22,
+	-- then the drive eases toward the terrain-grid pad instead of the raw pit.
+	if x > -104 and x < 18 and z >= -1 and z < 160 then
+		local designed
+		if z <= 14 then
+			designed = 0
+		elseif z <= 22.2 then
+			designed = -4.083 * (z - 14) / 8.2
+		else
+			local t = math.clamp((z - 22.2) / 110, 0, 1)
+			local far = math.max(raw, -6.5)
+			designed = -4.083 * (1 - t) + far * t
+		end
+		h = math.max(h, designed)
 	end
 	return h
 end

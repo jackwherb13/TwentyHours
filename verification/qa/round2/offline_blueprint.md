@@ -1,171 +1,380 @@
-# Offline blueprint vs WALKTHROUGH.md (round 2)
+# Round 2 offline blueprint vs walkthrough
 
-**Scope:** circulation and layout in `blueprint/*.json` only. `WALKTHROUGH.md` is authoritative. Every FAIL against the walkthrough is **critical**. Geometry QA (`blueprint_check.txt`: rooms reachable, no overlaps) is **not** a walkthrough pass.
+Read-only check of `blueprint/*.json` against `docs/WALKTHROUGH.md` (authoritative), plus `docs/SPEC.md`, `docs/ARCHITECT_NOTES.md`, `docs/reviews/USER-2026-09-28-2345.md`, `docs/reviews/USER-2026-09-29-0140.md`, `verification/exterior/ROOF_HEIGHTS.md`, `verification/qa/round2/build.txt`, `verification/qa/round2/blueprint_check.txt`.
 
-**Coordinate frame used:** south glass on `z = 0`, `x` increasing east, walking **north** = decreasing `z`. Left/right are from that travel direction unless a step says otherwise.
+Coordinate convention in the JSON: **+x east, +z south, z = 0 is the south entrance glass, more negative z is north / into the building.** Walking away from the entrance is walking north (decreasing z). Left is west (−x). Units are feet. Level 2 elevation in `site.json` is **+20**.
 
-**Verdict: FAIL.** The south-glass entrance, two-flight left-turn main stair, keypad/fridge locker sequence, racquetball-on-L2, basketball sign, L2 grade exit, cardio rail, and coaches suite exist, but the **order and handedness** of the L1 hall, the **20×20 entry**, the **desk**, the **locker door hand**, and the **L2 straight hall** do not match the user.
+`verification/qa/round2/blueprint_check.txt` reports 57/58 L1 rooms reachable, 0 dead doors, 32/32 L2 reachable. `build.txt` reports walkthrough check PASS. Those tools do **not** test stair flight direction, door placement vs the 20×20 lobby, or racquetball/stair adjacency. This file does.
 
----
-
-## Critical mismatches
-
-### 1. Lobby is not a 20 × 20 double-height entry
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | L1 lobby / void |
-| **Issue** | Walkthrough: open **20 × 20 ft** with **no second floor above**. Blueprint lobby is **20 ft E–W × 28 ft N–S** at the north (`x = -10…10`, `z = 0…-28`) and **28 ft** wide at the glass (`x = -18…10`). That is not 20×20. |
-| **Evidence** | `docs/WALKTHROUGH.md` L9; `blueprint/level1.json` `lobby.polygon` L307–330; ceiling 32 L331–333. `level2.json` `void_lobby` L905–951 leaves a **5 × 12 ft** strip (`x = -10…-5`, `z = -28…-16`) **outside** the void, so L2 is not fully clear over the north-west corner of the lobby. |
-| **Fix** | Shrink/reshape `lobby` to a **20×20** clear bay at the south door. Expand `void_lobby` to cover that entire rectangle. Do not let `cardio_south` / balcony occupy any of it. |
-
-### 2. Reception desk: distance, length, raised counter
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | lobby desk |
-| **Issue** | Walkthrough: **~10 ft inside**, long axis **perpendicular to the window**, **20–25 ft**, **raised counter** in a staff enclosure. Live prop is `length: 20` (floor of the range), `depth: 6`, `at: [-6.5, -17.5]`, `rotation: 270`. If 270 = N–S, the south end is at **`z ≈ -7.5` (7.5 ft from glass)**, not ~10 ft. No `raised` / transaction-top field. `structural_anchors.json` still has a **different** desk (`at [0,-10]`, `rotation: 90`, `size 16×3.6`, `nearEndDistanceToGlass: 2`) that contradicts `level1.json`. |
-| **Evidence** | `WALKTHROUGH.md` L10, L76–77; `level1.json` `reception_desk` L4816–4826; `structural_anchors.json` L4–25; `ARCHITECT_NOTES.md` L12 (admits **8 ft** inside, not 10). |
-| **Fix** | Single source of truth: 20–25 ft N–S enclosure, public frosted face to the east, south end **10 ft** from `z = 0`, raised counter + staff well. Sync or delete the stale anchor. |
-
-### 3. Main stairs sit on the RIGHT of the gym hall, not the LEFT
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | `stair_main` vs `corridor_entry_south` |
-| **Issue** | Walkthrough L1 route: along the left hallway, **on the left: the main stairs**. The northbound hall to the gym is `corridor_entry_south` at **`x = -78.5…-66.5`**. The stair volume is **`x = -66.5…-42.5`, `z = -60…-28`**. Walking **north** (to the gym), east is **right**. The stair is **east of the hall = RIGHT**. Walking **west** in `south_vestibule`, the stair is **north = also RIGHT**. |
-| **Evidence** | `WALKTHROUGH.md` L39, L80–81; `level1.json` `stair_main` L500–524, `corridor_entry_south` L605–629; `stair_details.json` first flight L14–21. `ARCHITECT_NOTES.md` L12 describes this geometry and does not fix the hand. |
-| **Fix** | Put the main stair **west of** the northbound hall (more negative `x` than the hall), so it reads **left** when walking from the door toward the volleyball gym. Keep two flights, square landing, left turn, +20 ft. |
-
-### 4. First flight setback vs “along the hall,” and hall is not immediately the gym run
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | main stair setback / left hall |
-| **Issue** | User 01:40: **immediately LEFT of the main door**, a hallway that **runs all the way** to the volleyball gym; stair **set back**; **first flight along the wall**. Immediate left is `south_vestibule` (EW along glass). The gym hall is a **second** NS leg (`corridor_entry_south`) starting **16 ft** inside. First flight south edge is **`z = -29` (29 ft from glass)** and runs **east**, i.e. **across** the plan, not along the NS gym hall. Setback itself is real; the “one left hallway with stairs on the left then gym” is not. |
-| **Evidence** | `WALKTHROUGH.md` L37–39, L80–81; `south_vestibule` L562–597; flights in `level1.json` L4491–4544 / `stair_details.json` L14–38 (landing 7×7 at `x=-50…-43`, `z=-36…-29`). |
-| **Fix** | One continuous left-side public hall from the door to the gym doors, stair opening on its left, first flight parallel to that hall wall, landing, left turn. |
-
-### 5. L1 stop order is wrong: thin link vs gym doors vs trophy
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | corridor_entry_link / corridor_gym_east / thin_link |
-| **Issue** | Required order walking from the entrance: **stairs → hall narrows → trophy RIGHT + first gym doors LEFT → further doors → immediately left, doorless thin hall → perpendicular hall**. Measured northbound (`z` decreasing): **trophy `z = -100`** (`trophy_main` in `corridor_entry_link`) → **thin_link `z = -132.5…-124.5`** → **gym doors `z ≈ -152` and `-141`** (`l1_w002` offsets 110 and 121 on wall from `z = -262`). Thin hall is **before** the gym doors, not after. Gym doors have **no `connection` array** (unlike other doors). |
-| **Evidence** | `WALKTHROUGH.md` L40–43; `level1.json` `thin_link` L659–683; `trophy_main` L4879–4886; jerseys L4889–4906 at `z = -110` and `-90`; `l1_w002` L1608–1640. |
-| **Fix** | Re-order along the northbound hall: narrow + trophy/jerseys on the **right**, gym leaf doors on the **left**, then further doors, then an **8 ft doorless** link on the **left** into the athletic NS hall. Tag gym doors `connection: [corridor_gym_east, competition_gym]`. |
-
-### 6. Volleyball locker is not at the end of the perp hall; vestibule door is not on the LEFT
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | athletic_corridor / nutrition_vestibule / locker_volleyball |
-| **Issue** | Walkthrough: perp hall; **left → training**; **at the end, just past the thin hall**, keypad locker; vestibule **only** the fridge; **door on the LEFT** into the locker. Training **is** west (left) of `athletic_corridor` (`x = -236.5…-205.5`, `z = -92.5…-62`) — that part matches. Nutrition vestibule is **east of the corridor** (`x = -193.5…-183.5`, `z = -102.5…-92.5`), **not at the end** (`corridor` runs to `z = -80` and `-180`). Thin link hits the corridor at **`z = -132.5`**; vestibule door is **~30 ft** north of that, mid-run. Vestibule→locker door is on the **south** wall near the **west** end (`l1_w090` offset 3). Entering from the corridor you face **east**; locker is **south = RIGHT**, not left. Keypad `15234` on the corridor door is present. Fridge prop has **no sign string** (sign lives only on a stale-ish anchor). |
-| **Evidence** | `WALKTHROUGH.md` L44–47; `level1.json` rooms L686–791; `l1_w029` keypad door L2304–2317; `l1_w090` L3813–3838; `nutri_fridge` L5738–5745 (no `sign`); `structural_anchors.json` L40–50 `MATT CORSON NUTRITION STATION`. |
-| **Fix** | Put keypad + 10×10 vestibule at the **end** of the athletic hall, just past the thin-link junction. Fridge only, signed **MATT CORSON NUTRITION STATION**. Locker door on the **left** from inside the vestibule. Keep code **15234**. |
-
-### 7. L1 “straight down the hall” from locker to the second stair is a dogleg through the training room
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | locker → `stair_second` |
-| **Issue** | Walkthrough: past the locker, **straight down the hall**, stairs up to L2, basketball on the left, L2 exit. `stair_second` is at **`x = -339.5…-305`, `z = -132.5…-92.5`**. Locker is at **`x = -193.5…-159.5`**. `west_link` (`x = -346.5…-236.5`, `z = -92.5…-80`) does **not** touch `athletic_corridor`. The graph path is **athletic_corridor → training_room → west_link → stair_second**. That is not a straight hall past the locker. |
-| **Evidence** | `WALKTHROUGH.md` L48–49; `walkthrough_routes.json` L26–38 (skips `west_link`/`training_room`); `level1.json` `l1_w` training_room–west_link opening ~L2406–2414; `l1_w095` L3948–3974. |
-| **Fix** | Continue the athletic / west public hall in a straight line from the locker to `stair_second`. Do not force players through the training room. |
-
-### 8. Level 2 cannot keep gym LEFT then racquetball LEFT without a 90° turn
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | `corridor_l2_overlook` / `corridor_l2` / racquetball |
-| **Issue** | Walkthrough L2: top of main stairs → **one hallway**, glass **LEFT** into volleyball, then **racquetball LEFT**, stairs **DOWN on RIGHT opposite**, basketball OFF LIMITS, L2 exit at grade. Architect **admits** a turn is required and that one straight line cannot keep both gym and courts on the left. After the turn onto `corridor_l2` (EW at `z = -92.5…-80`), the gym is **behind**, not on the left. Overlook glass on `l2_w002` only covers **`z = -262…-132.5`**; the south ~50 ft of `corridor_l2_overlook` (`z = -132.5…-80`) has **no** gym glass (team offices occupy that west side). |
-| **Evidence** | `WALKTHROUGH.md` L15–23, L27–29, L67–68; `ARCHITECT_NOTES.md` L20–21, L27; `level2.json` `corridor_l2_overlook` L357–376, `corridor_l2` L438–463, `racquetball_*` L546–588 (20×40, south of hall = left when walking **west**), `l2_w002` curtainwall L1039–1061, `l2_w064` court doors L2391–2432. |
-| **Fix** | Rebuild L2 public circulation so a walker leaving the main stair, traveling **away from the entrance glass**, has: gym glass continuously on the **left**, then racquetball on the **left**, second stair down on the **right** (run opposite the travel direction), then basketball, then grade exit. If the gym footprint must stay, rotate/move courts and the second stair to the **west side of the NS overlook**, not onto a separate EW hall. |
-
-### 9. Ping-pong / vending are not “along the glass wrap” as a wide left hall in front of the stair
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | south_vestibule props |
-| **Issue** | Walkthrough: **wide** left hall, ping-pong and vending **along the glass wrap**. `south_vestibule` is **16 ft** deep (`z = 0…-16`). Tables at `(-32,-8)` and `(-52,-8)` sit in the **middle** of that bay, not along `z = 0`. The continuation that actually reaches the gym is only **12 ft** wide. Stair is not in this glazed wrap (it starts 29 ft in). |
-| **Evidence** | `WALKTHROUGH.md` L37–38; `level1.json` L562–597, L4829–4866; `ARCHITECT_NOTES.md` L12 (12 ft north leg). |
-| **Fix** | Keep a **wide** glazed left hall from the door along the south glass, props on the glass line, then the same hall turning to the gym with the stair on the left. |
-
-### 10. Fitness “behind the desk” vs “workout on the RIGHT” then coaches
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | fitness_annex / glazed_recreation / coach_suite |
-| **Issue** | 22:50: **behind the desk** = selectorized, **partition**, then **squat racks**. 01:40: **straight from the main door**, workout **on the RIGHT**, then **glass coaches suite**, cubicles, **HEAD COACH**. Selectorized + racks are in **`fitness_annex`** (`x = -42.5…-5`, mostly **west / left** of the door, `z = -16…-48`). There is **no partition prop**. The north/east bay `glazed_recreation` (`x = -5…10`, `z = -80…-28`) has cardio bits and a **glass door at `z = -80`** into `coach_suite` (`l1_w079`) — that **right-side** coaches move is closer to 01:40. Two different workout floors; the partition sequence is missing. Head-coach plate exists (`head_plate` text `HEAD COACH` at `[-26.5,-88]`). |
-| **Evidence** | `WALKTHROUGH.md` L51–54, L83–84; `level1.json` annex machines L4978–5040; `l1_w079` L3526–3561; `l1_w103` also opens **corridor_wide → coach_suite** from the **south** of the suite (second entrance, not “straight from the main door”); `head_plate` L5399–5407; cubicles L5110+. |
-| **Fix** | One readable sequence from the door: desk → weights behind it with a real partition then racks; **right** of the northbound path = workout; **straight on** = glass storefront into cubicles + private offices + HEAD COACH. Remove or hide the extra south door from `corridor_wide` if it breaks “straight ahead.” |
-
-### 11. Stale anchors vs live level JSON
-| | |
-|---|---|
-| **Severity** | critical |
-| **Owner** | architect |
-| **Area** | `structural_anchors.json` vs `level1.json` |
-| **Issue** | Checkers that still read anchors will place the desk on the wrong rotation/distance and the trophy at `[-68,-143]` in `corridor_gym_east` instead of `trophy_main` at `[-72,-100]`. That is a circulation/prop conflict inside the blueprint set. |
-| **Evidence** | `structural_anchors.json` L4–37 vs `level1.json` L4816–4886. |
-| **Fix** | Make `level1.json` / `level2.json` the only live geometry; rewrite anchors to match or drop them from the build. |
+`docs/ARCHITECT_NOTES.md` is **stale** in several places versus the live JSON (noted per item). Live `level1.json` / `level2.json` / `stair_details.json` win for “what the blueprint currently is.”
 
 ---
 
-## What does match (not a pass overall)
+## 1. Main stair: two flights, first along wall, square landing, turn LEFT, L2 +20 ft, set back from entrance window
 
-These items **agree** with the walkthrough and should not be undone while fixing the FAILs.
+### What the walkthrough requires
 
-| Step | Result | Evidence |
-|---|---|---|
-| Enter on **smaller south glass**, not east curtain | PASS | `l1_w071` `(-97,0)→(10,0)` door offset 90 (door at `x ≈ -7`) `level1.json` L3290–3337; east `l1_w016` glass only, no entry door L1920–1950; `site.json` origin L4–5. |
-| Glass wrap on south + east corner | PASS (glazing present) | South 107 ft curtain + door; east head-30 curtain `l1_w016`. Canopy/RAC letters are exterior, not this check. |
-| L2 floor-to-floor **+20 ft**, **34 risers ~7 in**, **two flights, one square landing, turn LEFT**, second flight **north** | PASS | `site.json` levels L87–95; `stair_details.json` L6–40 rise `20/34`, `turn: left`, flight A `[1,0]`, flight B `[0,-1]`. |
-| Main stair **set back** from glass (not in the curtain bay) | PASS vs 01:40 setback only | First flight `z = -29…-36` (`stair_details.json` L16). Round-1 “against the glass” is **fixed in JSON**. Handedness still FAIL (#3). |
-| Ping-pong + vending exist in south vestibule | PASS as props | `level1.json` L4829–4866. Placement vs glass still FAIL (#9). |
-| Trophy case + jersey frames on hall | PASS as kinds | L4879–4906. Side/order still FAIL (#5). |
-| Gym doors on **left** of northbound hall | PASS handedness | `l1_w002` on `x = -78.5` (west side of hall). Order vs thin_link still FAIL (#5). |
-| Keypad **15234** on nutrition door | PASS | `l1_w029` L2317. |
-| Vestibule 10×10, fridge present, generic locker (no dedication) | PASS as rooms | `nutrition_vestibule` L740–764; locker L767–791. Sign + door hand FAIL (#6). |
-| Training room left of athletic hall, green tables | PASS | `training_room` L713–737; `train_t1…t4` L5410–5447. |
-| Racquetball **L2 only**, **40×20**, left when walking **west** on `corridor_l2` | PASS local | `level2.json` L546–588; no L1 racquetball rooms. Global L2 path FAIL (#8). |
-| Second stair **right** of westbound L2 hall; up-direction west so **down faces back** | PASS local | `stair_details.json` L43–77 `direction [-1,0]`; volume north of `corridor_l2`. |
-| **BASKETBALL — OFF LIMITS** then **LEVEL 2 EXIT AT GRADE** | PASS | `level2.json` L2466–2477, L1729–1737; `terrain_relationship.json` high door `[-351.5, -102.5]` at elev 20, continuous slope L15–45. |
-| Cardio open edge **horizontal rail** at `z = -16` | PASS | `level2.json` `cardio_rail` L3618–3628; `cardio_south` south edge `z = -16` L303–323. ~16 ft setback vs written **~15 ft** — within a foot. |
-| Coaches cubicles + HEAD COACH plate + glass | PASS as program | `coach_suite` / `coach_head` L1374–1479; plate L5399–5407; curtain on `l1_w079`/`l1_w103`. Sequence vs door FAIL (#10). |
-| Blueprint connectivity (schema) | PASS for the checker | `verification/qa/round2/blueprint_check.txt`: 56/56 and 32/32 reachable. Does **not** encode left/right or walkthrough order. |
+Two flights, one small square landing, turn **left**, floor-to-floor **~20 ft**. First flight runs **along the wall** (user 01:40), not toward the glass. Volume **set back** from the entrance window. First flight then second to L2.
 
----
+### What the JSON has
 
-## Ambiguities (flagged, not invented)
+**L1 room `stair_main`** (`level1.json`): polygon `x = −106.0 … −78.5`, `z = −54.0 … −16.0` (27.5 × 38 ft). South edge of the well is **16 ft** north of the glass at `z = 0`.
 
-1. **Wide left hall vs thinner hall just inside** (`WALKTHROUGH.md` L37 vs L52). Keep **order** of ping-pong/vending → stairs → trophy/gym → thin link → training/locker if geometry conflicts. Current plan splits this into vestibule + 12 ft NS hall and **reverses** thin vs gym.
-2. **Squash vs racquetball:** 23:00 says racquetball 40×20 on L2. Modelled as racquetball. Do not put courts on L1.
-3. **“Three switchbacks”** superseded by two flights / one landing. Current stair geometry follows the correction; **placement/hand** do not.
-4. **`stair_west`:** not a walkthrough stop (`ARCHITECT_NOTES.md` L17, L36). Leave as egress unless it blocks the second-stair route.
-5. **`structural_anchors.json` vs `level*.json`:** treat `level1.json` / `level2.json` / `stair_details.json` as the built plan; anchors are inconsistent.
+**Flights** (same in `level1.json` `stairs[]` and `stair_details.json`):
 
----
+| Flight | polygon | direction | risers | rise | run | elevations |
+| --- | --- | --- | --- | --- | --- | --- |
+| `main_a` | `x = −88.5…−80.5` (8 ft), `z = −44.0…−29.8` (14.2 ft) | `(0, −1)` **south, toward the glass** | 17 | 0.588235 ft | 0.8333 ft | 0 → 10 |
+| `main_b` | `x = −102.7…−88.5` (14.2 ft), `z = −52.0…−44.0` (8 ft) | `(−1, 0)` **west** | 17 | 0.588235 ft | 0.8333 ft | 10 → 20 |
+| landing `main_turn` | `x = −88.5…−80.5`, `z = −52.0…−44.0` | — | — | — | — | 10 |
 
-## Suggested owner split
+Landing is **8 × 8 ft** (matches “small square landing”). Total rise **17 × 0.588235 × 2 = 20.00 ft**. Parent `fromLevel`/`toLevel` 1→2.
 
-| Owner | Fail IDs |
-|---|---|
-| **architect** | 1–11 (all circulation/rooms/props in JSON) |
-| **exterior** | none in this offline **circulation** pass. South door location is correct in plan; canopy, wide exterior stair/ramp, and grade mesh remain exterior photo-match (round 1 issues) and are out of this file unless they move the **LOW_ENTRANCE** point. |
+### Mismatches
+
+1. **First flight faces the window, not “along the wall then left.”** Direction `(0, −1)` is south. User 01:40: the first flight was “starting the other way” and must run along/against the wall, then turn left. Climbing `main_a` walks **toward** `z = 0`. That is the same defect the user already flagged.
+
+2. **Turn is a right turn, not left.** Walk south onto the landing, then `main_b` goes west. South then west is a **right** turn. A left turn from south is east. Architect notes (`ARCHITECT_NOTES.md` item 2) describe a different geometry that *would* be a left turn (first flight **east** along the south wall of the well, second **north**): first flight `z = −28…−36`, `x = −112…−96.5`. **That description is not what is in the JSON.** Live flights contradict both the walkthrough and the architect notes.
+
+3. **Setback is only 16 ft at the well, 29.8 ft at the first tread.** User: move the stair back; architect notes claimed south edge at `z = −28` (28 ft). Live south edge is `z = −16`. First riser at `z = −29.8`. Better than sitting on the glass, still 12 ft closer than the notes.
+
+4. **`level2.json` `stairs[]` for `stair_main` is a stale, conflicting polygon** with **no `flights` / `landings`:**
+   - L2 stairs entry: `x = −78.5…−42.5`, `z = −32.0…0.0` (36 × 32 ft **on the entrance glass**).
+   - L2 **room** `stair_main` matches L1 (`−106…−78.5`, `−54…−16`).
+   - If any builder/path uses the L2 `stairs[]` polygon instead of L1 flights, the stair sits on the window (the 01:40 bug).
+
+5. **Going vs parent `run`.** Parent `run` is **0.917 ft** (~11.0 in). Flight `run` is **0.8333 ft** (exactly 10.0 in). `verify_blueprint.py` checks the parent, not the flights.
+
+### Matches
+
+Two flights, one landing, +20 ft, 8 ft width on `main_a`, 8×8 landing.
 
 ---
 
-## Bottom line
+## 2. Hallway immediately LEFT of the main door connecting to the volleyball gym
 
-Do **not** treat `blueprint_check.txt` or `build.txt` PASS as walkthrough compliance. Rebuild the **left-hand L1 public hall** (door → glass wrap + rec → stair on left → trophy/gym → thin link → training/locker/keypad → straight to second stair) and the **single L2 hall** (overlook glass left → racquetball left → down-stair right → basketball → grade exit). Fix lobby **20×20**, desk **10 ft / 20–25 ft / raised counter**, locker **left-hand** door, and fridge **sign**. Until those land in JSON, round-2 blueprint circulation is **FAIL**.
+### Walkthrough
+
+Enter the wrap-around glass at a **corner** into a **~20 × 20 ft** double-height lobby. Immediately **left** of the main door, a hallway runs all the way and connects to the volleyball/competition gym (wide glass wrap, ping-pong / vending).
+
+### What the JSON has
+
+**Lobby** `lobby`: `x = −10…10`, `z = −36…0` → **20 × 36 ft**, not 20 × 20. Double-height via L2 `void_lobby` over that polygon (and over `south_vestibule`).
+
+**Main exterior door** is **not** in `lobby`. Wall `l1_w094` `a = (−97, 0)`, `b = (10, 0)` (107 ft south wall):
+
+- curtainwall offset 1.5, width 48.5 → glass `x ≈ −95.5…−47`
+- **door offset 50, width 12** → leaf **`x = −47…−35`**, center **`(−41.0, 0.0)`**
+- curtainwall offset 62, width 43.5 → glass `x ≈ −35…8.5`
+
+That door opens **`OUTSIDE` ↔ `south_vestibule`**, not `lobby`. `south_vestibule` is `x = −97…−10`, `z = −16…0` (87 × 16 ft). Lobby connects to the vestibule by a 12 ft opening at `(−10, −8)` (`l1_w021`).
+
+Ping-pong / vending are in `south_vestibule` (`ping_pong_1` at `(−36, −4)`, `ping_pong_2` at `(−58, −4)`).
+
+**Interior gym path** (excluding the bogus exterior shortcut through `competition_gym`’s north doors):
+
+`south_vestibule` → opening at `(−72.5, −16)` → `corridor_entry_south` (`x = −78.5…−66.5`, `z = −80…−16`, 12 × 64) → `corridor_entry_link` (`z = −132.5…−80`) → `corridor_gym_east` (`z = −188…−132.5`) → 6 ft doors at `(−78.5, −152)` and `(−78.5, −142)` into `gym_foyer` → 113 ft opening on `z = −186` into `competition_gym` (`x = −193.5…−78.5`, `z = −279.5…−186`).
+
+Connectivity exists. Graph also treats `competition_gym` as having **exterior** doors on the north wall `z = −279.5` at `x = −181.5` and `−94.5`, so a naive BFS from lobby to gym walks **outside**.
+
+### Mismatches
+
+1. **The public entrance is 31 ft west of the lobby**, in the vestibule, not in the 20×20 entry the walkthrough starts in. You do not “walk in → 20×20 with the desk.” You walk into `south_vestibule` at `x = −41`.
+
+2. **Immediately left of that door (west, facing north) is more vestibule toward `x = −97` and `south_gym`**, not the gym hall. The gym-connecting hall (`corridor_entry_south` at `x ≈ −72`) is only ~6 ft west of the door center, but it is a **north** opening in the north wall of the vestibule, not a left-hand hallway along the glass.
+
+3. **Lobby is 36 ft deep, not 20.** `z = 0…−36`.
+
+4. **Architect notes** still describe the 20×20 at `x = −10…10`, `z = 0…−20` plus a north neck. Live lobby is `z = 0…−36` with no separate 20×20 cut; `lobby_north` is a disconnected piece at `z = −154.5…−124`, `x = −5…10`.
+
+### Partial match
+
+A continuous interior corridor from the south glass zone to the gym **does** exist (`south_vestibule` → `corridor_entry_*` → `gym_foyer` / `competition_gym`). Ping-pong/vending exist. That is the 01:40 “missing left hallway” item at the room-graph level, but **not** at the door-placement / 20×20-entry level.
+
+---
+
+## 3. L2 hallway with gym overlook on LEFT walking away from the entrance
+
+### Walkthrough
+
+Top of the big stairs → L2 hall with glass on the **left** looking into the volleyball gym, walking **away** from the entrance (north). User 22:40 correction: gym on the left.
+
+### What the JSON has
+
+`main_stair_landing`: `x = −78.5…−64.5`, `z = −80…−40`.
+
+`corridor_l2_overlook`: `x = −78.5…−64.5` (14 ft wide), `z = −330…−80` (250 ft long). West face `x = −78.5`.
+
+`competition_gym` west of that line: `x = −193.5…−78.5`, `z = −279.5…−186`.
+
+Overlook glass: wall `l2_w018` `a = (−78.5, −279.5)`, `b = (−78.5, −92.5)`, curtainwall offset 1, width **185**, head 9.5, mullions 5 ft. Covers the gym + `gym_foyer` void.
+
+Walking north (away from glass): gym is **west = left**. Neighbors of the overlook include `racquetball_2`, `corridor_l2`, `main_stair_landing`.
+
+### Match
+
+Overlook corridor exists, is walkable from `stair_main` → `main_stair_landing` → overlook, glass on the left into the competition gym. This is the 23:45 user item 1 at blueprint level.
+
+### Caveats (not full fails)
+
+- To also put racquetball on the left **and** the second stair on the right in one straight walk, the plan turns west onto `corridor_l2` at `z = −80…−92.5` (`ARCHITECT_NOTES.md` §7–8). That west hall does **not** look into the gym. User’s L2 list is a single sequence; the JSON is an L then a west leg.
+- Architect notes still say overlook is `sealed_concrete`; live `corridor_l2_overlook.floorMaterial` is **`terrazzo`**.
+
+---
+
+## 4. Second stair down after racquetball courts on the RIGHT
+
+### Walkthrough
+
+After the overlook: **two racquetball courts on the LEFT**. On the **RIGHT**: second stairs **down**, opposite the direction of travel. Then basketball OFF LIMITS, then L2 exit at grade.
+
+### What the JSON has
+
+**Racquetball** (Level 2 only, 40 × 20, maple, ceiling 16.5):
+
+- `racquetball_2`: `x = −98.5…−78.5`, `z = −319.5…−279.5` (door from overlook, label `RACQUETBALL`)
+- `racquetball_1`: `x = −118.5…−98.5`, `z = −319.5…−279.5` (door from court 2)
+
+They sit **north of the gym**, west of the **north end of the overlook** (`z ≈ −280…−320`), **not** on `corridor_l2`.
+
+**`corridor_l2`**: `x = −345.0…−78.5`, `z = −92.5…−80` (266.5 × 12.5), the east–west hall at the **south** end of the overlook.
+
+**`stair_second` L2 room**: `x = −339.5…−305.0`, `z = −132.5…−92.5`. North of `corridor_l2` at the **west** end. Walking **west** on `corridor_l2`, the stair is on the **right** (north). Flights run **west** (`direction (−1, 0)`), so walking **down** is east, back toward the courts’ x-range — “opposite direction” if travel was west.
+
+Graph: `racquetball_2` → `corridor_l2_overlook` → `corridor_l2` → `stair_second` (must reverse ~200 ft south along the overlook, then ~226 ft west). Straight-line gap from court door `(−78.5, ~−300)` to stair `(−320, −105)` is on the order of **230 ft**, not “then the stair.”
+
+Architect notes claim courts at `racquetball_2` `x = −265…−225`, `racquetball_1` `x = −305…−265`, `z = −80…−60`, south of `corridor_l2`, immediately east of `stair_second`. **Live polygons are not that.** Notes are leftover.
+
+### Mismatch
+
+**Racquetball is not on the same hall as `stair_second`.** You cannot walk away from the entrance, pass courts on the left, and immediately have the down-stair on the right. Courts are on the overlook’s north end; the second stair is on the far west of `corridor_l2`. Sequence exists only if you U-turn.
+
+Partial: two 40×20 L2-only courts; stair on the right of the west hall; down-direction opposes westbound travel; `BASKETBALL — OFF LIMITS` on `l2_w071` cage door; `LEVEL 2 EXIT AT GRADE` on `l2_w040` at `(−351.5, −102.5)` `OUTSIDE` ↔ `basketball_approach`.
+
+---
+
+## 5. Stair near volleyball locker to basketball door + L2 exit
+
+### Walkthrough
+
+Past the locker, straight down the hall: stairs up to L2. At the top, **left**: basketball OFF LIMITS door, then Level 2 exit at grade.
+
+### What the JSON has (L1)
+
+`locker_volleyball`: `x = −225.0…−205.5`, `z = −160.0…−140.0` (19.5 × 20).
+
+Door graph: `locker_volleyball` → `nutrition_vestibule` → `athletic_corridor` → `corridor_locker_west` (`x = −305.0…−205.5`, `z = −140.0…−112.0`) → **`stair_second`**.
+
+`stair_second` L1 flights: two 17-riser runs west, mid landing `x = −325…−320`, `z = −111…−105` (5 × 6 ft, **not** square 8×8). Width **6** (main is 8). Rise 0.588235 ft.
+
+L2: `stair_second` neighbors **only** `corridor_l2`. `basketball_approach` is `x = −351.5…−339.5`, `z = −132.5…−92.5`, west of the stair well, but the graph connects approach to `corridor_l2` and `cage_gym`, **not directly to `stair_second`**. Top-out is onto `corridor_l2` at `z = −92.5`; then west into `basketball_approach` (also a `corridor_l2` neighbor).
+
+Cage door: 6 ft, label `BASKETBALL — OFF LIMITS`. Exit door: 6 ft, `LEVEL 2 EXIT AT GRADE`.
+
+### Match (with nits)
+
+This is the walkthrough’s “locker hall stair.” It does connect L1 lockers to L2 basketball + high exit. Not “straight down the hall” in a single axis: locker at `x ≈ −215`, stair at `x ≈ −320` via a west hall at `z ≈ −112…−140`. At the top, basketball is **west**, not strictly “on the left” unless facing north (left = west). If you face west up the stair, basketball is ahead, not left.
+
+`stair_west` (`x = −357.5…−345`, `z = −80…−34`) is a third stair the walkthrough never names (architect question still open).
+
+---
+
+## 6. Reception desk: in entry, 20–25 ft, long axis perpendicular to entrance window, raised counter
+
+### Walkthrough / 23:47 / 23:45 item 9
+
+In the front entry you walk into; ~20–25 ft; long axis **perpendicular** to the entrance glass; raised transaction counter; staff inside; ~10 ft from the glass.
+
+### What the JSON has
+
+`level1.json` prop `reception_desk`:
+
+```
+kind: front_desk
+at: (−6.0, −21.0)
+rotation: 270
+room: lobby
+length: 22
+bays: 5
+depth: 6
+```
+
+`structural_anchors.json` `front_desk`: same `at`, `rotation` 270, `longAxis (0, −1)` (north–south), `nearEndDistanceToGlass: 10`, `centerDistanceToGlass: 21`, `size [22, 3.6, 6]`.
+
+South end if length 22 is N–S about center `z = −21`: **`z ≈ −10`** (10 ft inside the glass). 22 ft is inside 20–25. Perpendicular to south glass: yes.
+
+### Mismatches
+
+1. **Desk is in `lobby` (`x = −10…10`) but the entrance door is at `x = −41`.** The room you actually walk into is `south_vestibule`. The desk is ~35 ft **east** of the door, not “in the front entry room you walk into.”
+
+2. **No explicit raised-counter field.** Raised top is implied only by `kind: front_desk` + architect notes (frosted bays, white transaction top). JSON does not store counter height.
+
+3. **Lobby width is 20 ft; desk depth 6 at `x = −6`.** Fits, but the 20×20 “bigger entry” the user asked for is still the 20×36 lobby east of the real door.
+
+### Partial match
+
+Size, orientation, and ~10 ft setback from **south glass** match if the entrance were in `lobby`. They do not match the door that is actually drawn.
+
+---
+
+## 7. Coaches office suite past workout equipment
+
+### Walkthrough (01:40)
+
+Straight from the main door, workout equipment on the **right**, then coaches’ suite: interior **glass** entrance, open cubicles, private offices around, nameplate **HEAD COACH**.
+
+### What the JSON has
+
+Fitness on the east bay:
+
+- `glazed_recreation`: `x = −5…10`, `z = −80…−36` (15 × 44)
+- `fitness_annex`: `x = −42.5…−10`, `z = −48…−16` (selectorized machines: `annex_chest`, `annex_lat`, `annex_leg`, `annex_cable`)
+- `corridor_wide` / `weight_room` further north with racks at the weight room
+
+**`coach_suite`** cubicle core: `x = −28…2`, `z = −112…−80` (30 × 32). Private offices:
+
+| id | polygon |
+| --- | --- |
+| `coach_head` | `x = −40…−28`, `z = −96…−80` |
+| `coach_west` | `x = −40…−28`, `z = −112…−96` |
+| `coach_west_n` | `x = −40…−28`, `z = −124…−112` |
+| `coach_north` | `x = −28…2`, `z = −124…−112` |
+| `coach_east_s` | `x = 2…10`, `z = −96…−80` |
+| `coach_east_m` | `x = 2…10`, `z = −112…−96` |
+| `coach_east_n` | `x = 2…10`, `z = −124…−112` |
+
+Entrance: **4 ft door** `glazed_recreation` → `coach_suite` at `(−1.5, −80)` (`l1_w102`). A second 3.5 ft door `corridor_wide` → `coach_head` at `(−34.2, −80)`.
+
+Nameplate `head_plate`, `kind: nameplate`, `text: "HEAD COACH"`, `at (−29, −88)`, room `coach_head`. Cubicle props in `coach_suite`.
+
+### Mismatches
+
+1. **Storefront is a 4 ft opaque door, not an interior glass wall + glass door.** No curtainwall/glass opening on the suite south wall in the JSON.
+
+2. **“Straight from the main door”** only works from `lobby`/`glazed_recreation` (north). From the real door at `(−41, 0)` you are west of the annex; the suite is northeast, past `fitness_annex` / `corridor_wide`, not dead ahead.
+
+3. Door into `coach_head` from `corridor_wide` bypasses the suite glass narrative.
+
+### Partial match
+
+Suite exists north of the east workout bay, cubicles + perimeter offices, HEAD COACH plate, on the desk-fitness walkthrough route (`1:lobby` → `1:glazed_recreation` → `1:coach_suite` → `1:coach_head`).
+
+---
+
+## 8. Entrance on SOUTH smaller glass
+
+### Walkthrough (23:20)
+
+Main entrance is **not** the long east curtain wall. It is the **smaller south glass**, which should be **longer** than an earlier drawing. Canopy, wide stairs, 20×20 double-height belong there. East wall remains glazing, not the door.
+
+### What the JSON has
+
+`site.json` origin: “Main entrance SOUTH-facing smaller glass frontage.” Footprint south edge `x = −97…10` at `z = 0` (**107 ft**).
+
+`level1.json` `l1_w094`: that full 107 ft is **curtainwall + 12 ft door** (see §2). Corner wrap: `l1_w020` `x = 10`, `z = −36…0`, curtainwall width 32, head 30.
+
+**East long wall** `site.facade` last segment: `(10, −195.5) → (10, 0)`, **`style: brick`, height 33.5** — **not glass**. Interior `l1_w020` only glasses the south 36 ft of `x = 10`.
+
+**`site.facade` has no south segment at `z = 0`.** Facade jumps from `(−97, 0) → (−97, 47)` (brick, south gym) to later `(10, −195.5) → (10, 0)` (brick). The 107 ft entrance glass exists only on the **room wall** `l1_w094`, not on the site facade list.
+
+No entrance door on `x = 10`. Good vs the 23:20 correction.
+
+### Mismatches
+
+1. South “smaller” glass is **107 ft of curtainwall**, i.e. the entire south public front, not a small bay that was lengthened a bit. Door sits in the **middle-west** of that run (`x = −47…−35`), not in the 20 ft lobby bay (`x = −10…10`).
+
+2. **Site facade vs interior walls disagree:** site draws the east wall as brick; L1 draws south + SE corner as glass. Overlay/exterior passes that read `site.facade` will miss the entrance glass.
+
+3. User: east curtain wall stays glass (not the door). Site still codes the long east wall as brick.
+
+---
+
+## 9. Stair risers ≤ 7.75 in
+
+IBC-style cap used by `verify_blueprint.py`: rise ≤ 0.646 ft (7.75 in), tread ≥ 0.833 ft (10 in).
+
+| Stair | `rise` | inches | `risers` | `n × rise` | parent `run` | flight `run` |
+| --- | --- | --- | --- | --- | --- | --- |
+| `stair_main` | 0.588235 ft | **7.059 in** | 34 | 20.00 ft | 0.917 ft (11.0 in) | **0.8333 ft (10.0 in)** |
+| `stair_second` | 0.588235 ft | **7.059 in** | 34 | 20.00 ft | 0.917 ft | **0.8529 ft (10.24 in)** |
+| `stair_west` | 0.588235 ft | **7.059 in** | 34 | 20.00 ft | 0.917 ft | **0.9412 ft (11.29 in)** |
+
+All risers **pass** 7.75 in. 34 × 7.059 in = 20.00 ft matches `site.levels[1].elevation = 20` and the walkthrough “big gap.”
+
+`south_gym` roof lidar ~40 ft and lobby lidar ~25.5 ft (`ROOF_HEIGHTS.md`) still disagree with a 20 ft occupied L2 + ceiling; that is a roof/section issue, not a riser fail. Architect notes already say ignore `validate_blueprint.luau` 16 ft.
+
+### Pass
+
+Risers are legal. Main-stair **flight** treads are exactly 10 in (minimum). Do not treat parent `run` 0.917 as the built going.
+
+---
+
+## 10. Rooms without access, dead doors
+
+`blueprint_check.txt`: L1 **57/58** reachable, **0** dead doors; L2 **32/32**, 0 dead.
+
+Recomputed from wall openings:
+
+**Unreachable occupiable-ish room:** `cage_lower_reserved` (L1, type `construction`, `x = −351.5…` cage undercroft). Not in `NEEDS_ACCESS` for the verifier, so it does not FAIL the script, but it is the 1/58. No door into it from the public graph.
+
+**Dead doors (same space both sides):** none.
+
+**Exterior doors (L1):**
+
+| wall | at | rooms | width | label |
+| --- | --- | --- | --- | --- |
+| `l1_w094` | (−41.0, 0.0) | OUTSIDE / `south_vestibule` | 12 | (none) |
+| `l1_w065` | (−357.5, −72.0) | OUTSIDE / `stair_west` | 4 | |
+| `l1_w073` | (−181.5, −279.5), (−94.5, −279.5) | `competition_gym` / OUTSIDE | 6+6 | |
+| `l1_w079` | (−221.5, 47.0), (−111.5, 47.0) | OUTSIDE / `south_gym` | 6+6 | |
+| `l1_w146` | (−302.0, −301.0) | `addition` / OUTSIDE | 6 | `CONSTRUCTION` |
+
+**L2 exterior:** `l2_w040` (−351.5, −102.5) OUTSIDE / `basketball_approach`, 6 ft, `LEVEL 2 EXIT AT GRADE`.
+
+### Issues that are not “dead doors” but are access problems
+
+1. **`competition_gym` opens to OUTSIDE** on the north wall. That is a second public entrance the walkthrough never describes, and it makes lobby→gym “reachable” via the lawn.
+
+2. **`lobby` is not on `OUTSIDE`.** The building’s named lobby is interior-only. Spawn/walkthrough `LOW_ENTRANCE` → `1:lobby` skips the actual door room unless the route goes `south_vestibule` first (`walkthrough_routes.json` does include vestibule on the long L1 route, but “Desk fitness route” is `lobby` → `glazed_recreation` → coaches and never uses the exterior door).
+
+3. **`stair_second` L2 does not door directly into `basketball_approach`.** Fine if `corridor_l2` is the landing, but it is an extra room in between.
+
+4. **`cage_lower_reserved`:** sealed construction volume under the cage. Flag as no access.
+
+5. **`lobby_north`** is reachable through other east rooms, but it is not a “neck” of the entrance lobby (it sits at `z = −124…−154.5`). Easy to misread as the double-height neck from the notes.
+
+No dead (double-sided) doors in the wall openings.
+
+---
+
+## Cross-cutting JSON contradictions (affect several items)
+
+| Topic | `ARCHITECT_NOTES.md` / `stair_details` evidence text | Live `level1.json` / `level2.json` |
+| --- | --- | --- |
+| Main first flight | East along south wall, `z = −28…−36`, `x = −112…−96.5`, then north | South `(0,−1)` `z = −29.8…−44`, then west |
+| Main well | `x = −112…−78.5`, `z = −52…−28` | `x = −106…−78.5`, `z = −54…−16` |
+| Desk | `(−4, −15)`, rot 270, length 20 | `(−6, −21)`, length 22 |
+| Racquetball | South of `corridor_l2`, `x = −305…−225`, `z = −80…−60` | North of gym, `x = −118.5…−78.5`, `z = −319.5…−279.5` |
+| L2 `stairs[]` `stair_main` | (notes match L1 well) | Polygon on the glass `z = 0…−32`, `x = −78.5…−42.5`, **no flights** |
+| Site south glass | Implied | Missing from `site.facade` |
+
+`walkthrough_routes.json` L2 route lists `racquetball_2` then `racquetball_1` then `stair_second` as consecutive rooms; the door graph requires `corridor_l2_overlook` and `corridor_l2` in between. The route file hides that U-turn.
+
+---
+
+## Scoreboard vs the 10 asked items
+
+| # | Item | Verdict |
+| --- | --- | --- |
+| 1 | Main stair two flights, along wall, square landing, **left**, +20, set back | **FAIL** direction (south, then west = right turn). Landing 8×8 and +20 **OK**. Setback 16 ft well / 30 ft first tread. L2 `stairs[]` polygon still on the glass. |
+| 2 | Hall immediately left of main door to VB gym | **FAIL** as drawn: door is in vestibule at `x = −41`, not lobby. **PASS** that a west/north corridor eventually reaches the gym. |
+| 3 | L2 overlook, gym on left walking away | **PASS** (`corridor_l2_overlook` at `x = −78.5`, glass 185 ft). |
+| 4 | After racquetball, second stair on right | **FAIL** adjacency. Courts on north overlook; stair on west `corridor_l2`. |
+| 5 | Locker-side stair to basketball + L2 exit | **PASS** with a west hall (`corridor_locker_west`) and top-out onto `corridor_l2` not directly into `basketball_approach`. |
+| 6 | Reception 20–25 ft, perpendicular, raised, in entry | **PARTIAL**: 22 ft, N–S, ~10 ft from glass, in `lobby`. Not in the room the exterior door enters. Raised counter not a field. |
+| 7 | Coaches suite past equipment | **PARTIAL**: suite + HEAD COACH exist north of `glazed_recreation`. Entrance is a 4 ft door, not glass storefront. Not straight from the real main door. |
+| 8 | Entrance on south smaller glass | **PARTIAL**: door is on `z = 0`, not on east wall. South glass is 107 ft; site facade omits it and bricks the east wall. Door not in the 20×20 lobby bay. |
+| 9 | Risers ≤ 7.75 in | **PASS** (7.059 in × 34 = 20 ft). |
+| 10 | Rooms without access, dead doors | **PASS** dead doors (0). **Note** `cage_lower_reserved` unreachable; gym has extra exterior doors. |
+
+Highest-priority blueprint fixes if the next round is still layout: (a) rebuild `stair_main` flights to run along the wall and **turn left**, delete the L2 stale `stairs[]` polygon; (b) put the 12 ft entrance in the south face of `lobby` and keep the left-hand vestibule hall to the gym; (c) put racquetball on the L2 hall the user walks, immediately before `stair_second` on the right, or change the walkthrough (user document wins); (d) glass storefront into `coach_suite`; (e) add the south curtain wall to `site.facade` and stop calling the long east wall brick-only if it is glass.

@@ -36,8 +36,15 @@ function Horizon.build(parent: Instance): (Model, number)
 	local sil = P.folder(model, "Silhouettes")
 	local canopy = P.folder(model, "TreeMass")
 
+	local function overBuilding(x: number, z: number): boolean
+		return x >= -390 and x <= 30 and z >= -340 and z <= 70
+	end
+
 	for _, s in Data.silhouettes do
 		local box = s.box
+		if overBuilding(box.x, box.z) then
+			continue
+		end
 		local ground = Height.at(box.x, box.z)
 		blob(
 			sil,
@@ -49,6 +56,13 @@ function Horizon.build(parent: Instance): (Model, number)
 		)
 	end
 	for i, t in Data.trees do
+		if overBuilding(t.x, t.z) then
+			continue
+		end
+		-- Every canopy is a distant mass. Keep half so the place stays under the part cap.
+		if i % 2 == 0 then
+			continue
+		end
 		local ground = Height.at(t.x, t.z)
 		blob(
 			canopy,

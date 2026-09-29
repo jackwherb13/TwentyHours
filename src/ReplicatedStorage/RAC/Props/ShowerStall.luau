@@ -17,9 +17,10 @@ local TILE = Color3.fromRGB(242, 242, 238)
 local GROUT = Color3.fromRGB(198, 196, 190)
 local CURTAIN = Color3.fromRGB(248, 246, 240)
 
-function ShowerStall.build(cf: CFrame, _opts: { [string]: any }?): Model
+function ShowerStall.build(cf: CFrame, opts: { [string]: any }?): Model
 	local b = Kit.new("ShowerStall", cf)
 	local C = Kit.Color
+	local backPad = if opts and type(opts.backPad) == "number" then opts.backPad else 0
 	local backZ = DEPTH / 2 - 0.08
 	local leftX = -WIDTH / 2 + 0.08
 	local rightX = WIDTH / 2 - 0.08
@@ -58,8 +59,8 @@ function ShowerStall.build(cf: CFrame, _opts: { [string]: any }?): Model
 
 	chunk(
 		"BackWall",
-		Vector3.new(WIDTH, HEIGHT, 0.16),
-		Vector3.new(0, HEIGHT / 2, backZ),
+		Vector3.new(WIDTH, HEIGHT, 0.16 + backPad),
+		Vector3.new(0, HEIGHT / 2, backZ + backPad / 2),
 		TILE,
 		Enum.Material.SmoothPlastic,
 		true

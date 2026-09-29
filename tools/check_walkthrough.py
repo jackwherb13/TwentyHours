@@ -81,9 +81,9 @@ if void:
 desk = next((p for p in l1["props"] if p["id"] == "reception_desk"), None)
 check(desk is not None, "missing reception desk")
 if desk:
-    # 09:35: U-shaped counter in the main room. Supersedes the 20-25 ft north-south bar.
+    # Round 3: 20-25 ft white U in the main room, with the 09:35 U shape.
     check(desk.get("shape") == "u", "desk is not the U-shaped main-room counter")
-    check(desk.get("length", 0) >= 10, f"desk length {desk.get('length')} is under 10 ft")
+    check(desk.get("length", 0) >= 20, f"desk length {desk.get('length')} is under 20 ft")
     check(desk.get("room") == "lobby", "desk is not in the lobby")
     ax, az = desk["at"]
     check(-10 <= ax <= 10 and -16 <= az <= -6, f"desk at {desk['at']} is outside the open entry")

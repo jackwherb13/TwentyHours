@@ -1,0 +1,345 @@
+{
+  "gemini": {
+    "results": [
+      {
+        "image": "IMG_0323.jpg",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 1,
+        "problems": [
+          "Roblox Studio UI (Terrain Editor and toolbars) covers more than 60% of the viewport; screenshot must be captured from a clean game view.",
+          "Camera position and angle are incorrect; camera is tilted upward toward a ceiling and brick wall instead of looking over the reception counter into Work Room 1120.",
+          "Wall finish is exposed red brick; should be painted off-white drywall/gypsum board.",
+          "Reception counter and interior desks are missing; should have a white solid-surface countertop with wood-faced base and interior work tables.",
+          "Office props missing; should have a gray multi-compartment mail sorting cubby (approx 24 slots), black task chair, and computer workstation.",
+          "Signage and door missing; room plaque 'Work Room 1120', round analog wall clock, and wood-finish door with brushed metal lever hardware are absent.",
+          "Ceiling lighting is mismatched; 2x4 acoustic drop ceiling should feature flush recessed fluorescent troffers with white acrylic diffusers."
+        ]
+      },
+      {
+        "image": "IMG_0344.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 2,
+        "props": 1,
+        "lighting": 1,
+        "overall": 2,
+        "problems": [
+          "Gym interior lighting is completely unlit; space is a pitch-black void and should be brightly illuminated with multi-row high-bay gym fixtures.",
+          "Far north wall has an incorrect punch window showing outdoor trees and sky; should be a solid white wall with high-level clerestory windows, American flag, and banners.",
+          "Court flooring is unlit and lacks texture; should be high-gloss maple hardwood with dark green perimeter borders and crisp court striping.",
+          "Perimeter wall protective padding is missing; lower walls should feature ~8-10 ft high dark green padded wainscoting.",
+          "Athletic fixtures missing; suspended ceiling basketball backboards/hoops, volleyball net system, wall-mounted scoreboard, and banners are absent.",
+          "Foreground corridor lighting is missing; ceiling lacks the recessed troffer light fixture and the floor lacks polished specular reflection."
+        ]
+      },
+      {
+        "image": "IMG_0364.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 2,
+        "props": 1,
+        "lighting": 1,
+        "overall": 2,
+        "problems": [
+          "Canopy underside is glowing blinding emissive white; should be matte dark charcoal/black soffit panels with discrete recessed downlights.",
+          "Canopy support columns are thick white square pillars; should be dark charcoal cylindrical or tapered structural steel columns.",
+          "Environment sky and lighting are set to pitch-black nighttime with stars; should be daytime with diffuse natural daylight and a partly cloudy blue sky.",
+          "Camera station is placed too close on an accessibility ramp; should be positioned further back on the lawn approach path looking up at the entrance steps.",
+          "Landscaping and site elements missing; red flowering shrub beds, mulch, board-formed concrete retaining wall, and multiple bicycle racks are absent.",
+          "Ground surface has bare pale concrete and sparse grass decals; should be a continuous sloped green turf lawn."
+        ]
+      },
+      {
+        "image": "IMG_0368.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 3,
+        "props": 2,
+        "lighting": 4,
+        "overall": 3,
+        "problems": [
+          "Camera angle is shifted off to the right; should be centered head-on from the drop-off curb facing square to the entrance facade.",
+          "Exterior signage missing; large vertical bold white capital 'RAC' lettering on the right glass curtain wall is completely missing.",
+          "Retaining wall and planter missing; build shows an open sloped plaza instead of a straight board-formed concrete retaining wall with a dense manicured hedge.",
+          "Entrance stairs geometry is altered; build has a split ramp and stair layout instead of a wide, monumental single flight of concrete steps (approx 10-12 risers).",
+          "Entrance doors are solid grey panels; should be commercial clear double glass doors with dark aluminum stiles and panic hardware.",
+          "Curb fixture missing; red and silver fire hydrant on the street curb is absent."
+        ]
+      },
+      {
+        "image": "IMG_0369.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "Architectural layout behind desk is incorrect; build places a solid wall with a massive central staircase ascending into a portal, whereas the real building has an open opening under the mezzanine leading directly into the fitness center with no center stairs.",
+          "Reception desk design is inaccurate; build has a plain white box with a small green 'GM' plaque, whereas the real desk is an elongated L-shaped counter with wood base and illuminated frosted cubby compartments.",
+          "Atrium volume and ceiling height are missing; build has a low 2x4 drop ceiling on the left, whereas the real lobby is an open double-height atrium with a sloped drywall ceiling and recessed linear strip lights.",
+          "Mezzanine overlook and railing missing; upper floor lacks the open balcony edge with horizontal stainless steel cable safety railings.",
+          "Fitness center equipment missing; cardio machines, weight racks, and gym fixtures visible under the mezzanine are completely absent.",
+          "Floor finish is flat gray/brown; should be large-format light beige polished porcelain tile with visible joint lines."
+        ]
+      },
+      {
+        "image": "WEB_entrance_1.jpg",
+        "layout": 1,
+        "proportions": 1,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 1,
+        "problems": [
+          "Roblox Studio UI (Terrain Editor and toolbars) obscures roughly 50% of the screenshot; capture must be a clean game viewport.",
+          "Camera station is completely mismatched; camera is placed inches away from the glass facade looking at 3D letters rather than 50+ ft back on the approach walkway.",
+          "Site approach is entirely missing; concrete sidewalk, pedestrian light pole fixture, surrounding grass lawn, and trees are out of frame.",
+          "Building massing cannot be evaluated; the cantilevered canopy, entrance stairs, and flanking brick wings are cut off due to extreme camera proximity."
+        ]
+      },
+      {
+        "image": "WEB_entrance_2.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 3,
+        "props": 2,
+        "lighting": 2,
+        "overall": 3,
+        "problems": [
+          "Time of day and lighting do not match; build is rendered in harsh midday sun with stark diagonal shadows instead of a dusk/twilight atmosphere with warm interior architectural lighting.",
+          "Camera station is positioned too far to the right and angled downward; should be centered from the driveway approach looking across the plaza stairs.",
+          "Entrance stairs are distorted; build features a narrow stair flight and an intrusive ramp cutting across the foreground instead of a wide monumental concrete staircase spanning the full facade width.",
+          "Canopy underside lacks detailing; missing warm recessed downlight pools and realistic dark metal composite soffit panel seams.",
+          "Glazing is opaque and reflective; should be transparent curtain wall glass revealing the illuminated two-story lobby and mezzanine within."
+        ]
+      },
+      {
+        "image": "WEB_entrance_left_pole.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 2,
+        "props": 1,
+        "lighting": 1,
+        "overall": 1,
+        "problems": [
+          "Camera station is incorrect; camera is placed at the building base on an entrance ramp instead of ~150 ft back in the parking lot capturing the east wing elevation.",
+          "Major architectural volume missing; the prominent two-story dark charcoal metal panel cube with upper picture window and the adjacent brick facade are completely excluded from view.",
+          "Lighting and sky are set to night with stars and a glowing white canopy; should be bright daylight with blue sky.",
+          "Site infrastructure missing; asphalt parking lot, painted parking stalls, concrete curbs, parking lot light pole, and landscape trees are absent.",
+          "Foreground is dominated by a concrete ramp with high metal railings; should be open asphalt drive and grass landscape berm."
+        ]
+      },
+      {
+        "image": "WEB_vb_gym_overlook.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "Camera orientation is looking down the hallway parallel to the glass; should be rotated perpendicular to look directly down into the gym bowl.",
+          "Gymnasium interior is completely empty and unlit; missing the maple court floor, green court perimeter/keys, and volleyball/basketball lines.",
+          "Telescopic bleachers missing; green and gold spectator bleachers (approx 12-15 rows) on both east and west walls are absent.",
+          "Gym wall finishes and props missing; dark green lower wall safety padding, wall scoreboard, American flag, and championship banners are absent.",
+          "Ceiling structure missing; exposed open-web steel joist ceiling with industrial high-bay lighting is replaced by an unlit dark ceiling.",
+          "Corridor finishes are generic; corridor floor is flat beige/grey and lacks interior doors, signage, and realistic lighting."
+        ]
+      }
+    ]
+  },
+  "gpt": null,
+  "grok": {
+    "results": [
+      {
+        "image": "IMG_0323.jpg",
+        "layout": 1,
+        "proportions": 1,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 1,
+        "problems": [
+          "Roblox panel is Studio Terrain Editor chrome, not a play-mode camera of the office; recapture from inside the office looking at the wrap counter, cubbies, and wood door",
+          "Visible viewport is a gym/hallway (red brick, white CMU, 2x2 gym ceiling) instead of the RAC office; this room should be a small beige office with a white laminate wrap desk",
+          "Counter should be a white laminate wrap with a light wood-tone apron on the public side, not a gym wall",
+          "Missing grey 4-column mail-slot cubby unit against the back wall",
+          "Missing round analog wall clock above the cubbies",
+          "Door should be a light oak wood door with a narrow vision panel, centered on the back wall",
+          "Ceiling lights should be 2x4 fluorescent troffers in a T-bar grid, not the gym 2x2 array",
+          "Missing black office chair, tissue box, desktop organizers, and cardboard in the left corner",
+          "Floor should be grey office carpet; walls painted beige, not brick/CMU"
+        ]
+      },
+      {
+        "image": "IMG_0344.jpg",
+        "layout": 5,
+        "proportions": 5,
+        "materials": 4,
+        "props": 3,
+        "lighting": 2,
+        "overall": 4,
+        "problems": [
+          "Gym beyond the glass is nearly black; match the photo's bright even gym lighting so court, walls, and fixtures read",
+          "Hallway floor should be light polished concrete/tile with reflections, not near-black carpet",
+          "Court should be maple with a large green GMU center logo and green painted keys/endzones; current court is a dim tan pad with a faint green border",
+          "Missing telescopic bleachers on the left wall: gold seat backs, dark treads, ~8ΓÇô12 rows, full sideline length",
+          "Missing basketball hoop, cable stays, and backboard on the near-left",
+          "Missing American flag hanging from the ceiling truss",
+          "Missing green electronic scoreboard on the far wall",
+          "Missing GMU banners (white/green/gold) on the end wall",
+          "Lower gym wall should have a dark green wainscot; upper walls white",
+          "High gym openings should be interior clerestory, not windows to outdoor sky/trees",
+          "Gym ceiling should be white exposed structure with linear high-bays, not a dark blue ribbed lid",
+          "Foreground hallway ceiling should include a 2x2 fluorescent troffer as in the photo",
+          "Window mullion grid is close; keep the dark frames but drop the heavy tint so the gym is visible"
+        ]
+      },
+      {
+        "image": "IMG_0364.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 3,
+        "props": 2,
+        "lighting": 2,
+        "overall": 3,
+        "problems": [
+          "Camera is under the canopy at night; match the photo: overcast daylight from the lawn ~30ΓÇô40 ft back, showing the full cantilever",
+          "Canopy soffit should be dark charcoal metal, not a white plane with a grid of can lights",
+          "Columns should be two round grey steel pipes in the glass plane, not a square white pier",
+          "Missing sloping lawn berm in the foreground; the plaza sits above grass, not flush paving",
+          "Missing red shrub bed and ornamental grasses along the glass and stair",
+          "Missing bike rack with bicycles at the stair",
+          "Missing trees framing the roof and right side",
+          "Time of day is night with a black sky; photo is daytime overcast",
+          "Brick side walls are too dominant; primary facade is glass under a dark floating roof",
+          "Interior through the glass should read as a lit lobby, not a high-contrast night interior"
+        ]
+      },
+      {
+        "image": "IMG_0368.jpg",
+        "layout": 5,
+        "proportions": 4,
+        "materials": 3,
+        "props": 3,
+        "lighting": 5,
+        "overall": 4,
+        "problems": [
+          "Camera is from the right-hand covered walk; match the street-curb view looking square-on at the RAC letters",
+          "Facade should be charcoal/grey metal panels plus glass, not red brick/red panels",
+          "Missing large white 'RAC' letters on the right glass bay",
+          "Missing raised concrete planter with mixed shrubs/grasses to the right of the stairs",
+          "Fire hydrant should be a full-size yellow/red hydrant at the street curb, not a tiny red cube on the plaza",
+          "Columns should be grey, continuous with the dark canopy, not lost in red wall massing",
+          "Green overhang on the right does not exist in this view; the right edge is open sky / a grey volume",
+          "Stair railings should be silver/galvanized, not black",
+          "Foreground should be asphalt street and curb, not grey plaza tiles",
+          "Sky is hard sun vs overcast; reduce contrast to match the photo"
+        ]
+      },
+      {
+        "image": "IMG_0369.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 4,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "Layout is a stair shaft plus a reception box; photo is a two-story fitness atrium with a mezzanine wrapping the space",
+          "Build the mezzanine with horizontal-bar metal railings and fitness equipment visible on both levels",
+          "Service desk should be a long low counter with frosted pink-beige front panels and a white top, not a solid white island with a green 'GM' plaque",
+          "Missing gym equipment on the ground floor (racks, benches, bags on the counter)",
+          "Ceiling should be white acoustic with linear slot fixtures and recessed cans in a two-story volume, not an open CMU stair with a small grid-ceiling hole",
+          "Floor should be light beige tile, not brown",
+          "Walls should be painted white/cream, not grey CMU block",
+          "Keep the tall windows on the right",
+          "Missing Patriot/blue banner on the far mezzanine wall",
+          "Lighting should be bright even institutional, not dim directional"
+        ]
+      },
+      {
+        "image": "WEB_entrance_1.jpg",
+        "layout": 1,
+        "proportions": 1,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 1,
+        "problems": [
+          "Roblox panel is Studio Terrain Editor UI; recapture in play mode from the walkway looking at the entrance",
+          "Visible viewport is interior looking out a window, not the exterior approach",
+          "Need the dark cantilevered metal roof over a full-height glass curtain wall with round grey columns",
+          "Stairs should be wide beige stone/concrete with silver railings",
+          "Missing lamp post on the left, metal handrail on a low concrete wall, bike rack, lawn, trees, and A-frame signs",
+          "Walkway should be concrete with expansion joints leading straight to the stairs",
+          "Building massing should read as a dark floating roof over glass, not a red interior wall seen through a window"
+        ]
+      },
+      {
+        "image": "WEB_entrance_2.jpg",
+        "layout": 4,
+        "proportions": 3,
+        "materials": 3,
+        "props": 4,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "Iconic massing is a dark floating roof over a fully glazed box; build has a red two-story brick volume with a small canopy",
+          "Camera should be frontal at dusk, not from the right walkway in daylight",
+          "Interior should glow warm yellow through the entire glass wall with fitness-equipment silhouettes; current interior is pale and empty",
+          "Two round grey columns should stand in the glass plane under the roof",
+          "Roof should be a single dark cantilevered plane with a deep soffit, not red walls above the glass",
+          "Stairs should be a wide frontal run with silver railings on both sides; current stairs are offset and black-railed",
+          "Green side volume/overhang is extra in this view; hide or remove it",
+          "Missing trees on the left of the glass box",
+          "Tiny red cube on the plaza is not a hydrant; omit it from this composition"
+        ]
+      },
+      {
+        "image": "WEB_entrance_left_pole.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 3,
+        "props": 2,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "Camera is the night plaza under-canopy shot; photo is a daytime side elevation from the parking lot",
+          "Need the grey metal-panel tower to the right of the glass, then a brick wing with a regular grid of punched windows",
+          "Roof should be a thin dark cantilever continuing past the glass, not a thick white soffit with can lights",
+          "Glass should be a long two-story horizontal curtain wall, not a plaza-facing night interior",
+          "Missing side stair to the brick wing, small tree, trash/recycling cans, and parking lot with blue ADA striping",
+          "Foreground should be asphalt and sidewalk, not a ramp railing",
+          "Lighting is night; photo is clear daylight",
+          "Brick exists but is in the wrong place relative to the grey metal tower, which is missing entirely"
+        ]
+      },
+      {
+        "image": "WEB_vb_gym_overlook.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Wrong space: Roblox is an empty carpeted corridor looking through glass at a blank atrium; photo is standing on the court looking the length of the gym",
+          "Recapture from center court, or from a true overlook whose glass looks onto this court",
+          "Court should be maple with green painted keys, 'GEORGE' / 'MASON' wordmarks, and Patriots logos at both ends",
+          "Bleachers on both sidelines: telescopic, gold upper seats / dark treads, ~12ΓÇô15 rows, full court length",
+          "Basketball hoops at both ends with ceiling supports",
+          "American flag on the far wall, green scoreboard, championship banners high on both sides",
+          "Walls white with a dark green wainscot and high clerestory windows",
+          "Ceiling should be white with dense linear high-bay fluorescents, not a low 2x2 office grid",
+          "If this is meant to be an overlook, the glass must look onto the court and bleachers, not an empty white room with a far railing"
+        ]
+      }
+    ]
+  }
+}

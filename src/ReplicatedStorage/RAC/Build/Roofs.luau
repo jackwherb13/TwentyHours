@@ -3,6 +3,15 @@ local Blueprint = require(script.Parent.Blueprint)
 local Geometry = require(script.Parent.Geometry)
 local Parts = require(script.Parent.Parts)
 local Roofs = {}
+
+-- Open service yard west of the volleyball gym. A roof slab here boxed the dumpsters indoors.
+local YARD: { { number } } = {
+	{ -236.5, -214 },
+	{ -193.5, -214 },
+	{ -193.5, -186 },
+	{ -236.5, -186 },
+}
+
 function Roofs.build(parent: Instance, site: Blueprint.Site)
 	for index, roof in site.roofs do
 		local group = Geometry.folder(parent, `Roof_{index}`)
@@ -11,7 +20,8 @@ function Roofs.build(parent: Instance, site: Blueprint.Site)
 		local thickness = if canopy then 0.25 else 0.5
 		local overhang = roof.overhang
 		assert(overhang >= 0, "Negative roof overhang")
-		for _, r in Geometry.rectangles(roof.polygon) do
+		local holes: { { { number } } }? = if canopy then nil else { YARD }
+		for _, r in Geometry.rectangles(roof.polygon, holes) do
 			Parts.box(
 				group,
 				if canopy then "Canopy" else "RoofSlab",

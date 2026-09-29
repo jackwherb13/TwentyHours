@@ -1,0 +1,123 @@
+WARN: gpt judge returned no parsable JSON
+FAIL [gemini] IMG_0323.jpg: overall 1 (layout 1, materials 2, props 1)
+       - Roblox Studio UI (Terrain Editor and tool panels) covers more than half of the captured frame; capture must be a clean full-screen viewport without editor GUI.
+       - Camera station is completely misplaced; camera faces an arbitrary red brick wall instead of the Work Room 1120 reception desk and office interior.
+       - Reception desk missing: should have an L-shaped white solid-surface countertop with light wood veneer base.
+       - Office furniture and equipment missing: lacks the multi-slot mail sorter/organizer unit, computer workstation, and task chairs.
+       - Wall finishes and architectural fixtures missing: should have off-white painted drywall, an analog wall clock, 'Work Room 1120' room plaque, and a natural wood door with metal hardware.
+       - Ceiling grid uses generic flat square panels instead of 2x4 acoustic ceiling tiles with recessed rectangular fluorescent troffers.
+FAIL [gemini] IMG_0344.jpg: overall 3 (layout 6, materials 3, props 2)
+       - Gymnasium interior lighting is nearly pitch black; real gym is brilliantly illuminated by dozens of high-bay fluorescent/LED fixtures across the open ceiling.
+       - Observation window glass is too dark and reflective; real partition is crystal clear architectural glazing offering high visibility into the court.
+       - Court floor coloring and striping: real court has polished maple hardwood with George Mason dark green perimeter aprons and gold accents; build has dark/teal tinted coloring.
+       - Bleachers on the west wall should be multi-tiered green and gold telescopic athletic seating; build has simplified flat grey blocks.
+       - North wall finishes and fixtures missing: lacks dark green lower wall wainscoting/pads, double exit doors, digital scoreboard, championship banners, and American flag.
+       - Observation mezzanine foreground lacks the 2x2 recessed troffer ceiling light and glossy floor tile finish.
+FAIL [gemini] IMG_0364.jpg: overall 3 (layout 3, materials 3, props 2)
+       - Camera viewpoint is severely misaligned: reference is taken from low on the grassy berm looking up at the entrance canopy; build capture is elevated and floating above the plaza looking down.
+       - Site landscaping is incorrect: foreground should be a sloping grass knoll with retaining wall, ornamental grasses, and red flowering shrub beds; build features flat grey concrete pavers and generic low-poly trees.
+       - Entrance facade framing: build uses heavy red brick piers between curtain wall bays; real entrance is an expansive, sleek two-story glass curtain wall with dark metal framing.
+       - Entrance canopy architecture: real canopy is a dramatic soaring cantilever sloping upward supported by an angled column; build has a segmented, flat horizontal awning.
+       - Site fixtures missing: stainless steel hoop bike racks with bicycles, retaining wall, and landscape lighting are absent.
+FAIL [gemini] IMG_0368.jpg: overall 4 (layout 4, materials 4, props 2)
+       - Camera station is too close and positioned on the upper landing; should be set back across the asphalt access drive at street level facing the central stair axis.
+       - Signage missing: prominent vertical white 'RAC' lettering on the curtain wall glass is completely absent.
+       - Street and approach elements missing: asphalt roadway, concrete curb with bright yellow paint, and red fire hydrant in the left foreground are missing.
+       - Retaining wall to the right of the stairs: real wall is a clean cast-in-place concrete wall with horizontal form lines and shrub planter; build has an irregular angled concrete wedge.
+       - Handrails: build features crude, thin black angled wire rails; should be round metal pipe railings with center double-rail and side wall rails anchored into stair treads.
+       - Facade materials: build introduces red brick columns on the pavilion front; real facade is continuous two-story dark metal curtain wall.
+       - Stray untextured red/black block prop left sitting on the plaza pavers should be removed.
+FAIL [gemini] IMG_0369.jpg: overall 2 (layout 2, materials 3, props 1)
+       - Major layout error: a solid wall completely closes off the space behind the desk; in reality, the lobby opens directly into an expansive two-story fitness center with a mezzanine overlook above.
+       - Missing second floor mezzanine: upper floor cutout with white drywall fascia and horizontal stainless steel pipe railings is completely absent.
+       - Missing curtain wall: right side should be a two-story exterior glass curtain wall washing the lobby in natural light, but build has a solid interior wall.
+       - Reception desk design: build has harsh glowing white neon lightbox panels with dark framing; real desk has low frosted/translucent glass front panels and storage cubbies under a white countertop.
+       - Fitness equipment and props missing: entire cardio and weight training machine floor (treadmills, ellipticals, weight stacks) visible through the lobby opening is absent.
+       - White builder wireframe / dimension marker lines and two anomalous cylindrical wall fixtures above the desk must be removed.
+FAIL [gemini] WEB_entrance_1.jpg: overall 1 (layout 1, materials 2, props 1)
+       - Critical capture failure: Roblox Studio GUI (Terrain Editor window and top toolbar) covers more than 60% of the image; screenshots must be taken in clean viewport or game view.
+       - Camera station is completely wrong: instead of a wide shot from the approach sidewalk ~100 ft back looking at the full entrance facade, the camera is zoomed in millimeters away from letters on the glass.
+       - Approach hardscape and landscape missing from view: wide concrete walkway, concrete cheek wall with handrail, round post-top pedestrian light pole, trees, and broad stairs are not captured.
+FAIL [gemini] WEB_entrance_2.jpg: overall 3 (layout 3, materials 3, props 2)
+       - Camera position is far too close and positioned on the upper plaza walkway; reference is a wide dusk architectural shot taken from across the access road showing the full building elevation.
+       - Right wing architecture missing: reference features a large two-story glass curtain wall fitness center wing extending to the right; build truncates into an open walkway with brick columns.
+       - Canopy geometry and lighting: real canopy has a dynamic upward cantilever pitch with warm recessed soffit downlights; build canopy is flat, heavy, and lacks warm soffit illumination.
+       - Time of day and lighting mismatch: reference is taken at twilight/blue hour with glowing interior spaces; build uses flat daytime lighting.
+       - Grand entry stairs: reference shows wide multi-tiered stairs with illuminated retaining wall and multiple handrails; build stairs are narrow and cut off.
+       - Stray red/black block sitting on the plaza pavers in the foreground needs removal.
+FAIL [gemini] WEB_entrance_left_pole.jpg: overall 1 (layout 1, materials 2, props 1)
+       - Catastrophic camera station error: reference is an EXTERIOR shot from the parking lot looking northwest at the brick facade, metal bump-out, and canopy; build capture is inside an INTERIOR hallway looking at ping pong tables.
+       - photo_stations.json coordinate for 'WEB_entrance_left_pole' is inside the building and must be moved outside to the roadway/parking area.
+       - Exterior architecture missing: two-story red brick facade, dark metal architectural bay projection, punched window openings, and concrete retaining wall are completely omitted.
+       - Site features missing: asphalt roadway, parking stalls, sidewalk bollards, and perimeter trees are not shown.
+FAIL [gemini] WEB_vb_gym_overlook.jpg: overall 3 (layout 5, materials 2, props 1)
+       - Gymnasium interior lighting is completely dark/unlit; needs numerous high-output industrial high-bay fixtures across the ceiling joists to flood the court with light.
+       - Observation glass transparency: glass is heavily tinted/darkened, obscuring the court below; should be clear transparent architectural safety glass.
+       - Court floor materials and graphics: real court is light maple hardwood with dark green court borders, yellow 'GEORGE MASON' text, 'A10' conference logos, and volleyball boundary lines; build floor is dark and markings are unreadable.
+       - Bleachers: east and west walls should both have massive retractable green and gold bleachers; build has an obstructive wall on the left and empty space on the right.
+       - Far north wall fixtures missing: lacks centered digital scoreboard, American flag, green wall padding/wainscoting, double grey exit doors with exit signs, and hanging championship banners.
+       - Roof ceiling structure: missing white open-web steel trusses, HVAC ducting, and ceiling-suspended retracted basketball backboards.
+FAIL [grok] IMG_0323.jpg: overall 1 (layout 1, materials 2, props 1)
+       - RIGHT is Roblox Studio Terrain Editor UI covering the viewport; capture a Play-mode camera matching LEFT.
+       - LEFT is a compact staff office/reception: cream walls, two wood doors, drop-ceiling with 2x4 fluorescent troffers, mail-slot cabinet, white laminate counter with wood-grain face. RIGHT shows a tall gym/lobby with red brick, CMU, and a 2x2 grid ceiling ΓÇö wrong room entirely.
+       - Rebuild the office: round analog wall clock left of the rear door; grey 6ΓÇô7 row mail sorter against the back wall; wood door with silver lever (left) and matching wood door (rear); white counter ~36 in high with wood-grain apron; office chair and mail cubbies.
+       - Lighting should be even fluorescent 2x4s in a 2x2-ish drop grid, not sparse square panels over a high gym.
+FAIL [grok] IMG_0344.jpg: overall 3 (layout 4, materials 3, props 3)
+       - RIGHT is underexposed almost to black; gym and corridor need bright even arena lighting matching LEFT (white walls, glossy floor, lit ceiling cans).
+       - Camera is too low/oblique and looks across the court; match LEFT: slightly down through a 2-row x 3-bay black mullion curtain wall onto the full court.
+       - Court should be maple with large green GMU logo at center, green painted keys/sidelines, and 'MASON' type; build reads as a pale empty rectangle with a thin green border.
+       - Far wall should be white CMU with a US flag hung high, stacked championship banners, a green electronic scoreboard, and a yellow/green Patriot banner; build has a dark wall, no flag, no banners, a tiny scoreboard.
+       - Left wall should show gold/green telescopic bleachers (~8ΓÇô12 rows) plus stacked green chairs; build has a low dark mass and yellow wall patches.
+       - Corridor floor LEFT is glossy light terrazzo; RIGHT is dark carpet.
+       - Ceiling in the corridor LEFT is white acoustic tile with a square recessed fixture; RIGHT has no visible drop ceiling, only the window grid.
+FAIL [grok] IMG_0364.jpg: overall 4 (layout 4, materials 3, props 3)
+       - Camera is from the plaza looking down at the canopy; LEFT is from the lawn looking up at a long dark cantilever over a glass curtain. Move camera onto the grass, lower, facing the glass.
+       - Facade cladding is dark charcoal metal/zinc; build uses bright red brick/panels on the upper mass. Recolor the box to dark grey metal.
+       - Foreground should be a continuous green lawn sloping up to a low planter of dense red/burgundy shrubs; build has grey plaza pavers, no lawn, no red planting bed.
+       - Bike rack with several bikes should sit at the right stair landing under the canopy; missing.
+       - Canopy should be a thin, deep, nearly flat dark plane with a sharp leading edge and a single round column; build canopy is shorter, thicker, and sits over a plaza with extra posts.
+       - Glass should read as a continuous dark curtain reflecting trees; build glass is too bright/white with interior rooms clearly visible.
+       - Street/drive LEFT is absent; extra grey walkway and distant red box volume should not dominate this shot.
+FAIL [grok] IMG_0368.jpg: overall 4 (layout 5, materials 3, props 4)
+       - Camera is on the plaza looking at the glass; LEFT is from the street: asphalt, curb, fire hydrant, then a concrete stair into a dark canopy. Pull camera to the street, include curb and hydrant.
+       - Vertical 'RAC' lettering in large white caps on the glass corner is missing; add ~4ΓÇô5 ft RAC stacked on the right glass bay.
+       - Planter: LEFT is a long grey CMU retaining wall topped with dense mixed shrubs; build has a tiny green strip and a white ramp cheek. Rebuild the full planter wall.
+       - Building skin is dark charcoal metal + glass; build is red brick/panels with a bright green soffit on the right walkway. Recolor to charcoal; the green soffit is not in this view.
+       - Stair should be a short flight (~6ΓÇô8 risers) with a single silver rail on the left, fire hydrant at curb; build has a wide plaza stair with dual rails and no hydrant.
+       - Canopy underside LEFT is a dark coffered/panel soffit; build soffit is lighter with scattered can lights.
+FAIL [grok] IMG_0369.jpg: overall 2 (layout 2, materials 3, props 2)
+       - LEFT is a two-story atrium: mezzanine with horizontal metal rails, clerestory, and a full weight room behind the desk. RIGHT is a one-story dead-end against CMU with no mezzanine and no gym floor.
+       - Desk front LEFT is frosted/translucent cubbies with visible bags/gear; build is four blank glowing white panels. Use frosted cubby modules with wood/metal frames.
+       - Weight equipment (cardio, racks, fans) should fill the space behind the desk; build has empty floor and a stray TV antenna on the wall.
+       - Floor LEFT is large light beige tile with a dark walk-off mat; build is a patchwork of beige/grey/tan tiles in a diagonal field.
+       - Walls LEFT are painted gypsum with a red brick accent far back; build puts a full-height red brick pier immediately behind the desk and blank CMU on the right.
+       - Ceiling LEFT is a high coffered grid with linear slots and recessed cans; build has almost no ceiling in frame, only two round security cameras.
+       - Add the mezzanine rail (silver horizontal bars, ~42 in) spanning the width above the gym.
+FAIL [grok] WEB_entrance_1.jpg: overall 1 (layout 1, materials 3, props 1)
+       - RIGHT is Studio UI plus a close-up of a glass curtain and a GMU 'G' logo; LEFT is the exterior plaza approach. Capture Play-mode from the walkway looking at the dark canopy and stairs.
+       - Match the approach: concrete stair in foreground with a silver rail on the right, then a long paved walk to a wide stair under a dark cantilever.
+       - Building mass should be a dark metal box with a deep canopy, two round columns, and a glass curtain; not a tight interior glass shot.
+       - Props: lamp post left of walk, bike rack mid-walk, small blue A-frame signs on the grass; none appear in the Studio crop.
+       - Cladding is charcoal metal, not red interior walls visible through glass.
+FAIL [grok] WEB_entrance_2.jpg: overall 4 (layout 5, materials 4, props 5)
+       - LEFT is dominated by a huge dark cantilevered roof with a single round column in front of a full-height glass curtain. Build roof is a smaller dark canopy on a red brick box; enlarge the canopy to read as the whole upper mass.
+       - Central round column in front of the doors is missing or too thin/offset; place a large grey cylinder on axis with the entry.
+       - Facade should be glass + dark metal, not red brick panels between window bays. Recolor verticals to charcoal.
+       - Green soffit/walkway on the right is not in LEFT; this view should show the dark roof edge continuing over the glass, with trees at the right.
+       - Entry doors LEFT are a pair of glass doors under the canopy at grade of the stair landing; build shows extra white double doors in a red bay to the right.
+       - Uplighting at the column base and warm interior fluorescent bands should read through the glass at dusk; build interior is cooler and flatter.
+       - Plaza stair + rails are in the right family; keep them but align the camera lower and more frontal like LEFT.
+FAIL [grok] WEB_entrance_left_pole.jpg: overall 1 (layout 1, materials 2, props 2)
+       - RIGHT is an interior ping-pong corridor; LEFT is the exterior west wing from the street. Move camera outdoors, south of the glass wing, looking along the building.
+       - Rebuild the exterior: long dark cantilever over a two-story dark-tinted curtain wall, then a grey metal-panel 'bookend' with punched windows, then red brick with a second-story window band.
+       - Landscape: lawn, a conical evergreen at the brick corner, a metal stair with rail to a side door, two grey bollard lights, a bench, and street with blue accessible parking hashes. None of that is in RIGHT.
+       - Interior ping-pong tables, red wall, and lobby tile do not belong in this pair; they are a different space.
+       - Glass on LEFT is dark and reflective; if showing the curtain wall, it should be exterior-tinted, not a bright interior wall of clear panels.
+FAIL [grok] WEB_vb_gym_overlook.jpg: overall 2 (layout 2, materials 3, props 2)
+       - Camera mismatch: LEFT is on-court looking down the floor; RIGHT is from a dark corridor through a glass wall at an oblique. Capture from mid-court, eye height, axis down the keys.
+       - Gym is nearly black; add dense high-bay fluorescent rows matching LEFT.
+       - Court: maple center with green painted ends, gold 'MASON' / 'GEORGE' wordmarks, red 'PATRIOTS'-style type, center logos, and full key/three-point graphics. Build floor is barely visible and lacks markings.
+       - Bleachers: both sidelines should be gold/green telescopic, ~12 rows, yellow aisle nosings, grey seats; they are missing from this capture.
+       - Far wall: US flag centered high, banners, black scoreboard, white CMU with a dark wainscot, exit doors under the hoop.
+       - Ceiling: white exposed structure with long fluorescent banks; RIGHT shows a dark void and a corridor 2x2 grid.
+       - Glass corridor belongs beside the gym, not as the primary view for this pair.

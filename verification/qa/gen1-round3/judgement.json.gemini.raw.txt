@@ -1,0 +1,153 @@
+{
+  "results": [
+    {
+      "image": "IMG_0323.jpg",
+      "layout": 1,
+      "proportions": 1,
+      "materials": 2,
+      "props": 1,
+      "lighting": 2,
+      "overall": 1,
+      "problems": [
+        "Roblox Studio UI (Terrain Editor and tool panels) covers more than half of the captured frame; capture must be a clean full-screen viewport without editor GUI.",
+        "Camera station is completely misplaced; camera faces an arbitrary red brick wall instead of the Work Room 1120 reception desk and office interior.",
+        "Reception desk missing: should have an L-shaped white solid-surface countertop with light wood veneer base.",
+        "Office furniture and equipment missing: lacks the multi-slot mail sorter/organizer unit, computer workstation, and task chairs.",
+        "Wall finishes and architectural fixtures missing: should have off-white painted drywall, an analog wall clock, 'Work Room 1120' room plaque, and a natural wood door with metal hardware.",
+        "Ceiling grid uses generic flat square panels instead of 2x4 acoustic ceiling tiles with recessed rectangular fluorescent troffers."
+      ]
+    },
+    {
+      "image": "IMG_0344.jpg",
+      "layout": 6,
+      "proportions": 5,
+      "materials": 3,
+      "props": 2,
+      "lighting": 1,
+      "overall": 3,
+      "problems": [
+        "Gymnasium interior lighting is nearly pitch black; real gym is brilliantly illuminated by dozens of high-bay fluorescent/LED fixtures across the open ceiling.",
+        "Observation window glass is too dark and reflective; real partition is crystal clear architectural glazing offering high visibility into the court.",
+        "Court floor coloring and striping: real court has polished maple hardwood with George Mason dark green perimeter aprons and gold accents; build has dark/teal tinted coloring.",
+        "Bleachers on the west wall should be multi-tiered green and gold telescopic athletic seating; build has simplified flat grey blocks.",
+        "North wall finishes and fixtures missing: lacks dark green lower wall wainscoting/pads, double exit doors, digital scoreboard, championship banners, and American flag.",
+        "Observation mezzanine foreground lacks the 2x2 recessed troffer ceiling light and glossy floor tile finish."
+      ]
+    },
+    {
+      "image": "IMG_0364.jpg",
+      "layout": 3,
+      "proportions": 4,
+      "materials": 3,
+      "props": 2,
+      "lighting": 5,
+      "overall": 3,
+      "problems": [
+        "Camera viewpoint is severely misaligned: reference is taken from low on the grassy berm looking up at the entrance canopy; build capture is elevated and floating above the plaza looking down.",
+        "Site landscaping is incorrect: foreground should be a sloping grass knoll with retaining wall, ornamental grasses, and red flowering shrub beds; build features flat grey concrete pavers and generic low-poly trees.",
+        "Entrance facade framing: build uses heavy red brick piers between curtain wall bays; real entrance is an expansive, sleek two-story glass curtain wall with dark metal framing.",
+        "Entrance canopy architecture: real canopy is a dramatic soaring cantilever sloping upward supported by an angled column; build has a segmented, flat horizontal awning.",
+        "Site fixtures missing: stainless steel hoop bike racks with bicycles, retaining wall, and landscape lighting are absent."
+      ]
+    },
+    {
+      "image": "IMG_0368.jpg",
+      "layout": 4,
+      "proportions": 5,
+      "materials": 4,
+      "props": 2,
+      "lighting": 5,
+      "overall": 4,
+      "problems": [
+        "Camera station is too close and positioned on the upper landing; should be set back across the asphalt access drive at street level facing the central stair axis.",
+        "Signage missing: prominent vertical white 'RAC' lettering on the curtain wall glass is completely absent.",
+        "Street and approach elements missing: asphalt roadway, concrete curb with bright yellow paint, and red fire hydrant in the left foreground are missing.",
+        "Retaining wall to the right of the stairs: real wall is a clean cast-in-place concrete wall with horizontal form lines and shrub planter; build has an irregular angled concrete wedge.",
+        "Handrails: build features crude, thin black angled wire rails; should be round metal pipe railings with center double-rail and side wall rails anchored into stair treads.",
+        "Facade materials: build introduces red brick columns on the pavilion front; real facade is continuous two-story dark metal curtain wall.",
+        "Stray untextured red/black block prop left sitting on the plaza pavers should be removed."
+      ]
+    },
+    {
+      "image": "IMG_0369.jpg",
+      "layout": 2,
+      "proportions": 3,
+      "materials": 3,
+      "props": 1,
+      "lighting": 3,
+      "overall": 2,
+      "problems": [
+        "Major layout error: a solid wall completely closes off the space behind the desk; in reality, the lobby opens directly into an expansive two-story fitness center with a mezzanine overlook above.",
+        "Missing second floor mezzanine: upper floor cutout with white drywall fascia and horizontal stainless steel pipe railings is completely absent.",
+        "Missing curtain wall: right side should be a two-story exterior glass curtain wall washing the lobby in natural light, but build has a solid interior wall.",
+        "Reception desk design: build has harsh glowing white neon lightbox panels with dark framing; real desk has low frosted/translucent glass front panels and storage cubbies under a white countertop.",
+        "Fitness equipment and props missing: entire cardio and weight training machine floor (treadmills, ellipticals, weight stacks) visible through the lobby opening is absent.",
+        "White builder wireframe / dimension marker lines and two anomalous cylindrical wall fixtures above the desk must be removed."
+      ]
+    },
+    {
+      "image": "WEB_entrance_1.jpg",
+      "layout": 1,
+      "proportions": 1,
+      "materials": 2,
+      "props": 1,
+      "lighting": 2,
+      "overall": 1,
+      "problems": [
+        "Critical capture failure: Roblox Studio GUI (Terrain Editor window and top toolbar) covers more than 60% of the image; screenshots must be taken in clean viewport or game view.",
+        "Camera station is completely wrong: instead of a wide shot from the approach sidewalk ~100 ft back looking at the full entrance facade, the camera is zoomed in millimeters away from letters on the glass.",
+        "Approach hardscape and landscape missing from view: wide concrete walkway, concrete cheek wall with handrail, round post-top pedestrian light pole, trees, and broad stairs are not captured."
+      ]
+    },
+    {
+      "image": "WEB_entrance_2.jpg",
+      "layout": 3,
+      "proportions": 4,
+      "materials": 3,
+      "props": 2,
+      "lighting": 3,
+      "overall": 3,
+      "problems": [
+        "Camera position is far too close and positioned on the upper plaza walkway; reference is a wide dusk architectural shot taken from across the access road showing the full building elevation.",
+        "Right wing architecture missing: reference features a large two-story glass curtain wall fitness center wing extending to the right; build truncates into an open walkway with brick columns.",
+        "Canopy geometry and lighting: real canopy has a dynamic upward cantilever pitch with warm recessed soffit downlights; build canopy is flat, heavy, and lacks warm soffit illumination.",
+        "Time of day and lighting mismatch: reference is taken at twilight/blue hour with glowing interior spaces; build uses flat daytime lighting.",
+        "Grand entry stairs: reference shows wide multi-tiered stairs with illuminated retaining wall and multiple handrails; build stairs are narrow and cut off.",
+        "Stray red/black block sitting on the plaza pavers in the foreground needs removal."
+      ]
+    },
+    {
+      "image": "WEB_entrance_left_pole.jpg",
+      "layout": 1,
+      "proportions": 1,
+      "materials": 2,
+      "props": 1,
+      "lighting": 2,
+      "overall": 1,
+      "problems": [
+        "Catastrophic camera station error: reference is an EXTERIOR shot from the parking lot looking northwest at the brick facade, metal bump-out, and canopy; build capture is inside an INTERIOR hallway looking at ping pong tables.",
+        "photo_stations.json coordinate for 'WEB_entrance_left_pole' is inside the building and must be moved outside to the roadway/parking area.",
+        "Exterior architecture missing: two-story red brick facade, dark metal architectural bay projection, punched window openings, and concrete retaining wall are completely omitted.",
+        "Site features missing: asphalt roadway, parking stalls, sidewalk bollards, and perimeter trees are not shown."
+      ]
+    },
+    {
+      "image": "WEB_vb_gym_overlook.jpg",
+      "layout": 5,
+      "proportions": 5,
+      "materials": 2,
+      "props": 1,
+      "lighting": 1,
+      "overall": 3,
+      "problems": [
+        "Gymnasium interior lighting is completely dark/unlit; needs numerous high-output industrial high-bay fixtures across the ceiling joists to flood the court with light.",
+        "Observation glass transparency: glass is heavily tinted/darkened, obscuring the court below; should be clear transparent architectural safety glass.",
+        "Court floor materials and graphics: real court is light maple hardwood with dark green court borders, yellow 'GEORGE MASON' text, 'A10' conference logos, and volleyball boundary lines; build floor is dark and markings are unreadable.",
+        "Bleachers: east and west walls should both have massive retractable green and gold bleachers; build has an obstructive wall on the left and empty space on the right.",
+        "Far north wall fixtures missing: lacks centered digital scoreboard, American flag, green wall padding/wainscoting, double grey exit doors with exit signs, and hanging championship banners.",
+        "Roof ceiling structure: missing white open-web steel trusses, HVAC ducting, and ceiling-suspended retracted basketball backboards."
+      ]
+    }
+  ]
+}
+

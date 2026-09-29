@@ -31,18 +31,36 @@ local function buildU(cf: CFrame, opts: { [string]: any }?): Model
 		Enum.Material.SmoothPlastic,
 		true
 	)
-	b:box(
-		"FrontPanel",
-		Vector3.new(length - 0.2, counterH - 0.2, 0.12),
-		Kit.at(0, counterH / 2, frontZ - 0.45),
-		CounterWhite,
-		Enum.Material.SmoothPlastic,
-		true
-	)
+	local bays = 4
+	local bay = length / bays
+	for i = 1, bays do
+		local x = -length / 2 + (i - 0.5) * bay
+		local panel = b:box(
+			`Frosted_{i}`,
+			Vector3.new(bay - 0.2, counterH - 0.55, 0.08),
+			Kit.at(x, counterH / 2, frontZ - 0.45),
+			FrostedGlass,
+			Enum.Material.Glass,
+			true
+		)
+		panel.Transparency = 0.35
+	end
+	for i = 0, bays do
+		local x = -length / 2 + i * bay
+		b:box(
+			`Mullion_{i}`,
+			Vector3.new(0.12, counterH - 0.35, 0.16),
+			Kit.at(x, counterH / 2, frontZ - 0.45),
+			Bronze,
+			Enum.Material.Metal,
+			true
+		)
+	end
+	-- 0.02 above the slab so a return that meets a wall does not share the floor face.
 	b:box(
 		"LeftReturn",
 		Vector3.new(0.7, counterH, depth - 1.4),
-		Kit.at(-armX, counterH / 2, 0.3),
+		Kit.at(-armX, counterH / 2 + 0.02, 0.3),
 		CounterWhite,
 		Enum.Material.SmoothPlastic,
 		true
@@ -50,7 +68,7 @@ local function buildU(cf: CFrame, opts: { [string]: any }?): Model
 	b:box(
 		"RightReturn",
 		Vector3.new(0.7, counterH, depth - 1.4),
-		Kit.at(armX, counterH / 2, 0.3),
+		Kit.at(armX, counterH / 2 + 0.02, 0.3),
 		CounterWhite,
 		Enum.Material.SmoothPlastic,
 		true
@@ -73,8 +91,8 @@ local function buildU(cf: CFrame, opts: { [string]: any }?): Model
 	)
 	local mark = b:box(
 		"MarkPlate",
-		Vector3.new(2.4, 1.1, 0.08),
-		Kit.at(0, 2.05, frontZ - 0.52),
+		Vector3.new(6.5, 2.4, 0.08),
+		Kit.at(0, 2.15, frontZ - 0.56),
 		MasonGreen,
 		Enum.Material.SmoothPlastic,
 		false
@@ -136,7 +154,8 @@ local function buildU(cf: CFrame, opts: { [string]: any }?): Model
 end
 
 function FrontDesk.build(cf: CFrame, opts: { [string]: any }?): Model
-	if opts ~= nil and opts.shape == "u" then
+	-- shape "u" is the lobby counter: white returns, frosted front, GM mark.
+	if opts and opts.shape == "u" then
 		return buildU(cf, opts)
 	end
 	local b = Kit.new("FrontDesk", cf)

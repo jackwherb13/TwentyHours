@@ -10,10 +10,12 @@ local Nameplate = {
 
 function Nameplate.build(cf: CFrame, opts: { [string]: any }?): Model
 	local b = Kit.new("NameplateSign", cf)
+	local width = if opts and type(opts.width) == "number" then opts.width else 1.5
+	local height = if opts and type(opts.height) == "number" then opts.height else 0.36
 	local plate = b:box(
 		"Plate",
-		Vector3.new(1.5, 0.36, 0.06),
-		Kit.at(0, 0.22, 0),
+		Vector3.new(width, height, 0.06),
+		Kit.at(0, height / 2 + 0.04, 0),
 		Color3.fromRGB(24, 28, 26),
 		Enum.Material.Metal,
 		false
