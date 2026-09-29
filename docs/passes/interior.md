@@ -1,6 +1,8 @@
 # Interior realism passes (run in order; each is built, reviewed, fixed before the next)
 
 ## Pass 1: Reference harvest (interior)
+ALREADY STARTED 2026-09-29: docs/ROOM_REFERENCES.md + reference/web/rooms/ (70 images, 27 spaces). Do not redo it - extend it:
+close the GAPS list at its end, add images to the same folders, and keep ROOM_REFERENCES.md the single per-room spec.
 Search the web for as many real photos of the GMU RAC interior as possible: Mason Recreation site, gomason.com facility pages, GMU news,
 Perkins&Will, Instagram/Facebook posts, Google Maps user photos, YouTube walkthrough frames (download frames with yt-dlp + ffmpeg if available),
 virtual tours. Save to reference/web/interior/ (git-ignored) with a short INDEX.md entry per image: what room, camera position/direction, what it

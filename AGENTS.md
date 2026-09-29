@@ -7,6 +7,8 @@ visually faithful to the real building. Gameplay is intentionally simple for now
 ## Sources of truth (read before building anything)
 - `docs/WALKTHROUGH.md` — the user's first-hand walkthrough of the RAC. AUTHORITATIVE: overrides drawings and your own inference.
 - `docs/RAC_DOSSIER.md` — sourced facts on the real GMU RAC (history, program, sizes, videos); use to fill gaps, walkthrough still wins on circulation.
+- `docs/ROOM_REFERENCES.md` — per-room finish/furniture spec with reference image paths (27 spaces). Use it for every interior
+  detail; the walkthrough still wins on any conflict. Its GAPS list names the rooms with no photo yet.
 - `docs/BUILDING_PRIMER.md` — typical rec/athletics construction numbers (grids, joists, IBC stairs, courts, MEP, site) when photos/drawings are silent.
 - `docs/SPEC.md` — what we are building and the quality bar.
 - `docs/MILESTONES.md` — ordered work list; do only the milestone you were given.
