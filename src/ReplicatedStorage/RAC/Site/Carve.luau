@@ -36,7 +36,31 @@ function Carve.apply(terrain: Terrain): number
 		n += 1
 	end
 	for _, r in Geometry.rectangles(Data.footprint) do
-		n += fill(terrain, r.x, r.z, r.w, r.d, -1, 42)
+		n += fill(terrain, r.x, r.z, r.w, r.d, -4, 44)
+	end
+	-- FillBlock leaves partial lidar voxels. Write the footprint to empty occupancy.
+	local function wipe(x: number, z: number, w: number, d: number)
+		if w < 1 or d < 1 then
+			return
+		end
+		local rough = Region3.new(Vector3.new(x - 4, -4, z - 4), Vector3.new(x + w + 4, 44, z + d + 4))
+		local region = rough:ExpandToGrid(4)
+		local materials, occupancy = terrain:ReadVoxels(region, 4)
+		for ix = 1, #materials do
+			local column = materials[ix]
+			for iy = 1, #column do
+				local row = column[iy]
+				for iz = 1, #row do
+					materials[ix][iy][iz] = Enum.Material.Air
+					occupancy[ix][iy][iz] = 0
+				end
+			end
+		end
+		terrain:WriteVoxels(region, 4, materials, occupancy)
+		n += 1
+	end
+	for _, r in Geometry.rectangles(Data.footprint) do
+		wipe(r.x, r.z, r.w, r.d)
 	end
 	return n
 end
@@ -54,9 +78,12 @@ function Carve.audit(terrain: Terrain): { fails: number, samples: number }
 	local size = region.Size
 	local origin = region.CFrame.Position - size / 2
 	local fails, samples = 0, 0
-	for ix, column in materials do
-		for iy, row in column do
-			for iz, material in row do
+	for ix = 1, #materials do
+		local column = materials[ix]
+		for iy = 1, #column do
+			local row = column[iy]
+			for iz = 1, #row do
+				local material = row[iz]
 				local x = origin.X + (ix - 0.5) * resolution
 				local y = origin.Y + (iy - 0.5) * resolution
 				local z = origin.Z + (iz - 0.5) * resolution

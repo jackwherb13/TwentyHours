@@ -33,8 +33,8 @@ local function pipe(parent: Instance, name: string, a: Vector3, b: Vector3)
 	)
 	part.Shape = Enum.PartType.Cylinder
 	part.Material = Enum.Material.Metal
-	part.Color = Color3.fromRGB(42, 44, 46)
-	part.Reflectance = 0.08
+	part.Color = Color3.fromRGB(186, 190, 194)
+	part.Reflectance = 0.28
 end
 
 function Exterior.build(parent: Instance, site: any)
@@ -91,14 +91,14 @@ function Exterior.build(parent: Instance, site: any)
 	P.box(
 		entrance,
 		"ApronSlab",
-		Vector3.new(apronLen, rise, width + 10),
+		Vector3.new(apronLen, rise, width),
 		CFrame.new(apronX + apronLen / 2, -drop - rise / 2, 0),
 		"concrete",
 		true
 	)
-	-- Smooth strips over the lidar slope so the 4 ft terrain mesh does not read as broken steps.
+	-- A short walk at the toe. The lawn on either side stays terrain, not a terrace.
 	local stripLen = 6
-	for s = 0, 7 do
+	for s = 0, 2 do
 		local nearX = apronX + apronLen + s * stripLen
 		local farX = nearX + stripLen
 		local y0 = math.min(groundAt(nearX, 0), -drop + 0.05)
@@ -107,8 +107,8 @@ function Exterior.build(parent: Instance, site: any)
 		P.box(
 			entrance,
 			"ApproachSlab",
-			Vector3.new(stripLen + 0.25, 0.4, width + 22),
-			CFrame.new((nearX + farX) / 2, (y0 + y1) / 2 + 0.22, -4) * CFrame.Angles(0, 0, pitch),
+			Vector3.new(stripLen + 0.25, 0.35, width * 0.55),
+			CFrame.new((nearX + farX) / 2, (y0 + y1) / 2 + 0.2, 0) * CFrame.Angles(0, 0, pitch),
 			"concrete",
 			true
 		)
@@ -117,7 +117,7 @@ function Exterior.build(parent: Instance, site: any)
 	-- Three pipe runs: both cheeks and the center, matching the short flight in the entrance photos.
 	local railTop = Vector3.new(e.landingDepth - 0.5, 3.1, 0)
 	local railBottom = Vector3.new(apronX + 1.2, -drop + 3.1, 0)
-	for _, offset in { -width / 2 + 0.7, 0, width / 2 - 0.7 } do
+	for _, offset in { -width / 2 + 0.7, -2.15, 2.15, width / 2 - 0.7 } do
 		local a = railTop + Vector3.new(0, 0, offset)
 		local b = railBottom + Vector3.new(0, 0, offset)
 		pipe(entrance, "StairHandrail", a, b)
@@ -146,16 +146,19 @@ function Exterior.build(parent: Instance, site: any)
 		true
 	)
 	cheek.Color = Color3.fromRGB(128, 130, 126)
-	local hedge = P.beam(
-		entrance,
-		"CheekHedge",
-		Vector3.new(2.2, 2.4, cheekZ + 1.35),
-		Vector3.new(apronX - 1.5, -drop + 2.4, cheekZ + 1.35),
-		2.2,
-		2.6,
-		"shrub"
-	)
-	hedge.CanCollide = false
+	for i = 1, 4 do
+		local along = (i - 0.5) / 4
+		local lx = 2 + (apronX - 3) * along
+		local foot = walkY(lx)
+		local clump = P.box(
+			entrance,
+			"CheekPlant",
+			Vector3.new(2.4, 1.1, 1.6),
+			CFrame.new(lx, foot + 0.55, cheekZ + 2.1),
+			if i % 2 == 0 then "barberry" else "shrub"
+		)
+		clump.CanCollide = false
+	end
 
 	-- East ramp, 1:12, the right-hand run in WEB_entrance_1 / IMG_0365. Stems carry it where the lidar slope is steeper.
 	local rampWidth = 5.2
@@ -242,10 +245,11 @@ function Exterior.build(parent: Instance, site: any)
 	local coverWest = if e.coverWest ~= nil then e.coverWest else e.x - e.canopyWidth / 2
 	local coverEast = if e.coverEast ~= nil then e.coverEast else e.x + e.canopyWidth / 2
 	local zWest, zEast = e.x - coverWest, e.x - coverEast
-	-- 0.3 ft soffit everywhere; the wedge adds 1.2 ft at the glass and dies out at the lip (1.5 → 0.3).
-	local soffit = 23.1
+	-- Grey soffit at ~25 ft. The charcoal wedge dies to a 0.3 ft lip at the street.
+	local soffit = 24.8
 	local tip = 0.3
-	local canopyRise = 1.2
+	-- Deep enough that a three-quarter view reads as a knife-edge wedge, not a flat awning.
+	local canopyRise = 12
 	local function spanCanopy(z0: number, z1: number)
 		if z1 < z0 then
 			z0, z1 = z1, z0
@@ -269,14 +273,14 @@ function Exterior.build(parent: Instance, site: any)
 			true
 		)
 		plate.Material = Enum.Material.SmoothPlastic
-		plate.Color = Color3.fromRGB(28, 30, 32)
+		plate.Color = Color3.fromRGB(168, 170, 166)
 		plate.Reflectance = 0
 		canopyWedge(
 			canopy,
 			"TaperedCanopy",
 			Vector3.new(length, canopyRise, depth),
 			CFrame.fromMatrix(
-				Vector3.new(depth / 2 + 0.35, soffit + tip + canopyRise / 2, midZ),
+				Vector3.new(depth / 2 + 0.35, soffit + tip + canopyRise / 2 + 0.02, midZ),
 				Vector3.new(0, 0, 1),
 				Vector3.new(0, 1, 0),
 				Vector3.new(-1, 0, 0)
@@ -303,33 +307,32 @@ function Exterior.build(parent: Instance, site: any)
 		true
 	)
 	cornerPlate.Material = Enum.Material.SmoothPlastic
-	cornerPlate.Color = Color3.fromRGB(28, 30, 32)
+	cornerPlate.Color = Color3.fromRGB(168, 170, 166)
 	cornerPlate.Reflectance = 0
 	canopyWedge(
 		canopy,
 		"CornerCanopy",
 		Vector3.new(28, canopyRise, projection),
 		CFrame.fromMatrix(
-			Vector3.new(-6, soffit + tip + rise / 2, cornerLocalZ - projection / 2),
+			Vector3.new(-6, soffit + tip + canopyRise / 2 + 0.02, cornerLocalZ - projection / 2),
 			Vector3.new(1, 0, 0),
 			Vector3.new(0, 1, 0),
 			Vector3.new(0, 0, 1)
 		)
 	)
-	-- Square charcoal columns (WEB_entrance_left_pole).
-	local columnHeight = soffit - 0.12
-	local col = math.max(0.7, e.columnRadius or 0.85)
-	for _, offset in { -18, 0, 18 } do
+	-- Square charcoal pier on the door axis, and one at the glass corner.
+	local columnHeight = soffit - 0.2
+	for _, at in { Vector3.new(3.4, 0, 0), Vector3.new(3.6, 0, cornerLocalZ - 1.8) } do
 		local column = P.box(
 			canopy,
 			"SupportColumn",
-			Vector3.new(col, columnHeight, col),
-			CFrame.new(10.2, columnHeight / 2 + 0.08, offset),
+			Vector3.new(3.4, columnHeight, 3.4),
+			CFrame.new(at.X, columnHeight / 2 + 0.06, at.Z),
 			"dark",
 			true
 		)
 		column.Material = Enum.Material.SmoothPlastic
-		column.Color = Color3.fromRGB(52, 54, 56)
+		column.Color = Color3.fromRGB(214, 214, 208)
 		column.Reflectance = 0
 	end
 	local function soffitLamp(lx: number, lz: number)
@@ -343,9 +346,27 @@ function Exterior.build(parent: Instance, site: any)
 		light.Color = Color3.fromRGB(255, 236, 210)
 		light.Parent = bulb
 	end
-	for lz = lo + 8, hi - 8, 12 do
-		for _, lx in { depth * 0.28, depth * 0.62 } do
+	for lz = lo + 6, hi - 6, 8 do
+		for _, lx in { depth * 0.22, depth * 0.5, depth * 0.78 } do
 			soffitLamp(lx, lz)
+		end
+	end
+	for lx = -14, 2, 8 do
+		for lz = cornerLocalZ - 4, cornerLocalZ - projection + 4, -8 do
+			soffitLamp(lx, lz)
+		end
+	end
+	-- Red bed along the glass, clear of the door pair at the stair center.
+	for i = -3, 3 do
+		if math.abs(i) >= 2 then
+			local bed = P.box(
+				entrance,
+				"EntryBed",
+				Vector3.new(2.4, 1.35, 4.4),
+				CFrame.new(1.5, 0.7, i * 6.2),
+				"barberry"
+			)
+			bed.CanCollide = false
 		end
 	end
 
@@ -354,6 +375,39 @@ function Exterior.build(parent: Instance, site: any)
 		local z = -width / 2 - 8 - i * 2.4
 		pipe(entrance, "BikeRack", Vector3.new(6.2, 0.35, z), Vector3.new(6.2, 2.1, z))
 		pipe(entrance, "BikeRack", Vector3.new(5.4, 0.35, z), Vector3.new(7.0, 0.35, z))
+	end
+
+	-- Horizontal white channel letters on the south glass, centered on the door (WEB_entrance_2).
+	local letters = P.folder(entrance, "RACLetterSign")
+	local glyphs = {
+		R = { "11110", "10001", "10001", "11110", "10100", "10010", "10001" },
+		A = { "01110", "10001", "10001", "11111", "10001", "10001", "10001" },
+		C = { "01110", "10001", "10000", "10000", "10000", "10001", "01110" },
+	}
+	local cell = 0.42
+	local order = { "R", "A", "C" }
+	local letterW = 5 * cell
+	local gap = 0.7
+	local total = #order * letterW + (#order - 1) * gap
+	for index, ch in order do
+		local origin = -total / 2 + (index - 1) * (letterW + gap)
+		local rows = glyphs[ch]
+		for row, bits in rows do
+			for col = 1, 5 do
+				if string.sub(bits, col, col) == "1" then
+					local block = P.box(
+						letters,
+						"Letter",
+						Vector3.new(cell * 0.92, cell * 0.92, 0.18),
+						CFrame.new(0.7, 18.6 - (row - 1) * cell, origin + (col - 0.5) * cell),
+						"metal",
+						false
+					)
+					block.Color = Color3.fromRGB(245, 245, 242)
+					block.Material = Enum.Material.SmoothPlastic
+				end
+			end
+		end
 	end
 
 	for _, item in entrance:GetDescendants() do

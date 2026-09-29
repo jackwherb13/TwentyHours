@@ -59,6 +59,11 @@ vx, vz = b["direction"]
 check(ux * vz - uz * vx == -1, "main stair turn is not left")
 ax0, ax1, az0, az1 = bbox(a["polygon"])
 check(az1 - az0 >= ax1 - ax0, "first flight is not the long north-south run")
+check(a.get("run", 0) >= 10 / 12 - 0.01, f"first flight run {a.get('run')} is under 10 in")
+check(b.get("run", 0) >= 10 / 12 - 0.01, f"second flight run {b.get('run')} is under 10 in")
+check(abs(a.get("rise", 0) * 17 - 10) < 0.05, f"first flight rise {a.get('rise')} does not total 10 ft")
+check(a.get("width", 0) >= 8, f"first flight width {a.get('width')} is under 8 ft")
+check(az1 <= -28, f"first flight south edge z={az1} is closer than 28 ft to the glass")
 
 lobby = by1["lobby"]
 lx0, lx1, lz0, lz1 = bbox(lobby["polygon"])

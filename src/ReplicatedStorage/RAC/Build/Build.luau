@@ -78,7 +78,15 @@ function Build.build(parent: Instance, raw: any): Stats
 		count(stairs, "Stairs")
 		local levelProps = Geometry.folder(props, tostring(level.level))
 		for _, prop in level.props do
-			local cf = CFrame.new(prop.at[1], level.elevation, prop.at[2])
+			local propY = level.elevation
+			if prop.kind == "jersey_frame" then
+				propY += 4.2
+			elseif prop.kind == "nameplate" then
+				propY += 5.2
+			elseif prop.kind == "bulletin_board" then
+				propY += 3.4
+			end
+			local cf = CFrame.new(prop.at[1], propY, prop.at[2])
 				* CFrame.Angles(0, math.rad(prop.rotation), 0)
 			local opts: { [string]: any } = { room = prop.room }
 			local extra = prop :: any
@@ -124,6 +132,7 @@ function Build.build(parent: Instance, raw: any): Stats
 		ice_machine = true,
 		supply_cabinet = true,
 		trophy_case = true,
+		bleacher_bank = true,
 		shower_stall = true,
 		toilet_partition = true,
 		plate_tree = true,

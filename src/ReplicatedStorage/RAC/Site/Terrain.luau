@@ -26,7 +26,7 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 				paved += 1
 			end
 		end
-		if paved >= 3 then
+		if paved >= 2 then
 			return 2
 		end
 		return m
@@ -87,10 +87,11 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 							h = math.min(h, -1.5)
 							material = 3
 						else
-							-- Entrance local +X is world +Z (rotationDeg −90 at x=-21.5, z=58.5).
-							local lx = z - 58.5
-							local lz = -21.5 - x
-							if lx > -4 and lx < 72 and math.abs(lz) < 32 then
+							-- Entrance centered on the south door (x=-41, z=0), yaw −90.
+							-- local +X is world +Z. Concrete only under the stair and the east ramp.
+							local lx = z
+							local lz = -41 - x
+							if lx > -1 and lx < 42 and lz > -26 and lz < 24 then
 								material = 3
 							end
 						end

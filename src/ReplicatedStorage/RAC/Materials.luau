@@ -16,7 +16,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		base = Enum.Material.WoodPlanks,
 		color = Color3.fromRGB(232, 204, 156),
 		texture = "art/materials/maple_court.png",
-		studsPerTile = 18,
+		studsPerTile = 8,
 		roughness = 0.12,
 		assetId = "rbxassetid://115379168184321",
 	},

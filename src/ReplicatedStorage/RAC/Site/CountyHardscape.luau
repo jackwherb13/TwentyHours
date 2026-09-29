@@ -35,15 +35,7 @@ function County.build(parent: Instance, site: any)
 		if onBuilding(site, x, z) or inEntrance(x, z) then
 			continue
 		end
-		-- South road meets the stair toe instead of dropping into a lidar trench.
-		local e = site.entrance
-		if e then
-			local toe = -(e.risers or 10) * (e.rise or 0.583)
-			local south = z - (e.z or 0)
-			if south > 8 and south < 90 and math.abs(x - e.x) < (e.width or 40) + 48 then
-				hy = math.max(hy, toe - 0.15)
-			end
-		end
+		-- Slabs stay on the lidar sample. Do not lift south-of-door pavement to FFE.
 		local gx = (H.height(x + q.w / 2, z) - H.height(x - q.w / 2, z)) / math.max(q.w, 0.5)
 		local gz = (H.height(x, z + q.d / 2) - H.height(x, z - q.d / 2)) / math.max(q.d, 0.5)
 		local right = Vector3.new(1, gx, 0).Unit
@@ -143,7 +135,7 @@ function County.build(parent: Instance, site: any)
 			)
 		)
 	end
-	-- 9 x 18 ft stalls and a 24 ft aisle on large asphalt patches. Planimetric paint is kept above.
+	-- 9 x 18 ft stalls and a 24 ft aisle. County cells are small; cluster the fat ones into a lot.
 	local stallCount = 0
 	local function addStripe(ax: number, az: number, bx: number, bz: number)
 		if stallCount >= 320 then
@@ -168,82 +160,125 @@ function County.build(parent: Instance, site: any)
 			)
 		)
 	end
-	-- County patches are small cells, not one rectangle per lot. Stripe the largest cells first.
-	local ranked = {}
-	for _, q in source.patches do
-		if q.material == "asphalt" then
-			table.insert(ranked, q)
-		end
+	type Field = { x0: number, z0: number, x1: number, z1: number, area: number }
+	local fields: { Field } = {}
+	local function overlaps(a: Field, b: Field): boolean
+		return a.x0 < b.x1 + 8 and b.x0 < a.x1 + 8 and a.z0 < b.z1 + 8 and b.z0 < a.z1 + 8
 	end
-	table.sort(ranked, function(a, b)
-		return a.w * a.d > b.w * b.d
-	end)
-	for _, q in ranked do
-		if stallCount >= 320 then
-			break
+	local function fillOf(f: Field): number
+		return f.area / math.max(1, (f.x1 - f.x0) * (f.z1 - f.z0))
+	end
+	for _, q in source.patches do
+		if q.material ~= "asphalt" or math.min(q.w, q.d) < 12 or math.max(q.w, q.d) < 18 then
+			continue
 		end
 		local cx, cz = q.x + q.w / 2, q.z + q.d / 2
 		if onBuilding(site, cx, cz) or inEntrance(cx, cz) then
 			continue
 		end
-		local alongX = q.w >= q.d
-		local length = if alongX then q.w else q.d
-		local depth = if alongX then q.d else q.w
-		if length < 18 or depth < 8 then
-			continue
-		end
-		local stallDepth = math.min(18, depth - 1)
-		local rows = math.clamp(math.floor((depth + 24) / 42), 1, 2)
-		for row = 0, rows - 1 do
-			local band = row * 42
-			if band + stallDepth > depth - 0.5 then
-				break
-			end
-			local n = math.min(math.floor((length - 2) / 9), 10)
-			for i = 0, n do
-				local t = 1 + i * 9
-				if t > length - 1 then
+		local cell: Field = { x0 = q.x, z0 = q.z, x1 = q.x + q.w, z1 = q.z + q.d, area = q.w * q.d }
+		local host: Field? = nil
+		for _, field in fields do
+			if overlaps(field, cell) then
+				local merged: Field = {
+					x0 = math.min(field.x0, cell.x0),
+					z0 = math.min(field.z0, cell.z0),
+					x1 = math.max(field.x1, cell.x1),
+					z1 = math.max(field.z1, cell.z1),
+					area = field.area + cell.area,
+				}
+				local long = math.max(merged.x1 - merged.x0, merged.z1 - merged.z0)
+				if long <= 240 and fillOf(merged) >= 0.38 then
+					host = field
+					field.x0, field.z0, field.x1, field.z1, field.area = merged.x0, merged.z0, merged.x1, merged.z1, merged.area
 					break
 				end
-				if alongX then
-					addStripe(q.x + t, q.z + band + 0.5, q.x + t, q.z + band + 0.5 + stallDepth)
-				else
-					addStripe(q.x + band + 0.5, q.z + t, q.x + band + 0.5 + stallDepth, q.z + t)
-				end
 			end
 		end
+		if not host then
+			table.insert(fields, cell)
+		end
 	end
-	-- Planted islands every ~72 ft on the larger asphalt cells, plus working poles.
 	local islandN = 0
 	local poles = P.folder(ground, "LotPoles")
-	for _, q in ranked do
-		if islandN >= 28 then
-			break
-		end
-		local cx, cz = q.x + q.w / 2, q.z + q.d / 2
-		if onBuilding(site, cx, cz) or inEntrance(cx, cz) or q.w < 28 or q.d < 18 then
-			continue
-		end
-		if (math.floor(cx / 72) + math.floor(cz / 72)) % 2 ~= 0 then
-			continue
-		end
-		islandN += 1
-		local hy = H.height(cx, cz)
-		local island =
-			P.box(ground, "LotIslandSlab", Vector3.new(6, 0.55, 16), CFrame.new(cx, hy + 0.36, cz), "concrete", true)
-		table.insert(dress, island)
-		P.box(ground, "LotIslandPlant", Vector3.new(4.6, 1.4, 14), CFrame.new(cx, hy + 1.15, cz), "shrub")
-		local pole = P.box(poles, "LightPole", Vector3.new(0.32, 18, 0.32), CFrame.new(cx, hy + 9.1, cz), "dark", true)
-		local globe = P.box(poles, "LightGlobe", Vector3.new(1.1, 1.1, 1.1), CFrame.new(cx, hy + 18.4, cz), "metal")
-		globe.Shape = Enum.PartType.Ball
+	local function lotPole(x: number, z: number)
+		local hy = H.height(x, z)
+		local pole = P.box(poles, "LightPole", Vector3.new(0.35, 22, 0.35), CFrame.new(x, hy + 11.2, z), "dark", true)
+		local globe = P.box(poles, "LightGlobe", Vector3.new(1.3, 0.7, 1.3), CFrame.new(x, hy + 22.4, z), "metal")
 		globe.Material = Enum.Material.SmoothPlastic
 		globe.Color = Color3.fromRGB(255, 236, 200)
 		local lamp = Instance.new("PointLight")
 		lamp.Brightness = 1.4
-		lamp.Range = 42
+		lamp.Range = 48
 		lamp.Color = Color3.fromRGB(255, 236, 200)
 		lamp.Parent = globe
 		table.insert(dress, pole)
+	end
+	for _, field in fields do
+		local width, depth = field.x1 - field.x0, field.z1 - field.z0
+		local alongX = width >= depth
+		local length = if alongX then width else depth
+		local span = if alongX then depth else width
+		if length < 36 or span < 20 or fillOf(field) < 0.38 then
+			continue
+		end
+		-- One 18 ft stall band, a 24 ft aisle, then another band when the lot is deep enough.
+		local bands = if span >= 60 then 2 else 1
+		for band = 0, bands - 1 do
+			local inset = 1.5 + band * (18 + 24)
+			if inset + 18 > span - 1 then
+				break
+			end
+			local n = math.min(math.floor((length - 4) / 9), 16)
+			for i = 0, n do
+				local t = 2 + i * 9
+				if t > length - 2 then
+					break
+				end
+				if alongX then
+					addStripe(field.x0 + t, field.z0 + inset, field.x0 + t, field.z0 + inset + 18)
+				else
+					addStripe(field.x0 + inset, field.z0 + t, field.x0 + inset + 18, field.z0 + t)
+				end
+			end
+		end
+		if islandN < 24 and span >= 36 and length >= 54 then
+			local count = math.clamp(math.floor(length / 72), 1, 3)
+			for k = 1, count do
+				if islandN >= 24 then
+					break
+				end
+				islandN += 1
+				local t = length * k / (count + 1)
+				local across = span * 0.5
+				local ix = if alongX then field.x0 + t else field.x0 + across
+				local iz = if alongX then field.z0 + across else field.z0 + t
+				if grounded(ix, iz) then
+					local hy = H.height(ix, iz)
+					local iw = if alongX then 8 else 18
+					local id = if alongX then 18 else 8
+					local island = P.box(
+						ground,
+						"LotIslandSlab",
+						Vector3.new(iw, 0.55, id),
+						CFrame.new(ix, hy + 0.4, iz),
+						"concrete",
+						true
+					)
+					table.insert(dress, island)
+					local plant = P.box(
+						ground,
+						"LotIslandPlant",
+						Vector3.new(iw - 2.2, 1.3, id - 2.2),
+						CFrame.new(ix, hy + 1.55, iz),
+						"shrub"
+					)
+					plant.CanCollide = false
+					table.insert(dress, plant)
+					lotPole(ix, iz)
+				end
+			end
+		end
 	end
 	-- The geometry check uses AABBs. A sloped slab's box can share a face with a curb
 	-- even when the meshes do not. Nudge the thinner part until the faces separate.

@@ -3,7 +3,7 @@
   "properties": {
     "BaseMaterial": "WoodPlanks",
     "ColorMap": "rbxassetid://115379168184321",
-    "StudsPerTile": 18,
+    "StudsPerTile": 8,
     "Name": "RAC_maple"
   }
 }

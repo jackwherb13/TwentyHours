@@ -36,6 +36,10 @@ function Layout.rectangles(level: any, index: number, data: any): { Geometry.Rec
 		if z0 > wall.thickness / 2 or z1 < -wall.thickness / 2 then
 			continue
 		end
+		-- Short glass rails are posts and bars, not a slab. Cutting the host leaves a slit the rail does not fill.
+		if other.height <= 4 and other.material == "glass" and #(other.openings or {}) == 0 then
+			continue
+		end
 		local otherThrough = z0 < -0.001 and z1 > 0.001
 		local thisThrough = a.X > 0.001 and a.X < length - 0.001
 		if otherThrough or (not thisThrough and math.abs(wall.b[2] - wall.a[2]) > 0.001) then

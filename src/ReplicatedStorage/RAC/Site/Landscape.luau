@@ -4,93 +4,55 @@ local H = require(script.Parent.Heightfield)
 local G = require(script.Parent.Parent.Build.Geometry)
 local Landscape = {}
 
-local function meshBlob(parent: Instance, center: Vector3, size: Vector3, color: Color3, yaw: number)
-	local part = Instance.new("Part")
-	part.Name = "Crown"
-	part.Size = Vector3.new(math.max(2.2, size.X), math.max(2.2, size.Y), math.max(2.2, size.Z))
-	part.CFrame = CFrame.new(center) * CFrame.Angles(0, yaw, math.rad(6))
-	part.Material = Enum.Material.SmoothPlastic
-	part.Color = color
-	part.Anchored = true
-	part.CanCollide = false
-	part.Parent = parent
-end
+-- Generated meshes: trunk plus an irregular crown, not stacked discs or cones.
+local DECIDUOUS_MESH = "rbxassetid://110305079240397"
+local DECIDUOUS_TEX = "rbxassetid://138916508834826"
+local PINE_MESH = "rbxassetid://134575217828136"
+local PINE_TEX = "rbxassetid://83047659402289"
 
-local function pineWhorl(parent: Instance, at: Vector3, radius: number, thick: number, color: Color3, yaw: number)
-	local part = Instance.new("Part")
-	part.Name = "Crown"
-	part.Size = Vector3.new(math.max(2.4, radius * 2), math.max(1.6, thick), math.max(2.4, radius * 2 * 0.72))
-	part.CFrame = CFrame.new(at) * CFrame.Angles(0, yaw, 0)
-	part.Material = Enum.Material.SmoothPlastic
-	part.Color = color
-	part.Anchored = true
-	part.CanCollide = false
-	part.Parent = parent
+local function onAsphalt(x: number, z: number): boolean
+	local d = H.data
+	local function raw(px: number, pz: number): boolean
+		local u = math.clamp((px - d.x0) / d.step - 0.5, 0, d.nx - 1.001)
+		local v = math.clamp((pz - d.z0) / d.step - 0.5, 0, d.nz - 1.001)
+		local i, j = math.floor(u) + 1, math.floor(v) + 1
+		return string.sub(d.materials[j], i, i) == "2"
+	end
+	if raw(x, z) then
+		return true
+	end
+	local paved = 0
+	for _, o in { { 4, 0 }, { -4, 0 }, { 0, 4 }, { 0, -4 } } do
+		if raw(x + o[1], z + o[2]) then
+			paved += 1
+		end
+	end
+	return paved >= 2
 end
 
 local function tree(parent: Instance, item: any, index: number)
-	local p, height, radius = item.at, item.height, item.radius
-	local scale = 0.8 + ((index * 13) % 5) * 0.1
-	height *= scale
-	radius *= scale
+	local p = item.at
+	local scale = 0.85 + ((index * 13) % 5) * 0.08
+	local height = math.clamp(item.height * scale, 16, 42)
 	local y = H.height(p[1], p[2])
-	local model = Instance.new("Model")
-	model.Name = `Tree_{index}`
 	local pine = item.species == "pine"
-	local trunkH = height * (if pine then 0.55 else 0.38)
-	local trunkR = math.clamp(0.28 + height * 0.012, 0.45, 1.35)
-	P.pole(model, "Trunk", Vector3.new(p[1], y, p[2]), trunkH, trunkR, "bark", true)
-	local crownH = math.max(6, height - trunkH * 0.55)
-	local base = y + trunkH * 0.72
-	local spin = math.rad((index * 47) % 360)
-	if pine then
-		local color = ({
-			Color3.fromRGB(28, 52, 34),
-			Color3.fromRGB(36, 64, 40),
-			Color3.fromRGB(24, 46, 30),
-		})[(index % 3) + 1]
-		for tier = 1, 5 do
-			local t = (tier - 1) / 4
-			local tierR = radius * (1.12 - t * 0.78)
-			local wy = base + t * crownH * 0.92
-			pineWhorl(
-				model,
-				Vector3.new(p[1], wy, p[2]),
-				math.max(2.4, tierR),
-				crownH * 0.28,
-				color,
-				spin + tier * 0.35
-			)
-		end
-	else
-		local color = ({
-			Color3.fromRGB(58, 86, 44),
-			Color3.fromRGB(42, 70, 34),
-			Color3.fromRGB(74, 102, 52),
-		})[(index % 3) + 1]
-		local blobs = {
-			{ 0.05, 0.42, -0.08, 1.15, 0.62, 0.95 },
-			{ 0.48, 0.58, 0.22, 0.78, 0.55, 0.7 },
-			{ -0.52, 0.5, 0.18, 0.82, 0.5, 0.74 },
-			{ 0.18, 0.82, -0.42, 0.7, 0.48, 0.62 },
-			{ -0.28, 0.7, -0.38, 0.74, 0.52, 0.68 },
-			{ 0.32, 0.34, -0.46, 0.66, 0.4, 0.58 },
-			{ -0.12, 0.92, 0.08, 0.55, 0.42, 0.5 },
-		}
-		local c, s = math.cos(spin), math.sin(spin)
-		for _, blob in blobs do
-			local ox, oz = blob[1] * radius, blob[3] * radius
-			local jx, jz = ox * c - oz * s, ox * s + oz * c
-			meshBlob(
-				model,
-				Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz),
-				Vector3.new(radius * 2 * blob[4], crownH * blob[5], radius * 2 * blob[6]),
-				color,
-				spin + blob[1]
-			)
-		end
-	end
-	model.Parent = parent
+	local mesh = if pine then PINE_MESH else DECIDUOUS_MESH
+	local tex = if pine then PINE_TEX else DECIDUOUS_TEX
+	local authoredH = if pine then 22.45 else 25.85
+	local authoredW = if pine then 14 else 18
+	local part = Instance.new("MeshPart")
+	part.Name = if pine then "Pine" else "ShadeTree"
+	local s = height / authoredH
+	part.Size = Vector3.new(authoredW * s, height, authoredW * s)
+	part.CFrame = CFrame.new(p[1], y + height / 2, p[2]) * CFrame.Angles(0, math.rad((index * 47) % 360), 0)
+	part.MeshId = mesh
+	part.TextureID = tex
+	part.Material = Enum.Material.SmoothPlastic
+	part.Color = Color3.new(1, 1, 1)
+	part.Anchored = true
+	part.CanCollide = false
+	part.DoubleSided = true
+	part.Parent = parent
 end
 
 function Landscape.build(parent: Instance, site: any, props: any)
@@ -124,7 +86,7 @@ function Landscape.build(parent: Instance, site: any, props: any)
 				end
 			end
 		end
-		if blocked then
+		if blocked or onAsphalt(at[1], at[2]) then
 			continue
 		end
 		tree(trees, item, i)

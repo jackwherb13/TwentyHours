@@ -6,7 +6,7 @@ local Blueprint = require(script.Parent.Blueprint)
 local Parts = require(script.Parent.Parts)
 
 local Court = {}
-local GREEN = Color3.fromRGB(0, 90, 48)
+local GREEN = Color3.fromRGB(0, 110, 52)
 local GOLD = Color3.fromRGB(214, 172, 44)
 local LOGO_GREEN = Color3.fromRGB(0, 70, 38)
 
@@ -121,8 +121,9 @@ function Court.build(parent: Instance, level: Blueprint.Level)
 	local gymL = maxZ - minZ - INSET * 2
 	local innerW = HALF_W * 2
 	local innerL = HALF_L * 2
-	local apronX = math.max((gymW - innerW) / 2, 8)
-	local apronZ = math.max((gymL - innerL) / 2, 8)
+	-- Eight-foot Mason-green border only. The rest of the slab stays glossy maple.
+	local apronX = 8
+	local apronZ = 8
 	local outerL = innerL + apronZ * 2
 	local group = Instance.new("Folder")
 	group.Name = "Court"

@@ -9,9 +9,9 @@ for z, row in Data.rows do
 	end
 	heights[z] = values
 end
--- Grid is NAVD88 minus an inferred FFE. 30 ft south of the glass is about 5.3 ft
--- too low for ten 7 in risers (WEB_entrance_1/2). Lift so the stair toe sits on lidar.
-local DATUM = 5.3
+-- Grid is NAVD88 minus Level 1. Patriot Circle stays about 8–12 ft below FFE.
+-- A +5.3 lift put the stair toe and the south road on the floor.
+local DATUM = 0
 
 function Heightfield.height(x: number, z: number): number
 	local u = math.clamp((x - Data.x0) / Data.step - 0.5, 0, Data.nx - 1.001)

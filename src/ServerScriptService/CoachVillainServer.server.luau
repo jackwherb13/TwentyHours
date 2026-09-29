@@ -65,12 +65,18 @@ local function dbg(...)
 	end
 end
 
-local remotes = ReplicatedStorage:WaitForChild("CoachVillainRemotes")
+local remotes = ReplicatedStorage:FindFirstChild("CoachVillainRemotes")
+if remotes == nil then
+	return
+end
 local ChaseStarted = remotes:WaitForChild("ChaseStarted")
 local ChaseEnded = remotes:WaitForChild("ChaseEnded")
 local CatchStarted = remotes:WaitForChild("CatchStarted")
 
-local model = workspace:WaitForChild("Jay")
+local model = workspace:FindFirstChild("Jay")
+if model == nil then
+	return
+end
 local humanoid = model:WaitForChild("Humanoid")
 local root = model:WaitForChild("HumanoidRootPart")
 local head = model:FindFirstChild("Head") or root

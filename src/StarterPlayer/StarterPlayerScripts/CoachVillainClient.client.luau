@@ -8,7 +8,10 @@ local SoundService = game:GetService("SoundService")
 local player = Players.LocalPlayer
 local camera = workspace.CurrentCamera
 
-local remotes = ReplicatedStorage:WaitForChild("CoachVillainRemotes")
+local remotes = ReplicatedStorage:FindFirstChild("CoachVillainRemotes")
+if remotes == nil then
+	return
+end
 local ChaseStarted = remotes:WaitForChild("ChaseStarted")
 local ChaseEnded = remotes:WaitForChild("ChaseEnded")
 local CatchStarted = remotes:WaitForChild("CatchStarted")

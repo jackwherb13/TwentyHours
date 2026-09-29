@@ -3,7 +3,7 @@
     "file": "art/materials/maple_court.png",
     "assetId": "rbxassetid://115379168184321",
     "baseMaterial": "WoodPlanks",
-    "studsPerTile": 18
+    "studsPerTile": 8
   },
   "terrazzo": {
     "file": "art/materials/terrazzo_corridor.png",

@@ -200,7 +200,8 @@ function BleacherBank.build(cf: CFrame, opts: { [string]: any }?): Model
 						Vector3.new(w - 0.08, fh * 0.92, 0.28),
 						Kit.at(xc, y, faceZ + 0.32),
 						if r % 2 == 0 then TREAD_GREY else TREAD_DARK,
-						Enum.Material.Metal
+						Enum.Material.Metal,
+						true
 					)
 				else
 					local color = if span.kind == "gold" then C.BleacherGold else C.BleacherGreen
@@ -209,7 +210,8 @@ function BleacherBank.build(cf: CFrame, opts: { [string]: any }?): Model
 						Vector3.new(w - 0.06, fh, 0.42),
 						Kit.at(xc, y, faceZ),
 						color,
-						Enum.Material.SmoothPlastic
+						Enum.Material.SmoothPlastic,
+						true
 					)
 					if span.kind == "green" and w > 3 then
 						local n = if w > 9 then 2 else 1

@@ -17,7 +17,7 @@ end
 type Tune = { brightness: number, range: number, angle: number }
 
 local TUNE: { [string]: Tune } = {
-	high_bay_light = { brightness = 12, range = 60, angle = 90 },
+	high_bay_light = { brightness = 18, range = 75, angle = 110 },
 	troffer_2x4 = { brightness = 4.2, range = 40, angle = 90 },
 	troffer_2x2 = { brightness = 3.6, range = 32, angle = 90 },
 	downlight = { brightness = 2.4, range = 26, angle = 80 },
@@ -91,11 +91,33 @@ local function place(parent: Instance, roomId: string, kind: string, x: number, 
 	model.Parent = parent
 	applyTune(model, roomId, kind)
 	if kind == "high_bay_light" then
-		addFill(model, roomId, 5.0, 48)
+		addFill(model, roomId, 10, 70)
 	elseif kind == "troffer_2x4" or kind == "troffer_2x2" then
 		addFill(model, roomId, 1.8, 22)
 	elseif kind == "downlight" then
 		addFill(model, roomId, 0.9, 16)
+	end
+	-- Gym volume and the training/coach rooms were still black at daytime.
+	-- Lobby cans stay on the sparse tune so the south glass does not blow out.
+	local bright = roomId == "competition_gym" or roomId == "cage_gym" or roomId == "south_gym" or roomId == "gym_foyer"
+	local work = roomId == "training_room" or roomId == "coach_suite" or roomId == "corridor_entry_link"
+	if bright or work then
+		-- Gym high-bays stay strong. Work rooms use one troffer each; boosting the
+		-- fill light as well washes white ceilings and tabletops out of the frame.
+		local floor = if bright then 18 else 5
+		local reach = if bright then 70 else 32
+		for _, desc in model:GetDescendants() do
+			if desc.Name == "Fill" then
+				continue
+			end
+			if desc:IsA("PointLight") or desc:IsA("SpotLight") or desc:IsA("SurfaceLight") then
+				local light = desc :: any
+				light.Brightness = math.max(light.Brightness, floor)
+				light.Range = math.max(light.Range, reach)
+				light.Enabled = true
+				light.Shadows = false
+			end
+		end
 	end
 end
 
@@ -120,12 +142,14 @@ end
 local function fixtures(zone: Instance, room: Blueprint.Room, roomType: string, floorY: number, ceilY: number)
 	if roomType == "gym" or room.id == "cage_gym" then
 		-- Mount at 18 ft so Range 60 covers the maple at eye height from the overlook.
-		scatter(zone, room, "high_bay_light", floorY + 18, 32, 16)
+		scatter(zone, room, "high_bay_light", floorY + 22, 24, 20)
 	elseif roomType == "stair" then
 		local pack = math.min(ceilY - 1.5, floorY + 14)
 		scatter(zone, room, "downlight", math.min(floorY + 5, pack), 10, 4)
 		scatter(zone, room, "downlight", math.min(floorY + 12, pack), 10, 4)
 		scatter(zone, room, "downlight", pack, 12, 3)
+	elseif room.id == "training_room" or room.id == "coach_suite" or room.id == "corridor_entry_link" then
+		scatter(zone, room, "troffer_2x4", ceilY - 0.5, 10, 10)
 	elseif roomType == "lobby" or room.id == "south_vestibule" then
 		-- Sparse cans. Daylight through the south curtain wall already fills this volume.
 		scatter(zone, room, "downlight", math.min(ceilY - 2, floorY + 12), 18, 6)

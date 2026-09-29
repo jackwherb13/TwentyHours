@@ -9,7 +9,7 @@ local Nameplate = {
 }
 
 function Nameplate.build(cf: CFrame, opts: { [string]: any }?): Model
-	local b = Kit.new("Nameplate", cf)
+	local b = Kit.new("NameplateSign", cf)
 	local plate = b:box(
 		"Plate",
 		Vector3.new(1.5, 0.36, 0.06),
