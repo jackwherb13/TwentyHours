@@ -44,3 +44,5 @@ LLM hand-tracing of markings plateaued at judge scores 3-7 after 5 iterations. E
    tools/site_refs/markings_extracted.json, and have src/ReplicatedStorage/RAC/Site/Markings build from it (drape on the heightfield).
 4. Verify numerically: re-project the extracted lines onto the ortho and report mean pixel distance to the detected paint (target < 1.5 ft);
    then judge the overlay. Hand-edit only what the detector misses (e.g. under tree canopy), and log those edits.
+
+Note for pass 1 and pass 4 (user 09:40): there are MULTIPLE lots around the RAC. Pull the GMU Parking Services campus parking map (lot names, permit types, entrances) and match every lot to the county planimetrics + ortho; build each lot's real layout (aisles, stall counts, islands, entrances, accessible stalls, signs).

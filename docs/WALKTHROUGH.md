@@ -105,3 +105,8 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 11. **Level 2 cardio area**: **TVs**, **free weights along the wall perpendicular to the window**, **a couple of benches**; the **entire area is
     open** with a **railing overlooking the lobby**.
 12. **Dumpsters / service yard**: **west of the volleyball gym**.
+
+## Answers (user, 2026-09-29 09:40)
+- **Volleyball/competition gym bleachers**: on **BOTH long sides**, **RETRACTED** (closed/stacked against the walls), not pulled out.
+- **Parking**: there are **multiple lots** around the RAC. Identify every lot, its layout and markings from GMU Parking Services maps, Fairfax County
+  planimetrics and the aerial imagery; build all of them as they really look.
