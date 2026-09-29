@@ -10,9 +10,9 @@ local function canopyWedge(parent: Instance, name: string, size: Vector3, cf: CF
 	wedge.Name = name
 	wedge.Size = size
 	wedge.CFrame = cf
-	-- Neon keeps the sun from blowing the sloped top out to white. The color stays charcoal.
-	wedge.Material = Enum.Material.Neon
-	wedge.Color = Color3.fromRGB(22, 24, 26)
+	-- Matte charcoal. Neon read as a glowing slab and washed out in the sun.
+	wedge.Material = Enum.Material.SmoothPlastic
+	wedge.Color = Color3.fromRGB(28, 30, 32)
 	wedge.Reflectance = 0
 	wedge.Anchored = true
 	wedge.CanCollide = true
@@ -27,12 +27,14 @@ local function pipe(parent: Instance, name: string, a: Vector3, b: Vector3)
 	local part = P.box(
 		parent,
 		name,
-		Vector3.new(length, 0.16, 0.16),
+		Vector3.new(length, 0.22, 0.22),
 		CFrame.lookAt((a + b) / 2, b) * CFrame.Angles(0, math.pi / 2, 0),
 		"metal"
 	)
 	part.Shape = Enum.PartType.Cylinder
-	part.Color = Color3.fromRGB(58, 62, 66)
+	part.Material = Enum.Material.Metal
+	part.Color = Color3.fromRGB(42, 44, 46)
+	part.Reflectance = 0.08
 end
 
 function Exterior.build(parent: Instance, site: any)
@@ -48,7 +50,8 @@ function Exterior.build(parent: Instance, site: any)
 	end
 	-- Foot of the flight is one landing plus the treads south of the glass. Count risers from that lidar sample.
 	local probeX = e.landingDepth + e.risers * run + 4
-	local n = math.clamp(math.round(-groundAt(probeX, 0) / rise), 8, 14)
+	-- Photos show one flight of about 8–10 risers. The top stays at FFE 0.
+	local n = math.clamp(math.round(-groundAt(probeX, 0) / rise), 8, 10)
 	local drop = n * rise
 	local function walkY(lx: number): number
 		if lx <= e.landingDepth then
@@ -111,10 +114,10 @@ function Exterior.build(parent: Instance, site: any)
 		)
 	end
 
-	-- Sides plus three intermediate rails, the count visible across IMG_0365 / WEB_entrance_2.
-	local railTop = Vector3.new(e.landingDepth - 0.5, 3, 0)
-	local railBottom = Vector3.new(apronX + 1.2, -drop + 3, 0)
-	for _, offset in { -width / 2 + 0.4, -width / 4, 0, width / 4, width / 2 - 0.4 } do
+	-- Three pipe runs: both cheeks and the center, matching the short flight in the entrance photos.
+	local railTop = Vector3.new(e.landingDepth - 0.5, 3.1, 0)
+	local railBottom = Vector3.new(apronX + 1.2, -drop + 3.1, 0)
+	for _, offset in { -width / 2 + 0.7, 0, width / 2 - 0.7 } do
 		local a = railTop + Vector3.new(0, 0, offset)
 		local b = railBottom + Vector3.new(0, 0, offset)
 		pipe(entrance, "StairHandrail", a, b)
@@ -130,23 +133,32 @@ function Exterior.build(parent: Instance, site: any)
 		end
 	end
 
-	-- Low planted cheek on the left when facing the doors. It stays on the landing,
-	-- not a wall running the full grade drop.
-	P.box(
+	-- Board-formed cheek beside the flight. Shrubs sit on the wall, not on the treads.
+	local cheekZ = width / 2 + 1.6
+	local cheek = P.beam(
 		entrance,
-		"PlanterCheek",
-		Vector3.new(e.landingDepth + 6, 2.2, 3.2),
-		CFrame.new((e.landingDepth + 6) / 2, 1.1, width / 2 + 2.4),
+		"CheekWall",
+		Vector3.new(0.6, 1.7, cheekZ),
+		Vector3.new(apronX, -drop + 1.7, cheekZ),
+		1.15,
+		3.2,
 		"concrete",
 		true
 	)
-	P.box(
-		entrance,
-		"PlanterHedge",
-		Vector3.new(e.landingDepth + 5, 2.4, 2.6),
-		CFrame.new((e.landingDepth + 5) / 2, 3.3, width / 2 + 2.4),
-		"leaf"
-	)
+	cheek.Color = Color3.fromRGB(128, 130, 126)
+	for i = 0, 4 do
+		local lx = 2 + (apronX - 4) * i / 4
+		local along = (lx - 0.6) / math.max(apronX - 0.6, 1)
+		local wallCenter = 1.7 + (-drop) * along
+		local finish = if i % 2 == 0 then "shrub" else "barberry"
+		P.box(
+			entrance,
+			"CheekShrub",
+			Vector3.new(2.6, 1.35, 1.4),
+			CFrame.new(lx, wallCenter + 2.35, cheekZ),
+			finish
+		)
+	end
 
 	-- East ramp, 1:12, the right-hand run in WEB_entrance_1 / IMG_0365. Stems carry it where the lidar slope is steeper.
 	local rampWidth = 5.2
@@ -229,21 +241,36 @@ function Exterior.build(parent: Instance, site: any)
 
 	local canopy = P.folder(entrance, "Canopy")
 	local depth = e.canopyDepth
-	local span = e.canopyWidth
-	local thick = 6.5
+	-- World X = entrance.x - local Z. Cover the south glass (about x=-97..10), not only the door.
+	local coverWest = if e.coverWest ~= nil then e.coverWest else e.x - e.canopyWidth / 2
+	local coverEast = if e.coverEast ~= nil then e.coverEast else e.x + e.canopyWidth / 2
+	local zWest, zEast = e.x - coverWest, e.x - coverEast
+	local thick = 0.4
 	local soffit = 23.1
-	-- Thick end on the glass, point at the outer edge. Top plane slopes down; the soffit stays flat.
-	canopyWedge(
-		canopy,
-		"TaperedCanopy",
-		Vector3.new(span, thick, depth),
-		CFrame.fromMatrix(
-			Vector3.new(depth / 2, soffit + thick / 2, 0),
-			Vector3.new(0, 0, 1),
-			Vector3.new(0, 1, 0),
-			Vector3.new(-1, 0, 0)
+	-- Knife edge at the outer lip, 0.4 ft at the glass. A gap over the doors is the skylight well.
+	local function spanWedge(z0: number, z1: number)
+		if z1 < z0 then
+			z0, z1 = z1, z0
+		end
+		local length = z1 - z0
+		if length < 2 then
+			return
+		end
+		canopyWedge(
+			canopy,
+			"TaperedCanopy",
+			Vector3.new(length, thick, depth),
+			CFrame.fromMatrix(
+				Vector3.new(depth / 2 + 0.35, soffit + thick / 2, (z0 + z1) / 2),
+				Vector3.new(0, 0, 1),
+				Vector3.new(0, 1, 0),
+				Vector3.new(-1, 0, 0)
+			)
 		)
-	)
+	end
+	local lo, hi = math.min(zWest, zEast), math.max(zWest, zEast)
+	spanWedge(lo, -9)
+	spanWedge(9, hi)
 	-- East return over the corner glass. Yaw -90 maps local -Z to world +X, so the tip points east.
 	local projection = math.max(12, e.returnCanopyDepth)
 	local cornerX = if e.glassCorner then e.glassCorner[1] else e.x + width / 2
@@ -251,63 +278,113 @@ function Exterior.build(parent: Instance, site: any)
 	canopyWedge(
 		canopy,
 		"CornerCanopy",
-		Vector3.new(24, thick, projection),
+		Vector3.new(28, thick, projection),
 		CFrame.fromMatrix(
-			Vector3.new(-2, soffit + thick / 2, cornerLocalZ - projection / 2),
+			Vector3.new(-6, soffit + thick / 2, cornerLocalZ - projection / 2),
 			Vector3.new(1, 0, 0),
 			Vector3.new(0, 1, 0),
 			Vector3.new(0, 0, 1)
 		)
 	)
-	for _, offset in { -width * 0.32, width * 0.32 } do
-		local columnHeight = soffit - 0.08
+	-- Two light-grey square tubes under the glass, not a row of black cylinders.
+	local columnHeight = soffit - 0.16
+	for _, offset in { -16, 16 } do
 		local column = P.box(
 			canopy,
 			"SupportColumn",
-			Vector3.new(2, columnHeight, 2),
-			CFrame.new(e.landingDepth - 2.5, columnHeight / 2, offset),
+			Vector3.new(1.45, columnHeight, 1.45),
+			CFrame.new(8.5, 0.08 + columnHeight / 2, offset),
 			"metal",
 			true
 		)
-		-- Metal reflectance turns the pale columns sky-blue. The photos are matte concrete.
-		column.Material = Enum.Material.Neon
-		column.Color = Color3.fromRGB(42, 44, 46)
-		column.Reflectance = 0
+		column.Material = Enum.Material.SmoothPlastic
+		column.Color = Color3.fromRGB(176, 180, 184)
+		column.Reflectance = 0.05
 	end
-	for _, lampZ in { -8, 8 } do
+	local function soffitLamp(lx: number, lz: number)
 		local bulb = P.box(
 			canopy,
 			"SoffitLamp",
-			Vector3.new(0.6, 0.12, 0.6),
-			CFrame.new(e.landingDepth, soffit - 0.4, lampZ),
+			Vector3.new(0.45, 0.08, 0.45),
+			CFrame.new(lx, soffit - 0.12, lz),
 			"metal"
 		)
 		bulb.Material = Enum.Material.Neon
-		bulb.Color = Color3.fromRGB(255, 232, 200)
+		bulb.Color = Color3.fromRGB(255, 236, 210)
 		local light = Instance.new("PointLight")
-		light.Brightness = 1.6
-		light.Range = 40
-		light.Color = Color3.fromRGB(255, 232, 200)
+		light.Brightness = 0.55
+		light.Range = 14
+		light.Color = Color3.fromRGB(255, 236, 210)
 		light.Parent = bulb
 	end
+	for lz = lo + 4, -12, 10 do
+		soffitLamp(depth * 0.32, lz)
+		soffitLamp(depth * 0.68, lz)
+	end
+	for lz = 12, hi - 4, 10 do
+		soffitLamp(depth * 0.32, lz)
+		soffitLamp(depth * 0.68, lz)
+	end
 
-	local sign = P.box(entrance, "RACSign", Vector3.new(0.2, 22, 5), CFrame.new(0.4, 14, -8), "glass")
-	sign.Transparency = 1
-	local gui = Instance.new("SurfaceGui")
-	gui.Face = Enum.NormalId.Right
-	gui.LightInfluence = 0
-	gui.CanvasSize = Vector2.new(220, 900)
-	gui.Parent = sign
-	local text = Instance.new("TextLabel")
-	text.Size = UDim2.fromScale(1, 1)
-	text.BackgroundTransparency = 1
-	text.Text = "R\nA\nC"
-	text.TextScaled = true
-	text.TextColor3 = Color3.fromRGB(244, 244, 236)
-	text.Parent = gui
+	-- Opaque white letters on the south curtain wall, just outside the glass.
+	local function letter(sx: number, sy: number, sz: number, x: number, y: number, z: number)
+		local part = P.box(entrance, "RACLetter", Vector3.new(sx, sy, sz), CFrame.new(x, y, z), "white")
+		part.Material = Enum.Material.SmoothPlastic
+		part.Color = Color3.fromRGB(248, 248, 244)
+		part.Reflectance = 0
+	end
+	local sx, sz = 1.05, 24
+	letter(0.32, 4.6, 0.42, sx, 17.2, sz - 1.15)
+	letter(0.32, 0.42, 2.3, sx, 19.2, sz)
+	letter(0.32, 0.42, 2.1, sx, 17.1, sz - 0.1)
+	letter(0.32, 1.7, 0.42, sx, 18.2, sz + 0.95)
+	letter(0.32, 2.1, 0.42, sx, 15.6, sz + 0.85)
+	letter(0.32, 4.4, 0.42, sx, 11.4, sz - 1.15)
+	letter(0.32, 0.42, 2.2, sx, 13.4, sz)
+	letter(0.32, 0.42, 2.2, sx, 9.4, sz)
+	letter(0.32, 4.4, 0.42, sx, 11.4, sz + 1.05)
+	letter(0.32, 4.2, 0.42, sx, 5.6, sz - 1.15)
+	letter(0.32, 0.42, 2.2, sx, 7.5, sz)
+	letter(0.32, 0.42, 2.2, sx, 3.7, sz)
+	letter(0.32, 4.2, 0.42, sx, 5.6, sz + 1.05)
+
+	local hydrantAt = Vector3.new(apronX + 3, -drop, -width / 2 + 4)
+	local hydrant = P.pole(entrance, "Hydrant", hydrantAt, 2.15, 0.28, "metal", true)
+	hydrant.Color = Color3.fromRGB(176, 36, 32)
+	hydrant.Material = Enum.Material.SmoothPlastic
+	local cap = P.box(entrance, "HydrantCap", Vector3.new(0.62, 0.22, 0.62), CFrame.new(hydrantAt + Vector3.new(0, 2.32, 0)), "metal")
+	cap.Color = Color3.fromRGB(40, 40, 42)
+	cap.Material = Enum.Material.Metal
+	for _, side in { -1, 1 } do
+		local nozzle = P.box(
+			entrance,
+			"HydrantNozzle",
+			Vector3.new(0.55, 0.28, 0.28),
+			CFrame.new(hydrantAt + Vector3.new(side * 0.4, 1.35, 0)),
+			"metal"
+		)
+		nozzle.Color = Color3.fromRGB(176, 36, 32)
+		nozzle.Material = Enum.Material.SmoothPlastic
+	end
+
+	-- Three hoops on the west landing. Dark metal, not a pipe pile in the lawn.
+	for i = 0, 2 do
+		local z = width / 2 + 6 + i * 2.2
+		pipe(entrance, "BikeRack", Vector3.new(4.2, 0.4, z), Vector3.new(4.2, 2.15, z))
+		pipe(entrance, "BikeRack", Vector3.new(3.5, 0.4, z), Vector3.new(4.9, 0.4, z))
+	end
 
 	for _, item in entrance:GetDescendants() do
 		if item:IsA("BasePart") then
+			if
+				item.Name == "LandingSlab"
+				or item.Name == "ApronSlab"
+				or item.Name == "ApproachSlab"
+				or string.sub(item.Name, 1, 10) == "StairTread"
+				or string.sub(item.Name, 1, 4) == "Ramp"
+			then
+				item.Color = Color3.fromRGB(148, 146, 138)
+			end
 			item.CFrame = frame * item.CFrame
 		end
 	end

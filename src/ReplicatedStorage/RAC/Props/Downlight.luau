@@ -91,7 +91,7 @@ function Downlight.build(cf: CFrame, _opts: { [string]: any }?): Model
 	)
 
 	-- 7. Downward SurfaceLight
-	b:light(led, Enum.NormalId.Bottom, 1.5, 18, WarmDownlight)
+	b:light(led, Enum.NormalId.Bottom, 2.4, 24, WarmDownlight)
 
 	return b:done()
 end

@@ -1,5 +1,7 @@
 --!strict
+local Materials = require(script.Parent.Parent.Materials)
 local Parts = {}
+local alias: { [string]: string } = { acoustic = "acoustic_ceiling" }
 local finishes: { [string]: { material: Enum.Material, color: Color3, variant: string? } } = {
 	maple = { material = Enum.Material.WoodPlanks, color = Color3.fromRGB(214, 176, 124), variant = "RAC_Maple" },
 	terrazzo = { material = Enum.Material.Marble, color = Color3.fromRGB(220, 217, 207), variant = "RAC_Terrazzo" },
@@ -38,9 +40,14 @@ function Parts.box(parent: Instance, name: string, size: Vector3, cf: CFrame, fi
 	part.CanCollide = collide ~= false
 	part.TopSurface = Enum.SurfaceType.Smooth
 	part.BottomSurface = Enum.SurfaceType.Smooth
-	part.Material = look.material
-	part.Color = look.color
-	part.MaterialVariant = look.variant or ""
+	local key = alias[finish] or finish
+	if Materials[key] ~= nil and key ~= "apply" then
+		Materials.apply(part, key)
+	else
+		part.Material = look.material
+		part.Color = look.color
+		part.MaterialVariant = ""
+	end
 	if finish == "glass" then
 		part.Transparency = 0.6
 	end

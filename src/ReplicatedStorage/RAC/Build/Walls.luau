@@ -142,6 +142,72 @@ local function doorNotice(parent: Instance, doorCF: CFrame, opening: any, thickn
 	end
 end
 
+local function onGuard(level: Blueprint.Level, wall: Blueprint.Wall): boolean
+	local guards = (level :: any).guards
+	if typeof(guards) ~= "table" then
+		return false
+	end
+	local ax, az = wall.a[1], wall.a[2]
+	local bx, bz = wall.b[1], wall.b[2]
+	local horizontal = math.abs(az - bz) < 0.05
+	local vertical = math.abs(ax - bx) < 0.05
+	if not horizontal and not vertical then
+		return false
+	end
+	for _, guard in guards do
+		local ga = guard.a
+		local gb = guard.b
+		if typeof(ga) ~= "table" or typeof(gb) ~= "table" then
+			continue
+		end
+		if horizontal and math.abs(ga[2] - gb[2]) < 0.05 and math.abs(az - ga[2]) < 0.08 then
+			local overlap = math.min(math.max(ax, bx), math.max(ga[1], gb[1])) - math.max(math.min(ax, bx), math.min(ga[1], gb[1]))
+			if overlap > math.abs(bx - ax) * 0.75 and overlap > 1 then
+				return true
+			end
+		elseif vertical and math.abs(ga[1] - gb[1]) < 0.05 and math.abs(ax - ga[1]) < 0.08 then
+			local overlap = math.min(math.max(az, bz), math.max(ga[2], gb[2])) - math.max(math.min(az, bz), math.min(ga[2], gb[2]))
+			if overlap > math.abs(bz - az) * 0.75 and overlap > 1 then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): string
+	if wall.exterior or wall.material == "glass" then
+		return wall.material
+	end
+	local mx = (wall.a[1] + wall.b[1]) / 2
+	local mz = (wall.a[2] + wall.b[2]) / 2
+	local dx = wall.b[1] - wall.a[1]
+	local dz = wall.b[2] - wall.a[2]
+	local length = math.sqrt(dx * dx + dz * dz)
+	if length < 0.01 then
+		return wall.material
+	end
+	local nx, nz = -dz / length, dx / length
+	local chosen = wall.material
+	local function rank(finish: string): number
+		if finish == "brick" or finish == "painted_cmu" or finish == "ceramic_tile" then
+			return 2
+		end
+		return 1
+	end
+	for _, sign in { -1, 1 } do
+		local x = mx + nx * sign * (wall.thickness / 2 + 0.8)
+		local z = mz + nz * sign * (wall.thickness / 2 + 0.8)
+		for _, room in level.rooms do
+			local finish = room.wallFinish
+			if finish and finish ~= "" and Geometry.contains(room.polygon, x, z) and rank(finish) >= rank(chosen) then
+				chosen = finish
+			end
+		end
+	end
+	return chosen
+end
+
 function Walls.build(parent: Instance, level: Blueprint.Level, data: any)
 	for wallIndex, wall in level.walls do
 		local group = Geometry.folder(parent, wall.id)
@@ -149,17 +215,20 @@ function Walls.build(parent: Instance, level: Blueprint.Level, data: any)
 		local dx = wall.b[1] - wall.a[1]
 		local dz = wall.b[2] - wall.a[2]
 		local length = math.sqrt(dx * dx + dz * dz)
-		if wall.height <= 4 and wall.material == "glass" and #wall.openings == 0 and length > 1 then
+		local rail = (wall.height <= 4 and wall.material == "glass" and #wall.openings == 0 and length > 1)
+			or (onGuard(level, wall) and #wall.openings == 0 and length > 1)
+		if rail then
 			buildHorizontalRail(group, cf, length)
 			continue
 		end
+		local finish = interiorFinish(level, wall)
 		for _, r in Layout.rectangles(level, wallIndex, data) do
 			Parts.box(
 				group,
 				"WallSegment",
 				Vector3.new(r.w, r.d, wall.thickness),
 				cf * CFrame.new(r.x + r.w / 2, r.z + r.d / 2, 0),
-				wall.material
+				finish
 			)
 		end
 		for index, o in wall.openings do

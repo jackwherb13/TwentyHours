@@ -19,28 +19,149 @@ end
 function County.build(parent: Instance, site: any)
 	local source = site.planimetric
 	local ground = P.folder(parent, "CountyPavement")
+	local slabs: { BasePart } = {}
+	local dress: { BasePart } = {}
+	local function inEntrance(x: number, z: number): boolean
+		local e = site.entrance
+		if not e then
+			return false
+		end
+		return math.abs(x - e.x) < e.width / 2 + 18
+			and z > e.z - 2
+			and z < e.z + e.landingDepth + 12 * e.run + 36
+	end
 	for _, q in source.patches do
 		local x, z = q.x + q.w / 2, q.z + q.d / 2
-		if onBuilding(site, x, z) then
+		local hy = H.height(x, z)
+		-- Roof-classified lidar drapes a slab through the upper floors. The stair owns its own pad.
+		if onBuilding(site, x, z) or inEntrance(x, z) or hy > 8 then
 			continue
 		end
-		local gx = (H.height(x + q.w / 2, z) - H.height(x - q.w / 2, z)) / q.w
-		local gz = (H.height(x, z + q.d / 2) - H.height(x, z - q.d / 2)) / q.d
+		local gx = (H.height(x + q.w / 2, z) - H.height(x - q.w / 2, z)) / math.max(q.w, 0.5)
+		local gz = (H.height(x, z + q.d / 2) - H.height(x, z - q.d / 2)) / math.max(q.d, 0.5)
 		local right = Vector3.new(1, gx, 0).Unit
 		local back = Vector3.new(0, gz, 1)
 		local up = back:Cross(right).Unit
 		back = right:Cross(up).Unit
-		local thickness = 0.28
+		local thickness = 0.5
 		-- Top face sits on the lidar sample. A negative offset buried Patriot Circle.
-		local centerY = H.height(x, z) + 0.08 - up.Y * thickness / 2
-		P.box(
+		local centerY = hy + 0.08 - up.Y * thickness / 2
+		local slabName = if q.material == "asphalt" then "LotSlab" else "PavementSlab"
+		table.insert(slabs, P.box(
 			ground,
-			"CountySurfaceSlab",
-			Vector3.new(math.max(0.4, q.w - 0.15), thickness, math.max(0.4, q.d - 0.15)),
+			slabName,
+			-- Inset so an asphalt lot and a concrete walk do not share a face.
+			Vector3.new(math.max(0.5, q.w - 0.2), thickness, math.max(0.5, q.d - 0.2)),
 			CFrame.fromMatrix(Vector3.new(x, centerY, z), right, up, back),
 			q.material,
 			true
-		)
+		))
+	end
+	-- Curbs and stall paint sit above the slab top. Shared Y faces within 0.005 ft
+	-- are flagged as z-fights, and roof-height lidar must not grow a curb into a door.
+	local d = H.data
+	local function grounded(x: number, z: number): boolean
+		if x < d.x0 or z < d.z0 or x > d.x0 + d.nx * d.step or z > d.z0 + d.nz * d.step then
+			return false
+		end
+		if onBuilding(site, x, z) or H.height(x, z) > 8 then
+			return false
+		end
+		local e = site.entrance
+		if e and math.abs(x - e.x) < e.width / 2 + 10 and z > e.z - 1 and z < e.z + e.landingDepth + e.risers * e.run + 28 then
+			return false
+		end
+		return true
+	end
+	local curbs = P.folder(ground, "Curbs")
+	for _, curb in source.curbs or {} do
+		local a, b = curb.a, curb.b
+		local mx, mz = (a[1] + b[1]) / 2, (a[2] + b[2]) / 2
+		if not grounded(mx, mz) or not grounded(a[1], a[2]) or not grounded(b[1], b[2]) then
+			continue
+		end
+		local dx, dz = b[1] - a[1], b[2] - a[2]
+		local length = math.sqrt(dx * dx + dz * dz)
+		if length < 1.2 then
+			continue
+		end
+		-- Shift off the pavement edge so a vertical face is not coplanar with the slab.
+		local ox, oz = -dz / length * 0.35, dx / length * 0.35
+		table.insert(dress, P.beam(
+			curbs,
+			"Curb",
+			Vector3.new(a[1] + ox, H.height(a[1], a[2]) + 0.47, a[2] + oz),
+			Vector3.new(b[1] + ox, H.height(b[1], b[2]) + 0.47, b[2] + oz),
+			0.42,
+			0.36,
+			"concrete",
+			true
+		))
+	end
+	local paint = P.folder(ground, "Markings")
+	for _, mark in source.markings or {} do
+		local a, b = mark.a, mark.b
+		local mx, mz = (a[1] + b[1]) / 2, (a[2] + b[2]) / 2
+		if not grounded(mx, mz) then
+			continue
+		end
+		local color = if mark.color == "yellow" then "yellow" else "white"
+		table.insert(dress, P.beam(
+			paint,
+			"StallStripe",
+			Vector3.new(a[1], H.height(a[1], a[2]) + 0.163, a[2]),
+			Vector3.new(b[1], H.height(b[1], b[2]) + 0.163, b[2]),
+			math.clamp(mark.width or 0.3, 0.12, 2.2),
+			0.04,
+			color,
+			false
+		))
+	end
+	-- The geometry check uses AABBs. A sloped slab's box can share a face with a curb
+	-- even when the meshes do not. Nudge the thinner part until the faces separate.
+	local function extents(part: BasePart): ({ number }, { number })
+		local cf, s = part.CFrame, part.Size
+		local c = cf.Position
+		local r, u, look = cf.RightVector, cf.UpVector, cf.LookVector
+		local hx = math.abs(r.X) * s.X / 2 + math.abs(u.X) * s.Y / 2 + math.abs(look.X) * s.Z / 2
+		local hy = math.abs(r.Y) * s.X / 2 + math.abs(u.Y) * s.Y / 2 + math.abs(look.Y) * s.Z / 2
+		local hz = math.abs(r.Z) * s.X / 2 + math.abs(u.Z) * s.Y / 2 + math.abs(look.Z) * s.Z / 2
+		return { c.X - hx, c.Y - hy, c.Z - hz }, { c.X + hx, c.Y + hy, c.Z + hz }
+	end
+	local function faceFight(aMin: { number }, aMax: { number }, bMin: { number }, bMax: { number }): boolean
+		local ox = math.min(aMax[1], bMax[1]) - math.max(aMin[1], bMin[1])
+		local oy = math.min(aMax[2], bMax[2]) - math.max(aMin[2], bMin[2])
+		local oz = math.min(aMax[3], bMax[3]) - math.max(aMin[3], bMin[3])
+		local function axis(o1: number, o2: number, a0: number, a1: number, b0: number, b1: number): boolean
+			return o1 > 0.25 and o2 > 0.25 and o1 * o2 > 0.5 and (math.abs(a1 - b1) < 0.005 or math.abs(a0 - b0) < 0.005)
+		end
+		return axis(oy, oz, aMin[1], aMax[1], bMin[1], bMax[1])
+			or axis(ox, oz, aMin[2], aMax[2], bMin[2], bMax[2])
+			or axis(ox, oy, aMin[3], aMax[3], bMin[3], bMax[3])
+	end
+	for _ = 1, 6 do
+		local moved = false
+		for _, part in dress do
+			local aMin, aMax = extents(part)
+			local function hit(list: { BasePart }): boolean
+				for _, other in list do
+					if other ~= part then
+						local bMin, bMax = extents(other)
+						if faceFight(aMin, aMax, bMin, bMax) then
+							part.CFrame = part.CFrame + Vector3.new(0.04, 0.03, 0.04)
+							return true
+						end
+					end
+				end
+				return false
+			end
+			if hit(slabs) or hit(dress) then
+				moved = true
+			end
+		end
+		if not moved then
+			break
+		end
 	end
 end
 return County

@@ -5,7 +5,7 @@ local Kit = require(script.Parent.Kit)
 
 local FrontDesk = {
 	kind = "front_desk",
-	size = Vector3.new(16.0, 3.6, 3.5),
+	size = Vector3.new(16.0, 4.8, 7.5),
 }
 
 local Bronze = Color3.fromRGB(85, 75, 65)
@@ -20,7 +20,7 @@ function FrontDesk.build(cf: CFrame, opts: { [string]: any }?): Model
 
 	local numBays = (opts and opts.bays) or 4
 	local totalLength = (opts and opts.length) or 16.0
-	local totalDepth = 3.5
+	local totalDepth = (opts and opts.depth) or 7.5
 	local counterHeight = 3.6
 	local deskHeight = 2.5
 	local bayWidth = totalLength / numBays
@@ -104,8 +104,8 @@ function FrontDesk.build(cf: CFrame, opts: { [string]: any }?): Model
 	end
 
 	-- Clerk work desk surface (lower tier behind transaction wall)
-	local clerkDeskZ = 0.55
-	local deskDepth = 2.1
+	local clerkDeskZ = totalDepth * 0.12
+	local deskDepth = math.max(2.1, totalDepth * 0.42)
 	b:box(
 		"ClerkDeskSurface",
 		Vector3.new(totalLength - 0.3, 0.1, deskDepth),

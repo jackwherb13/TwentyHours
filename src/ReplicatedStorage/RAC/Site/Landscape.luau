@@ -4,16 +4,18 @@ local H = require(script.Parent.Heightfield)
 local G = require(script.Parent.Parent.Build.Geometry)
 local Landscape = {}
 
--- Horizontal disc. Cylinder axis is X; a quarter-turn about Z stands it up. Thickness is vertical, not the tree height.
-local function disc(parent: Instance, center: Vector3, diameter: number, thickness: number, finish: string)
-	local part = P.box(
-		parent,
-		"Crown",
-		Vector3.new(math.max(0.8, thickness), math.max(1.5, diameter), math.max(1.5, diameter)),
-		CFrame.new(center) * CFrame.Angles(0, 0, math.pi / 2),
-		finish
-	)
-	part.Shape = Enum.PartType.Cylinder
+-- Irregular crown. Balls, not Grass cylinders: Grass material sprouts blades and reads as shelves.
+local function crown(parent: Instance, center: Vector3, diameter: number, squash: number, color: Color3)
+	local part = Instance.new("Part")
+	part.Name = "Crown"
+	part.Shape = Enum.PartType.Ball
+	part.Size = Vector3.new(math.max(2, diameter), math.max(2, diameter * squash), math.max(2, diameter))
+	part.CFrame = CFrame.new(center)
+	part.Material = Enum.Material.SmoothPlastic
+	part.Color = color
+	part.Anchored = true
+	part.CanCollide = false
+	part.Parent = parent
 end
 
 local function tree(parent: Instance, item: any, index: number)
@@ -22,38 +24,40 @@ local function tree(parent: Instance, item: any, index: number)
 	local model = Instance.new("Model")
 	model.Name = `Tree_{index}`
 	local pine = item.species == "pine"
-	local trunkH = height * (if pine then 0.42 else 0.36)
-	local trunkR = math.clamp(0.22 + height * 0.009, 0.35, 1.25)
+	local trunkH = height * (if pine then 0.55 else 0.38)
+	local trunkR = math.clamp(0.28 + height * 0.012, 0.45, 1.35)
 	P.pole(model, "Trunk", Vector3.new(p[1], y, p[2]), trunkH, trunkR, "bark", true)
-	local crownH = math.max(4, height - trunkH * 0.82)
-	local base = y + trunkH * 0.9
+	local crownH = math.max(6, height - trunkH * 0.55)
+	local base = y + trunkH * 0.72
 	if pine then
-		-- Overlapping discs, each smaller than the one below, so the silhouette is a cone rather than shelves.
-		local scales = { 1, 0.9, 0.78, 0.64, 0.5, 0.36, 0.22, 0.1 }
-		for i, scale in scales do
-			local t = (i - 0.4) / #scales
-			disc(model, Vector3.new(p[1], base + t * crownH, p[2]), radius * 2 * scale, crownH / #scales * 2.8, "pine")
+		local color = Color3.fromRGB(32, 58, 38)
+		for i = 1, 5 do
+			local t = (i - 0.35) / 5
+			local scale = 1.05 - t * 0.88
+			local jx = ((i * 5 + index) % 5 - 2) * radius * 0.06
+			local jz = ((i * 3 + index) % 5 - 2) * radius * 0.05
+			crown(
+				model,
+				Vector3.new(p[1] + jx, base + t * crownH, p[2] + jz),
+				radius * 2 * scale,
+				0.72,
+				color
+			)
 		end
 	else
-		-- Thin overlapping discs. Thick ones read as stacked plates when the crown is close.
-		local layers = {
-			{ 0.1, 0.5, 0.2 },
-			{ 0.24, 0.78, 0.22 },
-			{ 0.38, 0.96, 0.22 },
-			{ 0.5, 1, 0.2 },
-			{ 0.62, 0.9, 0.2 },
-			{ 0.74, 0.7, 0.18 },
-			{ 0.86, 0.46, 0.16 },
-			{ 0.95, 0.24, 0.14 },
+		local color = Color3.fromRGB(58, 86, 44)
+		local blobs = {
+			{ 0, 0.42, 0, 1 },
+			{ 0.36, 0.62, 0.18, 0.74 },
+			{ -0.4, 0.36, 0.16, 0.8 },
+			{ 0.1, 0.74, -0.34, 0.62 },
+			{ -0.22, 0.58, -0.3, 0.68 },
+			{ 0.24, 0.28, 0.38, 0.58 },
 		}
-		for _, layer in layers do
-			disc(
-				model,
-				Vector3.new(p[1], base + layer[1] * crownH, p[2]),
-				radius * 2 * layer[2],
-				crownH * layer[3],
-				"leaf"
-			)
+		for i, blob in blobs do
+			local jx = blob[1] * radius + ((index + i) % 3 - 1) * 0.4
+			local jz = blob[3] * radius
+			crown(model, Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz), radius * 2 * blob[4], 0.86, color)
 		end
 	end
 	model.Parent = parent
@@ -123,8 +127,11 @@ function Landscape.build(parent: Instance, site: any, props: any)
 		local cf = CFrame.new(x, y, z) * CFrame.Angles(0, math.rad(prop.rotation), 0)
 		if prop.kind == "site_lamp" then
 			local base = y - 0.5
-			P.pole(parent, "LightPole", Vector3.new(x, base, z), y + 18 - base, 0.18, "dark", true)
-			P.box(parent, "LightHead", Vector3.new(1.8, 0.3, 0.8), cf * CFrame.new(0.6, 18, 0), "dark")
+			P.pole(parent, "LightPole", Vector3.new(x, base, z), y + 16 - base, 0.22, "dark", true)
+			local globe = P.box(parent, "LightGlobe", Vector3.new(1.5, 1.5, 1.5), cf * CFrame.new(0, 16.6, 0), "dark")
+			globe.Shape = Enum.PartType.Ball
+			globe.Material = Enum.Material.SmoothPlastic
+			globe.Color = Color3.fromRGB(32, 34, 36)
 		elseif prop.kind == "site_dumpster" then
 			P.box(parent, "DumpsterBody", Vector3.new(6, 4, 3.7), cf * CFrame.new(0, 2, 0), "green", true)
 			P.box(
@@ -139,7 +146,7 @@ function Landscape.build(parent: Instance, site: any, props: any)
 			end
 		elseif prop.kind == "site_shrub_bed" then
 			P.box(parent, "PlanterSlab", Vector3.new(14, 0.4, 5), cf, "concrete")
-			P.box(parent, "Hedge", Vector3.new(12.5, 2.4, 3.4), cf * CFrame.new(0, 1.4, 0), "leaf")
+			P.box(parent, "Hedge", Vector3.new(12.5, 2.4, 3.4), cf * CFrame.new(0, 1.4, 0), "shrub")
 		end
 	end
 end

@@ -186,7 +186,7 @@ function HighBayLight.build(cf: CFrame, opts: { [string]: any }?): Model
 
 	-- 7. High-output downward SurfaceLight
 	if primaryLedPart then
-		b:light(primaryLedPart, Enum.NormalId.Bottom, 2.5, 40, GymLightBeam)
+		b:light(primaryLedPart, Enum.NormalId.Bottom, 4, 56, GymLightBeam)
 	end
 
 	return b:done()

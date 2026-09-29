@@ -18,7 +18,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/maple_court.png",
 		studsPerTile = 4,
 		roughness = 0.18,
-		assetId = nil,
+		assetId = "rbxassetid://115379168184321",
 	},
 	terrazzo = {
 		base = Enum.Material.Concrete,
@@ -26,7 +26,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/terrazzo_corridor.png",
 		studsPerTile = 4,
 		roughness = 0.25,
-		assetId = nil,
+		assetId = "rbxassetid://82792157361684",
 	},
 	porcelain_tile = {
 		base = Enum.Material.Marble,
@@ -34,7 +34,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/porcelain_tile_12x24.png",
 		studsPerTile = 4,
 		roughness = 0.32,
-		assetId = nil,
+		assetId = "rbxassetid://139851902641009",
 	},
 	carpet_tile = {
 		base = Enum.Material.Fabric,
@@ -42,7 +42,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/carpet_tile_office.png",
 		studsPerTile = 4,
 		roughness = 0.95,
-		assetId = nil,
+		assetId = "rbxassetid://112971278288310",
 	},
 	rubber = {
 		base = Enum.Material.Rubber,
@@ -50,7 +50,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/rubber_gym_floor.png",
 		studsPerTile = 4,
 		roughness = 0.9,
-		assetId = nil,
+		assetId = "rbxassetid://77770454739238",
 	},
 	sealed_concrete = {
 		base = Enum.Material.Concrete,
@@ -58,7 +58,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/sealed_concrete.png",
 		studsPerTile = 4,
 		roughness = 0.45,
-		assetId = nil,
+		assetId = "rbxassetid://132402981008958",
 	},
 	ceramic_tile = {
 		base = Enum.Material.CeramicTiles,
@@ -66,7 +66,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/ceramic_wall_tile.png",
 		studsPerTile = 2,
 		roughness = 0.22,
-		assetId = nil,
+		assetId = "rbxassetid://100222343892181",
 	},
 	vinyl = {
 		base = Enum.Material.SmoothPlastic,
@@ -74,7 +74,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/terrazzo_corridor.png",
 		studsPerTile = 4,
 		roughness = 0.4,
-		assetId = nil,
+		assetId = "rbxassetid://82792157361684",
 	},
 	painted_cmu = {
 		base = Enum.Material.Concrete,
@@ -82,7 +82,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/painted_cmu.png",
 		studsPerTile = 4,
 		roughness = 0.7,
-		assetId = nil,
+		assetId = "rbxassetid://127160626359077",
 	},
 	brick = {
 		base = Enum.Material.Brick,
@@ -90,7 +90,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/brick_red.png",
 		studsPerTile = 2,
 		roughness = 0.9,
-		assetId = nil,
+		assetId = "rbxassetid://102625076659678",
 	},
 	gypsum = {
 		base = Enum.Material.Plaster,
@@ -114,7 +114,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/metal_panel_grey.png",
 		studsPerTile = 4,
 		roughness = 0.4,
-		assetId = nil,
+		assetId = "rbxassetid://74124851272829",
 	},
 	precast = {
 		base = Enum.Material.Concrete,
@@ -122,7 +122,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/sealed_concrete.png",
 		studsPerTile = 4,
 		roughness = 0.8,
-		assetId = nil,
+		assetId = "rbxassetid://132402981008958",
 	},
 	acoustic_ceiling = {
 		base = Enum.Material.Plaster,
@@ -130,7 +130,7 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/acoustic_ceiling_2x2.png",
 		studsPerTile = 2,
 		roughness = 0.95,
-		assetId = nil,
+		assetId = "rbxassetid://125104498841691",
 	},
 	mosaic_green = {
 		base = Enum.Material.CeramicTiles,
@@ -138,25 +138,15 @@ local definitions: { [string]: MaterialDefinition } = {
 		texture = "art/materials/mosaic_green.png",
 		studsPerTile = 2,
 		roughness = 0.2,
-		assetId = nil,
+		assetId = "rbxassetid://138590772740153",
 	},
 }
 
-local function apply(part: BasePart, key: string)
+local function ensureVariant(key: string): string?
 	local definition = definitions[key]
-	assert(definition ~= nil, "Unknown RAC material: " .. key)
-	part.Material = definition.base
-	part.MaterialVariant = ""
-	part.Color = definition.color
-	part:SetAttribute("RACMaterial", key)
-	part:SetAttribute("RACTexturePath", definition.texture)
-	part:SetAttribute("RACStudsPerTile", definition.studsPerTile)
-	-- Scalar metadata for the Studio PBR workflow; Roblox needs a roughness map.
-	part:SetAttribute("RACRoughness", definition.roughness)
-
 	local assetId = definition.assetId
 	if assetId == nil or assetId == "" then
-		return
+		return nil
 	end
 	local variantName = "RAC_" .. key
 	local existing = MaterialService:FindFirstChild(variantName)
@@ -173,6 +163,33 @@ local function apply(part: BasePart, key: string)
 	variant.StudsPerTile = definition.studsPerTile
 	variant:SetAttribute("RACRoughness", definition.roughness)
 	variant.Parent = MaterialService
+	return variantName
+end
+
+local function install()
+	for key in definitions do
+		ensureVariant(key)
+	end
+end
+
+local function apply(part: BasePart, key: string)
+	local definition = definitions[key]
+	assert(definition ~= nil, "Unknown RAC material: " .. key)
+	part.Material = definition.base
+	part.MaterialVariant = ""
+	part.Color = definition.color
+	part:SetAttribute("RACMaterial", key)
+	part:SetAttribute("RACTexturePath", definition.texture)
+	part:SetAttribute("RACStudsPerTile", definition.studsPerTile)
+	-- Scalar metadata for the Studio PBR workflow; Roblox needs a roughness map.
+	part:SetAttribute("RACRoughness", definition.roughness)
+	-- Maple court boards are finished gloss. Other floors stay matte.
+	part.Reflectance = if key == "maple" then 0.22 else 0
+
+	local variantName = ensureVariant(key)
+	if variantName == nil then
+		return
+	end
 	-- Albedo is already colored. White avoids applying the fallback tint twice.
 	part.Color = Color3.new(1, 1, 1)
 	part.MaterialVariant = variantName
@@ -197,4 +214,5 @@ return {
 	acoustic_ceiling = definitions.acoustic_ceiling,
 	mosaic_green = definitions.mosaic_green,
 	apply = apply,
+	install = install,
 }

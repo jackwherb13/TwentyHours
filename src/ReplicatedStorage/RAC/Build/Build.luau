@@ -9,7 +9,18 @@ local Stairs = require(script.Parent.Stairs)
 local Facade = require(script.Parent.Facade)
 local Roofs = require(script.Parent.Roofs)
 local PropRegistry = require(script.Parent.PropRegistry)
+local Court = require(script.Parent.Court)
+local Lights = require(script.Parent.Lights)
 local Build = {}
+
+local function levelOneY(data: any): number
+	for _, level in data.levels do
+		if level.level == 1 then
+			return level.elevation + 0.2
+		end
+	end
+	return 0.2
+end
 export type Stats = { parts: number, byCategory: { [string]: number } }
 function Build.build(parent: Instance, raw: any): Stats
 	local data = if raw == nil then Blueprint.load() else Blueprint.decode(raw)
@@ -43,6 +54,7 @@ function Build.build(parent: Instance, raw: any): Stats
 		local root = Geometry.folder(levels, tostring(level.level))
 		local floors = Geometry.folder(root, "Floors")
 		Floors.build(floors, level, data.site)
+		Court.build(floors, level)
 		count(floors, "Floors")
 		local walls = Geometry.folder(root, "Walls")
 		Walls.build(walls, level, data)
@@ -62,7 +74,7 @@ function Build.build(parent: Instance, raw: any): Stats
 				* CFrame.Angles(0, math.rad(prop.rotation), 0)
 			local opts: { [string]: any } = { room = prop.room }
 			local extra = prop :: any
-			for _, key in { "length", "bays", "rows", "text" } do
+			for _, key in { "length", "bays", "rows", "text", "depth" } do
 				if extra[key] ~= nil then
 					opts[key] = extra[key]
 				end
@@ -73,7 +85,22 @@ function Build.build(parent: Instance, raw: any): Stats
 			instance.Parent = levelProps
 		end
 		count(levelProps, "Props")
+		local lights = Geometry.folder(root, "Lights")
+		Lights.build(lights, level)
+		count(lights, "Lights")
 	end
+	local spawn = Instance.new("SpawnLocation")
+	spawn.Name = "LobbySpawn"
+	spawn.Size = Vector3.new(4, 0.3, 4)
+	spawn.Anchored = true
+	spawn.Neutral = true
+	spawn.CanCollide = true
+	spawn.Duration = 0
+	-- South lobby, a few feet inside the glass, facing north.
+	spawn.CFrame = CFrame.new(-2, levelOneY(data), -6)
+	spawn.Material = Enum.Material.SmoothPlastic
+	spawn.Color = Color3.fromRGB(196, 192, 180)
+	spawn.Parent = model
 	local site = Geometry.folder(model, "Site")
 	local facade = Geometry.folder(site, "Facade")
 	Facade.build(facade, data.site, data.levels)

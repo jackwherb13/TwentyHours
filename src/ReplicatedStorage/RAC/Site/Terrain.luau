@@ -13,6 +13,27 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 		local i, j = math.floor(u) + 1, math.floor(v) + 1
 		return tonumber(string.sub(d.materials[j], i, i)) :: number
 	end
+	local function insidePad(x: number, z: number): boolean
+		local pads = d.pad
+		if not pads then
+			return false
+		end
+		for _, poly in pads do
+			local inside = false
+			local j = #poly
+			for i, a in poly do
+				local b = poly[j]
+				if (a[2] > z) ~= (b[2] > z) and x < (b[1] - a[1]) * (z - a[2]) / (b[2] - a[2]) + a[1] then
+					inside = not inside
+				end
+				j = i
+			end
+			if inside then
+				return true
+			end
+		end
+		return false
+	end
 	local count = 0
 	-- WriteVoxels snaps regions onto the 4-stud grid. The lidar origin is not on that grid
 	-- after the building-frame shift, so each tile is expanded and sampled at voxel centers.
@@ -42,8 +63,16 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 					for iz = 1, vz do
 						local z = origin.Z + (iz - 0.5) * resolution
 						local h = Heightfield.height(x, z)
-						local fill = math.clamp((h - bottom) / resolution, 0, 1)
 						local material = materialAt(x, z)
+						-- Roof-classified lidar inside the footprint was growing grass through floors.
+						if insidePad(x, z) then
+							h = math.min(h, -1.5)
+							material = 3
+						elseif math.abs(x) < 34 and z > -1 and z < 64 then
+							-- Stair, ramp, and apron. Concrete does not grow grass blades through the treads.
+							material = 3
+						end
+						local fill = math.clamp((h - bottom) / resolution, 0, 1)
 						mats[ix][iy][iz] = if fill == 0 then Enum.Material.Air else materials[material]
 						occupancy[ix][iy][iz] = fill
 					end
