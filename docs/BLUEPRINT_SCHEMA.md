@@ -64,6 +64,6 @@ cable_machine, leg_press, lat_pulldown, chest_press, treadmill, elliptical, stai
 wall_mirror, wall_tv, water_fountain, trash_bin, recycle_bin, bleacher_bank, basketball_hoop_ceiling, volleyball_standard,
 wall_pad, scoreboard, banner, flag, locker_bank_wood, locker_bank_metal, bench_locker, front_desk, cubicle, office_desk,
 office_chair, mail_slots, wall_clock, fire_extinguisher_cabinet, exit_sign, troffer_2x4, troffer_2x2, high_bay_light,
-downlight, door_single, door_double, toilet_partition, urinal, sink_counter, shower_stall, vending_machine, bulletin_board.
+downlight, door_single, door_double, toilet_partition, urinal, sink_counter, shower_stall, vending_machine, bulletin_board, training_table, ping_pong_table, trophy_case, jersey_frame, industrial_fridge, keypad_door, squash_court.
 Each prop module returns `{ kind = "...", size = Vector3 (ft, bounding box), build = function(cf: CFrame, opts: {[string]: any}?): Model }`.
 Model pivot = bottom-center of the bounding box, facing −Z.
