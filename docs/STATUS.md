@@ -1,7 +1,7 @@
 # 20 Hour Weeks — RAC build status board
 
 Maintained by the manager (Claude). One place to see what's done, what's running, and what's open.
-Last updated: 2026-09-29 08:50
+Last updated: 2026-09-29 10:15
 
 Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail) - lobby-open job, 08:44
 
@@ -20,6 +20,11 @@ Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail)
 | exterior-grok | QA round 2 exterior fixes (27 items) | Site/ |
 | site-markings (Grok) | aerial + street-level references; trace and build lane/stall/crosswalk markings, curbs, islands | Site/Markings/ |
 | gemini-layout (Antigravity) | spatial review of plan vs walkthrough → coordinate fixes | docs/reviews/GEMINI_LAYOUT_REVIEW.md |
+| material-library (Grok) | one material template from high-quality PBR textures matched to photos; check_materials in verify; judged >= 8 | MaterialService, Materials.luau, art/materials |
+| world-extent (Grok) | done: low-detail campus (PV Lot, Angel Cabrera Global Center, EagleBank) + horizon, wired into Site.Builder | Site/Campus, Site/Horizon |
+| repo-organizer (Grok) | README, docs index, CONTRIBUTING, GitHub Actions CI, cleanup candidates, GitHub issues/milestones | README, .github/, docs/INDEX |
+| roblox-readiness (Grok) | perf post-pass, check_perf gate, walkability, Studio play-test stats | Build/Perf.luau, tools/check_perf.luau |
+| game-integration (Grok) | zone/door/spawn tags, patrol points, pathfinding checks across the building | Build/Tags.luau, NavCheck |
 
 ## Done (verified, committed)
 - Toolchain, Rojo live sync into places/TwentyHours.rbxl, verify gate (lint, types, tests, blueprint logic, geometry, stairs)
