@@ -47,5 +47,5 @@ Monetization, data saving, lobbies/matchmaking, public publishing.
 - Materials: MaterialVariants with correct color + roughness; no default grey plastic anywhere visible.
 - Lighting: fixtures are actual light sources (SurfaceLight/SpotLight) placed where the ceiling fixtures are.
 - NOT OVERBOARD (user, 2026-09-28): accurate layout and recognizable detail, not micro-detail. Budgets: whole map <= 40,000 parts
-  (building shell <= 12k, props <= 20k, exterior <= 6k near the RAC + <= 4k low-detail neighbour buildings in the bigger map), repeated items instanced from templates, no parts < 0.3 ft except stripes/trim/labels,
+  (building shell <= 12k, props <= 20k, exterior <= 6k near the RAC + <= 6k low-detail campus (~3,000 x 3,000 ft incl. PV Lot, Angel Cabrera Global Center, EagleBank Arena) + <= 1.5k horizon parts beyond terrain; the world must never visibly end), repeated items instanced from templates, no parts < 0.3 ft except stripes/trim/labels,
   textures only from art/materials. When a detail costs lots of parts but is barely visible at eye level, skip it.
