@@ -1,0 +1,8 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Plaster",
+    "StudsPerTile": 8,
+    "Name": "RAC_gypsum"
+  }
+}

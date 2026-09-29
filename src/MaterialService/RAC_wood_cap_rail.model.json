@@ -1,0 +1,8 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Wood",
+    "StudsPerTile": 4,
+    "Name": "RAC_wood_cap_rail"
+  }
+}

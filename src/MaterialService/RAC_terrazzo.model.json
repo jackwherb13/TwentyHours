@@ -3,7 +3,7 @@
   "properties": {
     "BaseMaterial": "Concrete",
     "ColorMap": "rbxassetid://82792157361684",
-    "StudsPerTile": 8,
+    "StudsPerTile": 6,
     "Name": "RAC_terrazzo"
   }
 }

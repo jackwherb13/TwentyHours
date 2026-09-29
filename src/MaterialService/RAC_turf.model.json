@@ -1,0 +1,8 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Grass",
+    "StudsPerTile": 4,
+    "Name": "RAC_turf"
+  }
+}

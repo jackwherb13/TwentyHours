@@ -1,0 +1,8 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "CeramicTiles",
+    "StudsPerTile": 2,
+    "Name": "RAC_ceramic_floor_tile"
+  }
+}

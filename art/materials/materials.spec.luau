@@ -5,10 +5,12 @@ local luau = require("@lune/luau")
 local roblox = require("@lune/roblox")
 local service = roblox.Instance.new("MaterialService")
 local env = {
-	game = { GetService = function(_, name)
-		assert(name == "MaterialService")
-		return service
-	end },
+	game = {
+		GetService = function(_, name)
+			assert(name == "MaterialService")
+			return service
+		end,
+	},
 	Enum = roblox.Enum,
 	Color3 = roblox.Color3,
 	Instance = roblox.Instance,
@@ -53,7 +55,7 @@ local variant = service:FindFirstChild("RAC_maple")
 assert(variant.ColorMap == materials.maple.assetId)
 assert(variant.StudsPerTile == materials.maple.studsPerTile)
 assert(variant.BaseMaterial == roblox.Enum.Material.WoodPlanks)
-assert(part.Color == roblox.Color3.fromRGB(232, 204, 156))
+assert(part.Color == materials.maple.color)
 materials.apply(part, "glass")
 assert(part.MaterialVariant == "" and part:GetAttribute("RACTexturePath") == nil)
 print("PASS Materials: tinted variants, local files, fallback, unknown key, idempotent variants")

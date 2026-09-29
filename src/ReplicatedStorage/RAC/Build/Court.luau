@@ -6,9 +6,6 @@ local Blueprint = require(script.Parent.Blueprint)
 local Parts = require(script.Parent.Parts)
 
 local Court = {}
-local GREEN = Color3.fromRGB(0, 110, 52)
-local GOLD = Color3.fromRGB(214, 172, 44)
-local LOGO_GREEN = Color3.fromRGB(0, 70, 38)
 
 local HALF_W = 29.5 / 2
 local HALF_L = 59 / 2
@@ -23,13 +20,9 @@ local function paint(
 	w: number,
 	d: number,
 	y: number,
-	color: Color3
+	finish: string
 )
-	local part = Parts.box(parent, name, Vector3.new(w, 0.02, d), CFrame.new(x, y, z), "metal_panel", false)
-	part.Color = color
-	part.Material = Enum.Material.Metal
-	part.MaterialVariant = "RAC_metal_panel"
-	part.Reflectance = 0.08
+	local part = Parts.box(parent, name, Vector3.new(w, 0.02, d), CFrame.new(x, y, z), finish, false)
 	part.CanCollide = false
 	return part
 end
@@ -75,7 +68,7 @@ local function word(parent: Instance, name: string, text: string, cx: number, cz
 						cell * 0.85,
 						cell * 0.85,
 						y,
-						GOLD
+						"court_gold_paint"
 					)
 				end
 			end
@@ -84,12 +77,12 @@ local function word(parent: Instance, name: string, text: string, cx: number, cz
 end
 
 local function logo(parent: Instance, cx: number, cz: number, y: number)
-	paint(parent, "LogoOuter", cx, cz, 8.5, 8.5, y, GOLD)
-	paint(parent, "LogoRing", cx, cz, 7.6, 7.6, y + 0.01, LOGO_GREEN)
-	paint(parent, "LogoInner", cx, cz, 6.2, 6.2, y + 0.02, GOLD)
-	paint(parent, "LogoFace", cx, cz, 5.4, 5.4, y + 0.03, GREEN)
-	paint(parent, "LogoG", cx - 1.2, cz, 1.8, 3.6, y + 0.04, GOLD)
-	paint(parent, "LogoM", cx + 1.2, cz, 1.8, 3.6, y + 0.04, GOLD)
+	paint(parent, "LogoOuter", cx, cz, 8.5, 8.5, y, "court_gold_paint")
+	paint(parent, "LogoRing", cx, cz, 7.6, 7.6, y + 0.01, "court_green_paint")
+	paint(parent, "LogoInner", cx, cz, 6.2, 6.2, y + 0.02, "court_gold_paint")
+	paint(parent, "LogoFace", cx, cz, 5.4, 5.4, y + 0.03, "court_green_paint")
+	paint(parent, "LogoG", cx - 1.2, cz, 1.8, 3.6, y + 0.04, "court_gold_paint")
+	paint(parent, "LogoM", cx + 1.2, cz, 1.8, 3.6, y + 0.04, "court_gold_paint")
 end
 
 function Court.build(parent: Instance, level: Blueprint.Level)
@@ -127,12 +120,12 @@ function Court.build(parent: Instance, level: Blueprint.Level)
 	group.Parent = parent
 	local yGreen = level.elevation + 0.02
 	local yLine = level.elevation + 0.05
-	paint(group, "ApronWest", cx - HALF_W - apronX / 2, cz, apronX, outerL, yGreen, GREEN)
-	paint(group, "ApronEast", cx + HALF_W + apronX / 2, cz, apronX, outerL, yGreen, GREEN)
-	paint(group, "ApronNorth", cx, cz - HALF_L - apronZ / 2, innerW, apronZ, yGreen, GREEN)
-	paint(group, "ApronSouth", cx, cz + HALF_L + apronZ / 2, innerW, apronZ, yGreen, GREEN)
+	paint(group, "ApronWest", cx - HALF_W - apronX / 2, cz, apronX, outerL, yGreen, "court_green_paint")
+	paint(group, "ApronEast", cx + HALF_W + apronX / 2, cz, apronX, outerL, yGreen, "court_green_paint")
+	paint(group, "ApronNorth", cx, cz - HALF_L - apronZ / 2, innerW, apronZ, yGreen, "court_green_paint")
+	paint(group, "ApronSouth", cx, cz + HALF_L + apronZ / 2, innerW, apronZ, yGreen, "court_green_paint")
 	local function line(name: string, x: number, z: number, w: number, d: number)
-		paint(group, name, x, z, w, d, yLine, GOLD)
+		paint(group, name, x, z, w, d, yLine, "court_gold_paint")
 	end
 	line("SidelineWest", cx - HALF_W, cz, LINE, innerL)
 	line("SidelineEast", cx + HALF_W, cz, LINE, innerL)

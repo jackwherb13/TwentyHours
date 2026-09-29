@@ -3,7 +3,7 @@
   "properties": {
     "BaseMaterial": "Concrete",
     "ColorMap": "rbxassetid://127160626359077",
-    "StudsPerTile": 4,
+    "StudsPerTile": 8,
     "Name": "RAC_painted_cmu"
   }
 }

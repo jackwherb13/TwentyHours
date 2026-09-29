@@ -1,0 +1,379 @@
+{
+  "maple": {
+    "source": "ambientCG WoodFloor051 CC0",
+    "color": "art/materials/pbr/maple_color.png",
+    "normal": "art/materials/pbr/maple_normal.png",
+    "roughness": "art/materials/pbr/maple_roughness.png",
+    "rgb": [
+      220,
+      196,
+      164
+    ],
+    "rough": 0.18,
+    "photo": "IMG_0332"
+  },
+  "racquetball_wood": {
+    "source": "ambientCG WoodFloor062 CC0",
+    "color": "art/materials/pbr/racquetball_wood_color.png",
+    "normal": "art/materials/pbr/racquetball_wood_normal.png",
+    "roughness": "art/materials/pbr/racquetball_wood_roughness.png",
+    "rgb": [
+      228,
+      208,
+      176
+    ],
+    "rough": 0.28,
+    "photo": "IMG_0332"
+  },
+  "terrazzo": {
+    "source": "ambientCG Terrazzo001 CC0",
+    "color": "art/materials/pbr/terrazzo_color.png",
+    "normal": "art/materials/pbr/terrazzo_normal.png",
+    "roughness": "art/materials/pbr/terrazzo_roughness.png",
+    "rgb": [
+      188,
+      178,
+      166
+    ],
+    "rough": 0.16,
+    "photo": "IMG_0314"
+  },
+  "porcelain_tile": {
+    "source": "ambientCG Tiles002 CC0",
+    "color": "art/materials/pbr/porcelain_tile_color.png",
+    "normal": "art/materials/pbr/porcelain_tile_normal.png",
+    "roughness": "art/materials/pbr/porcelain_tile_roughness.png",
+    "rgb": [
+      186,
+      174,
+      160
+    ],
+    "rough": 0.22,
+    "photo": "IMG_0316"
+  },
+  "carpet_tile": {
+    "source": "ambientCG Carpet008 CC0",
+    "color": "art/materials/pbr/carpet_tile_color.png",
+    "normal": "art/materials/pbr/carpet_tile_normal.png",
+    "roughness": "art/materials/pbr/carpet_tile_roughness.png",
+    "rgb": [
+      68,
+      67,
+      66
+    ],
+    "rough": 0.92,
+    "photo": "IMG_0324"
+  },
+  "rubber": {
+    "source": "ambientCG Rubber002 CC0",
+    "color": "art/materials/pbr/rubber_color.png",
+    "normal": "art/materials/pbr/rubber_normal.png",
+    "roughness": "art/materials/pbr/rubber_roughness.png",
+    "rgb": [
+      173,
+      164,
+      148
+    ],
+    "rough": 0.88,
+    "photo": "IMG_0318"
+  },
+  "turf": {
+    "source": "ambientCG Grass001 CC0",
+    "color": "art/materials/pbr/turf_color.png",
+    "normal": "art/materials/pbr/turf_normal.png",
+    "roughness": "art/materials/pbr/turf_roughness.png",
+    "rgb": [
+      77,
+      84,
+      47
+    ],
+    "rough": 0.9,
+    "photo": "IMG_0364"
+  },
+  "ceramic_tile": {
+    "source": "ambientCG Tiles107 CC0",
+    "color": "art/materials/pbr/ceramic_tile_color.png",
+    "normal": "art/materials/pbr/ceramic_tile_normal.png",
+    "roughness": "art/materials/pbr/ceramic_tile_roughness.png",
+    "rgb": [
+      232,
+      224,
+      210
+    ],
+    "rough": 0.2,
+    "photo": "IMG_0379"
+  },
+  "ceramic_floor_tile": {
+    "source": "ambientCG Tiles001 CC0",
+    "color": "art/materials/pbr/ceramic_floor_tile_color.png",
+    "normal": "art/materials/pbr/ceramic_floor_tile_normal.png",
+    "roughness": "art/materials/pbr/ceramic_floor_tile_roughness.png",
+    "rgb": [
+      196,
+      180,
+      160
+    ],
+    "rough": 0.28,
+    "photo": "IMG_0378"
+  },
+  "painted_cmu": {
+    "source": "ambientCG Bricks093 CC0",
+    "color": "art/materials/pbr/painted_cmu_color.png",
+    "normal": "art/materials/pbr/painted_cmu_normal.png",
+    "roughness": "art/materials/pbr/painted_cmu_roughness.png",
+    "rgb": [
+      210,
+      206,
+      200
+    ],
+    "rough": 0.72,
+    "photo": "IMG_0314"
+  },
+  "brick": {
+    "source": "ambientCG Bricks059 CC0",
+    "color": "art/materials/pbr/brick_color.png",
+    "normal": "art/materials/pbr/brick_normal.png",
+    "roughness": "art/materials/pbr/brick_roughness.png",
+    "rgb": [
+      120,
+      84,
+      68
+    ],
+    "rough": 0.88,
+    "photo": "IMG_0349"
+  },
+  "gypsum": {
+    "source": "ambientCG Plaster003 CC0",
+    "color": "art/materials/pbr/gypsum_color.png",
+    "normal": "art/materials/pbr/gypsum_normal.png",
+    "roughness": "art/materials/pbr/gypsum_roughness.png",
+    "rgb": [
+      220,
+      220,
+      222
+    ],
+    "rough": 0.82,
+    "photo": "IMG_0314"
+  },
+  "metal_panel": {
+    "source": "ambientCG Metal032 CC0",
+    "color": "art/materials/pbr/metal_panel_color.png",
+    "normal": "art/materials/pbr/metal_panel_normal.png",
+    "roughness": "art/materials/pbr/metal_panel_roughness.png",
+    "rgb": [
+      145,
+      150,
+      153
+    ],
+    "rough": 0.38,
+    "photo": "IMG_0359"
+  },
+  "precast": {
+    "source": "ambientCG Concrete034 CC0",
+    "color": "art/materials/pbr/precast_color.png",
+    "normal": "art/materials/pbr/precast_normal.png",
+    "roughness": "art/materials/pbr/precast_roughness.png",
+    "rgb": [
+      184,
+      170,
+      156
+    ],
+    "rough": 0.78,
+    "photo": "IMG_0349"
+  },
+  "acoustic_ceiling": {
+    "source": "ambientCG Plaster001 CC0",
+    "color": "art/materials/pbr/acoustic_ceiling_color.png",
+    "normal": "art/materials/pbr/acoustic_ceiling_normal.png",
+    "roughness": "art/materials/pbr/acoustic_ceiling_roughness.png",
+    "rgb": [
+      232,
+      230,
+      226
+    ],
+    "rough": 0.94,
+    "photo": "IMG_0327"
+  },
+  "mosaic_green": {
+    "source": "ambientCG Tiles023 CC0",
+    "color": "art/materials/pbr/mosaic_green_color.png",
+    "normal": "art/materials/pbr/mosaic_green_normal.png",
+    "roughness": "art/materials/pbr/mosaic_green_roughness.png",
+    "rgb": [
+      168,
+      176,
+      162
+    ],
+    "rough": 0.22,
+    "photo": "IMG_0340"
+  },
+  "sealed_concrete": {
+    "source": "ambientCG Concrete034 CC0",
+    "color": "art/materials/pbr/sealed_concrete_color.png",
+    "normal": "art/materials/pbr/sealed_concrete_normal.png",
+    "roughness": "art/materials/pbr/sealed_concrete_roughness.png",
+    "rgb": [
+      184,
+      180,
+      172
+    ],
+    "rough": 0.36,
+    "photo": "IMG_0365"
+  },
+  "vinyl": {
+    "source": "ambientCG Tiles002 CC0",
+    "color": "art/materials/pbr/vinyl_color.png",
+    "normal": "art/materials/pbr/vinyl_normal.png",
+    "roughness": "art/materials/pbr/vinyl_roughness.png",
+    "rgb": [
+      184,
+      176,
+      164
+    ],
+    "rough": 0.4,
+    "photo": "IMG_0316"
+  },
+  "steel": {
+    "source": "ambientCG Metal032 CC0",
+    "color": "art/materials/pbr/steel_color.png",
+    "normal": "art/materials/pbr/steel_normal.png",
+    "roughness": "art/materials/pbr/steel_roughness.png",
+    "rgb": [
+      48,
+      50,
+      52
+    ],
+    "rough": 0.45,
+    "photo": "IMG_0332"
+  },
+  "mullion_aluminum": {
+    "source": "ambientCG Metal032 CC0",
+    "color": "art/materials/pbr/mullion_aluminum_color.png",
+    "normal": "art/materials/pbr/mullion_aluminum_normal.png",
+    "roughness": "art/materials/pbr/mullion_aluminum_roughness.png",
+    "rgb": [
+      168,
+      172,
+      176
+    ],
+    "rough": 0.32,
+    "photo": "IMG_0368"
+  },
+  "stainless": {
+    "source": "ambientCG Metal021 CC0",
+    "color": "art/materials/pbr/stainless_color.png",
+    "normal": "art/materials/pbr/stainless_normal.png",
+    "roughness": "art/materials/pbr/stainless_roughness.png",
+    "rgb": [
+      180,
+      184,
+      186
+    ],
+    "rough": 0.22,
+    "photo": "IMG_0329"
+  },
+  "door_wood": {
+    "source": "ambientCG Wood051 CC0",
+    "color": "art/materials/pbr/door_wood_color.png",
+    "normal": "art/materials/pbr/door_wood_normal.png",
+    "roughness": "art/materials/pbr/door_wood_roughness.png",
+    "rgb": [
+      122,
+      87,
+      48
+    ],
+    "rough": 0.55,
+    "photo": "IMG_0329"
+  },
+  "door_paint": {
+    "source": "ambientCG Paint002 CC0",
+    "color": "art/materials/pbr/door_paint_color.png",
+    "normal": "art/materials/pbr/door_paint_normal.png",
+    "roughness": "art/materials/pbr/door_paint_roughness.png",
+    "rgb": [
+      76,
+      81,
+      86
+    ],
+    "rough": 0.5,
+    "photo": "IMG_0378"
+  },
+  "wood_cap_rail": {
+    "source": "ambientCG Wood051 CC0",
+    "color": "art/materials/pbr/wood_cap_rail_color.png",
+    "normal": "art/materials/pbr/wood_cap_rail_normal.png",
+    "roughness": "art/materials/pbr/wood_cap_rail_roughness.png",
+    "rgb": [
+      58,
+      48,
+      40
+    ],
+    "rough": 0.5,
+    "photo": "IMG_0369"
+  },
+  "court_green_paint": {
+    "source": "ambientCG Paint001 CC0",
+    "color": "art/materials/pbr/court_green_paint_color.png",
+    "normal": "art/materials/pbr/court_green_paint_normal.png",
+    "roughness": "art/materials/pbr/court_green_paint_roughness.png",
+    "rgb": [
+      28,
+      70,
+      40
+    ],
+    "rough": 0.18,
+    "photo": "IMG_0334"
+  },
+  "court_gold_paint": {
+    "source": "ambientCG Paint002 CC0",
+    "color": "art/materials/pbr/court_gold_paint_color.png",
+    "normal": "art/materials/pbr/court_gold_paint_normal.png",
+    "roughness": "art/materials/pbr/court_gold_paint_roughness.png",
+    "rgb": [
+      214,
+      172,
+      44
+    ],
+    "rough": 0.2,
+    "photo": "IMG_0332"
+  },
+  "bleacher_green": {
+    "source": "ambientCG Paint001 CC0",
+    "color": "art/materials/pbr/bleacher_green_color.png",
+    "normal": "art/materials/pbr/bleacher_green_normal.png",
+    "roughness": "art/materials/pbr/bleacher_green_roughness.png",
+    "rgb": [
+      30,
+      35,
+      31
+    ],
+    "rough": 0.55,
+    "photo": "IMG_0332"
+  },
+  "bleacher_gold": {
+    "source": "ambientCG Paint002 CC0",
+    "color": "art/materials/pbr/bleacher_gold_color.png",
+    "normal": "art/materials/pbr/bleacher_gold_normal.png",
+    "roughness": "art/materials/pbr/bleacher_gold_roughness.png",
+    "rgb": [
+      160,
+      108,
+      32
+    ],
+    "rough": 0.5,
+    "photo": "IMG_0332"
+  },
+  "sign_paint": {
+    "source": "ambientCG Paint001 CC0",
+    "color": "art/materials/pbr/sign_paint_color.png",
+    "normal": "art/materials/pbr/sign_paint_normal.png",
+    "roughness": "art/materials/pbr/sign_paint_roughness.png",
+    "rgb": [
+      0,
+      70,
+      36
+    ],
+    "rough": 0.4,
+    "photo": "IMG_0339"
+  }
+}

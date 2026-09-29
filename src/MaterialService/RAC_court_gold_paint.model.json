@@ -1,0 +1,8 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "SmoothPlastic",
+    "StudsPerTile": 8,
+    "Name": "RAC_court_gold_paint"
+  }
+}

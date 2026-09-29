@@ -18,7 +18,7 @@ function Walls.glazing(parent: Instance, cf: CFrame, width: number, height: numb
 			"Mullion",
 			Vector3.new(TRIM, height, 0.25),
 			cf * CFrame.new(x * width / nx, height / 2, 0),
-			"steel",
+			"mullion_aluminum",
 			false
 		)
 	end
@@ -28,7 +28,7 @@ function Walls.glazing(parent: Instance, cf: CFrame, width: number, height: numb
 			"Transom",
 			Vector3.new(width, TRIM, 0.25),
 			cf * CFrame.new(width / 2, y * height / ny, 0),
-			"steel",
+			"mullion_aluminum",
 			false
 		)
 	end
@@ -79,27 +79,19 @@ local function buildHorizontalRail(group: Folder, cf: CFrame, length: number)
 	local x0 = (length - span) / 2
 	for i = 0, postCount do
 		local x = x0 + span * i / postCount
-		Parts.box(group, "RailPost", Vector3.new(0.16, 3.42, 0.16), cf * CFrame.new(x, 1.71, 0), "steel", true)
+		Parts.box(group, "RailPost", Vector3.new(0.16, 3.42, 0.16), cf * CFrame.new(x, 1.71, 0), "stainless", true)
 	end
 	for _, y in { 0.55, 1.25, 1.95, 2.65 } do
-		Parts.box(
-			group,
-			"RailBar",
-			Vector3.new(span, 0.12, 0.1),
-			cf * CFrame.new(length / 2, y, 0),
-			"metal_panel",
-			true
-		)
+		Parts.box(group, "RailBar", Vector3.new(span, 0.12, 0.1), cf * CFrame.new(length / 2, y, 0), "stainless", true)
 	end
-	local cap = Parts.box(
+	Parts.box(
 		group,
 		"RailCap",
 		Vector3.new(span, 0.22, 0.32),
 		cf * CFrame.new(length / 2, 3.35, 0),
-		"metal_panel",
+		"wood_cap_rail",
 		true
 	)
-	cap.Color = Color3.fromRGB(42, 44, 46)
 end
 
 local function doorNotice(parent: Instance, doorCF: CFrame, opening: any, thickness: number)
@@ -124,11 +116,9 @@ local function doorNotice(parent: Instance, doorCF: CFrame, opening: any, thickn
 			"DoorSign",
 			Vector3.new(width, height, 0.04),
 			doorCF * CFrame.new(0, y, side * (thickness / 2 + 0.06)),
-			"painted_cmu",
+			"sign_paint",
 			false
 		)
-		plate.Color = Color3.fromRGB(0, 70, 36)
-		plate.Material = Enum.Material.SmoothPlastic
 		local gui = Instance.new("SurfaceGui")
 		gui.Name = "Sign"
 		gui.Face = if side < 0 then Enum.NormalId.Front else Enum.NormalId.Back

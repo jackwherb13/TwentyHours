@@ -1,0 +1,8 @@
+{
+  "className": "MaterialVariant",
+  "properties": {
+    "BaseMaterial": "Metal",
+    "StudsPerTile": 4,
+    "Name": "RAC_steel"
+  }
+}
