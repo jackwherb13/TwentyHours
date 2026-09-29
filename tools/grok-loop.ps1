@@ -38,7 +38,7 @@ function Get-NextMilestone {
 function Invoke-Grok([string]$prompt, [string]$sessionFile, [string]$tag, [string]$schema, [int]$turns = $MaxTurns) {
 	$pf = Join-Path $state "$tag.prompt.txt"
 	$prompt | Out-File $pf -Encoding utf8
-	$gargs = @('--prompt-file', $pf, '--cwd', $root, '--output-format', 'json', '--always-approve', '--max-turns', $turns)
+	$gargs = @('--prompt-file', $pf, '--cwd', $root, '--output-format', 'json', '--always-approve', '--reasoning-effort', 'xhigh', '--max-turns', $turns)
 	if ($schema) { $gargs += @('--json-schema', $schema) }
 	if ($sessionFile -and (Test-Path $sessionFile)) { $gargs += @('--resume', (Get-Content $sessionFile -Raw).Trim()) }
 	$out = Join-Path $state "$tag.out.json"

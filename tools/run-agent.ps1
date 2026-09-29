@@ -23,7 +23,7 @@ $prompt = Get-Content $PromptFile -Raw
 
 switch ($Tool) {
 	'grok' {
-		$ga = @('--prompt-file', $PromptFile, '--cwd', $root, '--output-format', 'json', '--always-approve', '--max-turns', $MaxTurns)
+		$ga = @('--prompt-file', $PromptFile, '--cwd', $root, '--output-format', 'json', '--always-approve', '--max-turns', $MaxTurns, '--reasoning-effort', $(if ($Effort) { $Effort } else { 'xhigh' }))
 		if ($Resume) { $ga += @('--resume', $Resume) }
 		& "$env:USERPROFILE\.grok\bin\grok.exe" @ga 2>$errLog |
 			Out-File "$out.json" -Encoding utf8

@@ -38,7 +38,7 @@ function Run-Builder([string]$prompt, [string]$tag) {
 	$pf = Join-Path $agents "$Chain-$tag.txt"
 	$prompt | Out-File $pf -Encoding utf8
 	"RUNNING $(Get-Date -Format HH:mm)" | Out-File (Join-Path $agents "$Chain-realism.status") -Encoding ascii
-	& $grok --prompt-file $pf --cwd $root --output-format json --always-approve --max-turns 500 --resume $Session 2>(Join-Path $agents "$Chain-$tag.err") |
+	& $grok --prompt-file $pf --cwd $root --output-format json --always-approve --reasoning-effort xhigh --max-turns 500 --resume $Session 2>(Join-Path $agents "$Chain-$tag.err") |
 		Out-File (Join-Path $agents "$Chain-$tag.json") -Encoding utf8
 	"DONE 0 $(Get-Date -Format HH:mm)" | Out-File (Join-Path $agents "$Chain-realism.status") -Encoding ascii
 }
@@ -76,7 +76,7 @@ Do the FULL review first. Only at the very end write $dir/ISSUES_REVIEW$r.json i
 A review without screenshots in $dir/pairs$r/ is invalid.
 $lockRule
 "@ | Out-File "$dir/review$r.prompt.txt" -Encoding utf8
-		& $grok --prompt-file "$dir/review$r.prompt.txt" --cwd $root --output-format json --always-approve --max-turns 300 2>"$dir/review$r.err" |
+		& $grok --prompt-file "$dir/review$r.prompt.txt" --cwd $root --output-format json --always-approve --reasoning-effort xhigh --max-turns 300 2>"$dir/review$r.err" |
 			Out-File "$dir/review$r.json" -Encoding utf8
 		$issues = @()
 		try { $issues = @((Get-Content "$dir/ISSUES_REVIEW$r.json" -Raw | ConvertFrom-Json).issues) } catch { Log "pass $n review $r wrote no ISSUES_REVIEW json"; $issues = @([pscustomobject]@{ severity = 'major'; area = 'review'; issue = 'reviewer produced no issue file - rerun review'; evidence = ''; fix = 'n/a' }) }

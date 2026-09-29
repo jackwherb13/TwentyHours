@@ -72,7 +72,7 @@ $jobs.grok = Start-Job -ScriptBlock {
 	$pf = Join-Path $env:TEMP "judge_grok_$([guid]::NewGuid().ToString('N')).txt"
 	($p + "`nOpen each image file listed above with your file reading tool (it shows images) before judging. Do not modify any files.") |
 		Out-File $pf -Encoding utf8
-	$j = & "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file $pf --cwd $r --output-format json --always-approve --max-turns 30 2>$null | Out-String
+	$j = & "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file $pf --cwd $r --output-format json --always-approve --reasoning-effort xhigh --max-turns 30 2>$null | Out-String
 	try { ($j | ConvertFrom-Json).text } catch { $j }
 } -ArgumentList $root, $prompt
 $result = @{}

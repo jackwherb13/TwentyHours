@@ -63,7 +63,7 @@ Do the FULL review first (expect 60-200 tool calls). Only at the very end, write
 and a readable $dir/REVIEW.md. A review with no screenshots under $dir/route/ and $dir/pairs/ is invalid.
 "@ | Out-File "$dir/reviewer_prompt.txt" -Encoding utf8
 	Log "round $round - reviewer"
-	& "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file "$dir/reviewer_prompt.txt" --cwd $root --output-format json --always-approve --max-turns 300 2>"$dir/reviewer.err" |
+	& "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file "$dir/reviewer_prompt.txt" --cwd $root --output-format json --always-approve --reasoning-effort xhigh --max-turns 300 2>"$dir/reviewer.err" |
 		Out-File "$dir/reviewer.json" -Encoding utf8
 	$issues = @()
 	try { $issues = @((Get-Content "$dir/ISSUES_REVIEW.json" -Raw | ConvertFrom-Json).issues) } catch { Log "round $round - reviewer wrote no ISSUES_REVIEW.json" }
