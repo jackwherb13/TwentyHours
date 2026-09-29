@@ -42,8 +42,8 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 4. Further down: **doors into another area**. Immediately **left** of those doors is a **thinner hallway with no doors** that leads to a
    **perpendicular hallway**.
 5. In that perpendicular hallway: turn **left** → the **training room**. At the end of that hallway (not far, just past where the thin hallway
-   enters) is the **volleyball locker room entrance**: a **keypad-locked door** (do NOT model a real code) → a **small square vestibule** containing
-   only a **big industrial glass-door fridge** with a sign on top reading **"NUTRITION STATION"** (no person's name) (IMG_0375) → a door on the
+   enters) is the **volleyball locker room entrance**: a **keypad-locked door, code 15234** (fictional code, use it in-game) → a **small square vestibule**
+   containing only a **big industrial glass-door fridge** with a sign on top reading **"MATT CORSON NUTRITION STATION"** (fictional name) (IMG_0375) → a door on the
    **left** into the **volleyball locker room** (IMG_0377, 0378).
 6. Past the locker room, **straight down the hall**: **stairs up to Level 2**. At the top of those stairs, on the **left**: the **basketball
    (OFF LIMITS) door**, then the **Level 2 exit** (at grade, building on a slope). This is how the Level 1 route connects back to the Level 2 route.
