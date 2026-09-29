@@ -6,6 +6,7 @@ via the browser or Street View Static API if a key exists; otherwise user photos
 photos, Perkins&Will renderings. Save to reference/web/exterior/ with INDEX.md (camera position + what it shows). Add stations.
 
 ## Pass 2: Bigger map
+A separate campus agent builds src/ReplicatedStorage/RAC/Site/Campus/ in parallel (see verification/campus/HANDOFF.md): integrate it, fix seams, verify.
 Extend the playable/visible area to include the surrounding campus out to the Angel Cabrera Global Center ("the Globe"), EagleBank Arena, the
 Field House, RAC Field, West PE Module and the parking decks/lots between them. Beyond ~400 ft from the RAC, neighbour buildings are LOW-DETAIL
 massing (correct footprint from Fairfax/OSM, height from lidar, simple facade color/material, window bands) - no interiors. Terrain for the whole

@@ -2,10 +2,10 @@
 # independent reviewer + judges -> up to $FixRounds fixes -> next pass.
 # Usage: pwsh tools/realism-loop.ps1 -Chain interior -Session <grok id> [-FixRounds 2] [-WaitFor verification/qa/PASSED]
 param(
-	[Parameter(Mandatory)] [ValidateSet('interior', 'exterior')] [string]$Chain,
+	[Parameter(Mandatory)] [ValidateSet('interior', 'exterior', 'life')] [string]$Chain,
 	[Parameter(Mandatory)] [string]$Session,
 	[int]$FixRounds = 2,
-	[string]$WaitFor = 'verification/qa/PASSED',
+	[string[]]$WaitFor = @('verification/qa/PASSED'),
 	[int]$StartPass = 1,
 	[int]$MinScore = 7
 )
@@ -25,7 +25,7 @@ STUDIO LOCK: two chains share Roblox Studio. Before ANY Roblox_Studio MCP call t
 batch of Studio work is done. Keep each locked batch short (< 10 min). Never edit the RAC model by hand; rebuild with tools/build_rac.ps1.
 '@
 
-while ($WaitFor -and -not (Test-Path $WaitFor)) {
+while (@($WaitFor | Where-Object { $_ -and -not (Test-Path $_) }).Count) {
 	if ((Test-Path 'verification/qa/PROGRESS.md') -and (Select-String 'verification/qa/PROGRESS.md' -Pattern 'qa loop finished' -Quiet)) { break }
 	Start-Sleep 60
 }
@@ -38,7 +38,7 @@ function Run-Builder([string]$prompt, [string]$tag) {
 	$pf = Join-Path $agents "$Chain-$tag.txt"
 	$prompt | Out-File $pf -Encoding utf8
 	"RUNNING $(Get-Date -Format HH:mm)" | Out-File (Join-Path $agents "$Chain-realism.status") -Encoding ascii
-	& $grok --prompt-file $pf --cwd $root --output-format json --always-approve --max-turns 300 --resume $Session 2>(Join-Path $agents "$Chain-$tag.err") |
+	& $grok --prompt-file $pf --cwd $root --output-format json --always-approve --max-turns 500 --resume $Session 2>(Join-Path $agents "$Chain-$tag.err") |
 		Out-File (Join-Path $agents "$Chain-$tag.json") -Encoding utf8
 	"DONE 0 $(Get-Date -Format HH:mm)" | Out-File (Join-Path $agents "$Chain-realism.status") -Encoding ascii
 }
@@ -73,7 +73,7 @@ Also flag anything that makes no sense as a real building/site, anything floatin
 Severity: critical = wrong vs walkthrough/photos or broken; major = clearly unrealistic or illogical; minor = polish.
 $lockRule
 "@ | Out-File "$dir/review$r.prompt.txt" -Encoding utf8
-		& $grok --prompt-file "$dir/review$r.prompt.txt" --cwd $root --output-format json --always-approve --max-turns 150 --json-schema $schema 2>"$dir/review$r.err" |
+		& $grok --prompt-file "$dir/review$r.prompt.txt" --cwd $root --output-format json --always-approve --max-turns 250 --json-schema $schema 2>"$dir/review$r.err" |
 			Out-File "$dir/review$r.json" -Encoding utf8
 		$issues = @()
 		try { $issues = @((((Get-Content "$dir/review$r.json" -Raw | ConvertFrom-Json).text) | ConvertFrom-Json).issues) } catch { Log "pass $n review $r unparsable" }
@@ -92,3 +92,4 @@ $lockRule
 	Log "pass $n done"
 }
 Log 'chain finished'
+"done $(Get-Date -Format s)" | Out-File "verification/passes/DONE-$Chain" -Encoding ascii
