@@ -1,7 +1,9 @@
 # 20 Hour Weeks — RAC build status board
 
 Maintained by the manager (Claude). One place to see what's done, what's running, and what's open.
-Last updated: 2026-09-29 10:15
+Last updated: 2026-09-29 16:30
+
+**Restart note:** the pipeline now runs detached (tools/detach.ps1; logs .grok-loop/detached/) so it survives Claude Code sessions ending. Studio: '20 Hour Weeks' (placeId 100200567955206), Rojo on :34872.
 
 Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail) - lobby-open job, 08:44
 
