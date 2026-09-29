@@ -63,7 +63,7 @@ Each milestone's **Done when** list is the acceptance test. Work only inside the
       post-processing, night/after-hours lighting state for the horror mood, performance check.
 - [ ] M8 Photo-match audit — every station in photo_stations.json captured and compared; fix all FAILs; ≥ 90 % PASS.
 - [ ] M9 Gameplay (simple) — Coach character from art/coach/ (coach_turnaround.png = reference for proportions/outfit:
-      tall + long arms via R15 scaling, green polo, khaki shorts, whistle on lanyard, clipboard; coach_face.png uploaded via MCP
+      tall and heavyset: wide/deep torso + belly and thick limbs via R15 BodyWidth/BodyDepth/BodyHeight scaling plus a belly mesh/part under the shirt, green polo, khaki shorts, whistle on lanyard, clipboard; coach_face.png uploaded via MCP
       upload_image and applied as the head Decal). Rename the in-game villain model/labels to "Coach". Then: Coach AI on the new map (regenerate patrol points, PathfindingService), Geak Bar lure,
       volleyball stun, golf club + ball noise lure, 5 tasks, win/lose; 2-player playtest with clean console.
 - [ ] M10 Polish — perf (< 25k parts, stable 60 fps target), bug sweep, save place; do NOT publish.

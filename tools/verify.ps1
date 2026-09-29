@@ -19,6 +19,9 @@ Step 'stylua --check' { stylua --check src }
 Step 'selene' { selene src }
 Step 'rojo build' { rojo build default.project.json -o "$env:TEMP\twentyhours-verify.rbxl" }
 
+if (Test-Path blueprint/level1.json) {
+	Step 'blueprint geometry' { python tools/verify_blueprint.py }
+}
 if (Test-Path tools/validate_blueprint.luau) {
 	Step 'blueprint schema' { lune run tools/validate_blueprint.luau }
 }

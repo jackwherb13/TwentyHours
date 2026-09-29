@@ -3,7 +3,7 @@
 param(
 	[string]$Only,
 	[int]$MaxAttempts = 5,
-	[int]$MaxTurns = 400,
+	[int]$MaxTurns = 150,
 	[switch]$NoPush
 )
 $ErrorActionPreference = 'Continue'
@@ -34,10 +34,10 @@ function Get-NextMilestone {
 	return $null
 }
 
-function Invoke-Grok([string]$prompt, [string]$sessionFile, [string]$tag, [string]$schema) {
+function Invoke-Grok([string]$prompt, [string]$sessionFile, [string]$tag, [string]$schema, [int]$turns = $MaxTurns) {
 	$pf = Join-Path $state "$tag.prompt.txt"
 	$prompt | Out-File $pf -Encoding utf8
-	$gargs = @('--prompt-file', $pf, '--cwd', $root, '--output-format', 'json', '--always-approve', '--max-turns', $MaxTurns)
+	$gargs = @('--prompt-file', $pf, '--cwd', $root, '--output-format', 'json', '--always-approve', '--max-turns', $turns)
 	if ($schema) { $gargs += @('--json-schema', $schema) }
 	if ($sessionFile -and (Test-Path $sessionFile)) { $gargs += @('--resume', (Get-Content $sessionFile -Raw).Trim()) }
 	$out = Join-Path $state "$tag.out.json"
@@ -81,6 +81,7 @@ $($m.Text)
 			continue
 		}
 		Log "$id attempt ${attempt}: verify passed"
+		if (Test-Path tools/render_plan.py) { python tools/render_plan.py "verification/$id/packet.png" 2>&1 | Out-Null; Log "$id packet: verification/$id/packet.png" }
 
 		$auditSchema = '{"type":"object","properties":{"verdict":{"type":"string","enum":["PASS","FAIL"]},"problems":{"type":"array","items":{"type":"string"}}},"required":["verdict","problems"]}'
 		$audit = Invoke-Grok @"
@@ -95,7 +96,7 @@ $($m.Text)
 
 MANAGER REVIEW:
 $(if (Test-Path "docs/reviews/$id.md") { Get-Content "docs/reviews/$id.md" -Raw } else { "(none)" })
-"@ $null "$id.audit$attempt" $auditSchema
+"@ $null "$id.audit$attempt" $auditSchema 40
 		$verdict = $null
 		try { $verdict = ($audit.text | ConvertFrom-Json) } catch {}
 		if ($verdict -and $verdict.verdict -eq 'PASS') {

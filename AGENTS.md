@@ -41,3 +41,15 @@ visually faithful to the real building. Gameplay is intentionally simple for now
 ## Reporting
 End every task with: what changed (files), verify.ps1 result, Studio console result, screenshots taken, known gaps.
 Never claim something passed that you did not run.
+
+## Efficiency rules (tokens + wall-clock)
+- **Images:** navigate with `reference/sheets/*` and `reference/thumbs/*` (small). Open `reference/photos/*` (2048 px) only to
+  measure something specific, and prefer cropping the region you need with a script over reading the whole image.
+  Never re-read an image you already described; write what you learned into `blueprint/` or a notes file instead.
+- **Deterministic first:** run `python tools/verify_blueprint.py` and `python tools/render_plan.py` instead of eyeballing
+  geometry. Fix every FAIL line it prints before doing anything else.
+- **Checkpoints:** keep `verification/<milestone>/PROGRESS.md` current: one line per finished stage
+  (`HH:MM stage - result - artifact path`). Produce the first checkpoint artifact (packet or screenshot) within ~15 minutes.
+  The manager reviews only PROGRESS.md + the packet; make them self-explanatory.
+- **Scripts over chat:** write reusable scripts in `tools/` (not %TEMP%) so later milestones and retries reuse them.
+- **Studio:** batch edits into one `execute_luau`/builder run; do not place parts one MCP call at a time.
