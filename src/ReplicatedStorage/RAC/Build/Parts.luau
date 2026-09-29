@@ -2,31 +2,23 @@
 local Materials = require(script.Parent.Parent.Materials)
 local Parts = {}
 local alias: { [string]: string } = { acoustic = "acoustic_ceiling" }
-local finishes: { [string]: { material: Enum.Material, color: Color3, variant: string? } } = {
-	maple = { material = Enum.Material.WoodPlanks, color = Color3.fromRGB(214, 176, 124), variant = "RAC_Maple" },
-	terrazzo = { material = Enum.Material.Marble, color = Color3.fromRGB(220, 217, 207), variant = "RAC_Terrazzo" },
-	porcelain_tile = {
-		material = Enum.Material.Slate,
-		color = Color3.fromRGB(210, 210, 204),
-		variant = "RAC_PorcelainTile",
-	},
-	ceramic_tile = { material = Enum.Material.Slate, color = Color3.fromRGB(225, 224, 214) },
-	carpet_tile = { material = Enum.Material.Fabric, color = Color3.fromRGB(65, 67, 65), variant = "RAC_CarpetTile" },
-	rubber = { material = Enum.Material.Rubber, color = Color3.fromRGB(22, 22, 24), variant = "RAC_Rubber" },
-	sealed_concrete = { material = Enum.Material.Concrete, color = Color3.fromRGB(157, 158, 153) },
-	vinyl = { material = Enum.Material.SmoothPlastic, color = Color3.fromRGB(191, 187, 170) },
-	painted_cmu = {
-		material = Enum.Material.Concrete,
-		color = Color3.fromRGB(232, 230, 221),
-		variant = "RAC_PaintedCMU",
-	},
-	brick = { material = Enum.Material.Brick, color = Color3.fromRGB(111, 69, 52), variant = "RAC_Brick" },
-	gypsum = { material = Enum.Material.Plaster, color = Color3.fromRGB(237, 235, 227) },
-	glass = { material = Enum.Material.Glass, color = Color3.fromRGB(180, 205, 210) },
-	metal_panel = { material = Enum.Material.Metal, color = Color3.fromRGB(118, 123, 126) },
-	precast = { material = Enum.Material.Concrete, color = Color3.fromRGB(201, 195, 180) },
+local finishes: { [string]: { material: Enum.Material, color: Color3 } } = {
+	maple = { material = Enum.Material.WoodPlanks, color = Color3.fromRGB(232, 204, 156) },
+	terrazzo = { material = Enum.Material.Concrete, color = Color3.fromRGB(198, 190, 178) },
+	porcelain_tile = { material = Enum.Material.Marble, color = Color3.fromRGB(186, 178, 168) },
+	ceramic_tile = { material = Enum.Material.CeramicTiles, color = Color3.fromRGB(231, 228, 215) },
+	carpet_tile = { material = Enum.Material.Fabric, color = Color3.fromRGB(68, 70, 74) },
+	rubber = { material = Enum.Material.Rubber, color = Color3.fromRGB(34, 35, 36) },
+	sealed_concrete = { material = Enum.Material.Concrete, color = Color3.fromRGB(176, 174, 166) },
+	vinyl = { material = Enum.Material.SmoothPlastic, color = Color3.fromRGB(184, 176, 164) },
+	painted_cmu = { material = Enum.Material.Concrete, color = Color3.fromRGB(232, 230, 224) },
+	brick = { material = Enum.Material.Brick, color = Color3.fromRGB(136, 69, 45) },
+	gypsum = { material = Enum.Material.Plaster, color = Color3.fromRGB(235, 233, 223) },
+	glass = { material = Enum.Material.Glass, color = Color3.fromRGB(208, 225, 224) },
+	metal_panel = { material = Enum.Material.Metal, color = Color3.fromRGB(145, 150, 153) },
+	precast = { material = Enum.Material.Concrete, color = Color3.fromRGB(179, 173, 158) },
 	steel = { material = Enum.Material.Metal, color = Color3.fromRGB(43, 46, 48) },
-	acoustic = { material = Enum.Material.Plaster, color = Color3.fromRGB(226, 225, 216), variant = "RAC_AcousticTile" },
+	acoustic = { material = Enum.Material.Plaster, color = Color3.fromRGB(236, 235, 225) },
 }
 function Parts.box(parent: Instance, name: string, size: Vector3, cf: CFrame, finish: string, collide: boolean?): Part
 	assert(size.X > 0 and size.Y > 0 and size.Z > 0, `Invalid size for {name}`)

@@ -146,13 +146,16 @@ function Exterior.build(parent: Instance, site: any)
 		true
 	)
 	cheek.Color = Color3.fromRGB(128, 130, 126)
-	for i = 0, 4 do
-		local lx = 2 + (apronX - 4) * i / 4
-		local along = (lx - 0.6) / math.max(apronX - 0.6, 1)
-		local wallCenter = 1.7 + -drop * along
-		local finish = if i % 2 == 0 then "shrub" else "barberry"
-		P.box(entrance, "CheekShrub", Vector3.new(2.6, 1.35, 1.4), CFrame.new(lx, wallCenter + 2.35, cheekZ), finish)
-	end
+	local hedge = P.beam(
+		entrance,
+		"CheekHedge",
+		Vector3.new(2.2, 2.4, cheekZ + 1.35),
+		Vector3.new(apronX - 1.5, -drop + 2.4, cheekZ + 1.35),
+		2.2,
+		2.6,
+		"shrub"
+	)
+	hedge.CanCollide = false
 
 	-- East ramp, 1:12, the right-hand run in WEB_entrance_1 / IMG_0365. Stems carry it where the lidar slope is steeper.
 	local rampWidth = 5.2
@@ -281,8 +284,7 @@ function Exterior.build(parent: Instance, site: any)
 		)
 	end
 	local lo, hi = math.min(zWest, zEast), math.max(zWest, zEast)
-	spanCanopy(lo, -9)
-	spanCanopy(9, hi)
+	spanCanopy(lo, hi)
 	-- East return over the corner glass. Yaw -90 maps local -Z to world +X, so the tip points east.
 	local projection = math.max(12, e.returnCanopyDepth)
 	local cornerX = if e.glassCorner then e.glassCorner[1] else e.x + width / 2
@@ -306,7 +308,7 @@ function Exterior.build(parent: Instance, site: any)
 	canopyWedge(
 		canopy,
 		"CornerCanopy",
-		Vector3.new(28, rise, projection),
+		Vector3.new(28, canopyRise, projection),
 		CFrame.fromMatrix(
 			Vector3.new(-6, soffit + tip + rise / 2, cornerLocalZ - projection / 2),
 			Vector3.new(1, 0, 0),
@@ -314,13 +316,20 @@ function Exterior.build(parent: Instance, site: any)
 			Vector3.new(0, 0, 1)
 		)
 	)
-	-- Slender round posts. The 1.7 ft black cylinders read as columns through the soffit.
+	-- Square charcoal columns (WEB_entrance_left_pole).
 	local columnHeight = soffit - 0.12
-	for _, offset in { -16, 16 } do
-		local column =
-			P.pole(canopy, "SupportColumn", Vector3.new(8.5, 0.08, offset), columnHeight, 0.38, "metal", true)
+	local col = math.max(0.7, e.columnRadius or 0.85)
+	for _, offset in { -18, 0, 18 } do
+		local column = P.box(
+			canopy,
+			"SupportColumn",
+			Vector3.new(col, columnHeight, col),
+			CFrame.new(10.2, columnHeight / 2 + 0.08, offset),
+			"dark",
+			true
+		)
 		column.Material = Enum.Material.SmoothPlastic
-		column.Color = Color3.fromRGB(78, 80, 82)
+		column.Color = Color3.fromRGB(52, 54, 56)
 		column.Reflectance = 0
 	end
 	local function soffitLamp(lx: number, lz: number)
@@ -334,64 +343,17 @@ function Exterior.build(parent: Instance, site: any)
 		light.Color = Color3.fromRGB(255, 236, 210)
 		light.Parent = bulb
 	end
-	for _, lz in { -24, -40, 20, 48, 76 } do
-		if lz > lo + 3 and lz < hi - 3 and math.abs(lz) > 10 then
-			soffitLamp(depth * 0.45, lz)
+	for lz = lo + 8, hi - 8, 12 do
+		for _, lx in { depth * 0.28, depth * 0.62 } do
+			soffitLamp(lx, lz)
 		end
 	end
 
-	-- Opaque white letters on the south curtain wall, just outside the glass.
-	local function letter(sx: number, sy: number, sz: number, x: number, y: number, z: number)
-		local part = P.box(entrance, "RACLetter", Vector3.new(sx, sy, sz), CFrame.new(x, y, z), "white")
-		part.Material = Enum.Material.SmoothPlastic
-		part.Color = Color3.fromRGB(248, 248, 244)
-		part.Reflectance = 0
-	end
-	local sx, sz = 1.05, 24
-	letter(0.32, 4.6, 0.42, sx, 17.2, sz - 1.15)
-	letter(0.32, 0.42, 2.3, sx, 19.2, sz)
-	letter(0.32, 0.42, 2.1, sx, 17.1, sz - 0.1)
-	letter(0.32, 1.7, 0.42, sx, 18.2, sz + 0.95)
-	letter(0.32, 2.1, 0.42, sx, 15.6, sz + 0.85)
-	letter(0.32, 4.4, 0.42, sx, 11.4, sz - 1.15)
-	letter(0.32, 0.42, 2.2, sx, 13.4, sz)
-	letter(0.32, 0.42, 2.2, sx, 9.4, sz)
-	letter(0.32, 4.4, 0.42, sx, 11.4, sz + 1.05)
-	letter(0.32, 4.2, 0.42, sx, 5.6, sz - 1.15)
-	letter(0.32, 0.42, 2.2, sx, 7.5, sz)
-	letter(0.32, 0.42, 2.2, sx, 3.7, sz)
-	letter(0.32, 4.2, 0.42, sx, 5.6, sz + 1.05)
-
-	local hydrantAt = Vector3.new(apronX + 3, -drop, -width / 2 + 4)
-	local hydrant = P.pole(entrance, "Hydrant", hydrantAt, 2.15, 0.28, "metal", true)
-	hydrant.Color = Color3.fromRGB(176, 36, 32)
-	hydrant.Material = Enum.Material.SmoothPlastic
-	local cap = P.box(
-		entrance,
-		"HydrantCap",
-		Vector3.new(0.62, 0.22, 0.62),
-		CFrame.new(hydrantAt + Vector3.new(0, 2.32, 0)),
-		"metal"
-	)
-	cap.Color = Color3.fromRGB(40, 40, 42)
-	cap.Material = Enum.Material.Metal
-	for _, side in { -1, 1 } do
-		local nozzle = P.box(
-			entrance,
-			"HydrantNozzle",
-			Vector3.new(0.55, 0.28, 0.28),
-			CFrame.new(hydrantAt + Vector3.new(side * 0.4, 1.35, 0)),
-			"metal"
-		)
-		nozzle.Color = Color3.fromRGB(176, 36, 32)
-		nozzle.Material = Enum.Material.SmoothPlastic
-	end
-
-	-- Three hoops on the west landing. Dark metal, not a pipe pile in the lawn.
-	for i = 0, 2 do
-		local z = width / 2 + 6 + i * 2.2
-		pipe(entrance, "BikeRack", Vector3.new(4.2, 0.4, z), Vector3.new(4.2, 2.15, z))
-		pipe(entrance, "BikeRack", Vector3.new(3.5, 0.4, z), Vector3.new(4.9, 0.4, z))
+	-- Photo-placed hoop racks east of the ramp, not the west lawn pipes.
+	for i = 0, 3 do
+		local z = -width / 2 - 8 - i * 2.4
+		pipe(entrance, "BikeRack", Vector3.new(6.2, 0.35, z), Vector3.new(6.2, 2.1, z))
+		pipe(entrance, "BikeRack", Vector3.new(5.4, 0.35, z), Vector3.new(7.0, 0.35, z))
 	end
 
 	for _, item in entrance:GetDescendants() do

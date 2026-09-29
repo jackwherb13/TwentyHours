@@ -4,13 +4,11 @@ local H = require(script.Parent.Heightfield)
 local G = require(script.Parent.Parent.Build.Geometry)
 local Landscape = {}
 
--- Irregular crown. Balls, not Grass cylinders: Grass material sprouts blades and reads as shelves.
-local function crown(parent: Instance, center: Vector3, diameter: number, squash: number, color: Color3)
+local function meshBlob(parent: Instance, center: Vector3, size: Vector3, color: Color3, yaw: number)
 	local part = Instance.new("Part")
 	part.Name = "Crown"
-	part.Shape = Enum.PartType.Ball
-	part.Size = Vector3.new(math.max(2, diameter), math.max(2, diameter * squash), math.max(2, diameter))
-	part.CFrame = CFrame.new(center)
+	part.Size = Vector3.new(math.max(2.2, size.X), math.max(2.2, size.Y), math.max(2.2, size.Z))
+	part.CFrame = CFrame.new(center) * CFrame.Angles(0, yaw, math.rad(6))
 	part.Material = Enum.Material.SmoothPlastic
 	part.Color = color
 	part.Anchored = true
@@ -18,24 +16,16 @@ local function crown(parent: Instance, center: Vector3, diameter: number, squash
 	part.Parent = parent
 end
 
--- WedgePart tip is local -Z at the bottom. A +90° X turn stands that tip up so six wedges read as one cone.
-local function coneTier(parent: Instance, apex: Vector3, radius: number, height: number, color: Color3, spin: number)
-	local sy, sz = radius, height
-	local sx = 2 * radius * math.sin(math.pi / 6) * 1.45
-	for i = 0, 5 do
-		local yaw = spin + i * math.pi / 3
-		local rot = CFrame.Angles(0, yaw, 0) * CFrame.Angles(math.rad(90), 0, 0)
-		local tip = Vector3.new(0, -sy / 2, -sz / 2)
-		local wedge = Instance.new("WedgePart")
-		wedge.Name = "Crown"
-		wedge.Size = Vector3.new(math.max(1.2, sx), sy, sz)
-		wedge.CFrame = CFrame.new(apex - rot:VectorToWorldSpace(tip)) * rot
-		wedge.Material = Enum.Material.SmoothPlastic
-		wedge.Color = color
-		wedge.Anchored = true
-		wedge.CanCollide = false
-		wedge.Parent = parent
-	end
+local function pineWhorl(parent: Instance, at: Vector3, radius: number, thick: number, color: Color3, yaw: number)
+	local part = Instance.new("Part")
+	part.Name = "Crown"
+	part.Size = Vector3.new(math.max(2.4, radius * 2), math.max(1.6, thick), math.max(2.4, radius * 2 * 0.72))
+	part.CFrame = CFrame.new(at) * CFrame.Angles(0, yaw, 0)
+	part.Material = Enum.Material.SmoothPlastic
+	part.Color = color
+	part.Anchored = true
+	part.CanCollide = false
+	part.Parent = parent
 end
 
 local function tree(parent: Instance, item: any, index: number)
@@ -59,12 +49,18 @@ local function tree(parent: Instance, item: any, index: number)
 			Color3.fromRGB(36, 64, 40),
 			Color3.fromRGB(24, 46, 30),
 		})[(index % 3) + 1]
-		for tier = 1, 3 do
-			local t = (tier - 1) / 3
-			local tierH = crownH * 0.48
-			local tierR = radius * (1.05 - t * 0.62)
-			local apex = Vector3.new(p[1], base + t * crownH * 0.78 + tierH, p[2])
-			coneTier(model, apex, math.max(2.2, tierR), tierH, color, spin + tier)
+		for tier = 1, 5 do
+			local t = (tier - 1) / 4
+			local tierR = radius * (1.12 - t * 0.78)
+			local wy = base + t * crownH * 0.92
+			pineWhorl(
+				model,
+				Vector3.new(p[1], wy, p[2]),
+				math.max(2.4, tierR),
+				crownH * 0.28,
+				color,
+				spin + tier * 0.35
+			)
 		end
 	else
 		local color = ({
@@ -73,17 +69,25 @@ local function tree(parent: Instance, item: any, index: number)
 			Color3.fromRGB(74, 102, 52),
 		})[(index % 3) + 1]
 		local blobs = {
-			{ 0, 0.48, 0, 1 },
-			{ 0.38, 0.66, 0.2, 0.72 },
-			{ -0.42, 0.4, 0.14, 0.78 },
-			{ 0.12, 0.78, -0.36, 0.6 },
-			{ -0.2, 0.58, -0.32, 0.66 },
+			{ 0.05, 0.42, -0.08, 1.15, 0.62, 0.95 },
+			{ 0.48, 0.58, 0.22, 0.78, 0.55, 0.7 },
+			{ -0.52, 0.5, 0.18, 0.82, 0.5, 0.74 },
+			{ 0.18, 0.82, -0.42, 0.7, 0.48, 0.62 },
+			{ -0.28, 0.7, -0.38, 0.74, 0.52, 0.68 },
+			{ 0.32, 0.34, -0.46, 0.66, 0.4, 0.58 },
+			{ -0.12, 0.92, 0.08, 0.55, 0.42, 0.5 },
 		}
 		local c, s = math.cos(spin), math.sin(spin)
 		for _, blob in blobs do
 			local ox, oz = blob[1] * radius, blob[3] * radius
 			local jx, jz = ox * c - oz * s, ox * s + oz * c
-			crown(model, Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz), radius * 2 * blob[4], 0.82, color)
+			meshBlob(
+				model,
+				Vector3.new(p[1] + jx, base + blob[2] * crownH, p[2] + jz),
+				Vector3.new(radius * 2 * blob[4], crownH * blob[5], radius * 2 * blob[6]),
+				color,
+				spin + blob[1]
+			)
 		end
 	end
 	model.Parent = parent
@@ -177,11 +181,23 @@ function Landscape.build(parent: Instance, site: any, props: any)
 		local cf = CFrame.new(x, y, z) * CFrame.Angles(0, math.rad(prop.rotation), 0)
 		if prop.kind == "site_lamp" then
 			local base = y - 0.5
-			P.pole(parent, "LightPole", Vector3.new(x, base, z), y + 16 - base, 0.22, "dark", true)
-			local globe = P.box(parent, "LightGlobe", Vector3.new(1.5, 1.5, 1.5), cf * CFrame.new(0, 16.6, 0), "dark")
+			P.box(
+				parent,
+				"LightPole",
+				Vector3.new(0.28, y + 16 - base, 0.28),
+				CFrame.new(x, (base + y + 16) / 2, z),
+				"dark",
+				true
+			)
+			local globe = P.box(parent, "LightGlobe", Vector3.new(1.2, 1.2, 1.2), cf * CFrame.new(0, 16.6, 0), "metal")
 			globe.Shape = Enum.PartType.Ball
 			globe.Material = Enum.Material.SmoothPlastic
-			globe.Color = Color3.fromRGB(32, 34, 36)
+			globe.Color = Color3.fromRGB(255, 236, 200)
+			local lamp = Instance.new("PointLight")
+			lamp.Brightness = 1.5
+			lamp.Range = 48
+			lamp.Color = Color3.fromRGB(255, 236, 200)
+			lamp.Parent = globe
 		elseif prop.kind == "site_dumpster" then
 			P.box(parent, "DumpsterBody", Vector3.new(6, 4, 3.7), cf * CFrame.new(0, 2, 0), "green", true)
 			P.box(

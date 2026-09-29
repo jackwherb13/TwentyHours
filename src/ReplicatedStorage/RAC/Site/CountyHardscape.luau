@@ -31,9 +31,18 @@ function County.build(parent: Instance, site: any)
 	for _, q in source.patches do
 		local x, z = q.x + q.w / 2, q.z + q.d / 2
 		local hy = H.height(x, z)
-		-- Roof-classified lidar drapes a slab through the upper floors. The stair owns its own pad.
-		if onBuilding(site, x, z) or inEntrance(x, z) or hy > 8 then
+		-- Roof lidar still cuts floors. Pavement near the pad must stay (hy>8 used to drop the roundabout).
+		if onBuilding(site, x, z) or inEntrance(x, z) then
 			continue
+		end
+		-- South road meets the stair toe instead of dropping into a lidar trench.
+		local e = site.entrance
+		if e then
+			local toe = -(e.risers or 10) * (e.rise or 0.583)
+			local south = z - (e.z or 0)
+			if south > 8 and south < 90 and math.abs(x - e.x) < (e.width or 40) + 48 then
+				hy = math.max(hy, toe - 0.15)
+			end
 		end
 		local gx = (H.height(x + q.w / 2, z) - H.height(x - q.w / 2, z)) / math.max(q.w, 0.5)
 		local gz = (H.height(x, z + q.d / 2) - H.height(x, z - q.d / 2)) / math.max(q.d, 0.5)
@@ -65,7 +74,7 @@ function County.build(parent: Instance, site: any)
 		if x < d.x0 or z < d.z0 or x > d.x0 + d.nx * d.step or z > d.z0 + d.nz * d.step then
 			return false
 		end
-		if onBuilding(site, x, z) or H.height(x, z) > 8 then
+		if onBuilding(site, x, z) then
 			return false
 		end
 		local e = site.entrance
@@ -174,8 +183,7 @@ function County.build(parent: Instance, site: any)
 			break
 		end
 		local cx, cz = q.x + q.w / 2, q.z + q.d / 2
-		local hy = H.height(cx, cz)
-		if onBuilding(site, cx, cz) or inEntrance(cx, cz) or hy > 8 then
+		if onBuilding(site, cx, cz) or inEntrance(cx, cz) then
 			continue
 		end
 		local alongX = q.w >= q.d
@@ -204,6 +212,38 @@ function County.build(parent: Instance, site: any)
 				end
 			end
 		end
+	end
+	-- Planted islands every ~72 ft on the larger asphalt cells, plus working poles.
+	local islandN = 0
+	local poles = P.folder(ground, "LotPoles")
+	for _, q in ranked do
+		if islandN >= 28 then
+			break
+		end
+		local cx, cz = q.x + q.w / 2, q.z + q.d / 2
+		if onBuilding(site, cx, cz) or inEntrance(cx, cz) or q.w < 28 or q.d < 18 then
+			continue
+		end
+		if (math.floor(cx / 72) + math.floor(cz / 72)) % 2 ~= 0 then
+			continue
+		end
+		islandN += 1
+		local hy = H.height(cx, cz)
+		local island =
+			P.box(ground, "LotIslandSlab", Vector3.new(6, 0.55, 16), CFrame.new(cx, hy + 0.36, cz), "concrete", true)
+		table.insert(dress, island)
+		P.box(ground, "LotIslandPlant", Vector3.new(4.6, 1.4, 14), CFrame.new(cx, hy + 1.15, cz), "shrub")
+		local pole = P.box(poles, "LightPole", Vector3.new(0.32, 18, 0.32), CFrame.new(cx, hy + 9.1, cz), "dark", true)
+		local globe = P.box(poles, "LightGlobe", Vector3.new(1.1, 1.1, 1.1), CFrame.new(cx, hy + 18.4, cz), "metal")
+		globe.Shape = Enum.PartType.Ball
+		globe.Material = Enum.Material.SmoothPlastic
+		globe.Color = Color3.fromRGB(255, 236, 200)
+		local lamp = Instance.new("PointLight")
+		lamp.Brightness = 1.4
+		lamp.Range = 42
+		lamp.Color = Color3.fromRGB(255, 236, 200)
+		lamp.Parent = globe
+		table.insert(dress, pole)
 	end
 	-- The geometry check uses AABBs. A sloped slab's box can share a face with a curb
 	-- even when the meshes do not. Nudge the thinner part until the faces separate.

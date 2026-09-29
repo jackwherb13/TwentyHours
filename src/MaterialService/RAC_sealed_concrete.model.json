@@ -3,7 +3,7 @@
   "properties": {
     "BaseMaterial": "Concrete",
     "ColorMap": "rbxassetid://132402981008958",
-    "StudsPerTile": 4,
+    "StudsPerTile": 8,
     "Name": "RAC_sealed_concrete"
   }
 }

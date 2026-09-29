@@ -8,15 +8,34 @@ local function lighting()
 	pcall(function()
 		Lighting.Technology = Enum.Technology.Future
 	end)
+	-- Mid-afternoon. Keep sun honest outdoors; interiors come from fixtures + a small ambient fill.
 	Lighting.ClockTime = 14
-	Lighting.Brightness = 1.2
-	Lighting.EnvironmentDiffuseScale = 0.35
-	Lighting.EnvironmentSpecularScale = 0.25
-	Lighting.ExposureCompensation = 0
-	-- Interiors are lit by fixtures. Outdoor sun still lights the site.
-	Lighting.Ambient = Color3.fromRGB(40, 40, 42)
-	Lighting.OutdoorAmbient = Color3.fromRGB(110, 112, 108)
+	Lighting.Brightness = 1.0
+	Lighting.EnvironmentDiffuseScale = 0.22
+	Lighting.EnvironmentSpecularScale = 0.18
+	Lighting.ExposureCompensation = -0.15
+	Lighting.Ambient = Color3.fromRGB(52, 52, 54)
+	Lighting.OutdoorAmbient = Color3.fromRGB(96, 98, 94)
 	Lighting.GlobalShadows = true
+	local atmosphere = Lighting:FindFirstChildOfClass("Atmosphere")
+	if atmosphere == nil then
+		atmosphere = Instance.new("Atmosphere")
+		atmosphere.Parent = Lighting
+	end
+	atmosphere.Density = 0.18
+	atmosphere.Offset = 0.08
+	atmosphere.Haze = 0
+	atmosphere.Glare = 0
+	atmosphere.Color = Color3.fromRGB(198, 204, 210)
+	atmosphere.Decay = Color3.fromRGB(160, 166, 172)
+	local bloom = Lighting:FindFirstChildOfClass("BloomEffect")
+	if bloom == nil then
+		bloom = Instance.new("BloomEffect")
+		bloom.Parent = Lighting
+	end
+	bloom.Intensity = 0.12
+	bloom.Size = 12
+	bloom.Threshold = 1.4
 end
 
 local function clearInteriorTerrain()

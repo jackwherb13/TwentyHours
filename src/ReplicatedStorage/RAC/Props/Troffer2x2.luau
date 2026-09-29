@@ -153,7 +153,7 @@ function Troffer2x2.build(cf: CFrame, _opts: { [string]: any }?): Model
 	led.CastShadow = false
 
 	-- 6. SurfaceLight facing downward into the room
-	b:light(led, Enum.NormalId.Bottom, 1.2, 18, LightBeamColor)
+	b:light(led, Enum.NormalId.Bottom, 3.6, 32, LightBeamColor)
 
 	return b:done()
 end

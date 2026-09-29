@@ -251,7 +251,7 @@
       "type": "stair",
       "polygon": [
         [
-          -97.0,
+          -112.0,
           -52.0
         ],
         [
@@ -260,11 +260,11 @@
         ],
         [
           -78.5,
-          -16.0
+          -28.0
         ],
         [
-          -97.0,
-          -16.0
+          -112.0,
+          -28.0
         ]
       ],
       "floorMaterial": "sealed_concrete",
@@ -375,7 +375,7 @@
           -80.0
         ]
       ],
-      "floorMaterial": "terrazzo",
+      "floorMaterial": "sealed_concrete",
       "ceilingHeight": 10,
       "ceilingType": "act_2x2",
       "wallFinish": "painted_cmu"
@@ -548,20 +548,20 @@
       "type": "racquetball",
       "polygon": [
         [
-          -118.5,
-          -319.5
+          -305.0,
+          -80.0
         ],
         [
-          -98.5,
-          -319.5
+          -265.0,
+          -80.0
         ],
         [
-          -98.5,
-          -279.5
+          -265.0,
+          -60.0
         ],
         [
-          -118.5,
-          -279.5
+          -305.0,
+          -60.0
         ]
       ],
       "floorMaterial": "maple",
@@ -575,20 +575,20 @@
       "type": "racquetball",
       "polygon": [
         [
-          -98.5,
-          -319.5
+          -265.0,
+          -80.0
         ],
         [
-          -78.5,
-          -319.5
+          -225.0,
+          -80.0
         ],
         [
-          -78.5,
-          -279.5
+          -225.0,
+          -60.0
         ],
         [
-          -98.5,
-          -279.5
+          -265.0,
+          -60.0
         ]
       ],
       "floorMaterial": "maple",
@@ -657,11 +657,11 @@
       "polygon": [
         [
           -305.0,
-          -80.0
+          -60.0
         ],
         [
           -285.0,
-          -80.0
+          -60.0
         ],
         [
           -285.0,
@@ -1445,18 +1445,12 @@
       "exterior": false,
       "openings": [
         {
-          "type": "door",
-          "offset": 18.0,
-          "width": 4.0,
+          "type": "curtainwall",
+          "offset": 1.0,
+          "width": 38.0,
           "sill": 0,
-          "head": 7,
-          "leaves": 1,
-          "tag": "RACDoor",
-          "connection": [
-            "corridor_l2_overlook",
-            "racquetball_2"
-          ],
-          "label": "RACQUETBALL"
+          "head": 9.5,
+          "mullionSpacing": 5
         }
       ]
     },
@@ -1660,21 +1654,7 @@
       "height": 17.0,
       "material": "painted_cmu",
       "exterior": false,
-      "openings": [
-        {
-          "type": "door",
-          "offset": 18.0,
-          "width": 4.0,
-          "sill": 0,
-          "head": 7,
-          "leaves": 1,
-          "tag": "RACDoor",
-          "connection": [
-            "racquetball_2",
-            "racquetball_1"
-          ]
-        }
-      ]
+      "openings": []
     },
     {
       "id": "l2_w032",
@@ -2499,31 +2479,48 @@
         -80.0
       ],
       "b": [
-        -285.0,
+        -225.0,
         -80.0
       ],
       "thickness": 0.28,
-      "height": 12.5,
+      "height": 17.0,
       "material": "painted_cmu",
       "exterior": false,
       "openings": [
         {
-          "type": "opening",
-          "offset": 6.0,
-          "width": 8.0,
+          "type": "door",
+          "offset": 18.0,
+          "width": 4.0,
           "sill": 0,
-          "head": 9,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
           "connection": [
             "corridor_l2",
-            "court_gallery"
-          ]
+            "racquetball_1"
+          ],
+          "label": "RACQUETBALL"
+        },
+        {
+          "type": "door",
+          "offset": 58.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1,
+          "tag": "RACDoor",
+          "connection": [
+            "corridor_l2",
+            "racquetball_2"
+          ],
+          "label": "RACQUETBALL"
         }
       ]
     },
     {
       "id": "l2_w071",
       "a": [
-        -285.0,
+        -225.0,
         -80.0
       ],
       "b": [
@@ -2786,6 +2783,82 @@
       "material": "brick",
       "exterior": true,
       "openings": []
+    },
+    {
+      "id": "l2_w_rb_south",
+      "a": [
+        -305.0,
+        -60.0
+      ],
+      "b": [
+        -225.0,
+        -60.0
+      ],
+      "thickness": 0.67,
+      "height": 17.0,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 8.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7,
+          "connection": [
+            "racquetball_1",
+            "court_gallery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2_w_rb_div",
+      "a": [
+        -265.0,
+        -80.0
+      ],
+      "b": [
+        -265.0,
+        -60.0
+      ],
+      "thickness": 0.67,
+      "height": 17.0,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l2_w_rb_east",
+      "a": [
+        -225.0,
+        -80.0
+      ],
+      "b": [
+        -225.0,
+        -60.0
+      ],
+      "thickness": 0.67,
+      "height": 17.0,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l2_w_rb_west",
+      "a": [
+        -305.0,
+        -80.0
+      ],
+      "b": [
+        -305.0,
+        -60.0
+      ],
+      "thickness": 0.67,
+      "height": 17.0,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
     }
   ],
   "columns": [
@@ -2867,32 +2940,118 @@
       "id": "stair_main",
       "polygon": [
         [
-          -78.5,
-          -32.0
-        ],
-        [
-          -42.5,
-          -32.0
-        ],
-        [
-          -42.5,
-          0.0
+          -112.0,
+          -52.0
         ],
         [
           -78.5,
-          0.0
+          -52.0
+        ],
+        [
+          -78.5,
+          -28.0
+        ],
+        [
+          -112.0,
+          -28.0
         ]
       ],
       "fromLevel": 1,
       "toLevel": 2,
       "direction": [
-        0,
-        -1
+        1,
+        0
       ],
       "width": 8,
       "risers": 34,
       "rise": 0.5882352941176471,
-      "run": 0.917
+      "run": 0.917,
+      "flights": [
+        {
+          "id": "main_a",
+          "polygon": [
+            [
+              -112.0,
+              -36.0
+            ],
+            [
+              -96.5,
+              -36.0
+            ],
+            [
+              -96.5,
+              -28.0
+            ],
+            [
+              -112.0,
+              -28.0
+            ]
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "risers": 17,
+          "rise": 0.5882352941176471,
+          "run": 0.917,
+          "width": 8,
+          "baseElevation": 0
+        },
+        {
+          "id": "main_b",
+          "polygon": [
+            [
+              -96.5,
+              -51.5
+            ],
+            [
+              -88.5,
+              -51.5
+            ],
+            [
+              -88.5,
+              -36.0
+            ],
+            [
+              -96.5,
+              -36.0
+            ]
+          ],
+          "direction": [
+            0,
+            -1
+          ],
+          "risers": 17,
+          "rise": 0.5882352941176471,
+          "run": 0.917,
+          "width": 8,
+          "baseElevation": 10
+        }
+      ],
+      "landings": [
+        {
+          "id": "main_turn",
+          "polygon": [
+            [
+              -96.5,
+              -36.0
+            ],
+            [
+              -88.5,
+              -36.0
+            ],
+            [
+              -88.5,
+              -28.0
+            ],
+            [
+              -96.5,
+              -28.0
+            ]
+          ],
+          "elevation": 10
+        }
+      ]
     },
     {
       "id": "stair_second",
@@ -2992,6 +3151,22 @@
         ],
         [
           -97.0,
+          -52.0
+        ],
+        [
+          -112.0,
+          -52.0
+        ],
+        [
+          -112.0,
+          -28.0
+        ],
+        [
+          -97.0,
+          -28.0
+        ],
+        [
+          -97.0,
           47.0
         ],
         [
@@ -3049,20 +3224,20 @@
       "id": "stair_main_opening",
       "polygon": [
         [
-          -86.5,
-          -34.0
+          -112.0,
+          -36.0
         ],
         [
-          -80.5,
-          -34.0
+          -96.5,
+          -36.0
         ],
         [
-          -80.5,
-          -22.0
+          -96.5,
+          -28.0
         ],
         [
-          -86.5,
-          -22.0
+          -112.0,
+          -28.0
         ]
       ]
     },
@@ -3113,19 +3288,19 @@
       "polygon": [
         [
           -96.5,
-          -40.0
+          -51.5
         ],
         [
-          -86.5,
-          -40.0
+          -88.5,
+          -51.5
         ],
         [
-          -86.5,
-          -34.0
+          -88.5,
+          -36.0
         ],
         [
           -96.5,
-          -34.0
+          -36.0
         ]
       ]
     },
@@ -3175,20 +3350,41 @@
       "id": "stair_main_landing",
       "polygon": [
         [
-          -86.5,
-          -40.0
+          -96.5,
+          -36.0
         ],
         [
-          -80.5,
-          -40.0
+          -88.5,
+          -36.0
         ],
         [
-          -80.5,
-          -34.0
+          -88.5,
+          -28.0
         ],
         [
-          -86.5,
-          -34.0
+          -96.5,
+          -28.0
+        ]
+      ]
+    },
+    {
+      "id": "void_north_bay",
+      "polygon": [
+        [
+          -118.5,
+          -319.5
+        ],
+        [
+          -78.5,
+          -319.5
+        ],
+        [
+          -78.5,
+          -279.5
+        ],
+        [
+          -118.5,
+          -279.5
         ]
       ]
     }
@@ -3578,20 +3774,20 @@
     },
     {
       "id": "racquetball_1_fit",
-      "kind": "water_fountain",
+      "kind": "squash_court",
       "at": [
-        -108.5,
-        -299.5
+        -285.0,
+        -70.0
       ],
       "rotation": 0,
       "room": "racquetball_1"
     },
     {
       "id": "racquetball_2_fit",
-      "kind": "water_fountain",
+      "kind": "squash_court",
       "at": [
-        -88.5,
-        -299.5
+        -245.0,
+        -70.0
       ],
       "rotation": 0,
       "room": "racquetball_2"
@@ -3695,6 +3891,76 @@
       ],
       "rotation": 0,
       "room": "balcony"
+    },
+    {
+      "id": "racquetball_1_fountain",
+      "kind": "water_fountain",
+      "at": [
+        -300.0,
+        -78.0
+      ],
+      "rotation": 180,
+      "room": "racquetball_1"
+    },
+    {
+      "id": "racquetball_2_fountain",
+      "kind": "water_fountain",
+      "at": [
+        -260.0,
+        -78.0
+      ],
+      "rotation": 180,
+      "room": "racquetball_2"
+    },
+    {
+      "id": "overlook_trash",
+      "kind": "trash_bin",
+      "at": [
+        -71.0,
+        -160.0
+      ],
+      "rotation": 0,
+      "room": "corridor_l2_overlook"
+    },
+    {
+      "id": "overlook_recycle",
+      "kind": "recycle_bin",
+      "at": [
+        -71.0,
+        -200.0
+      ],
+      "rotation": 0,
+      "room": "corridor_l2_overlook"
+    },
+    {
+      "id": "overlook_board",
+      "kind": "bulletin_board",
+      "at": [
+        -66.0,
+        -140.0
+      ],
+      "rotation": 270,
+      "room": "corridor_l2_overlook"
+    },
+    {
+      "id": "overlook_ext",
+      "kind": "fire_extinguisher_cabinet",
+      "at": [
+        -66.0,
+        -180.0
+      ],
+      "rotation": 270,
+      "room": "corridor_l2_overlook"
+    },
+    {
+      "id": "overlook_exit",
+      "kind": "exit_sign",
+      "at": [
+        -71.0,
+        -84.0
+      ],
+      "rotation": 0,
+      "room": "corridor_l2_overlook"
     }
   ],
   "guards": [

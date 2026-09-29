@@ -14,26 +14,26 @@ export type MaterialDefinition = {
 local definitions: { [string]: MaterialDefinition } = {
 	maple = {
 		base = Enum.Material.WoodPlanks,
-		color = Color3.fromRGB(216, 185, 138),
+		color = Color3.fromRGB(232, 204, 156),
 		texture = "art/materials/maple_court.png",
-		studsPerTile = 4,
-		roughness = 0.18,
+		studsPerTile = 18,
+		roughness = 0.12,
 		assetId = "rbxassetid://115379168184321",
 	},
 	terrazzo = {
 		base = Enum.Material.Concrete,
-		color = Color3.fromRGB(184, 176, 164),
+		color = Color3.fromRGB(198, 190, 178),
 		texture = "art/materials/terrazzo_corridor.png",
-		studsPerTile = 4,
-		roughness = 0.25,
+		studsPerTile = 8,
+		roughness = 0.14,
 		assetId = "rbxassetid://82792157361684",
 	},
 	porcelain_tile = {
 		base = Enum.Material.Marble,
-		color = Color3.fromRGB(175, 167, 156),
+		color = Color3.fromRGB(186, 178, 168),
 		texture = "art/materials/porcelain_tile_12x24.png",
-		studsPerTile = 4,
-		roughness = 0.32,
+		studsPerTile = 8,
+		roughness = 0.22,
 		assetId = "rbxassetid://139851902641009",
 	},
 	carpet_tile = {
@@ -54,10 +54,10 @@ local definitions: { [string]: MaterialDefinition } = {
 	},
 	sealed_concrete = {
 		base = Enum.Material.Concrete,
-		color = Color3.fromRGB(168, 167, 160),
+		color = Color3.fromRGB(176, 174, 166),
 		texture = "art/materials/sealed_concrete.png",
-		studsPerTile = 4,
-		roughness = 0.45,
+		studsPerTile = 8,
+		roughness = 0.32,
 		assetId = "rbxassetid://132402981008958",
 	},
 	ceramic_tile = {
@@ -183,8 +183,18 @@ local function apply(part: BasePart, key: string)
 	part:SetAttribute("RACStudsPerTile", definition.studsPerTile)
 	-- Scalar metadata for the Studio PBR workflow; Roblox needs a roughness map.
 	part:SetAttribute("RACRoughness", definition.roughness)
-	-- Maple court boards are finished gloss. Other floors stay matte.
-	part.Reflectance = if key == "maple" then 0.28 else 0
+	-- Gloss by finish: maple court, terrazzo corridors, porcelain lobby.
+	if key == "maple" then
+		part.Reflectance = 0.38
+	elseif key == "terrazzo" then
+		part.Reflectance = 0.22
+	elseif key == "porcelain_tile" then
+		part.Reflectance = 0.14
+	elseif key == "sealed_concrete" then
+		part.Reflectance = 0.1
+	else
+		part.Reflectance = 0
+	end
 	-- Rojo syncs RAC_* into MaterialService. Naming the variant here is enough;
 	-- creating one from a play script lacks the Plugin capability.
 	if definition.assetId ~= nil and definition.assetId ~= "" then

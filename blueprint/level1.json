@@ -44,6 +44,22 @@
         ],
         [
           -97.0,
+          -52.0
+        ],
+        [
+          -112.0,
+          -52.0
+        ],
+        [
+          -112.0,
+          -28.0
+        ],
+        [
+          -97.0,
+          -28.0
+        ],
+        [
+          -97.0,
           47.0
         ],
         [
@@ -518,7 +534,7 @@
       "type": "stair",
       "polygon": [
         [
-          -97.0,
+          -112.0,
           -52.0
         ],
         [
@@ -527,11 +543,11 @@
         ],
         [
           -78.5,
-          -16.0
+          -28.0
         ],
         [
-          -97.0,
-          -16.0
+          -112.0,
+          -28.0
         ]
       ],
       "floorMaterial": "sealed_concrete",
@@ -1738,7 +1754,7 @@
       ],
       "b": [
         -97.0,
-        0.0
+        -52.0
       ],
       "thickness": 0.28,
       "height": 39.5,
@@ -1751,7 +1767,7 @@
           "width": 6.0,
           "sill": 0,
           "head": 7,
-          "leaves": 2,
+          "leaves": 1,
           "tag": "RACDoor",
           "connection": [
             "corridor_south_link",
@@ -2367,7 +2383,7 @@
       ],
       "b": [
         -78.5,
-        -16.0
+        -28.0
       ],
       "thickness": 0.28,
       "height": 32.5,
@@ -2376,10 +2392,10 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 10.0,
+          "offset": 4.0,
           "width": 16.0,
           "sill": 0,
-          "head": 12,
+          "head": 9,
           "connection": [
             "corridor_entry_south",
             "stair_main"
@@ -4063,7 +4079,7 @@
     {
       "id": "l1_w104",
       "a": [
-        -97.0,
+        -112.0,
         -52.0
       ],
       "b": [
@@ -4077,7 +4093,7 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 5.0,
+          "offset": 20.0,
           "width": 8.0,
           "sill": 0,
           "head": 9,
@@ -4105,21 +4121,10 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 3.0,
-          "width": 12.0,
-          "sill": 0,
-          "head": 12,
-          "connection": [
-            "south_vestibule",
-            "stair_main"
-          ]
-        },
-        {
-          "type": "opening",
           "offset": 19.5,
           "width": 10.0,
           "sill": 0,
-          "head": 9,
+          "head": 12,
           "connection": [
             "south_vestibule",
             "corridor_entry_south"
@@ -5066,6 +5071,54 @@
         }
       ],
       "id": "l1_w147"
+    },
+    {
+      "id": "l1_w_stair_south",
+      "a": [
+        -112.0,
+        -28.0
+      ],
+      "b": [
+        -78.5,
+        -28.0
+      ],
+      "thickness": 0.67,
+      "height": 32.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l1_w_stair_west",
+      "a": [
+        -112.0,
+        -52.0
+      ],
+      "b": [
+        -112.0,
+        -28.0
+      ],
+      "thickness": 0.67,
+      "height": 32.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "l1_w_gym_notch_e",
+      "a": [
+        -97.0,
+        -28.0
+      ],
+      "b": [
+        -97.0,
+        0.0
+      ],
+      "thickness": 0.67,
+      "height": 39.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
     }
   ],
   "columns": [
@@ -5147,7 +5200,7 @@
       "id": "stair_main",
       "polygon": [
         [
-          -97.0,
+          -112.0,
           -52.0
         ],
         [
@@ -5156,18 +5209,18 @@
         ],
         [
           -78.5,
-          -16.0
+          -28.0
         ],
         [
-          -97.0,
-          -16.0
+          -112.0,
+          -28.0
         ]
       ],
       "fromLevel": 1,
       "toLevel": 2,
       "direction": [
-        0,
-        -1
+        1,
+        0
       ],
       "width": 8,
       "risers": 34,
@@ -5178,20 +5231,50 @@
           "id": "main_a",
           "polygon": [
             [
-              -86.5,
-              -34.0
+              -112.0,
+              -36.0
             ],
             [
-              -80.5,
-              -34.0
+              -96.5,
+              -36.0
             ],
             [
-              -80.5,
-              -22.0
+              -96.5,
+              -28.0
             ],
             [
-              -86.5,
-              -22.0
+              -112.0,
+              -28.0
+            ]
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "risers": 17,
+          "rise": 0.5882352941176471,
+          "run": 0.917,
+          "width": 8,
+          "baseElevation": 0
+        },
+        {
+          "id": "main_b",
+          "polygon": [
+            [
+              -96.5,
+              -51.5
+            ],
+            [
+              -88.5,
+              -51.5
+            ],
+            [
+              -88.5,
+              -36.0
+            ],
+            [
+              -96.5,
+              -36.0
             ]
           ],
           "direction": [
@@ -5200,38 +5283,8 @@
           ],
           "risers": 17,
           "rise": 0.5882352941176471,
-          "run": 0.7058823529411765,
-          "width": 6,
-          "baseElevation": 0
-        },
-        {
-          "id": "main_b",
-          "polygon": [
-            [
-              -96.5,
-              -40.0
-            ],
-            [
-              -86.5,
-              -40.0
-            ],
-            [
-              -86.5,
-              -34.0
-            ],
-            [
-              -96.5,
-              -34.0
-            ]
-          ],
-          "direction": [
-            -1,
-            0
-          ],
-          "risers": 17,
-          "rise": 0.5882352941176471,
-          "run": 0.5882352941176471,
-          "width": 6,
+          "run": 0.917,
+          "width": 8,
           "baseElevation": 10
         }
       ],
@@ -5240,20 +5293,20 @@
           "id": "main_turn",
           "polygon": [
             [
-              -86.5,
-              -40.0
+              -96.5,
+              -36.0
             ],
             [
-              -80.5,
-              -40.0
+              -88.5,
+              -36.0
             ],
             [
-              -80.5,
-              -34.0
+              -88.5,
+              -28.0
             ],
             [
-              -86.5,
-              -34.0
+              -96.5,
+              -28.0
             ]
           ],
           "elevation": 10
@@ -5501,12 +5554,12 @@
       "id": "reception_desk",
       "kind": "front_desk",
       "at": [
-        -6.0,
-        -21.0
+        -4.0,
+        -15.0
       ],
       "rotation": 270,
       "room": "lobby",
-      "length": 22,
+      "length": 20,
       "bays": 5,
       "depth": 6
     },
@@ -5515,9 +5568,9 @@
       "kind": "ping_pong_table",
       "at": [
         -36.0,
-        -4.0
+        -8.0
       ],
-      "rotation": 90,
+      "rotation": 0,
       "room": "south_vestibule"
     },
     {
@@ -5525,9 +5578,9 @@
       "kind": "ping_pong_table",
       "at": [
         -58.0,
-        -4.0
+        -8.0
       ],
-      "rotation": 90,
+      "rotation": 0,
       "room": "south_vestibule"
     },
     {
@@ -5564,10 +5617,10 @@
       "id": "trophy_main",
       "kind": "trophy_case",
       "at": [
-        -72.0,
-        -100.0
+        -68.0,
+        -106.0
       ],
-      "rotation": 0,
+      "rotation": 270,
       "room": "corridor_entry_link"
     },
     {
@@ -5575,9 +5628,9 @@
       "kind": "jersey_frame",
       "at": [
         -68.0,
-        -110.0
+        -96.0
       ],
-      "rotation": 90,
+      "rotation": 270,
       "room": "corridor_entry_link"
     },
     {
@@ -5585,9 +5638,9 @@
       "kind": "jersey_frame",
       "at": [
         -68.0,
-        -90.0
+        -116.0
       ],
-      "rotation": 90,
+      "rotation": 270,
       "room": "corridor_entry_link"
     },
     {
@@ -5595,9 +5648,9 @@
       "kind": "treadmill",
       "at": [
         6.0,
-        -40.0
+        -36.0
       ],
-      "rotation": 90,
+      "rotation": 0,
       "room": "glazed_recreation"
     },
     {
@@ -5605,9 +5658,9 @@
       "kind": "treadmill",
       "at": [
         6.0,
-        -50.0
+        -46.0
       ],
-      "rotation": 90,
+      "rotation": 0,
       "room": "glazed_recreation"
     },
     {
@@ -5615,9 +5668,9 @@
       "kind": "treadmill",
       "at": [
         6.0,
-        -60.0
+        -56.0
       ],
-      "rotation": 90,
+      "rotation": 0,
       "room": "glazed_recreation"
     },
     {
@@ -5625,9 +5678,9 @@
       "kind": "treadmill",
       "at": [
         6.0,
-        -70.0
+        -66.0
       ],
-      "rotation": 90,
+      "rotation": 0,
       "room": "glazed_recreation"
     },
     {
@@ -6096,7 +6149,7 @@
       "kind": "training_table",
       "at": [
         -230.0,
-        -72.0
+        -70.0
       ],
       "rotation": 90,
       "room": "training_room"
@@ -6106,7 +6159,7 @@
       "kind": "training_table",
       "at": [
         -230.0,
-        -84.0
+        -78.0
       ],
       "rotation": 90,
       "room": "training_room"
@@ -6115,8 +6168,8 @@
       "id": "train_t3",
       "kind": "training_table",
       "at": [
-        -218.0,
-        -72.0
+        -230.0,
+        -86.0
       ],
       "rotation": 90,
       "room": "training_room"
@@ -6126,7 +6179,7 @@
       "kind": "training_table",
       "at": [
         -218.0,
-        -84.0
+        -70.0
       ],
       "rotation": 90,
       "room": "training_room"
@@ -6135,8 +6188,8 @@
       "id": "train_ice",
       "kind": "ice_machine",
       "at": [
-        -228.0,
-        -89.0
+        -208.0,
+        -90.0
       ],
       "rotation": 180,
       "room": "training_room"
@@ -6145,7 +6198,7 @@
       "id": "train_plate",
       "kind": "nameplate",
       "at": [
-        -214.0,
+        -226.0,
         -64.0
       ],
       "rotation": 180,
@@ -6157,7 +6210,7 @@
       "kind": "supply_cabinet",
       "at": [
         -234.0,
-        -80.0
+        -68.0
       ],
       "rotation": 90,
       "room": "training_room"
@@ -6167,7 +6220,7 @@
       "kind": "supply_cabinet",
       "at": [
         -234.0,
-        -72.0
+        -76.0
       ],
       "rotation": 90,
       "room": "training_room"
@@ -6176,17 +6229,17 @@
       "id": "train_cab_3",
       "kind": "supply_cabinet",
       "at": [
-        -222.0,
-        -89.0
+        -234.0,
+        -84.0
       ],
-      "rotation": 180,
+      "rotation": 90,
       "room": "training_room"
     },
     {
       "id": "train_desk",
       "kind": "office_desk",
       "at": [
-        -210.0,
+        -209.0,
         -66.0
       ],
       "rotation": 0,
@@ -6196,7 +6249,7 @@
       "id": "train_chair",
       "kind": "office_chair",
       "at": [
-        -210.0,
+        -209.0,
         -69.0
       ],
       "rotation": 0,
@@ -6227,7 +6280,7 @@
       "kind": "stair_climber",
       "at": [
         -208.0,
-        -86.0
+        -84.0
       ],
       "rotation": 270,
       "room": "training_room"
@@ -6237,7 +6290,7 @@
       "kind": "water_fountain",
       "at": [
         -208.0,
-        -70.0
+        -66.0
       ],
       "rotation": 270,
       "room": "training_room"
@@ -6267,7 +6320,7 @@
       "kind": "volleyball_standard",
       "at": [
         -136.0,
-        -206.0
+        -232.0
       ],
       "rotation": 90,
       "room": "competition_gym"
@@ -6276,25 +6329,25 @@
       "id": "vb_bleach_e",
       "kind": "bleacher_bank",
       "at": [
-        -86.0,
-        -226.0
+        -88.0,
+        -232.0
       ],
       "rotation": 90,
       "room": "competition_gym",
-      "length": 60,
-      "rows": 8
+      "length": 28,
+      "rows": 10
     },
     {
       "id": "vb_bleach_w",
       "kind": "bleacher_bank",
       "at": [
-        -186.0,
-        -226.0
+        -184.0,
+        -232.0
       ],
       "rotation": 270,
       "room": "competition_gym",
-      "length": 60,
-      "rows": 8
+      "length": 28,
+      "rows": 10
     },
     {
       "id": "vb_pad_n",
@@ -6305,14 +6358,14 @@
       ],
       "rotation": 180,
       "room": "competition_gym",
-      "length": 40
+      "length": 36
     },
     {
       "id": "vb_pad_s",
       "kind": "wall_pad",
       "at": [
-        -150.0,
-        -190.0
+        -136.0,
+        -194.0
       ],
       "rotation": 0,
       "room": "competition_gym",
@@ -6332,21 +6385,21 @@
       "id": "vb_cart_3",
       "kind": "ball_cart",
       "at": [
-        -120.0,
-        -150.0
+        -116.0,
+        -198.0
       ],
       "rotation": 0,
-      "room": "gym_foyer"
+      "room": "competition_gym"
     },
     {
       "id": "vb_cart_4",
       "kind": "ball_cart",
       "at": [
-        -150.0,
-        -148.0
+        -168.0,
+        -198.0
       ],
       "rotation": 0,
-      "room": "gym_foyer"
+      "room": "competition_gym"
     },
     {
       "id": "vb_bags",
@@ -6373,22 +6426,22 @@
       "kind": "wall_pad",
       "at": [
         -82.0,
-        -155.0
+        -232.0
       ],
       "rotation": 90,
       "room": "competition_gym",
-      "length": 12
+      "length": 40
     },
     {
       "id": "vb_pad_w",
       "kind": "wall_pad",
       "at": [
         -190.0,
-        -155.0
+        -232.0
       ],
       "rotation": 270,
       "room": "competition_gym",
-      "length": 12
+      "length": 40
     },
     {
       "id": "vb_score",
@@ -6405,9 +6458,9 @@
       "kind": "banner",
       "at": [
         -120.0,
-        -142.0
+        -274.0
       ],
-      "rotation": 0,
+      "rotation": 180,
       "room": "competition_gym"
     },
     {
@@ -6415,9 +6468,9 @@
       "kind": "banner",
       "at": [
         -150.0,
-        -142.0
+        -274.0
       ],
-      "rotation": 0,
+      "rotation": 180,
       "room": "competition_gym"
     },
     {
@@ -6425,9 +6478,9 @@
       "kind": "banner",
       "at": [
         -136.0,
-        -272.0
+        -192.0
       ],
-      "rotation": 180,
+      "rotation": 0,
       "room": "competition_gym"
     },
     {
@@ -6435,7 +6488,7 @@
       "kind": "flag",
       "at": [
         -84.0,
-        -148.0
+        -210.0
       ],
       "rotation": 90,
       "room": "competition_gym"
@@ -6444,8 +6497,8 @@
       "id": "vb_cart_1",
       "kind": "ball_cart",
       "at": [
-        -108.0,
-        -158.0
+        -100.0,
+        -198.0
       ],
       "rotation": 0,
       "room": "competition_gym"
@@ -6454,8 +6507,8 @@
       "id": "vb_cart_2",
       "kind": "ball_cart",
       "at": [
-        -116.0,
-        -158.0
+        -108.0,
+        -198.0
       ],
       "rotation": 0,
       "room": "competition_gym"
@@ -6464,8 +6517,8 @@
       "id": "vb_fountain",
       "kind": "water_fountain",
       "at": [
-        -84.0,
-        -190.0
+        -82.5,
+        -250.0
       ],
       "rotation": 90,
       "room": "competition_gym"
@@ -6475,7 +6528,7 @@
       "kind": "trash_bin",
       "at": [
         -96.0,
-        -168.0
+        -198.0
       ],
       "rotation": 0,
       "room": "competition_gym"
@@ -7000,6 +7053,186 @@
       ],
       "rotation": 0,
       "room": "corridor_locker_west"
+    },
+    {
+      "id": "train_t5",
+      "kind": "training_table",
+      "at": [
+        -218.0,
+        -78.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_tape_1",
+      "kind": "training_table",
+      "at": [
+        -218.0,
+        -86.0
+      ],
+      "rotation": 90,
+      "room": "training_room"
+    },
+    {
+      "id": "train_ice_2",
+      "kind": "industrial_fridge",
+      "at": [
+        -212.0,
+        -90.0
+      ],
+      "rotation": 180,
+      "room": "training_room"
+    },
+    {
+      "id": "train_cab_4",
+      "kind": "supply_cabinet",
+      "at": [
+        -222.0,
+        -90.0
+      ],
+      "rotation": 180,
+      "room": "training_room"
+    },
+    {
+      "id": "train_tv",
+      "kind": "wall_tv",
+      "at": [
+        -214.0,
+        -64.0
+      ],
+      "rotation": 180,
+      "room": "training_room"
+    },
+    {
+      "id": "train_rehab",
+      "kind": "lat_pulldown",
+      "at": [
+        -208.0,
+        -72.0
+      ],
+      "rotation": 270,
+      "room": "training_room"
+    },
+    {
+      "id": "train_bench",
+      "kind": "flat_bench",
+      "at": [
+        -224.0,
+        -82.0
+      ],
+      "rotation": 0,
+      "room": "training_room"
+    },
+    {
+      "id": "vb_bench_1",
+      "kind": "flat_bench",
+      "at": [
+        -100.0,
+        -250.0
+      ],
+      "rotation": 90,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_bench_2",
+      "kind": "flat_bench",
+      "at": [
+        -108.0,
+        -250.0
+      ],
+      "rotation": 90,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_bench_3",
+      "kind": "flat_bench",
+      "at": [
+        -170.0,
+        -250.0
+      ],
+      "rotation": 90,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_bench_4",
+      "kind": "bench_locker",
+      "at": [
+        -92.0,
+        -198.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "vb_recycle",
+      "kind": "recycle_bin",
+      "at": [
+        -94.0,
+        -198.0
+      ],
+      "rotation": 0,
+      "room": "competition_gym"
+    },
+    {
+      "id": "cube_chair_1",
+      "kind": "office_chair",
+      "at": [
+        -22.0,
+        -85.0
+      ],
+      "rotation": 0,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_chair_2",
+      "kind": "office_chair",
+      "at": [
+        -14.0,
+        -85.0
+      ],
+      "rotation": 0,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_chair_3",
+      "kind": "office_chair",
+      "at": [
+        -6.0,
+        -85.0
+      ],
+      "rotation": 0,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_chair_4",
+      "kind": "office_chair",
+      "at": [
+        -22.0,
+        -103.0
+      ],
+      "rotation": 180,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_chair_5",
+      "kind": "office_chair",
+      "at": [
+        -14.0,
+        -103.0
+      ],
+      "rotation": 180,
+      "room": "coach_suite"
+    },
+    {
+      "id": "cube_chair_6",
+      "kind": "office_chair",
+      "at": [
+        -6.0,
+        -103.0
+      ],
+      "rotation": 180,
+      "room": "coach_suite"
     }
   ]
 }

@@ -8,11 +8,28 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 	local materials =
 		{ Enum.Material.Grass, Enum.Material.Asphalt, Enum.Material.Concrete, Enum.Material.Rock, Enum.Material.Ground }
 	local resolution = 4
-	local function materialAt(x: number, z: number): number
+	local function rawMaterial(x: number, z: number): number
 		local u = math.clamp((x - d.x0) / d.step - 0.5, 0, d.nx - 1.001)
 		local v = math.clamp((z - d.z0) / d.step - 0.5, 0, d.nz - 1.001)
 		local i, j = math.floor(u) + 1, math.floor(v) + 1
 		return tonumber(string.sub(d.materials[j], i, i)) :: number
+	end
+	local function materialAt(x: number, z: number): number
+		local m = rawMaterial(x, z)
+		if m ~= 1 then
+			return m
+		end
+		-- Close grass fingers inside lots: a grass cell ringed by asphalt becomes asphalt.
+		local paved = 0
+		for _, o in { { 4, 0 }, { -4, 0 }, { 0, 4 }, { 0, -4 } } do
+			if rawMaterial(x + o[1], z + o[2]) == 2 then
+				paved += 1
+			end
+		end
+		if paved >= 3 then
+			return 2
+		end
+		return m
 	end
 	local function insidePad(x: number, z: number): boolean
 		local pads = d.pad
@@ -69,9 +86,13 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 						if insidePad(x, z) then
 							h = math.min(h, -1.5)
 							material = 3
-						elseif math.abs(x) < 34 and z > -1 and z < 64 then
-							-- Stair, ramp, and apron. Concrete does not grow grass blades through the treads.
-							material = 3
+						else
+							-- Entrance local +X is world +Z (rotationDeg −90 at x=-21.5, z=58.5).
+							local lx = z - 58.5
+							local lz = -21.5 - x
+							if lx > -4 and lx < 72 and math.abs(lz) < 32 then
+								material = 3
+							end
 						end
 						local fill = math.clamp((h - bottom) / resolution, 0, 1)
 						mats[ix][iy][iz] = if fill == 0 then Enum.Material.Air else materials[material]
