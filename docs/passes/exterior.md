@@ -32,3 +32,15 @@ Remove stray/duplicated/floating parts, fix z-fighting, align everything to the 
 performance check (total parts within spec), final exterior photo-match on every station.
 
 Note for pass 2: judge the campus with pwsh tools/judge.ps1 -Mode plan -Task "Each image compares our low-detail campus massing (neighbour buildings, fields, lots, decks) with satellite/ortho imagery of the same area around GMU's RAC. Judge footprint registration, sizes, shapes (e.g. EagleBank Arena octagon), heights and colours." ... Fix registration issues listed in verification/campus/judgement.json.
+
+## Required method for markings (passes 3-4) - manager, 2026-09-29 09:25
+LLM hand-tracing of markings plateaued at judge scores 3-7 after 5 iterations. Extract them deterministically instead:
+1. Use the stitched, georeferenced ortho from tools/site_refs/ (highest zoom). Convert to HSV; threshold white paint (low saturation, high value)
+   and yellow paint (hue ~40-60 deg, high saturation) inside the pavement mask (asphalt areas from the planimetric polygons, dilated 2 ft).
+2. Clean with morphology, skeletonize, and vectorize with probabilistic Hough (OpenCV HoughLinesP) + merge collinear segments; fit arcs for the
+   roundabout (RANSAC circle fit). Classify: long parallel pairs = lane/edge lines, short parallel repeats at 9 ft spacing = stall lines,
+   dense stripe clusters across a road = crosswalks.
+3. Transform pixel coordinates to blueprint feet with the existing georeference (tools/site/prepare_site.py geo/inverse + SHIFT), write
+   tools/site_refs/markings_extracted.json, and have src/ReplicatedStorage/RAC/Site/Markings build from it (drape on the heightfield).
+4. Verify numerically: re-project the extracted lines onto the ortho and report mean pixel distance to the detected paint (target < 1.5 ft);
+   then judge the overlay. Hand-edit only what the detector misses (e.g. under tree canopy), and log those edits.
