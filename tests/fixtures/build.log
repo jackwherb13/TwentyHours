@@ -1,0 +1,2 @@
+PASS build: 671 parts; openings, floors, voids, stairs, generated data, placeholders, idempotence
+Missing-prop warnings captured: 1; preview: places/build_preview.rbxm

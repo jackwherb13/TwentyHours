@@ -1,0 +1,54 @@
+PASS  stylua --check
+PASS  selene
+PASS  rojo build
+PASS  test build.spec.luau
+PASS  test props.spec.luau
+FAIL  prop geometry (z-fight, slivers, floating)
+degenerate   55
+   PropsPreview.BulletinBoard.SmallNote  size 0.644 x 0.690 x 0.005
+   PropsPreview.BulletinBoard.PolicyMemo  size 0.779 x 0.876 x 0.005
+   PropsPreview.BulletinBoard.ActivityFlyer  size 0.851 x 1.040 x 0.005
+   PropsPreview.BulletinBoard.SafetyNoticeBody  size 0.916 x 0.966 x 0.005
+   PropsPreview.BulletinBoard.SafetyNoticeHeader  size 0.904 x 0.266 x 0.005
+   PropsPreview.BulletinBoard.MasonScheduleInner  size 0.777 x 0.826 x 0.005
+   PropsPreview.BulletinBoard.MasonRecSchedule  size 0.888 x 1.129 x 0.005
+   PropsPreview.Cubicle.MousePad  size 0.500 x 0.010 x 0.500
+   PropsPreview.Cubicle.PinnedNote2  size 0.600 x 0.700 x 0.010
+   PropsPreview.Cubicle.PinnedNote1  size 0.700 x 0.900 x 0.010
+   PropsPreview.DoorSingle.ReaderKeypad  size 0.140 x 0.250 x 0.010
+   PropsPreview.DoorSingle.KickPlate_Back  size 2.920 x 0.830 x 0.010
+   PropsPreview.DoorSingle.KickPlate_Front  size 2.920 x 0.830 x 0.010
+   PropsPreview.ExitSign.Chevron_R2  size 0.095 x 0.095 x 0.010
+   PropsPreview.ExitSign.Chevron_R1  size 0.095 x 0.095 x 0.010
+   PropsPreview.ExitSign.Chevron_L2  size 0.095 x 0.095 x 0.010
+   PropsPreview.ExitSign.Chevron_L1  size 0.095 x 0.095 x 0.010
+   PropsPreview.ExitSign.Letter_T_Cross  size 0.160 x 0.040 x 0.010
+   PropsPreview.ExitSign.Letter_T_Stem  size 0.045 x 0.350 x 0.010
+   PropsPreview.ExitSign.Letter_I  size 0.045 x 0.350 x 0.010
+   PropsPreview.ExitSign.Letter_X_2  size 0.214 x 0.354 x 0.010
+   PropsPreview.ExitSign.Letter_X_1  size 0.214 x 0.354 x 0.010
+   PropsPreview.ExitSign.Letter_E_Bot  size 0.140 x 0.040 x 0.010
+   PropsPreview.ExitSign.Letter_E_Mid  size 0.110 x 0.040 x 0.010
+   PropsPreview.ExitSign.Letter_E_Top  size 0.140 x 0.040 x 0.010
+doorBlocked  0
+floating     6
+   PropsPreview.MailSlots.MailItem_6  bottom at y=1.72
+   PropsPreview.MailSlots.MailItem_5  bottom at y=2.47
+   PropsPreview.MailSlots.MailItem_4  bottom at y=2.11
+   PropsPreview.MailSlots.MailItem_2  bottom at y=1.35
+   PropsPreview.MailSlots.MailItem_1  bottom at y=0.58
+   PropsPreview.OfficeDesk.MonitorBezel  bottom at y=2.90
+zfight       6
+   PropsPreview.RecycleBin.RimCollar  /  PropsPreview.RecycleBin.BodyUpper  (axis Y, 3.5 sqft)
+   PropsPreview.TrashBin.LidOpeningRecess  /  PropsPreview.TrashBin.LidTopBevel  (axis Y, 0.9 sqft)
+   PropsPreview.TrashBin.RimCollar  /  PropsPreview.TrashBin.BodyUpper  (axis Y, 1.9 sqft)
+   PropsPreview.OfficeDesk.Keyboard  /  PropsPreview.OfficeDesk.DeskBlotter  (axis Y, 0.5 sqft)
+   PropsPreview.VendingMachine.HeaderGlow  /  PropsPreview.VendingMachine.HeaderPanel  (axis Z, 2.4 sqft)
+   PropsPreview.BulletinBoard.MasonScheduleInner  /  PropsPreview.BulletinBoard.MasonRecSchedule  (axis Z, 0.6 sqft)
+intersect    0
+gap          0
+686 parts checked, 67 issues
+
+PASS  luau-lsp analyze
+
+VERIFY FAILED: prop geometry (z-fight, slivers, floating)

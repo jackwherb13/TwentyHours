@@ -1,0 +1,301 @@
+{
+  "level": 2,
+  "elevation": 14,
+  "rooms": [
+    {
+      "id": "office_upper",
+      "name": "Office Upper",
+      "type": "office",
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x4",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "fitness_upper",
+      "name": "Fitness Upper",
+      "type": "fitness",
+      "polygon": [
+        [
+          20,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        [
+          40,
+          20
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      "floorMaterial": "rubber",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "balcony_u",
+      "name": "Balcony U",
+      "type": "corridor",
+      "polygon": [
+        [
+          0,
+          20
+        ],
+        [
+          40,
+          20
+        ],
+        [
+          40,
+          40
+        ],
+        [
+          30,
+          40
+        ],
+        [
+          30,
+          30
+        ],
+        [
+          10,
+          30
+        ],
+        [
+          10,
+          40
+        ],
+        [
+          0,
+          40
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "gypsum",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "gym_void",
+      "name": "Gym Void",
+      "type": "void",
+      "polygon": [
+        [
+          40,
+          0
+        ],
+        [
+          80,
+          0
+        ],
+        [
+          80,
+          40
+        ],
+        [
+          40,
+          40
+        ]
+      ],
+      "floorMaterial": "maple",
+      "ceilingHeight": 12,
+      "ceilingType": "none",
+      "wallFinish": "painted_cmu"
+    }
+  ],
+  "walls": [
+    {
+      "id": "upper_north",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        40,
+        0
+      ],
+      "height": 12,
+      "thickness": 1,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "upper_west",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        30
+      ],
+      "height": 12,
+      "thickness": 1,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "upper_divider",
+      "a": [
+        20,
+        0
+      ],
+      "b": [
+        20,
+        20
+      ],
+      "height": 12,
+      "thickness": 0.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "upper_office",
+      "a": [
+        0,
+        20
+      ],
+      "b": [
+        20,
+        20
+      ],
+      "height": 12,
+      "thickness": 0.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 8,
+          "width": 3,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "upper_fitness",
+      "a": [
+        20,
+        20
+      ],
+      "b": [
+        40,
+        20
+      ],
+      "height": 12,
+      "thickness": 0.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 8,
+          "width": 3,
+          "sill": 0,
+          "head": 7,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "gym_view",
+      "a": [
+        40,
+        0
+      ],
+      "b": [
+        40,
+        20
+      ],
+      "height": 12,
+      "thickness": 0.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 4,
+          "width": 12,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    }
+  ],
+  "columns": [],
+  "stairs": [],
+  "voids": [
+    {
+      "id": "v_gym",
+      "polygon": [
+        [
+          40,
+          0
+        ],
+        [
+          80,
+          0
+        ],
+        [
+          80,
+          40
+        ],
+        [
+          40,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "v_stair",
+      "polygon": [
+        [
+          0,
+          30
+        ],
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          54
+        ],
+        [
+          0,
+          54
+        ]
+      ]
+    }
+  ],
+  "props": []
+}

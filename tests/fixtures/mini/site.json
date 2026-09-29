@@ -1,0 +1,166 @@
+{
+  "units": "ft",
+  "trueNorthDeg": 11.2,
+  "origin": {
+    "desc": "fixture entrance threshold",
+    "lat": 38.83,
+    "lon": -77.31
+  },
+  "footprint": [
+    [
+      0,
+      0
+    ],
+    [
+      80,
+      0
+    ],
+    [
+      80,
+      54
+    ],
+    [
+      0,
+      54
+    ]
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "elevation": 0
+    },
+    {
+      "level": 2,
+      "elevation": 14
+    }
+  ],
+  "facade": [
+    {
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        80,
+        0
+      ],
+      "style": "precast_band",
+      "height": 2,
+      "base": 26
+    },
+    {
+      "a": [
+        80,
+        0
+      ],
+      "b": [
+        80,
+        40
+      ],
+      "style": "metal_panel",
+      "height": 2,
+      "base": 26
+    },
+    {
+      "a": [
+        0,
+        54
+      ],
+      "b": [
+        20,
+        54
+      ],
+      "style": "sunshade_fins",
+      "height": 3,
+      "base": 10
+    },
+    {
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        20
+      ],
+      "style": "brick",
+      "height": 12,
+      "base": 0
+    },
+    {
+      "a": [
+        20,
+        54
+      ],
+      "b": [
+        40,
+        54
+      ],
+      "style": "curtain_wall",
+      "height": 12,
+      "base": 14
+    },
+    {
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        20,
+        0
+      ],
+      "style": "brick",
+      "height": 12,
+      "base": 0
+    }
+  ],
+  "roofs": [
+    {
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          80,
+          0
+        ],
+        [
+          80,
+          54
+        ],
+        [
+          0,
+          54
+        ]
+      ],
+      "height": 28,
+      "type": "flat",
+      "overhang": 0
+    },
+    {
+      "polygon": [
+        [
+          20,
+          54
+        ],
+        [
+          40,
+          54
+        ],
+        [
+          40,
+          60
+        ],
+        [
+          20,
+          60
+        ]
+      ],
+      "height": 12,
+      "type": "canopy",
+      "overhang": 2
+    }
+  ],
+  "calibration": "calibration.json"
+}
