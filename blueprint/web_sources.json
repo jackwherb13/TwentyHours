@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://recreation.gmu.edu/facilities/rac/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://oips.gmu.edu/managing-your-academic-workload/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://construction.gmu.edu/bapc-rac-addition",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+  }
+]

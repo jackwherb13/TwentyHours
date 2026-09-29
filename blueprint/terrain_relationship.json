@@ -1,0 +1,126 @@
+{
+  "units": "ft",
+  "origin": "site.json",
+  "status": "Slope relationship authoritative; spot heights between endpoints inferred, not a topographic survey",
+  "lowThreshold": [
+    0,
+    0,
+    0
+  ],
+  "highThreshold": [
+    -351.5,
+    20,
+    -102.5
+  ],
+  "gradeTransect": [
+    [
+      -0.0,
+      0,
+      -0.0
+    ],
+    [
+      -70.3,
+      4,
+      -20.5
+    ],
+    [
+      -140.6,
+      8,
+      -41.0
+    ],
+    [
+      -210.9,
+      12,
+      -61.5
+    ],
+    [
+      -281.2,
+      16,
+      -82.0
+    ],
+    [
+      -351.5,
+      20,
+      -102.5
+    ]
+  ],
+  "interpolation": "continuous linear; blend laterally into measured site terrain; no retaining cliff",
+  "highDoor": {
+    "level": 2,
+    "room": "basketball_approach",
+    "point": [
+      -351.5,
+      -102.5
+    ]
+  },
+  "gradeLanding": {
+    "polygon": [
+      [
+        -360,
+        -107
+      ],
+      [
+        -351.5,
+        -107
+      ],
+      [
+        -351.5,
+        -98
+      ],
+      [
+        -360,
+        -98
+      ]
+    ],
+    "elevation": 20
+  },
+  "constructionFence": "addition polygon; no public access",
+  "evidence": [
+    "WALKTHROUGH.md slope and L2 exit",
+    "G-0201 west egress side",
+    "IMG_0349-0368"
+  ],
+  "entranceExteriorStair": {
+    "threshold": [
+      0,
+      0,
+      0
+    ],
+    "topLanding": {
+      "polygon": [
+        [
+          -24,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          24,
+          6
+        ],
+        [
+          -24,
+          6
+        ]
+      ],
+      "elevation": 0
+    },
+    "width": 48,
+    "risers": 14,
+    "rise": 0.5,
+    "run": 1.5,
+    "directionUp": [
+      0,
+      -1
+    ],
+    "bottomCenter": [
+      0,
+      -7,
+      27
+    ],
+    "evidence": "Wide exterior stairs IMG_0365-0368, south entrance per 23:20 correction; 14 risers/7ft rise are provisional photo estimates, not surveyed",
+    "builderOwner": "Site agent; canonical building builder does not consume this sidecar"
+  }
+}

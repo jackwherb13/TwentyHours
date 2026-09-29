@@ -1,0 +1,217 @@
+{
+  "units": "ft",
+  "status": "Authoritative main turn; riser count inferred from user approximate 20ft elevation. Source aggregate stairs are legacy builder envelopes, NOT the flight geometry.",
+  "stairs": [
+    {
+      "id": "stair_main",
+      "fromLevel": 1,
+      "toLevel": 2,
+      "width": 8,
+      "rise": 0.5882352941176471,
+      "risers": 34,
+      "turn": "left",
+      "flights": [
+        {
+          "id": "main_a",
+          "start": [
+            -48,
+            -3
+          ],
+          "direction": [
+            0,
+            -1
+          ],
+          "risers": 17,
+          "run": 1,
+          "baseElevation": 0,
+          "topElevation": 10
+        },
+        {
+          "id": "main_b",
+          "start": [
+            -52,
+            -24
+          ],
+          "direction": [
+            -1,
+            0
+          ],
+          "risers": 17,
+          "run": 1,
+          "baseElevation": 10,
+          "topElevation": 20
+        }
+      ],
+      "landings": [
+        {
+          "id": "main_turn",
+          "polygon": [
+            [
+              -52,
+              -28
+            ],
+            [
+              -44,
+              -28
+            ],
+            [
+              -44,
+              -20
+            ],
+            [
+              -52,
+              -20
+            ]
+          ],
+          "elevation": 10
+        },
+        {
+          "id": "main_top",
+          "polygon": [
+            [
+              -78.5,
+              -28
+            ],
+            [
+              -69,
+              -28
+            ],
+            [
+              -69,
+              -20
+            ],
+            [
+              -78.5,
+              -20
+            ]
+          ],
+          "elevation": 20
+        }
+      ],
+      "lowerApproach": [
+        [
+          -42.5,
+          -4
+        ],
+        [
+          -48,
+          -3
+        ]
+      ],
+      "upperApproach": [
+        [
+          -74,
+          -28
+        ],
+        [
+          -74,
+          -32
+        ]
+      ],
+      "headroomFt": 7,
+      "evidence": "WALKTHROUGH.md 23:00 correction; IMG_0371 concrete/CMU stair finishes; flight dimensions provisional"
+    },
+    {
+      "id": "stair_second",
+      "fromLevel": 1,
+      "toLevel": 2,
+      "width": 6,
+      "rise": 0.5882352941176471,
+      "risers": 34,
+      "turn": "straight (inferred)",
+      "flights": [
+        {
+          "id": "second_a",
+          "start": [
+            -306.5,
+            -117
+          ],
+          "direction": [
+            -1,
+            0
+          ],
+          "risers": 34,
+          "run": 0.917,
+          "baseElevation": 0,
+          "topElevation": 20
+        }
+      ],
+      "landings": [
+        {
+          "id": "second_top",
+          "polygon": [
+            [
+              -339.5,
+              -121
+            ],
+            [
+              -337.5,
+              -121
+            ],
+            [
+              -337.5,
+              -113
+            ],
+            [
+              -339.5,
+              -113
+            ]
+          ],
+          "elevation": 20
+        }
+      ],
+      "evidence": "Upper court -> right stair -> Cage/exit adjacency is user-authoritative; west-side position inferred. Unmeasured straight run."
+    },
+    {
+      "id": "stair_west",
+      "fromLevel": 1,
+      "toLevel": 2,
+      "width": 6,
+      "rise": 0.5882352941176471,
+      "risers": 34,
+      "turn": "straight (inferred)",
+      "flights": [
+        {
+          "id": "west_a",
+          "start": [
+            -351,
+            -75
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "risers": 34,
+          "run": 1,
+          "baseElevation": 0,
+          "topElevation": 20
+        }
+      ],
+      "landings": [
+        {
+          "id": "west_top",
+          "polygon": [
+            [
+              -354,
+              -41
+            ],
+            [
+              -348,
+              -41
+            ],
+            [
+              -348,
+              -35
+            ],
+            [
+              -354,
+              -35
+            ]
+          ],
+          "elevation": 20
+        }
+      ],
+      "evidence": "Existing service-stair placeholder; exact arrangement not legible in plan."
+    }
+  ]
+}

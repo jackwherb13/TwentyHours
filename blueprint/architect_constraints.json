@@ -1,0 +1,1324 @@
+{
+  "status": "Walkthrough-authoritative reconstruction; inferred room partitions need survey confirmation",
+  "previousFrameShiftFt": [
+    5,
+    172
+  ],
+  "level2Elevation": 20,
+  "mainStair": {
+    "flightRisers": [
+      17,
+      17
+    ],
+    "rise": 0.5882352941176471,
+    "run": 1,
+    "width": 8,
+    "landingSize": 8,
+    "turn": "left",
+    "directions": [
+      [
+        0,
+        -1
+      ],
+      [
+        -1,
+        0
+      ]
+    ]
+  },
+  "customRooms": [
+    {
+      "levels": [
+        1,
+        2
+      ],
+      "id": "corridor_ne",
+      "type": "corridor",
+      "polygon": [
+        [
+          -73.5,
+          -90
+        ],
+        [
+          -61.5,
+          -90
+        ],
+        [
+          -61.5,
+          -52
+        ],
+        [
+          -23,
+          -52
+        ],
+        [
+          -23,
+          -40
+        ],
+        [
+          -65.5,
+          -40
+        ],
+        [
+          -65.5,
+          -23.5
+        ],
+        [
+          -73.5,
+          -23.5
+        ]
+      ]
+    },
+    {
+      "levels": [
+        1
+      ],
+      "id": "addition",
+      "type": "construction",
+      "polygon": [
+        [
+          -374,
+          -129
+        ],
+        [
+          -220,
+          -129
+        ],
+        [
+          -220,
+          -48
+        ],
+        [
+          -346.5,
+          -48
+        ],
+        [
+          -346.5,
+          79.5
+        ],
+        [
+          -374,
+          79.5
+        ]
+      ]
+    },
+    {
+      "levels": [
+        1
+      ],
+      "id": "cage_lower_reserved",
+      "type": "construction",
+      "polygon": [
+        [
+          -346.5,
+          -48
+        ],
+        [
+          -220,
+          -48
+        ],
+        [
+          -220,
+          79.5
+        ],
+        [
+          -300,
+          79.5
+        ],
+        [
+          -300,
+          39.5
+        ],
+        [
+          -346.5,
+          39.5
+        ]
+      ]
+    },
+    {
+      "levels": [
+        2
+      ],
+      "id": "cage_gym",
+      "type": "gym",
+      "polygon": [
+        [
+          -346.5,
+          -48
+        ],
+        [
+          -220,
+          -48
+        ],
+        [
+          -220,
+          79.5
+        ],
+        [
+          -300,
+          79.5
+        ],
+        [
+          -300,
+          39.5
+        ],
+        [
+          -346.5,
+          39.5
+        ]
+      ]
+    },
+    {
+      "levels": [
+        2
+      ],
+      "id": "void_lobby",
+      "type": "void",
+      "polygon": [
+        [
+          0,
+          17.5
+        ],
+        [
+          15,
+          17.5
+        ],
+        [
+          15,
+          172
+        ],
+        [
+          -92,
+          172
+        ],
+        [
+          -92,
+          157
+        ],
+        [
+          -5,
+          157
+        ],
+        [
+          -5,
+          152
+        ],
+        [
+          0,
+          152
+        ]
+      ]
+    },
+    {
+      "levels": [
+        1
+      ],
+      "id": "corridor_wide",
+      "type": "lobby",
+      "polygon": [
+        [
+          -73.5,
+          92
+        ],
+        [
+          0,
+          92
+        ],
+        [
+          0,
+          124
+        ],
+        [
+          -73.5,
+          124
+        ]
+      ]
+    },
+    {
+      "levels": [
+        2
+      ],
+      "id": "balcony",
+      "type": "corridor",
+      "polygon": [
+        [
+          -73.5,
+          92
+        ],
+        [
+          0,
+          92
+        ],
+        [
+          0,
+          124
+        ],
+        [
+          -73.5,
+          124
+        ]
+      ]
+    }
+  ],
+  "commonConnections": [
+    [
+      "corridor_ne",
+      "office_ne_1",
+      3.5
+    ],
+    [
+      "corridor_ne",
+      "office_ne_reception",
+      3.5
+    ],
+    [
+      "corridor_ne",
+      "restroom_ne_w",
+      3.5
+    ],
+    [
+      "corridor_ne",
+      "fitness_north",
+      6
+    ],
+    [
+      "office_ne_1",
+      "office_ne_2",
+      3.5
+    ],
+    [
+      "office_ne_2",
+      "office_ne_3",
+      3.5
+    ],
+    [
+      "office_ne_reception",
+      "office_ne_4",
+      3.5
+    ],
+    [
+      "office_ne_4",
+      "office_ne_5",
+      3.5
+    ],
+    [
+      "restroom_ne_w",
+      "restroom_ne_m",
+      3.5
+    ]
+  ],
+  "level1Connections": [
+    [
+      "lobby_north",
+      "fitness_center",
+      24,
+      "opening"
+    ],
+    [
+      "fitness_center",
+      "weight_room",
+      8,
+      "opening"
+    ],
+    [
+      "weight_room",
+      "corridor_wide",
+      16,
+      "opening"
+    ],
+    [
+      "fitness_center",
+      "fitness_north",
+      8,
+      "opening"
+    ],
+    [
+      "fitness_north",
+      "corridor_gym_east",
+      6
+    ],
+    [
+      "corridor_wide",
+      "corridor_entry_link",
+      10,
+      "opening"
+    ],
+    [
+      "corridor_entry_link",
+      "corridor_gym_east",
+      10,
+      "opening"
+    ],
+    [
+      "corridor_gym_east",
+      "competition_gym",
+      6
+    ],
+    [
+      "corridor_entry_link",
+      "thin_link",
+      6,
+      "opening"
+    ],
+    [
+      "thin_link",
+      "athletic_corridor",
+      6,
+      "opening"
+    ],
+    [
+      "athletic_corridor",
+      "training_room",
+      4
+    ],
+    [
+      "athletic_corridor",
+      "nutrition_vestibule",
+      3.5
+    ],
+    [
+      "nutrition_vestibule",
+      "locker_volleyball",
+      3.5
+    ],
+    [
+      "locker_volleyball",
+      "volleyball_washroom",
+      3.5
+    ],
+    [
+      "west_link",
+      "stair_second",
+      4
+    ],
+    [
+      "athletic_corridor",
+      "training_store",
+      3.5
+    ],
+    [
+      "athletic_corridor",
+      "corridor_main",
+      8,
+      "opening"
+    ],
+    [
+      "thin_link",
+      "locker_general_w",
+      3.5
+    ],
+    [
+      "thin_link",
+      "locker_general_m",
+      3.5
+    ],
+    [
+      "corridor_main",
+      "storage_athletic",
+      3.5
+    ],
+    [
+      "corridor_main",
+      "team_support",
+      6
+    ],
+    [
+      "corridor_main",
+      "corridor_entry_link",
+      6
+    ],
+    [
+      "corridor_south_link",
+      "corridor_wide",
+      10,
+      "opening"
+    ],
+    [
+      "corridor_south_link",
+      "south_gym",
+      6
+    ],
+    [
+      "training_room",
+      "west_link",
+      6,
+      "opening"
+    ],
+    [
+      "west_link",
+      "corridor_office",
+      6,
+      "opening"
+    ],
+    [
+      "corridor_office",
+      "stair_west",
+      4
+    ],
+    [
+      "corridor_office",
+      "corridor_service",
+      6,
+      "opening"
+    ],
+    [
+      "corridor_service",
+      "mechanical_sw",
+      3.5
+    ],
+    [
+      "corridor_service",
+      "training_room",
+      4
+    ],
+    [
+      "corridor_office",
+      "office_w1",
+      3.5
+    ],
+    [
+      "corridor_office",
+      "office_w2",
+      3.5
+    ],
+    [
+      "corridor_office",
+      "office_w3",
+      3.5
+    ],
+    [
+      "lobby",
+      "south_vestibule",
+      18,
+      "opening"
+    ],
+    [
+      "lobby",
+      "glazed_recreation",
+      12,
+      "opening"
+    ],
+    [
+      "south_vestibule",
+      "fitness_annex",
+      28,
+      "opening"
+    ],
+    [
+      "fitness_annex",
+      "corridor_entry_south",
+      12,
+      "opening"
+    ],
+    [
+      "corridor_entry_south",
+      "stair_main",
+      8,
+      "opening"
+    ],
+    [
+      "south_vestibule",
+      "stair_main",
+      8,
+      "opening"
+    ],
+    [
+      "corridor_entry_south",
+      "corridor_wide",
+      30,
+      "opening"
+    ],
+    [
+      "fitness_annex",
+      "corridor_wide",
+      24,
+      "opening"
+    ],
+    [
+      "glazed_recreation",
+      "fitness_annex",
+      20,
+      "opening"
+    ],
+    [
+      "glazed_recreation",
+      "lobby_north",
+      12,
+      "opening"
+    ],
+    [
+      "lobby_north",
+      "fitness_center",
+      24,
+      "opening"
+    ],
+    [
+      "glazed_recreation",
+      "corridor_wide",
+      12,
+      "opening"
+    ],
+    [
+      "corridor_south_link",
+      "corridor_entry_south",
+      10,
+      "opening"
+    ],
+    [
+      "corridor_south_link",
+      "glazed_recreation_west",
+      10,
+      "opening"
+    ],
+    [
+      "glazed_recreation_west",
+      "stair_main",
+      6,
+      "opening"
+    ]
+  ],
+  "level2Connections": [
+    [
+      "balcony",
+      "cardio_gallery",
+      20,
+      "opening"
+    ],
+    [
+      "balcony",
+      "cardio_south",
+      12,
+      "opening"
+    ],
+    [
+      "balcony",
+      "corridor_l2_return",
+      10,
+      "opening"
+    ],
+    [
+      "corridor_l2_return",
+      "corridor_l2_overlook",
+      10,
+      "opening"
+    ],
+    [
+      "corridor_l2_overlook",
+      "fitness_north",
+      6
+    ],
+    [
+      "corridor_l2_return",
+      "corridor_l2",
+      6
+    ],
+    [
+      "corridor_l2",
+      "team_meeting",
+      4
+    ],
+    [
+      "corridor_l2",
+      "team_offices",
+      3.5
+    ],
+    [
+      "corridor_l2",
+      "athletic_upper",
+      8,
+      "opening"
+    ],
+    [
+      "corridor_l2",
+      "stair_second",
+      4
+    ],
+    [
+      "athletic_upper",
+      "upper_store",
+      3.5
+    ],
+    [
+      "corridor_l2",
+      "racquetball_1",
+      3
+    ],
+    [
+      "corridor_l2",
+      "racquetball_2",
+      3
+    ],
+    [
+      "corridor_l2",
+      "court_gallery",
+      8,
+      "opening"
+    ],
+    [
+      "corridor_l2",
+      "office_l2_w1",
+      3.5
+    ],
+    [
+      "corridor_l2",
+      "office_l2_w2",
+      3.5
+    ],
+    [
+      "corridor_l2",
+      "basketball_approach",
+      4,
+      "opening"
+    ],
+    [
+      "basketball_approach",
+      "cage_gym",
+      6
+    ],
+    [
+      "upper_service",
+      "stair_west",
+      4
+    ],
+    [
+      "court_gallery",
+      "upper_service",
+      4,
+      "opening"
+    ],
+    [
+      "upper_service",
+      "mechanical_l2",
+      3.5
+    ],
+    [
+      "stair_main",
+      "main_stair_landing",
+      8,
+      "opening"
+    ],
+    [
+      "main_stair_landing",
+      "balcony",
+      24,
+      "opening"
+    ],
+    [
+      "main_stair_landing",
+      "cardio_south",
+      10,
+      "opening"
+    ]
+  ],
+  "apertures": [
+    {
+      "level": 1,
+      "a": [
+        -188.5,
+        -107.5
+      ],
+      "b": [
+        -73.5,
+        -107.5
+      ],
+      "openings": [
+        {
+          "center": 12,
+          "width": 6,
+          "kind": "door"
+        },
+        {
+          "center": 99,
+          "width": 6,
+          "kind": "door"
+        },
+        {
+          "center": 57,
+          "width": 90,
+          "kind": "window",
+          "sill": 25,
+          "head": 31
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        -231.5,
+        219
+      ],
+      "b": [
+        -92,
+        219
+      ],
+      "openings": [
+        {
+          "center": 15,
+          "width": 6,
+          "kind": "door"
+        },
+        {
+          "center": 125,
+          "width": 6,
+          "kind": "door"
+        },
+        {
+          "center": 70,
+          "width": 80,
+          "kind": "window",
+          "sill": 18,
+          "head": 26
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        -352.5,
+        92
+      ],
+      "b": [
+        -352.5,
+        138
+      ],
+      "openings": [
+        {
+          "center": 8,
+          "width": 4,
+          "kind": "door"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "a": [
+        -346.5,
+        39.5
+      ],
+      "b": [
+        -346.5,
+        79.5
+      ],
+      "height": 12,
+      "openings": [
+        {
+          "center": 30,
+          "width": 6,
+          "kind": "door",
+          "label": "LEVEL 2 EXIT AT GRADE"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "a": [
+        -73.5,
+        17.5
+      ],
+      "b": [
+        -73.5,
+        39.5
+      ],
+      "height": 12,
+      "openings": [
+        {
+          "center": 11,
+          "width": 20,
+          "kind": "window",
+          "sill": 0.5,
+          "head": 9
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        15,
+        17.5
+      ],
+      "b": [
+        15,
+        92
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 37.25,
+          "width": 72,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        15,
+        92
+      ],
+      "b": [
+        15,
+        152
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 30,
+          "width": 58,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        15,
+        152
+      ],
+      "b": [
+        15,
+        172
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 10,
+          "width": 18,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        -5,
+        172
+      ],
+      "b": [
+        15,
+        172
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 10,
+          "width": 6,
+          "kind": "door",
+          "sill": 0,
+          "head": 7
+        },
+        {
+          "center": 3,
+          "width": 4,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        },
+        {
+          "center": 17,
+          "width": 4,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        },
+        {
+          "center": 10,
+          "width": 6,
+          "kind": "curtainwall",
+          "sill": 7,
+          "head": 30
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        -37.5,
+        172
+      ],
+      "b": [
+        -5,
+        172
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 16.25,
+          "width": 30,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        -73.5,
+        172
+      ],
+      "b": [
+        -37.5,
+        172
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 18,
+          "width": 34,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "a": [
+        -92,
+        172
+      ],
+      "b": [
+        -73.5,
+        172
+      ],
+      "height": 32.5,
+      "openings": [
+        {
+          "center": 9.25,
+          "width": 16.5,
+          "kind": "curtainwall",
+          "sill": 0,
+          "head": 30
+        }
+      ]
+    }
+  ],
+  "stairEnvelopes": {
+    "stair_main": {
+      "direction": [
+        0,
+        -1
+      ],
+      "width": 8,
+      "risers": 34,
+      "rise": 0.5882352941176471,
+      "run": 0.917
+    },
+    "stair_second": {
+      "direction": [
+        -1,
+        0
+      ],
+      "width": 6,
+      "risers": 34,
+      "rise": 0.5882352941176471,
+      "run": 0.917
+    },
+    "stair_west": {
+      "direction": [
+        0,
+        1
+      ],
+      "width": 6,
+      "risers": 34,
+      "rise": 0.5882352941176471,
+      "run": 0.917
+    }
+  },
+  "roofSchedule": [
+    {
+      "polygon": [
+        [
+          -188.5,
+          -107.5
+        ],
+        [
+          -73.5,
+          -107.5
+        ],
+        [
+          -73.5,
+          39.5
+        ],
+        [
+          -188.5,
+          39.5
+        ]
+      ],
+      "height": 36
+    },
+    {
+      "polygon": [
+        [
+          -231.5,
+          110
+        ],
+        [
+          -92,
+          110
+        ],
+        [
+          -92,
+          219
+        ],
+        [
+          -231.5,
+          219
+        ]
+      ],
+      "height": 32
+    },
+    {
+      "polygon": [
+        [
+          -346.5,
+          -48
+        ],
+        [
+          -220,
+          -48
+        ],
+        [
+          -220,
+          79.5
+        ],
+        [
+          -300,
+          79.5
+        ],
+        [
+          -300,
+          39.5
+        ],
+        [
+          -346.5,
+          39.5
+        ]
+      ],
+      "height": 48
+    },
+    {
+      "polygon": [
+        [
+          -73.5,
+          -107.5
+        ],
+        [
+          0.5,
+          -107.5
+        ],
+        [
+          0.5,
+          -23.5
+        ],
+        [
+          -73.5,
+          -23.5
+        ]
+      ],
+      "height": 34
+    },
+    {
+      "polygon": [
+        [
+          -73.5,
+          -23.5
+        ],
+        [
+          15,
+          -23.5
+        ],
+        [
+          15,
+          172
+        ],
+        [
+          -92,
+          172
+        ],
+        [
+          -92,
+          110
+        ],
+        [
+          -73.5,
+          110
+        ]
+      ],
+      "height": 34
+    },
+    {
+      "polygon": [
+        [
+          -188.5,
+          39.5
+        ],
+        [
+          -73.5,
+          39.5
+        ],
+        [
+          -73.5,
+          110
+        ],
+        [
+          -231.5,
+          110
+        ],
+        [
+          -231.5,
+          79.5
+        ],
+        [
+          -188.5,
+          79.5
+        ]
+      ],
+      "height": 34
+    },
+    {
+      "polygon": [
+        [
+          -352.5,
+          79.5
+        ],
+        [
+          -231.5,
+          79.5
+        ],
+        [
+          -231.5,
+          138
+        ],
+        [
+          -352.5,
+          138
+        ]
+      ],
+      "height": 42
+    },
+    {
+      "polygon": [
+        [
+          -220,
+          -8
+        ],
+        [
+          -188.5,
+          -8
+        ],
+        [
+          -188.5,
+          79.5
+        ],
+        [
+          -220,
+          79.5
+        ]
+      ],
+      "height": 34
+    }
+  ],
+  "canopy": {
+    "polygon": [
+      [
+        -100,
+        164
+      ],
+      [
+        5,
+        164
+      ],
+      [
+        5,
+        142
+      ],
+      [
+        28,
+        142
+      ],
+      [
+        28,
+        197
+      ],
+      [
+        -100,
+        197
+      ]
+    ],
+    "height": 33
+  },
+  "guards": [
+    {
+      "level": 2,
+      "a": [
+        0,
+        17.5
+      ],
+      "b": [
+        0,
+        152
+      ]
+    },
+    {
+      "level": 2,
+      "a": [
+        -5,
+        152
+      ],
+      "b": [
+        0,
+        152
+      ]
+    },
+    {
+      "level": 2,
+      "a": [
+        -5,
+        152
+      ],
+      "b": [
+        -5,
+        157
+      ]
+    },
+    {
+      "level": 2,
+      "a": [
+        -37.5,
+        157
+      ],
+      "b": [
+        -5,
+        157
+      ]
+    }
+  ],
+  "entrance": {
+    "oldFrameThreshold": [
+      5,
+      172
+    ],
+    "sitePlanPixel": [
+      680,
+      579
+    ],
+    "side": "south",
+    "glazingLengthFt": 107,
+    "previousSouthVestibuleGlazingFt": 92,
+    "authority": "WALKTHROUGH 23:20 user correction",
+    "note": "Use full 107ft frontage (-92 to15), 15ft longer than the prior South Vestibule room, with wrapped east return."
+  },
+  "ceilingOverrides": {
+    "1:south_vestibule": {
+      "height": 12,
+      "type": "act_2x4"
+    }
+  }
+}

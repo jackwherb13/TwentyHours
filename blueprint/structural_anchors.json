@@ -1,0 +1,97 @@
+{
+  "notes": "Coordinates corrected; fixtures remain future detail work. Do not use people or photographic cutouts as textures.",
+  "anchors": [
+    {
+      "id": "front_desk",
+      "kind": "front_desk",
+      "level": 1,
+      "at": [
+        0,
+        -10
+      ],
+      "rotation": 90,
+      "room": "lobby",
+      "longAxis": [
+        0,
+        -1
+      ],
+      "nearEndDistanceToGlass": 2,
+      "centerDistanceToGlass": 10,
+      "size": [
+        16,
+        3.6,
+        3.5
+      ],
+      "evidence": "23:20 SOUTH glass entrance; desk center 10ft north of threshold, long axis north-south, perpendicular to SOUTH glass."
+    },
+    {
+      "id": "trophy_wall",
+      "kind": "trophy_case",
+      "level": 1,
+      "at": [
+        -68,
+        -143
+      ],
+      "rotation": 90,
+      "room": "corridor_gym_east",
+      "evidence": "Right/east of northbound hall; IMG_0331"
+    },
+    {
+      "id": "nutrition_fridge",
+      "kind": "industrial_fridge",
+      "level": 1,
+      "at": [
+        -185,
+        -95.5
+      ],
+      "room": "nutrition_vestibule",
+      "sign": "MATT CORSON NUTRITION STATION",
+      "signNameIsFictional": true,
+      "evidence": "IMG_0375; only fridge inside vestibule"
+    },
+    {
+      "id": "keypad",
+      "kind": "keypad_door",
+      "level": 1,
+      "room": "nutrition_vestibule",
+      "code": "15234",
+      "evidence": "Walkthrough fictional code"
+    },
+    {
+      "id": "basketball_sign",
+      "kind": "sign",
+      "level": 2,
+      "room": "basketball_approach",
+      "text": "BASKETBALL - OFF LIMITS"
+    },
+    {
+      "id": "ping_pong_south",
+      "kind": "ping_pong_table",
+      "level": 1,
+      "room": "south_vestibule",
+      "at": [
+        -22,
+        -9
+      ],
+      "rotation": 0,
+      "size": [
+        9,
+        2.5,
+        5
+      ],
+      "evidence": "User wide left hallway along south glass"
+    },
+    {
+      "id": "vending_south",
+      "kind": "vending_machine",
+      "level": 1,
+      "room": "south_vestibule",
+      "at": [
+        -34,
+        -2.5
+      ],
+      "rotation": 0,
+      "evidence": "User wide left hallway along south glass"
+    }
+  ]
+}

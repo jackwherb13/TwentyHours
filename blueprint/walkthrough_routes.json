@@ -1,0 +1,68 @@
+{
+  "notes": "Waypoints preserve the user's visit order. Resolved intermediate rooms and unconfirmed return turns are reported, never hidden.",
+  "routes": [
+    {
+      "id": "L1 entry, recreation, stair, trophy, gym, athletic route",
+      "rooms": [
+        "LOW_ENTRANCE",
+        "1:lobby",
+        "1:south_vestibule",
+        "1:fitness_annex",
+        "1:corridor_entry_south",
+        "1:stair_main",
+        "1:corridor_entry_south",
+        "1:corridor_wide",
+        "1:corridor_gym_east",
+        "1:competition_gym",
+        "1:corridor_gym_east",
+        "1:fitness_north",
+        "1:thin_link",
+        "1:athletic_corridor",
+        "1:training_room",
+        "1:nutrition_vestibule",
+        "1:locker_volleyball"
+      ]
+    },
+    {
+      "id": "L1 lockers to second stair, restricted basketball and exit",
+      "rooms": [
+        "1:locker_volleyball",
+        "1:nutrition_vestibule",
+        "1:athletic_corridor",
+        "1:stair_second",
+        "2:stair_second",
+        "2:basketball_approach",
+        "2:cage_gym",
+        "2:basketball_approach",
+        "HIGH_EXIT"
+      ]
+    },
+    {
+      "id": "L2 main stair, overlook, courts, second stair, basketball, exit",
+      "rooms": [
+        "1:stair_main",
+        "2:stair_main",
+        "2:main_stair_landing",
+        "2:balcony",
+        "2:corridor_l2_overlook",
+        "2:racquetball_2",
+        "2:racquetball_1",
+        "2:stair_second",
+        "2:basketball_approach",
+        "2:cage_gym",
+        "2:basketball_approach",
+        "HIGH_EXIT"
+      ]
+    },
+    {
+      "id": "Desk fitness route",
+      "rooms": [
+        "1:lobby",
+        "1:south_vestibule",
+        "1:fitness_annex",
+        "1:fitness_center",
+        "1:weight_room"
+      ]
+    }
+  ]
+}

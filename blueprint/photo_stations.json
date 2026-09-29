@@ -1,0 +1,1498 @@
+{
+  "stations": [
+    {
+      "id": "IMG_0314",
+      "file": "reference/photos/IMG_0314.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        0.999,
+        -0.05,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "long terrazzo corridor, looking east | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0315",
+      "file": "reference/photos/IMG_0315.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        0.999,
+        -0.05,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "same concourse further west | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0316",
+      "file": "reference/photos/IMG_0316.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        0.981,
+        0.0,
+        0.196
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "corridor with lockers and a glass wall | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0318",
+      "file": "reference/photos/IMG_0318.jpg",
+      "position": [
+        -45.75,
+        5.2,
+        -67.25
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "fitness_center",
+      "note": "through the glass into the fitness floor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0319",
+      "file": "reference/photos/IMG_0319.jpg",
+      "position": [
+        -135,
+        5.2,
+        -12
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "corridor junction, tile floor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0320",
+      "file": "reference/photos/IMG_0320.jpg",
+      "position": [
+        -115,
+        5.2,
+        -12
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "double doors into a gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0321",
+      "file": "reference/photos/IMG_0321.jpg",
+      "position": [
+        -82.5,
+        5.2,
+        -36.25
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_entry_link",
+      "note": "gym doors at the end of the link | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0322",
+      "file": "reference/photos/IMG_0322.jpg",
+      "position": [
+        -82.5,
+        5.2,
+        -36.25
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_entry_link",
+      "note": "sidelight windows into the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0323",
+      "file": "reference/photos/IMG_0323.jpg",
+      "position": [
+        -315,
+        5.2,
+        -12
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "office_n2",
+      "note": "office reception, clock and mail slots | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0324",
+      "file": "reference/photos/IMG_0324.jpg",
+      "position": [
+        -317.25,
+        5.2,
+        -5.0
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_office",
+      "note": "office corridor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0325",
+      "file": "reference/photos/IMG_0325.jpg",
+      "position": [
+        -317.25,
+        5.2,
+        -5.0
+      ],
+      "look": [
+        0.981,
+        -0.196,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_office",
+      "note": "office ceiling, looking along the suite | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0326",
+      "file": "reference/photos/IMG_0326.jpg",
+      "position": [
+        -295,
+        5.2,
+        -12
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "office_n3",
+      "note": "cubicles | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0327",
+      "file": "reference/photos/IMG_0327.jpg",
+      "position": [
+        -335,
+        5.2,
+        -14
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "office_n1",
+      "note": "cubicle workstations | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0328",
+      "file": "reference/photos/IMG_0328.jpg",
+      "position": [
+        -10.0,
+        5.2,
+        0.0
+      ],
+      "look": [
+        0.958,
+        0.0,
+        0.287
+      ],
+      "fovVertical": 55,
+      "room": "lobby",
+      "note": "lobby toward the fitness glass | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0329",
+      "file": "reference/photos/IMG_0329.jpg",
+      "position": [
+        -10.0,
+        5.2,
+        0.0
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "lobby",
+      "note": "front desk and the lower soffit at the balcony edge | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0330",
+      "file": "reference/photos/IMG_0330.jpg",
+      "position": [
+        -10.0,
+        5.2,
+        0.0
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "lobby",
+      "note": "lobby looking back toward the curtain wall | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0331",
+      "file": "reference/photos/IMG_0331.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "brick accent wall in the concourse | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0332",
+      "file": "reference/photos/IMG_0332.jpg",
+      "position": [
+        -165,
+        5.2,
+        -122
+      ],
+      "look": [
+        0.995,
+        0.1,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "bleachers and clerestory, looking east | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0333",
+      "file": "reference/photos/IMG_0333.jpg",
+      "position": [
+        -155,
+        5.2,
+        -112
+      ],
+      "look": [
+        0.0,
+        0.148,
+        -0.989
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "court and north wall | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0334",
+      "file": "reference/photos/IMG_0334.jpg",
+      "position": [
+        -135,
+        5.2,
+        -142
+      ],
+      "look": [
+        0.0,
+        0.196,
+        0.981
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "court, joists, high-bays | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0335",
+      "file": "reference/photos/IMG_0335.jpg",
+      "position": [
+        -175,
+        5.2,
+        -152
+      ],
+      "look": [
+        0.989,
+        0.148,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "across the court | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0336",
+      "file": "reference/photos/IMG_0336.jpg",
+      "position": [
+        -125,
+        5.2,
+        -102
+      ],
+      "look": [
+        -0.995,
+        0.1,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "bleachers and scoreboard side | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0338",
+      "file": "reference/photos/IMG_0338.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "concourse toward the south gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0339",
+      "file": "reference/photos/IMG_0339.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "brick pier in the concourse | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0340",
+      "file": "reference/photos/IMG_0340.jpg",
+      "position": [
+        -186.5,
+        5.2,
+        -43.5
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_volleyball",
+      "note": "mosaic tile wall at the locker room | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0341",
+      "file": "reference/photos/IMG_0341.jpg",
+      "position": [
+        -185,
+        5.2,
+        -12
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "corridor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0342",
+      "file": "reference/photos/IMG_0342.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "corridor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0343",
+      "file": "reference/photos/IMG_0343.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "corridor looking west | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0344",
+      "file": "reference/photos/IMG_0344.jpg",
+      "position": [
+        -145,
+        5.2,
+        -162
+      ],
+      "look": [
+        0.0,
+        0.287,
+        0.958
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "up at joists and the clerestory | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0345",
+      "file": "reference/photos/IMG_0345.jpg",
+      "position": [
+        -165,
+        5.2,
+        -92
+      ],
+      "look": [
+        0.0,
+        0.196,
+        -0.981
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "court from the baseline | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0346",
+      "file": "reference/photos/IMG_0346.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -16.25
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_main",
+      "note": "west end of the concourse | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0347",
+      "file": "reference/photos/IMG_0347.jpg",
+      "position": [
+        -115,
+        5.2,
+        -62
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "group_exercise",
+      "note": "studio | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0348",
+      "file": "reference/photos/IMG_0348.jpg",
+      "position": [
+        -317.25,
+        5.2,
+        -5.0
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_office",
+      "note": "office corridor, west end | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0349",
+      "file": "reference/photos/IMG_0349.jpg",
+      "position": [
+        -95,
+        5.2,
+        148
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "service yard, south side | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0350",
+      "file": "reference/photos/IMG_0350.jpg",
+      "position": [
+        -55,
+        5.2,
+        158
+      ],
+      "look": [
+        -0.287,
+        0.0,
+        -0.958
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "service ramp and brick | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0351",
+      "file": "reference/photos/IMG_0351.jpg",
+      "position": [
+        15,
+        5.2,
+        98
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "east service side, metal panel and brick | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0352",
+      "file": "reference/photos/IMG_0352.jpg",
+      "position": [
+        25,
+        5.2,
+        -62
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "east lawn toward the entrance | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0353",
+      "file": "reference/photos/IMG_0353.jpg",
+      "position": [
+        -415,
+        5.2,
+        -62
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "west approach | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0354",
+      "file": "reference/photos/IMG_0354.jpg",
+      "position": [
+        -435,
+        5.2,
+        -182
+      ],
+      "look": [
+        0.958,
+        0.0,
+        0.287
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "rock swale west of the cage | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0355",
+      "file": "reference/photos/IMG_0355.jpg",
+      "position": [
+        -465,
+        5.2,
+        -142
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "swale and the west brick wall | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0356",
+      "file": "reference/photos/IMG_0356.jpg",
+      "position": [
+        65,
+        5.2,
+        78
+      ],
+      "look": [
+        -0.981,
+        0.0,
+        -0.196
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "road, east of the building | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0357",
+      "file": "reference/photos/IMG_0357.jpg",
+      "position": [
+        45,
+        5.2,
+        118
+      ],
+      "look": [
+        -0.447,
+        0.0,
+        -0.894
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "crosswalk south-east | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0358",
+      "file": "reference/photos/IMG_0358.jpg",
+      "position": [
+        85,
+        5.2,
+        -22
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "east road, metal-panel facade | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0359",
+      "file": "reference/photos/IMG_0359.jpg",
+      "position": [
+        75,
+        5.2,
+        38
+      ],
+      "look": [
+        -0.928,
+        0.0,
+        -0.371
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "east road looking northwest | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0360",
+      "file": "reference/photos/IMG_0360.jpg",
+      "position": [
+        55,
+        5.2,
+        138
+      ],
+      "look": [
+        -0.371,
+        0.0,
+        -0.928
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "south-east corner from the road | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0361",
+      "file": "reference/photos/IMG_0361.jpg",
+      "position": [
+        -315,
+        5.2,
+        178
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "south lawn looking north | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0362",
+      "file": "reference/photos/IMG_0362.jpg",
+      "position": [
+        5,
+        5.2,
+        -72
+      ],
+      "look": [
+        -0.999,
+        0.05,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "entrance canopy from the east | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0363",
+      "file": "reference/photos/IMG_0363.jpg",
+      "position": [
+        1,
+        5.2,
+        -94
+      ],
+      "look": [
+        -0.995,
+        0.1,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "under the canopy toward the doors | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0364",
+      "file": "reference/photos/IMG_0364.jpg",
+      "position": [
+        25,
+        5.2,
+        -82
+      ],
+      "look": [
+        -0.999,
+        0.05,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "entrance curtain wall and canopy, from the lawn | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0365",
+      "file": "reference/photos/IMG_0365.jpg",
+      "position": [
+        9,
+        5.2,
+        -112
+      ],
+      "look": [
+        -0.981,
+        0.0,
+        0.196
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "entrance, oblique | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0366",
+      "file": "reference/photos/IMG_0366.jpg",
+      "position": [
+        3,
+        5.2,
+        -62
+      ],
+      "look": [
+        -0.957,
+        0.048,
+        -0.287
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "entrance steps | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0367",
+      "file": "reference/photos/IMG_0367.jpg",
+      "position": [
+        -5,
+        5.2,
+        -96
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "at the threshold, looking in | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0368",
+      "file": "reference/photos/IMG_0368.jpg",
+      "position": [
+        15,
+        5.2,
+        -122
+      ],
+      "look": [
+        -0.894,
+        0.0,
+        0.447
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "canopy and RAC sign from the north-east | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0369",
+      "file": "reference/photos/IMG_0369.jpg",
+      "position": [
+        -10.0,
+        5.2,
+        0.0
+      ],
+      "look": [
+        0.0,
+        0.1,
+        0.995
+      ],
+      "fovVertical": 55,
+      "room": "lobby",
+      "note": "lobby from just inside the doors | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0370",
+      "file": "reference/photos/IMG_0370.jpg",
+      "position": [
+        -10.0,
+        5.2,
+        0.0
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "lobby",
+      "note": "front desk | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0371",
+      "file": "reference/photos/IMG_0371.jpg",
+      "position": [
+        -63.25,
+        5.2,
+        -142.125
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_ne",
+      "note": "northeast corridor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0372",
+      "file": "reference/photos/IMG_0372.jpg",
+      "position": [
+        -63.25,
+        5.2,
+        -142.125
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_ne",
+      "note": "northeast corridor | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0373",
+      "file": "reference/photos/IMG_0373.jpg",
+      "position": [
+        -70.5,
+        5.2,
+        38.5
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "stair_main",
+      "note": "stair | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0374",
+      "file": "reference/photos/IMG_0374.jpg",
+      "position": [
+        -82.5,
+        5.2,
+        -36.25
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_entry_link",
+      "note": "link toward the concourse | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0375",
+      "file": "reference/photos/IMG_0375.jpg",
+      "position": [
+        -186.5,
+        5.2,
+        -43.5
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_volleyball",
+      "note": "locker room entry | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0376",
+      "file": "reference/photos/IMG_0376.jpg",
+      "position": [
+        -186.5,
+        5.2,
+        -43.5
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_volleyball",
+      "note": "wood lockers | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0377",
+      "file": "reference/photos/IMG_0377.jpg",
+      "position": [
+        -186.5,
+        5.2,
+        -43.5
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_volleyball",
+      "note": "all-americans board wall | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0378",
+      "file": "reference/photos/IMG_0378.jpg",
+      "position": [
+        -186.5,
+        5.2,
+        -43.5
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_volleyball",
+      "note": "door with the volleyball mark | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0379",
+      "file": "reference/photos/IMG_0379.jpg",
+      "position": [
+        -186.5,
+        5.2,
+        -43.5
+      ],
+      "look": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_volleyball",
+      "note": "showers | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0380",
+      "file": "reference/photos/IMG_0380.jpg",
+      "position": [
+        -127.5,
+        5.2,
+        -38.5
+      ],
+      "look": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_general_m",
+      "note": "second locker room | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0381",
+      "file": "reference/photos/IMG_0381.jpg",
+      "position": [
+        -127.5,
+        5.2,
+        -38.5
+      ],
+      "look": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fovVertical": 55,
+      "room": "locker_general_m",
+      "note": "locker banks | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0382",
+      "file": "reference/photos/IMG_0382.jpg",
+      "position": [
+        -70,
+        5.2,
+        -132
+      ],
+      "look": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "fovVertical": 55,
+      "room": "restroom_ne_w",
+      "note": "restroom | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f000",
+      "file": "reference/photos/IMG_0337_f000.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        -0.716,
+        0.05,
+        -0.696
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f001",
+      "file": "reference/photos/IMG_0337_f001.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        -0.58,
+        0.05,
+        -0.813
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f002",
+      "file": "reference/photos/IMG_0337_f002.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        -0.425,
+        0.05,
+        -0.904
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f003",
+      "file": "reference/photos/IMG_0337_f003.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        -0.257,
+        0.05,
+        -0.965
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f004",
+      "file": "reference/photos/IMG_0337_f004.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        -0.08,
+        0.05,
+        -0.996
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f005",
+      "file": "reference/photos/IMG_0337_f005.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        0.1,
+        0.05,
+        -0.994
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f006",
+      "file": "reference/photos/IMG_0337_f006.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        0.276,
+        0.05,
+        -0.96
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f007",
+      "file": "reference/photos/IMG_0337_f007.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        0.443,
+        0.05,
+        -0.895
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f008",
+      "file": "reference/photos/IMG_0337_f008.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        0.596,
+        0.05,
+        -0.801
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "IMG_0337_f009",
+      "file": "reference/photos/IMG_0337_f009.jpg",
+      "position": [
+        -155,
+        5.2,
+        -132
+      ],
+      "look": [
+        0.73,
+        0.05,
+        -0.681
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "video frame, pan across the competition gym | Revised-frame estimate; not photographically solved. Recalibrate in Studio before comparison.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "WEB_entrance_1",
+      "file": "reference/photos/WEB_entrance_1.jpg",
+      "position": [
+        45,
+        5.2,
+        0
+      ],
+      "look": [
+        -1,
+        0,
+        0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "Estimated station; image dimensions/FOV and pose need Studio calibration.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "WEB_entrance_2",
+      "file": "reference/photos/WEB_entrance_2.jpg",
+      "position": [
+        45,
+        5.2,
+        0
+      ],
+      "look": [
+        -1,
+        0,
+        0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "Estimated station; image dimensions/FOV and pose need Studio calibration.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "WEB_entrance_left_pole",
+      "file": "reference/photos/WEB_entrance_left_pole.jpg",
+      "position": [
+        45,
+        5.2,
+        0
+      ],
+      "look": [
+        -1,
+        0,
+        0
+      ],
+      "fovVertical": 55,
+      "room": "exterior",
+      "note": "Estimated station; image dimensions/FOV and pose need Studio calibration.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "WEB_entrance_from_level2",
+      "file": "reference/photos/WEB_entrance_from_level2.jpg",
+      "position": [
+        -51.75,
+        25.2,
+        6.0
+      ],
+      "look": [
+        1,
+        -0.35,
+        0
+      ],
+      "fovVertical": 55,
+      "room": "balcony",
+      "note": "Estimated station; image dimensions/FOV and pose need Studio calibration.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "WEB_vb_gym_interior",
+      "file": "reference/photos/WEB_vb_gym_interior.jpg",
+      "position": [
+        -146.0,
+        5.2,
+        -136.0
+      ],
+      "look": [
+        0,
+        0,
+        -1
+      ],
+      "fovVertical": 55,
+      "room": "competition_gym",
+      "note": "Estimated station; image dimensions/FOV and pose need Studio calibration.",
+      "confidence": "estimated"
+    },
+    {
+      "id": "WEB_vb_gym_overlook",
+      "file": "reference/photos/WEB_vb_gym_overlook.jpg",
+      "position": [
+        -82.5,
+        25.2,
+        -73.5
+      ],
+      "look": [
+        -1,
+        -0.2,
+        0
+      ],
+      "fovVertical": 55,
+      "room": "corridor_l2_overlook",
+      "note": "Estimated station; image dimensions/FOV and pose need Studio calibration.",
+      "confidence": "estimated"
+    }
+  ]
+}

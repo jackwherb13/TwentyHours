@@ -63,8 +63,17 @@ $jobs = @{
 		agy -p ($p + "`nOpen each image file listed above with your file/image viewing tool before judging.") --dangerously-skip-permissions --output-format text 2>$null | Out-String
 	} -ArgumentList $root, $prompt
 }
+$jobs.grok = Start-Job -ScriptBlock {
+	param($r, $p)
+	Set-Location $r
+	$pf = Join-Path $env:TEMP "judge_grok_$([guid]::NewGuid().ToString('N')).txt"
+	($p + "`nOpen each image file listed above with your file reading tool (it shows images) before judging. Do not modify any files.") |
+		Out-File $pf -Encoding utf8
+	$j = & "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file $pf --cwd $r --output-format json --always-approve --max-turns 30 2>$null | Out-String
+	try { ($j | ConvertFrom-Json).text } catch { $j }
+} -ArgumentList $root, $prompt
 $result = @{}
-foreach ($k in $jobs.Keys) {
+foreach ($k in @($jobs.Keys)) {
 	$raw = Receive-Job $jobs[$k] -Wait -AutoRemoveJob
 	$raw | Out-File "$Out.$k.raw.txt" -Encoding utf8
 	$result[$k] = Parse $raw
@@ -73,7 +82,12 @@ foreach ($k in $jobs.Keys) {
 $result | ConvertTo-Json -Depth 8 | Out-File $Out -Encoding utf8
 
 $fail = $false
-foreach ($k in $result.Keys) {
+$valid = @($result.Keys | Where-Object { $result[$_] -and $result[$_].results })
+if ($valid.Count -lt 2) {
+	Write-Output "FAIL only $($valid.Count) judge(s) produced results (need 2 of gpt/gemini/grok) - check $Out.*.raw.txt"
+	$fail = $true
+}
+foreach ($k in $valid) {
 	foreach ($r in $result[$k].results) {
 		$flag = if ($r.overall -lt $MinScore) { $fail = $true; 'FAIL' } else { 'ok  ' }
 		Write-Output "$flag [$k] $($r.image): overall $($r.overall) (layout $($r.layout), materials $($r.materials), props $($r.props))"
