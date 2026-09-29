@@ -39,11 +39,18 @@ function Treadmill.build(cf: CFrame, opts: { [string]: any }?): Model
 	b:box("RailR", Vector3.new(0.12, 0.28, 5.2), Kit.at(1.32, 0.5, 0.4), CHARCOAL, Enum.Material.Metal, true)
 	b:cyl("RollerF", 1.7, 0.18, Kit.at(0, 0.5, -1.95), C.SteelGrey, Enum.Material.Metal)
 	b:cyl("RollerB", 1.7, 0.16, Kit.at(0, 0.48, 2.75), C.SteelGrey, Enum.Material.Metal)
-	b:box("Hood", Vector3.new(2.78, 0.55, 1.15), Kit.at(0, 0.55, -2.55), CHARCOAL, Enum.Material.SmoothPlastic, true)
+	b:box("Hood", Vector3.new(2.78, 0.825, 1.15), Kit.at(0, 0.4125, -2.55), CHARCOAL, Enum.Material.SmoothPlastic, true)
 	b:box("HoodLip", Vector3.new(2.82, 0.08, 0.12), Kit.at(0, 0.85, -2.05), steel, Enum.Material.Metal)
-	b:box("RearCap", Vector3.new(2.7, 0.35, 0.28), Kit.at(0, 0.4, 3.05), CHARCOAL, Enum.Material.SmoothPlastic, true)
+	b:box(
+		"RearCap",
+		Vector3.new(2.7, 0.575, 0.28),
+		Kit.at(0, 0.2875, 3.05),
+		CHARCOAL,
+		Enum.Material.SmoothPlastic,
+		true
+	)
 	for s = -1, 1, 2 do
-		b:cyl(`Wheel{s}`, 0.1, 0.22, Kit.vertical(s * 0.85, 0.12, 3.12), C.RubberBlack, Enum.Material.Rubber)
+		b:cyl(`Wheel{s}`, 0.1, 0.22, Kit.vertical(s * 0.85, 0.05, 3.12), C.RubberBlack, Enum.Material.Rubber)
 		b:box(
 			`Foot{s}`,
 			Vector3.new(0.28, 0.08, 0.4),

@@ -50,7 +50,7 @@ function WaterFountain.build(cf: CFrame, opts: { [string]: any }?): Model
 	local C = Kit.Color
 	local accent = optNum(opts, "accent", 1, 0, 1) >= 0.5
 
-	b:box("BackA", Vector3.new(2.9, 2.95, 0.08), Kit.at(0, 1.625, 0.28), STEEL, Enum.Material.Metal, true)
+	b:box("BackA", Vector3.new(2.9, 3.1, 0.08), Kit.at(0, 1.55, 0.28), STEEL, Enum.Material.Metal, true)
 	b:box("BackB", Vector3.new(2.9, 1.5, 0.08), Kit.at(0, 3.85, 0.28), STEEL, Enum.Material.Metal, true)
 	b:box("BackC", Vector3.new(1.15, 1.15, 0.1), Kit.at(0, 4.7, 0.26), STEEL, Enum.Material.Metal, true)
 	for s = -1, 1, 2 do
@@ -62,8 +62,8 @@ function WaterFountain.build(cf: CFrame, opts: { [string]: any }?): Model
 	basin(b, "Hi", -0.7, 3.35)
 	basin(b, "Lo", 0.75, 2.85)
 	b:box("Apron", Vector3.new(2.7, 0.7, 0.55), Kit.at(0.05, 2.15, -0.05), STEEL, Enum.Material.Metal, true)
-	b:box("TrapL", Vector3.new(0.12, 1.85, 0.12), Kit.at(-0.7, 1.1, -0.12), C.Chrome, Enum.Material.Metal)
-	b:box("TrapR", Vector3.new(0.12, 1.7, 0.12), Kit.at(0.75, 1.1, -0.12), C.Chrome, Enum.Material.Metal)
+	b:box("TrapL", Vector3.new(0.12, 2.025, 0.12), Kit.at(-0.7, 1.0125, -0.12), C.Chrome, Enum.Material.Metal)
+	b:box("TrapR", Vector3.new(0.12, 1.95, 0.12), Kit.at(0.75, 0.975, -0.12), C.Chrome, Enum.Material.Metal)
 
 	-- Bottle filler cabinet centered above the basins.
 	b:box("Filler", Vector3.new(1.05, 1.35, 0.55), Kit.at(0, 4.35, 0.06), STEEL, Enum.Material.Metal, true)

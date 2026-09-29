@@ -94,6 +94,54 @@ local function buildHorizontalRail(group: Folder, cf: CFrame, length: number)
 	Parts.box(group, "RailCap", Vector3.new(span, 0.18, 0.28), cf * CFrame.new(length / 2, 3.35, 0), "maple", true)
 end
 
+local function doorNotice(parent: Instance, doorCF: CFrame, opening: any, thickness: number)
+	local text = opening.label
+	local code = opening.keypadCode
+	local shown = if type(text) == "string" then text else ""
+	if shown == "BASKETBALL - OFF LIMITS" then
+		shown = "BASKETBALL — OFF LIMITS"
+	end
+	if type(code) == "string" and code ~= "" then
+		shown = if shown ~= "" then shown .. "\n" .. code else code
+	end
+	if shown == "" then
+		return
+	end
+	local width = math.clamp(math.max(opening.width + 1.5, 9), 4, 12)
+	local height = if string.find(shown, "\n", 1, true) then 1.6 else 1.15
+	local y = opening.head + 0.12 + height / 2
+	for _, side in { -1, 1 } do
+		local plate = Parts.box(
+			parent,
+			"DoorSign",
+			Vector3.new(width, height, 0.04),
+			doorCF * CFrame.new(0, y, side * (thickness / 2 + 0.06)),
+			"painted_cmu",
+			false
+		)
+		plate.Color = Color3.fromRGB(0, 70, 36)
+		plate.Material = Enum.Material.SmoothPlastic
+		local gui = Instance.new("SurfaceGui")
+		gui.Name = "Sign"
+		gui.Face = if side < 0 then Enum.NormalId.Front else Enum.NormalId.Back
+		gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+		gui.PixelsPerStud = 42
+		gui.LightInfluence = 0.15
+		gui.Parent = plate
+		local label = Instance.new("TextLabel")
+		label.Name = "Label"
+		label.BackgroundTransparency = 1
+		label.Size = UDim2.fromScale(1, 1)
+		label.Text = shown
+		label.TextColor3 = Color3.fromRGB(255, 204, 0)
+		label.TextScaled = true
+		label.TextWrapped = true
+		label.TextXAlignment = Enum.TextXAlignment.Center
+		label.TextYAlignment = Enum.TextYAlignment.Center
+		label.Parent = gui
+	end
+end
+
 function Walls.build(parent: Instance, level: Blueprint.Level, data: any)
 	for wallIndex, wall in level.walls do
 		local group = Geometry.folder(parent, wall.id)
@@ -158,6 +206,7 @@ function Walls.build(parent: Instance, level: Blueprint.Level, data: any)
 					door:AddTag(o.tag)
 				end
 				door.Parent = openingGroup
+				doorNotice(openingGroup, doorCF, o, wall.thickness)
 			elseif o.type == "window" then
 				frame(openingGroup, cf, o, wall.thickness + 0.15)
 				Walls.glazing(

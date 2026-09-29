@@ -15,7 +15,14 @@ function BallCart.build(cf: CFrame, _opts: { [string]: any }?): Model
 	for _, x in { -1.2, 1.2 } do
 		for _, z in { -0.7, 0.7 } do
 			b:box("Leg", Vector3.new(0.1, 0.5, 0.1), Kit.at(x, 0.25, z), steel, Enum.Material.Metal, true)
-			b:cyl("Wheel", 0.12, 0.36, Kit.at(x, 0.18, z) * CFrame.Angles(0, 0, math.rad(90)), Color3.fromRGB(30, 30, 32), Enum.Material.Plastic)
+			b:cyl(
+				"Wheel",
+				0.12,
+				0.36,
+				Kit.at(x, 0.18, z) * CFrame.Angles(0, 0, math.rad(90)),
+				Color3.fromRGB(30, 30, 32),
+				Enum.Material.Plastic
+			)
 		end
 	end
 	b:box("Rail", Vector3.new(2.8, 0.08, 0.08), Kit.at(0, 2.4, -0.85), steel, Enum.Material.Metal, false)
