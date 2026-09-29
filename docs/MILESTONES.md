@@ -41,12 +41,19 @@ Each milestone's **Done when** list is the acceptance test. Work only inside the
 
 - [ ] M4 Lobby, entrance, front desk, balcony, fitness center (IMG_0318, 0328–0330, 0364–0370)
 - [ ] M5 Corridors, stairs, offices, locker rooms, restrooms, brick accent walls (IMG_0314–0316, 0319–0327, 0331, 0338–0348, 0371–0382)
+      - Volleyball locker room gets Mason branding like the real one: the green "GM" logo + "VOLLEYBALL" on the door and wall
+        (IMG_0378), the green/white mosaic tile wall with the GM logo (IMG_0340), and the "NCAA ALL-AMERICANS" board (IMG_0377,
+        generic names only). Recreate the logo as a clean vector-style texture in art/branding/ (do not crop photos with people),
+        upload via MCP upload_image, and gate every Mason mark behind `RACConfig.MASON_BRANDING = true` so it can be swapped for a
+        generic logo before any public release.
 - [ ] M6 Exterior + campus — facades (brick/precast/fins/metal panel/curtain wall/canopy + "RAC" sign), terrain,
       OSM roads/paths/crosswalks/bike lanes, parking, lawns, trees, rock swale, RAC Field, neighbor buildings as massing,
       NW construction zone with fencing, service yard (IMG_0349–0368).
 - [ ] M7 Realism pass — MaterialVariants, Future lighting, fixtures (2×4 troffers, high-bays, downlights), reflections,
       post-processing, night/after-hours lighting state for the horror mood, performance check.
 - [ ] M8 Photo-match audit — every station in photo_stations.json captured and compared; fix all FAILs; ≥ 90 % PASS.
-- [ ] M9 Gameplay (simple) — Coach AI on the new map (regenerate patrol points, PathfindingService), Geak Bar lure,
+- [ ] M9 Gameplay (simple) — Coach character from art/coach/ (coach_turnaround.png = reference for proportions/outfit:
+      tall + long arms via R15 scaling, green polo, khaki shorts, whistle on lanyard, clipboard; coach_face.png uploaded via MCP
+      upload_image and applied as the head Decal). Rename the in-game villain model/labels to "Coach". Then: Coach AI on the new map (regenerate patrol points, PathfindingService), Geak Bar lure,
       volleyball stun, golf club + ball noise lure, 5 tasks, win/lose; 2-player playtest with clean console.
 - [ ] M10 Polish — perf (< 25k parts, stable 60 fps target), bug sweep, save place; do NOT publish.
