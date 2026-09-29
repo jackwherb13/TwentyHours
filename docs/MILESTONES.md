@@ -5,10 +5,24 @@ runs verification, and only checks it off after `tools/verify.ps1` passes AND an
 Each milestone's **Done when** list is the acceptance test. Work only inside the milestone's scope.
 
 - [ ] M1 Blueprint — measured building data
-  - Trace the RAC from `reference/site_plan_native.png` (scale bar 0–100 ft at bottom-left; measure it in pixels),
-    the Perkins&Will drawings (`reference/photos/Screenshot_*.jpg`, Level 1/2/3 plans) and the OSM outline
-    (`reference/osm_rac_area.json`, way 112472416) into `blueprint/level1.json`, `blueprint/level2.json`,
-    `blueprint/site.json` (units: feet; axes per AGENTS.md).
+  - Sources: `reference/site_plan_native.png` (718×727, scale bar 0–100 ft bottom-left), the Perkins&Will drawings
+    (`reference/photos/Screenshot_*.jpg`, Level 1/2/3 plans, 1/32"=1'), and the OSM outline (`reference/osm_rac_area.json`,
+    way 112472416, ~392×341 ft, the ground truth for size). Output `blueprint/level1.json`, `level2.json`, `site.json`.
+  - Work in STAGES; after each, append a line to verification/M1/PROGRESS.md and run `python tools/render_plan.py`:
+    1. Calibration (≤15 min): fit the site plan to the OSM outline (scale + rotation + offset). Cross-check scale with the
+       basketball courts drawn in the Competition Gym and South Gym (regulation 94×50 ft, cross courts 84×50): must agree
+       within ±4 %. Save `blueprint/calibration.json` (transform, residuals, court measurements, trueNorthDeg).
+    2. Axis-align: rotate into blueprint space so the building's main walls run exactly along X/Z; store `trueNorthDeg`
+       in site.json (used only for OSM context in M6). Snap all coordinates to 0.5 ft.
+    3. Major blocks: footprint + gyms + lobby + long corridors as clean rectangles. No room may overlap another, and
+       none may be a catch-all spanning the building. The NW RAC Addition is ONE fenced `construction` zone that does
+       not overlap the Cage gym.
+    4. Rooms: offices, locker rooms, weight rooms, racquetball (standard 40×20 ft), restrooms, stairs, mechanical — each a
+       clean rectilinear polygon (≤ 12 vertices). Level 2 from the drawings.
+    5. Walls + openings: one wall per real wall, collinear segments merged, ≥ 2 ft long (target < 350 on L1). Doors,
+       windows and curtain walls are `openings` on their wall, placed from the photos/drawings.
+    6. Heights (HEIGHTS.md), photo stations, schema validator, final packet.
+  - Use `python tools/verify_blueprint.py` continuously; it must print no FAIL lines.
   - Schema (document it in `blueprint/SCHEMA.md`): rooms {id,name,type,polygon,floorMaterial,ceilingHeight,ceilingType},
     walls {a,b,thickness,height,material,openings:[{type:door|window|opening|curtainwall,offset,width,sill,head}]},
     columns, stairs {polygon, rise, run, fromLevel, toLevel}, voids (double-height "open to below"), exterior facade
@@ -18,7 +32,8 @@ Each milestone's **Done when** list is the acceptance test. Work only inside the
     position (x,y,z ft, eye height ~5.2), look direction, and vertical FOV (iPhone main camera ≈ 55° vertical for portrait).
   - `tools/overlay.py`: renders the blueprint polygons over `site_plan_native.png` and over the OSM outline into
     `verification/M1/overlay_*.png`, and prints footprint IoU vs OSM.
-  - **Done when:** overlay IoU vs OSM footprint ≥ 0.92; every room visible in the site plan exists in level1.json;
+  - **Done when:** verify_blueprint.py passes; calibration court check within ±4 % (numbers in REPORT.md);
+    overlay IoU vs OSM footprint ≥ 0.92; every room visible in the site plan exists in level1.json;
     Level 2 rooms from the drawings exist in level2.json; HEIGHTS.md cites evidence for every height; JSON validates
     against SCHEMA.md via `lune run tools/validate_blueprint.luau` (write it).
 
