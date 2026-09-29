@@ -72,3 +72,6 @@ If a drawing seems to contradict it, follow this document and note the conflict 
   **longer** than currently drawn. (In Astra's 23:04 plan the small glass = the South Vestibule glazing on the south side; the big glass = the long
   east curtain wall.) The entrance canopy (black overhang), wide stairs and the 20x20 double-height entry belong at the small-glass entrance.
   Use WEB_entrance_1, WEB_entrance_2, WEB_entrance_left_pole, IMG_0364-0368 to place it and size the glazing.
+
+## Reception desk (user, 2026-09-28 23:47)
+- In the front entry room, bigger than modeled, long axis perpendicular to the entrance window, with a raised counter within the desk enclosure (staff inside). ~20-25 ft long. IMG_0369.
