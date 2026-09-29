@@ -4,7 +4,6 @@
 -- Lobby stays sparse so daylight through the south glass does not blow out.
 local Blueprint = require(script.Parent.Blueprint)
 local Geometry = require(script.Parent.Geometry)
-local PropRegistry = require(script.Parent.PropRegistry)
 
 local Lighting = {}
 
@@ -17,10 +16,10 @@ end
 type Tune = { brightness: number, range: number, angle: number }
 
 local TUNE: { [string]: Tune } = {
-	high_bay_light = { brightness = 18, range = 75, angle = 110 },
-	troffer_2x4 = { brightness = 4.2, range = 40, angle = 90 },
-	troffer_2x2 = { brightness = 3.6, range = 32, angle = 90 },
-	downlight = { brightness = 2.4, range = 26, angle = 80 },
+	high_bay_light = { brightness = 6, range = 48, angle = 100 },
+	troffer_2x4 = { brightness = 1.4, range = 24, angle = 80 },
+	troffer_2x2 = { brightness = 1.1, range = 18, angle = 75 },
+	downlight = { brightness = 0.9, range = 16, angle = 70 },
 }
 
 local function bounds(poly: Blueprint.Polygon): (number, number, number, number)
@@ -35,26 +34,6 @@ local function bounds(poly: Blueprint.Polygon): (number, number, number, number)
 	return x0, x1, z0, z1
 end
 
-local function applyTune(model: Instance, zone: string, kind: string)
-	local spec = TUNE[kind]
-	for _, desc in model:GetDescendants() do
-		if desc:IsA("PointLight") or desc:IsA("SpotLight") or desc:IsA("SurfaceLight") then
-			local light = desc :: any
-			if spec then
-				light.Brightness = spec.brightness
-				light.Range = spec.range
-				if light:IsA("SurfaceLight") or light:IsA("SpotLight") then
-					light.Angle = spec.angle
-				end
-			end
-			light.Enabled = true
-			light.Shadows = false
-			light:SetAttribute("Zone", zone)
-			tagNormal(light)
-		end
-	end
-end
-
 local TROFFER_KIND: { [string]: string } = {
 	corridor = "troffer_2x4",
 	office = "troffer_2x2",
@@ -67,58 +46,40 @@ local TROFFER_KIND: { [string]: string } = {
 	mechanical = "troffer_2x2",
 }
 
-local function addFill(model: Model, zone: string, brightness: number, range: number)
-	local part = model.PrimaryPart or model:FindFirstChildWhichIsA("BasePart")
-	if part == nil then
-		return
-	end
-	local fill = Instance.new("PointLight")
-	fill.Name = "Fill"
-	fill.Brightness = brightness
-	fill.Range = range
-	fill.Color = Color3.fromRGB(255, 248, 235)
-	fill.Shadows = false
-	fill.Enabled = true
-	fill:SetAttribute("Zone", zone)
-	fill.Parent = part
-	tagNormal(fill)
-end
+local FIXTURE_SIZE: { [string]: Vector3 } = {
+	high_bay_light = Vector3.new(1.2, 0.25, 4),
+	troffer_2x4 = Vector3.new(2, 0.12, 4),
+	troffer_2x2 = Vector3.new(2, 0.12, 2),
+	downlight = Vector3.new(0.7, 0.08, 0.7),
+}
 
 local function place(parent: Instance, roomId: string, kind: string, x: number, y: number, z: number)
-	local model = PropRegistry.build(kind, CFrame.new(x, y, z), nil)
-	model.Name = kind
-	model:SetAttribute("Room", roomId)
-	model.Parent = parent
-	applyTune(model, roomId, kind)
-	if kind == "high_bay_light" then
-		addFill(model, roomId, 10, 70)
-	elseif kind == "troffer_2x4" or kind == "troffer_2x2" then
-		addFill(model, roomId, 1.8, 22)
-	elseif kind == "downlight" then
-		addFill(model, roomId, 0.9, 16)
-	end
-	-- Gym volume and the training/coach rooms were still black at daytime.
-	-- Lobby cans stay on the sparse tune so the south glass does not blow out.
-	local bright = roomId == "competition_gym" or roomId == "cage_gym" or roomId == "south_gym" or roomId == "gym_foyer"
-	local work = roomId == "training_room" or roomId == "coach_suite" or roomId == "corridor_entry_link"
-	if bright or work then
-		-- Gym high-bays stay strong. Work rooms use one troffer each; boosting the
-		-- fill light as well washes white ceilings and tabletops out of the frame.
-		local floor = if bright then 18 else 5
-		local reach = if bright then 70 else 32
-		for _, desc in model:GetDescendants() do
-			if desc.Name == "Fill" then
-				continue
-			end
-			if desc:IsA("PointLight") or desc:IsA("SpotLight") or desc:IsA("SurfaceLight") then
-				local light = desc :: any
-				light.Brightness = math.max(light.Brightness, floor)
-				light.Range = math.max(light.Range, reach)
-				light.Enabled = true
-				light.Shadows = false
-			end
-		end
-	end
+	-- One housing and one spot. The old kit meshes were most of the 13k lighting parts.
+	local housing = Instance.new("Part")
+	housing.Name = kind
+	housing.Size = FIXTURE_SIZE[kind] or Vector3.new(2, 0.12, 2)
+	housing.CFrame = CFrame.new(x, y, z)
+	housing.Anchored = true
+	housing.CanCollide = false
+	housing.Material = Enum.Material.Metal
+	housing.Color = if kind == "high_bay_light" then Color3.fromRGB(214, 216, 214) else Color3.fromRGB(236, 236, 232)
+	housing.TopSurface = Enum.SurfaceType.Smooth
+	housing.BottomSurface = Enum.SurfaceType.Smooth
+	housing:SetAttribute("Room", roomId)
+	housing.Parent = parent
+	local spec = TUNE[kind]
+	local spot = Instance.new("SpotLight")
+	spot.Name = "Lamp"
+	spot.Face = Enum.NormalId.Bottom
+	spot.Brightness = if spec then spec.brightness else 1
+	spot.Range = if spec then spec.range else 18
+	spot.Angle = if spec then spec.angle else 70
+	spot.Color = Color3.fromRGB(255, 246, 230)
+	spot.Shadows = false
+	spot.Enabled = true
+	spot:SetAttribute("Zone", roomId)
+	spot.Parent = housing
+	tagNormal(spot)
 end
 
 local function scatter(parent: Instance, room: Blueprint.Room, kind: string, y: number, spacing: number, limit: number)
@@ -139,28 +100,32 @@ local function scatter(parent: Instance, room: Blueprint.Room, kind: string, y: 
 	end
 end
 
+-- Cover the floor. A fixed cap of 4 left the 200 ft overlook and the west hall dark.
+local function gridBudget(room: Blueprint.Room, spacing: number, hardCap: number): number
+	local x0, x1, z0, z1 = bounds(room.polygon)
+	local nx = math.max(1, math.floor((x1 - x0 - 2) / spacing) + 1)
+	local nz = math.max(1, math.floor((z1 - z0 - 2) / spacing) + 1)
+	return math.clamp(nx * nz, 1, hardCap)
+end
+
 local function fixtures(zone: Instance, room: Blueprint.Room, roomType: string, floorY: number, ceilY: number)
 	if roomType == "gym" or room.id == "cage_gym" then
-		-- Mount at 18 ft so Range 60 covers the maple at eye height from the overlook.
-		scatter(zone, room, "high_bay_light", floorY + 22, 24, 20)
+		scatter(zone, room, "high_bay_light", floorY + 22, 28, gridBudget(room, 28, 16))
 	elseif roomType == "stair" then
-		local pack = math.min(ceilY - 1.5, floorY + 14)
-		scatter(zone, room, "downlight", math.min(floorY + 5, pack), 10, 4)
-		scatter(zone, room, "downlight", math.min(floorY + 12, pack), 10, 4)
-		scatter(zone, room, "downlight", pack, 12, 3)
+		scatter(zone, room, "downlight", floorY + 10, 14, gridBudget(room, 14, 6))
 	elseif room.id == "training_room" or room.id == "coach_suite" or room.id == "corridor_entry_link" then
-		scatter(zone, room, "troffer_2x4", ceilY - 0.5, 10, 10)
+		scatter(zone, room, "troffer_2x4", ceilY - 0.5, 16, gridBudget(room, 16, 6))
 	elseif roomType == "lobby" or room.id == "south_vestibule" then
-		-- Sparse cans. Daylight through the south curtain wall already fills this volume.
-		scatter(zone, room, "downlight", math.min(ceilY - 2, floorY + 12), 18, 6)
+		scatter(zone, room, "downlight", math.min(ceilY - 2, floorY + 12), 18, gridBudget(room, 18, 4))
 	elseif room.ceilingHeight >= 24 then
-		scatter(zone, room, "downlight", floorY + 12, 16, 6)
+		scatter(zone, room, "downlight", floorY + 12, 20, gridBudget(room, 20, 6))
 	elseif TROFFER_KIND[roomType] then
 		local kind = TROFFER_KIND[roomType]
-		local spacing = if kind == "troffer_2x4" then 16 else 12
-		scatter(zone, room, kind, ceilY - 0.5, spacing, 8)
+		local spacing = if kind == "troffer_2x4" then 18 else 16
+		local cap = if kind == "troffer_2x4" then 14 else 6
+		scatter(zone, room, kind, ceilY - 0.5, spacing, gridBudget(room, spacing, cap))
 	elseif room.ceilingType ~= "none" then
-		scatter(zone, room, "troffer_2x2", ceilY - 0.45, 14, 6)
+		scatter(zone, room, "troffer_2x2", ceilY - 0.45, 16, gridBudget(room, 16, 4))
 	end
 end
 

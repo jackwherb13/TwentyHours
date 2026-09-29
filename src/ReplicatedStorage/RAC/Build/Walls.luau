@@ -185,9 +185,14 @@ local function onGuard(level: Blueprint.Level, wall: Blueprint.Wall): boolean
 	return false
 end
 
+-- Interior brick is only the locker-corridor accent/portals (IMG_0339, 0340, 0372, 0373).
+-- Envelope walls stay brick on the exterior skin (Facade); the body uses the room finish.
 local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): string
-	if wall.exterior or wall.material == "glass" then
+	if wall.material == "glass" then
 		return wall.material
+	end
+	if not wall.exterior and wall.material == "brick" then
+		return "brick"
 	end
 	local mx = (wall.a[1] + wall.b[1]) / 2
 	local mz = (wall.a[2] + wall.b[2]) / 2
@@ -195,27 +200,44 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 	local dz = wall.b[2] - wall.a[2]
 	local length = math.sqrt(dx * dx + dz * dz)
 	if length < 0.01 then
+		if wall.exterior then
+			return "painted_cmu"
+		end
 		return wall.material
 	end
 	local nx, nz = -dz / length, dx / length
-	local chosen = wall.material
 	local function rank(finish: string): number
-		if finish == "brick" or finish == "painted_cmu" or finish == "ceramic_tile" then
+		if finish == "painted_cmu" or finish == "ceramic_tile" then
+			return 3
+		end
+		if finish == "gypsum" then
 			return 2
 		end
 		return 1
 	end
+	local chosen: string? = nil
+	local chosenRank = 0
 	for _, sign in { -1, 1 } do
 		local x = mx + nx * sign * (wall.thickness / 2 + 0.8)
 		local z = mz + nz * sign * (wall.thickness / 2 + 0.8)
 		for _, room in level.rooms do
 			local finish = room.wallFinish
-			if finish and finish ~= "" and Geometry.contains(room.polygon, x, z) and rank(finish) >= rank(chosen) then
-				chosen = finish
+			if finish and finish ~= "" and Geometry.contains(room.polygon, x, z) then
+				local r = rank(finish)
+				if r >= chosenRank then
+					chosen = finish
+					chosenRank = r
+				end
 			end
 		end
 	end
-	return chosen
+	if chosen then
+		return chosen
+	end
+	if wall.exterior then
+		return "painted_cmu"
+	end
+	return wall.material
 end
 
 function Walls.build(parent: Instance, level: Blueprint.Level, data: any)

@@ -4,12 +4,6 @@ local H = require(script.Parent.Heightfield)
 local G = require(script.Parent.Parent.Build.Geometry)
 local Landscape = {}
 
--- Generated meshes: trunk plus an irregular crown, not stacked discs or cones.
-local DECIDUOUS_MESH = "rbxassetid://110305079240397"
-local DECIDUOUS_TEX = "rbxassetid://138916508834826"
-local PINE_MESH = "rbxassetid://134575217828136"
-local PINE_TEX = "rbxassetid://83047659402289"
-
 local function onAsphalt(x: number, z: number): boolean
 	local d = H.data
 	local function raw(px: number, pz: number): boolean
@@ -30,29 +24,61 @@ local function onAsphalt(x: number, z: number): boolean
 	return paved >= 2
 end
 
+local function ball(parent: Instance, name: string, size: number, cf: CFrame, finish: string)
+	local part = P.box(parent, name, Vector3.new(size, size, size), cf, finish)
+	part.Shape = Enum.PartType.Ball
+	part.CanCollide = false
+	return part
+end
+
+-- Trunk plus a cluster of crowns. The birch mesh read as a faceted tropical blob.
 local function tree(parent: Instance, item: any, index: number)
 	local p = item.at
 	local scale = 0.85 + ((index * 13) % 5) * 0.08
-	local height = math.clamp(item.height * scale, 16, 42)
+	local height = math.clamp(item.height * scale, 18, 36)
 	local y = H.height(p[1], p[2])
-	local pine = item.species == "pine"
-	local mesh = if pine then PINE_MESH else DECIDUOUS_MESH
-	local tex = if pine then PINE_TEX else DECIDUOUS_TEX
-	local authoredH = if pine then 22.45 else 25.85
-	local authoredW = if pine then 14 else 18
-	local part = Instance.new("MeshPart")
-	part.Name = if pine then "Pine" else "ShadeTree"
-	local s = height / authoredH
-	part.Size = Vector3.new(authoredW * s, height, authoredW * s)
-	part.CFrame = CFrame.new(p[1], y + height / 2, p[2]) * CFrame.Angles(0, math.rad((index * 47) % 360), 0)
-	part.MeshId = mesh
-	part.TextureID = tex
-	part.Material = Enum.Material.SmoothPlastic
-	part.Color = Color3.new(1, 1, 1)
-	part.Anchored = true
-	part.CanCollide = false
-	part.DoubleSided = true
-	part.Parent = parent
+	local pine = item.species == "pine" or (index % 5 == 0)
+	local model = P.folder(parent, if pine then "PineCanopy" else "ShadeCanopy")
+	local trunkH = if pine then height * 0.55 else height * 0.48
+	local trunkW = if pine then 1.15 else 1.55
+	local trunk = P.pole(model, "Trunk", Vector3.new(p[1], y, p[2]), trunkH, trunkW / 2, "bark", false)
+	trunk.Color = Color3.fromRGB(92, 74, 56)
+	local yaw = math.rad((index * 47) % 360)
+	if pine then
+		local layers = 5
+		for i = 1, layers do
+			local t = (i - 0.15) / layers
+			local radius = height * (0.34 - 0.22 * t)
+			local disc = P.box(
+				model,
+				"Crown",
+				Vector3.new(1.5, radius * 2, radius * 2),
+				CFrame.new(p[1], y + trunkH * 0.42 + t * height * 0.62, p[2]) * CFrame.Angles(0, 0, math.pi / 2),
+				"pine"
+			)
+			disc.Shape = Enum.PartType.Cylinder
+			disc.CanCollide = false
+		end
+	else
+		local crown = height * 0.42
+		local centerY = y + trunkH + crown * 0.28
+		ball(model, "Crown", crown, CFrame.new(p[1], centerY, p[2]), "leaf")
+		for i = 1, 4 do
+			local a = yaw + i * 1.5
+			local reach = crown * (0.28 + (i % 3) * 0.06)
+			ball(
+				model,
+				"Crown",
+				crown * (0.62 + (i % 2) * 0.12),
+				CFrame.new(
+					p[1] + math.cos(a) * reach,
+					centerY + ((i % 3) - 1) * crown * 0.18,
+					p[2] + math.sin(a) * reach
+				),
+				if i % 2 == 0 then "leaf" else "shrub"
+			)
+		end
+	end
 end
 
 function Landscape.build(parent: Instance, site: any, props: any)
@@ -62,28 +88,38 @@ function Landscape.build(parent: Instance, site: any, props: any)
 	for i, item in site.trees do
 		local at = item.at
 		local dx, dz = at[1] - entrance.x, at[2] - entrance.z
-		if dx * dx + dz * dz < 42 * 42 and at[2] > entrance.z - 8 then
+		-- Keep the south glass, the canopy, and the stair clear. Crowns were growing through the lobby.
+		if at[1] > -120 and at[1] < 36 and at[2] > -40 and at[2] < 68 then
 			continue
 		end
-		local pads = site.terrain and site.terrain.padPolygons
+		if dx * dx + dz * dz < 56 * 56 and at[2] > entrance.z - 12 then
+			continue
+		end
+		local pads = {}
+		if site.terrain and site.terrain.padPolygons then
+			for _, polygon in site.terrain.padPolygons do
+				table.insert(pads, polygon)
+			end
+		end
+		if site.footprint then
+			table.insert(pads, site.footprint)
+		end
 		local blocked = false
-		if pads then
-			local reach = (item.radius or 8) + 2
-			for _, polygon in pads do
-				if G.contains(polygon, at[1], at[2]) then
+		local reach = (item.radius or 8) + 8
+		for _, polygon in pads do
+			if G.contains(polygon, at[1], at[2]) then
+				blocked = true
+				break
+			end
+			for k = 0, 11 do
+				local a = k * math.pi / 6
+				if G.contains(polygon, at[1] + math.cos(a) * reach, at[2] + math.sin(a) * reach) then
 					blocked = true
 					break
 				end
-				for k = 0, 7 do
-					local a = k * math.pi / 4
-					if G.contains(polygon, at[1] + math.cos(a) * reach, at[2] + math.sin(a) * reach) then
-						blocked = true
-						break
-					end
-				end
-				if blocked then
-					break
-				end
+			end
+			if blocked then
+				break
 			end
 		end
 		if blocked or onAsphalt(at[1], at[2]) then

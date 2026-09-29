@@ -71,7 +71,7 @@ function Loader.new(warningHandler: ((any) -> ())?)
 				end
 				if key == "IsA" then
 					return function(_, class)
-						return class == "ModuleScript" and fs.isFile(path .. ".luau")
+						return class == "ModuleScript" and (fs.isFile(path .. ".luau") or fs.isFile(path .. "/init.luau"))
 					end
 				end
 				return node(path .. "/" .. key)
@@ -88,7 +88,9 @@ function Loader.new(warningHandler: ((any) -> ())?)
 		e.require = function(ref)
 			return load(ref.__path)
 		end
-		local fn = luau.load(luau.compile(fs.readFile(path .. ".luau")), { debugName = path, environment = e })
+		-- Rojo folder modules: Folder/init.luau becomes the ModuleScript named Folder.
+		local file = if fs.isFile(path .. ".luau") then path .. ".luau" else path .. "/init.luau"
+		local fn = luau.load(luau.compile(fs.readFile(file)), { debugName = path, environment = e })
 		cache[path] = fn()
 		return cache[path]
 	end

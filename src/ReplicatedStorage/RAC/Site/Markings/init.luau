@@ -51,7 +51,7 @@ local KIND_LIFT: { [string]: number } = {
 	stop_bar = 0.26,
 	arrow = 0.10,
 	symbol = 0.14,
-	island = 0.55,
+	island = 0.72,
 }
 
 local function draped(

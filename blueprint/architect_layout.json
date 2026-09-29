@@ -46,16 +46,8 @@
               -62.0
             ],
             [
-              -106.0,
-              -62.0
-            ],
-            [
-              -106.0,
-              -16.0
-            ],
-            [
               -97.0,
-              -16.0
+              -62.0
             ],
             [
               -97.0,
@@ -317,11 +309,27 @@
           "polygon": [
             [
               -10.0,
-              -36.0
+              -16.0
+            ],
+            [
+              -12.5,
+              -16.0
+            ],
+            [
+              -12.5,
+              -33.0
+            ],
+            [
+              2.0,
+              -33.0
+            ],
+            [
+              2.0,
+              -18.5
             ],
             [
               10.0,
-              -36.0
+              -18.5
             ],
             [
               10.0,
@@ -487,11 +495,11 @@
             ],
             [
               10.0,
-              -36.0
+              -41.0
             ],
             [
               -5.0,
-              -36.0
+              -41.0
             ]
           ],
           "floorMaterial": "porcelain_tile",
@@ -505,20 +513,28 @@
           "type": "stair",
           "polygon": [
             [
-              -106.0,
-              -54.0
+              2.0,
+              -18.5
             ],
             [
-              -78.5,
-              -54.0
+              2.0,
+              -33.0
             ],
             [
-              -78.5,
-              -16.0
+              -12.5,
+              -33.0
             ],
             [
-              -106.0,
-              -16.0
+              -12.5,
+              -41.0
+            ],
+            [
+              10.0,
+              -41.0
+            ],
+            [
+              10.0,
+              -18.5
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -536,11 +552,11 @@
               -48.0
             ],
             [
-              -10.0,
+              -12.5,
               -48.0
             ],
             [
-              -10.0,
+              -12.5,
               -16.0
             ],
             [
@@ -605,7 +621,7 @@
           "floorMaterial": "terrazzo",
           "ceilingHeight": 12,
           "ceilingType": "act_2x4",
-          "wallFinish": "gypsum"
+          "wallFinish": "painted_cmu"
         },
         {
           "id": "corridor_south_link",
@@ -613,26 +629,26 @@
           "type": "corridor",
           "polygon": [
             [
-              -106.0,
-              -62.0
-            ],
-            [
-              -78.5,
-              -62.0
+              -97.0,
+              -54.0
             ],
             [
               -78.5,
               -54.0
             ],
             [
-              -106.0,
-              -54.0
+              -78.5,
+              -16.0
+            ],
+            [
+              -97.0,
+              -16.0
             ]
           ],
-          "floorMaterial": "terrazzo",
-          "ceilingHeight": 10,
-          "ceilingType": "act_2x4",
-          "wallFinish": "painted_cmu"
+          "floorMaterial": "porcelain_tile",
+          "ceilingHeight": 32,
+          "ceilingType": "gypsum",
+          "wallFinish": "gypsum"
         },
         {
           "id": "thin_link",
@@ -649,11 +665,11 @@
             ],
             [
               -78.5,
-              -170.0
+              -178.0
             ],
             [
               -193.5,
-              -170.0
+              -178.0
             ]
           ],
           "floorMaterial": "terrazzo",
@@ -668,11 +684,11 @@
           "polygon": [
             [
               -205.5,
-              -180.0
+              -186.0
             ],
             [
               -193.5,
-              -180.0
+              -186.0
             ],
             [
               -193.5,
@@ -695,19 +711,19 @@
           "polygon": [
             [
               -236.5,
-              -92.5
+              -180.0
             ],
             [
               -205.5,
-              -92.5
+              -180.0
             ],
             [
               -205.5,
-              -62.0
+              -150.0
             ],
             [
               -236.5,
-              -62.0
+              -150.0
             ]
           ],
           "floorMaterial": "porcelain_tile",
@@ -722,19 +738,19 @@
           "polygon": [
             [
               -215.5,
-              -170.0
+              -150.0
             ],
             [
               -205.5,
-              -170.0
+              -150.0
             ],
             [
               -205.5,
-              -160.0
+              -140.0
             ],
             [
               -215.5,
-              -160.0
+              -140.0
             ]
           ],
           "floorMaterial": "porcelain_tile",
@@ -748,20 +764,20 @@
           "type": "locker",
           "polygon": [
             [
-              -225.0,
-              -160.0
-            ],
-            [
-              -205.5,
-              -160.0
+              -239.5,
+              -140.0
             ],
             [
               -205.5,
               -140.0
             ],
             [
-              -225.0,
-              -140.0
+              -205.5,
+              -118.0
+            ],
+            [
+              -239.5,
+              -118.0
             ]
           ],
           "floorMaterial": "porcelain_tile",
@@ -937,7 +953,7 @@
           "type": "stair",
           "polygon": [
             [
-              -339.5,
+              -343.5,
               -132.5
             ],
             [
@@ -949,7 +965,7 @@
               -92.5
             ],
             [
-              -339.5,
+              -343.5,
               -92.5
             ]
           ],
@@ -964,20 +980,20 @@
           "type": "storage",
           "polygon": [
             [
-              -225.0,
-              -180.0
+              -236.5,
+              -150.0
             ],
             [
-              -205.5,
-              -180.0
+              -215.5,
+              -150.0
             ],
             [
-              -205.5,
-              -170.0
+              -215.5,
+              -140.0
             ],
             [
-              -225.0,
-              -170.0
+              -236.5,
+              -140.0
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -1262,16 +1278,8 @@
               -220.0
             ],
             [
-              -351.5,
-              -220.0
-            ],
-            [
-              -351.5,
-              -92.5
-            ],
-            [
               -379.0,
-              -92.5
+              -220.0
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -1289,11 +1297,11 @@
               -220.0
             ],
             [
-              -225.0,
+              -236.5,
               -220.0
             ],
             [
-              -225.0,
+              -236.5,
               -140.0
             ],
             [
@@ -1329,11 +1337,11 @@
             ],
             [
               -42.5,
-              -28.0
+              -41.0
             ],
             [
               -66.5,
-              -28.0
+              -41.0
             ]
           ],
           "floorMaterial": "porcelain_tile",
@@ -1560,26 +1568,18 @@
         {
           "id": "gym_foyer",
           "name": "Volleyball Gym Entry",
-          "type": "gym",
+          "type": "lobby",
           "polygon": [
             [
               -193.5,
-              -170.0
+              -178.0
             ],
             [
               -78.5,
-              -170.0
+              -178.0
             ],
             [
               -78.5,
-              -92.5
-            ],
-            [
-              -110.0,
-              -92.5
-            ],
-            [
-              -110.0,
               -132.5
             ],
             [
@@ -1588,8 +1588,8 @@
             ]
           ],
           "floorMaterial": "maple",
-          "ceilingHeight": 32.5,
-          "ceilingType": "none",
+          "ceilingHeight": 12,
+          "ceilingType": "act_2x4",
           "wallFinish": "painted_cmu"
         },
         {
@@ -1599,19 +1599,19 @@
           "polygon": [
             [
               -305.0,
-              -140.0
+              -118.0
             ],
             [
               -205.5,
-              -140.0
+              -118.0
             ],
             [
               -205.5,
-              -112.0
+              -100.0
             ],
             [
               -305.0,
-              -112.0
+              -100.0
             ]
           ],
           "floorMaterial": "terrazzo",
@@ -1778,14 +1778,6 @@
         {
           "rooms": [
             "athletic_corridor",
-            "training_store"
-          ],
-          "width": 3.5,
-          "type": "door"
-        },
-        {
-          "rooms": [
-            "athletic_corridor",
             "corridor_main"
           ],
           "width": 8,
@@ -1814,14 +1806,6 @@
           ],
           "width": 6,
           "type": "door"
-        },
-        {
-          "rooms": [
-            "training_room",
-            "west_link"
-          ],
-          "width": 6,
-          "type": "opening"
         },
         {
           "rooms": [
@@ -1857,14 +1841,6 @@
         },
         {
           "rooms": [
-            "corridor_service",
-            "training_room"
-          ],
-          "width": 4,
-          "type": "door"
-        },
-        {
-          "rooms": [
             "corridor_office",
             "office_w1"
           ],
@@ -1892,34 +1868,9 @@
             "lobby",
             "south_vestibule"
           ],
-          "width": 12,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "lobby",
-            "glazed_recreation"
-          ],
-          "width": 6,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "corridor_entry_south",
-            "stair_main"
-          ],
-          "width": 16,
+          "width": "full",
           "type": "opening",
-          "head": 12
-        },
-        {
-          "rooms": [
-            "south_vestibule",
-            "stair_main"
-          ],
-          "width": 12,
-          "type": "opening",
-          "head": 12
+          "head": 16
         },
         {
           "rooms": [
@@ -1927,14 +1878,6 @@
             "corridor_wide"
           ],
           "width": 16,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "fitness_annex",
-            "corridor_wide"
-          ],
-          "width": 24,
           "type": "opening"
         },
         {
@@ -1958,8 +1901,9 @@
             "corridor_south_link",
             "corridor_entry_south"
           ],
-          "width": 7.5,
-          "type": "opening"
+          "width": "full",
+          "type": "opening",
+          "head": 12
         },
         {
           "rooms": [
@@ -2075,36 +2019,10 @@
         },
         {
           "rooms": [
-            "corridor_south_link",
-            "stair_main"
-          ],
-          "width": 8,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "gym_foyer",
-            "thin_link"
-          ],
-          "width": "full",
-          "type": "opening",
-          "head": 12
-        },
-        {
-          "rooms": [
-            "thin_link",
-            "competition_gym"
-          ],
-          "width": "full",
-          "type": "opening",
-          "head": 16
-        },
-        {
-          "rooms": [
             "thin_link",
             "corridor_gym_east"
           ],
-          "width": 8,
+          "width": 6,
           "type": "opening"
         },
         {
@@ -2120,7 +2038,7 @@
             "corridor_locker_west",
             "stair_second"
           ],
-          "width": 8,
+          "width": 6,
           "type": "opening"
         },
         {
@@ -2173,11 +2091,39 @@
         },
         {
           "rooms": [
+            "lobby",
+            "stair_main"
+          ],
+          "width": "full",
+          "type": "opening",
+          "head": 12
+        },
+        {
+          "rooms": [
             "south_vestibule",
+            "corridor_south_link"
+          ],
+          "width": "full",
+          "type": "opening",
+          "head": 16
+        },
+        {
+          "rooms": [
+            "lobby",
             "fitness_annex"
           ],
-          "width": 12,
-          "type": "opening"
+          "width": "full",
+          "type": "opening",
+          "head": 12
+        },
+        {
+          "rooms": [
+            "fitness_annex",
+            "corridor_wide"
+          ],
+          "width": "full",
+          "type": "opening",
+          "head": 10
         }
       ],
       "apertures": [
@@ -2312,28 +2258,50 @@
         },
         {
           "a": [
-            10.0,
-            -80.0
+            -78.5,
+            -178.0
           ],
           "b": [
-            10.0,
-            -36.0
+            -78.5,
+            -132.5
           ],
-          "height": 19.5,
           "openings": [
             {
-              "center": 22,
-              "width": 40,
-              "kind": "curtainwall",
-              "sill": 0,
-              "head": 18
+              "center": 26.0,
+              "width": 6,
+              "kind": "door"
+            },
+            {
+              "center": 36.0,
+              "width": 6,
+              "kind": "door"
             }
           ]
         },
         {
           "a": [
             10.0,
-            -36.0
+            -80.0
+          ],
+          "b": [
+            10.0,
+            -41.0
+          ],
+          "height": 12.5,
+          "openings": [
+            {
+              "center": 19.5,
+              "width": 36,
+              "kind": "curtainwall",
+              "sill": 0,
+              "head": 11
+            }
+          ]
+        },
+        {
+          "a": [
+            10.0,
+            -18.5
           ],
           "b": [
             10.0,
@@ -2342,33 +2310,11 @@
           "height": 32.5,
           "openings": [
             {
-              "center": 18,
-              "width": 32,
+              "center": 9.0,
+              "width": 16,
               "kind": "curtainwall",
               "sill": 0,
               "head": 30
-            }
-          ]
-        },
-        {
-          "a": [
-            -78.5,
-            -170.0
-          ],
-          "b": [
-            -78.5,
-            -132.5
-          ],
-          "openings": [
-            {
-              "center": 18,
-              "width": 6,
-              "kind": "door"
-            },
-            {
-              "center": 28,
-              "width": 6,
-              "kind": "door"
             }
           ]
         }
@@ -2378,20 +2324,28 @@
           "id": "stair_main",
           "polygon": [
             [
-              -106.0,
-              -54.0
+              2.0,
+              -18.5
             ],
             [
-              -78.5,
-              -54.0
+              2.0,
+              -33.0
             ],
             [
-              -78.5,
-              -16.0
+              -12.5,
+              -33.0
             ],
             [
-              -106.0,
-              -16.0
+              -12.5,
+              -41.0
+            ],
+            [
+              10.0,
+              -41.0
+            ],
+            [
+              10.0,
+              -18.5
             ]
           ],
           "fromLevel": 1,
@@ -2403,26 +2357,26 @@
           "width": 8,
           "risers": 34,
           "rise": 0.5882352941176471,
-          "run": 0.917,
+          "run": 0.8529411764705882,
           "flights": [
             {
               "id": "main_a",
               "polygon": [
                 [
-                  -88.5,
-                  -44.0
+                  2.0,
+                  -33.0
                 ],
                 [
-                  -80.5,
-                  -44.0
+                  10.0,
+                  -33.0
                 ],
                 [
-                  -80.5,
-                  -29.8
+                  10.0,
+                  -18.5
                 ],
                 [
-                  -88.5,
-                  -29.8
+                  2.0,
+                  -18.5
                 ]
               ],
               "direction": [
@@ -2431,7 +2385,7 @@
               ],
               "risers": 17,
               "rise": 0.5882352941176471,
-              "run": 0.8333333333333334,
+              "run": 0.8529411764705882,
               "width": 8,
               "baseElevation": 0
             },
@@ -2439,20 +2393,20 @@
               "id": "main_b",
               "polygon": [
                 [
-                  -102.7,
-                  -52.0
+                  -12.5,
+                  -41.0
                 ],
                 [
-                  -88.5,
-                  -52.0
+                  2.0,
+                  -41.0
                 ],
                 [
-                  -88.5,
-                  -44.0
+                  2.0,
+                  -33.0
                 ],
                 [
-                  -102.7,
-                  -44.0
+                  -12.5,
+                  -33.0
                 ]
               ],
               "direction": [
@@ -2461,7 +2415,7 @@
               ],
               "risers": 17,
               "rise": 0.5882352941176471,
-              "run": 0.8333333333333334,
+              "run": 0.8529411764705882,
               "width": 8,
               "baseElevation": 10
             }
@@ -2471,20 +2425,20 @@
               "id": "main_turn",
               "polygon": [
                 [
-                  -88.5,
-                  -52.0
+                  2.0,
+                  -41.0
                 ],
                 [
-                  -80.5,
-                  -52.0
+                  10.0,
+                  -41.0
                 ],
                 [
-                  -80.5,
-                  -44.0
+                  10.0,
+                  -33.0
                 ],
                 [
-                  -88.5,
-                  -44.0
+                  2.0,
+                  -33.0
                 ]
               ],
               "elevation": 10
@@ -2495,7 +2449,7 @@
           "id": "stair_second",
           "polygon": [
             [
-              -339.5,
+              -343.5,
               -132.5
             ],
             [
@@ -2507,7 +2461,7 @@
               -92.5
             ],
             [
-              -339.5,
+              -343.5,
               -92.5
             ]
           ],
@@ -2605,6 +2559,28 @@
                 ]
               ],
               "elevation": 10
+            },
+            {
+              "id": "second_top",
+              "polygon": [
+                [
+                  -343.5,
+                  -111.0
+                ],
+                [
+                  -339.5,
+                  -111.0
+                ],
+                [
+                  -339.5,
+                  -105.0
+                ],
+                [
+                  -343.5,
+                  -105.0
+                ]
+              ],
+              "elevation": 20
             }
           ]
         },
@@ -2813,7 +2789,7 @@
           "room": "lobby",
           "length": 22,
           "bays": 5,
-          "depth": 6
+          "depth": 8
         },
         {
           "id": "ping_pong_1",
@@ -2869,7 +2845,7 @@
           "id": "trophy_main",
           "kind": "trophy_case",
           "at": [
-            -68.0,
+            -67.5,
             -108.0
           ],
           "rotation": 90,
@@ -3156,6 +3132,66 @@
           "room": "coach_suite"
         },
         {
+          "id": "cube_chair_1",
+          "kind": "office_chair",
+          "at": [
+            -22.0,
+            -92.5
+          ],
+          "rotation": 180,
+          "room": "coach_suite"
+        },
+        {
+          "id": "cube_chair_2",
+          "kind": "office_chair",
+          "at": [
+            -14.0,
+            -92.5
+          ],
+          "rotation": 180,
+          "room": "coach_suite"
+        },
+        {
+          "id": "cube_chair_3",
+          "kind": "office_chair",
+          "at": [
+            -6.0,
+            -92.5
+          ],
+          "rotation": 180,
+          "room": "coach_suite"
+        },
+        {
+          "id": "cube_chair_4",
+          "kind": "office_chair",
+          "at": [
+            -22.0,
+            -95.5
+          ],
+          "rotation": 0,
+          "room": "coach_suite"
+        },
+        {
+          "id": "cube_chair_5",
+          "kind": "office_chair",
+          "at": [
+            -14.0,
+            -95.5
+          ],
+          "rotation": 0,
+          "room": "coach_suite"
+        },
+        {
+          "id": "cube_chair_6",
+          "kind": "office_chair",
+          "at": [
+            -6.0,
+            -95.5
+          ],
+          "rotation": 0,
+          "room": "coach_suite"
+        },
+        {
           "id": "suite_desk_n",
           "kind": "office_desk",
           "at": [
@@ -3401,7 +3437,7 @@
           "kind": "training_table",
           "at": [
             -230.0,
-            -72.0
+            -160.0
           ],
           "rotation": 90,
           "room": "training_room"
@@ -3411,7 +3447,7 @@
           "kind": "training_table",
           "at": [
             -230.0,
-            -84.0
+            -172.0
           ],
           "rotation": 90,
           "room": "training_room"
@@ -3421,7 +3457,7 @@
           "kind": "training_table",
           "at": [
             -218.0,
-            -72.0
+            -160.0
           ],
           "rotation": 90,
           "room": "training_room"
@@ -3431,7 +3467,7 @@
           "kind": "training_table",
           "at": [
             -218.0,
-            -84.0
+            -172.0
           ],
           "rotation": 90,
           "room": "training_room"
@@ -3441,7 +3477,7 @@
           "kind": "ice_machine",
           "at": [
             -228.0,
-            -89.0
+            -176.0
           ],
           "rotation": 180,
           "room": "training_room"
@@ -3451,7 +3487,7 @@
           "kind": "nameplate",
           "at": [
             -214.0,
-            -64.0
+            -152.0
           ],
           "rotation": 180,
           "room": "training_room",
@@ -3462,7 +3498,7 @@
           "kind": "supply_cabinet",
           "at": [
             -234.0,
-            -80.0
+            -168.0
           ],
           "rotation": 90,
           "room": "training_room"
@@ -3472,7 +3508,7 @@
           "kind": "supply_cabinet",
           "at": [
             -234.0,
-            -72.0
+            -160.0
           ],
           "rotation": 90,
           "room": "training_room"
@@ -3482,7 +3518,7 @@
           "kind": "supply_cabinet",
           "at": [
             -222.0,
-            -89.0
+            -176.0
           ],
           "rotation": 180,
           "room": "training_room"
@@ -3492,7 +3528,7 @@
           "kind": "office_desk",
           "at": [
             -210.0,
-            -66.0
+            -154.0
           ],
           "rotation": 0,
           "room": "training_room"
@@ -3502,7 +3538,7 @@
           "kind": "office_chair",
           "at": [
             -210.0,
-            -69.0
+            -157.0
           ],
           "rotation": 0,
           "room": "training_room"
@@ -3512,7 +3548,7 @@
           "kind": "bulletin_board",
           "at": [
             -222.0,
-            -64.0
+            -152.0
           ],
           "rotation": 180,
           "room": "training_room"
@@ -3521,8 +3557,8 @@
           "id": "train_bike",
           "kind": "upright_bike",
           "at": [
-            -208.0,
-            -78.0
+            -210.0,
+            -166.0
           ],
           "rotation": 270,
           "room": "training_room"
@@ -3531,8 +3567,8 @@
           "id": "train_climb",
           "kind": "stair_climber",
           "at": [
-            -208.0,
-            -86.0
+            -210.0,
+            -174.0
           ],
           "rotation": 270,
           "room": "training_room"
@@ -3541,8 +3577,8 @@
           "id": "train_fountain",
           "kind": "water_fountain",
           "at": [
-            -208.0,
-            -70.0
+            -210.0,
+            -158.0
           ],
           "rotation": 270,
           "room": "training_room"
@@ -3552,7 +3588,7 @@
           "kind": "trash_bin",
           "at": [
             -214.0,
-            -66.0
+            -154.0
           ],
           "rotation": 0,
           "room": "training_room"
@@ -3562,7 +3598,7 @@
           "kind": "recycle_bin",
           "at": [
             -216.0,
-            -66.0
+            -154.0
           ],
           "rotation": 0,
           "room": "training_room"
@@ -3617,7 +3653,7 @@
           "kind": "wall_pad",
           "at": [
             -150.0,
-            -188.0
+            -187.5
           ],
           "rotation": 0,
           "room": "competition_gym",
@@ -3770,7 +3806,7 @@
           "kind": "water_fountain",
           "at": [
             -100.0,
-            -178.0
+            -182.0
           ],
           "rotation": 90,
           "room": "thin_link"
@@ -3780,7 +3816,7 @@
           "kind": "trash_bin",
           "at": [
             -110.0,
-            -178.0
+            -182.0
           ],
           "rotation": 0,
           "room": "thin_link"
@@ -3789,8 +3825,8 @@
           "id": "nutri_fridge",
           "kind": "industrial_fridge",
           "at": [
-            -212.0,
-            -165.0
+            -210.5,
+            -145.0
           ],
           "rotation": 270,
           "room": "nutrition_vestibule",
@@ -3800,8 +3836,8 @@
           "id": "lock_bank_1",
           "kind": "locker_bank_wood",
           "at": [
-            -216.0,
-            -156.0
+            -228.0,
+            -130.0
           ],
           "rotation": 0,
           "room": "locker_volleyball"
@@ -3810,8 +3846,8 @@
           "id": "lock_bank_2",
           "kind": "locker_bank_metal",
           "at": [
-            -210.0,
-            -156.0
+            -220.0,
+            -130.0
           ],
           "rotation": 0,
           "room": "locker_volleyball"
@@ -3820,8 +3856,8 @@
           "id": "lock_bench",
           "kind": "bench_locker",
           "at": [
-            -214.0,
-            -148.0
+            -224.0,
+            -124.0
           ],
           "rotation": 0,
           "room": "locker_volleyball"
@@ -4050,8 +4086,8 @@
           "id": "corridor_south_link_fit",
           "kind": "trash_bin",
           "at": [
-            -92.0,
-            -58.0
+            -88.0,
+            -35.0
           ],
           "rotation": 0,
           "room": "corridor_south_link"
@@ -4061,7 +4097,7 @@
           "kind": "trash_bin",
           "at": [
             -199.5,
-            -130.0
+            -133.0
           ],
           "rotation": 0,
           "room": "athletic_corridor"
@@ -4160,8 +4196,8 @@
           "id": "training_store_fit",
           "kind": "supply_cabinet",
           "at": [
-            -215.0,
-            -175.0
+            -226.0,
+            -145.0
           ],
           "rotation": 0,
           "room": "training_store"
@@ -4281,7 +4317,7 @@
           "kind": "trash_bin",
           "at": [
             -36.0,
-            -54.0
+            -60.5
           ],
           "rotation": 0,
           "room": "corridor_wide"
@@ -4291,7 +4327,7 @@
           "kind": "trash_bin",
           "at": [
             -255.0,
-            -126.0
+            -109.0
           ],
           "rotation": 0,
           "room": "corridor_locker_west"
@@ -4552,20 +4588,28 @@
           "type": "stair",
           "polygon": [
             [
-              -106.0,
-              -54.0
+              2.0,
+              -18.5
             ],
             [
-              -78.5,
-              -54.0
+              2.0,
+              -33.0
             ],
             [
-              -78.5,
-              -16.0
+              -12.5,
+              -33.0
             ],
             [
-              -106.0,
-              -16.0
+              -12.5,
+              -41.0
+            ],
+            [
+              10.0,
+              -41.0
+            ],
+            [
+              10.0,
+              -18.5
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -4610,11 +4654,11 @@
               -48.0
             ],
             [
-              -10.0,
+              -12.5,
               -48.0
             ],
             [
-              -10.0,
+              -12.5,
               -16.0
             ],
             [
@@ -4661,11 +4705,11 @@
           "polygon": [
             [
               -78.5,
-              -330.0
+              -279.5
             ],
             [
               -64.5,
-              -330.0
+              -279.5
             ],
             [
               -64.5,
@@ -4768,7 +4812,7 @@
           "type": "stair",
           "polygon": [
             [
-              -339.5,
+              -343.5,
               -132.5
             ],
             [
@@ -4780,7 +4824,7 @@
               -92.5
             ],
             [
-              -339.5,
+              -343.5,
               -92.5
             ]
           ],
@@ -4849,20 +4893,20 @@
           "type": "racquetball",
           "polygon": [
             [
-              -118.5,
-              -319.5
+              -305.0,
+              -80.0
             ],
             [
-              -98.5,
-              -319.5
+              -265.0,
+              -80.0
             ],
             [
-              -98.5,
-              -279.5
+              -265.0,
+              -60.0
             ],
             [
-              -118.5,
-              -279.5
+              -305.0,
+              -60.0
             ]
           ],
           "floorMaterial": "maple",
@@ -4876,20 +4920,20 @@
           "type": "racquetball",
           "polygon": [
             [
-              -98.5,
-              -319.5
+              -265.0,
+              -80.0
             ],
             [
-              -78.5,
-              -319.5
+              -225.0,
+              -80.0
             ],
             [
-              -78.5,
-              -279.5
+              -225.0,
+              -60.0
             ],
             [
-              -98.5,
-              -279.5
+              -265.0,
+              -60.0
             ]
           ],
           "floorMaterial": "maple",
@@ -4958,11 +5002,11 @@
           "polygon": [
             [
               -305.0,
-              -80.0
+              -60.0
             ],
             [
               -285.0,
-              -80.0
+              -60.0
             ],
             [
               -285.0,
@@ -5069,11 +5113,11 @@
               -132.5
             ],
             [
-              -339.5,
+              -343.5,
               -132.5
             ],
             [
-              -339.5,
+              -343.5,
               -92.5
             ],
             [
@@ -5135,16 +5179,8 @@
               -62.0
             ],
             [
-              -106.0,
-              -62.0
-            ],
-            [
-              -106.0,
-              -16.0
-            ],
-            [
               -97.0,
-              -16.0
+              -62.0
             ],
             [
               -97.0,
@@ -5232,16 +5268,24 @@
               -16.0
             ],
             [
-              -10.0,
+              -12.5,
               -16.0
             ],
             [
-              -10.0,
-              -36.0
+              -12.5,
+              -33.0
+            ],
+            [
+              2.0,
+              -33.0
+            ],
+            [
+              2.0,
+              -18.5
             ],
             [
               10.0,
-              -36.0
+              -18.5
             ],
             [
               10.0,
@@ -5263,11 +5307,11 @@
               -80.0
             ],
             [
-              -5.0,
+              -12.5,
               -80.0
             ],
             [
-              -5.0,
+              -12.5,
               -48.0
             ],
             [
@@ -5276,16 +5320,43 @@
             ],
             [
               -42.5,
-              -76.0
+              -16.0
             ],
             [
               -64.5,
-              -76.0
+              -16.0
             ]
           ],
-          "floorMaterial": "terrazzo",
+          "floorMaterial": "rubber",
+          "ceilingHeight": 12,
+          "ceilingType": "act_2x2",
+          "wallFinish": "gypsum"
+        },
+        {
+          "id": "overlook_mechanical",
+          "name": "Overlook Mechanical",
+          "type": "mechanical",
+          "polygon": [
+            [
+              -118.5,
+              -330.0
+            ],
+            [
+              -78.5,
+              -330.0
+            ],
+            [
+              -78.5,
+              -279.5
+            ],
+            [
+              -118.5,
+              -279.5
+            ]
+          ],
+          "floorMaterial": "sealed_concrete",
           "ceilingHeight": 10,
-          "ceilingType": "act_2x4",
+          "ceilingType": "none",
           "wallFinish": "painted_cmu"
         }
       ],
@@ -5359,8 +5430,9 @@
             "balcony",
             "cardio_south"
           ],
-          "width": 8,
-          "type": "opening"
+          "width": "full",
+          "type": "opening",
+          "head": 10
         },
         {
           "rooms": [
@@ -5405,14 +5477,6 @@
         {
           "rooms": [
             "corridor_l2",
-            "court_gallery"
-          ],
-          "width": 8,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "corridor_l2",
             "office_l2_w1"
           ],
           "width": 3.5,
@@ -5425,14 +5489,6 @@
           ],
           "width": 3.5,
           "type": "door"
-        },
-        {
-          "rooms": [
-            "corridor_l2",
-            "basketball_approach"
-          ],
-          "width": 4,
-          "type": "opening"
         },
         {
           "rooms": [
@@ -5469,19 +5525,12 @@
         },
         {
           "rooms": [
-            "stair_main",
-            "main_stair_landing"
-          ],
-          "width": 8,
-          "type": "opening"
-        },
-        {
-          "rooms": [
             "main_stair_landing",
             "balcony"
           ],
-          "width": 3,
-          "type": "opening"
+          "width": "full",
+          "type": "opening",
+          "head": 10
         },
         {
           "rooms": [
@@ -5518,6 +5567,23 @@
         {
           "rooms": [
             "corridor_l2_overlook",
+            "fitness_north"
+          ],
+          "width": 6,
+          "type": "door"
+        },
+        {
+          "rooms": [
+            "stair_main",
+            "cardio_south"
+          ],
+          "width": 6,
+          "type": "opening",
+          "head": 10
+        },
+        {
+          "rooms": [
+            "corridor_l2",
             "racquetball_2"
           ],
           "width": 4,
@@ -5526,19 +5592,12 @@
         },
         {
           "rooms": [
-            "racquetball_2",
+            "corridor_l2",
             "racquetball_1"
           ],
           "width": 4,
-          "type": "door"
-        },
-        {
-          "rooms": [
-            "corridor_l2_overlook",
-            "fitness_north"
-          ],
-          "width": 6,
-          "type": "door"
+          "type": "door",
+          "label": "RACQUETBALL"
         }
       ],
       "apertures": [
@@ -5567,20 +5626,28 @@
           "id": "stair_main",
           "polygon": [
             [
-              -78.5,
-              -32.0
+              2.0,
+              -18.5
             ],
             [
-              -42.5,
-              -32.0
+              2.0,
+              -33.0
             ],
             [
-              -42.5,
-              0.0
+              -12.5,
+              -33.0
             ],
             [
-              -78.5,
-              0.0
+              -12.5,
+              -41.0
+            ],
+            [
+              10.0,
+              -41.0
+            ],
+            [
+              10.0,
+              -18.5
             ]
           ],
           "fromLevel": 1,
@@ -5592,13 +5659,99 @@
           "width": 8,
           "risers": 34,
           "rise": 0.5882352941176471,
-          "run": 0.917
+          "run": 0.8529411764705882,
+          "flights": [
+            {
+              "id": "main_a",
+              "polygon": [
+                [
+                  2.0,
+                  -33.0
+                ],
+                [
+                  10.0,
+                  -33.0
+                ],
+                [
+                  10.0,
+                  -18.5
+                ],
+                [
+                  2.0,
+                  -18.5
+                ]
+              ],
+              "direction": [
+                0,
+                -1
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.8529411764705882,
+              "width": 8,
+              "baseElevation": 0
+            },
+            {
+              "id": "main_b",
+              "polygon": [
+                [
+                  -12.5,
+                  -41.0
+                ],
+                [
+                  2.0,
+                  -41.0
+                ],
+                [
+                  2.0,
+                  -33.0
+                ],
+                [
+                  -12.5,
+                  -33.0
+                ]
+              ],
+              "direction": [
+                -1,
+                0
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.8529411764705882,
+              "width": 8,
+              "baseElevation": 10
+            }
+          ],
+          "landings": [
+            {
+              "id": "main_turn",
+              "polygon": [
+                [
+                  2.0,
+                  -41.0
+                ],
+                [
+                  10.0,
+                  -41.0
+                ],
+                [
+                  10.0,
+                  -33.0
+                ],
+                [
+                  2.0,
+                  -33.0
+                ]
+              ],
+              "elevation": 10
+            }
+          ]
         },
         {
           "id": "stair_second",
           "polygon": [
             [
-              -339.5,
+              -343.5,
               -132.5
             ],
             [
@@ -5610,7 +5763,7 @@
               -92.5
             ],
             [
-              -339.5,
+              -343.5,
               -92.5
             ]
           ],
@@ -5623,7 +5776,31 @@
           "width": 6,
           "risers": 34,
           "rise": 0.5882352941176471,
-          "run": 0.917
+          "run": 0.917,
+          "landings": [
+            {
+              "id": "second_top",
+              "polygon": [
+                [
+                  -343.5,
+                  -111.0
+                ],
+                [
+                  -339.5,
+                  -111.0
+                ],
+                [
+                  -339.5,
+                  -105.0
+                ],
+                [
+                  -343.5,
+                  -105.0
+                ]
+              ],
+              "elevation": 20
+            }
+          ]
         },
         {
           "id": "stair_west",
@@ -5765,16 +5942,8 @@
               -62.0
             ],
             [
-              -106.0,
-              -62.0
-            ],
-            [
-              -106.0,
-              -16.0
-            ],
-            [
               -97.0,
-              -16.0
+              -62.0
             ],
             [
               -97.0,
@@ -5794,16 +5963,24 @@
               -16.0
             ],
             [
-              -10.0,
+              -12.5,
               -16.0
             ],
             [
-              -10.0,
-              -36.0
+              -12.5,
+              -33.0
+            ],
+            [
+              2.0,
+              -33.0
+            ],
+            [
+              2.0,
+              -18.5
             ],
             [
               10.0,
-              -36.0
+              -18.5
             ],
             [
               10.0,
@@ -5815,20 +5992,20 @@
           "id": "stair_main_opening",
           "polygon": [
             [
-              -88.5,
-              -44.0
+              2.0,
+              -33.0
             ],
             [
-              -80.5,
-              -44.0
+              10.0,
+              -33.0
             ],
             [
-              -80.5,
-              -29.8
+              10.0,
+              -18.5
             ],
             [
-              -88.5,
-              -29.8
+              2.0,
+              -18.5
             ]
           ]
         },
@@ -5878,20 +6055,20 @@
           "id": "stair_main_upper",
           "polygon": [
             [
-              -102.7,
-              -52.0
+              -12.5,
+              -41.0
             ],
             [
-              -88.5,
-              -52.0
+              2.0,
+              -41.0
             ],
             [
-              -88.5,
-              -44.0
+              2.0,
+              -33.0
             ],
             [
-              -102.7,
-              -44.0
+              -12.5,
+              -33.0
             ]
           ]
         },
@@ -5941,20 +6118,20 @@
           "id": "stair_main_landing",
           "polygon": [
             [
-              -88.5,
-              -52.0
+              2.0,
+              -41.0
             ],
             [
-              -80.5,
-              -52.0
+              10.0,
+              -41.0
             ],
             [
-              -80.5,
-              -44.0
+              10.0,
+              -33.0
             ],
             [
-              -88.5,
-              -44.0
+              2.0,
+              -33.0
             ]
           ]
         }
@@ -6014,31 +6191,31 @@
           "id": "l2_tread_1",
           "kind": "treadmill",
           "at": [
-            -16.0,
-            -120.0
+            -30.0,
+            -22.0
           ],
-          "rotation": 270,
-          "room": "cardio_gallery"
+          "rotation": 180,
+          "room": "cardio_south"
         },
         {
           "id": "l2_tread_2",
           "kind": "treadmill",
           "at": [
-            -16.0,
-            -108.0
+            -22.0,
+            -28.0
           ],
-          "rotation": 270,
-          "room": "cardio_gallery"
+          "rotation": 180,
+          "room": "cardio_south"
         },
         {
           "id": "l2_tread_3",
           "kind": "treadmill",
           "at": [
-            -16.0,
-            -96.0
+            -36.0,
+            -36.0
           ],
-          "rotation": 270,
-          "room": "cardio_gallery"
+          "rotation": 180,
+          "room": "cardio_south"
         },
         {
           "id": "l2_climb_1",
@@ -6346,8 +6523,8 @@
           "id": "racquetball_1_fit",
           "kind": "water_fountain",
           "at": [
-            -108.5,
-            -299.5
+            -285.0,
+            -70.0
           ],
           "rotation": 0,
           "room": "racquetball_1"
@@ -6356,8 +6533,8 @@
           "id": "racquetball_2_fit",
           "kind": "water_fountain",
           "at": [
-            -88.5,
-            -299.5
+            -245.0,
+            -70.0
           ],
           "rotation": 0,
           "room": "racquetball_2"
@@ -6407,7 +6584,7 @@
           "kind": "trash_bin",
           "at": [
             -295.0,
-            -64.0
+            -54.0
           ],
           "rotation": 0,
           "room": "court_gallery"
@@ -6456,11 +6633,21 @@
           "id": "balcony_fit",
           "kind": "trash_bin",
           "at": [
-            -35.0,
-            -64.0
+            -38.5,
+            -48.0
           ],
           "rotation": 0,
           "room": "balcony"
+        },
+        {
+          "id": "overlook_mechanical_fit",
+          "kind": "supply_cabinet",
+          "at": [
+            -98.5,
+            -305.0
+          ],
+          "rotation": 0,
+          "room": "overlook_mechanical"
         }
       ],
       "guards": []

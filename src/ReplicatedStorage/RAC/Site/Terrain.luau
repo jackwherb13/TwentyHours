@@ -82,36 +82,12 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 						local z = origin.Z + (iz - 0.5) * resolution
 						local h = Heightfield.height(x, z)
 						local material = materialAt(x, z)
-						-- Roof lidar inside the footprint must not become the floor, and the
-						-- perimeter has to meet Level 1 or the lobby reads as floating.
-						if insidePad(x, z) then
-							h = -0.4
+						-- Concrete under the slab and on the south stair. Lawn beside the flight stays grass.
+						if insidePad(x, z) or (x > -70 and x < -12 and z > -1 and z < 32) then
 							material = 3
-						else
-							local skirt = false
-							for _, dist in { 8, 16 } do
-								for k = 0, 7 do
-									local a = k * math.pi / 4
-									if insidePad(x + math.cos(a) * dist, z + math.sin(a) * dist) then
-										h = math.max(h, if dist == 8 then -0.8 else -2.0)
-										skirt = true
-										break
-									end
-								end
-								if skirt then
-									break
-								end
-							end
-							-- South walk: the stair toe and the road that meets it sit just below L1.
-							if x > -78 and x < 4 and z > -2 and z < 48 then
-								h = math.max(h, -4.0)
-								material = 3
-							elseif x > -90 and x < 20 and z > 48 and z < 78 then
-								h = math.max(h, -6.5)
-								if material == 1 then
-									material = 2
-								end
-							end
+						elseif x > -224 and x < -96 and z > 46 and z < 86 and material == 1 then
+							-- Service court along the south brick wall. Grass blades were growing through the pad.
+							material = 2
 						end
 						local fill = math.clamp((h - bottom) / resolution, 0, 1)
 						mats[ix][iy][iz] = if fill == 0 then Enum.Material.Air else materials[material]

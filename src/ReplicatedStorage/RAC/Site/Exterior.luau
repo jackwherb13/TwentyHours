@@ -12,7 +12,7 @@ local function canopyWedge(parent: Instance, name: string, size: Vector3, cf: CF
 	wedge.CFrame = cf
 	-- Matte charcoal. Neon read as a glowing slab and washed out in the sun.
 	wedge.Material = Enum.Material.SmoothPlastic
-	wedge.Color = Color3.fromRGB(28, 30, 32)
+	wedge.Color = Color3.fromRGB(12, 12, 14)
 	wedge.Reflectance = 0
 	wedge.Anchored = true
 	wedge.CanCollide = true
@@ -81,9 +81,9 @@ function Exterior.build(parent: Instance, site: any)
 		)
 	end
 	local apronX = e.landingDepth + n * run
-	-- Stop the flat pad where the lidar slope falls away, so the apron does not hover over the road.
+	-- A short toe pad. The drive beyond it is terrain, not a grey terrace.
 	local apronLen = 8
-	for len = 8, 34, 2 do
+	for len = 8, 10, 2 do
 		if groundAt(apronX + len, 0) >= -drop - 0.55 then
 			apronLen = len
 		end
@@ -166,7 +166,7 @@ function Exterior.build(parent: Instance, site: any)
 	local rampStartX = e.landingDepth
 	local bestLen = drop * 12
 	local bestErr = math.huge
-	for len = 48, 96, 4 do
+	for len = 36, 72, 4 do
 		local err = math.abs(groundAt(rampStartX + len, rampZ) + len / 12)
 		if err < bestErr then
 			bestErr = err
@@ -240,14 +240,14 @@ function Exterior.build(parent: Instance, site: any)
 	end
 
 	local canopy = P.folder(entrance, "Canopy")
-	-- South glass only (x=-97..10). A 32 ft deep, 12 ft thick wedge was a roof over the lawn.
-	local depth = 18
-	local southWest, southEast = -97, 10
+	-- Small canopy over the south door. The glass hall to the west stays open.
+	local depth = 8
+	local southWest, southEast = -14, 14
 	local zWest, zEast = e.x - southWest, e.x - southEast
-	-- Curtain head is 30 ft. The soffit sits just above it, and the whole wedge is under 2 ft.
+	-- Curtain head is 30 ft. The soffit sits just above it.
 	local soffit = 30.5
-	local tip = 0.35
-	local canopyRise = 1.35
+	local tip = 0.4
+	local canopyRise = 1.55
 	local function spanCanopy(z0: number, z1: number)
 		if z1 < z0 then
 			z0, z1 = z1, z0
@@ -271,7 +271,7 @@ function Exterior.build(parent: Instance, site: any)
 			true
 		)
 		plate.Material = Enum.Material.SmoothPlastic
-		plate.Color = Color3.fromRGB(32, 34, 36)
+		plate.Color = Color3.fromRGB(14, 14, 16)
 		plate.Reflectance = 0
 		canopyWedge(
 			canopy,
@@ -290,7 +290,7 @@ function Exterior.build(parent: Instance, site: any)
 	-- Dark square piers, one on the door and one at the east end of the south glass.
 	local columnHeight = soffit - 0.2
 	local eastColumnZ = e.x - southEast
-	for _, at in { Vector3.new(3.2, 0, 0), Vector3.new(3.2, 0, eastColumnZ + 2.2) } do
+	for _, at in { Vector3.new(depth - 3, 0, 0), Vector3.new(depth - 3, 0, eastColumnZ + 2.2) } do
 		local column = P.box(
 			canopy,
 			"SupportColumn",
@@ -300,36 +300,43 @@ function Exterior.build(parent: Instance, site: any)
 			true
 		)
 		column.Material = Enum.Material.SmoothPlastic
-		column.Color = Color3.fromRGB(28, 30, 32)
+		column.Color = Color3.fromRGB(16, 16, 18)
 		column.Reflectance = 0
 	end
 	-- A few dark recesses, not a white neon ceiling.
 	for lz = lo + 8, hi - 8, 14 do
 		for _, lx in { depth * 0.35, depth * 0.7 } do
-			local mark = P.box(
-				canopy,
-				"SoffitMark",
-				Vector3.new(0.35, 0.04, 0.35),
-				CFrame.new(lx, soffit - 0.04, lz),
-				"dark"
-			)
+			local mark =
+				P.box(canopy, "SoffitMark", Vector3.new(0.35, 0.04, 0.35), CFrame.new(lx, soffit - 0.04, lz), "dark")
 			mark.Color = Color3.fromRGB(18, 18, 18)
 			mark.Material = Enum.Material.SmoothPlastic
 		end
 	end
-	-- Red bed along the glass, clear of the door pair at the stair center.
-	for i = -3, 3 do
-		if math.abs(i) >= 2 then
-			local bed = P.box(
-				entrance,
-				"EntryBed",
-				Vector3.new(2.4, 1.35, 4.4),
-				CFrame.new(1.5, 0.7, i * 6.2),
-				"barberry"
-			)
-			bed.CanCollide = false
-		end
+	-- Red shrubs along the west glass. The east side is a concrete planter, not a bed on the treads.
+	for i = 2, 4 do
+		local bed = P.box(entrance, "EntryBed", Vector3.new(2.6, 1.5, 4.2), CFrame.new(2.2, 0.75, i * 5.4), "barberry")
+		bed.CanCollide = false
 	end
+	local planter =
+		P.box(entrance, "PlanterWall", Vector3.new(3.4, 2.7, 16), CFrame.new(7.5, 1.35, -16), "concrete", true)
+	planter.Color = Color3.fromRGB(168, 166, 158)
+	local hedge = P.box(entrance, "PlanterHedge", Vector3.new(2.6, 1.6, 14.4), CFrame.new(7.5, 3.2, -16), "shrub")
+	hedge.CanCollide = false
+	-- Red hydrant at the west curb of the stair toe (IMG_0368), off the landing.
+	local hydrantAt = Vector3.new(apronX + 1.2, -drop, width / 2 + 2.6)
+	local barrel = P.pole(entrance, "Hydrant", hydrantAt, 2.15, 0.32, "metal", false)
+	barrel.Color = Color3.fromRGB(168, 32, 28)
+	barrel.Material = Enum.Material.SmoothPlastic
+	local cap = P.box(
+		entrance,
+		"HydrantCap",
+		Vector3.new(0.7, 0.28, 0.7),
+		CFrame.new(hydrantAt.X, -drop + 2.25, hydrantAt.Z),
+		"metal",
+		false
+	)
+	cap.Color = Color3.fromRGB(168, 32, 28)
+	cap.Material = Enum.Material.SmoothPlastic
 
 	-- Photo-placed hoop racks east of the ramp, not the west lawn pipes.
 	for i = 0, 3 do
@@ -338,20 +345,20 @@ function Exterior.build(parent: Instance, site: any)
 		pipe(entrance, "BikeRack", Vector3.new(5.4, 0.35, z), Vector3.new(7.0, 0.35, z))
 	end
 
-	-- Horizontal white channel letters on the south glass, centered on the door (WEB_entrance_2).
+	-- Vertical white RAC letters on the east glass, each about 4 ft (IMG_0368).
 	local letters = P.folder(entrance, "RACLetterSign")
 	local glyphs = {
 		R = { "11110", "10001", "10001", "11110", "10100", "10010", "10001" },
 		A = { "01110", "10001", "10001", "11111", "10001", "10001", "10001" },
 		C = { "01110", "10001", "10000", "10000", "10000", "10001", "01110" },
 	}
-	local cell = 0.42
+	local cell = 0.58
 	local order = { "R", "A", "C" }
-	local letterW = 5 * cell
-	local gap = 0.7
-	local total = #order * letterW + (#order - 1) * gap
+	local letterH = 7 * cell
+	local gap = 0.45
+	local letterZ = -30
 	for index, ch in order do
-		local origin = -total / 2 + (index - 1) * (letterW + gap)
+		local top = 23.5 - (index - 1) * (letterH + gap)
 		local rows = glyphs[ch]
 		for row, bits in rows do
 			for col = 1, 5 do
@@ -359,8 +366,8 @@ function Exterior.build(parent: Instance, site: any)
 					local block = P.box(
 						letters,
 						"Letter",
-						Vector3.new(cell * 0.92, cell * 0.92, 0.18),
-						CFrame.new(0.7, 18.6 - (row - 1) * cell, origin + (col - 0.5) * cell),
+						Vector3.new(0.22, cell * 0.9, cell * 0.9),
+						CFrame.new(0.55, top - (row - 0.5) * cell, letterZ + (3 - col) * cell),
 						"metal",
 						false
 					)
@@ -385,6 +392,53 @@ function Exterior.build(parent: Instance, site: any)
 			item.CFrame = frame * item.CFrame
 		end
 	end
+
+	-- South brick service court along l1_w079 (z = 47). Asphalt, precast brow, fence, dumpster.
+	local yard = P.folder(parent, "ServiceYard")
+	local yardY = H.height(-160, 64)
+	P.box(yard, "ServiceAsphalt", Vector3.new(124, 0.4, 34), CFrame.new(-158, yardY + 0.16, 65), "asphalt", true)
+	P.box(yard, "ServiceCanopy", Vector3.new(64, 1.1, 7.5), CFrame.new(-178, 13.4, 52.4), "concrete", true)
+	for t = 0, 5 do
+		P.box(
+			yard,
+			"ServiceCanopyFin",
+			Vector3.new(0.35, 0.7, 6.2),
+			CFrame.new(-202 + t * 10, 12.5, 52.6),
+			"concrete",
+			false
+		)
+	end
+	local fenceZ = 80
+	for x = -220, -120, 8 do
+		P.pole(yard, "YardPost", Vector3.new(x, yardY, fenceZ), 6, 0.12, "dark", false)
+	end
+	P.beam(
+		yard,
+		"YardRail",
+		Vector3.new(-220, yardY + 5.4, fenceZ),
+		Vector3.new(-120, yardY + 5.4, fenceZ),
+		0.2,
+		0.2,
+		"dark"
+	)
+	P.beam(
+		yard,
+		"YardRail",
+		Vector3.new(-220, yardY + 0.8, fenceZ),
+		Vector3.new(-120, yardY + 0.8, fenceZ),
+		0.2,
+		0.2,
+		"dark"
+	)
+	local link =
+		P.box(yard, "YardRailPanel", Vector3.new(100, 4.6, 0.12), CFrame.new(-170, yardY + 3.1, fenceZ), "metal", false)
+	link.Transparency = 0.55
+	link.Color = Color3.fromRGB(40, 42, 44)
+	local dump = CFrame.new(-128, yardY, 58)
+	P.box(yard, "DumpsterBody", Vector3.new(7.5, 4.4, 4.2), dump * CFrame.new(0, 2.2, 0), "green", true)
+	P.box(yard, "DumpsterLid", Vector3.new(7.8, 0.35, 4.4), dump * CFrame.new(0, 4.5, 0), "dark", true)
+	-- Double doors are on the brick wall. A dark glass leaf pair sits in front of the east door opening.
+	P.box(yard, "ServiceDoor", Vector3.new(6, 7, 0.2), CFrame.new(-118, 3.6, 47.8), "glass", false)
 
 	for _, d in site.details do
 		if d.kind == "sunshade" or d.kind == "panel_joints" then

@@ -35,7 +35,7 @@ function County.build(parent: Instance, site: any)
 		if onBuilding(site, x, z) or inEntrance(x, z) then
 			continue
 		end
-		-- Slabs stay on the lidar sample. Do not lift south-of-door pavement to FFE.
+		-- Slabs use Heightfield.height, which already raises the south walk onto the stair.
 		local gx = (H.height(x + q.w / 2, z) - H.height(x - q.w / 2, z)) / math.max(q.w, 0.5)
 		local gz = (H.height(x, z + q.d / 2) - H.height(x, z - q.d / 2)) / math.max(q.d, 0.5)
 		local right = Vector3.new(1, gx, 0).Unit
@@ -109,7 +109,7 @@ function County.build(parent: Instance, site: any)
 			)
 		)
 	end
-	local paint = P.folder(ground, "Markings")
+	local paint = P.folder(ground, "MarkingSlab")
 	for _, mark in source.markings or {} do
 		local a, b = mark.a, mark.b
 		local mx, mz = (a[1] + b[1]) / 2, (a[2] + b[2]) / 2
@@ -126,10 +126,10 @@ function County.build(parent: Instance, site: any)
 			P.beam(
 				paint,
 				"StallStripe",
-				Vector3.new(a[1], H.height(a[1], a[2]) + 0.163, a[2]),
-				Vector3.new(b[1], H.height(b[1], b[2]) + 0.163, b[2]),
-				math.clamp(stripeW, 0.12, 2.2),
-				0.04,
+				Vector3.new(a[1], H.height(a[1], a[2]) + 1.8, a[2]),
+				Vector3.new(b[1], H.height(b[1], b[2]) + 1.8, b[2]),
+				math.clamp(stripeW, 0.4, 2.2),
+				0.1,
 				color,
 				false
 			)
@@ -151,10 +151,10 @@ function County.build(parent: Instance, site: any)
 			P.beam(
 				paint,
 				"StallStripe",
-				Vector3.new(ax, H.height(ax, az) + 0.17, az),
-				Vector3.new(bx, H.height(bx, bz) + 0.17, bz),
-				0.333,
-				0.04,
+				Vector3.new(ax, H.height(ax, az) + 1.8, az),
+				Vector3.new(bx, H.height(bx, bz) + 1.8, bz),
+				0.9,
+				0.18,
 				"white",
 				false
 			)
@@ -222,6 +222,17 @@ function County.build(parent: Instance, site: any)
 		if length < 36 or span < 20 or fillOf(field) < 0.38 then
 			continue
 		end
+		-- One asphalt body over the stall field so terrain grass cannot show between patches.
+		local hy = H.height((field.x0 + field.x1) / 2, (field.z0 + field.z1) / 2)
+		local cover = P.box(
+			ground,
+			"LotSlab",
+			Vector3.new(width - 0.4, 0.45, depth - 0.4),
+			CFrame.new((field.x0 + field.x1) / 2, hy + 0.12, (field.z0 + field.z1) / 2),
+			"asphalt",
+			true
+		)
+		table.insert(slabs, cover)
 		-- One 18 ft stall band, a 24 ft aisle, then another band when the lot is deep enough.
 		local bands = if span >= 60 then 2 else 1
 		for band = 0, bands - 1 do
@@ -242,6 +253,50 @@ function County.build(parent: Instance, site: any)
 				end
 			end
 		end
+		-- One blue accessible stall and a lot sign, plus a drive tongue toward the south road.
+		local hy2 = H.height((field.x0 + field.x1) / 2, (field.z0 + field.z1) / 2)
+		local px = if alongX then field.x0 + 6.5 else field.x0 + 10
+		local pz = if alongX then field.z0 + 10 else field.z0 + 6.5
+		if grounded(px, pz) then
+			local paintW = if alongX then 8.2 else 16.5
+			local paintD = if alongX then 16.5 else 8.2
+			local stall = P.box(
+				paint,
+				"StallPaint",
+				Vector3.new(paintW, 0.08, paintD),
+				CFrame.new(px, hy2 + 0.42, pz),
+				"metal",
+				false
+			)
+			stall.Color = Color3.fromRGB(35, 78, 150)
+			stall.Material = Enum.Material.SmoothPlastic
+			local sign = P.pole(poles, "LotSign", Vector3.new(field.x0 + 1.2, hy2, field.z0 + 1.2), 8, 0.12, "dark", false)
+			local board = P.box(
+				poles,
+				"LotSign",
+				Vector3.new(1.6, 1.6, 0.12),
+				CFrame.new(field.x0 + 1.2, hy2 + 7.2, field.z0 + 1.2),
+				"metal",
+				false
+			)
+			board.Color = Color3.fromRGB(20, 72, 150)
+			table.insert(dress, sign)
+			table.insert(dress, board)
+		end
+		local tongueZ = field.z1 + 14
+		local tongueX = (field.x0 + field.x1) / 2
+		if field.z1 < 140 and not onBuilding(site, tongueX, tongueZ) and not inEntrance(tongueX, tongueZ) then
+			local ty = H.height(tongueX, tongueZ)
+			local tongue = P.box(
+				ground,
+				"LotAisle",
+				Vector3.new(24, 0.4, 28),
+				CFrame.new(tongueX, ty + 0.16, tongueZ),
+				"asphalt",
+				true
+			)
+			table.insert(slabs, tongue)
+		end
 		if islandN < 24 and span >= 36 and length >= 54 then
 			local count = math.clamp(math.floor(length / 72), 1, 3)
 			for k = 1, count do
@@ -254,14 +309,14 @@ function County.build(parent: Instance, site: any)
 				local ix = if alongX then field.x0 + t else field.x0 + across
 				local iz = if alongX then field.z0 + across else field.z0 + t
 				if grounded(ix, iz) then
-					local hy = H.height(ix, iz)
+					local islandY = H.height(ix, iz)
 					local iw = if alongX then 8 else 18
 					local id = if alongX then 18 else 8
 					local island = P.box(
 						ground,
 						"LotIslandSlab",
 						Vector3.new(iw, 0.55, id),
-						CFrame.new(ix, hy + 0.4, iz),
+						CFrame.new(ix, islandY + 0.4, iz),
 						"concrete",
 						true
 					)
@@ -270,7 +325,7 @@ function County.build(parent: Instance, site: any)
 						ground,
 						"LotIslandPlant",
 						Vector3.new(iw - 2.2, 1.3, id - 2.2),
-						CFrame.new(ix, hy + 1.55, iz),
+						CFrame.new(ix, islandY + 1.55, iz),
 						"shrub"
 					)
 					plant.CanCollide = false

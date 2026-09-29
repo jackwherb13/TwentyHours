@@ -13,7 +13,7 @@ local function lighting()
 	Lighting.Brightness = 1.0
 	Lighting.EnvironmentDiffuseScale = 0.22
 	Lighting.EnvironmentSpecularScale = 0.18
-	Lighting.ExposureCompensation = -0.6
+	Lighting.ExposureCompensation = -0.35
 	Lighting.Ambient = Color3.fromRGB(52, 52, 54)
 	Lighting.OutdoorAmbient = Color3.fromRGB(96, 98, 94)
 	Lighting.GlobalShadows = true

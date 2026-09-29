@@ -43,27 +43,29 @@ by1 = {r["id"]: r for r in l1["rooms"]}
 by2 = {r["id"]: r for r in l2["rooms"]}
 
 stair = by1["stair_main"]
-hall = by1["corridor_entry_south"]
 sx0, sx1, sz0, sz1 = bbox(stair["polygon"])
-hx0, hx1, hz0, hz1 = bbox(hall["polygon"])
-check(sx1 <= hx0 + 0.05, f"main stair is not west of the gym hall (stair x to {sx1}, hall x from {hx0})")
+check(sx0 < 10 and sx1 > -2, f"main stair is not in the entry bay (x {sx0}..{sx1})")
 
-flights = {f["id"]: f for f in (l1["stairs"][0]["flights"] if l1["stairs"] else [])}
 main = next(s for s in l1["stairs"] if s["id"] == "stair_main")
+l2main = next(s for s in l2["stairs"] if s["id"] == "stair_main")
+check(bbox(l2main["polygon"]) == bbox(main["polygon"]), "level 2 stair polygon does not match level 1")
+check(l2main.get("flights"), "level 2 stair_main has no flights")
 by_flight = {f["id"]: f for f in main["flights"]}
 a, b = by_flight["main_a"], by_flight["main_b"]
-check(a["direction"] == [0, -1], f"first flight direction {a['direction']} is not north along the hall")
+check(a["direction"] == [0, -1], f"first flight direction {a['direction']} is not north along the wall")
 check(b["direction"] == [-1, 0], f"second flight direction {b['direction']} is not west")
 ux, uz = a["direction"]
 vx, vz = b["direction"]
 check(ux * vz - uz * vx == -1, "main stair turn is not left")
 ax0, ax1, az0, az1 = bbox(a["polygon"])
-check(az1 - az0 >= ax1 - ax0, "first flight is not the long north-south run")
+check(az1 - az0 >= ax1 - ax0 - 0.05, "first flight is not the long north-south run")
 check(a.get("run", 0) >= 10 / 12 - 0.01, f"first flight run {a.get('run')} is under 10 in")
 check(b.get("run", 0) >= 10 / 12 - 0.01, f"second flight run {b.get('run')} is under 10 in")
 check(abs(a.get("rise", 0) * 17 - 10) < 0.05, f"first flight rise {a.get('rise')} does not total 10 ft")
 check(a.get("width", 0) >= 8, f"first flight width {a.get('width')} is under 8 ft")
-check(az1 <= -28, f"first flight south edge z={az1} is closer than 28 ft to the glass")
+check(-28 <= az1 <= -15, f"first flight south edge z={az1} is not 15-28 ft from the glass")
+bx0, bx1, bz0, bz1 = bbox(b["polygon"])
+check(abs(bx0 - (-12.5)) < 0.05, f"upper flight does not reach the Level 2 door at x=-12.5 ({bx0})")
 
 lobby = by1["lobby"]
 lx0, lx1, lz0, lz1 = bbox(lobby["polygon"])
@@ -122,12 +124,20 @@ if glass_z:
     covered = any(z0 <= -250 and z1 >= -110 for z0, z1 in glass_z)
     check(covered, f"gym glass is not continuous along the overlook ({glass_z})")
 
+hall2 = by2["corridor_l2"]
+hx0, hx1, hz0, hz1 = bbox(hall2["polygon"])
+check(oz0 >= -279.5 - 0.05, f"overlook still runs past the gym to z={oz0}")
 for cid in ("racquetball_1", "racquetball_2"):
     rx0, rx1, rz0, rz1 = bbox(by2[cid]["polygon"])
-    check(rx1 <= ox0 + 0.05, f"{cid} is not on the left (west) of the overlook")
-    check(rz1 <= -270, f"{cid} is not past the gym glass")
+    check(rz0 >= hz1 - 0.05, f"{cid} is not on the south (left) side of the L2 hall")
+    check(rx1 <= hx1 and rx0 >= hx0 - 0.05, f"{cid} is not along corridor_l2")
     dims = sorted((round(rx1 - rx0, 1), round(rz1 - rz0, 1)))
-    check(dims == [20.0, 40.0], f"{cid} dims {dims} are not 20x40")
+    check(dims == [20.0, 40.0], f"{cid} dims {dims} are not 40x20")
+stair2 = by2["stair_second"]
+tx0, tx1, tz0, tz1 = bbox(stair2["polygon"])
+r1 = bbox(by2["racquetball_1"]["polygon"])
+check(tx1 <= r1[0] + 0.05, "down stair is not west of the racquetball courts")
+check(tz0 <= hz0 + 0.05, "down stair is not on the right (north) of the L2 hall")
 
 vest = by1["nutrition_vestibule"]
 ath = by1["athletic_corridor"]

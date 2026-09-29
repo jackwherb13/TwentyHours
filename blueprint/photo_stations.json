@@ -598,14 +598,14 @@
       "id": "IMG_0349",
       "file": "reference/photos/IMG_0349.jpg",
       "position": [
-        -95,
-        5.2,
-        148
+        -175,
+        6.0,
+        78
       ],
       "look": [
-        0.0,
-        0.0,
-        -1.0
+        0.25,
+        0.08,
+        -0.96
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -760,14 +760,14 @@
       "id": "IMG_0358",
       "file": "reference/photos/IMG_0358.jpg",
       "position": [
-        85,
-        5.2,
-        -22
+        -90,
+        4.0,
+        -360
       ],
       "look": [
-        -1.0,
         0.0,
-        0.0
+        0.12,
+        1.0
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -868,14 +868,14 @@
       "id": "IMG_0364",
       "file": "reference/photos/IMG_0364.jpg",
       "position": [
-        25,
-        5.2,
-        -82
+        -78,
+        1.5,
+        48
       ],
       "look": [
-        -0.999,
-        0.05,
-        0.0
+        0.62,
+        0.18,
+        -0.76
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -940,14 +940,14 @@
       "id": "IMG_0368",
       "file": "reference/photos/IMG_0368.jpg",
       "position": [
-        15,
-        5.2,
-        -122
+        -41,
+        -0.5,
+        58
       ],
       "look": [
-        -0.894,
         0.0,
-        0.447
+        0.2,
+        -1.0
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1390,13 +1390,13 @@
       "id": "WEB_entrance_1",
       "file": "reference/photos/WEB_entrance_1.jpg",
       "position": [
-        -8,
-        6.2,
-        36
+        -41,
+        0.5,
+        44
       ],
       "look": [
         0,
-        -0.08,
+        0.28,
         -1
       ],
       "fovVertical": 55,
@@ -1408,14 +1408,14 @@
       "id": "WEB_entrance_2",
       "file": "reference/photos/WEB_entrance_2.jpg",
       "position": [
-        18,
-        6.5,
-        42
+        22,
+        3.0,
+        64
       ],
       "look": [
-        -0.35,
-        -0.06,
-        -0.93
+        -0.78,
+        0.08,
+        -0.62
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1426,14 +1426,14 @@
       "id": "WEB_entrance_left_pole",
       "file": "reference/photos/WEB_entrance_left_pole.jpg",
       "position": [
-        -70,
-        6.2,
-        32
+        52,
+        3.0,
+        30
       ],
       "look": [
-        0.45,
-        -0.05,
-        -0.89
+        -0.7,
+        0.12,
+        -0.7
       ],
       "fovVertical": 55,
       "room": "exterior",

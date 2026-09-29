@@ -14,7 +14,6 @@ local HALF_W = 29.5 / 2
 local HALF_L = 59 / 2
 local ATTACK = 9.84
 local LINE = 0.5
-local INSET = 1.5
 
 local function paint(
 	parent: Instance,
@@ -26,11 +25,11 @@ local function paint(
 	y: number,
 	color: Color3
 )
-	local part = Parts.box(parent, name, Vector3.new(w, 0.02, d), CFrame.new(x, y, z), "maple", false)
+	local part = Parts.box(parent, name, Vector3.new(w, 0.02, d), CFrame.new(x, y, z), "metal_panel", false)
 	part.Color = color
-	part.Material = Enum.Material.SmoothPlastic
-	part.MaterialVariant = ""
-	part.Reflectance = 0.12
+	part.Material = Enum.Material.Metal
+	part.MaterialVariant = "RAC_metal_panel"
+	part.Reflectance = 0.08
 	part.CanCollide = false
 	return part
 end
@@ -117,8 +116,6 @@ function Court.build(parent: Instance, level: Blueprint.Level)
 	end
 	local cx = (minX + maxX) / 2
 	local cz = (minZ + maxZ) / 2
-	local gymW = maxX - minX - INSET * 2
-	local gymL = maxZ - minZ - INSET * 2
 	local innerW = HALF_W * 2
 	local innerL = HALF_L * 2
 	-- Eight-foot Mason-green border only. The rest of the slab stays glossy maple.

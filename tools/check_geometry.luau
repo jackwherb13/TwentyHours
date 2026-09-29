@@ -188,6 +188,31 @@ for i, b in boxes do
 	end
 end
 
+-- Assembly vs slab: sibling parts holding each other up still float if the pedestal misses the floor.
+local groups: { [string]: { number } } = {}
+for i, b in boxes do
+	local path = lower(b.path)
+	if string.find(path, "treadmill", 1, true) or string.find(path, "waterfountain", 1, true) then
+		local parent = string.match(b.path, "^(.*)%.[^.]+$") or b.path
+		local bucket = groups[parent]
+		if bucket == nil then
+			bucket = {}
+			groups[parent] = bucket
+		end
+		table.insert(bucket, i)
+	end
+end
+for name, members in groups do
+	local bottom = math.huge
+	for _, i in members do
+		bottom = math.min(bottom, boxes[i].min[2])
+	end
+	local onSlab = math.abs(bottom - 0) < 0.2 or math.abs(bottom - 20) < 0.2
+	if not onSlab then
+		add("floating", string.format("%s  assembly bottom at y=%.2f", name, bottom))
+	end
+end
+
 -- small gaps between wall ends (0.05..1.5 ft) = sloppy geometry / light leaks
 local walls = {}
 for _, b in boxes do

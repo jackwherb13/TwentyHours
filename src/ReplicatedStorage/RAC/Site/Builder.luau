@@ -4,6 +4,8 @@ local Hardscape = require(script.Parent.Hardscape)
 local County = require(script.Parent.CountyHardscape)
 local Exterior = require(script.Parent.Exterior)
 local Landscape = require(script.Parent.Landscape)
+local Markings = require(script.Parent.Markings)
+local Campus = require(script.Parent.Campus.Builder)
 local Builder = {}
 function Builder.build(model: Instance, rawSite: any): number
 	if not rawSite.site then
@@ -24,8 +26,16 @@ function Builder.build(model: Instance, rawSite: any): number
 	else
 		Hardscape.build(grounded, rawSite.site)
 	end
+	-- Road/lot/crosswalk paint traced from aerial imagery replaces the county layer's raised stripe hack.
+	local liftedPaint = grounded:FindFirstChild("MarkingSlab", true)
+	if liftedPaint then
+		liftedPaint:Destroy()
+	end
+	Markings.build(grounded, rawSite.site)
 	Exterior.build(P.folder(grounded, "ExteriorDetails"), rawSite.site)
 	Landscape.build(P.folder(grounded, "Landscape"), rawSite.site, rawSite.props or {})
+	-- Low-detail neighbouring campus buildings (footprints from county data, heights from lidar).
+	Campus.build(grounded)
 	local count = 0
 	for _, item in context:GetDescendants() do
 		if item:IsA("BasePart") then
