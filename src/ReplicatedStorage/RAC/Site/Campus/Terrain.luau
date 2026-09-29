@@ -7,8 +7,15 @@ local Data = Height.data
 local TerrainBuilder = {}
 
 function TerrainBuilder.build(terrain: Terrain): { [string]: number }
-	local materials =
-		{ Enum.Material.Grass, Enum.Material.Asphalt, Enum.Material.Concrete, Enum.Material.Rock, Enum.Material.Ground }
+	local materials = {
+		Enum.Material.Grass,
+		Enum.Material.Asphalt,
+		Enum.Material.Concrete,
+		Enum.Material.Rock,
+		Enum.Material.Ground,
+		Enum.Material.LeafyGrass,
+		Enum.Material.Water,
+	}
 	local resolution = 4
 	local function materialAt(x: number, z: number): number
 		local u = math.clamp((x - Data.x0) / Data.step - 0.5, 0, Data.nx - 1.001)

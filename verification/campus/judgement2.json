@@ -1,0 +1,92 @@
+{
+  "gpt": null,
+  "grok": {
+    "results": [
+      {
+        "image": "plan_comparison.png",
+        "layout": 5,
+        "proportions": 5,
+        "materials": 4,
+        "props": 3,
+        "lighting": 7,
+        "overall": 5,
+        "problems": [
+          "This is a campus massing overlay on NAIP, not an RAC interior floor plan; room/door/wall checks cannot be scored from this image.",
+          "EagleBank Arena (bottom-right octagon): white polygonal mass is offset from the true octagonal roof and does not share the same center or rotation; snap the prism to the arena roof outline.",
+          "RAC / MASON (top-left): tan box is a single rectangle; the real RAC is a stepped multi-bay volume with a distinct north natatorium/gym wing. Split into the actual roof bays and pull the south edge off the parking.",
+          "Large solid green polygon west of RAC / south of the track sits on grass/embankment, not a field or building. Remove it or replace with the actual west practice/field geometry if that is the intent.",
+          "Football field overlay is roughly on the turf but the in-field hash/end-zone rectangle and north end do not match the painted field; fit the green quad to the white boundary lines.",
+          "Tennis-court green pads: count and court long axis should match the photo cluster (multiple courts, NΓÇôS); overlay looks like one or two undersized pads.",
+          "Mid-west dark mass (south of tennis, west of the Johnson Center quad) is a large black rectangle covering canopy and only part of a smaller real roof; shrink to the building footprint and drop the wooded remainder.",
+          "Southwest tan/black cluster (south of RAC, west of the big parking lot): overlay is an L of tan boxes plus a black south bar. The photo shows a compact light-roof building and open parking; delete the black bar over stalls and match the white roof.",
+          "East academic belt: overlapping tan + dark translucent boxes on the same footprints (duplicate masses). Keep one mass per building.",
+          "Dark/tan box over the north parking lot (above the academic cluster) covers cars, not a roof. Remove or convert to a surface lot, not a building.",
+          "Several east-campus tan boxes overshoot eaves by a bay or more and ignore courtyards/light wells; clip to roof edges including the Johnson CenterΓÇÖs irregular plan.",
+          "Pond/Globe area: no circular mass for the Globe rotunda; the photoΓÇÖs round roof is unmatched. Add a circular (or faceted) volume on that pad.",
+          "Black wedge masses near the pond/south cluster sit on trees and the arena approach, not buildings. Delete vegetation hits.",
+          "Parking lots, roads, and the racetrack are unmodeled while random grass is filled green; either omit site work or model lots/track consistently."
+        ]
+      },
+      {
+        "image": "horizon_comparison.png",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 3,
+        "props": 4,
+        "lighting": 7,
+        "overall": 4,
+        "problems": [
+          "Yellow campus box is only the academic core. RAC, track, west fields, EagleBank Arena, and south lots sit outside it. Expand the box to the full built campus if that is the culling volume.",
+          "Horizon/tree silhouettes are scattered 1 mi out onto suburban houses (north/northeast residential streets). If the set is campus occlusion only, drop off-campus house boxes; if it is a 1 mi horizon, the set is still sparse and misses many large roofs.",
+          "Boxes are mostly small axis-aligned or loosely rotated rectangles; GMU academic roofs are long bars, courts, and an octagon. Replace house-scale stamps with true footprints for RAC, Johnson Center, SUB, arena.",
+          "RAC / MASON and the west athletic complex have little or no silhouette while smaller east residence halls are boxed. Add the RAC mass and arena octagon; they dominate the west/south skyline.",
+          "Several black outlines sit on closed tree canopy with no building (especially north of the core and along the west woods). Move to trunks/building pads or delete.",
+          "Tree-mass vs building-mass styling is the same dark outline, so canopy blobs read as architecture. Separate tree volumes (organic, taller, forest-colored) from building prisms.",
+          "Yellow box clips through building clusters rather than following roads/tree lines; the east edge cuts residence halls that still have silhouettes outside the box. Align the box to a consistent include/exclude rule.",
+          "Coverage inside the yellow box is incomplete: large white roofs in the core are missing boxes while adjacent smaller roofs are marked. Inventory every major roof in the ortho.",
+          "1 mi horizon claim: far south golf/athletic complex and west neighborhood have almost no silhouettes, so distant skyline will be empty. Either populate the ring or shrink the radius to match what is drawn."
+        ]
+      }
+    ]
+  },
+  "gemini": {
+    "results": [
+      {
+        "image": "plan_comparison.png",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 2,
+        "problems": [
+          "Coordinate registration: Overlaid building footprints, athletic fields, and road patches are rotated ~10-15 degrees askew and translated relative to the NAIP orthophoto basemap. Apply the correct origin shift and trueNorthDeg (10.43┬░) transform.",
+          "RAC footprint missing: The main Recreation and Athletic Complex (RAC) in the center west of Patriot Circle has no massing or footprint placed over its actual roof footprint.",
+          "EagleBank Arena misalignment: The octagonal arena massing at the bottom right is shifted ~150-200 ft south/southeast into tree cover and parking lots, and rotated off-axis rather than aligning with the octagonal roof.",
+          "Field House (MASON roof) offset: The tan massing over the northwest structure is rotated ~15 degrees askew and shifted south of the visible rectangular roofline.",
+          "Athletic field displacement: The green turf polygon is placed far west on the grass slope across Ox Road instead of overlaying the regulation turf practice field northeast of the RAC.",
+          "Outdoor courts offset: The teal court rectangles near the center are shifted south onto roadways and grass instead of snapping to the paved outdoor tennis/basketball courts.",
+          "Spurious massings on surface lots: Oversized dark charcoal volumes are placed over PV Lot, Patriot Circle, and tree buffers where no above-ground buildings exist.",
+          "Academic building footprints: Northeast academic core building masses (Johnson Center, exploratory halls, garages) are misaligned and overlap lawns and roadways.",
+          "Diagnostic materials: Overlays use flat untextured color fills (tan, charcoal, green) with no roof textures, architectural massing details, or site props."
+        ]
+      },
+      {
+        "image": "horizon_comparison.png",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 1,
+        "problems": [
+          "Projection transform error: Building silhouettes on the right panel are plotted in a vertical strip far to the east in residential Fairfax neighborhoods outside the yellow campus boundary box due to an unprojected local coordinate mapping.",
+          "Campus core empty: The interior of the yellow campus box is almost completely devoid of building silhouettes, omitting the RAC, EagleBank Arena, Field House, and academic core.",
+          "Tree canopy representation: Dark green tree blobs are rendered as sparse, isolated discs scattered arbitrarily over suburbs and fairways rather than reflecting the contiguous dense forest canopy.",
+          "Building proportions and heading: Silhouettes do not match the aspect ratios, dimensions, or orientations of any real structures due to the projection offset.",
+          "Horizon massing fidelity: Footprints are flat 2D outlines without 3D extrusion heights, skyline profiles, atmospheric depth, or materials."
+        ]
+      }
+    ]
+  }
+}

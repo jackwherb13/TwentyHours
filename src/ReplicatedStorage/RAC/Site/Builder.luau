@@ -6,6 +6,7 @@ local Exterior = require(script.Parent.Exterior)
 local Landscape = require(script.Parent.Landscape)
 local Markings = require(script.Parent.Markings)
 local Campus = require(script.Parent.Campus.Builder)
+local Horizon = require(script.Parent.Horizon.Builder)
 local Builder = {}
 function Builder.build(model: Instance, rawSite: any): number
 	if not rawSite.site then
@@ -35,7 +36,11 @@ function Builder.build(model: Instance, rawSite: any): number
 	Exterior.build(P.folder(grounded, "ExteriorDetails"), rawSite.site)
 	Landscape.build(P.folder(grounded, "Landscape"), rawSite.site, rawSite.props or {})
 	-- Low-detail neighbouring campus buildings (footprints from county data, heights from lidar).
-	Campus.build(grounded)
+	local _, campusParts = Campus.build(grounded)
+	-- Coarse terrain-colored horizon out to ~1 mile so the world never visibly ends (terrain voxels are written in edit mode).
+	local _, horizonParts = Horizon.build(grounded)
+	assert(campusParts <= 6000, "Campus exceeds part budget")
+	assert(horizonParts <= 1500, "Horizon exceeds part budget")
 	local count = 0
 	for _, item in context:GetDescendants() do
 		if item:IsA("BasePart") then
@@ -43,9 +48,10 @@ function Builder.build(model: Instance, rawSite: any): number
 			count += 1
 		end
 	end
+	-- The 6k exterior budget covers the RAC's own site; campus + horizon have their own budgets above.
 	local allExterior = 0
 	for _, item in site:GetDescendants() do
-		if item:IsA("BasePart") then
+		if item:IsA("BasePart") and not item:FindFirstAncestor("Campus") and not item:FindFirstAncestor("Horizon") then
 			allExterior += 1
 		end
 	end

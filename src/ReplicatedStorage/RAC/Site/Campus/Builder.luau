@@ -74,15 +74,53 @@ local function instanceWindows(
 		pane.Name = `WindowBand_{i}`
 		pane.Size = Vector3.new(length, band, 0.28)
 		local offset = face[2] :: Vector3
-		pane.CFrame = yawFrame(box.x, y, box.z, box.yaw) * CFrame.new(offset)
 		if i >= 3 then
 			pane.CFrame = yawFrame(box.x, y, box.z, box.yaw) * CFrame.new(offset) * CFrame.Angles(0, math.pi / 2, 0)
+		else
+			pane.CFrame = yawFrame(box.x, y, box.z, box.yaw) * CFrame.new(offset)
 		end
 		pane.Parent = parent
 	end
 end
 
+local function massOctagon(parent: Folder, b: any)
+	local folder = P.folder(parent, b.id)
+	folder:SetAttribute("CampusName", b.name)
+	local box = b.boxes[1]
+	if not box then
+		return
+	end
+	local ground = b.ground :: number
+	local height = b.height :: number
+	local radius = math.min(box.w, box.d) / 2
+	local side = radius * 0.828
+	for k = 0, 7 do
+		local ang = box.yaw + k * math.pi / 4
+		local dist = radius * 0.707
+		painted(
+			folder,
+			`ArenaFacet_{k}`,
+			Vector3.new(side, height, math.max(radius * 0.42, 18)),
+			yawFrame(box.x + math.sin(ang) * dist * 0.55, ground + height / 2, box.z + math.cos(ang) * dist * 0.55, ang),
+			b.finish,
+			true
+		)
+	end
+	painted(
+		folder,
+		"ArenaRoof",
+		Vector3.new(radius * 1.55, 2.2, radius * 1.55),
+		yawFrame(box.x, ground + height + 1.1, box.z, box.yaw),
+		"metal",
+		true
+	)
+end
+
 local function massBuilding(parent: Folder, b: any, windowTemplate: BasePart)
+	if b.kind == "arena" then
+		massOctagon(parent, b)
+		return
+	end
 	local folder = P.folder(parent, b.id)
 	folder:SetAttribute("CampusName", b.name)
 	local ground = b.ground :: number
@@ -127,7 +165,6 @@ local function massDeck(parent: Folder, b: any)
 				true
 			)
 		end
-		-- Open spandrel rails as thin bands between slabs.
 		for level = 1, levels - 1 do
 			local y = ground + level * story - story / 2
 			painted(
@@ -139,7 +176,6 @@ local function massDeck(parent: Folder, b: any)
 				false
 			)
 		end
-		-- Exterior stair mass on the long side, clear of the floor plates.
 		painted(
 			folder,
 			"DeckStairSlab",
@@ -174,7 +210,32 @@ local function massField(parent: Folder, field: any)
 			folder,
 			`LineSlab_{i}`,
 			Vector3.new(mark.w or 0.4, 0.08, len),
-			yawFrame(mx, Height.at(mx, mz) + 0.85, mz, yaw),
+			yawFrame(mx, Height.at(mx, mz) + 1.15, mz, yaw),
+			"paint",
+			false
+		)
+	end
+end
+
+local function massLot(parent: Folder, lot: any)
+	local folder = P.folder(parent, lot.id)
+	folder:SetAttribute("CampusName", lot.name)
+	local box = lot.box
+	local y = Height.at(box.x, box.z)
+	painted(
+		folder,
+		"LotSlab",
+		Vector3.new(math.max(box.w, 8), 0.28, math.max(box.d, 8)),
+		yawFrame(box.x, y + 0.14, box.z, box.yaw),
+		"asphalt",
+		true
+	)
+	for i, stripe in lot.stripes do
+		painted(
+			folder,
+			`StallSlab_{i}`,
+			Vector3.new(math.max(stripe.w, 0.3), 0.05, math.max(stripe.d, 0.3)),
+			yawFrame(stripe.x, y + 0.40, stripe.z, stripe.yaw),
 			"paint",
 			false
 		)
@@ -191,7 +252,7 @@ function Campus.build(parent: Instance): (Model, number)
 	model.Parent = parent
 	model:SetAttribute("TrueNorthDeg", 10.43)
 	model:SetAttribute("Origin", "RAC south entrance door")
-	model:SetAttribute("Budget", 4000)
+	model:SetAttribute("Budget", 6000)
 
 	local kit = P.folder(model, "Templates")
 	local windowTemplate =
@@ -201,7 +262,9 @@ function Campus.build(parent: Instance): (Model, number)
 	local masses = P.folder(model, "Buildings")
 	local decks = P.folder(model, "ParkingDecks")
 	local fields = P.folder(model, "Fields")
+	local lots = P.folder(model, "Lots")
 	local roads = P.folder(model, "Roads")
+	local lanes = P.folder(model, "LaneLines")
 
 	for _, b in Data.buildings do
 		if b.kind == "deck" then
@@ -212,6 +275,11 @@ function Campus.build(parent: Instance): (Model, number)
 	end
 	for _, field in Data.fields do
 		massField(fields, field)
+	end
+	if Data.lots then
+		for _, lot in Data.lots do
+			massLot(lots, lot)
+		end
 	end
 	for _, patch in Data.roads do
 		local x = patch.x + patch.w / 2
@@ -226,6 +294,18 @@ function Campus.build(parent: Instance): (Model, number)
 			true
 		)
 	end
+	if Data.lanes then
+		for i, lane in Data.lanes do
+			painted(
+				lanes,
+				`LaneSlab_{i}`,
+				Vector3.new(lane.w, 0.05, math.max(lane.len - 4, 8)),
+				yawFrame(lane.x, Height.at(lane.x, lane.z) + 0.42, lane.z, lane.yaw),
+				"paint",
+				false
+			)
+		end
+	end
 
 	local count = 0
 	for _, item in model:GetDescendants() do
@@ -234,9 +314,8 @@ function Campus.build(parent: Instance): (Model, number)
 			count += 1
 		end
 	end
-	-- Template is not in the visible budget.
 	count -= 1
-	assert(count <= 4000, `Campus exceeds 4000-part neighbour budget ({count})`)
+	assert(count <= 6000, `Campus exceeds 6000-part neighbour budget ({count})`)
 	model:SetAttribute("PartCount", count)
 	return model, count
 end
