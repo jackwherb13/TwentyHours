@@ -63,12 +63,20 @@ Do the FULL review first (expect 60-200 tool calls). Only at the very end, write
 and a readable $dir/REVIEW.md. A review with no screenshots under $dir/route/ and $dir/pairs/ is invalid.
 "@ | Out-File "$dir/reviewer_prompt.txt" -Encoding utf8
 	Log "round $round - reviewer"
-	& "$env:USERPROFILE\.grok\bin\grok.exe" --prompt-file "$dir/reviewer_prompt.txt" --cwd $root --output-format json --always-approve --reasoning-effort xhigh --max-turns 300 2>"$dir/reviewer.err" |
-		Out-File "$dir/reviewer.json" -Encoding utf8
+	# Run the reviewer with a watchdog: if its session writes nothing for 20 minutes (a hung Studio call), kill it.
+	$rp = Start-Process -FilePath "$env:USERPROFILE\.grok\bin\grok.exe" -ArgumentList @('--prompt-file', "$dir/reviewer_prompt.txt", '--cwd', $root, '--output-format', 'json', '--always-approve', '--reasoning-effort', 'xhigh', '--max-turns', '300') -RedirectStandardOutput "$dir/reviewer.json" -RedirectStandardError "$dir/reviewer.err" -NoNewWindow -PassThru
+	$sessions = "$env:USERPROFILE\.grok\sessions"
+	while (-not $rp.HasExited) {
+		Start-Sleep 60
+		$newest = Get-ChildItem $sessions -Recurse -Filter chat_history.jsonl -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime -gt $rp.StartTime } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+		$last = if ($newest) { $newest.LastWriteTime } else { $rp.StartTime }
+		if (((Get-Date) - $last).TotalMinutes -gt 20) { Log "round $round - reviewer silent 20 min (hung Studio call?), killing"; Stop-Process -Id $rp.Id -Force; break }
+	}
 	$issues = @()
-	try { $issues = @((Get-Content "$dir/ISSUES_REVIEW.json" -Raw | ConvertFrom-Json).issues) } catch { Log "round $round - reviewer wrote no ISSUES_REVIEW.json" }
+	$reviewOk = $true
+	try { $issues = @((Get-Content "$dir/ISSUES_REVIEW.json" -Raw -ErrorAction Stop | ConvertFrom-Json).issues) } catch { Log "round $round - reviewer wrote no ISSUES_REVIEW.json"; $reviewOk = $false }
 	$shots = @(Get-ChildItem "$dir/route", "$dir/pairs" -Recurse -File -ErrorAction SilentlyContinue).Count
-	if ($shots -lt 5) {
+	if ($shots -lt 5 -or -not $reviewOk) {
 		Log "round $round - reviewer produced only $shots screenshots: review invalid, retrying the round"
 		if (++$invalid -gt 2) { Log "round $round - reviewer failed 3 times; stopping QA loop"; break }
 		$round--
