@@ -33,6 +33,8 @@ for ($round = 1; $round -le $Rounds; $round++) {
 	Log "round $round - build"
 	pwsh -NoProfile -File tools/build_rac.ps1 2>&1 | Out-File "$dir/build.txt" -Encoding utf8
 	python tools/verify_blueprint.py 2>&1 | Out-File "$dir/blueprint_check.txt" -Encoding utf8
+	pwsh -NoProfile -File tools/verify.ps1 2>&1 | Out-File "$dir/verify.txt" -Encoding utf8
+	$verifyFailed = $LASTEXITCODE -ne 0
 
 	$userReviews = (Get-ChildItem docs/reviews -Filter 'USER-*.md' | ForEach-Object { Get-Content $_.FullName -Raw }) -join "`n"
 	@"
@@ -79,6 +81,10 @@ and a readable $dir/REVIEW.md. A review with no screenshots under $dir/route/ an
 		Select-String "$dir/judge.txt" -Pattern '^FAIL' | ForEach-Object {
 			$issues += [pscustomobject]@{ severity = 'major'; owner = 'exterior'; area = 'photo match'; issue = $_.Line; evidence = "$dir/judge.txt"; fix = 'see judge problems' }
 		}
+	}
+	if ($verifyFailed) {
+		$vf = (Select-String "$dir/verify.txt" -Pattern '^FAIL' | ForEach-Object Line) -join '; '
+		$issues += [pscustomobject]@{ severity = 'critical'; owner = 'architect'; area = 'verify gate'; issue = "tools/verify.ps1 fails: $vf"; evidence = "$dir/verify.txt"; fix = 'make pwsh tools/verify.ps1 print VERIFY PASSED' }
 	}
 	$issues | ConvertTo-Json -Depth 6 | Out-File "$dir/ISSUES.json" -Encoding utf8
 	$serious = @($issues | Where-Object { $_.severity -in 'critical', 'major' })
