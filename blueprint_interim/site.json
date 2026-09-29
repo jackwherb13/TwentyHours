@@ -1,0 +1,38 @@
+{
+ "units": "ft",
+ "trueNorthDeg": 0,
+ "origin": {
+  "desc": "east lobby facade (interim)"
+ },
+ "footprint": [
+  [
+   -388.0,
+   -227.0
+  ],
+  [
+   0.0,
+   -227.0
+  ],
+  [
+   0.0,
+   132.0
+  ],
+  [
+   -388.0,
+   132.0
+  ]
+ ],
+ "levels": [
+  {
+   "level": 1,
+   "elevation": 0
+  },
+  {
+   "level": 2,
+   "elevation": 16
+  }
+ ],
+ "facade": [],
+ "roofs": [],
+ "props": []
+}

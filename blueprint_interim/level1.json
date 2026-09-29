@@ -1,0 +1,2410 @@
+{
+ "level": 1,
+ "elevation": 0,
+ "rooms": [
+  {
+   "id": "competition_gym",
+   "name": "Competition Gym",
+   "type": "gym",
+   "polygon": [
+    [
+     -199.5,
+     -204.5
+    ],
+    [
+     -82.0,
+     -204.5
+    ],
+    [
+     -82.0,
+     -55.5
+    ],
+    [
+     -199.5,
+     -55.5
+    ]
+   ],
+   "floorMaterial": "maple",
+   "ceilingHeight": 30,
+   "ceilingType": "open_joist",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "south_gym",
+   "name": "South Gym",
+   "type": "gym",
+   "polygon": [
+    [
+     -248.0,
+     14.5
+    ],
+    [
+     -100.0,
+     14.5
+    ],
+    [
+     -100.0,
+     132.0
+    ],
+    [
+     -248.0,
+     132.0
+    ]
+   ],
+   "floorMaterial": "maple",
+   "ceilingHeight": 28,
+   "ceilingType": "open_joist",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "cage_construction",
+   "name": "Cage Gym + RAC Addition (construction)",
+   "type": "construction",
+   "polygon": [
+    [
+     -388.0,
+     -227.0
+    ],
+    [
+     -239.5,
+     -227.0
+    ],
+    [
+     -239.5,
+     -13.0
+    ],
+    [
+     -388.0,
+     -13.0
+    ]
+   ],
+   "floorMaterial": "sealed_concrete",
+   "ceilingHeight": 28,
+   "ceilingType": "none",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "main_corridor",
+   "name": "Main Corridor",
+   "type": "corridor",
+   "polygon": [
+    [
+     -371.5,
+     -13.0
+    ],
+    [
+     -95.0,
+     -13.0
+    ],
+    [
+     -95.0,
+     14.5
+    ],
+    [
+     -371.5,
+     14.5
+    ]
+   ],
+   "floorMaterial": "terrazzo",
+   "ceilingHeight": 10,
+   "ceilingType": "act_2x4",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "lobby",
+   "name": "Main Lobby",
+   "type": "lobby",
+   "polygon": [
+    [
+     -82.0,
+     -78.0
+    ],
+    [
+     0.0,
+     -78.0
+    ],
+    [
+     0.0,
+     14.5
+    ],
+    [
+     -95.0,
+     14.5
+    ],
+    [
+     -95.0,
+     -55.5
+    ],
+    [
+     -82.0,
+     -55.5
+    ]
+   ],
+   "floorMaterial": "porcelain_tile",
+   "ceilingHeight": 26,
+   "ceilingType": "gypsum",
+   "wallFinish": "gypsum"
+  },
+  {
+   "id": "office_wing",
+   "name": "Offices",
+   "type": "office",
+   "polygon": [
+    [
+     -82.0,
+     -204.5
+    ],
+    [
+     -12.0,
+     -204.5
+    ],
+    [
+     -12.0,
+     -117.0
+    ],
+    [
+     -82.0,
+     -117.0
+    ]
+   ],
+   "floorMaterial": "carpet_tile",
+   "ceilingHeight": 9,
+   "ceilingType": "act_2x2",
+   "wallFinish": "gypsum"
+  },
+  {
+   "id": "east_support",
+   "name": "Fitness Center",
+   "type": "fitness",
+   "polygon": [
+    [
+     -82.0,
+     -117.0
+    ],
+    [
+     0.0,
+     -117.0
+    ],
+    [
+     0.0,
+     -78.0
+    ],
+    [
+     -82.0,
+     -78.0
+    ]
+   ],
+   "floorMaterial": "rubber",
+   "ceilingHeight": 12,
+   "ceilingType": "open_joist",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "weight_room",
+   "name": "Weight Room",
+   "type": "fitness",
+   "polygon": [
+    [
+     -146.5,
+     -55.5
+    ],
+    [
+     -95.0,
+     -55.5
+    ],
+    [
+     -95.0,
+     -13.0
+    ],
+    [
+     -146.5,
+     -13.0
+    ]
+   ],
+   "floorMaterial": "rubber",
+   "ceilingHeight": 12,
+   "ceilingType": "open_joist",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "locker_men",
+   "name": "Men's Locker Room",
+   "type": "locker",
+   "polygon": [
+    [
+     -175.0,
+     -55.5
+    ],
+    [
+     -146.5,
+     -55.5
+    ],
+    [
+     -146.5,
+     -13.0
+    ],
+    [
+     -175.0,
+     -13.0
+    ]
+   ],
+   "floorMaterial": "ceramic_tile",
+   "ceilingHeight": 9,
+   "ceilingType": "act_2x2",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "locker_women",
+   "name": "Women's Locker Room",
+   "type": "locker",
+   "polygon": [
+    [
+     -203.5,
+     -55.5
+    ],
+    [
+     -175.0,
+     -55.5
+    ],
+    [
+     -175.0,
+     -13.0
+    ],
+    [
+     -203.5,
+     -13.0
+    ]
+   ],
+   "floorMaterial": "ceramic_tile",
+   "ceilingHeight": 9,
+   "ceilingType": "act_2x2",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "volleyball_locker",
+   "name": "Volleyball Locker Room",
+   "type": "locker",
+   "polygon": [
+    [
+     -239.5,
+     -55.5
+    ],
+    [
+     -203.5,
+     -55.5
+    ],
+    [
+     -203.5,
+     -13.0
+    ],
+    [
+     -239.5,
+     -13.0
+    ]
+   ],
+   "floorMaterial": "ceramic_tile",
+   "ceilingHeight": 9,
+   "ceilingType": "act_2x2",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "restrooms",
+   "name": "Restrooms",
+   "type": "restroom",
+   "polygon": [
+    [
+     -239.5,
+     -100.0
+    ],
+    [
+     -199.5,
+     -100.0
+    ],
+    [
+     -199.5,
+     -55.5
+    ],
+    [
+     -239.5,
+     -55.5
+    ]
+   ],
+   "floorMaterial": "ceramic_tile",
+   "ceilingHeight": 9,
+   "ceilingType": "act_2x2",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "racquetball_1",
+   "name": "Racquetball 1",
+   "type": "racquetball",
+   "polygon": [
+    [
+     -371.5,
+     14.5
+    ],
+    [
+     -347.0,
+     14.5
+    ],
+    [
+     -347.0,
+     48.0
+    ],
+    [
+     -371.5,
+     48.0
+    ]
+   ],
+   "floorMaterial": "maple",
+   "ceilingHeight": 20,
+   "ceilingType": "gypsum",
+   "wallFinish": "gypsum"
+  },
+  {
+   "id": "racquetball_2",
+   "name": "Racquetball 2",
+   "type": "racquetball",
+   "polygon": [
+    [
+     -347.0,
+     14.5
+    ],
+    [
+     -323.0,
+     14.5
+    ],
+    [
+     -323.0,
+     48.0
+    ],
+    [
+     -347.0,
+     48.0
+    ]
+   ],
+   "floorMaterial": "maple",
+   "ceilingHeight": 20,
+   "ceilingType": "gypsum",
+   "wallFinish": "gypsum"
+  },
+  {
+   "id": "racquetball_3",
+   "name": "Racquetball 3",
+   "type": "racquetball",
+   "polygon": [
+    [
+     -323.0,
+     14.5
+    ],
+    [
+     -299.5,
+     14.5
+    ],
+    [
+     -299.5,
+     48.0
+    ],
+    [
+     -323.0,
+     48.0
+    ]
+   ],
+   "floorMaterial": "maple",
+   "ceilingHeight": 20,
+   "ceilingType": "gypsum",
+   "wallFinish": "gypsum"
+  },
+  {
+   "id": "racquetball_4",
+   "name": "Racquetball 4",
+   "type": "racquetball",
+   "polygon": [
+    [
+     -299.5,
+     14.5
+    ],
+    [
+     -275.0,
+     14.5
+    ],
+    [
+     -275.0,
+     48.0
+    ],
+    [
+     -299.5,
+     48.0
+    ]
+   ],
+   "floorMaterial": "maple",
+   "ceilingHeight": 20,
+   "ceilingType": "gypsum",
+   "wallFinish": "gypsum"
+  },
+  {
+   "id": "west_restrooms",
+   "name": "Restrooms (West)",
+   "type": "restroom",
+   "polygon": [
+    [
+     -275.0,
+     14.5
+    ],
+    [
+     -248.0,
+     14.5
+    ],
+    [
+     -248.0,
+     48.0
+    ],
+    [
+     -275.0,
+     48.0
+    ]
+   ],
+   "floorMaterial": "ceramic_tile",
+   "ceilingHeight": 9,
+   "ceilingType": "act_2x2",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "south_lobby",
+   "name": "South Lobby",
+   "type": "corridor",
+   "polygon": [
+    [
+     -100.0,
+     14.5
+    ],
+    [
+     -43.0,
+     14.5
+    ],
+    [
+     -43.0,
+     58.5
+    ],
+    [
+     -100.0,
+     58.5
+    ]
+   ],
+   "floorMaterial": "porcelain_tile",
+   "ceilingHeight": 12,
+   "ceilingType": "act_2x4",
+   "wallFinish": "painted_cmu"
+  },
+  {
+   "id": "entrance_vestibule",
+   "name": "Entrance Vestibule",
+   "type": "lobby",
+   "polygon": [
+    [
+     -43.0,
+     14.5
+    ],
+    [
+     0.0,
+     14.5
+    ],
+    [
+     0.0,
+     58.5
+    ],
+    [
+     -43.0,
+     58.5
+    ]
+   ],
+   "floorMaterial": "porcelain_tile",
+   "ceilingHeight": 14,
+   "ceilingType": "gypsum",
+   "wallFinish": "gypsum"
+  }
+ ],
+ "walls": [
+  {
+   "id": "w000",
+   "a": [
+    -388.0,
+    -227.0
+   ],
+   "b": [
+    -239.5,
+    -227.0
+   ],
+   "thickness": 1.33,
+   "height": 30,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w001",
+   "a": [
+    -199.5,
+    -204.5
+   ],
+   "b": [
+    -82.0,
+    -204.5
+   ],
+   "thickness": 1.33,
+   "height": 34,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "window",
+     "offset": 4,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 24,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 64,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 84,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    }
+   ]
+  },
+  {
+   "id": "w002",
+   "a": [
+    -82.0,
+    -204.5
+   ],
+   "b": [
+    -12.0,
+    -204.5
+   ],
+   "thickness": 1.33,
+   "height": 12,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w003",
+   "a": [
+    -82.0,
+    -117.0
+   ],
+   "b": [
+    -12.0,
+    -117.0
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w004",
+   "a": [
+    -12.0,
+    -117.0
+   ],
+   "b": [
+    0.0,
+    -117.0
+   ],
+   "thickness": 1.33,
+   "height": 14,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w005",
+   "a": [
+    -239.5,
+    -100.0
+   ],
+   "b": [
+    -199.5,
+    -100.0
+   ],
+   "thickness": 1.33,
+   "height": 12,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w006",
+   "a": [
+    -82.0,
+    -78.0
+   ],
+   "b": [
+    0.0,
+    -78.0
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 38.0,
+     "width": 6.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w007",
+   "a": [
+    -239.5,
+    -55.5
+   ],
+   "b": [
+    -203.5,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 12,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w008",
+   "a": [
+    -203.5,
+    -55.5
+   ],
+   "b": [
+    -199.5,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 12,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w009",
+   "a": [
+    -199.5,
+    -55.5
+   ],
+   "b": [
+    -175.0,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w010",
+   "a": [
+    -175.0,
+    -55.5
+   ],
+   "b": [
+    -146.5,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w011",
+   "a": [
+    -146.5,
+    -55.5
+   ],
+   "b": [
+    -95.0,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w012",
+   "a": [
+    -95.0,
+    -55.5
+   ],
+   "b": [
+    -82.0,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w013",
+   "a": [
+    -388.0,
+    -13.0
+   ],
+   "b": [
+    -371.5,
+    -13.0
+   ],
+   "thickness": 1.33,
+   "height": 30,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w014",
+   "a": [
+    -371.5,
+    -13.0
+   ],
+   "b": [
+    -239.5,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 64.5,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w015",
+   "a": [
+    -239.5,
+    -13.0
+   ],
+   "b": [
+    -203.5,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 16.5,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w016",
+   "a": [
+    -203.5,
+    -13.0
+   ],
+   "b": [
+    -175.0,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 12.75,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w017",
+   "a": [
+    -175.0,
+    -13.0
+   ],
+   "b": [
+    -146.5,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 12.75,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w018",
+   "a": [
+    -146.5,
+    -13.0
+   ],
+   "b": [
+    -95.0,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 22.75,
+     "width": 6.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w019",
+   "a": [
+    -371.5,
+    14.5
+   ],
+   "b": [
+    -347.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 10.75,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w020",
+   "a": [
+    -347.0,
+    14.5
+   ],
+   "b": [
+    -323.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 10.5,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w021",
+   "a": [
+    -323.0,
+    14.5
+   ],
+   "b": [
+    -299.5,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 10.25,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w022",
+   "a": [
+    -299.5,
+    14.5
+   ],
+   "b": [
+    -275.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 10.75,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w023",
+   "a": [
+    -275.0,
+    14.5
+   ],
+   "b": [
+    -248.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 12.0,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w024",
+   "a": [
+    -248.0,
+    14.5
+   ],
+   "b": [
+    -100.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 32,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 71.0,
+     "width": 6.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w025",
+   "a": [
+    -100.0,
+    14.5
+   ],
+   "b": [
+    -95.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "opening",
+     "offset": 1.0,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w026",
+   "a": [
+    -95.0,
+    14.5
+   ],
+   "b": [
+    -43.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "opening",
+     "offset": 20.0,
+     "width": 12.0,
+     "sill": 0,
+     "head": 8.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w027",
+   "a": [
+    -43.0,
+    14.5
+   ],
+   "b": [
+    0.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "opening",
+     "offset": 15.5,
+     "width": 12.0,
+     "sill": 0,
+     "head": 8.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w028",
+   "a": [
+    -371.5,
+    48.0
+   ],
+   "b": [
+    -347.0,
+    48.0
+   ],
+   "thickness": 1.33,
+   "height": 22,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w029",
+   "a": [
+    -347.0,
+    48.0
+   ],
+   "b": [
+    -323.0,
+    48.0
+   ],
+   "thickness": 1.33,
+   "height": 22,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w030",
+   "a": [
+    -323.0,
+    48.0
+   ],
+   "b": [
+    -299.5,
+    48.0
+   ],
+   "thickness": 1.33,
+   "height": 22,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w031",
+   "a": [
+    -299.5,
+    48.0
+   ],
+   "b": [
+    -275.0,
+    48.0
+   ],
+   "thickness": 1.33,
+   "height": 22,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w032",
+   "a": [
+    -275.0,
+    48.0
+   ],
+   "b": [
+    -248.0,
+    48.0
+   ],
+   "thickness": 1.33,
+   "height": 12,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w033",
+   "a": [
+    -100.0,
+    58.5
+   ],
+   "b": [
+    -43.0,
+    58.5
+   ],
+   "thickness": 1.33,
+   "height": 14,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w034",
+   "a": [
+    -43.0,
+    58.5
+   ],
+   "b": [
+    0.0,
+    58.5
+   ],
+   "thickness": 1.33,
+   "height": 16,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w035",
+   "a": [
+    -248.0,
+    132.0
+   ],
+   "b": [
+    -100.0,
+    132.0
+   ],
+   "thickness": 1.33,
+   "height": 32,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "window",
+     "offset": 4,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 24,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 44,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 84,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 104,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 124,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    }
+   ]
+  },
+  {
+   "id": "w036",
+   "a": [
+    -388.0,
+    -227.0
+   ],
+   "b": [
+    -388.0,
+    -13.0
+   ],
+   "thickness": 1.33,
+   "height": 30,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w037",
+   "a": [
+    -371.5,
+    -13.0
+   ],
+   "b": [
+    -371.5,
+    14.5
+   ],
+   "thickness": 1.33,
+   "height": 14,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 10.75,
+     "width": 6.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w038",
+   "a": [
+    -371.5,
+    14.5
+   ],
+   "b": [
+    -371.5,
+    48.0
+   ],
+   "thickness": 1.33,
+   "height": 22,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w039",
+   "a": [
+    -347.0,
+    14.5
+   ],
+   "b": [
+    -347.0,
+    48.0
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w040",
+   "a": [
+    -323.0,
+    14.5
+   ],
+   "b": [
+    -323.0,
+    48.0
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w041",
+   "a": [
+    -299.5,
+    14.5
+   ],
+   "b": [
+    -299.5,
+    48.0
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w042",
+   "a": [
+    -275.0,
+    14.5
+   ],
+   "b": [
+    -275.0,
+    48.0
+   ],
+   "thickness": 0.67,
+   "height": 22,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w043",
+   "a": [
+    -248.0,
+    14.5
+   ],
+   "b": [
+    -248.0,
+    48.0
+   ],
+   "thickness": 0.67,
+   "height": 32,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w044",
+   "a": [
+    -248.0,
+    48.0
+   ],
+   "b": [
+    -248.0,
+    132.0
+   ],
+   "thickness": 1.33,
+   "height": 32,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "window",
+     "offset": 4,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 24,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 44,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 64,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    }
+   ]
+  },
+  {
+   "id": "w045",
+   "a": [
+    -239.5,
+    -227.0
+   ],
+   "b": [
+    -239.5,
+    -100.0
+   ],
+   "thickness": 1.33,
+   "height": 30,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w046",
+   "a": [
+    -239.5,
+    -100.0
+   ],
+   "b": [
+    -239.5,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 20.75,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w047",
+   "a": [
+    -239.5,
+    -55.5
+   ],
+   "b": [
+    -239.5,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w048",
+   "a": [
+    -203.5,
+    -55.5
+   ],
+   "b": [
+    -203.5,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 12,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w049",
+   "a": [
+    -199.5,
+    -204.5
+   ],
+   "b": [
+    -199.5,
+    -100.0
+   ],
+   "thickness": 1.33,
+   "height": 34,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "window",
+     "offset": 4,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 24,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 44,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 64,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 84,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    }
+   ]
+  },
+  {
+   "id": "w050",
+   "a": [
+    -199.5,
+    -100.0
+   ],
+   "b": [
+    -199.5,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w051",
+   "a": [
+    -175.0,
+    -55.5
+   ],
+   "b": [
+    -175.0,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 12,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w052",
+   "a": [
+    -146.5,
+    -55.5
+   ],
+   "b": [
+    -146.5,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 14,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w053",
+   "a": [
+    -100.0,
+    14.5
+   ],
+   "b": [
+    -100.0,
+    58.5
+   ],
+   "thickness": 0.67,
+   "height": 32,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w054",
+   "a": [
+    -100.0,
+    58.5
+   ],
+   "b": [
+    -100.0,
+    132.0
+   ],
+   "thickness": 1.33,
+   "height": 32,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "window",
+     "offset": 4,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 24,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    },
+    {
+     "type": "window",
+     "offset": 44,
+     "width": 12.0,
+     "sill": 20.0,
+     "head": 26.0
+    }
+   ]
+  },
+  {
+   "id": "w055",
+   "a": [
+    -95.0,
+    -55.5
+   ],
+   "b": [
+    -95.0,
+    -13.0
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w056",
+   "a": [
+    -95.0,
+    -13.0
+   ],
+   "b": [
+    -95.0,
+    14.5
+   ],
+   "thickness": 0.67,
+   "height": 30,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "opening",
+     "offset": 7.75,
+     "width": 12.0,
+     "sill": 0,
+     "head": 8.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w057",
+   "a": [
+    -82.0,
+    -204.5
+   ],
+   "b": [
+    -82.0,
+    -117.0
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 42.25,
+     "width": 3.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 1,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w058",
+   "a": [
+    -82.0,
+    -117.0
+   ],
+   "b": [
+    -82.0,
+    -78.0
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": []
+  },
+  {
+   "id": "w059",
+   "a": [
+    -82.0,
+    -78.0
+   ],
+   "b": [
+    -82.0,
+    -55.5
+   ],
+   "thickness": 0.67,
+   "height": 34,
+   "material": "painted_cmu",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 8.25,
+     "width": 6.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w060",
+   "a": [
+    -43.0,
+    14.5
+   ],
+   "b": [
+    -43.0,
+    58.5
+   ],
+   "thickness": 0.67,
+   "height": 16,
+   "material": "gypsum",
+   "exterior": false,
+   "openings": [
+    {
+     "type": "opening",
+     "offset": 16.0,
+     "width": 12.0,
+     "sill": 0,
+     "head": 8.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  },
+  {
+   "id": "w061",
+   "a": [
+    -12.0,
+    -204.5
+   ],
+   "b": [
+    -12.0,
+    -117.0
+   ],
+   "thickness": 1.33,
+   "height": 12,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w062",
+   "a": [
+    0.0,
+    -117.0
+   ],
+   "b": [
+    0.0,
+    -78.0
+   ],
+   "thickness": 1.33,
+   "height": 14,
+   "material": "brick",
+   "exterior": true,
+   "openings": []
+  },
+  {
+   "id": "w063",
+   "a": [
+    0.0,
+    -78.0
+   ],
+   "b": [
+    0.0,
+    14.5
+   ],
+   "thickness": 1.33,
+   "height": 30,
+   "material": "glass",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "curtainwall",
+     "offset": 0,
+     "width": 92.5,
+     "sill": 0,
+     "head": 24.0,
+     "mullionSpacing": 5.0
+    }
+   ]
+  },
+  {
+   "id": "w064",
+   "a": [
+    0.0,
+    14.5
+   ],
+   "b": [
+    0.0,
+    58.5
+   ],
+   "thickness": 1.33,
+   "height": 16,
+   "material": "brick",
+   "exterior": true,
+   "openings": [
+    {
+     "type": "door",
+     "offset": 19.0,
+     "width": 6.0,
+     "sill": 0,
+     "head": 7.0,
+     "leaves": 2,
+     "tag": "RACDoor"
+    }
+   ]
+  }
+ ],
+ "columns": [],
+ "stairs": [],
+ "voids": [],
+ "props": [
+  {
+   "id": "p000",
+   "kind": "front_desk",
+   "at": [
+    -32.0,
+    -35.5
+   ],
+   "rotation": 90,
+   "room": "lobby"
+  },
+  {
+   "id": "p001",
+   "kind": "bleacher_bank",
+   "at": [
+    -195.0,
+    -184.5
+   ],
+   "rotation": 90,
+   "room": "competition_gym",
+   "opts": {
+    "rows": 12,
+    "length": 20
+   }
+  },
+  {
+   "id": "p002",
+   "kind": "bleacher_bank",
+   "at": [
+    -195.0,
+    -163.0
+   ],
+   "rotation": 90,
+   "room": "competition_gym",
+   "opts": {
+    "rows": 12,
+    "length": 20
+   }
+  },
+  {
+   "id": "p003",
+   "kind": "bleacher_bank",
+   "at": [
+    -195.0,
+    -141.5
+   ],
+   "rotation": 90,
+   "room": "competition_gym",
+   "opts": {
+    "rows": 12,
+    "length": 20
+   }
+  },
+  {
+   "id": "p004",
+   "kind": "bleacher_bank",
+   "at": [
+    -195.0,
+    -120.0
+   ],
+   "rotation": 90,
+   "room": "competition_gym",
+   "opts": {
+    "rows": 12,
+    "length": 20
+   }
+  },
+  {
+   "id": "p005",
+   "kind": "bleacher_bank",
+   "at": [
+    -195.0,
+    -98.5
+   ],
+   "rotation": 90,
+   "room": "competition_gym",
+   "opts": {
+    "rows": 12,
+    "length": 20
+   }
+  },
+  {
+   "id": "p006",
+   "kind": "bleacher_bank",
+   "at": [
+    -195.0,
+    -77.0
+   ],
+   "rotation": 90,
+   "room": "competition_gym",
+   "opts": {
+    "rows": 12,
+    "length": 20
+   }
+  },
+  {
+   "id": "p007",
+   "kind": "basketball_hoop_ceiling",
+   "at": [
+    -140.5,
+    -200.0
+   ],
+   "rotation": 0,
+   "room": "competition_gym"
+  },
+  {
+   "id": "p008",
+   "kind": "basketball_hoop_ceiling",
+   "at": [
+    -140.5,
+    -60.0
+   ],
+   "rotation": 180,
+   "room": "competition_gym"
+  },
+  {
+   "id": "p009",
+   "kind": "scoreboard",
+   "at": [
+    -140.5,
+    -203.0
+   ],
+   "rotation": 0,
+   "room": "competition_gym"
+  },
+  {
+   "id": "p010",
+   "kind": "bleacher_bank",
+   "at": [
+    -228.5,
+    18.5
+   ],
+   "rotation": 0,
+   "room": "south_gym",
+   "opts": {
+    "rows": 8,
+    "length": 20
+   }
+  },
+  {
+   "id": "p011",
+   "kind": "bleacher_bank",
+   "at": [
+    -207.0,
+    18.5
+   ],
+   "rotation": 0,
+   "room": "south_gym",
+   "opts": {
+    "rows": 8,
+    "length": 20
+   }
+  },
+  {
+   "id": "p012",
+   "kind": "bleacher_bank",
+   "at": [
+    -185.5,
+    18.5
+   ],
+   "rotation": 0,
+   "room": "south_gym",
+   "opts": {
+    "rows": 8,
+    "length": 20
+   }
+  },
+  {
+   "id": "p013",
+   "kind": "bleacher_bank",
+   "at": [
+    -164.5,
+    18.5
+   ],
+   "rotation": 0,
+   "room": "south_gym",
+   "opts": {
+    "rows": 8,
+    "length": 20
+   }
+  },
+  {
+   "id": "p014",
+   "kind": "bleacher_bank",
+   "at": [
+    -143.0,
+    18.5
+   ],
+   "rotation": 0,
+   "room": "south_gym",
+   "opts": {
+    "rows": 8,
+    "length": 20
+   }
+  },
+  {
+   "id": "p015",
+   "kind": "bleacher_bank",
+   "at": [
+    -121.5,
+    18.5
+   ],
+   "rotation": 0,
+   "room": "south_gym",
+   "opts": {
+    "rows": 8,
+    "length": 20
+   }
+  },
+  {
+   "id": "p016",
+   "kind": "power_rack",
+   "at": [
+    -140.5,
+    -50.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p017",
+   "kind": "flat_bench",
+   "at": [
+    -139.5,
+    -32.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p018",
+   "kind": "power_rack",
+   "at": [
+    -129.5,
+    -50.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p019",
+   "kind": "flat_bench",
+   "at": [
+    -128.0,
+    -32.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p020",
+   "kind": "power_rack",
+   "at": [
+    -118.0,
+    -50.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p021",
+   "kind": "flat_bench",
+   "at": [
+    -116.5,
+    -32.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p022",
+   "kind": "power_rack",
+   "at": [
+    -106.5,
+    -50.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p023",
+   "kind": "flat_bench",
+   "at": [
+    -105.0,
+    -32.0
+   ],
+   "rotation": 0,
+   "room": "weight_room"
+  },
+  {
+   "id": "p024",
+   "kind": "treadmill",
+   "at": [
+    -75.0,
+    -113.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p025",
+   "kind": "elliptical",
+   "at": [
+    -75.0,
+    -93.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p026",
+   "kind": "treadmill",
+   "at": [
+    -60.5,
+    -113.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p027",
+   "kind": "elliptical",
+   "at": [
+    -60.5,
+    -93.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p028",
+   "kind": "treadmill",
+   "at": [
+    -46.5,
+    -113.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p029",
+   "kind": "elliptical",
+   "at": [
+    -46.5,
+    -93.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p030",
+   "kind": "treadmill",
+   "at": [
+    -32.0,
+    -113.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p031",
+   "kind": "elliptical",
+   "at": [
+    -32.0,
+    -93.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p032",
+   "kind": "treadmill",
+   "at": [
+    -18.0,
+    -113.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p033",
+   "kind": "elliptical",
+   "at": [
+    -18.0,
+    -93.0
+   ],
+   "rotation": 0,
+   "room": "east_support"
+  },
+  {
+   "id": "p034",
+   "kind": "vending_machine",
+   "at": [
+    -275.0,
+    -10.5
+   ],
+   "rotation": 0,
+   "room": "main_corridor"
+  },
+  {
+   "id": "p035",
+   "kind": "trash_bin",
+   "at": [
+    -253.5,
+    -10.5
+   ],
+   "rotation": 0,
+   "room": "main_corridor"
+  },
+  {
+   "id": "p036",
+   "kind": "recycle_bin",
+   "at": [
+    -249.5,
+    -10.5
+   ],
+   "rotation": 0,
+   "room": "main_corridor"
+  },
+  {
+   "id": "p037",
+   "kind": "locker_bank_wood",
+   "at": [
+    -235.0,
+    -50.0
+   ],
+   "rotation": 90,
+   "room": "volleyball_locker"
+  },
+  {
+   "id": "p038",
+   "kind": "locker_bank_wood",
+   "at": [
+    -235.0,
+    -38.5
+   ],
+   "rotation": 90,
+   "room": "volleyball_locker"
+  },
+  {
+   "id": "p039",
+   "kind": "locker_bank_wood",
+   "at": [
+    -235.0,
+    -27.0
+   ],
+   "rotation": 90,
+   "room": "volleyball_locker"
+  }
+ ]
+}
