@@ -58,7 +58,10 @@ for _, p in model:GetDescendants() do
 		partCount += 1
 		assert(p.Anchored and p.Size.X > 0 and p.Size.Y > 0 and p.Size.Z > 0, `Invalid part {p:GetFullName()} {p.Size}`)
 		if p.Name == "Glass" then
-			assert(math.abs(p.Transparency - 0.6) < 0.0001 and p.Material == roblox.Enum.Material.Glass)
+			assert(
+				math.abs(p.Transparency - 0.78) < 0.0001 and p.Material == roblox.Enum.Material.Glass,
+				`Glass pane {p:GetFullName()} transparency {p.Transparency}`
+			)
 		end
 	end
 end
@@ -120,7 +123,16 @@ for _, level in data.levels do
 			math.abs(floor.CFrame.Position.Y + floor.Size.Y / 2 - level.elevation) < 0.001,
 			"Finished floor elevation"
 		)
+		local open = {}
 		for _, void in level.voids do
+			table.insert(open, void)
+		end
+		for _, room in level.rooms do
+			if room.type == "void" then
+				table.insert(open, room)
+			end
+		end
+		for _, void in open do
 			for _, r in Geometry.rectangles(void.polygon) do
 				assert(
 					not (
@@ -142,14 +154,41 @@ for _, level in data.levels do
 			end
 		end
 	end
+	-- Same holes Floors.build uses: voids, void rooms, and on upper levels the
+	-- lower-level rooms so a deck is not poured over the gym.
 	local holes = {}
 	for _, void in level.voids do
 		table.insert(holes, void.polygon)
 	end
-	assert(
-		math.abs(floorArea - area(Geometry.rectangles(data.site.footprint, holes))) < 0.01,
-		"Footprint coverage has gaps or overlaps"
-	)
+	for _, room in level.rooms do
+		if room.type == "void" then
+			table.insert(holes, room.polygon)
+		end
+	end
+	local uncovered = table.clone(holes)
+	for _, room in level.rooms do
+		if room.type ~= "void" then
+			table.insert(uncovered, room.polygon)
+		end
+	end
+	if level.level > 1 then
+		for _, other in data.levels do
+			if other.level < level.level then
+				for _, room in other.rooms do
+					if room.type ~= "void" then
+						table.insert(uncovered, room.polygon)
+					end
+				end
+			end
+		end
+	end
+	local expected = area(Geometry.rectangles(data.site.footprint, uncovered))
+	for _, room in level.rooms do
+		if room.type ~= "void" then
+			expected += area(Geometry.rectangles(room.polygon, holes))
+		end
+	end
+	assert(math.abs(floorArea - expected) < 0.01, `Footprint coverage has gaps or overlaps on level {level.level}`)
 end
 local stair = levels["1"].Stairs.stair_one
 assert(stair:GetAttribute("FromElevation") == 0 and stair:GetAttribute("ToElevation") == 14)
