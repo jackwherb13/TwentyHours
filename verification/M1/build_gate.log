@@ -1,0 +1,92 @@
+Built verification/M1/build.rbxm from blueprint
+Part counts by category:
+  Ceilings     2176
+  Columns      12
+  Facade       38
+  Floors       109
+  Props        0
+  Roofs        51
+  Stairs       270
+  Walls        3506
+Total: 6162 parts; build time: 1.016 s
+Geometry QA: complete RAC (including props)
+degenerate   0
+doorBlocked  0
+floating     0
+zfight       6
+   RAC.Levels.1.Ceilings.locker_volleyball.Ceiling  /  RAC.Levels.1.Walls.l1_w121.WallSegment  (axis Y, 7.4 sqft)
+   RAC.Levels.1.Ceilings.nutrition_vestibule.Ceiling  /  RAC.Levels.1.Walls.l1_w121.WallSegment  (axis Y, 3.3 sqft)
+   RAC.Site.Roofs.Roof_7.Parapet  /  RAC.Levels.2.Walls.l2_w034.WallSegment  (axis Y, 34.2 sqft)
+   RAC.Site.Roofs.Roof_2.RoofSlab  /  RAC.Levels.1.Walls.l1_w084.WallSegment  (axis Y, 4.9 sqft)
+   RAC.Site.Roofs.Roof_8.Parapet  /  RAC.Levels.2.Walls.l2_w094.WallSegment  (axis Z, 1.0 sqft)
+   RAC.Site.Roofs.Roof_2.RoofSlab  /  RAC.Levels.2.Walls.l2_w104.WallSegment  (axis Y, 2.5 sqft)
+intersect    0
+gap          64
+   RAC.Levels.2.Walls.l2_w109.WallSegment  <->  RAC.Levels.2.Walls.l2_w106.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w108.WallSegment  <->  RAC.Levels.2.Walls.l2_w094.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w105.WallSegment  <->  RAC.Levels.2.Walls.l2_w096.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w104.WallSegment  <->  RAC.Levels.1.Walls.l1_w087.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w102.WallSegment  <->  RAC.Levels.2.Walls.l2_w101.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w101.WallSegment  <->  RAC.Levels.2.Walls.l2_w089.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w098.WallSegment  <->  RAC.Levels.2.Walls.l2_w046.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w098.WallSegment  <->  RAC.Levels.2.Walls.l2_w040.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w092.WallSegment  <->  RAC.Levels.2.Walls.l2_w088.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w092.WallSegment  <->  RAC.Levels.1.Walls.l1_w081.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w089.WallSegment  <->  RAC.Levels.2.Walls.l2_w037.WallSegment  gap 0.25 ft
+   RAC.Levels.2.Walls.l2_w089.WallSegment  <->  RAC.Levels.2.Walls.l2_w032.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w086.WallSegment  <->  RAC.Levels.2.Walls.l2_w085.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w086.WallSegment  <->  RAC.Levels.2.Walls.l2_w111.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w086.WallSegment  <->  RAC.Levels.2.Walls.l2_w027.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w085.WallSegment  <->  RAC.Levels.2.Walls.l2_w084.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w084.WallSegment  <->  RAC.Levels.2.Walls.l2_w061.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w084.WallSegment  <->  RAC.Levels.2.Walls.l2_w026.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w111.WallSegment  <->  RAC.Levels.2.Walls.l2_w077.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w111.WallSegment  <->  RAC.Levels.2.Walls.l2_w027.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w081.WallSegment  <->  RAC.Levels.2.Walls.l2_w025.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w081.WallSegment  <->  RAC.Levels.1.Walls.l1_w102.WallSegment  gap 0.12 ft
+   RAC.Levels.2.Walls.l2_w078.WallSegment  <->  RAC.Levels.1.Walls.l1_w033.WallSegment  gap 0.21 ft
+   RAC.Levels.2.Walls.l2_w076.WallSegment  <->  RAC.Levels.2.Walls.l2_w082.WallSegment  gap 0.25 ft
+   RAC.Levels.2.Walls.l2_w073.WallSegment  <->  RAC.Levels.1.Walls.l1_w103.WallSegment  gap 0.83 ft
+6162 parts checked, 70 issues
+Checking building separately; RAC.Props issues do not fail this command.
+degenerate   0
+doorBlocked  0
+floating     0
+zfight       6
+   RAC.Levels.1.Ceilings.locker_volleyball.Ceiling  /  RAC.Levels.1.Walls.l1_w121.WallSegment  (axis Y, 7.4 sqft)
+   RAC.Levels.1.Ceilings.nutrition_vestibule.Ceiling  /  RAC.Levels.1.Walls.l1_w121.WallSegment  (axis Y, 3.3 sqft)
+   RAC.Site.Roofs.Roof_7.Parapet  /  RAC.Levels.2.Walls.l2_w034.WallSegment  (axis Y, 34.2 sqft)
+   RAC.Site.Roofs.Roof_2.RoofSlab  /  RAC.Levels.1.Walls.l1_w084.WallSegment  (axis Y, 4.9 sqft)
+   RAC.Site.Roofs.Roof_8.Parapet  /  RAC.Levels.2.Walls.l2_w094.WallSegment  (axis Z, 1.0 sqft)
+   RAC.Site.Roofs.Roof_2.RoofSlab  /  RAC.Levels.2.Walls.l2_w104.WallSegment  (axis Y, 2.5 sqft)
+intersect    0
+gap          64
+   RAC.Levels.2.Walls.l2_w109.WallSegment  <->  RAC.Levels.2.Walls.l2_w106.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w108.WallSegment  <->  RAC.Levels.2.Walls.l2_w094.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w105.WallSegment  <->  RAC.Levels.2.Walls.l2_w096.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w104.WallSegment  <->  RAC.Levels.1.Walls.l1_w087.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w102.WallSegment  <->  RAC.Levels.2.Walls.l2_w101.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w101.WallSegment  <->  RAC.Levels.2.Walls.l2_w089.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w098.WallSegment  <->  RAC.Levels.2.Walls.l2_w046.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w098.WallSegment  <->  RAC.Levels.2.Walls.l2_w040.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w092.WallSegment  <->  RAC.Levels.2.Walls.l2_w088.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w092.WallSegment  <->  RAC.Levels.1.Walls.l1_w081.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w089.WallSegment  <->  RAC.Levels.2.Walls.l2_w037.WallSegment  gap 0.25 ft
+   RAC.Levels.2.Walls.l2_w089.WallSegment  <->  RAC.Levels.2.Walls.l2_w032.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w086.WallSegment  <->  RAC.Levels.2.Walls.l2_w085.WallSegment  gap 0.50 ft
+   RAC.Levels.2.Walls.l2_w086.WallSegment  <->  RAC.Levels.2.Walls.l2_w111.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w086.WallSegment  <->  RAC.Levels.2.Walls.l2_w027.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w085.WallSegment  <->  RAC.Levels.2.Walls.l2_w084.WallSegment  gap 1.00 ft
+   RAC.Levels.2.Walls.l2_w084.WallSegment  <->  RAC.Levels.2.Walls.l2_w061.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w084.WallSegment  <->  RAC.Levels.2.Walls.l2_w026.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w111.WallSegment  <->  RAC.Levels.2.Walls.l2_w077.WallSegment  gap 0.67 ft
+   RAC.Levels.2.Walls.l2_w111.WallSegment  <->  RAC.Levels.2.Walls.l2_w027.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w081.WallSegment  <->  RAC.Levels.2.Walls.l2_w025.WallSegment  gap 0.17 ft
+   RAC.Levels.2.Walls.l2_w081.WallSegment  <->  RAC.Levels.1.Walls.l1_w102.WallSegment  gap 0.12 ft
+   RAC.Levels.2.Walls.l2_w078.WallSegment  <->  RAC.Levels.1.Walls.l1_w033.WallSegment  gap 0.21 ft
+   RAC.Levels.2.Walls.l2_w076.WallSegment  <->  RAC.Levels.2.Walls.l2_w082.WallSegment  gap 0.25 ft
+   RAC.Levels.2.Walls.l2_w073.WallSegment  <->  RAC.Levels.1.Walls.l1_w103.WallSegment  gap 0.83 ft
+6162 parts checked, 70 issues
+
+FAIL Building geometry QA failed.
+Build + QA elapsed: 3.852 s

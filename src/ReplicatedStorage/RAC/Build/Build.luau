@@ -60,7 +60,15 @@ function Build.build(parent: Instance, raw: any): Stats
 		for _, prop in level.props do
 			local cf = CFrame.new(prop.at[1], level.elevation, prop.at[2])
 				* CFrame.Angles(0, math.rad(prop.rotation), 0)
-			local instance = PropRegistry.build(prop.kind, cf, { room = prop.room })
+			local opts: { [string]: any } = { room = prop.room }
+			local extra = prop :: any
+			if extra.length ~= nil then
+				opts.length = extra.length
+			end
+			if extra.bays ~= nil then
+				opts.bays = extra.bays
+			end
+			local instance = PropRegistry.build(prop.kind, cf, opts)
 			instance:SetAttribute("BlueprintId", prop.id)
 			instance:SetAttribute("Room", prop.room)
 			instance.Parent = levelProps

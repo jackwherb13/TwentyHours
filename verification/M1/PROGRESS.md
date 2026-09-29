@@ -1,0 +1,12 @@
+# M1 progress
+
+- 21:40 calibration — site plan fitted to OSM way 112472416. Scale 0.7088 ft/px. Competition court 94.3×50.3 ft vs 94×50 (under 1%). Scale bar 144 px = 102.1 ft vs 100 (+2.1%). Building grid is 10.43° east of true north. Artifact: blueprint/calibration.json.
+- 22:10 axis-align — rooms, walls, footprint snapped to 0.5 ft on X/Z. trueNorthDeg 10.43 in blueprint/site.json. verify_blueprint.py: 100% of wall length axis-aligned.
+- 22:25 major blocks — competition gym 115×147, cage 148×122, south gym 138×105, lobby, main concourse, one L-shaped construction zone. No overlaps. Artifact: verification/M1/overlay_site.png.
+- 22:40 rooms — offices, four 40×20 racquetball courts, lockers, restrooms, stairs, fitness, weight, mechanical. Level 2 voids over the three gyms and the lobby, plus the upper office wing and balcony. Artifact: verification/M1/overlay_level1.png, overlay_level2.png.
+- 22:55 walls — Level 1 has 100 walls (cap 350), Level 2 has 71, none under 2 ft. Doors and the entrance curtain wall are openings. verify_blueprint.py: 0 overlaps, 0 dead doors.
+- 23:10 heights and packet — blueprint/HEIGHTS.md, photo_stations.json (77 stations), tools/overlay.py footprint IoU vs OSM 0.9887, lune validator silent pass. Artifact: verification/M1/packet.png.
+22:49 Baseline and route graph - blueprint checker 0 FAIL; source conflicts identified - verification/M1/packet.png, docs/ARCHITECT_NOTES.md
+23:04 Corrected structure - L2 +20ft, two upper racquetball courts, no lower courts; 0 blueprint FAIL - verification/M1/packet.png
+2026-09-29 Review structure - Level 2 gym overlook corridor with west curtain wall; two-flight stairs (main turns left); 22 ft desk clear of the lobby opening; slim south canopy. verify_blueprint 0 FAIL. Route check PASS. Route walk PASS. places/build.rbxm geometry QA 0 issues. Validator still expects floor-to-floor 16. Exterior stairs, roads, and trees are not in this pass.
+2026-09-29 Gates - verify.ps1: PASS selene, rojo, blueprint geometry, build.spec, props.spec, prop geometry, building geometry, luau-lsp. FAIL stylua on Site/TerrainData.luau (not this pass). FAIL blueprint schema: level 2 must be 16 ft, and WEB_entrance_from_level2 / WEB_vb_gym_overlook eye height 25.2 (L2 stays at +20). Plan judges: GPT no JSON; Grok and Gemini overall 5-6 on overlay_level1, overlay_level2, and packet.png. MinScore 8 not met. Scores ask for a drawing underlay and for moves that contradict the south-glass entrance.

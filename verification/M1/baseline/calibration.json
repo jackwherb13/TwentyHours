@@ -1,0 +1,92 @@
+{
+  "trueNorthDeg": 10.43,
+  "trueNorthDef": "Compass bearing of blueprint -Z (plan north). Plan north points 10.43 degrees east of true north. Geographic east/north map into the pre-shift frame by x = E*cos(theta) + N*sin(theta), z = E*sin(theta) - N*cos(theta), theta=-10.43 deg.",
+  "thetaDeg": -10.43,
+  "scaleFtPerPx": 0.7088,
+  "pixelAnchor": {
+    "px": 407,
+    "py": 184,
+    "rawX": -21.18,
+    "rawZ": -164.65,
+    "note": "NW corner of the OSM north wall, which is the competition-gym north wall on the site plan"
+  },
+  "entrance": {
+    "px": 672,
+    "py": 336,
+    "note": "Center of the east curtain-wall opening on the site plan. The snapped wall centerline is x=-0.5. The exterior face of the 1.33 ft wall is about x=0.2, within one snap of the origin threshold."
+  },
+  "shift": {
+    "x": 167.152,
+    "z": -56.9124
+  },
+  "scaleBar": {
+    "px": 144,
+    "labeledFt": 100,
+    "measuredFtAtScale": 102.07,
+    "error": 0.0207,
+    "where": "site_plan_native.png row 625, x=164 to 308"
+  },
+  "courts": [
+    {
+      "name": "competition_gym",
+      "drawing": "regulation, length east-west",
+      "px": [
+        133,
+        71
+      ],
+      "measuredFt": [
+        94.27,
+        50.32
+      ],
+      "regulationFt": [
+        94,
+        50
+      ],
+      "error": [
+        0.0029,
+        0.0065
+      ]
+    },
+    {
+      "name": "south_gym_full",
+      "drawing": "regulation, length north-south",
+      "px": [
+        137.5,
+        69.6
+      ],
+      "measuredFt": [
+        97.46,
+        49.33
+      ],
+      "regulationFt": [
+        94,
+        50
+      ],
+      "error": [
+        0.0368,
+        -0.0134
+      ]
+    },
+    {
+      "name": "south_gym_cross",
+      "drawing": "cross court, length north-south",
+      "px": [
+        115.0
+      ],
+      "measuredFt": [
+        81.51
+      ],
+      "regulationFt": [
+        84
+      ],
+      "error": [
+        -0.0296
+      ]
+    }
+  ],
+  "osm": {
+    "way": 112472416,
+    "iouOrthogonalVsRaw": 0.9887,
+    "note": "Footprint is the OSM outline rotated onto the building axes and snapped to 0.5 ft. The 4-degree kink in the south wing is squared off."
+  }
+}

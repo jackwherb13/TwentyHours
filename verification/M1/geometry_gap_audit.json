@@ -1,0 +1,1742 @@
+{
+  "coveredGaps": {},
+  "note": "Full gap AABB coverage by a third solid is recorded; required checker is unchanged.",
+  "uncoveredGaps": [
+    {
+      "a": "RAC.Levels.2.Walls.l2_w109.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w106.WallSegment",
+      "max": [
+        -351,
+        32,
+        -132.16500854492188
+      ],
+      "min": [
+        -352,
+        30.5,
+        -132.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w109.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w106.WallSegment",
+      "max": [
+        -351,
+        30.5,
+        -132.16500854492188
+      ],
+      "min": [
+        -352,
+        27,
+        -132.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w109.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w106.WallSegment",
+      "max": [
+        -351,
+        27,
+        -132.16500854492188
+      ],
+      "min": [
+        -352,
+        20,
+        -132.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w108.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w094.WallSegment",
+      "max": [
+        -224.66500854492188,
+        30.5,
+        -179.5
+      ],
+      "min": [
+        -225.33499145507812,
+        20,
+        -180.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w107.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w074.WallSegment",
+      "max": [
+        -78,
+        30.5,
+        -195.16500854492188
+      ],
+      "min": [
+        -79,
+        20,
+        -195.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w107.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w061.WallSegment",
+      "max": [
+        -78,
+        29.5,
+        -261.75
+      ],
+      "min": [
+        -79,
+        20,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w105.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w096.WallSegment",
+      "max": [
+        -284.6650085449219,
+        32.5,
+        -39.665000915527344
+      ],
+      "min": [
+        -285.3349914550781,
+        27,
+        -40.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w105.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w096.WallSegment",
+      "max": [
+        -284.6650085449219,
+        27,
+        -39.665000915527344
+      ],
+      "min": [
+        -285.3349914550781,
+        20,
+        -40.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w104.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w087.WallSegment",
+      "max": [
+        -236,
+        28.5,
+        -34
+      ],
+      "min": [
+        -237,
+        20,
+        -34.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w102.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w101.WallSegment",
+      "max": [
+        -344.75,
+        30.5,
+        -47.75
+      ],
+      "min": [
+        -345.25,
+        27,
+        -48.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w102.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w101.WallSegment",
+      "max": [
+        -344.75,
+        27,
+        -47.75
+      ],
+      "min": [
+        -345.25,
+        20,
+        -48.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w101.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w089.WallSegment",
+      "max": [
+        -344.75,
+        30.5,
+        -79.5
+      ],
+      "min": [
+        -345.25,
+        20,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w098.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w046.WallSegment",
+      "max": [
+        -245,
+        32.5,
+        -40.334999084472656
+      ],
+      "min": [
+        -245.5,
+        30.5,
+        -40.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w098.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w046.WallSegment",
+      "max": [
+        -245,
+        30.5,
+        -40.334999084472656
+      ],
+      "min": [
+        -245.5,
+        20,
+        -40.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w098.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w040.WallSegment",
+      "max": [
+        -245,
+        30.5,
+        -79.5
+      ],
+      "min": [
+        -245.5,
+        27,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w098.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w040.WallSegment",
+      "max": [
+        -245,
+        27,
+        -79.5
+      ],
+      "min": [
+        -245.5,
+        20,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w092.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w088.WallSegment",
+      "max": [
+        -193.16500854492188,
+        30.5,
+        -132
+      ],
+      "min": [
+        -193.83499145507812,
+        20,
+        -133
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w092.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w081.WallSegment",
+      "max": [
+        -193,
+        30.5,
+        -179.5
+      ],
+      "min": [
+        -194,
+        20,
+        -180
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w089.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w037.WallSegment",
+      "max": [
+        -344.5,
+        30.5,
+        -80.25
+      ],
+      "min": [
+        -345,
+        27,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w089.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w037.WallSegment",
+      "max": [
+        -344.5,
+        27,
+        -80.25
+      ],
+      "min": [
+        -345,
+        20,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w089.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w032.WallSegment",
+      "max": [
+        -344.5,
+        30.5,
+        -92
+      ],
+      "min": [
+        -345,
+        29,
+        -92.16500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w089.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w032.WallSegment",
+      "max": [
+        -344.5,
+        29,
+        -92
+      ],
+      "min": [
+        -345,
+        20,
+        -92.16500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w085.WallSegment",
+      "max": [
+        -78.25,
+        29.5,
+        -92.25
+      ],
+      "min": [
+        -78.75,
+        27,
+        -92.75
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w111.WallSegment",
+      "max": [
+        -78.16500091552734,
+        30.5,
+        -79.5
+      ],
+      "min": [
+        -78.83499908447266,
+        27,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w027.WallSegment",
+      "max": [
+        -78.16500091552734,
+        30.5,
+        -80.33499908447266
+      ],
+      "min": [
+        -78.5,
+        29,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w027.WallSegment",
+      "max": [
+        -78.16500091552734,
+        29,
+        -80.33499908447266
+      ],
+      "min": [
+        -78.5,
+        27,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w111.WallSegment",
+      "max": [
+        -78.16500091552734,
+        27,
+        -79.5
+      ],
+      "min": [
+        -78.83499908447266,
+        20,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w027.WallSegment",
+      "max": [
+        -78.16500091552734,
+        27,
+        -80.33499908447266
+      ],
+      "min": [
+        -78.5,
+        20,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w086.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w085.WallSegment",
+      "max": [
+        -78.25,
+        27,
+        -92.25
+      ],
+      "min": [
+        -78.75,
+        20,
+        -92.75
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w085.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w084.WallSegment",
+      "max": [
+        -78.25,
+        29,
+        -132
+      ],
+      "min": [
+        -78.75,
+        20.5,
+        -133
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w084.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w074.WallSegment",
+      "max": [
+        -78,
+        32,
+        -154.16500854492188
+      ],
+      "min": [
+        -79,
+        30.5,
+        -154.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w084.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w026.WallSegment",
+      "max": [
+        -78,
+        29,
+        -132.83499145507812
+      ],
+      "min": [
+        -78.5,
+        20.5,
+        -133
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w084.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w074.WallSegment",
+      "max": [
+        -78,
+        29,
+        -154.16500854492188
+      ],
+      "min": [
+        -79,
+        20.5,
+        -154.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w111.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w077.WallSegment",
+      "max": [
+        -78,
+        30.5,
+        -31.665008544921875
+      ],
+      "min": [
+        -79,
+        20,
+        -32.334991455078125
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w111.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w027.WallSegment",
+      "max": [
+        -78,
+        30.5,
+        -79.5
+      ],
+      "min": [
+        -78.5,
+        29,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w111.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w027.WallSegment",
+      "max": [
+        -78,
+        29,
+        -79.5
+      ],
+      "min": [
+        -78.5,
+        20,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w081.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w023.WallSegment",
+      "max": [
+        -10,
+        30.5,
+        -47.5
+      ],
+      "min": [
+        -10.5,
+        29,
+        -47.665000915527344
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w081.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w023.WallSegment",
+      "max": [
+        -10,
+        29,
+        -47.5
+      ],
+      "min": [
+        -10.5,
+        23.5,
+        -47.665000915527344
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w081.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w023.WallSegment",
+      "max": [
+        -10,
+        23.5,
+        -47.5
+      ],
+      "min": [
+        -10.5,
+        20,
+        -47.665000915527344
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w081.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w102.WallSegment",
+      "max": [
+        -9.665000915527344,
+        23.5,
+        -15
+      ],
+      "min": [
+        -10.334999084472656,
+        20,
+        -15.125
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w078.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -4.664985656738281,
+        23.5,
+        -79.66500091552734
+      ],
+      "min": [
+        -4.875,
+        20,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w076.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w082.WallSegment",
+      "max": [
+        -42.165000915527344,
+        23.5,
+        -14.875
+      ],
+      "min": [
+        -42.834999084472656,
+        20,
+        -15.125
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w073.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w103.WallSegment",
+      "max": [
+        10.5,
+        32,
+        -154.16500854492188
+      ],
+      "min": [
+        9.5,
+        30,
+        -155
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w073.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w103.WallSegment",
+      "max": [
+        10.5,
+        30,
+        -154.16500854492188
+      ],
+      "min": [
+        9.5,
+        20,
+        -155
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w068.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w062.WallSegment",
+      "max": [
+        -27.75,
+        29.5,
+        -223.75
+      ],
+      "min": [
+        -28.25,
+        27,
+        -224.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w068.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w062.WallSegment",
+      "max": [
+        -27.75,
+        27,
+        -223.75
+      ],
+      "min": [
+        -28.25,
+        20,
+        -224.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w063.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w015.WallSegment",
+      "max": [
+        -4.5,
+        29.5,
+        -195.83499145507812
+      ],
+      "min": [
+        -5,
+        27,
+        -196
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w063.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w015.WallSegment",
+      "max": [
+        -4.5,
+        27,
+        -195.83499145507812
+      ],
+      "min": [
+        -5,
+        20,
+        -196
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w062.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w062.WallSegment",
+      "max": [
+        -27.75,
+        29.5,
+        -261.75
+      ],
+      "min": [
+        -28.25,
+        27,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w062.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w062.WallSegment",
+      "max": [
+        -27.75,
+        27,
+        -261.75
+      ],
+      "min": [
+        -28.25,
+        20,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w022.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -4.664985656738281,
+        32,
+        -79.66500091552734
+      ],
+      "min": [
+        -5,
+        29,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w022.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -4.664985656738281,
+        29,
+        -79.66500091552734
+      ],
+      "min": [
+        -5,
+        23.5,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w022.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -4.664985656738281,
+        23.5,
+        -79.66500091552734
+      ],
+      "min": [
+        -5.125,
+        20,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.2.Walls.l2_w003.WallSegment",
+      "b": "RAC.Levels.2.Walls.l2_w003.WallSegment",
+      "max": [
+        -27.75,
+        29.5,
+        -261.75
+      ],
+      "min": [
+        -28.25,
+        20,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "max": [
+        -78.16500091552734,
+        10.5,
+        -61.5
+      ],
+      "min": [
+        -78.83499908447266,
+        9,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "max": [
+        -78.16500091552734,
+        9,
+        -61.5
+      ],
+      "min": [
+        -78.83499908447266,
+        0,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "max": [
+        -78.16500091552734,
+        10.5,
+        -79.5
+      ],
+      "min": [
+        -78.83499908447266,
+        9,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "max": [
+        -78.16500091552734,
+        9,
+        -79.5
+      ],
+      "min": [
+        -78.83499908447266,
+        7,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "max": [
+        -78.16500091552734,
+        7,
+        -79.5
+      ],
+      "min": [
+        -78.83499908447266,
+        0,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -78,
+        10.5,
+        -79.5
+      ],
+      "min": [
+        -78.5,
+        9,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w149.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -78,
+        9,
+        -79.5
+      ],
+      "min": [
+        -78.5,
+        0,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w148.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w147.WallSegment",
+      "max": [
+        -269.25,
+        10.5,
+        -61.665008544921875
+      ],
+      "min": [
+        -269.75,
+        0,
+        -62.33501434326172
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w147.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w141.WallSegment",
+      "max": [
+        -269.25,
+        10.5,
+        -69.75000762939453
+      ],
+      "min": [
+        -269.75,
+        9,
+        -70.25000762939453
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w147.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w141.WallSegment",
+      "max": [
+        -269.25,
+        9,
+        -69.75000762939453
+      ],
+      "min": [
+        -269.75,
+        0,
+        -70.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w143.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w142.WallSegment",
+      "max": [
+        -344.75,
+        10.5,
+        -69.75
+      ],
+      "min": [
+        -345.25,
+        7,
+        -70.25000762939453
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w143.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w142.WallSegment",
+      "max": [
+        -344.75,
+        7,
+        -69.75
+      ],
+      "min": [
+        -345.25,
+        0,
+        -70.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w142.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w070.WallSegment",
+      "max": [
+        -345.3349914550781,
+        19.5,
+        -79.5
+      ],
+      "min": [
+        -346.5,
+        10.5,
+        -80
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w138.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w061.WallSegment",
+      "max": [
+        -339,
+        10.5,
+        -92.83499908447266
+      ],
+      "min": [
+        -339.5,
+        7,
+        -93
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w138.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w061.WallSegment",
+      "max": [
+        -339,
+        7,
+        -92.83499908447266
+      ],
+      "min": [
+        -339.5,
+        0,
+        -93
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w136.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "max": [
+        -193.16500854492188,
+        10.5,
+        -79.5
+      ],
+      "min": [
+        -193.83499145507812,
+        9,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w136.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "max": [
+        -193.16500854492188,
+        9,
+        -79.5
+      ],
+      "min": [
+        -193.83499145507812,
+        0,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w136.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -193,
+        10.5,
+        -79.5
+      ],
+      "min": [
+        -193.5,
+        7,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w136.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -193,
+        7,
+        -79.5
+      ],
+      "min": [
+        -193.5,
+        0,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w136.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w005.WallSegment",
+      "max": [
+        -193,
+        10.5,
+        -62.334999084472656
+      ],
+      "min": [
+        -193.5,
+        0,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w135.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "max": [
+        -96.66500091552734,
+        10.5,
+        -61.5
+      ],
+      "min": [
+        -97.33499908447266,
+        7,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w135.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "max": [
+        -96.66500091552734,
+        7,
+        -61.5
+      ],
+      "min": [
+        -97.33499908447266,
+        0,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w135.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -97,
+        10.5,
+        -79.5
+      ],
+      "min": [
+        -97.5,
+        7,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w135.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -97,
+        7,
+        -79.5
+      ],
+      "min": [
+        -97.5,
+        0,
+        -79.66500091552734
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w135.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w005.WallSegment",
+      "max": [
+        -97,
+        10.5,
+        -62.334999084472656
+      ],
+      "min": [
+        -97.5,
+        0,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w128.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w086.WallSegment",
+      "max": [
+        -236.16500854492188,
+        10.5,
+        -61.665008544921875
+      ],
+      "min": [
+        -236.83499145507812,
+        9,
+        -62.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w128.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w086.WallSegment",
+      "max": [
+        -236.16500854492188,
+        9,
+        -61.665008544921875
+      ],
+      "min": [
+        -236.83499145507812,
+        7,
+        -62.334991455078125
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w128.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w086.WallSegment",
+      "max": [
+        -236.16500854492188,
+        7,
+        -61.665008544921875
+      ],
+      "min": [
+        -236.83499145507812,
+        0,
+        -62.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w127.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w125.WallSegment",
+      "max": [
+        -205.16500854492188,
+        10.5,
+        -79.5
+      ],
+      "min": [
+        -205.83499145507812,
+        7,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w127.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w125.WallSegment",
+      "max": [
+        -205.16500854492188,
+        7,
+        -79.5
+      ],
+      "min": [
+        -205.83499145507812,
+        0,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w127.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w003.WallSegment",
+      "max": [
+        -205.5,
+        10.5,
+        -62.334999084472656
+      ],
+      "min": [
+        -206,
+        0,
+        -62.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w082.WallSegment",
+      "max": [
+        -193.16500854492188,
+        10.5,
+        -132.16500854492188
+      ],
+      "min": [
+        -193.83499145507812,
+        9,
+        -132.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -193.16500854492188,
+        10.5,
+        -80.33499908447266
+      ],
+      "min": [
+        -193.5,
+        9,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -193.16500854492188,
+        9,
+        -80.33499908447266
+      ],
+      "min": [
+        -193.5,
+        7,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w058.WallSegment",
+      "max": [
+        -193.16500854492188,
+        7,
+        -80.33499908447266
+      ],
+      "min": [
+        -193.5,
+        0,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w121.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w082.WallSegment",
+      "max": [
+        -193.16500854492188,
+        9,
+        -132.16500854492188
+      ],
+      "min": [
+        -193.83499145507812,
+        0,
+        -132.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "max": [
+        -78.16500091552734,
+        19.5,
+        -31.665008544921875
+      ],
+      "min": [
+        -78.83499908447266,
+        10.5,
+        -32.334991455078125
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "max": [
+        -78.16500091552734,
+        10.5,
+        -31.665008544921875
+      ],
+      "min": [
+        -78.83499908447266,
+        9,
+        -32.334991455078125
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w120.WallSegment",
+      "max": [
+        -78.16500091552734,
+        9,
+        -31.665000915527344
+      ],
+      "min": [
+        -78.83499908447266,
+        0,
+        -32.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w078.WallSegment",
+      "max": [
+        -78.16500091552734,
+        10.5,
+        -132.16500854492188
+      ],
+      "min": [
+        -78.83499908447266,
+        9,
+        -132.83502197265625
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -78.16500091552734,
+        10.5,
+        -80.33499908447266
+      ],
+      "min": [
+        -78.5,
+        9,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -78.16500091552734,
+        9,
+        -80.33499908447266
+      ],
+      "min": [
+        -78.5,
+        7,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -78.16500091552734,
+        7,
+        -80.33499908447266
+      ],
+      "min": [
+        -78.5,
+        0,
+        -80.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w078.WallSegment",
+      "max": [
+        -78.16500091552734,
+        9,
+        -132.16500854492188
+      ],
+      "min": [
+        -78.83499908447266,
+        7,
+        -132.83502197265625
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w109.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w078.WallSegment",
+      "max": [
+        -78.1650161743164,
+        7,
+        -132.16500854492188
+      ],
+      "min": [
+        -78.83499908447266,
+        0,
+        -132.83502197265625
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w104.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w104.WallSegment",
+      "max": [
+        -4.665000915527344,
+        19.5,
+        -79.66500091552734
+      ],
+      "min": [
+        -5.334999084472656,
+        9,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w104.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w104.WallSegment",
+      "max": [
+        -4.665000915527344,
+        9,
+        -79.66500091552734
+      ],
+      "min": [
+        -5.334999084472656,
+        0,
+        -80.33499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w103.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w100.WallSegment",
+      "max": [
+        10.5,
+        12.5,
+        -154.16500854492188
+      ],
+      "min": [
+        9.5,
+        0,
+        -154.83499145507812
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w095.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w089.WallSegment",
+      "max": [
+        -27.75,
+        9.5,
+        -223.75
+      ],
+      "min": [
+        -28.25,
+        7,
+        -224.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w095.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w089.WallSegment",
+      "max": [
+        -27.75,
+        7,
+        -223.75
+      ],
+      "min": [
+        -28.25,
+        0,
+        -224.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w090.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w021.WallSegment",
+      "max": [
+        -4.5,
+        9.5,
+        -195.83499145507812
+      ],
+      "min": [
+        -5,
+        7,
+        -196
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w090.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w021.WallSegment",
+      "max": [
+        -4.5,
+        7,
+        -195.83499145507812
+      ],
+      "min": [
+        -5,
+        0,
+        -196
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w089.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w089.WallSegment",
+      "max": [
+        -27.75,
+        9.5,
+        -261.75
+      ],
+      "min": [
+        -28.25,
+        7,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w089.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w089.WallSegment",
+      "max": [
+        -27.75,
+        7,
+        -261.75
+      ],
+      "min": [
+        -28.25,
+        0,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w087.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w086.WallSegment",
+      "max": [
+        -236.16500854492188,
+        12.5,
+        -33.5
+      ],
+      "min": [
+        -236.83499145507812,
+        0,
+        -34.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w085.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w084.WallSegment",
+      "max": [
+        -96.66500091552734,
+        28.5,
+        0.5
+      ],
+      "min": [
+        -97.33499908447266,
+        19.5,
+        -0.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w085.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w084.WallSegment",
+      "max": [
+        -96.66500091552734,
+        19.5,
+        0.5
+      ],
+      "min": [
+        -97.33499908447266,
+        0,
+        -0.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w084.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "max": [
+        -96.66500091552734,
+        19.5,
+        -31.665008544921875
+      ],
+      "min": [
+        -97.33499908447266,
+        10.5,
+        -32.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w084.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "max": [
+        -96.66500091552734,
+        10.5,
+        -31.665008544921875
+      ],
+      "min": [
+        -97.33499908447266,
+        7,
+        -32.334991455078125
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w084.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "max": [
+        -96.66500091552734,
+        7,
+        -31.665008544921875
+      ],
+      "min": [
+        -97.33499908447266,
+        0,
+        -32.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w005.WallSegment",
+      "max": [
+        -97,
+        10.5,
+        -61.5
+      ],
+      "min": [
+        -97.33499908447266,
+        7,
+        -61.665000915527344
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w083.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w005.WallSegment",
+      "max": [
+        -97,
+        7,
+        -61.5
+      ],
+      "min": [
+        -97.33499908447266,
+        0,
+        -61.665000915527344
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w082.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w081.WallSegment",
+      "max": [
+        -193.16500854492188,
+        10.5,
+        -179.5
+      ],
+      "min": [
+        -193.83499145507812,
+        0,
+        -180.5
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w078.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w077.WallSegment",
+      "max": [
+        -78.25,
+        10.5,
+        -261.75
+      ],
+      "min": [
+        -78.75,
+        7,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w078.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w077.WallSegment",
+      "max": [
+        -78.25,
+        7,
+        -261.75
+      ],
+      "min": [
+        -78.75,
+        0,
+        -262.25
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w040.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w040.WallSegment",
+      "max": [
+        -78.16500091552734,
+        19.5,
+        -31.665000915527344
+      ],
+      "min": [
+        -78.83499145507812,
+        9,
+        -32.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w040.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w040.WallSegment",
+      "max": [
+        -78.16500091552734,
+        9,
+        -31.665000915527344
+      ],
+      "min": [
+        -78.83499908447266,
+        0,
+        -32.334999084472656
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -4.664985656738281,
+        19.5,
+        -79.66500091552734
+      ],
+      "min": [
+        -5.334991455078125,
+        9,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w033.WallSegment",
+      "max": [
+        -4.665000915527344,
+        9,
+        -79.66500091552734
+      ],
+      "min": [
+        -5.334991455078125,
+        0,
+        -80.33499908447266
+      ]
+    },
+    {
+      "a": "RAC.Levels.1.Walls.l1_w009.WallSegment",
+      "b": "RAC.Levels.1.Walls.l1_w009.WallSegment",
+      "max": [
+        -27.75,
+        9.5,
+        -261.75
+      ],
+      "min": [
+        -28.25,
+        0,
+        -262.25
+      ]
+    }
+  ]
+}

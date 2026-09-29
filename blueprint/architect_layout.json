@@ -28,7 +28,7 @@
             ]
           ],
           "floorMaterial": "maple",
-          "ceilingHeight": 32,
+          "ceilingHeight": 32.5,
           "ceilingType": "open_joist",
           "wallFinish": "painted_cmu"
         },
@@ -55,7 +55,7 @@
             ]
           ],
           "floorMaterial": "maple",
-          "ceilingHeight": 28,
+          "ceilingHeight": 39,
           "ceilingType": "open_joist",
           "wallFinish": "painted_cmu"
         },
@@ -309,11 +309,11 @@
           "polygon": [
             [
               -10.0,
-              -20.0
+              -28.0
             ],
             [
               10.0,
-              -20.0
+              -28.0
             ],
             [
               10.0,
@@ -479,11 +479,11 @@
             ],
             [
               10.0,
-              -20.0
+              -28.0
             ],
             [
               -5.0,
-              -20.0
+              -28.0
             ]
           ],
           "floorMaterial": "porcelain_tile",
@@ -533,6 +533,14 @@
             ],
             [
               -5.0,
+              -28.0
+            ],
+            [
+              -10.0,
+              -28.0
+            ],
+            [
+              -10.0,
               -20.0
             ],
             [
@@ -552,11 +560,11 @@
           "polygon": [
             [
               -42.5,
-              -20.0
+              -15.0
             ],
             [
               -10.0,
-              -20.0
+              -15.0
             ],
             [
               -10.0,
@@ -568,8 +576,8 @@
             ]
           ],
           "floorMaterial": "porcelain_tile",
-          "ceilingHeight": 12,
-          "ceilingType": "act_2x4",
+          "ceilingHeight": 32,
+          "ceilingType": "gypsum",
           "wallFinish": "gypsum"
         },
         {
@@ -595,8 +603,8 @@
             ]
           ],
           "floorMaterial": "porcelain_tile",
-          "ceilingHeight": 32,
-          "ceilingType": "gypsum",
+          "ceilingHeight": 12,
+          "ceilingType": "act_2x4",
           "wallFinish": "gypsum"
         },
         {
@@ -606,11 +614,11 @@
           "polygon": [
             [
               -97.0,
-              -32.0
+              -15.0
             ],
             [
               -78.5,
-              -32.0
+              -15.0
             ],
             [
               -78.5,
@@ -641,11 +649,11 @@
             ],
             [
               -78.5,
-              -32.0
+              -15.0
             ],
             [
               -97.0,
-              -32.0
+              -15.0
             ]
           ],
           "floorMaterial": "terrazzo",
@@ -1356,8 +1364,35 @@
             ]
           ],
           "floorMaterial": "porcelain_tile",
-          "ceilingHeight": 32,
-          "ceilingType": "gypsum",
+          "ceilingHeight": 12,
+          "ceilingType": "act_2x4",
+          "wallFinish": "gypsum"
+        },
+        {
+          "id": "vestibule_inner",
+          "name": "Vestibule Inner",
+          "type": "lobby",
+          "polygon": [
+            [
+              -42.5,
+              -20.0
+            ],
+            [
+              -10.0,
+              -20.0
+            ],
+            [
+              -10.0,
+              -15.0
+            ],
+            [
+              -42.5,
+              -15.0
+            ]
+          ],
+          "floorMaterial": "porcelain_tile",
+          "ceilingHeight": 12,
+          "ceilingType": "act_2x4",
           "wallFinish": "gypsum"
         }
       ],
@@ -1489,14 +1524,6 @@
           ],
           "width": 10,
           "type": "opening"
-        },
-        {
-          "rooms": [
-            "corridor_gym_east",
-            "competition_gym"
-          ],
-          "width": 6,
-          "type": "door"
         },
         {
           "rooms": [
@@ -1705,7 +1732,7 @@
             "lobby",
             "south_vestibule"
           ],
-          "width": 18,
+          "width": 12,
           "type": "opening"
         },
         {
@@ -1714,14 +1741,6 @@
             "glazed_recreation"
           ],
           "width": 12,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "south_vestibule",
-            "fitness_annex"
-          ],
-          "width": 28,
           "type": "opening"
         },
         {
@@ -1769,7 +1788,7 @@
             "glazed_recreation",
             "fitness_annex"
           ],
-          "width": 20,
+          "width": 18,
           "type": "opening"
         },
         {
@@ -1818,6 +1837,39 @@
             "stair_main"
           ],
           "width": 6,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "cage_lower_reserved",
+            "west_link"
+          ],
+          "width": 6,
+          "type": "door",
+          "label": "CONSTRUCTION"
+        },
+        {
+          "rooms": [
+            "south_vestibule",
+            "vestibule_inner"
+          ],
+          "width": 28,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "vestibule_inner",
+            "fitness_annex"
+          ],
+          "width": 28,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "lobby",
+            "vestibule_inner"
+          ],
+          "width": 3,
           "type": "opening"
         }
       ],
@@ -1924,13 +1976,13 @@
           ],
           "b": [
             10.0,
-            -20.0
+            -28.0
           ],
           "height": 32.5,
           "openings": [
             {
-              "center": 30,
-              "width": 58,
+              "center": 26,
+              "width": 48,
               "kind": "curtainwall",
               "sill": 0,
               "head": 30
@@ -1940,7 +1992,7 @@
         {
           "a": [
             10.0,
-            -20.0
+            -28.0
           ],
           "b": [
             10.0,
@@ -1949,8 +2001,8 @@
           "height": 32.5,
           "openings": [
             {
-              "center": 10,
-              "width": 18,
+              "center": 14,
+              "width": 24,
               "kind": "curtainwall",
               "sill": 0,
               "head": 30
@@ -2057,6 +2109,28 @@
               "head": 30
             }
           ]
+        },
+        {
+          "a": [
+            -78.5,
+            -154.5
+          ],
+          "b": [
+            -78.5,
+            -132.5
+          ],
+          "openings": [
+            {
+              "center": 5.5,
+              "width": 6,
+              "kind": "door"
+            },
+            {
+              "center": 16.5,
+              "width": 6,
+              "kind": "door"
+            }
+          ]
         }
       ],
       "stairs": [
@@ -2089,7 +2163,93 @@
           "width": 8,
           "risers": 34,
           "rise": 0.5882352941176471,
-          "run": 0.917
+          "run": 0.917,
+          "flights": [
+            {
+              "id": "main_a",
+              "polygon": [
+                [
+                  -54.0,
+                  -17.0
+                ],
+                [
+                  -46.0,
+                  -17.0
+                ],
+                [
+                  -46.0,
+                  -1.0
+                ],
+                [
+                  -54.0,
+                  -1.0
+                ]
+              ],
+              "direction": [
+                0,
+                -1
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.9411764705882353,
+              "width": 8,
+              "baseElevation": 0
+            },
+            {
+              "id": "main_b",
+              "polygon": [
+                [
+                  -70.0,
+                  -25.0
+                ],
+                [
+                  -54.0,
+                  -25.0
+                ],
+                [
+                  -54.0,
+                  -17.0
+                ],
+                [
+                  -70.0,
+                  -17.0
+                ]
+              ],
+              "direction": [
+                -1,
+                0
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.9411764705882353,
+              "width": 8,
+              "baseElevation": 10
+            }
+          ],
+          "landings": [
+            {
+              "id": "main_turn",
+              "polygon": [
+                [
+                  -54.0,
+                  -25.0
+                ],
+                [
+                  -46.0,
+                  -25.0
+                ],
+                [
+                  -46.0,
+                  -17.0
+                ],
+                [
+                  -54.0,
+                  -17.0
+                ]
+              ],
+              "elevation": 10
+            }
+          ]
         },
         {
           "id": "stair_second",
@@ -2120,7 +2280,93 @@
           "width": 6,
           "risers": 34,
           "rise": 0.5882352941176471,
-          "run": 0.917
+          "run": 0.917,
+          "flights": [
+            {
+              "id": "second_a",
+              "polygon": [
+                [
+                  -320.0,
+                  -111.0
+                ],
+                [
+                  -305.5,
+                  -111.0
+                ],
+                [
+                  -305.5,
+                  -105.0
+                ],
+                [
+                  -320.0,
+                  -105.0
+                ]
+              ],
+              "direction": [
+                -1,
+                0
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.8529411764705882,
+              "width": 6,
+              "baseElevation": 0
+            },
+            {
+              "id": "second_b",
+              "polygon": [
+                [
+                  -339.5,
+                  -111.0
+                ],
+                [
+                  -325.0,
+                  -111.0
+                ],
+                [
+                  -325.0,
+                  -105.0
+                ],
+                [
+                  -339.5,
+                  -105.0
+                ]
+              ],
+              "direction": [
+                -1,
+                0
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.8529411764705882,
+              "width": 6,
+              "baseElevation": 10
+            }
+          ],
+          "landings": [
+            {
+              "id": "second_turn",
+              "polygon": [
+                [
+                  -325.0,
+                  -111.0
+                ],
+                [
+                  -320.0,
+                  -111.0
+                ],
+                [
+                  -320.0,
+                  -105.0
+                ],
+                [
+                  -325.0,
+                  -105.0
+                ]
+              ],
+              "elevation": 10
+            }
+          ]
         },
         {
           "id": "stair_west",
@@ -2151,7 +2397,93 @@
           "width": 6,
           "risers": 34,
           "rise": 0.5882352941176471,
-          "run": 0.917
+          "run": 0.917,
+          "flights": [
+            {
+              "id": "west_a",
+              "polygon": [
+                [
+                  -354.0,
+                  -78.0
+                ],
+                [
+                  -348.0,
+                  -78.0
+                ],
+                [
+                  -348.0,
+                  -62.0
+                ],
+                [
+                  -354.0,
+                  -62.0
+                ]
+              ],
+              "direction": [
+                0,
+                1
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.9411764705882353,
+              "width": 6,
+              "baseElevation": 0
+            },
+            {
+              "id": "west_b",
+              "polygon": [
+                [
+                  -354.0,
+                  -54.0
+                ],
+                [
+                  -348.0,
+                  -54.0
+                ],
+                [
+                  -348.0,
+                  -38.0
+                ],
+                [
+                  -354.0,
+                  -38.0
+                ]
+              ],
+              "direction": [
+                0,
+                1
+              ],
+              "risers": 17,
+              "rise": 0.5882352941176471,
+              "run": 0.9411764705882353,
+              "width": 6,
+              "baseElevation": 10
+            }
+          ],
+          "landings": [
+            {
+              "id": "west_turn",
+              "polygon": [
+                [
+                  -354.0,
+                  -62.0
+                ],
+                [
+                  -348.0,
+                  -62.0
+                ],
+                [
+                  -348.0,
+                  -54.0
+                ],
+                [
+                  -354.0,
+                  -54.0
+                ]
+              ],
+              "elevation": 10
+            }
+          ]
         }
       ],
       "columns": [
@@ -2229,7 +2561,20 @@
         }
       ],
       "voids": [],
-      "props": [],
+      "props": [
+        {
+          "id": "reception_desk",
+          "kind": "front_desk",
+          "at": [
+            -6.0,
+            -16.0
+          ],
+          "rotation": 270,
+          "room": "lobby",
+          "length": 22,
+          "bays": 5
+        }
+      ],
       "guards": []
     },
     {
@@ -2377,7 +2722,7 @@
           "type": "office",
           "polygon": [
             [
-              -66.5,
+              -64.5,
               -262.0
             ],
             [
@@ -2389,7 +2734,7 @@
               -224.0
             ],
             [
-              -66.5,
+              -64.5,
               -224.0
             ]
           ],
@@ -2404,7 +2749,7 @@
           "type": "restroom",
           "polygon": [
             [
-              -70.5,
+              -64.5,
               -212.0
             ],
             [
@@ -2416,7 +2761,7 @@
               -195.5
             ],
             [
-              -70.5,
+              -64.5,
               -195.5
             ]
           ],
@@ -2458,7 +2803,7 @@
           "type": "fitness",
           "polygon": [
             [
-              -78.5,
+              -64.5,
               -195.5
             ],
             [
@@ -2470,7 +2815,7 @@
               -154.5
             ],
             [
-              -78.5,
+              -64.5,
               -154.5
             ]
           ],
@@ -2512,7 +2857,7 @@
           "type": "fitness",
           "polygon": [
             [
-              -66.5,
+              -64.5,
               -154.5
             ],
             [
@@ -2524,7 +2869,7 @@
               -80.0
             ],
             [
-              -66.5,
+              -64.5,
               -80.0
             ]
           ],
@@ -2594,41 +2939,14 @@
           "polygon": [
             [
               -78.5,
-              -154.5
+              -262.0
             ],
             [
-              -66.5,
-              -154.5
+              -64.5,
+              -262.0
             ],
             [
-              -66.5,
-              -132.5
-            ],
-            [
-              -78.5,
-              -132.5
-            ]
-          ],
-          "floorMaterial": "terrazzo",
-          "ceilingHeight": 10,
-          "ceilingType": "act_2x4",
-          "wallFinish": "painted_cmu"
-        },
-        {
-          "id": "corridor_l2_return",
-          "name": "Corridor L2 Return",
-          "type": "corridor",
-          "polygon": [
-            [
-              -78.5,
-              -132.5
-            ],
-            [
-              -66.5,
-              -132.5
-            ],
-            [
-              -66.5,
+              -64.5,
               -80.0
             ],
             [
@@ -2636,9 +2954,9 @@
               -80.0
             ]
           ],
-          "floorMaterial": "terrazzo",
+          "floorMaterial": "sealed_concrete",
           "ceilingHeight": 10,
-          "ceilingType": "act_2x4",
+          "ceilingType": "act_2x2",
           "wallFinish": "painted_cmu"
         },
         {
@@ -2826,7 +3144,7 @@
             ]
           ],
           "floorMaterial": "maple",
-          "ceilingHeight": 20,
+          "ceilingHeight": 16.5,
           "ceilingType": "gypsum",
           "wallFinish": "painted_cmu"
         },
@@ -2853,7 +3171,7 @@
             ]
           ],
           "floorMaterial": "maple",
-          "ceilingHeight": 20,
+          "ceilingHeight": 16.5,
           "ceilingType": "gypsum",
           "wallFinish": "painted_cmu"
         },
@@ -3106,15 +3424,7 @@
           "type": "corridor",
           "polygon": [
             [
-              -78.5,
-              -262.0
-            ],
-            [
-              -66.5,
-              -262.0
-            ],
-            [
-              -66.5,
+              -64.5,
               -224.0
             ],
             [
@@ -3126,16 +3436,8 @@
               -212.0
             ],
             [
-              -70.5,
+              -64.5,
               -212.0
-            ],
-            [
-              -70.5,
-              -195.5
-            ],
-            [
-              -78.5,
-              -195.5
             ]
           ],
           "floorMaterial": "terrazzo",
@@ -3174,7 +3476,7 @@
             ]
           ],
           "floorMaterial": "maple",
-          "ceilingHeight": 24,
+          "ceilingHeight": 24.5,
           "ceilingType": "open_joist",
           "wallFinish": "painted_cmu"
         },
@@ -3209,11 +3511,11 @@
             ],
             [
               -10.0,
-              -20.0
+              -28.0
             ],
             [
               -5.0,
-              -20.0
+              -28.0
             ]
           ],
           "floorMaterial": "sealed_concrete",
@@ -3253,14 +3555,6 @@
         {
           "rooms": [
             "corridor_ne",
-            "office_ne_1"
-          ],
-          "width": 3.5,
-          "type": "door"
-        },
-        {
-          "rooms": [
-            "corridor_ne",
             "office_ne_reception"
           ],
           "width": 3.5,
@@ -3272,14 +3566,6 @@
             "restroom_ne_w"
           ],
           "width": 3.5,
-          "type": "door"
-        },
-        {
-          "rooms": [
-            "corridor_ne",
-            "fitness_north"
-          ],
-          "width": 6,
           "type": "door"
         },
         {
@@ -3337,38 +3623,6 @@
           ],
           "width": 12,
           "type": "opening"
-        },
-        {
-          "rooms": [
-            "balcony",
-            "corridor_l2_return"
-          ],
-          "width": 10,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "corridor_l2_return",
-            "corridor_l2_overlook"
-          ],
-          "width": 10,
-          "type": "opening"
-        },
-        {
-          "rooms": [
-            "corridor_l2_overlook",
-            "fitness_north"
-          ],
-          "width": 6,
-          "type": "door"
-        },
-        {
-          "rooms": [
-            "corridor_l2_return",
-            "corridor_l2"
-          ],
-          "width": 6,
-          "type": "door"
         },
         {
           "rooms": [
@@ -3496,7 +3750,7 @@
             "stair_main",
             "main_stair_landing"
           ],
-          "width": 8,
+          "width": 28,
           "type": "opening"
         },
         {
@@ -3514,6 +3768,46 @@
           ],
           "width": 10,
           "type": "opening"
+        },
+        {
+          "rooms": [
+            "balcony",
+            "corridor_l2_overlook"
+          ],
+          "width": 12,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "corridor_l2_overlook",
+            "corridor_l2"
+          ],
+          "width": 10,
+          "type": "opening"
+        },
+        {
+          "rooms": [
+            "corridor_l2_overlook",
+            "office_ne_reception"
+          ],
+          "width": 3.5,
+          "type": "door"
+        },
+        {
+          "rooms": [
+            "corridor_l2_overlook",
+            "office_ne_1"
+          ],
+          "width": 3.5,
+          "type": "door"
+        },
+        {
+          "rooms": [
+            "corridor_l2_overlook",
+            "fitness_north"
+          ],
+          "width": 6,
+          "type": "door"
         }
       ],
       "apertures": [
@@ -3533,26 +3827,6 @@
               "width": 6,
               "kind": "door",
               "label": "LEVEL 2 EXIT AT GRADE"
-            }
-          ]
-        },
-        {
-          "a": [
-            -78.5,
-            -154.5
-          ],
-          "b": [
-            -78.5,
-            -132.5
-          ],
-          "height": 12,
-          "openings": [
-            {
-              "center": 11,
-              "width": 20,
-              "kind": "window",
-              "sill": 0.5,
-              "head": 9
             }
           ]
         }
@@ -3798,11 +4072,11 @@
             ],
             [
               -10.0,
-              -20.0
+              -28.0
             ],
             [
               -5.0,
-              -20.0
+              -28.0
             ]
           ]
         },
@@ -3810,19 +4084,19 @@
           "id": "stair_main_opening",
           "polygon": [
             [
-              -77.5,
-              -26.0
+              -54.0,
+              -17.0
             ],
             [
-              -43.5,
-              -26.0
+              -46.0,
+              -17.0
             ],
             [
-              -43.5,
+              -46.0,
               -1.0
             ],
             [
-              -77.5,
+              -54.0,
               -1.0
             ]
           ]
@@ -3831,20 +4105,20 @@
           "id": "stair_second_opening",
           "polygon": [
             [
-              -338.5,
-              -126.5
+              -320.0,
+              -111.0
             ],
             [
-              -306.0,
-              -126.5
+              -305.5,
+              -111.0
             ],
             [
-              -306.0,
-              -93.5
+              -305.5,
+              -105.0
             ],
             [
-              -338.5,
-              -93.5
+              -320.0,
+              -105.0
             ]
           ]
         },
@@ -3852,20 +4126,83 @@
           "id": "stair_west_opening",
           "polygon": [
             [
-              -356.5,
-              -74.0
+              -354.0,
+              -78.0
             ],
             [
-              -346.0,
-              -74.0
+              -348.0,
+              -78.0
             ],
             [
-              -346.0,
-              -35.0
+              -348.0,
+              -62.0
             ],
             [
-              -356.5,
-              -35.0
+              -354.0,
+              -62.0
+            ]
+          ]
+        },
+        {
+          "id": "stair_main_upper",
+          "polygon": [
+            [
+              -70.0,
+              -25.0
+            ],
+            [
+              -54.0,
+              -25.0
+            ],
+            [
+              -54.0,
+              -17.0
+            ],
+            [
+              -70.0,
+              -17.0
+            ]
+          ]
+        },
+        {
+          "id": "stair_second_upper",
+          "polygon": [
+            [
+              -339.5,
+              -111.0
+            ],
+            [
+              -325.0,
+              -111.0
+            ],
+            [
+              -325.0,
+              -105.0
+            ],
+            [
+              -339.5,
+              -105.0
+            ]
+          ]
+        },
+        {
+          "id": "stair_west_upper",
+          "polygon": [
+            [
+              -354.0,
+              -54.0
+            ],
+            [
+              -348.0,
+              -54.0
+            ],
+            [
+              -348.0,
+              -38.0
+            ],
+            [
+              -354.0,
+              -38.0
             ]
           ]
         }
@@ -3880,25 +4217,25 @@
           ],
           "b": [
             -5.0,
-            -20.0
+            -28.0
           ]
         },
         {
           "id": "gallery_guard_2",
           "a": [
             -10.0,
-            -20.0
+            -28.0
           ],
           "b": [
             -5.0,
-            -20.0
+            -28.0
           ]
         },
         {
           "id": "gallery_guard_3",
           "a": [
             -10.0,
-            -20.0
+            -28.0
           ],
           "b": [
             -10.0,

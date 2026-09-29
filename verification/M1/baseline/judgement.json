@@ -1,0 +1,144 @@
+{
+  "gemini": {
+    "results": [
+      {
+        "image": "overlay_level1.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 3,
+        "props": 2,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "Southeast wing missing: Blueprint terminates at Weight Room (z=102 ft), completely omitting the southern ~109 ft x 70 ft wing shown on Perkins & Will drawing G-0201; should extend south to zΓëê172 ft to include the lower fitness annex, south entrance vestibule, and south stair.",
+          "Competition Gym egress & circulation: Competition Gym (115 x 147 ft) has only a single door on its west wall opening into corridor_west; should have double entrance doors on the east wall to the lobby/corridor, double exit doors on the north wall, and corner double doors per life safety drawings.",
+          "Mechanical Room SW access: Mechanical room (33 x 27 ft) between South Gym and SW offices is drawn with 4 solid walls and 0 doors; should have a 3 ft service access door from Main Concourse or an exterior wall.",
+          "Lobby to Locker Room access: Public Lobby (73 x 36 ft) has doors opening directly into Volleyball Locker and Locker Room; access should be buffered through a dedicated circulation vestibule/corridor rather than directly off the public lobby floor.",
+          "East facade profile: Eastern exterior wall from Northeast Stair to Weight Room is a single flat line at x=-0.5 ft; should step outward (~15 ft bump-out) around Lobby and Fitness Center to match the architectural drawings and OSM footprint.",
+          "Cage Gym secondary egress: Cage Gym (148 x 122 ft) has only one exit into Main Concourse; should have secondary exit doors along the west wall and into corridor_west.",
+          "Court markings and architectural fixtures: Plan lacks basketball court boundaries, keys, and 3-point arcs (94x50 ft main court, cross courts), bleachers along north/south walls of Competition Gym, structural column grids, and stair tread direction arrows."
+        ]
+      },
+      {
+        "image": "overlay_level2.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 3,
+        "props": 2,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "East Wing Mezzanine mischaracterized: South of Lobby Well, the build models two large enclosed rectangular rooms ('Conference 58 x 49' and 'Office 58 x 36'); architectural drawings (G-0201 & G-0300) show this area as an open fitness/cardio mezzanine with column grid, open stair, and angled railing overlooking an open-to-below lightwell.",
+          "Unmodeled gap over Racquetball courts: Between Open to Competition Gym (z=39.5 ft) and Upper Concourse (z=79.5 ft), a 40 ft north-south band across x=-188.5 to -108.5 ft is left as empty white space; should contain upper racquetball viewing galleries, meeting rooms, and team spaces.",
+          "Level 2 Mechanical Room door: Mechanical (58 x 28 ft) on the east wing has solid walls with zero doors; should have a service access door connecting from Upper Northeast Corridor or Upper Corridor.",
+          "Gym Viewing 35 x 40 viewing window: Gym Viewing lacks a viewing window into Competition Gym; should feature a continuous glass viewing wall/window overlooking Open to Competition Gym.",
+          "Stair West egress door: Stair West has a door leading into private office 'Off l2_nw'; should open directly into Upper Office Corridor (corridor_l2_office) for code-compliant egress.",
+          "Void edge protection: Open to Competition Gym, Open to South Gym, and Open to Cage lack edge railings, parapet walls, or mezzanine guardrails along concourse interfaces."
+        ]
+      },
+      {
+        "image": "overlay_osm.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 2,
+        "props": 1,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "Southeast footprint void: The cyan orthogonal footprint includes a ~109 ft x 70 ft area in the southeast quadrant (x=-92 to 15 ft, z=102 to 172 ft) where no blueprint rooms exist; interior rooms must be added to fill this space matching the building envelope.",
+          "NW Addition boundary overlap: Red addition polygon (150 x 208 ft) extends substantially north and west beyond the red OSM building boundary (way 112472416); should be identified as future/under-construction work and aligned with the site boundary.",
+          "East facade bump-out missing: Cyan footprint steps outward ~15 ft east along the lobby and fitness center, whereas the blueprint rooms form a continuous straight wall at x=-0.5 ft; rooms must step east to match the cyan footprint boundary.",
+          "South Gym southern boundary: Cyan footprint squares off the angled southern wall of the South Gym, creating triangular discrepancies at southwest and southeast corners; wall alignments should be verified against measured site geometry."
+        ]
+      },
+      {
+        "image": "overlay_site.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 3,
+        "props": 2,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "Southeast wing truncated: Orange Weight Room polygon terminates at z=102 ft, leaving the southern half of the yellow-shaded fitness/weights wing on site_plan_native.png uncovered; room layout must extend south to include the lower fitness annex, south stair, and south entrance vestibule.",
+          "Western addition strip omitted: Site plan shows a separate vertical dashed red strip along the west edge of the Cage Gym ('ADDITION'); blueprint only models the northern addition rectangle, omitting the western strip.",
+          "East entrance articulation: Site plan and cyan footprint show an eastward projection at the lobby and entrance; blueprint rooms follow a flat vertical edge, creating a visible misalignment with the building facade on the aerial plan.",
+          "Structural & interior alignment: Underlying site plan features structural column grids, court striping, and interior partitions that do not align with or appear in the blueprint overlay, particularly the regular column grid across the fitness and weight wings."
+        ]
+      }
+    ]
+  },
+  "gpt": {
+    "results": [
+      {
+        "image": "overlay_level1.png",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "RAC Addition is drawn as a 150 ├ù 208 rectangle overlapping much of Cage Gym. The site reference shows an L-shaped addition wrapping the north and west sides of the existing gym; replace the overlapping rectangle with that perimeter.",
+          "Cage Gym and corridor_wes extend into the exterior recess visible between the western gym and Competition Gym in the site/OSM references. Trace the recessed exterior boundary and constrain interior spaces to it.",
+          "The eastern Lobby/Fitness Center/Weight Room block does not reproduce the stepped eastern perimeter or the southeast occupied area visible on the architect/site drawing. Reconcile room boundaries with that drawing before accepting the stated dimensions.",
+          "Main Concourse and the office wing are simplified into rectangular bands; the architect drawing contains entrance, stair, and partition offsets that need to be traced individually.",
+          "Red door marks alone do not establish clear openings, door swings, or usable circulation. Provide an architect-plan overlay at sufficient resolution to verify each opening and stair connection.",
+          "Materials, props, and lighting are not assessable from this schematic; their scores of 1 indicate missing evidence."
+        ]
+      },
+      {
+        "image": "overlay_level2.png",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "No real Level 2 architect drawing is visible in this image. Office, conference, mechanical, viewing, and corridor assignments cannot be verified against a source; provide a registered Level 2 overlay.",
+          "The Level 2 RAC Addition has no depicted door or circulation connection to the rest of the floor. Establish its documented access and stair arrangement, or identify it as outside the modeled accessible area.",
+          "The addition changes from the overlapping 150 ├ù 208 Level 1 rectangle to a 150 ├ù 87 Level 2 rectangle. Document the actual roof and floor extents and replace the inconsistent footprint assumptions.",
+          "Northeast Stair and stair_west are plain rectangles without flights, landings, or floor openings. Draw the stair geometry to demonstrate feasible vertical circulation within those footprints.",
+          "Gym Viewing, balcony, Lobby Well, and the gym voids lack explicit guardrails and floor-edge construction. Identify protected walking surfaces and distinguish glazing from open guarded edges.",
+          "Materials, props, and lighting are not assessable from this schematic; their scores of 1 indicate missing evidence."
+        ]
+      },
+      {
+        "image": "overlay_osm.png",
+        "layout": 3,
+        "proportions": 4,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 3,
+        "problems": [
+          "The stated IoU of 0.9887 measures agreement between the cyan orthogonal outline and the red OSM outline, not agreement between the colored room layout and either outline. Report room-union agreement separately.",
+          "A substantial cyan-enclosed area east of the rooms and southeast of Weight Room is blank. Resolve whether these areas are interior space, covered exterior space, or an OSM discrepancy using the architect plan, then model the documented boundary.",
+          "The north portion of Cage Gym and its adjacent western corridor project into the cyan footprint's recessed notch. Set these boundaries to the measured exterior recess.",
+          "The western gym/office junction does not follow the cyan stepped boundary. Trace the actual jogs rather than spanning them with rectangular room envelopes.",
+          "The red addition region extends beyond the cyan existing-building footprint and overlaps the colored gym region. Separate proposed addition geometry from the existing building and eliminate overlapping room areas.",
+          "Doors and interior wall fidelity cannot be evaluated at this presentation scale. Materials, props, and lighting are not depicted; their scores of 1 indicate missing evidence."
+        ]
+      },
+      {
+        "image": "overlay_site.png",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 4,
+        "problems": [
+          "Cage Gym's colored northern boundary extends above the existing gym outline, and its eastern portion intrudes into the exterior recess between the two major gym volumes. Trace the existing gym walls and preserve the recess.",
+          "The colored eastern room stack reduces the architect plan's irregular fitness/weight-room arrangement to broad rectangles. Reproduce the visible internal partitions and the southeast extension beside South Gym.",
+          "South Gym's colored footprint begins too far south relative to the visible northern court enclosure. Align its north wall with the architect wall and independently verify the concourse boundary.",
+          "The southwest office wing uses regular rectangular cells, while the drawing shows different partition positions, a changing corridor profile, and service/stair details. Trace those boundaries and openings individually.",
+          "The site drawing explicitly labels the north and west regions as ADDITION. Establish whether the target is the existing RAC or this proposed scheme, and represent the addition as its actual L-shaped area without overlapping Cage Gym.",
+          "Opaque fills obscure many underlying partitions and door symbols. Produce a larger registered overlay with translucent fills and contrasting source/model wall lines so individual walls and doors can be judged.",
+          "This site-plan view provides no evidence for materials, props, or lighting; their scores of 1 indicate missing evidence."
+        ]
+      }
+    ]
+  }
+}

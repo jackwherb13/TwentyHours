@@ -1,6 +1,6 @@
 {
   "units": "ft",
-  "status": "Authoritative main turn; riser count inferred from user approximate 20ft elevation. Source aggregate stairs are legacy builder envelopes, NOT the flight geometry.",
+  "status": "Matches blueprint/architect_layout.json flights. Parent rise times risers is 20. Each flight is 17 risers at 20/34 ft.",
   "stairs": [
     {
       "id": "stair_main",
@@ -13,31 +13,19 @@
       "flights": [
         {
           "id": "main_a",
-          "start": [
-            -48,
-            -3
-          ],
-          "direction": [
-            0,
-            -1
-          ],
+          "polygon": [[-54.0, -17.0], [-46.0, -17.0], [-46.0, -1.0], [-54.0, -1.0]],
+          "direction": [0, -1],
           "risers": 17,
-          "run": 1,
+          "run": 0.9411764705882353,
           "baseElevation": 0,
           "topElevation": 10
         },
         {
           "id": "main_b",
-          "start": [
-            -52,
-            -24
-          ],
-          "direction": [
-            -1,
-            0
-          ],
+          "polygon": [[-70.0, -25.0], [-54.0, -25.0], [-54.0, -17.0], [-70.0, -17.0]],
+          "direction": [-1, 0],
           "risers": 17,
-          "run": 1,
+          "run": 0.9411764705882353,
           "baseElevation": 10,
           "topElevation": 20
         }
@@ -45,71 +33,11 @@
       "landings": [
         {
           "id": "main_turn",
-          "polygon": [
-            [
-              -52,
-              -28
-            ],
-            [
-              -44,
-              -28
-            ],
-            [
-              -44,
-              -20
-            ],
-            [
-              -52,
-              -20
-            ]
-          ],
+          "polygon": [[-54.0, -25.0], [-46.0, -25.0], [-46.0, -17.0], [-54.0, -17.0]],
           "elevation": 10
-        },
-        {
-          "id": "main_top",
-          "polygon": [
-            [
-              -78.5,
-              -28
-            ],
-            [
-              -69,
-              -28
-            ],
-            [
-              -69,
-              -20
-            ],
-            [
-              -78.5,
-              -20
-            ]
-          ],
-          "elevation": 20
         }
       ],
-      "lowerApproach": [
-        [
-          -42.5,
-          -4
-        ],
-        [
-          -48,
-          -3
-        ]
-      ],
-      "upperApproach": [
-        [
-          -74,
-          -28
-        ],
-        [
-          -74,
-          -32
-        ]
-      ],
-      "headroomFt": 7,
-      "evidence": "WALKTHROUGH.md 23:00 correction; IMG_0371 concrete/CMU stair finishes; flight dimensions provisional"
+      "evidence": "WALKTHROUGH.md 23:00: two flights, square landing, turn left, Level 2 at +20. IMG_0371 concrete and painted CMU."
     },
     {
       "id": "stair_second",
@@ -118,49 +46,35 @@
       "width": 6,
       "rise": 0.5882352941176471,
       "risers": 34,
-      "turn": "straight (inferred)",
+      "turn": "straight, mid landing",
       "flights": [
         {
           "id": "second_a",
-          "start": [
-            -306.5,
-            -117
-          ],
-          "direction": [
-            -1,
-            0
-          ],
-          "risers": 34,
-          "run": 0.917,
+          "polygon": [[-320.0, -111.0], [-305.5, -111.0], [-305.5, -105.0], [-320.0, -105.0]],
+          "direction": [-1, 0],
+          "risers": 17,
+          "run": 0.8529411764705882,
           "baseElevation": 0,
+          "topElevation": 10
+        },
+        {
+          "id": "second_b",
+          "polygon": [[-339.5, -111.0], [-325.0, -111.0], [-325.0, -105.0], [-339.5, -105.0]],
+          "direction": [-1, 0],
+          "risers": 17,
+          "run": 0.8529411764705882,
+          "baseElevation": 10,
           "topElevation": 20
         }
       ],
       "landings": [
         {
-          "id": "second_top",
-          "polygon": [
-            [
-              -339.5,
-              -121
-            ],
-            [
-              -337.5,
-              -121
-            ],
-            [
-              -337.5,
-              -113
-            ],
-            [
-              -339.5,
-              -113
-            ]
-          ],
-          "elevation": 20
+          "id": "second_turn",
+          "polygon": [[-325.0, -111.0], [-320.0, -111.0], [-320.0, -105.0], [-325.0, -105.0]],
+          "elevation": 10
         }
       ],
-      "evidence": "Upper court -> right stair -> Cage/exit adjacency is user-authoritative; west-side position inferred. Unmeasured straight run."
+      "evidence": "On the right of the Level 2 hall after the racquetball courts, walking west. Up-direction is west, so the walk down faces back toward the courts."
     },
     {
       "id": "stair_west",
@@ -169,49 +83,35 @@
       "width": 6,
       "rise": 0.5882352941176471,
       "risers": 34,
-      "turn": "straight (inferred)",
+      "turn": "straight, mid landing",
       "flights": [
         {
           "id": "west_a",
-          "start": [
-            -351,
-            -75
-          ],
-          "direction": [
-            0,
-            1
-          ],
-          "risers": 34,
-          "run": 1,
+          "polygon": [[-354.0, -78.0], [-348.0, -78.0], [-348.0, -62.0], [-354.0, -62.0]],
+          "direction": [0, 1],
+          "risers": 17,
+          "run": 0.9411764705882353,
           "baseElevation": 0,
+          "topElevation": 10
+        },
+        {
+          "id": "west_b",
+          "polygon": [[-354.0, -54.0], [-348.0, -54.0], [-348.0, -38.0], [-354.0, -38.0]],
+          "direction": [0, 1],
+          "risers": 17,
+          "run": 0.9411764705882353,
+          "baseElevation": 10,
           "topElevation": 20
         }
       ],
       "landings": [
         {
-          "id": "west_top",
-          "polygon": [
-            [
-              -354,
-              -41
-            ],
-            [
-              -348,
-              -41
-            ],
-            [
-              -348,
-              -35
-            ],
-            [
-              -354,
-              -35
-            ]
-          ],
-          "elevation": 20
+          "id": "west_turn",
+          "polygon": [[-354.0, -62.0], [-348.0, -62.0], [-348.0, -54.0], [-354.0, -54.0]],
+          "elevation": 10
         }
       ],
-      "evidence": "Existing service-stair placeholder; exact arrangement not legible in plan."
+      "evidence": "Egress stair beside the west link. Not a walkthrough waypoint. Kept so both floors connect at the west end."
     }
   ]
 }

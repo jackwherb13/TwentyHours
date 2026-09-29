@@ -1,0 +1,2249 @@
+{
+  "level": 2,
+  "elevation": 16,
+  "rooms": [
+    {
+      "id": "void_competition",
+      "name": "Open to Competition Gym",
+      "type": "void",
+      "polygon": [
+        [
+          -188.5,
+          -107.5
+        ],
+        [
+          -73.5,
+          -107.5
+        ],
+        [
+          -73.5,
+          39.5
+        ],
+        [
+          -188.5,
+          39.5
+        ]
+      ],
+      "floorMaterial": "maple",
+      "ceilingHeight": 0,
+      "ceilingType": "none",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "void_south",
+      "name": "Open to South Gym",
+      "type": "void",
+      "polygon": [
+        [
+          -231.5,
+          114.0
+        ],
+        [
+          -94.0,
+          114.0
+        ],
+        [
+          -94.0,
+          219.0
+        ],
+        [
+          -231.5,
+          219.0
+        ]
+      ],
+      "floorMaterial": "maple",
+      "ceilingHeight": 0,
+      "ceilingType": "none",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "void_cage",
+      "name": "Open to Cage",
+      "type": "void",
+      "polygon": [
+        [
+          -349.0,
+          -42.0
+        ],
+        [
+          -200.5,
+          -42.0
+        ],
+        [
+          -200.5,
+          79.5
+        ],
+        [
+          -349.0,
+          79.5
+        ]
+      ],
+      "floorMaterial": "maple",
+      "ceilingHeight": 0,
+      "ceilingType": "none",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "void_lobby",
+      "name": "Lobby Well",
+      "type": "void",
+      "polygon": [
+        [
+          -58.0,
+          -19.0
+        ],
+        [
+          -0.5,
+          -19.0
+        ],
+        [
+          -0.5,
+          17.5
+        ],
+        [
+          -58.0,
+          17.5
+        ]
+      ],
+      "floorMaterial": "porcelain_tile",
+      "ceilingHeight": 0,
+      "ceilingType": "none",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "addition_l2",
+      "name": "RAC Addition",
+      "type": "construction",
+      "polygon": [
+        [
+          -374.0,
+          -129.0
+        ],
+        [
+          -224.0,
+          -129.0
+        ],
+        [
+          -224.0,
+          -42.0
+        ],
+        [
+          -374.0,
+          -42.0
+        ]
+      ],
+      "floorMaterial": "sealed_concrete",
+      "ceilingHeight": 12,
+      "ceilingType": "none",
+      "wallFinish": "metal_panel"
+    },
+    {
+      "id": "stair_ne",
+      "name": "Northeast Stair",
+      "type": "stair",
+      "polygon": [
+        [
+          -40.0,
+          -107.5
+        ],
+        [
+          -0.5,
+          -107.5
+        ],
+        [
+          -0.5,
+          -75.0
+        ],
+        [
+          -40.0,
+          -75.0
+        ]
+      ],
+      "floorMaterial": "sealed_concrete",
+      "ceilingHeight": 10,
+      "ceilingType": "gypsum",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "stair_west",
+      "name": "West Stair",
+      "type": "stair",
+      "polygon": [
+        [
+          -352.5,
+          104.0
+        ],
+        [
+          -340.0,
+          104.0
+        ],
+        [
+          -340.0,
+          141.0
+        ],
+        [
+          -352.5,
+          141.0
+        ]
+      ],
+      "floorMaterial": "sealed_concrete",
+      "ceilingHeight": 10,
+      "ceilingType": "gypsum",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "corridor_l2_gym",
+      "name": "Gym Viewing",
+      "type": "corridor",
+      "polygon": [
+        [
+          -73.5,
+          -107.5
+        ],
+        [
+          -40.0,
+          -107.5
+        ],
+        [
+          -40.0,
+          -75.0
+        ],
+        [
+          -73.5,
+          -75.0
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x4",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "corridor_l2_north",
+      "name": "Upper Northeast Corridor",
+      "type": "corridor",
+      "polygon": [
+        [
+          -73.5,
+          -75.0
+        ],
+        [
+          -0.5,
+          -75.0
+        ],
+        [
+          -0.5,
+          -47.0
+        ],
+        [
+          -73.5,
+          -47.0
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x4",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "corridor_l2_ne",
+      "name": "Upper Corridor",
+      "type": "corridor",
+      "polygon": [
+        [
+          -73.5,
+          -47.0
+        ],
+        [
+          -58.0,
+          -47.0
+        ],
+        [
+          -58.0,
+          -19.0
+        ],
+        [
+          -73.5,
+          -19.0
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x4",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "mechanical_l2",
+      "name": "Mechanical",
+      "type": "mechanical",
+      "polygon": [
+        [
+          -58.0,
+          -47.0
+        ],
+        [
+          -0.5,
+          -47.0
+        ],
+        [
+          -0.5,
+          -19.0
+        ],
+        [
+          -58.0,
+          -19.0
+        ]
+      ],
+      "floorMaterial": "sealed_concrete",
+      "ceilingHeight": 10,
+      "ceilingType": "none",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "balcony",
+      "name": "Lobby Balcony",
+      "type": "lobby",
+      "polygon": [
+        [
+          -73.5,
+          -19.0
+        ],
+        [
+          -58.0,
+          -19.0
+        ],
+        [
+          -58.0,
+          17.5
+        ],
+        [
+          -73.5,
+          17.5
+        ]
+      ],
+      "floorMaterial": "porcelain_tile",
+      "ceilingHeight": 12,
+      "ceilingType": "gypsum",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "corridor_l2_east",
+      "name": "Upper East Corridor",
+      "type": "corridor",
+      "polygon": [
+        [
+          -73.5,
+          17.5
+        ],
+        [
+          -58.0,
+          17.5
+        ],
+        [
+          -58.0,
+          102.0
+        ],
+        [
+          -73.5,
+          102.0
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x4",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "conference",
+      "name": "Conference",
+      "type": "office",
+      "polygon": [
+        [
+          -58.0,
+          17.5
+        ],
+        [
+          -0.5,
+          17.5
+        ],
+        [
+          -0.5,
+          66.5
+        ],
+        [
+          -58.0,
+          66.5
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_east",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -58.0,
+          66.5
+        ],
+        [
+          -0.5,
+          66.5
+        ],
+        [
+          -0.5,
+          102.0
+        ],
+        [
+          -58.0,
+          102.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "corridor_l2",
+      "name": "Upper Concourse",
+      "type": "corridor",
+      "polygon": [
+        [
+          -264.5,
+          79.5
+        ],
+        [
+          -73.5,
+          79.5
+        ],
+        [
+          -73.5,
+          114.0
+        ],
+        [
+          -264.5,
+          114.0
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x4",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "lounge_l2",
+      "name": "Gym Viewing",
+      "type": "lobby",
+      "polygon": [
+        [
+          -108.5,
+          39.5
+        ],
+        [
+          -73.5,
+          39.5
+        ],
+        [
+          -73.5,
+          79.5
+        ],
+        [
+          -108.5,
+          79.5
+        ]
+      ],
+      "floorMaterial": "terrazzo",
+      "ceilingHeight": 10,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_nw",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -352.5,
+          79.5
+        ],
+        [
+          -340.0,
+          79.5
+        ],
+        [
+          -340.0,
+          104.0
+        ],
+        [
+          -352.5,
+          104.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_n1",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -340.0,
+          79.5
+        ],
+        [
+          -312.0,
+          79.5
+        ],
+        [
+          -312.0,
+          104.0
+        ],
+        [
+          -340.0,
+          104.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_n2",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -312.0,
+          79.5
+        ],
+        [
+          -288.0,
+          79.5
+        ],
+        [
+          -288.0,
+          104.0
+        ],
+        [
+          -312.0,
+          104.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_n3",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -288.0,
+          79.5
+        ],
+        [
+          -264.5,
+          79.5
+        ],
+        [
+          -264.5,
+          104.0
+        ],
+        [
+          -288.0,
+          104.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "corridor_l2_office",
+      "name": "Upper Office Corridor",
+      "type": "corridor",
+      "polygon": [
+        [
+          -340.0,
+          104.0
+        ],
+        [
+          -264.5,
+          104.0
+        ],
+        [
+          -264.5,
+          116.0
+        ],
+        [
+          -340.0,
+          116.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "restroom_l2",
+      "name": "Restroom",
+      "type": "restroom",
+      "polygon": [
+        [
+          -340.0,
+          116.0
+        ],
+        [
+          -312.0,
+          116.0
+        ],
+        [
+          -312.0,
+          141.0
+        ],
+        [
+          -340.0,
+          141.0
+        ]
+      ],
+      "floorMaterial": "ceramic_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "gypsum",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_s1",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -312.0,
+          116.0
+        ],
+        [
+          -288.0,
+          116.0
+        ],
+        [
+          -288.0,
+          141.0
+        ],
+        [
+          -312.0,
+          141.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "office_l2_s2",
+      "name": "Office",
+      "type": "office",
+      "polygon": [
+        [
+          -288.0,
+          116.0
+        ],
+        [
+          -264.5,
+          116.0
+        ],
+        [
+          -264.5,
+          141.0
+        ],
+        [
+          -288.0,
+          141.0
+        ]
+      ],
+      "floorMaterial": "carpet_tile",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    },
+    {
+      "id": "storage_l2",
+      "name": "Storage",
+      "type": "storage",
+      "polygon": [
+        [
+          -264.5,
+          114.0
+        ],
+        [
+          -231.5,
+          114.0
+        ],
+        [
+          -231.5,
+          141.0
+        ],
+        [
+          -264.5,
+          141.0
+        ]
+      ],
+      "floorMaterial": "sealed_concrete",
+      "ceilingHeight": 9,
+      "ceilingType": "act_2x2",
+      "wallFinish": "painted_cmu"
+    }
+  ],
+  "walls": [
+    {
+      "id": "w_0001",
+      "a": [
+        -374.0,
+        -129.0
+      ],
+      "b": [
+        -224.0,
+        -129.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0002",
+      "a": [
+        -374.0,
+        -42.0
+      ],
+      "b": [
+        -224.0,
+        -42.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0003",
+      "a": [
+        -40.0,
+        -107.5
+      ],
+      "b": [
+        -0.5,
+        -107.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0004",
+      "a": [
+        -40.0,
+        -75.0
+      ],
+      "b": [
+        -0.5,
+        -75.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 17.0,
+          "width": 5.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 2
+        }
+      ]
+    },
+    {
+      "id": "w_0005",
+      "a": [
+        -352.5,
+        104.0
+      ],
+      "b": [
+        -340.0,
+        104.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 5.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0006",
+      "a": [
+        -352.5,
+        141.0
+      ],
+      "b": [
+        -340.0,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0007",
+      "a": [
+        -73.5,
+        -107.5
+      ],
+      "b": [
+        -40.0,
+        -107.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0008",
+      "a": [
+        -73.5,
+        -75.0
+      ],
+      "b": [
+        -40.0,
+        -75.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 15.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0009",
+      "a": [
+        -73.5,
+        -47.0
+      ],
+      "b": [
+        -58.0,
+        -47.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 6.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0010",
+      "a": [
+        -58.0,
+        -47.0
+      ],
+      "b": [
+        -0.5,
+        -47.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 27.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0011",
+      "a": [
+        -73.5,
+        -19.0
+      ],
+      "b": [
+        -58.0,
+        -19.0
+      ],
+      "thickness": 0.67,
+      "height": 12,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 5.0,
+          "width": 5.0,
+          "sill": 0,
+          "head": 8.0
+        }
+      ]
+    },
+    {
+      "id": "w_0012",
+      "a": [
+        -58.0,
+        -19.0
+      ],
+      "b": [
+        -0.5,
+        -19.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0013",
+      "a": [
+        -73.5,
+        17.5
+      ],
+      "b": [
+        -58.0,
+        17.5
+      ],
+      "thickness": 0.67,
+      "height": 12,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 5.0,
+          "width": 5.0,
+          "sill": 0,
+          "head": 8.0
+        }
+      ]
+    },
+    {
+      "id": "w_0014",
+      "a": [
+        -73.5,
+        102.0
+      ],
+      "b": [
+        -58.0,
+        102.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0015",
+      "a": [
+        -58.0,
+        17.5
+      ],
+      "b": [
+        -0.5,
+        17.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0016",
+      "a": [
+        -58.0,
+        66.5
+      ],
+      "b": [
+        -0.5,
+        66.5
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 27.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0017",
+      "a": [
+        -58.0,
+        102.0
+      ],
+      "b": [
+        -0.5,
+        102.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0018",
+      "a": [
+        -264.5,
+        79.5
+      ],
+      "b": [
+        -108.5,
+        79.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0019",
+      "a": [
+        -108.5,
+        79.5
+      ],
+      "b": [
+        -73.5,
+        79.5
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 14.5,
+          "width": 6.0,
+          "sill": 0,
+          "head": 8.0
+        }
+      ]
+    },
+    {
+      "id": "w_0020",
+      "a": [
+        -264.5,
+        114.0
+      ],
+      "b": [
+        -231.5,
+        114.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 15.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0021",
+      "a": [
+        -231.5,
+        114.0
+      ],
+      "b": [
+        -73.5,
+        114.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 46.5,
+          "width": 40.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0022",
+      "a": [
+        -108.5,
+        39.5
+      ],
+      "b": [
+        -73.5,
+        39.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 11.5,
+          "width": 16.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0023",
+      "a": [
+        -352.5,
+        79.5
+      ],
+      "b": [
+        -340.0,
+        79.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0024",
+      "a": [
+        -340.0,
+        79.5
+      ],
+      "b": [
+        -312.0,
+        79.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0025",
+      "a": [
+        -340.0,
+        104.0
+      ],
+      "b": [
+        -312.0,
+        104.0
+      ],
+      "thickness": 0.4,
+      "height": 9,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 12.5,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0026",
+      "a": [
+        -312.0,
+        79.5
+      ],
+      "b": [
+        -288.0,
+        79.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0027",
+      "a": [
+        -312.0,
+        104.0
+      ],
+      "b": [
+        -288.0,
+        104.0
+      ],
+      "thickness": 0.4,
+      "height": 9,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 10.5,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0028",
+      "a": [
+        -288.0,
+        79.5
+      ],
+      "b": [
+        -264.5,
+        79.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0029",
+      "a": [
+        -288.0,
+        104.0
+      ],
+      "b": [
+        -264.5,
+        104.0
+      ],
+      "thickness": 0.4,
+      "height": 9,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 10.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0030",
+      "a": [
+        -340.0,
+        116.0
+      ],
+      "b": [
+        -312.0,
+        116.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 12.5,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0031",
+      "a": [
+        -312.0,
+        116.0
+      ],
+      "b": [
+        -288.0,
+        116.0
+      ],
+      "thickness": 0.4,
+      "height": 9,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 10.5,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0032",
+      "a": [
+        -288.0,
+        116.0
+      ],
+      "b": [
+        -264.5,
+        116.0
+      ],
+      "thickness": 0.4,
+      "height": 9,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 10.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0033",
+      "a": [
+        -340.0,
+        141.0
+      ],
+      "b": [
+        -312.0,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0034",
+      "a": [
+        -312.0,
+        141.0
+      ],
+      "b": [
+        -288.0,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0035",
+      "a": [
+        -288.0,
+        141.0
+      ],
+      "b": [
+        -264.5,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0036",
+      "a": [
+        -264.5,
+        141.0
+      ],
+      "b": [
+        -231.5,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0037",
+      "a": [
+        -224.0,
+        -129.0
+      ],
+      "b": [
+        -224.0,
+        -42.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0038",
+      "a": [
+        -374.0,
+        -129.0
+      ],
+      "b": [
+        -374.0,
+        -42.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0039",
+      "a": [
+        -0.5,
+        -107.5
+      ],
+      "b": [
+        -0.5,
+        -75.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0040",
+      "a": [
+        -40.0,
+        -107.5
+      ],
+      "b": [
+        -40.0,
+        -75.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 14.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0041",
+      "a": [
+        -340.0,
+        104.0
+      ],
+      "b": [
+        -340.0,
+        116.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 4.0,
+          "width": 4.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0042",
+      "a": [
+        -340.0,
+        116.0
+      ],
+      "b": [
+        -340.0,
+        141.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0043",
+      "a": [
+        -352.5,
+        104.0
+      ],
+      "b": [
+        -352.5,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0044",
+      "a": [
+        -73.5,
+        -107.5
+      ],
+      "b": [
+        -73.5,
+        -75.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 9.5,
+          "width": 16.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0045",
+      "a": [
+        -0.5,
+        -75.0
+      ],
+      "b": [
+        -0.5,
+        -47.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0046",
+      "a": [
+        -73.5,
+        -75.0
+      ],
+      "b": [
+        -73.5,
+        -47.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 7.0,
+          "width": 16.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0047",
+      "a": [
+        -58.0,
+        -47.0
+      ],
+      "b": [
+        -58.0,
+        -19.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0048",
+      "a": [
+        -73.5,
+        -47.0
+      ],
+      "b": [
+        -73.5,
+        -19.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 6.0,
+          "width": 16.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0049",
+      "a": [
+        -0.5,
+        -47.0
+      ],
+      "b": [
+        -0.5,
+        -19.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0050",
+      "a": [
+        -58.0,
+        -19.0
+      ],
+      "b": [
+        -58.0,
+        17.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0051",
+      "a": [
+        -73.5,
+        -19.0
+      ],
+      "b": [
+        -73.5,
+        17.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 8.0,
+          "width": 20.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0052",
+      "a": [
+        -58.0,
+        17.5
+      ],
+      "b": [
+        -58.0,
+        66.5
+      ],
+      "thickness": 0.4,
+      "height": 10,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 23.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0053",
+      "a": [
+        -58.0,
+        66.5
+      ],
+      "b": [
+        -58.0,
+        102.0
+      ],
+      "thickness": 0.4,
+      "height": 10,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 16.0,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0054",
+      "a": [
+        -73.5,
+        17.5
+      ],
+      "b": [
+        -73.5,
+        39.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": [
+        {
+          "type": "window",
+          "offset": 4.5,
+          "width": 12.0,
+          "sill": 3,
+          "head": 8
+        }
+      ]
+    },
+    {
+      "id": "w_0055",
+      "a": [
+        -73.5,
+        39.5
+      ],
+      "b": [
+        -73.5,
+        79.5
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0056",
+      "a": [
+        -73.5,
+        79.5
+      ],
+      "b": [
+        -73.5,
+        102.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 9.0,
+          "width": 5.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 2
+        }
+      ]
+    },
+    {
+      "id": "w_0057",
+      "a": [
+        -0.5,
+        17.5
+      ],
+      "b": [
+        -0.5,
+        66.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0058",
+      "a": [
+        -0.5,
+        66.5
+      ],
+      "b": [
+        -0.5,
+        102.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "metal_panel",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0059",
+      "a": [
+        -73.5,
+        102.0
+      ],
+      "b": [
+        -73.5,
+        114.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0060",
+      "a": [
+        -264.5,
+        79.5
+      ],
+      "b": [
+        -264.5,
+        104.0
+      ],
+      "thickness": 0.4,
+      "height": 10,
+      "material": "gypsum",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0061",
+      "a": [
+        -264.5,
+        104.0
+      ],
+      "b": [
+        -264.5,
+        114.0
+      ],
+      "thickness": 0.67,
+      "height": 10,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "door",
+          "offset": 3.5,
+          "width": 3.0,
+          "sill": 0,
+          "head": 7.0,
+          "leaves": 1
+        }
+      ]
+    },
+    {
+      "id": "w_0062",
+      "a": [
+        -108.5,
+        39.5
+      ],
+      "b": [
+        -108.5,
+        79.5
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0063",
+      "a": [
+        -340.0,
+        79.5
+      ],
+      "b": [
+        -340.0,
+        104.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0064",
+      "a": [
+        -352.5,
+        79.5
+      ],
+      "b": [
+        -352.5,
+        104.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    },
+    {
+      "id": "w_0065",
+      "a": [
+        -312.0,
+        79.5
+      ],
+      "b": [
+        -312.0,
+        104.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0066",
+      "a": [
+        -288.0,
+        79.5
+      ],
+      "b": [
+        -288.0,
+        104.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0067",
+      "a": [
+        -264.5,
+        114.0
+      ],
+      "b": [
+        -264.5,
+        116.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0068",
+      "a": [
+        -312.0,
+        116.0
+      ],
+      "b": [
+        -312.0,
+        141.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0069",
+      "a": [
+        -288.0,
+        116.0
+      ],
+      "b": [
+        -288.0,
+        141.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0070",
+      "a": [
+        -264.5,
+        116.0
+      ],
+      "b": [
+        -264.5,
+        141.0
+      ],
+      "thickness": 0.67,
+      "height": 9,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": []
+    },
+    {
+      "id": "w_0071",
+      "a": [
+        -231.5,
+        114.0
+      ],
+      "b": [
+        -231.5,
+        141.0
+      ],
+      "thickness": 1.33,
+      "height": 18,
+      "material": "brick",
+      "exterior": true,
+      "openings": []
+    }
+  ],
+  "columns": [],
+  "stairs": [
+    {
+      "id": "stair_ne",
+      "polygon": [
+        [
+          -40.0,
+          -107.5
+        ],
+        [
+          -0.5,
+          -107.5
+        ],
+        [
+          -0.5,
+          -75.0
+        ],
+        [
+          -40.0,
+          -75.0
+        ]
+      ],
+      "fromLevel": 1,
+      "toLevel": 2,
+      "direction": [
+        1,
+        0
+      ],
+      "risers": 28,
+      "rise": 0.571,
+      "run": 0.917,
+      "width": 6
+    },
+    {
+      "id": "stair_west",
+      "polygon": [
+        [
+          -352.5,
+          104.0
+        ],
+        [
+          -340.0,
+          104.0
+        ],
+        [
+          -340.0,
+          141.0
+        ],
+        [
+          -352.5,
+          141.0
+        ]
+      ],
+      "fromLevel": 1,
+      "toLevel": 2,
+      "direction": [
+        0,
+        1
+      ],
+      "risers": 28,
+      "rise": 0.571,
+      "run": 0.917,
+      "width": 6
+    }
+  ],
+  "voids": [
+    {
+      "id": "void_competition",
+      "polygon": [
+        [
+          -188.5,
+          -107.5
+        ],
+        [
+          -73.5,
+          -107.5
+        ],
+        [
+          -73.5,
+          39.5
+        ],
+        [
+          -188.5,
+          39.5
+        ]
+      ]
+    },
+    {
+      "id": "void_south",
+      "polygon": [
+        [
+          -231.5,
+          114.0
+        ],
+        [
+          -94.0,
+          114.0
+        ],
+        [
+          -94.0,
+          219.0
+        ],
+        [
+          -231.5,
+          219.0
+        ]
+      ]
+    },
+    {
+      "id": "void_cage",
+      "polygon": [
+        [
+          -349.0,
+          -42.0
+        ],
+        [
+          -200.5,
+          -42.0
+        ],
+        [
+          -200.5,
+          79.5
+        ],
+        [
+          -349.0,
+          79.5
+        ]
+      ]
+    },
+    {
+      "id": "void_lobby",
+      "polygon": [
+        [
+          -58.0,
+          -19.0
+        ],
+        [
+          -0.5,
+          -19.0
+        ],
+        [
+          -0.5,
+          17.5
+        ],
+        [
+          -58.0,
+          17.5
+        ]
+      ]
+    }
+  ],
+  "props": []
+}

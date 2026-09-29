@@ -1,0 +1,136 @@
+{
+  "gpt": null,
+  "grok": {
+    "results": [
+      {
+        "image": "overlay_level1.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 5,
+        "problems": [
+          "This file is a colored schematic, not an overlay on Perkins & Will G-0201 / the Level 1 interim life-safety sheet; walls cannot be pixel-checked against black drawing lines. Re-export with the architect plan as the underlay at the same scale.",
+          "Addition (154 x 208, red): drawn as one giant rectangle that swallows the cage. G-0201 shows an L-shaped hatched construction zone wrapping the north and west of the existing cage only. Cut the addition to that L and stop it at the cage walls.",
+          "Cage Lower Reserve (126 x 128): treated as a sealed slab under the addition with no doors. The life-safety sheet shows the existing cage volume (or construction over it) with public/egress doors on the east toward the athletic corridor. Either make this a true void/open-to-cage or add the double doors into athletic_cor / training_sto.",
+          "Competition Gym (115 x 147): east wall is a solid black line against corridor_gym / lobby_north / thin_link. The drawing has spectator/egress pairs on that east concourse and a northwest exterior egress. Add those double doors; do not force all traffic through thin_link (~8 ft).",
+          "South Gym (140 x 109): west edge does not pick up the drawingΓÇÖs west-wall jog and court-end bump-outs; east edge should meet the glazed_recreation / corridor_south stack as on G-0201. Re-register both faces. The sheet shows three basketball courts plus telescopic bleachers; the schematic is an empty rectangle.",
+          "Locker block (Locker Volleyball 34x22, Locker General pair 28x32, Storage Athletic 25x32, volleyball_v): four fat rectangles replace the drawingΓÇÖs locker rows, wet cores, and privacy vestibules. Trace the partitions; doors should not dump straight into corridor_mai without a baffle.",
+          "Northeast office suite (Off ne_1ΓÇô5, Office Ne Rec, Corridor Ne 50x66, RR_ne_w/m): regular grid does not match the recessed doors, irregular corridor, and restroom sizes on the sheet (womenΓÇÖs restroom is the smaller west bay; menΓÇÖs is the longer east bay ~42 ft). Trace each room.",
+          "East curtain wall (lobby_north, glazed_recre, lobby, south_vestib): modeled as one straight east face. The drawing steps the entrance vestibule out ~10ΓÇô15 ft and jogs the fitness/lobby line. Restore the SE entrance bump-out.",
+          "Mechanical Sw (33 x 28): fully enclosed, no red door. Add a 3 ft service door north into corridor_ser (or an exterior service door as on the sheet).",
+          "Stair Second (34 x 40): stair envelope is gym-sized. The drawingΓÇÖs secondary stair at the cage SE is a tight U/run, not a 34x40 room. Shrink to the actual shaft and put the basketball/cage door on the athletic corridor, not inside the stair box.",
+          "West offices W1ΓÇôW3 (28/24/24 x 36) plus corridor_off: partitions and the west exit stair (stair_w) do not follow the yellow office wing on the site/life-safety plans (recessed rooms, thinner corridor). Trace that wing.",
+          "Doors (red) vs windows (blue): many program rooms show no opening; gyms lack the drawingΓÇÖs court-end and concourse pairs. Inventory G-0201 door ticks and place matching red segments.",
+          "Materials / props / lighting cannot be scored: fill colors are program keys only. No CMU, maple, bleachers, courts, desk, or light fixtures are drawn."
+        ]
+      },
+      {
+        "image": "overlay_level2.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 5,
+        "problems": [
+          "Again a schematic, not a registered overlay on the Level 2 life-safety / G-0300 sheet. Cannot confirm wall coincidence without the drawing under the colors.",
+          "L2 Addition is missing. L1 reserved 154 x 208 of construction; L2 should show the addition roof/upper plate or a hatched construction void over that L, not empty white.",
+          "Cage Gym (126 x 128) is a solid occupied rectangle. Walkthrough/drawings put basketball on this floor with a restricted door from the west corridor, and much of the volume is open/high. Do not slab-fill the whole 126x128; keep play floor plus void/rail as the sheet shows.",
+          "Stair West (12 x ~46) door sequence: the west exit must land on corridor_l2 / high-side exterior, not through Off l2_w2. Move the north door onto corridor_l2.",
+          "RB1 / RB2 (20 x 40): correct program (two courts upstairs) but doors read south into mechanical_l / upper_servic. Court doors must face north into court_galler / corridor_l2, with glass back walls on the gallery.",
+          "mechanical_l (sliver south of RB courts): ~6 ft service cavity with poor access. Widen or merge with upper_servic and door it from the corridor, not through the courts.",
+          "Void Competition (115 x 147) and Void South (140 x 109): good as open-to-below, but the walking edges (corridor_l2, Team Meeting/Offices south edge, Void Lobby 107 x 154 / Balcony 74 x 32) are drawn as solid black walls. Those should be 42 in guards / glass overlooks, not full-height demising walls.",
+          "Cardio Gallery (60 x 74) vs Fitness North (74 x 41): L1 fitness_center/weight sit under this; L2 should be an open cardio mezzanine to the east glass, not a closed orange box. Drop the solid wall to Void Lobby.",
+          "Team Meeting 58x40 and Team Offices 56x40 sit over the L1 locker band. Plausible as a second floor, but confirm against the L2 sheet (often a narrower office/meeting strip, not two 40 ft-deep boxes filling the whole locker roof).",
+          "Stair Second 34x40 again overscaled; Stair Main 36x32 should be two flights, square landing, LEFT quarter-turn per walkthrough, not a blank 36x32 rectangle.",
+          "corridor_l2 is a single eastΓÇôwest bar; the drawingΓÇÖs upper route is gym-overlook on the east of the competition void, then west to the courts. Split/offset that corridor so volleyball is on the left walking away from the main stair.",
+          "Office Ne stack copied from L1 (same 36x38 reception, 24x25 offices). L2 office wing is a different partition set on the life-safety sheet; do not clone L1.",
+          "No rails, cardio machines, RB glass, or stair arrows. Materials/props/lighting not present in this diagram."
+        ]
+      },
+      {
+        "image": "packet.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 5,
+        "problems": [
+          "Packet is two labeled schematics side by side with no architect underlay, so it cannot prove walls line up with G-0201/G-0300. Composite overlay_site / drawing_l1_l2_crop is the correct check graphic.",
+          "Header vs footer counts disagree: LEVEL2 title says rooms=35, overlay_level2 says 32, footer says 32 rooms and also 33/32 reachable. Reconcile room ids so reachable Γëñ occupiable and construction/voids are called out.",
+          "Footer ΓÇÿ50/50 rooms reachable, 0 dead doorsΓÇÖ on L1 is false against the drawing of the graphic: Mechanical Sw has no door; Addition and Cage Lower Reserved have no interior doors. Either add those doors or stop claiming 50/50.",
+          "Same L1 faults as overlay_level1: rectangular addition vs L-shaped construction hatch; competition gym missing east double doors; lockers as four boxes; east facade with no vestibule bump-out; Stair Second 34x40.",
+          "Same L2 faults: Stair West through offices; RB doors to mechanical; solid walls on voids; no addition plate; overscaled stair boxes.",
+          "Labels collide so badly they are unusable: Locker Volleyball/General/Storage Athletic, Office Ne Rec/4/5, Corridor L2 / Upper Athletic, Racquetball names. Offset labels or use leaders.",
+          "100 ft scale bars are present but the two plans are not registered to the same origin (L2 Cage sits higher/left relative to L1 Addition). Share one origin (SE entrance = 0,0) on both sheets.",
+          "No wall-thickness distinction (exterior CMU vs interior partitions), no door swings, no court striping, no bleacher pouches, no column grid. Those are on the architect plans and belong on a verification packet.",
+          "Materials, props, and lighting are N/A on this 2D packet; scores reflect absence, not a furnished model."
+        ]
+      }
+    ]
+  },
+  "gemini": {
+    "results": [
+      {
+        "image": "overlay_level1.png",
+        "layout": 6,
+        "proportions": 6,
+        "materials": 2,
+        "props": 2,
+        "lighting": 1,
+        "overall": 6,
+        "problems": [
+          "Architectural drawing underlay missing: The image shows only an isolated 2D colored floor plan on a blank white canvas without the Perkins & Will G-0201 plan underlaid or registered side-by-side; provide registered drawing underlays or coordinate overlays to allow direct verification of wall alignment and tolerances.",
+          "Northwest Addition & Cage Lower Reserved (154 x 208 ft and 126 x 128 ft): Modeled as an oversized monolithic rectangle that ignores the stepped/L-shaped building footprint; Cage Lower Reserved has no interior circulation doors connecting to Athletic Corridor (12 x 100 ft) or Training Store (20 x 88 ft), isolating it from the main building circulation.",
+          "Competition Gym (115 x 147 ft) concourse circulation: Spectator access from the east concourse corridor (Corridor Gym East / Lobby North) has only a single door into Corridor Gym, forcing bottleneck circulation through Thin Link (115 x 8 ft); add pairs of double concourse entrance doors along the east gym wall matching Perkins & Will G-0201.",
+          "Competition Gym emergency egress: Gym lacks secondary corner double doors on the northwest exterior wall; add an exterior double egress door at the northwest corner.",
+          "Main entrance glazing and canopy orientation: WALKTHROUGH.md specifies that the main entrance with the black cantilevered overhang and 20 x 20 ft double-height entry is located on the smaller south glass curtain wall (south_vestib / vestibule_in) rather than the long east facade; lengthen the south entrance glazing span and delineate the exterior entrance canopy.",
+          "Volleyball Locker Suite & Nutrition Station: WALKTHROUGH.md requires a dedicated square vestibule with a keypad door (code 15234) housing the 'Matt Corson Nutrition Station' industrial fridge opening into Locker Volleyball (34 x 22 ft); current layout directly connects Locker Volleyball to thin_link / corridor_mai without the required nutrition station vestibule.",
+          "Northeast Office Suite subdivision: Rooms Off ne_1 through Off ne_3, Office Ne Reception (38 x 38 ft), Offices 4-5, and Corridor Ne (50 x 66 ft) are partitioned as coarse generic boxes; reproduce the actual recessed doorways, internal corridors, and storage spaces shown on G-0201.",
+          "Architectural fixtures and floor markings: Plan completely lacks basketball court boundaries and keys (94 x 50 ft court in South Gym and Competition Gym), telescoping bleacher banks along north and south walls of Competition Gym, front reception desk counter (20-25 ft perpendicular to entrance glass), turnstiles in the lobby, and stair flight direction arrows.",
+          "Materials, props, and lighting: Not assessable from this 2D schematic; lacks material specifications (maple gym floor, terrazzo, CMU, porcelain tile), 3D props (weight machines, squat racks, ping pong tables, trophy cases), and lighting layout."
+        ]
+      },
+      {
+        "image": "overlay_level2.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 2,
+        "props": 2,
+        "lighting": 1,
+        "overall": 5,
+        "problems": [
+          "Architectural drawing underlay missing: Lacks Perkins & Will Level 2 architectural drawing underlay or side-by-side registration, preventing direct verification of slab boundaries, structural column grids, and wall alignments.",
+          "Racquetball Courts placement and circulation: WALKTHROUGH.md specifies two 40 x 20 ft racquetball courts on Level 2 on the LEFT when walking north along the concourse past the volleyball gym overlook; current plan places RB1 and RB2 (20 x 40 ft) in the southwest wing off corridor_l2. Furthermore, court access doors erroneously open south into mechanical/service areas instead of north into Court Gallery or public circulation.",
+          "Second Stair location: WALKTHROUGH.md specifies a second set of stairs on the RIGHT opposite the racquetball courts going DOWN in the opposite direction of travel; current plan places Stair Second (34 x 40 ft) inside the west Cage Gym wing, disconnecting it from the primary Level 2 concourse route.",
+          "Stair West egress violation: The exit door from Stair West (12 x 46 ft) discharges directly into private office 'Off l2_w2' rather than into public Corridor L2, violating architectural egress circulation standards.",
+          "Mezzanine overlook edge protection: Mezzanine walkways overlooking Void Competition (115 x 147 ft), Void South (140 x 109 ft), and Void Lobby (107 x 154 ft) lack 42-inch guardrail/balustrade and glass partition markings along open edges.",
+          "Central Upper Block & Northeast Offices: Team Meeting (58 x 40 ft) and Team Offices (56 x 40 ft) replace a subdivided suite of offices and meeting rooms with two broad rectangles; northeast office suite repeats Level 1 partitions rather than reflecting the second-level layout.",
+          "Omission of Northwest Addition: The 154 x 208 ft Addition wing modeled on Level 1 is completely absent on Level 2, leaving an unmodeled exterior void instead of defining the upper addition volume, clerestory, or roof plate.",
+          "Materials, props, and lighting: Not assessable from this 2D schematic; lacks flooring specifications, cardio machines, glass backwalls for racquetball courts, and lighting layout."
+        ]
+      },
+      {
+        "image": "packet.png",
+        "layout": 5,
+        "proportions": 6,
+        "materials": 2,
+        "props": 2,
+        "lighting": 1,
+        "overall": 5,
+        "problems": [
+          "Absence of architectural reference underlay: Packet presents schematic plans on white backgrounds without registered Perkins & Will drawings or site plan underlays, preventing direct verification of wall positions and proportions.",
+          "Contradictory room count metrics: Level 2 top header declares 'LEVEL2 rooms=35 walls=74', while bottom summary log reports 'level2: 32 rooms, 74 walls' and 'level2: 33/32 rooms reachable'; reconcile room counting logic so total, reachable, and labeled room counts are mathematically consistent.",
+          "Severe text annotation collisions: Room labels heavily overlap across central locker suites (Thin Link, Locker Volleyball, Locker General W/M, Storage Athletic), northeast offices (Offices 1-5, Reception, Corridor NE), and Level 2 concourse/balcony spaces; use leader lines, room numbers with an external key, or enlarged callout plans for dense suites.",
+          "Level 2 circulation sequence conflicts: Layout does not follow the authoritative WALKTHROUGH.md circulation sequence (Main Stair -> Concourse with gym overlook on left -> Racquetball courts on left -> Second Stair on right -> Basketball team gym off limits -> Grade exit); Racquetball courts and Stair Second are misplaced in southwest and west wings.",
+          "Level 1 connectivity: Cage Lower Reserved (126 x 128 ft) lacks access doors to the Athletic Corridor or Training Store, isolating it from internal circulation; Competition Gym lacks spectator double doors along the east corridor concourse.",
+          "Stair representation: Stair Main, Stair Second, and Stair West are depicted as flat solid rectangles without flight arrows, landing configurations (Stair Main requires two flights with one left-turning landing for 20 ft rise), riser counts, or floor opening edges.",
+          "Door swing and clearance omissions: Door openings are indicated only by red line segments without door swing direction, door clearance envelopes, or door types (single, double, sliding, overhead roll-up)."
+        ]
+      }
+    ]
+  }
+}

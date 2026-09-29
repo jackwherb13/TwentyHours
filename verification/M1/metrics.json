@@ -1,0 +1,63 @@
+{
+  "footprint_iou_vs_osm": 0.9887180948744767,
+  "l1_room_union_iou_vs_footprint": 0.9882240301187875,
+  "court_scale_checks": [
+    {
+      "name": "competition_gym",
+      "drawing": "regulation, length east-west",
+      "px": [
+        133,
+        71
+      ],
+      "measuredFt": [
+        94.27,
+        50.32
+      ],
+      "regulationFt": [
+        94,
+        50
+      ],
+      "error": [
+        0.0029,
+        0.0065
+      ]
+    },
+    {
+      "name": "south_gym_full",
+      "drawing": "regulation, length north-south",
+      "px": [
+        137.5,
+        69.6
+      ],
+      "measuredFt": [
+        97.46,
+        49.33
+      ],
+      "regulationFt": [
+        94,
+        50
+      ],
+      "error": [
+        0.0368,
+        -0.0134
+      ]
+    },
+    {
+      "name": "south_gym_cross",
+      "drawing": "cross court, length north-south",
+      "px": [
+        115.0
+      ],
+      "measuredFt": [
+        81.51
+      ],
+      "regulationFt": [
+        84
+      ],
+      "error": [
+        -0.0296
+      ]
+    }
+  ],
+  "registration": "Corner fit on compressed screenshots; NOT a +/-1 ft survey certification."
+}
