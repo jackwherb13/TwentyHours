@@ -9,7 +9,7 @@ for z, row in Data.rows do
 	end
 	heights[z] = values
 end
--- Grid is NAVD88 minus Level 1. DATUM stays 0; the south walk is lifted in height().
+-- Grid is NAVD88 minus Level 1. DATUM stays 0. Roads keep raw lidar; only the door flight is filled.
 local DATUM = 0
 
 local function bilinear(x: number, z: number): number
@@ -73,12 +73,12 @@ function Heightfield.height(x: number, z: number): number
 		return west
 	end
 	local h = raw
-	for _, dist in { 8, 18 } do
+	for _, dist in { 4, 9 } do
 		local hit = false
 		for k = 0, 7 do
 			local a = k * math.pi / 4
 			if insidePad(x + math.cos(a) * dist, z + math.sin(a) * dist) then
-				h = math.max(h, if dist == 8 then -0.1 else -0.8)
+				h = math.max(h, if dist == 4 then -0.35 else -1.1)
 				hit = true
 				break
 			end
@@ -87,20 +87,18 @@ function Heightfield.height(x: number, z: number): number
 			break
 		end
 	end
-	-- South glass. The sill is L1. Seven risers (7 * 7/12) reach the toe at z≈22,
-	-- then the drive eases toward the terrain-grid pad instead of the raw pit.
-	if x > -104 and x < 18 and z >= -1 and z < 160 then
-		local designed
-		if z <= 14 then
-			designed = 0
-		elseif z <= 22.2 then
-			designed = -4.083 * (z - 14) / 8.2
-		else
-			local t = math.clamp((z - 22.2) / 110, 0, 1)
-			local far = math.max(raw, -6.5)
-			designed = -4.083 * (1 - t) + far * t
+	-- Fill only the bowl under the door-centered flight (Exterior: 11 risers, toe z = 30.2).
+	-- Patriot Circle and the lawn stay on raw lidar.
+	if x > -14 and x < 20 and z >= -1 and z < 35 then
+		local flightStart = 6.65
+		local toe = 30.2
+		local drop = 11 * (7 / 12)
+		local walk = 0.0
+		if z > flightStart then
+			local t = math.clamp((z - flightStart) / (toe - flightStart), 0, 1)
+			walk = -drop * t
 		end
-		h = math.max(h, designed)
+		return math.max(raw, walk - 0.95)
 	end
 	return h
 end

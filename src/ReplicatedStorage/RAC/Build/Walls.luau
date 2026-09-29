@@ -218,6 +218,7 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 	local chosen: string? = nil
 	local chosenRank = 0
 	local entryGypsum = false
+	local touchesRacquet = false
 	for _, sign in { -1, 1 } do
 		local x = mx + nx * sign * (wall.thickness / 2 + 0.8)
 		local z = mz + nz * sign * (wall.thickness / 2 + 0.8)
@@ -228,6 +229,9 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 				if r >= chosenRank then
 					chosen = finish
 					chosenRank = r
+				end
+				if room.type == "racquetball" then
+					touchesRacquet = true
 				end
 				if
 					finish == "gypsum"
@@ -242,6 +246,10 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 	-- The stair well shares a wall with the lobby. CMU bond reads as interior brick
 	-- from the entry. Those faces are gypsum; the envelope stays brick.
 	if entryGypsum then
+		return "gypsum"
+	end
+	-- Racquetball side walls stay white. The glass back wall already returned above.
+	if touchesRacquet and not wall.exterior and wall.material ~= "glass" then
 		return "gypsum"
 	end
 	if chosen and chosen ~= "brick" then
@@ -291,6 +299,7 @@ function Walls.build(parent: Instance, level: Blueprint.Level, data: any)
 						depth = wall.thickness,
 						leaves = o.leaves,
 						tag = o.tag,
+						glass = wall.material == "glass",
 					}
 				)
 				-- Fit the library's complete frame inside the measured rough opening.

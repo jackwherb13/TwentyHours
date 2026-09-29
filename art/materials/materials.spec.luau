@@ -32,13 +32,14 @@ for key, definition in materials do
 	end
 	materials.apply(part, key)
 	assert(part.Material == definition.base)
-	assert(part.Color == definition.color)
 	assert(part:GetAttribute("RACMaterial") == key)
 	if definition.assetId ~= nil then
 		withAsset += 1
 		assert(part.MaterialVariant == "RAC_" .. key)
+		assert(part.Color == roblox.Color3.fromRGB(254, 254, 254))
 		assert(part.Color ~= roblox.Color3.new(1, 1, 1))
 	else
+		assert(part.Color == definition.color)
 		assert(part.MaterialVariant == "")
 	end
 end
@@ -55,7 +56,7 @@ local variant = service:FindFirstChild("RAC_maple")
 assert(variant.ColorMap == materials.maple.assetId)
 assert(variant.StudsPerTile == materials.maple.studsPerTile)
 assert(variant.BaseMaterial == roblox.Enum.Material.WoodPlanks)
-assert(part.Color == materials.maple.color)
+assert(part.Color == roblox.Color3.fromRGB(254, 254, 254))
 materials.apply(part, "glass")
 assert(part.MaterialVariant == "" and part:GetAttribute("RACTexturePath") == nil)
 print("PASS Materials: tinted variants, local files, fallback, unknown key, idempotent variants")

@@ -11,10 +11,10 @@ local function lighting()
 	-- Mid-afternoon. Keep sun honest outdoors; interiors come from fixtures + a small ambient fill.
 	Lighting.ClockTime = 14
 	Lighting.Brightness = 1.0
-	Lighting.EnvironmentDiffuseScale = 0.22
+	Lighting.EnvironmentDiffuseScale = 0.45
 	Lighting.EnvironmentSpecularScale = 0.18
-	Lighting.ExposureCompensation = -0.35
-	Lighting.Ambient = Color3.fromRGB(52, 52, 54)
+	Lighting.ExposureCompensation = 0
+	Lighting.Ambient = Color3.fromRGB(40, 40, 42)
 	Lighting.OutdoorAmbient = Color3.fromRGB(96, 98, 94)
 	Lighting.GlobalShadows = true
 	local atmosphere = Lighting:FindFirstChildOfClass("Atmosphere")
@@ -39,10 +39,20 @@ local function lighting()
 end
 
 local function clearInteriorTerrain()
+	local board = workspace:FindFirstChild("MaterialBoard")
+	if board then
+		board:Destroy()
+	end
 	local terrain = workspace.Terrain
 	local ok, err = pcall(function()
 		local Carve = require(game:GetService("ReplicatedStorage").RAC.Site.Carve)
 		print("Interior terrain carve blocks:", Carve.apply(terrain))
+		local audit = Carve.audit(terrain)
+		if audit.fails > 0 then
+			warn(string.format("Interior terrain still occupied: %d of %d samples", audit.fails, audit.samples))
+		else
+			print(string.format("Interior terrain audit clean (%d samples)", audit.samples))
+		end
 	end)
 	if not ok then
 		warn("Interior terrain carve failed: " .. tostring(err))

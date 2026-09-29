@@ -868,14 +868,14 @@
       "id": "IMG_0364",
       "file": "reference/photos/IMG_0364.jpg",
       "position": [
-        -62,
-        2.5,
-        46
+        -28,
+        -4.2,
+        52
       ],
       "look": [
-        0.45,
-        0.22,
-        -0.86
+        0.527,
+        0.192,
+        -0.828
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -940,14 +940,14 @@
       "id": "IMG_0368",
       "file": "reference/photos/IMG_0368.jpg",
       "position": [
-        -41,
-        -1.2,
-        64
+        22,
+        -5.0,
+        58
       ],
       "look": [
-        0.0,
-        0.28,
-        -1.0
+        -0.235,
+        0.352,
+        -0.906
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1390,14 +1390,14 @@
       "id": "WEB_entrance_1",
       "file": "reference/photos/WEB_entrance_1.jpg",
       "position": [
-        -41,
-        1.5,
-        52
+        0,
+        -5.5,
+        62
       ],
       "look": [
         0,
-        0.22,
-        -1
+        0.276,
+        -0.961
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1408,14 +1408,14 @@
       "id": "WEB_entrance_2",
       "file": "reference/photos/WEB_entrance_2.jpg",
       "position": [
-        -41,
-        2.2,
-        70
+        36,
+        -4.0,
+        68
       ],
       "look": [
-        0,
-        0.12,
-        -1
+        -0.514,
+        0.228,
+        -0.827
       ],
       "fovVertical": 55,
       "room": "exterior",
@@ -1427,13 +1427,13 @@
       "file": "reference/photos/WEB_entrance_left_pole.jpg",
       "position": [
         78,
-        6,
-        42
+        -2.7,
+        40
       ],
       "look": [
-        -0.82,
-        0.06,
-        -0.57
+        -0.919,
+        0.165,
+        -0.359
       ],
       "fovVertical": 55,
       "room": "exterior",

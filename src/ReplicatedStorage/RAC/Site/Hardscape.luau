@@ -4,8 +4,7 @@ local H = require(script.Parent.Heightfield)
 local G = require(script.Parent.Parent.Build.Geometry)
 local Hardscape = {}
 local function onBuilding(site: any, x: number, z: number): boolean
-	local e = site.entrance
-	if x >= e.x and x <= e.x + e.landingDepth + e.risers * e.run + 2 and math.abs(z - e.z) <= e.width / 2 + 4 then
+	if math.abs(x) < 20 and z > -2 and z < 36 then
 		return true
 	end
 	for _, polygon in site.terrain.padPolygons do

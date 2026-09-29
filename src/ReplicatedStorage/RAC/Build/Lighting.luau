@@ -1,7 +1,7 @@
 --!strict
 -- Room fixtures parented at workspace.RAC.Lighting so LightingController can bind.
--- Fewer, brighter fixtures: gym high-bays every ~32 ft at 18 ft; rooms on a 12–16 ft grid.
--- Lobby stays sparse so daylight through the south glass does not blow out.
+-- Brightness carries the rooms. Gym high-bays wash the floor; offices sit on a 12 ft grid.
+-- Lobby downlights are close enough that the desk is not two tokens.
 local Blueprint = require(script.Parent.Blueprint)
 local Geometry = require(script.Parent.Geometry)
 
@@ -20,10 +20,10 @@ end
 type Tune = { brightness: number, range: number, angle: number }
 
 local TUNE: { [string]: Tune } = {
-	high_bay_light = { brightness = 6, range = 48, angle = 100 },
-	troffer_2x4 = { brightness = 1.4, range = 24, angle = 80 },
-	troffer_2x2 = { brightness = 1.1, range = 18, angle = 75 },
-	downlight = { brightness = 0.9, range = 16, angle = 70 },
+	high_bay_light = { brightness = 14, range = 60, angle = 110 },
+	troffer_2x4 = { brightness = 3.2, range = 28, angle = 90 },
+	troffer_2x2 = { brightness = 2.6, range = 24, angle = 85 },
+	downlight = { brightness = 2.8, range = 22, angle = 80 },
 }
 
 local function bounds(poly: Blueprint.Polygon): (number, number, number, number)
@@ -116,17 +116,19 @@ local function fixtures(zone: Instance, room: Blueprint.Room, roomType: string, 
 	if roomType == "gym" or room.id == "cage_gym" then
 		scatter(zone, room, "high_bay_light", floorY + 22, 28, gridBudget(room, 28, 16))
 	elseif roomType == "stair" then
-		scatter(zone, room, "downlight", floorY + 10, 14, gridBudget(room, 14, 6))
+		scatter(zone, room, "downlight", floorY + 9, 10, gridBudget(room, 10, 4))
+		scatter(zone, room, "downlight", floorY + 18, 12, gridBudget(room, 12, 4))
 	elseif
 		room.id == "office_w2"
 		or room.id == "training_room"
 		or room.id == "coach_suite"
 		or room.id == "coach_head"
+		or room.id == "coaches_open"
 		or room.id == "corridor_entry_link"
 	then
-		scatter(zone, room, "troffer_2x4", ceilY - 0.5, 16, gridBudget(room, 16, 6))
+		scatter(zone, room, "troffer_2x4", ceilY - 0.5, 12, gridBudget(room, 12, 8))
 	elseif roomType == "lobby" or room.id == "south_vestibule" then
-		scatter(zone, room, "downlight", math.min(ceilY - 2, floorY + 12), 18, gridBudget(room, 18, 4))
+		scatter(zone, room, "downlight", math.min(ceilY - 2, floorY + 12), 8, gridBudget(room, 8, 8))
 	elseif room.ceilingHeight >= 24 then
 		scatter(zone, room, "downlight", floorY + 12, 20, gridBudget(room, 20, 6))
 	elseif TROFFER_KIND[roomType] then

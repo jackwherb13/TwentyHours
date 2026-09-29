@@ -22,11 +22,8 @@ function County.build(parent: Instance, site: any)
 	local slabs: { BasePart } = {}
 	local dress: { BasePart } = {}
 	local function inEntrance(x: number, z: number): boolean
-		local e = site.entrance
-		if not e then
-			return false
-		end
-		return math.abs(x - e.x) < e.width / 2 + 18 and z > e.z - 2 and z < e.z + e.landingDepth + 12 * e.run + 36
+		-- Door-centered flight. Scene entrance.x is the old west stair and must not punch a hole in the road.
+		return math.abs(x) < 20 and z > -2 and z < 36
 	end
 	for _, q in source.patches do
 		local x, z = q.x + q.w / 2, q.z + q.d / 2
@@ -35,13 +32,25 @@ function County.build(parent: Instance, site: any)
 		if onBuilding(site, x, z) or inEntrance(x, z) then
 			continue
 		end
-		-- Slabs use Heightfield.height, which already raises the south walk onto the stair.
-		local gx = (H.height(x + q.w / 2, z) - H.height(x - q.w / 2, z)) / math.max(q.w, 0.5)
-		local gz = (H.height(x, z + q.d / 2) - H.height(x, z - q.d / 2)) / math.max(q.d, 0.5)
-		local right = Vector3.new(1, gx, 0).Unit
-		local back = Vector3.new(0, gz, 1)
-		local up = back:Cross(right).Unit
-		back = right:Cross(up).Unit
+		-- Follow lidar, but a steep patch becomes a flying knife. Flatten those onto the center sample.
+		local halfW = math.max(q.w, 0.5) / 2
+		local halfD = math.max(q.d, 0.5) / 2
+		local dhx = H.height(x + halfW, z) - H.height(x - halfW, z)
+		local dhz = H.height(x, z + halfD) - H.height(x, z - halfD)
+		local steep = math.abs(dhx) > 2.4 or math.abs(dhz) > 2.4
+		local right: Vector3, up: Vector3, back: Vector3
+		if steep then
+			right = Vector3.new(1, 0, 0)
+			up = Vector3.new(0, 1, 0)
+			back = Vector3.new(0, 0, 1)
+		else
+			local gx = dhx / math.max(q.w, 0.5)
+			local gz = dhz / math.max(q.d, 0.5)
+			right = Vector3.new(1, gx, 0).Unit
+			back = Vector3.new(0, gz, 1)
+			up = back:Cross(right).Unit
+			back = right:Cross(up).Unit
+		end
 		local thickness = 0.5
 		-- Top face sits on the lidar sample. A negative offset buried Patriot Circle.
 		local centerY = hy + 0.08 - up.Y * thickness / 2
@@ -51,8 +60,8 @@ function County.build(parent: Instance, site: any)
 			P.box(
 				ground,
 				slabName,
-				-- Inset so an asphalt lot and a concrete walk do not share a face.
-				Vector3.new(math.max(0.5, q.w - 0.2), thickness, math.max(0.5, q.d - 0.2)),
+				-- Hairline inset. A wider gap read as grass between asphalt cells.
+				Vector3.new(math.max(0.5, q.w - 0.05), thickness, math.max(0.5, q.d - 0.05)),
 				CFrame.fromMatrix(Vector3.new(x, centerY, z), right, up, back),
 				q.material,
 				true
@@ -69,13 +78,7 @@ function County.build(parent: Instance, site: any)
 		if onBuilding(site, x, z) then
 			return false
 		end
-		local e = site.entrance
-		if
-			e
-			and math.abs(x - e.x) < e.width / 2 + 10
-			and z > e.z - 1
-			and z < e.z + e.landingDepth + e.risers * e.run + 28
-		then
+		if math.abs(x) < 20 and z > -2 and z < 36 then
 			return false
 		end
 		return true
@@ -110,6 +113,8 @@ function County.build(parent: Instance, site: any)
 		)
 	end
 	local paint = P.folder(ground, "MarkingSlab")
+	-- Synthetic stalls live outside MarkingSlab. Builder deletes that folder and keeps SiteMarkings.
+	local lotPaint = P.folder(ground, "LotPaintSlab")
 	for _, mark in source.markings or {} do
 		local a, b = mark.a, mark.b
 		local mx, mz = (a[1] + b[1]) / 2, (a[2] + b[2]) / 2
@@ -126,8 +131,8 @@ function County.build(parent: Instance, site: any)
 			P.beam(
 				paint,
 				"StallStripe",
-				Vector3.new(a[1], H.height(a[1], a[2]) + 1.8, a[2]),
-				Vector3.new(b[1], H.height(b[1], b[2]) + 1.8, b[2]),
+				Vector3.new(a[1], H.height(a[1], a[2]) + 0.42, a[2]),
+				Vector3.new(b[1], H.height(b[1], b[2]) + 0.42, b[2]),
 				math.clamp(stripeW, 0.4, 2.2),
 				0.1,
 				color,
@@ -137,24 +142,34 @@ function County.build(parent: Instance, site: any)
 	end
 	-- 9 x 18 ft stalls and a 24 ft aisle. County cells are small; cluster the fat ones into a lot.
 	local stallCount = 0
+	local function tracedAlready(x: number, z: number): boolean
+		-- Lot K and the east pocket are painted by SiteMarkings. Don't draw a second grid.
+		if z > 250 and x > -430 and x < 60 then
+			return true
+		end
+		if x > 50 and x < 90 and z > 18 and z < 55 then
+			return true
+		end
+		return false
+	end
 	local function addStripe(ax: number, az: number, bx: number, bz: number)
-		if stallCount >= 320 then
+		if stallCount >= 200 then
 			return
 		end
 		local mx, mz = (ax + bx) / 2, (az + bz) / 2
-		if not grounded(mx, mz) then
+		if not grounded(mx, mz) or tracedAlready(mx, mz) then
 			return
 		end
 		stallCount += 1
 		table.insert(
 			dress,
 			P.beam(
-				paint,
+				lotPaint,
 				"StallStripe",
-				Vector3.new(ax, H.height(ax, az) + 1.8, az),
-				Vector3.new(bx, H.height(bx, bz) + 1.8, bz),
-				0.9,
-				0.18,
+				Vector3.new(ax, H.height(ax, az) + 0.42, az),
+				Vector3.new(bx, H.height(bx, bz) + 0.42, bz),
+				0.7,
+				0.12,
 				"white",
 				false
 			)
@@ -205,15 +220,23 @@ function County.build(parent: Instance, site: any)
 	local function lotPole(x: number, z: number)
 		local hy = H.height(x, z)
 		local pole = P.box(poles, "LightPole", Vector3.new(0.35, 22, 0.35), CFrame.new(x, hy + 11.2, z), "dark", true)
-		local globe = P.box(poles, "LightGlobe", Vector3.new(1.3, 0.7, 1.3), CFrame.new(x, hy + 22.4, z), "metal")
-		globe.Material = Enum.Material.SmoothPlastic
-		globe.Color = Color3.fromRGB(255, 236, 200)
+		pole.Material = Enum.Material.SmoothPlastic
+		pole.Color = Color3.fromRGB(32, 34, 36)
+		pole.Reflectance = 0
+		local head = P.box(poles, "LightHead", Vector3.new(2.4, 0.4, 1.05), CFrame.new(x, hy + 22.35, z), "dark")
+		head.Material = Enum.Material.SmoothPlastic
+		head.Color = Color3.fromRGB(28, 30, 32)
+		head.Reflectance = 0
+		local lens = P.box(poles, "LightHead", Vector3.new(1.9, 0.08, 0.6), CFrame.new(x, hy + 22.1, z), "white", false)
+		lens.Material = Enum.Material.SmoothPlastic
+		lens.Color = Color3.fromRGB(255, 232, 196)
 		local lamp = Instance.new("PointLight")
-		lamp.Brightness = 1.4
-		lamp.Range = 48
-		lamp.Color = Color3.fromRGB(255, 236, 200)
-		lamp.Parent = globe
+		lamp.Brightness = 1.2
+		lamp.Range = 46
+		lamp.Color = Color3.fromRGB(255, 228, 190)
+		lamp.Parent = lens
 		table.insert(dress, pole)
+		table.insert(dress, head)
 	end
 	for _, field in fields do
 		local width, depth = field.x1 - field.x0, field.z1 - field.z0
@@ -223,17 +246,6 @@ function County.build(parent: Instance, site: any)
 		if length < 36 or span < 20 or fillOf(field) < 0.38 then
 			continue
 		end
-		-- One asphalt body over the stall field so terrain grass cannot show between patches.
-		local hy = H.height((field.x0 + field.x1) / 2, (field.z0 + field.z1) / 2)
-		local cover = P.box(
-			ground,
-			"LotSlab",
-			Vector3.new(width - 0.4, 0.45, depth - 0.4),
-			CFrame.new((field.x0 + field.x1) / 2, hy + 0.12, (field.z0 + field.z1) / 2),
-			"asphalt",
-			true
-		)
-		table.insert(slabs, cover)
 		-- One 18 ft stall band, a 24 ft aisle, then another band when the lot is deep enough.
 		local bands = if span >= 60 then 2 else 1
 		for band = 0, bands - 1 do
@@ -258,14 +270,14 @@ function County.build(parent: Instance, site: any)
 		local hy2 = H.height((field.x0 + field.x1) / 2, (field.z0 + field.z1) / 2)
 		local px = if alongX then field.x0 + 6.5 else field.x0 + 10
 		local pz = if alongX then field.z0 + 10 else field.z0 + 6.5
-		if grounded(px, pz) then
+		if grounded(px, pz) and not tracedAlready(px, pz) then
 			local paintW = if alongX then 8.2 else 16.5
 			local paintD = if alongX then 16.5 else 8.2
 			local stall = P.box(
-				paint,
+				lotPaint,
 				"StallPaint",
 				Vector3.new(paintW, 0.08, paintD),
-				CFrame.new(px, hy2 + 0.42, pz),
+				CFrame.new(px, hy2 + 0.46, pz),
 				"metal",
 				false
 			)
@@ -298,6 +310,51 @@ function County.build(parent: Instance, site: any)
 				true
 			)
 			table.insert(slabs, tongue)
+			if not tracedAlready(tongueX, field.z1 - 2) and grounded(tongueX, field.z1 - 2) then
+				local sy = H.height(tongueX, field.z1 - 2)
+				table.insert(
+					dress,
+					P.beam(
+						lotPaint,
+						"StopBar",
+						Vector3.new(tongueX - 8, sy + 0.4, field.z1 - 2),
+						Vector3.new(tongueX + 8, sy + 0.4, field.z1 - 2),
+						1.3,
+						0.1,
+						"yellow",
+						false
+					)
+				)
+				for bar = 0, 4 do
+					local bz = tongueZ - 6 + bar * 2.2
+					if grounded(tongueX, bz) then
+						local by = H.height(tongueX, bz)
+						table.insert(
+							dress,
+							P.beam(
+								lotPaint,
+								"CrosswalkBar",
+								Vector3.new(tongueX - 7, by + 0.4, bz),
+								Vector3.new(tongueX + 7, by + 0.4, bz),
+								0.7,
+								0.1,
+								"white",
+								false
+							)
+						)
+					end
+				end
+				-- Shallow curb cut where the aisle meets the road. Local Y is thickness, so the ramp check stays quiet.
+				local cut = P.box(
+					lotPaint,
+					"CurbCut",
+					Vector3.new(8, 0.18, 5),
+					CFrame.new(tongueX, sy + 0.22, field.z1 + 1.6),
+					"concrete",
+					true
+				)
+				table.insert(dress, cut)
+			end
 		end
 		for _, side in { -1, 1 } do
 			local ax = if side < 0 then field.x0 - 16 else field.x1 + 16
@@ -346,6 +403,33 @@ function County.build(parent: Instance, site: any)
 				end
 			end
 		end
+	end
+	-- Lot K is south of the DEM tile. Stall stripes already use the clamped edge height.
+	-- The deck is the asphalt those stripes sit on. Same material and color, so shared faces are not z-fights.
+	for gx = -400, 20, 64 do
+		for gz = 236, 500, 64 do
+			local cx, cz = gx + 32, gz + 32
+			local hy = H.height(cx, cz)
+			local deck =
+				P.box(ground, "LotSlab", Vector3.new(64, 0.4, 64), CFrame.new(cx, hy - 0.02, cz), "asphalt", true)
+			table.insert(slabs, deck)
+		end
+	end
+	for i = 0, 5 do
+		local px = -360 + i * 70
+		lotPole(px, 300)
+		local hy = H.height(px + 10, 268)
+		local stall = P.box(
+			lotPaint,
+			"StallPaint",
+			Vector3.new(8.2, 0.08, 16.5),
+			CFrame.new(px + 10, hy + 0.32, 268),
+			"metal",
+			false
+		)
+		stall.Color = Color3.fromRGB(35, 78, 150)
+		stall.Material = Enum.Material.SmoothPlastic
+		table.insert(dress, stall)
 	end
 	-- The geometry check uses AABBs. A sloped slab's box can share a face with a curb
 	-- even when the meshes do not. Nudge the thinner part until the faces separate.

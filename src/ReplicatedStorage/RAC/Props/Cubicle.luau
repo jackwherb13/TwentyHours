@@ -291,11 +291,26 @@ function Cubicle.build(cf: CFrame, _opts: { [string]: any }?): Model
 		TrimDark,
 		Enum.Material.Metal
 	)
-	b:box(
+	local screen = b:box(
 		"MonitorScreen",
 		Vector3.new(1.6, 1.0, 0.06),
-		Kit.at(retDeskX, deskH + 0.9, retDeskZ + 0.5),
-		C.Screen,
+		Kit.at(retDeskX - 0.9, deskH + 0.9, retDeskZ + 0.5),
+		Color3.fromRGB(186, 214, 232),
+		Enum.Material.SmoothPlastic
+	)
+	screen.Material = Enum.Material.SmoothPlastic
+	b:box(
+		"MonitorScreen2",
+		Vector3.new(1.4, 0.9, 0.06),
+		Kit.at(retDeskX + 0.9, deskH + 0.85, retDeskZ + 0.5),
+		Color3.fromRGB(176, 206, 224),
+		Enum.Material.SmoothPlastic
+	)
+	b:box(
+		"DeskPaper",
+		Vector3.new(0.85, 0.01, 0.65),
+		Kit.at(retDeskX, deskH + 0.02, retDeskZ - 0.55),
+		Color3.fromRGB(244, 242, 232),
 		Enum.Material.SmoothPlastic
 	)
 	b:box(

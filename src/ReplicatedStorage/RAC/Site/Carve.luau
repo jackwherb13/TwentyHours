@@ -62,6 +62,55 @@ function Carve.apply(terrain: Terrain): number
 	for _, r in Geometry.rectangles(Data.footprint) do
 		wipe(r.x, r.z, r.w, r.d)
 	end
+	-- FillBlock misses partial cells, and grass blades hang in from the cells just outside the wall.
+	-- One footprint pass: air under the slab, Ground instead of Grass on the skirt. Decoration is global,
+	-- so it stays on outdoors.
+	local minX, maxX, minZ, maxZ = math.huge, -math.huge, math.huge, -math.huge
+	for _, p in Data.footprint do
+		minX, maxX = math.min(minX, p[1]), math.max(maxX, p[1])
+		minZ, maxZ = math.min(minZ, p[2]), math.max(maxZ, p[2])
+	end
+	local skirt = Region3.new(Vector3.new(minX - 8, -8, minZ - 8), Vector3.new(maxX + 8, 3, maxZ + 8)):ExpandToGrid(4)
+	local mats, occ = terrain:ReadVoxels(skirt, 4)
+	local origin = skirt.CFrame.Position - skirt.Size / 2
+	local function inside(x: number, z: number): boolean
+		return Geometry.contains(Data.footprint, x, z)
+	end
+	for ix = 1, #mats do
+		local column = mats[ix]
+		for iy = 1, #column do
+			local row = column[iy]
+			for iz = 1, #row do
+				local x = origin.X + (ix - 0.5) * 4
+				local y = origin.Y + (iy - 0.5) * 4
+				local z = origin.Z + (iz - 0.5) * 4
+				local material = row[iz]
+				if inside(x, z) and y < 2 and occ[ix][iy][iz] > 0 and material ~= Enum.Material.Air then
+					row[iz] = Enum.Material.Air
+					occ[ix][iy][iz] = 0
+				elseif
+					not inside(x, z)
+					and y > -6
+					and y < 2
+					and (material == Enum.Material.Grass or material == Enum.Material.LeafyGrass)
+				then
+					local near = inside(x + 8, z)
+						or inside(x - 8, z)
+						or inside(x, z + 8)
+						or inside(x, z - 8)
+						or inside(x + 6, z + 6)
+						or inside(x - 6, z + 6)
+						or inside(x + 6, z - 6)
+						or inside(x - 6, z - 6)
+					if near then
+						row[iz] = Enum.Material.Ground
+					end
+				end
+			end
+		end
+	end
+	terrain:WriteVoxels(skirt, 4, mats, occ)
+	n += 1
 	return n
 end
 

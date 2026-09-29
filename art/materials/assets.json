@@ -3,11 +3,16 @@
     "file": "art/materials/pbr/maple_color.png",
     "normal": "art/materials/pbr/maple_normal.png",
     "roughness": "art/materials/pbr/maple_roughness.png",
-    "assetId": "rbxassetid://115680050081537",
+    "assetId": "rbxassetid://91544688527461",
     "baseMaterial": "WoodPlanks",
-    "studsPerTile": 8,
+    "studsPerTile": 6,
     "normalAssetId": "rbxassetid://109560427488914",
-    "roughnessAssetId": "rbxassetid://81939913346542"
+    "roughnessAssetId": "rbxassetid://81939913346542",
+    "sha256": {
+      "file": "08e573ec04f45e0db073e9c5a70497e65b8cd89c2601259b35e834fcb3dcd802",
+      "normal": "402fc5482d961638164e287c4bd639fcafa7467df258f9dca34bb7505267c3dc",
+      "roughness": "5a9c7136acfbcf74b05b955f159b8cacfef28735e951eec2d93bab1cbe6a6e29"
+    }
   },
   "racquetball_wood": {
     "file": "art/materials/pbr/racquetball_wood_color.png",

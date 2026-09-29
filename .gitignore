@@ -16,3 +16,6 @@ verification/**/*.png
 places/*.rbxm
 verification/judge-test/
 reference/web/
+
+# agent scratch downloads (videos/web photos) - never commit
+scratch/

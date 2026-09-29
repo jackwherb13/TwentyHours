@@ -19,8 +19,8 @@ local SAMPLE = {
 	racquetball_1 = Vector3.new(-285, 25, -70),
 	basketball_approach = Vector3.new(-347.5, 25, -112.5),
 	cage_gym = Vector3.new(-288.2, 25, -156.2),
-	stair_main_L1 = Vector3.new(6, 5, -24.2),
-	stair_main_L2 = Vector3.new(-16, 25, -44),
+	stair_main_L1 = Vector3.new(6, 8, -38),
+	stair_main_L2 = Vector3.new(-13.5, 25, -49),
 }
 
 local KEY = {

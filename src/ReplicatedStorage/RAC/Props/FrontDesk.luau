@@ -91,8 +91,8 @@ local function buildU(cf: CFrame, opts: { [string]: any }?): Model
 	)
 	local mark = b:box(
 		"MarkPlate",
-		Vector3.new(6.5, 2.4, 0.08),
-		Kit.at(0, 2.15, frontZ - 0.56),
+		Vector3.new(2.2, 1.4, 0.06),
+		Kit.at(0, 1.7, frontZ - 0.5),
 		MasonGreen,
 		Enum.Material.SmoothPlastic,
 		false

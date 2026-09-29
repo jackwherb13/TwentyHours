@@ -48,34 +48,46 @@ local function hasKey(player, keyName)
 	return scan(player:FindFirstChild("Backpack")) or scan(player.Character) or scan(player:FindFirstChild("Keys"))
 end
 
+local function isLeaf(inst)
+	return inst:IsA("BasePart") and (inst.Name == "Door" or string.sub(inst.Name, 1, 5) == "Door_")
+end
+
 local function leavesOf(model)
 	local list = {}
 	for _, inst in model:GetDescendants() do
-		if inst:IsA("BasePart") and inst.Name == "Door" then
+		if isLeaf(inst) then
 			table.insert(list, inst)
 		end
 	end
 	return list
 end
 
-local function capture(doorPart)
-	if doorPart:GetAttribute("Captured") then
-		return
+local function findHinge(doorPart)
+	local own = doorPart:FindFirstChild("Hinge")
+	if own and own:IsA("BasePart") then
+		return own
 	end
-	local hinge = doorPart:FindFirstChild("Hinge")
-	if not hinge or not hinge:IsA("BasePart") then
-		warn("RAC door leaf missing Hinge: " .. doorPart:GetFullName())
-		return
+	local model = doorPart.Parent
+	if model then
+		for _, inst in model:GetDescendants() do
+			if inst.Name == "Hinge" and inst:IsA("BasePart") then
+				return inst
+			end
+		end
 	end
+	return nil
+end
+
+local function storeHinge(doorPart, hingeCF)
 	doorPart:SetAttribute("Captured", true)
-	doorPart:SetAttribute("_HingeX", hinge.CFrame.Position.X)
-	doorPart:SetAttribute("_HingeY", hinge.CFrame.Position.Y)
-	doorPart:SetAttribute("_HingeZ", hinge.CFrame.Position.Z)
-	local rx, ry, rz = hinge.CFrame:ToOrientation()
+	doorPart:SetAttribute("_HingeX", hingeCF.Position.X)
+	doorPart:SetAttribute("_HingeY", hingeCF.Position.Y)
+	doorPart:SetAttribute("_HingeZ", hingeCF.Position.Z)
+	local rx, ry, rz = hingeCF:ToOrientation()
 	doorPart:SetAttribute("_HingeRx", rx)
 	doorPart:SetAttribute("_HingeRy", ry)
 	doorPart:SetAttribute("_HingeRz", rz)
-	local rel = hinge.CFrame:ToObjectSpace(doorPart.CFrame)
+	local rel = hingeCF:ToObjectSpace(doorPart.CFrame)
 	local rpx, rpy, rpz = rel:ToOrientation()
 	doorPart:SetAttribute("_RelX", rel.Position.X)
 	doorPart:SetAttribute("_RelY", rel.Position.Y)
@@ -83,6 +95,20 @@ local function capture(doorPart)
 	doorPart:SetAttribute("_RelRx", rpx)
 	doorPart:SetAttribute("_RelRy", rpy)
 	doorPart:SetAttribute("_RelRz", rpz)
+end
+
+local function capture(doorPart)
+	if doorPart:GetAttribute("Captured") then
+		return
+	end
+	local hinge = findHinge(doorPart)
+	if hinge then
+		storeHinge(doorPart, hinge.CFrame)
+		return
+	end
+	-- No authored hinge: pivot the leaf about its left edge. Do not warn.
+	local edge = doorPart.CFrame * CFrame.new(-doorPart.Size.X / 2, 0, 0)
+	storeHinge(doorPart, edge)
 end
 
 local function hingeCF(doorPart)
@@ -212,7 +238,13 @@ local function onTriggered(model, player)
 	local locked = model:GetAttribute("Locked")
 	local requiresKey = model:GetAttribute("RequiresKey")
 	local keyName = model:GetAttribute("KeyName") or ""
+	local keypad = model:GetAttribute("KeypadCode")
 	if locked or requiresKey then
+		if type(keypad) == "string" and keypad ~= "" and locked then
+			playLeafSound(model, "Locked")
+			setPrompts(model, true, "Enter code")
+			return
+		end
 		if not (requiresKey and hasKey(player, keyName)) then
 			playLeafSound(model, "Locked")
 			setPrompts(model, true, if requiresKey then "Needs " .. keyName else "Locked")
@@ -226,6 +258,47 @@ local function onTriggered(model, player)
 	end
 end
 
+local KEY_ROWS = {
+	{ "1", "2", "3" },
+	{ "4", "5", "6" },
+	{ "7", "8", "9" },
+	{ "*", "0", "#" },
+}
+
+local function digitFor(name)
+	local row, col = string.match(name, "^KeypadBtn_(%d)_(%d)$")
+	if not row then
+		return nil
+	end
+	local line = KEY_ROWS[tonumber(row)]
+	if not line then
+		return nil
+	end
+	return line[tonumber(col)]
+end
+
+local function onDigit(model, digit)
+	local code = model:GetAttribute("KeypadCode")
+	if type(code) ~= "string" or code == "" then
+		return
+	end
+	if digit == "*" or digit == "#" then
+		model:SetAttribute("KeypadEntry", "")
+		return
+	end
+	local entry = model:GetAttribute("KeypadEntry") or ""
+	entry ..= digit
+	if #entry > #code then
+		entry = digit
+	end
+	model:SetAttribute("KeypadEntry", entry)
+	if entry == code then
+		model:SetAttribute("Locked", false)
+		model:SetAttribute("KeypadEntry", "")
+		DoorService.open(model)
+	end
+end
+
 local function hook(model)
 	if model:GetAttribute("Hooked") then
 		return
@@ -234,10 +307,30 @@ local function hook(model)
 	for _, doorPart in leavesOf(model) do
 		capture(doorPart)
 		local prompt = doorPart:FindFirstChildOfClass("ProximityPrompt")
-		if prompt then
+		if prompt and prompt:GetAttribute("RACHooked") ~= true then
+			prompt:SetAttribute("RACHooked", true)
 			prompt.Triggered:Connect(function(player)
 				onTriggered(model, player)
 			end)
+		end
+	end
+	local code = model:GetAttribute("KeypadCode")
+	if type(code) ~= "string" or code == "" then
+		return
+	end
+	for _, inst in model:GetDescendants() do
+		if inst:IsA("BasePart") then
+			local digit = digitFor(inst.Name)
+			if digit and inst:FindFirstChild("KeypadClick") == nil then
+				local click = Instance.new("ClickDetector")
+				click.Name = "KeypadClick"
+				click.MaxActivationDistance = 12
+				click.Parent = inst
+				local pressed = digit
+				click.MouseClick:Connect(function()
+					onDigit(model, pressed)
+				end)
+			end
 		end
 	end
 end

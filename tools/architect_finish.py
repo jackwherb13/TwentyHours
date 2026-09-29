@@ -2019,9 +2019,9 @@ def add_overlook_glass(level):
         if abs(a[0] - b[0]) > 0.01 or abs(a[0] + 78.5) > 0.01:
             continue
         z0, z1 = sorted((a[1], b[1]))
-        # Glass only where the competition gym is on the other side. South of
-        # z=-186 the same wall stays solid so the foyer is not a false balcony.
-        lo, hi = max(z0, -279.5), min(z1, -186.0)
+        # Continuous gym-side glass for the overlook run. The turn door on the
+        # south stub stays a separate wall.
+        lo, hi = max(z0, -279.5), min(z1, -92.5)
         if hi - lo < 8:
             continue
         length = abs(b[1] - a[1])
@@ -2029,8 +2029,6 @@ def add_overlook_glass(level):
             start, width = lo - a[1], hi - lo
         else:
             start, width = a[1] - hi, hi - lo
-        start += 1
-        width -= 2
         start = round(start * 2) / 2
         width = round(width * 2) / 2
         if start < 0 or start + width > length + 0.05 or width < 4:
@@ -2043,7 +2041,7 @@ def add_overlook_glass(level):
                 "width": width,
                 "sill": 0,
                 "head": min(9.5, wall["height"]),
-                "mullionSpacing": 5,
+                "mullionSpacing": 10,
             }
         )
 
@@ -2375,13 +2373,15 @@ def repair_south_entrance(level):
             return opening
 
         openings = []
-        if x0 <= -90 and x1 >= -10:
-            openings.append(place(-97 + 43.5, 80, "curtainwall", 30))
-        if x0 <= -10 and x1 >= 8:
-            # 12 ft pair centered on the origin. Glass stays beside the leaf, not across it.
-            openings.append(place(-8.5, 3, "curtainwall", 30))
-            openings.append(place(0, 12, "door", 9))
-            openings.append(place(8.5, 3, "curtainwall", 30))
+        if x0 <= -90 and x1 >= 6:
+            # Glass runs into the 12 ft entrance. No grey leaf in the east pier.
+            openings.append(place(-51, 90, "curtainwall", 30))
+            openings.append(place(0, 12, "opening", 9))
+            transom = place(0, 12, "curtainwall", 24)
+            transom["sill"] = 9.15
+            transom["mullionSpacing"] = 4
+            openings.append(transom)
+            openings.append(place(8, 4, "curtainwall", 30))
         kept = [
             opening
             for opening in openings

@@ -63,7 +63,7 @@ check(a.get("run", 0) >= 10 / 12 - 0.01, f"first flight run {a.get('run')} is un
 check(b.get("run", 0) >= 10 / 12 - 0.01, f"second flight run {b.get('run')} is under 10 in")
 check(abs(a.get("rise", 0) * 17 - 10) < 0.05, f"first flight rise {a.get('rise')} does not total 10 ft")
 check(a.get("width", 0) >= 8, f"first flight width {a.get('width')} is under 8 ft")
-check(-28 <= az1 <= -15, f"first flight south edge z={az1} is not 15-28 ft from the glass")
+check(-48 <= az1 <= -30, f"first flight south edge z={az1} is not 30-48 ft from the glass")
 bx0, bx1, bz0, bz1 = bbox(b["polygon"])
 check(abs(bx0 - (-12.5)) < 0.05, f"upper flight does not reach the Level 2 door at x=-12.5 ({bx0})")
 
@@ -115,15 +115,19 @@ for w in l2["walls"]:
     a, b = w["a"], w["b"]
     if abs(a[0] + 78.5) > 0.05 or abs(b[0] + 78.5) > 0.05:
         continue
-    z0, z1 = sorted((a[1], b[1]))
-    if any(o.get("type") == "curtainwall" for o in w.get("openings", [])):
-        glass_z.append((z0, z1))
+    direction = 1 if b[1] >= a[1] else -1
+    for o in w.get("openings", []):
+        if o.get("type") != "curtainwall":
+            continue
+        s0 = a[1] + direction * o["offset"]
+        s1 = a[1] + direction * (o["offset"] + o["width"])
+        glass_z.append(tuple(sorted((s0, s1))))
     if w.get("material") == "glass":
-        glass_z.append((z0, z1))
+        glass_z.append(tuple(sorted((a[1], b[1]))))
 check(glass_z, "overlook has no gym glass")
 if glass_z:
-    covered = any(z0 <= -250 and z1 >= -110 for z0, z1 in glass_z)
-    check(covered, f"gym glass is not continuous along the overlook ({glass_z})")
+    covered = any(lo <= -270 and hi >= -100 for lo, hi in glass_z)
+    check(covered, f"gym glass opening is not continuous along the overlook ({glass_z})")
 
 hall2 = by2["corridor_l2"]
 hx0, hx1, hz0, hz1 = bbox(hall2["polygon"])

@@ -99,12 +99,20 @@ end
 
 local function prepareLeaves(model: Model)
 	for _, inst in model:GetDescendants() do
-		if inst:IsA("BasePart") and (inst.Name == "Door" or string.sub(inst.Name, 1, 5) == "Door_") then
-			inst.Name = "Door"
+		if not inst:IsA("BasePart") then
+			continue
+		end
+		-- Keep Door_Lower / Door_Upper named so they share the middle leaf's hinge.
+		-- Renaming them to Door made DoorService warn and skip the swing.
+		if inst.Name == "Door" then
 			if inst:GetAttribute("OpenAngle") == nil then
 				inst:SetAttribute("OpenAngle", 90)
 			end
 			ensurePrompt(inst)
+		elseif string.sub(inst.Name, 1, 5) == "Door_" then
+			if inst:GetAttribute("OpenAngle") == nil then
+				inst:SetAttribute("OpenAngle", 90)
+			end
 		end
 	end
 end
@@ -142,31 +150,13 @@ local function bridgeOffLimits(door: Model, mid: CFrame, wall: Blueprint.Wall, e
 		return att
 	end
 
-	local near = linkMarker("DoorLinkNear", cx + nx * 4.5, cz + nz * 4.5)
-	local far = linkMarker("DoorLinkFar", cx - nx * 4.5, cz - nz * 4.5)
+	linkMarker("DoorLinkNear", cx + nx * 4.5, cz + nz * 4.5)
+	linkMarker("DoorLinkFar", cx - nx * 4.5, cz - nz * 4.5)
+	-- The link itself is created at Play. An edit-time PathfindingLink draws the orange arc.
 	door:SetAttribute("RAC_DoorLink", true)
-	local existingLink = door:FindFirstChild("DoorLink")
-	local link = if existingLink and existingLink:IsA("Instance") then existingLink else nil
-	if link == nil then
-		local ok, created = pcall(function()
-			return Instance.new("PathfindingLink")
-		end)
-		if ok and typeof(created) == "Instance" then
-			created.Name = "DoorLink"
-			created.Parent = door
-			link = created
-		end
-	end
-	if link then
-		local anyLink = link :: any
-		anyLink.Attachment0 = near
-		anyLink.Attachment1 = far
-		anyLink.IsBidirectional = true
-		anyLink.Label = "Door"
-	end
 end
 
-local function passThrough(parent: Instance, label: string)
+local function passThrough(parent: Instance, label: string, pass: boolean?)
 	local ok, modifier = pcall(function()
 		return Instance.new("PathfindingModifier")
 	end)
@@ -177,8 +167,9 @@ local function passThrough(parent: Instance, label: string)
 		return
 	end
 	modifier.Name = "PathfindingModifier"
+	local allow = if pass == nil then true else pass
 	pcall(function()
-		modifier.PassThrough = true
+		modifier.PassThrough = allow
 		modifier.Label = label
 	end)
 	modifier.Parent = parent
@@ -297,19 +288,13 @@ function Tags.apply(rac: Model, data: Blueprint.Data): Folder
 					door:SetAttribute("OffLimits", true)
 				end
 				prepareLeaves(door)
-				passThrough(door, "Door")
-				-- Closed leaves block the walk. The basketball door stays solid for the player
-				-- and gets a PassThrough modifier on the leaf so agents can still be tested.
-				if door:GetAttribute("OffLimits") == true then
-					for _, leaf in door:GetDescendants() do
-						if leaf:IsA("BasePart") and leaf.CanCollide then
-							passThrough(leaf, "Door")
-						end
-					end
+				-- Keypad and off-limits leaves stay solid until the code or a staff path opens them.
+				if door:GetAttribute("Locked") == true then
 					bridgeOffLimits(door, mid, wall, level.elevation)
 				else
+					passThrough(door, "Door")
 					for _, leaf in door:GetDescendants() do
-						if leaf:IsA("BasePart") and (leaf.Name == "Door" or string.sub(leaf.Name, 1, 5) == "Door") then
+						if leaf:IsA("BasePart") and (leaf.Name == "Door" or string.sub(leaf.Name, 1, 5) == "Door_") then
 							leaf.CanCollide = false
 							leaf:SetAttribute("RAC_ClearOpening", true)
 						end
@@ -338,8 +323,17 @@ function Tags.apply(rac: Model, data: Blueprint.Data): Folder
 			local stairs = levelFolder:FindFirstChild("Stairs")
 			if stairs then
 				for _, stair in stairs:GetChildren() do
-					passThrough(stair, "Stairs")
 					addTag(stair, "RACStair")
+					-- A modifier parented to the stair Folder is illegal in Studio.
+					for _, d in stair:GetDescendants() do
+						if not d:IsA("BasePart") then
+							continue
+						end
+						local treadName = string.lower(d.Name)
+						if string.find(treadName, "tread", 1, true) and not string.find(treadName, "rail", 1, true) then
+							passThrough(d, "Stairs", false)
+						end
+					end
 				end
 			end
 		end
@@ -427,13 +421,16 @@ function Tags.apply(rac: Model, data: Blueprint.Data): Folder
 						continue
 					end
 					local partName = string.lower(d.Name)
-					local walk = string.find(partName, "tread", 1, true) ~= nil
+					local isRail = string.find(partName, "rail", 1, true) ~= nil
+					local walk = (
+						string.find(partName, "tread", 1, true) ~= nil
 						or string.find(partName, "landing", 1, true) ~= nil
 						or string.find(partName, "bridge", 1, true) ~= nil
 						or string.find(partName, "turn", 1, true) ~= nil
 						or string.find(partName, "threshold", 1, true) ~= nil
 						or string.find(partName, "slab", 1, true) ~= nil
 						or string.find(partName, "ramp", 1, true) ~= nil
+					) and not isRail
 					if walk then
 						d.CanCollide = true
 						d.CanQuery = true
@@ -450,40 +447,7 @@ function Tags.apply(rac: Model, data: Blueprint.Data): Folder
 					end
 				end
 				if lowPart and highPart and lowPart ~= highPart and highY - lowY > 4 then
-					local function attach(part: BasePart, name: string, world: Vector3): Attachment
-						local existing = part:FindFirstChild(name)
-						local att = if existing and existing:IsA("Attachment")
-							then existing
-							else Instance.new("Attachment")
-						att.Name = name
-						att.Parent = part
-						att.WorldPosition = world
-						return att
-					end
-					local bottom = lowPart :: BasePart
-					local top = highPart :: BasePart
-					local a0 = attach(bottom, "StairLinkBottom", bottom.CFrame.Position + Vector3.new(0, 3, 0))
-					local a1 = attach(top, "StairLinkTop", top.CFrame.Position + Vector3.new(0, 3, 0))
 					stair:SetAttribute("RAC_StairLink", true)
-					local existingLink = stair:FindFirstChild("StairLink")
-					local link = if existingLink and existingLink:IsA("Instance") then existingLink else nil
-					if link == nil then
-						local ok, created = pcall(function()
-							return Instance.new("PathfindingLink")
-						end)
-						if ok and typeof(created) == "Instance" then
-							created.Name = "StairLink"
-							created.Parent = stair
-							link = created
-						end
-					end
-					if link then
-						local anyLink = link :: any
-						anyLink.Attachment0 = a0
-						anyLink.Attachment1 = a1
-						anyLink.IsBidirectional = true
-						anyLink.Label = "Stairs"
-					end
 				end
 			end
 		end

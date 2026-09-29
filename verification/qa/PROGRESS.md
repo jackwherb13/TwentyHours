@@ -16,3 +16,4 @@
 14:21 reviewer hung on a Studio call and was killed; QA loop restarted with watchdog
 14:21 round 1 - build
 14:23 round 1 - reviewer
+16:19 Claude session restart killed the pipeline at ~14:55; round 1 review (29 issues, 9 critical) kept as gen3-round1; fixers relaunched detached

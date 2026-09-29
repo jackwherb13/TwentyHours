@@ -101,3 +101,31 @@ if levels then
 		end
 	end
 end
+
+for _, inst in rac:GetDescendants() do
+	if inst:GetAttribute("RAC_DoorLink") ~= true or inst:FindFirstChild("DoorLink") then
+		continue
+	end
+	local nearPart = inst:FindFirstChild("DoorLinkNear", true)
+	local farPart = inst:FindFirstChild("DoorLinkFar", true)
+	if not (nearPart and nearPart:IsA("BasePart") and farPart and farPart:IsA("BasePart")) then
+		continue
+	end
+	local nearAtt = nearPart:FindFirstChild("DoorLinkNearAtt")
+	local farAtt = farPart:FindFirstChild("DoorLinkFarAtt")
+	if not (nearAtt and nearAtt:IsA("Attachment") and farAtt and farAtt:IsA("Attachment")) then
+		continue
+	end
+	local ok, created = pcall(function()
+		return Instance.new("PathfindingLink")
+	end)
+	if ok and typeof(created) == "Instance" then
+		created.Name = "DoorLink"
+		created.Parent = inst
+		local anyLink = created :: any
+		anyLink.Attachment0 = nearAtt
+		anyLink.Attachment1 = farAtt
+		anyLink.IsBidirectional = true
+		anyLink.Label = "Door"
+	end
+end

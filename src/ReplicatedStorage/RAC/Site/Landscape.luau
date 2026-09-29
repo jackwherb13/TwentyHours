@@ -24,70 +24,83 @@ local function onAsphalt(x: number, z: number): boolean
 	return paved >= 2
 end
 
-local function leafWedge(parent: Instance, cf: CFrame, size: Vector3, pine: boolean)
-	local wedge = Instance.new("WedgePart")
-	wedge.Name = "Crown"
-	wedge.Size = size
-	wedge.CFrame = cf
-	wedge.Anchored = true
-	wedge.CanCollide = false
-	wedge.Material = Enum.Material.SmoothPlastic
-	wedge.Color = if pine then Color3.fromRGB(28, 58, 36) else Color3.fromRGB(54, 86, 42)
-	wedge.Parent = parent
+local GREENS = {
+	Color3.fromRGB(54, 88, 44),
+	Color3.fromRGB(42, 74, 36),
+	Color3.fromRGB(66, 98, 50),
+	Color3.fromRGB(48, 80, 40),
+}
+
+local function foliageBall(parent: Instance, center: Vector3, diameter: number, color: Color3)
+	local part = P.box(
+		parent,
+		"Crown",
+		Vector3.new(diameter, diameter * 0.8, diameter * 0.92),
+		CFrame.new(center),
+		"leaf",
+		false
+	)
+	part.Shape = Enum.PartType.Ball
+	part.Color = color
+	part.Material = Enum.Material.SmoothPlastic
+	return part
 end
 
--- Trunk plus layered wedges. Stacked balls read as lollipops.
+local function pineCone(parent: Instance, center: Vector3, diameter: number, height: number, color: Color3)
+	local part = P.box(parent, "Crown", Vector3.new(diameter, height, diameter), CFrame.new(center), "pine", false)
+	part.Color = color
+	part.Material = Enum.Material.SmoothPlastic
+	local mesh = Instance.new("SpecialMesh")
+	-- This runtime's MeshType has Pyramid, not Cone. A stacked pyramid is the pine silhouette.
+	mesh.MeshType = Enum.MeshType.Pyramid
+	mesh.Scale = Vector3.new(1, 1, 1)
+	mesh.Parent = part
+	return part
+end
+
+-- Trunk plus 4 ellipsoid clusters, or a pine of stacked cones. No wedge crowns.
 local function tree(parent: Instance, item: any, index: number)
 	local p = item.at
-	local scale = 0.85 + ((index * 13) % 5) * 0.08
-	local height = math.clamp(item.height * scale, 18, 36)
+	local scale = 0.8 + ((index * 17) % 5) * 0.1
+	local height = math.clamp(item.height * scale, 14, 24)
 	local y = H.height(p[1], p[2])
 	local pine = item.species == "pine" or (index % 5 == 0)
 	local model = P.folder(parent, if pine then "PineCanopy" else "ShadeCanopy")
-	local trunkH = if pine then height * 0.55 else height * 0.48
-	local trunkW = if pine then 1.15 else 1.55
+	local trunkH = if pine then height * 0.46 else height * 0.42
+	local trunkW = if pine then 0.85 else 1.15
 	local trunk = P.pole(model, "Trunk", Vector3.new(p[1], y, p[2]), trunkH, trunkW / 2, "bark", false)
 	trunk.Color = Color3.fromRGB(92, 74, 56)
-	local yaw = math.rad((index * 47) % 360)
-	-- Tip of a WedgePart is local -Z. Pitch that tip up so the crown is a cone, not a stack of plates.
-	local function crown(origin: Vector3, face: number, tilt: number, size: Vector3)
-		leafWedge(
-			model,
-			CFrame.new(origin)
-				* CFrame.Angles(0, face, 0)
-				* CFrame.Angles(tilt, 0, 0)
-				* CFrame.new(0, 0, -size.Z * 0.32),
-			size,
-			pine
-		)
-	end
 	if pine then
-		for layer = 0, 2 do
-			local t = layer / 2
-			local len = height * (0.42 - 0.2 * t)
-			local cy = y + trunkH * 0.28 + t * height * 0.52
-			for k = 0, 2 do
-				crown(
-					Vector3.new(p[1], cy, p[2]),
-					yaw + layer * 0.7 + k * math.pi * 2 / 3,
-					math.rad(60),
-					Vector3.new(len * 0.78, len * 0.22, len)
-				)
-			end
+		local layers = {
+			{ t = 0.34, d = 0.62, h = 0.36 },
+			{ t = 0.52, d = 0.48, h = 0.3 },
+			{ t = 0.68, d = 0.34, h = 0.26 },
+			{ t = 0.82, d = 0.2, h = 0.22 },
+		}
+		for layerIndex, layer in layers do
+			pineCone(
+				model,
+				Vector3.new(p[1], y + height * layer.t, p[2]),
+				height * layer.d,
+				height * layer.h,
+				Color3.fromRGB(26 + layerIndex * 4, 56 + layerIndex * 3, 34)
+			)
 		end
 	else
-		local crownR = height * 0.42
-		for tier = 0, 1 do
-			local len = crownR * (1.2 - 0.38 * tier)
-			local cy = y + trunkH * 0.78 + tier * crownR * 0.55
-			for k = 0, 4 do
-				crown(
-					Vector3.new(p[1], cy, p[2]),
-					yaw + tier * 0.55 + k * math.pi * 2 / 5,
-					math.rad(32 + tier * 10),
-					Vector3.new(len * 0.62, len * 0.34, len)
-				)
-			end
+		local crown = height * 0.42
+		local spots = {
+			{ 0, crown * 0.12, 0, 1.15, 1 },
+			{ crown * 0.32, crown * 0.02, crown * 0.14, 0.78, 2 },
+			{ -crown * 0.26, -crown * 0.04, crown * 0.2, 0.7, 3 },
+			{ crown * 0.06, crown * 0.34, -crown * 0.18, 0.62, 4 },
+		}
+		for _, spot in spots do
+			foliageBall(
+				model,
+				Vector3.new(p[1] + spot[1], y + trunkH * 0.7 + spot[2], p[2] + spot[3]),
+				crown * spot[4] * 1.45,
+				GREENS[spot[5]]
+			)
 		end
 	end
 end
@@ -95,15 +108,13 @@ end
 function Landscape.build(parent: Instance, site: any, props: any)
 	local trees = P.folder(parent, "Trees")
 	assert(#site.trees <= 150, "Tree budget exceeded")
-	local entrance = site.entrance
 	for i, item in site.trees do
 		local at = item.at
-		local dx, dz = at[1] - entrance.x, at[2] - entrance.z
-		-- Keep the south glass, the canopy, and the stair clear. Crowns were growing through the lobby.
-		if at[1] > -120 and at[1] < 36 and at[2] > -40 and at[2] < 68 then
+		-- Keep the south glass and the door-centered flight clear. The east lot still gets trees.
+		if at[1] > -108 and at[1] < 18 and at[2] > -26 and at[2] < 20 then
 			continue
 		end
-		if dx * dx + dz * dz < 56 * 56 and at[2] > entrance.z - 12 then
+		if math.abs(at[1]) < 28 and at[2] > -4 and at[2] < 44 then
 			continue
 		end
 		local pads = {}
@@ -190,23 +201,30 @@ function Landscape.build(parent: Instance, site: any, props: any)
 		local cf = CFrame.new(x, y, z) * CFrame.Angles(0, math.rad(prop.rotation), 0)
 		if prop.kind == "site_lamp" then
 			local base = y - 0.5
-			P.box(
+			local pole = P.box(
 				parent,
 				"LightPole",
-				Vector3.new(0.28, y + 16 - base, 0.28),
+				Vector3.new(0.32, y + 16 - base, 0.32),
 				CFrame.new(x, (base + y + 16) / 2, z),
 				"dark",
 				true
 			)
-			local globe = P.box(parent, "LightGlobe", Vector3.new(1.2, 1.2, 1.2), cf * CFrame.new(0, 16.6, 0), "metal")
-			globe.Shape = Enum.PartType.Ball
-			globe.Material = Enum.Material.SmoothPlastic
-			globe.Color = Color3.fromRGB(255, 236, 200)
+			pole.Material = Enum.Material.SmoothPlastic
+			pole.Color = Color3.fromRGB(32, 34, 36)
+			pole.Reflectance = 0
+			local head = P.box(parent, "LightHead", Vector3.new(2.3, 0.38, 1.0), cf * CFrame.new(0, 16.35, 0), "dark")
+			head.Material = Enum.Material.SmoothPlastic
+			head.Color = Color3.fromRGB(28, 30, 32)
+			head.Reflectance = 0
+			local lens =
+				P.box(parent, "LightHead", Vector3.new(1.8, 0.08, 0.58), cf * CFrame.new(0, 16.12, 0), "white", false)
+			lens.Material = Enum.Material.SmoothPlastic
+			lens.Color = Color3.fromRGB(255, 232, 196)
 			local lamp = Instance.new("PointLight")
-			lamp.Brightness = 1.5
-			lamp.Range = 48
-			lamp.Color = Color3.fromRGB(255, 236, 200)
-			lamp.Parent = globe
+			lamp.Brightness = 1.2
+			lamp.Range = 42
+			lamp.Color = Color3.fromRGB(255, 228, 190)
+			lamp.Parent = lens
 		elseif prop.kind == "site_dumpster" then
 			P.box(parent, "DumpsterBody", Vector3.new(6, 4, 3.7), cf * CFrame.new(0, 2, 0), "green", true)
 			P.box(

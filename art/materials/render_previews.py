@@ -62,13 +62,22 @@ def main() -> None:
         tm = re.search(rf"\n\t{key} = \{{.*?\n\t\ttexture = ([^\n]+)", text, re.S)
         arr = np.zeros((1024, 1024, 3), np.float32)
         arr[:] = rgb
-        if tm:
+        if key == "glass":
+            yy = np.linspace(0, 1, 1024).reshape(1024, 1, 1)
+            sky = np.array([164, 200, 232], np.float32)
+            ground = np.array([140, 176, 210], np.float32)
+            arr = sky * (1 - yy) + ground * yy
+            for i in range(120, 1024, 160):
+                arr[i : i + 6, :, :] *= 0.45
+            for j in range(140, 1024, 200):
+                arr[:, j : j + 6, :] *= 0.45
+        elif tm:
             raw = tm.group(1).strip().rstrip(",")
             if raw.startswith('"'):
                 path = ROOT / raw.strip('"')
                 if path.exists():
                     src = np.array(Image.open(path).convert("RGB"), dtype=np.float32)
-                    arr = np.clip(src * (rgb / 255.0), 0, 255)
+                    arr = src
         im = Image.fromarray(np.rint(arr).astype(np.uint8)).resize((900, 900), Image.Resampling.LANCZOS)
         im.save(OUT / f"{key}.png")
         print(key, "ok")

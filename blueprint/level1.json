@@ -330,19 +330,19 @@
         ],
         [
           -12.5,
-          -40.0
+          -45.0
         ],
         [
           2.0,
-          -40.0
+          -45.0
         ],
         [
           2.0,
-          -23.5
+          -30.5
         ],
         [
           10.0,
-          -23.5
+          -30.5
         ],
         [
           10.0,
@@ -454,11 +454,11 @@
       "polygon": [
         [
           -78.5,
-          -188.0
+          -195.5
         ],
         [
           -66.5,
-          -188.0
+          -195.5
         ],
         [
           -66.5,
@@ -516,11 +516,11 @@
         ],
         [
           10.0,
-          -48.0
+          -53.0
         ],
         [
           -5.0,
-          -48.0
+          -53.0
         ]
       ],
       "floorMaterial": "porcelain_tile",
@@ -535,27 +535,31 @@
       "polygon": [
         [
           2.0,
-          -23.5
+          -30.5
         ],
         [
           2.0,
-          -40.0
+          -45.0
         ],
         [
           -12.5,
-          -40.0
+          -45.0
         ],
         [
-          -12.5,
-          -48.0
+          -15.0,
+          -45.0
+        ],
+        [
+          -15.0,
+          -53.0
         ],
         [
           10.0,
-          -48.0
+          -53.0
         ],
         [
           10.0,
-          -23.5
+          -30.5
         ]
       ],
       "floorMaterial": "sealed_concrete",
@@ -686,11 +690,11 @@
         ],
         [
           -78.5,
-          -177.0
+          -178.0
         ],
         [
           -193.5,
-          -177.0
+          -178.0
         ]
       ],
       "floorMaterial": "terrazzo",
@@ -1350,6 +1354,14 @@
         ],
         [
           -5.0,
+          -53.0
+        ],
+        [
+          -15.0,
+          -53.0
+        ],
+        [
+          -15.0,
           -48.0
         ],
         [
@@ -1601,11 +1613,11 @@
       "polygon": [
         [
           -193.5,
-          -177.0
+          -178.0
         ],
         [
           -78.5,
-          -177.0
+          -178.0
         ],
         [
           -78.5,
@@ -1742,7 +1754,7 @@
         -262.0
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "gypsum",
       "exterior": false,
       "openings": []
@@ -1758,10 +1770,35 @@
         -195.5
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "painted_cmu",
       "exterior": false,
-      "openings": []
+      "openings": [
+        {
+          "type": "door",
+          "offset": 20.0,
+          "width": 6.0,
+          "sill": 0,
+          "head": 8,
+          "leaves": 2,
+          "connection": [
+            "corridor_ne",
+            "competition_gym"
+          ]
+        },
+        {
+          "type": "door",
+          "offset": 32.0,
+          "width": 6.0,
+          "sill": 0,
+          "head": 8,
+          "leaves": 2,
+          "connection": [
+            "corridor_ne",
+            "competition_gym"
+          ]
+        }
+      ]
     },
     {
       "id": "l1_w003",
@@ -1774,7 +1811,7 @@
         -188.0
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "brick",
       "exterior": true,
       "openings": []
@@ -1790,7 +1827,7 @@
         -186.0
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": []
@@ -1806,7 +1843,7 @@
         -214.0
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "brick",
       "exterior": true,
       "openings": []
@@ -1822,7 +1859,7 @@
         -186.0
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": []
@@ -2167,7 +2204,7 @@
       "id": "l1_w023",
       "a": [
         -12.5,
-        -48.0
+        -45.0
       ],
       "b": [
         -12.5,
@@ -2180,8 +2217,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 9.0,
-          "width": 22.0,
+          "offset": 14.5,
+          "width": 12.0,
           "sill": 0,
           "head": 12,
           "connection": [
@@ -2195,11 +2232,11 @@
       "id": "l1_w024",
       "a": [
         2.0,
-        -40.0
+        -45.0
       ],
       "b": [
         2.0,
-        -23.5
+        -30.5
       ],
       "thickness": 0.67,
       "height": 32.5,
@@ -2227,7 +2264,7 @@
           "offset": 1.0,
           "width": 21.0,
           "sill": 0,
-          "head": 30,
+          "head": 23.8,
           "mullionSpacing": 5
         }
       ]
@@ -2402,22 +2439,15 @@
           ]
         },
         {
-          "type": "door",
-          "offset": 31.0,
+          "type": "opening",
+          "offset": 20.0,
           "width": 6.0,
           "sill": 0,
-          "head": 7,
-          "leaves": 2,
-          "tag": "RACDoor"
-        },
-        {
-          "type": "door",
-          "offset": 41.0,
-          "width": 6.0,
-          "sill": 0,
-          "head": 7,
-          "leaves": 2,
-          "tag": "RACDoor"
+          "head": 8,
+          "connection": [
+            "gym_foyer",
+            "corridor_gym_east"
+          ]
         }
       ]
     },
@@ -2486,7 +2516,7 @@
       ],
       "b": [
         10.0,
-        -48.0
+        -53.0
       ],
       "thickness": 0.28,
       "height": 12.5,
@@ -2496,7 +2526,7 @@
         {
           "type": "curtainwall",
           "offset": 1.0,
-          "width": 30.0,
+          "width": 24,
           "sill": 0,
           "head": 11,
           "mullionSpacing": 5
@@ -2511,7 +2541,7 @@
       ],
       "b": [
         -5.0,
-        -48.0
+        -53.0
       ],
       "thickness": 0.67,
       "height": 19.5,
@@ -2535,7 +2565,7 @@
       "id": "l1_w036",
       "a": [
         10.0,
-        -48.0
+        -53.0
       ],
       "b": [
         10.0,
@@ -3384,7 +3414,7 @@
         -279.5
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "brick",
       "exterior": true,
       "openings": [
@@ -3405,13 +3435,6 @@
           "head": 7,
           "leaves": 2,
           "tag": "RACDoor"
-        },
-        {
-          "type": "window",
-          "offset": 12.0,
-          "width": 90.0,
-          "sill": 25,
-          "head": 31
         }
       ]
     },
@@ -3426,7 +3449,7 @@
         -186.0
       ],
       "thickness": 0.28,
-      "height": 33.0,
+      "height": 34.5,
       "material": "painted_cmu",
       "exterior": false,
       "openings": [
@@ -3743,7 +3766,19 @@
       "height": 19.5,
       "material": "brick",
       "exterior": true,
-      "openings": []
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 0.5,
+          "width": 11.0,
+          "sill": 0,
+          "head": 12,
+          "connection": [
+            "corridor_ne",
+            "corridor_gym_east"
+          ]
+        }
+      ]
     },
     {
       "id": "l1_w089",
@@ -3867,12 +3902,12 @@
     {
       "id": "l1_w094",
       "a": [
-        -12.5,
-        -40.0
+        -15.0,
+        -45.0
       ],
       "b": [
         2.0,
-        -40.0
+        -45.0
       ],
       "thickness": 0.67,
       "height": 32.5,
@@ -3884,11 +3919,11 @@
       "id": "l1_w095",
       "a": [
         2.0,
-        -23.5
+        -30.5
       ],
       "b": [
         10.0,
-        -23.5
+        -30.5
       ],
       "thickness": 0.67,
       "height": 32.5,
@@ -3921,33 +3956,31 @@
       "openings": [
         {
           "type": "curtainwall",
-          "offset": 3.5,
-          "width": 80,
+          "offset": 1,
+          "width": 90,
           "sill": 0,
           "head": 30,
           "mullionSpacing": 5
         },
         {
-          "type": "curtainwall",
-          "offset": 87.0,
-          "width": 3,
-          "sill": 0,
-          "head": 30,
-          "mullionSpacing": 5
-        },
-        {
-          "type": "door",
-          "offset": 91.0,
+          "type": "opening",
+          "offset": 91,
           "width": 12,
           "sill": 0,
-          "head": 9,
-          "leaves": 2,
-          "tag": "RACDoor"
+          "head": 9
         },
         {
           "type": "curtainwall",
-          "offset": 104.0,
-          "width": 3,
+          "offset": 91,
+          "width": 12,
+          "sill": 9.15,
+          "head": 24,
+          "mullionSpacing": 4
+        },
+        {
+          "type": "curtainwall",
+          "offset": 103,
+          "width": 4,
           "sill": 0,
           "head": 30,
           "mullionSpacing": 5
@@ -4166,7 +4199,19 @@
       "height": 19.5,
       "material": "brick",
       "exterior": true,
-      "openings": []
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 0.5,
+          "width": 11.0,
+          "sill": 0,
+          "head": 12,
+          "connection": [
+            "corridor_gym_east",
+            "corridor_gym_east"
+          ]
+        }
+      ]
     },
     {
       "id": "l1_w105",
@@ -4266,12 +4311,12 @@
     {
       "id": "l1_w107",
       "a": [
-        -12.5,
-        -48.0
+        -15.0,
+        -53.0
       ],
       "b": [
         10.0,
-        -48.0
+        -53.0
       ],
       "thickness": 0.28,
       "height": 32.5,
@@ -4286,7 +4331,7 @@
         -48.0
       ],
       "b": [
-        -12.5,
+        -15.0,
         -48.0
       ],
       "thickness": 0.28,
@@ -4296,8 +4341,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 1.0,
-          "width": 28.0,
+          "offset": 0.5,
+          "width": 26,
           "sill": 0,
           "head": 10,
           "connection": [
@@ -4382,11 +4427,11 @@
       "id": "l1_w112",
       "a": [
         -193.5,
-        -177.0
+        -178.0
       ],
       "b": [
         -78.5,
-        -177.0
+        -178.0
       ],
       "thickness": 0.67,
       "height": 19.5,
@@ -5182,6 +5227,34 @@
         }
       ],
       "id": "l1_w148"
+    },
+    {
+      "id": "l1_w149",
+      "a": [
+        -15.0,
+        -53.0
+      ],
+      "b": [
+        -15.0,
+        -45.0
+      ],
+      "thickness": 0.67,
+      "height": 32.5,
+      "material": "painted_cmu",
+      "exterior": false,
+      "openings": [
+        {
+          "type": "opening",
+          "offset": 1.0,
+          "width": 6.0,
+          "sill": 0,
+          "head": 10,
+          "connection": [
+            "stair_main",
+            "corridor_wide"
+          ]
+        }
+      ]
     }
   ],
   "columns": [
@@ -5264,27 +5337,31 @@
       "polygon": [
         [
           2.0,
-          -23.5
+          -30.5
         ],
         [
           2.0,
-          -40.0
+          -45.0
         ],
         [
           -12.5,
-          -40.0
+          -45.0
         ],
         [
-          -12.5,
-          -48.0
+          -15.0,
+          -45.0
+        ],
+        [
+          -15.0,
+          -53.0
         ],
         [
           10.0,
-          -48.0
+          -53.0
         ],
         [
           10.0,
-          -23.5
+          -30.5
         ]
       ],
       "fromLevel": 1,
@@ -5303,19 +5380,19 @@
           "polygon": [
             [
               2.0,
-              -40.0
+              -45.0
             ],
             [
               10.0,
-              -40.0
+              -45.0
             ],
             [
               10.0,
-              -25.5
+              -30.5
             ],
             [
               2.0,
-              -25.5
+              -30.5
             ]
           ],
           "direction": [
@@ -5333,19 +5410,19 @@
           "polygon": [
             [
               -12.5,
-              -48.0
+              -53.0
             ],
             [
               2.0,
-              -48.0
+              -53.0
             ],
             [
               2.0,
-              -40.0
+              -45.0
             ],
             [
               -12.5,
-              -40.0
+              -45.0
             ]
           ],
           "direction": [
@@ -5365,19 +5442,19 @@
           "polygon": [
             [
               2.0,
-              -48.0
+              -53.0
             ],
             [
               10.0,
-              -48.0
+              -53.0
             ],
             [
               10.0,
-              -40.0
+              -45.0
             ],
             [
               2.0,
-              -40.0
+              -45.0
             ]
           ],
           "elevation": 10
@@ -5648,7 +5725,7 @@
       "kind": "front_desk",
       "at": [
         0.0,
-        -10.0
+        -13.5
       ],
       "rotation": 180,
       "room": "lobby",
@@ -5661,7 +5738,7 @@
       "kind": "office_chair",
       "at": [
         -6.0,
-        -14.0
+        -17.5
       ],
       "rotation": 180,
       "room": "lobby"
@@ -5671,7 +5748,7 @@
       "kind": "office_chair",
       "at": [
         -2.0,
-        -14.0
+        -17.5
       ],
       "rotation": 180,
       "room": "lobby"
@@ -5681,7 +5758,7 @@
       "kind": "office_chair",
       "at": [
         2.0,
-        -14.0
+        -17.5
       ],
       "rotation": 180,
       "room": "lobby"
@@ -5691,7 +5768,7 @@
       "kind": "office_chair",
       "at": [
         6.0,
-        -14.0
+        -17.5
       ],
       "rotation": 180,
       "room": "lobby"
@@ -6819,9 +6896,9 @@
       "kind": "banner",
       "at": [
         -120.0,
-        -142.0
+        -270.0
       ],
-      "rotation": 0,
+      "rotation": 180,
       "room": "competition_gym"
     },
     {
@@ -6829,9 +6906,9 @@
       "kind": "banner",
       "at": [
         -150.0,
-        -142.0
+        -270.0
       ],
-      "rotation": 0,
+      "rotation": 180,
       "room": "competition_gym"
     },
     {
@@ -6839,17 +6916,17 @@
       "kind": "banner",
       "at": [
         -136.0,
-        -272.0
+        -190.0
       ],
-      "rotation": 180,
+      "rotation": 0,
       "room": "competition_gym"
     },
     {
       "id": "vb_flag",
       "kind": "flag",
       "at": [
-        -84.0,
-        -148.0
+        -100.0,
+        -200.0
       ],
       "rotation": 90,
       "room": "competition_gym"

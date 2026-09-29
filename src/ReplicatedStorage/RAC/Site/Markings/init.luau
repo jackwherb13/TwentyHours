@@ -18,8 +18,8 @@ local Data = loadFirst({ script.Data, script.Parent.Data })
 
 local Markings = {}
 
-local STRIPE_H = 0.04
-local RISE = 0.12 -- 0.02 ft above county slab top (~height+0.08)
+local STRIPE_H = 0.06
+local RISE = 0.3 -- clear of the lidar slab top (~height+0.08)
 
 local extra: { [string]: { Enum.Material | Color3 } } = {
 	blue = { Enum.Material.SmoothPlastic, Color3.fromRGB(40, 82, 168) },
@@ -97,6 +97,9 @@ function Markings.build(parent: Instance, _site: any): number
 			elseif color == "concrete" then "concrete"
 			else "white"
 		local width = feat.width or 0.333
+		if kind == "stall" then
+			width = math.max(width, 0.55)
+		end
 		local depth = if kind == "island" then 0.5 else STRIPE_H
 		local lift = KIND_LIFT[kind] or 0
 		local pts = feat.points

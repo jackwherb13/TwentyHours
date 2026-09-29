@@ -28,7 +28,9 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 				end
 			end
 		end
-		if paved >= 3 then
+		-- Keep the entrance lawn. Everywhere else, two asphalt neighbors close a grass gap in a lot.
+		local entranceLawn = math.abs(x) < 48 and z >= 34 and z < 115
+		if paved >= 2 and not entranceLawn then
 			return 2
 		end
 		return m
@@ -53,6 +55,44 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 			end
 		end
 		return false
+	end
+	local function nearLine(x: number, z: number, pts: { { number } }, half: number): boolean
+		local limit = half * half
+		for i = 1, #pts - 1 do
+			local ax, az = pts[i][1], pts[i][2]
+			local bx, bz = pts[i + 1][1], pts[i + 1][2]
+			local dx, dz = bx - ax, bz - az
+			local len2 = dx * dx + dz * dz
+			local t = if len2 > 1 then math.clamp(((x - ax) * dx + (z - az) * dz) / len2, 0, 1) else 0
+			local ex, ez = x - (ax + dx * t), z - (az + dz * t)
+			if ex * ex + ez * ez < limit then
+				return true
+			end
+		end
+		return false
+	end
+	-- Patriot Circle centerline from the digitized double-yellow. The material grid calls this band grass.
+	local patriotWest = {
+		{ -410, 186.2 },
+		{ -280, 188.5 },
+		{ -100, 191.5 },
+		{ 20, 193.5 },
+		{ 55, 179.6 },
+		{ 82, 157.6 },
+	}
+	local patriotEast = {
+		{ 200, 141.0 },
+		{ 280, 147.5 },
+		{ 360, 160.0 },
+	}
+	local function carriageway(x: number, z: number): boolean
+		local dx, dz = x - 147, z - 147
+		local r2 = dx * dx + dz * dz
+		-- Island stays grass (r < 33). The ring matches the inner curb at 36 ft and the outer edge near 66 ft.
+		if r2 > 33 * 33 and r2 < 68 * 68 then
+			return true
+		end
+		return nearLine(x, z, patriotWest, 16) or nearLine(x, z, patriotEast, 16)
 	end
 	local count = 0
 	-- WriteVoxels snaps regions onto the 4-stud grid. The lidar origin is not on that grid
@@ -84,17 +124,30 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 						local z = origin.Z + (iz - 0.5) * resolution
 						local h = Heightfield.height(x, z)
 						local material = materialAt(x, z)
-						-- Concrete under the slab, on the south stair, and on the stair walk.
-						-- Grass blades were coming through the approach slabs. Lawn beside the flight stays grass.
-						if
-							insidePad(x, z)
-							or (x > -104 and x < 18 and z > -1 and z < 40)
-							or (x > -68 and x < -14 and z >= 40 and z < 92)
-						then
+						local flight = x > -14 and x < 20 and z > -1 and z < 35
+						local yard = x < -194 and x > -212 and z < -230 and z > -274
+						-- East RAC lot. The grid stores it as concrete and grass beside the glass corner.
+						local eastLot = x > 52 and x < 175 and z > -6 and z < 56
+						if insidePad(x, z) or flight then
 							material = 3
-						elseif x > -224 and x < -96 and z > 46 and z < 86 and material == 1 then
-							-- Service court along the south brick wall. Grass blades were growing through the pad.
+						elseif yard or carriageway(x, z) or (eastLot and (material == 1 or material == 3)) then
+							-- Roads and the east lot stay on lidar height. Only the material changes.
 							material = 2
+						else
+							-- The south approach is baked concrete from an old plaza. Photos show lawn.
+							local southLawn = math.abs(x) < 42 and z >= 36 and z < 102 and material == 3
+							local westCheek = x < -14 and x > -46 and z > 8 and z < 36 and material == 3
+							if southLawn or westCheek then
+								material = 1
+							elseif material == 1 and not (math.abs(x) < 48 and z >= 34 and z < 115) then
+								local left = rawMaterial(x - 8, z) == 2
+								local right = rawMaterial(x + 8, z) == 2
+								local north = rawMaterial(x, z - 8) == 2
+								local south = rawMaterial(x, z + 8) == 2
+								if (left and right) or (north and south) then
+									material = 2
+								end
+							end
 						end
 						local fill = math.clamp((h - bottom) / resolution, 0, 1)
 						mats[ix][iy][iz] = if fill == 0 then Enum.Material.Air else materials[material]

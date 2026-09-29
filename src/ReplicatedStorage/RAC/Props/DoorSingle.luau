@@ -21,10 +21,14 @@ function DoorSingle.build(cf: CFrame, opts: { [string]: any }?): Model
 	local C = Kit.Color
 
 	local isWood = opts and opts.material == "wood"
+	local isGlass = opts and opts.glass == true
 	local hasVision = opts and opts.vision == true
 
-	local leafMaterial = if isWood then Enum.Material.Wood else Enum.Material.Metal
-	local leafColor = if isWood then DoorWood else SteelGrey
+	local leafMaterial = if isGlass
+		then Enum.Material.Glass
+		elseif isWood then Enum.Material.Wood
+		else Enum.Material.Metal
+	local leafColor = if isGlass then Color3.fromRGB(198, 214, 216) elseif isWood then DoorWood else SteelGrey
 
 	local w, h, d = 3.6, 7.2, 0.8
 	local frameThick = 0.2
@@ -100,7 +104,7 @@ function DoorSingle.build(cf: CFrame, opts: { [string]: any }?): Model
 	-- 2. Door leaf (split into 3 segments for bounding checks: Lower, Middle "Door", Upper)
 	local doorSegH = doorH / 3
 	-- Lower leaf segment
-	b:box(
+	local lowerDoor = b:box(
 		"Door_Lower",
 		Vector3.new(doorW, doorSegH, doorThick),
 		Kit.at(0, doorSegH / 2, doorZ),
@@ -129,7 +133,7 @@ function DoorSingle.build(cf: CFrame, opts: { [string]: any }?): Model
 	hingePart.Parent = mainDoor
 
 	-- Upper leaf segment
-	b:box(
+	local upperDoor = b:box(
 		"Door_Upper",
 		Vector3.new(doorW, doorSegH, doorThick),
 		Kit.at(0, 2 * doorSegH + doorSegH / 2, doorZ),
@@ -137,6 +141,14 @@ function DoorSingle.build(cf: CFrame, opts: { [string]: any }?): Model
 		leafMaterial,
 		true
 	)
+	if isGlass then
+		for _, leaf in { lowerDoor, mainDoor, upperDoor } do
+			leaf.Material = Enum.Material.Glass
+			leaf.Color = Color3.fromRGB(198, 214, 216)
+			leaf.Transparency = 0.42
+			leaf.Reflectance = 0.08
+		end
+	end
 
 	-- 3. Vision lite option (narrow glass window insert in upper middle)
 	if hasVision then
