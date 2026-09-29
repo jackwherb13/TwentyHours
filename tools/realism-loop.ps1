@@ -6,7 +6,8 @@ param(
 	[Parameter(Mandatory)] [string]$Session,
 	[int]$FixRounds = 2,
 	[string]$WaitFor = 'verification/qa/PASSED',
-	[int]$StartPass = 1
+	[int]$StartPass = 1,
+	[int]$MinScore = 7
 )
 $ErrorActionPreference = 'Continue'
 $root = Split-Path $PSScriptRoot -Parent
@@ -78,7 +79,7 @@ $lockRule
 		try { $issues = @((((Get-Content "$dir/review$r.json" -Raw | ConvertFrom-Json).text) | ConvertFrom-Json).issues) } catch { Log "pass $n review $r unparsable" }
 		$pairs = @(Get-ChildItem "$dir/pairs$r" -Filter *.jpg -ErrorAction SilentlyContinue | ForEach-Object FullName)
 		if ($pairs.Count) {
-			pwsh -NoProfile -File tools/judge.ps1 -Images ($pairs -join ',') -Out "$dir/judgement$r.json" -MinScore 7 2>&1 | Out-File "$dir/judge$r.txt" -Encoding utf8
+			pwsh -NoProfile -File tools/judge.ps1 -Images ($pairs -join ',') -Out "$dir/judgement$r.json" -MinScore $MinScore 2>&1 | Out-File "$dir/judge$r.txt" -Encoding utf8
 			Select-String "$dir/judge$r.txt" -Pattern '^FAIL' | ForEach-Object { $issues += [pscustomobject]@{ severity = 'major'; area = 'photo match'; issue = $_.Line; evidence = "$dir/judge$r.txt"; fix = 'see judge problems' } }
 		}
 		$issues | ConvertTo-Json -Depth 6 | Out-File "$dir/ISSUES$r.json" -Encoding utf8

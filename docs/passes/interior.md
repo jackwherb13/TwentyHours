@@ -32,3 +32,13 @@ fire extinguisher cabinets, thermostats, outlets, bulletin boards, clocks, trash
 ## Pass 7: Fill the gaps with logic
 Walk every space that no photo shows and make it plausible for a university rec/athletics building (storage, mechanical, janitor, corridors),
 consistent with neighbouring spaces. No empty boxes, no impossible rooms. Final interior photo-match on every station.
+
+## Pass 8: Life
+The building must feel used: team bags and balls in carts by the volleyball gym, water bottles, towels, whiteboards with drills, posters and
+schedules, sign-in sheets at the desk, equipment left in realistic positions (dumbbells on racks and a few on the floor, a barbell loaded on a
+rack), trainer's room supplies (tape rolls, ice bags, foam rollers, bands), chairs slightly askew, trash in bins, notices on bulletin boards.
+Only what the photos or a real university rec/athletics building would have. Priority: volleyball gym + athletic trainer's office.
+
+## Pass 9: Photo-match iteration to 90 %
+For EVERY interior photo station (reference/photos IMG_*, WEB_*, reference/web/interior/*): capture, pair, judge. Fix the biggest differences
+first, re-capture, repeat. Done only when both judges score every interior station >= 8/10 (report the table of scores per station).
