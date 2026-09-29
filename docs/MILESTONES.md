@@ -7,7 +7,8 @@ Each milestone's **Done when** list is the acceptance test. Work only inside the
 - [ ] M1 Blueprint — measured building data
   - Sources: `reference/site_plan_native.png` (718×727, scale bar 0–100 ft bottom-left), the Perkins&Will drawings
     (`reference/photos/Screenshot_*.jpg`, Level 1/2/3 plans, 1/32"=1'), and the OSM outline (`reference/osm_rac_area.json`,
-    way 112472416, ~392×341 ft, the ground truth for size). Output `blueprint/level1.json`, `level2.json`, `site.json`.
+    way 112472416, ~392×341 ft, the ground truth for size). Output `blueprint/level1.json`, `level2.json`, `site.json` EXACTLY in the format of `docs/BLUEPRINT_SCHEMA.md` (the builder and prop library are being written against it in parallel by other agents; do not invent another schema).
+    You own ONLY: blueprint/, verification/M1/, tools/ scripts you create. Do not touch src/, art/, data/.
   - Work in STAGES; after each, append a line to verification/M1/PROGRESS.md and run `python tools/render_plan.py`:
     1. Calibration (≤15 min): fit the site plan to the OSM outline (scale + rotation + offset). Cross-check scale with the
        basketball courts drawn in the Competition Gym and South Gym (regulation 94×50 ft, cross courts 84×50): must agree

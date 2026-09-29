@@ -4,7 +4,8 @@ param(
 	[string]$Only,
 	[int]$MaxAttempts = 5,
 	[int]$MaxTurns = 150,
-	[switch]$NoPush
+	[switch]$NoPush,
+	[string[]]$Paths = @('.')
 )
 $ErrorActionPreference = 'Continue'
 $root = Split-Path $PSScriptRoot -Parent
@@ -115,7 +116,7 @@ $(if (Test-Path "docs/reviews/$id.md") { Get-Content "docs/reviews/$id.md" -Raw 
 	}
 
 	(Get-Content docs/MILESTONES.md -Raw) -replace "- \[ \] $id\b", "- [x] $id" | Set-Content docs/MILESTONES.md -NoNewline -Encoding utf8
-	git add -A
+	git add -- $Paths docs/MILESTONES.md
 	git commit -q -m "$id complete (Grok build loop, verify + audit passed)`n`nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 	if (-not $NoPush) { git push -q 2>&1 | Out-Null }
 	Log "=== $id DONE (committed) ==="
