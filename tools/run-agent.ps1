@@ -7,7 +7,8 @@ param(
 	[Parameter(Mandatory)] [string]$PromptFile,
 	[int]$MaxTurns = 200,
 	[string]$Model,
-	[string]$Effort
+	[string]$Effort,
+	[string]$Resume
 )
 $root = Split-Path $PSScriptRoot -Parent
 Set-Location $root
@@ -29,8 +30,12 @@ switch ($Tool) {
 		$cx = @()
 		if ($Model) { $cx += @('-m', $Model) }
 		if ($Effort) { $cx += @('-c', "model_reasoning_effort=`"$Effort`"") }
-		$prompt | codex exec --skip-git-repo-check --dangerously-bypass-approvals-and-sandbox -C $root @cx - 2>"$out.err" |
-			Out-File $out -Encoding utf8
+		if ($Resume) {
+			$prompt | codex exec resume $Resume --skip-git-repo-check --dangerously-bypass-approvals-and-sandbox @cx - 2>>"$out.err" | Out-File $out -Encoding utf8
+		} else {
+			$prompt | codex exec --skip-git-repo-check --dangerously-bypass-approvals-and-sandbox -C $root @cx - 2>"$out.err" |
+				Out-File $out -Encoding utf8
+		}
 	}
 	'agy' {
 		agy -p $prompt --dangerously-skip-permissions --output-format text 2>"$out.err" | Out-File $out -Encoding utf8
