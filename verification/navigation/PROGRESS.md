@@ -3,3 +3,5 @@
 00:10 navcheck - NavCheck.server.luau disabled by default - src/ServerScriptService/NavCheck.server.luau
 00:40 tests - build.spec PASS - tests/build.spec.luau
 00:50 verify - owned luau-lsp/selene/stylua pass; other-agent stylua/geometry/materials fail - verification/navigation/REPORT.md
+16:45 studio - Place1 Pathfinding pass=58 fail=74; Zone tags 0; REPORT Studio results 2026-09-29
+

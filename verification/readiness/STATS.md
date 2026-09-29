@@ -1,22 +1,11 @@
-# Offline stats (places/build.rbxm, 2026-09-29)
+# Studio stats 2026-09-29 (Place1 / TwentyHours.rbxl play)
 
-| Metric | Value |
-|---|---:|
-| BaseParts | 24496 |
-| Instances | 26282 |
-| Shell | 8475 |
-| Props | 10428 |
-| Exterior | 4091 |
-| Campus | 1372 |
-| Horizon | 130 |
-| MeshParts | 0 |
-| Unions | 0 |
-| Decals | 0 |
-| Textures | 0 |
-| Lights | 392 |
-| Lights with shadows | 0 |
+Rebuild `places/build.rbxm`: 24570 parts. Play workspace: 33972 instances, 32531 BaseParts.
 
-Studio FPS / memory / draw calls: not captured. Connected MCP studios were `Place1` and `rac_round4.rbxl`; the shared place `TwentyHours.rbxl` was not open. Do not play-test other places.
+| Location | AverageFPS | Batches | GetTotalMemoryUsageMb | physFPS |
+|---|---:|---:|---:|---:|
+| lobby (-2, 3, -17) | 41.0 | 177 | 5056 | 60 |
+| competition_gym (-135, 3, -232) | 41.0 | 146 | 5055 | 60 |
+| locker_volleyball (-222, 3, -129) | 41.0 | 97 | 5057 | 60 |
 
-Mini-build Perf.apply (`tests/build.spec` path, before Tags crash in that test):
-`parts 674→674 collide 256→240 touch 674→222 query 674→479 shadow 528→502 groups 0`
+VideoMemoryInMB=27876 (FrameRateManager). HeartbeatTimeMs≈0.16.
