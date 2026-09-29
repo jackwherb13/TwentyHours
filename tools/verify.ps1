@@ -38,6 +38,15 @@ if (Test-Path places/props_preview.rbxm) {
 if ((Test-Path places/build.rbxm) -and (Test-Path blueprint/level1.json) -and ((Get-Item places/build.rbxm).LastWriteTime -gt (Get-Item blueprint/level1.json).LastWriteTime)) {
 	Step 'building geometry (intersections, gaps, blocked doors)' { lune run tools/check_geometry.luau places/build.rbxm blueprint }
 }
+if (Test-Path art/materials/materials.spec.luau) {
+	Step 'material spec' { lune run art/materials/materials.spec.luau }
+}
+if (Test-Path tools/check_materials.luau) {
+	Step 'material template' { lune run tools/check_materials.luau }
+}
+if ((Test-Path tools/check_perf.luau) -and (Test-Path places/build.rbxm)) {
+	Step 'perf budgets and walkable surfaces' { lune run tools/check_perf.luau places/build.rbxm blueprint }
+}
 if (Test-Path tools/globalTypes.d.luau) {
 	rojo sourcemap default.project.json -o sourcemap.json 2>&1 | Out-Null
 	Step 'luau-lsp analyze' {

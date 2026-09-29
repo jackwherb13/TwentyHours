@@ -11,6 +11,8 @@ local Roofs = require(script.Parent.Roofs)
 local PropRegistry = require(script.Parent.PropRegistry)
 local Court = require(script.Parent.Court)
 local LightingBuild = require(script.Parent.Lighting)
+local Perf = require(script.Parent.Perf)
+local Tags = require(script.Parent.Tags)
 local Build = {}
 
 local function levelOneY(data: any): number
@@ -85,12 +87,13 @@ function Build.build(parent: Instance, raw: any): Stats
 				propY += 5.2
 			elseif prop.kind == "bulletin_board" then
 				propY += 3.4
+			elseif prop.kind == "exit_sign" then
+				propY += 7.6
 			end
-			local cf = CFrame.new(prop.at[1], propY, prop.at[2])
-				* CFrame.Angles(0, math.rad(prop.rotation), 0)
+			local cf = CFrame.new(prop.at[1], propY, prop.at[2]) * CFrame.Angles(0, math.rad(prop.rotation), 0)
 			local opts: { [string]: any } = { room = prop.room }
 			local extra = prop :: any
-			for _, key in { "length", "bays", "rows", "text", "depth", "sign" } do
+			for _, key in { "length", "bays", "rows", "text", "depth", "sign", "shape", "stalls", "count", "sinks" } do
 				if extra[key] ~= nil then
 					opts[key] = extra[key]
 				end
@@ -174,6 +177,17 @@ function Build.build(parent: Instance, raw: any): Stats
 	local roofs = Geometry.folder(site, "Roofs")
 	Roofs.build(roofs, data.site)
 	count(roofs, "Roofs")
+	Perf.apply(model)
+	local beforeTags = stats.parts
+	Tags.apply(model, data)
+	local afterTags = 0
+	for _, item in model:GetDescendants() do
+		if item:IsA("BasePart") then
+			afterTags += 1
+		end
+	end
+	stats.byCategory["Tags"] = math.max(0, afterTags - beforeTags)
+	stats.parts = afterTags
 	return stats
 end
 return Build
