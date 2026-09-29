@@ -17,3 +17,6 @@
 14:21 round 1 - build
 14:23 round 1 - reviewer
 16:19 Claude session restart killed the pipeline at ~14:55; round 1 review (29 issues, 9 critical) kept as gen3-round1; fixers relaunched detached
+18:35 round 1 - build
+18:38 round 1 - reviewer
+18:52 QA paused by manager: Studio signed out (agent-launched second Studio wiped the saved login); resumes once the user signs in and the place is open

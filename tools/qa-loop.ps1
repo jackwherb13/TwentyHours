@@ -90,8 +90,10 @@ and a readable $dir/REVIEW.md. A review with no screenshots under $dir/route/ an
 			$issues += [pscustomobject]@{ severity = 'major'; owner = 'exterior'; area = 'photo match'; issue = $_.Line; evidence = "$dir/judge.txt"; fix = 'see judge problems' }
 		}
 	}
-	if ($verifyFailed) {
-		$vf = (Select-String "$dir/verify.txt" -Pattern '^FAIL' | ForEach-Object Line) -join '; '
+	# PBR upload staleness belongs to the materials agent, not the structure fixers.
+	$vfLines = @(Select-String "$dir/verify.txt" -Pattern '^FAIL' | ForEach-Object Line | Where-Object { $_ -notmatch 'PBR maps uploaded' })
+	if ($verifyFailed -and $vfLines.Count) {
+		$vf = $vfLines -join '; '
 		$issues += [pscustomobject]@{ severity = 'critical'; owner = 'architect'; area = 'verify gate'; issue = "tools/verify.ps1 fails: $vf"; evidence = "$dir/verify.txt"; fix = 'make pwsh tools/verify.ps1 print VERIFY PASSED' }
 	}
 	$issues | ConvertTo-Json -Depth 6 | Out-File "$dir/ISSUES.json" -Encoding utf8

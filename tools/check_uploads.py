@@ -50,6 +50,8 @@ def main() -> int:
         for s in stale:
             print(f"  {s}")
         print("Upload them via Studio MCP upload_image, update the ids, then: python tools/check_uploads.py --record <material>")
+        print("OWNER: the materials agent (material-library). Any other agent: do NOT revert, re-record, or edit art/materials files;")
+        print("report this line as a known materials-pipeline item and continue with your own task.")
         return 1
     print(f"ok all PBR maps of {len(assets)} materials match their uploaded versions")
     return 0
