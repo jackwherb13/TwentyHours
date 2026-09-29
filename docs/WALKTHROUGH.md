@@ -66,3 +66,9 @@ If a drawing seems to contradict it, follow this document and note the conflict 
 2. **Level 2 is about 20 ft above Level 1** ("a big gap") -> floor-to-floor ~20 ft; stair riser count ~34 at ~7 in (split across the two flights).
 3. The courts are **racquetball courts on Level 2**, past the gym overlook, on the **left**. There are no racquetball courts on Level 1.
    (The earlier "2 squash courts" = these racquetball courts; model them as racquetball, 40x20 ft.)
+
+## Correction (user, 2026-09-28 23:20, looking at the Studio build + Astra's plan)
+- The MAIN ENTRANCE is NOT on the big long glass curtain wall. It is on the **smaller glass section**, and that smaller glass section should be
+  **longer** than currently drawn. (In Astra's 23:04 plan the small glass = the South Vestibule glazing on the south side; the big glass = the long
+  east curtain wall.) The entrance canopy (black overhang), wide stairs and the 20x20 double-height entry belong at the small-glass entrance.
+  Use WEB_entrance_1, WEB_entrance_2, WEB_entrance_left_pole, IMG_0364-0368 to place it and size the glazing.
