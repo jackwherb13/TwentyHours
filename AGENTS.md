@@ -42,8 +42,10 @@ visually faithful to the real building. Gameplay is intentionally simple for now
   pass/fail + notes per station in `verification/<milestone>/REPORT.md`.
 
 ## Which Studio to use (IMPORTANT)
-- The live place is the Studio window titled `...\places\TwentyHours.rbxl`. The Roblox_Studio MCP `list_roblox_studios` reports it as
-  **"Place1"** (unpublished place name). That is the ONLY studio to use; it is Rojo-connected and shows the latest build.rbxm.
+- The live place is the Studio window titled `20 Hour Weeks - Roblox Studio` (published 2026-09-29 as the private experience
+  "20 Hour Weeks", Team Create ON, collaborator BabyJoe2184 with Edit). In `list_roblox_studios` use the studio whose name contains
+  "20 Hour Weeks" (older notes may call it "Place1" / TwentyHours.rbxl). It is Rojo-connected and shows the latest build.rbxm.
+- Team Create: edits in Studio auto-save to the cloud and are visible to collaborators. Keep building only through tools/build_rac.ps1 + Rojo.
 - Never open, save-as, or work in other place files or temp copies (e.g. `%TEMP%\rac_round4.rbxl`); screenshots from copies are stale and invalid.
 
 ## Fast iteration pipeline (no Studio GUI, no manual import)
