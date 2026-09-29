@@ -2,7 +2,7 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "CeramicTiles",
-    "ColorMap": "rbxassetid://137324631886451",
+    "ColorMap": "rbxassetid://116682509188652",
     "StudsPerTile": 2,
     "Name": "RAC_mosaic_green",
     "NormalMap": "rbxassetid://77153283278015",

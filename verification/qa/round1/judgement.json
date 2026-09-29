@@ -5,16 +5,17 @@
         "image": "IMG_0358.jpg",
         "layout": 1,
         "proportions": 1,
-        "materials": 2,
+        "materials": 1,
         "props": 1,
-        "lighting": 3,
+        "lighting": 2,
         "overall": 1,
         "problems": [
-          "Camera station is completely wrong: camera is placed in the entrance plaza facing the curtain wall up close, rather than across Patriot Circle ~200 ft away looking west at the Field House / arena volume.",
-          "Target building volume missing: reference shows the large high-bay athletic facility clad in light-grey vertical corrugated metal panels with a red brick base; build displays the two-story glass entrance atrium.",
-          "Site civil infrastructure missing: two-lane asphalt road with double yellow line, concrete curb and gutter, service driveway with yellow bollards, and pedestrian light pole are completely absent.",
-          "Topography and landscape missing: sloping grass berm with river rock swale drainage bed and dense background trees are missing.",
-          "Studio GUI artifacts: Roblox Studio interface elements ('TwentyHours.rbxl' document tab, 'Clear' tool icon, cyan selection outline on tree) are visible over the viewport."
+          "Camera station: Camera is positioned directly under the entrance canopy looking into the lobby; it should be positioned across Patriot Circle at [-90, 4.0, -360] looking south at the north facade and loading ramp.",
+          "North fieldhouse facade: The entire north elevation is missing from the view; it should feature a lower ~10-12 ft red-brown utility brick base and upper vertical ribbed metal wall panels in light grey.",
+          "Roof geometry: Sloped gymnasium rooflines and clerestory ribbon windows are completely omitted; they should be visible above the metal panel massing.",
+          "Site and roadway: Foreground shows canopy framing and trees; it should show a two-lane asphalt roadway (Patriot Circle) with double yellow lines, white edge stripes, and a grass berm with rock riprap sloping down to the service drive.",
+          "Props and fixtures: Loading dock service doors, crash bollards along the service ramp, and tall pole-mounted site luminaire are missing.",
+          "Studio artifacts: Studio viewport UI ('TwentyHours.rbxl', 'Clear') and cyan selection highlight outlines on the canopy and trees are captured in the frame; these should be removed."
         ]
       },
       {
@@ -26,11 +27,14 @@
         "lighting": 3,
         "overall": 2,
         "problems": [
-          "Camera station is mispositioned: camera is placed high on the entrance terrace looking directly into the lobby; reference is taken low from the grass knoll looking upward at the canopy and stairs.",
-          "Roof canopy architecture: real entrance features a massive soaring cantilevered canopy tapering upward supported by an angled column; build has a thin, segmented, flat horizontal awning.",
-          "Curtain wall facade: build places heavy red brick piers between glass bays; the real building features an uninterrupted two-story dark metal glass curtain wall.",
-          "Grand entrance stairs and landscape missing: broad multi-step concrete staircase with pipe handrails, bicycle racks, sloping grass lawn, and planter bed with red ornamental grasses are completely absent from the frame.",
-          "Studio UI and selection artifacts: editor tabs, tool panel, and cyan selection highlights on the canopy and tree are visible in the capture."
+          "Camera station: Camera is jammed against the exterior curtain wall at ground level; it should be set back ~60 ft southwest on the grass lawn at [-62, 2.5, 46] looking up and northeast towards the entrance canopy.",
+          "Entrance canopy: The roof overhang is a thin, flat horizontal slab; it should be a massive, steeply angled cantilevered canopy with dark bronze/black soffit panels and angled fascia tapering upwards.",
+          "Canopy support column: Missing the prominent rectangular structural column; should have a large grey metal-composite-clad column supporting the outer edge of the roof canopy.",
+          "Entrance stairs and grading: The building sits on flat grade; it should have a wide, multi-tier cast-in-place concrete staircase with central and side galvanized steel handrails ascending the lawn berm.",
+          "Entrance doors: Build features a single 6-pane glass door; it should be a bank of commercial aluminum double doors with panic hardware and transoms.",
+          "Landscaping: Foreground lawn berm and ornamental fountain grass planting bed in mulch along the stairs are missing.",
+          "Props: Bike parking area with multiple U-loop bike racks and parked bikes on the lower stair landing is missing; an interior ping-pong table is incorrectly positioned right against the front curtain wall.",
+          "Studio artifacts: Studio tabs, tool icons, and selection outlines on trees are visible in the capture."
         ]
       },
       {
@@ -42,11 +46,11 @@
         "lighting": 2,
         "overall": 1,
         "problems": [
-          "Camera station and space completely mismatched: capture was taken from inside the building facing a reception desk, whereas WEB_entrance_1 is an exterior shot looking west up the entrance walkway toward the building.",
-          "Approach hardscape and landscape missing: scored concrete walkway, concrete cheek wall with curved pipe handrail, round post-top light pole, lawn, and bare deciduous trees are completely missing.",
-          "Building entrance architecture missing: broad grand exterior staircase, soaring cantilever canopy roof, and massive structural columns are not visible.",
-          "Player character and UI obstruction: avatar head, chat notification ('es supported languages in chat'), and window controls obstruct the foreground.",
-          "Lighting: reference shows crisp, direct morning/afternoon sunlight with long cast shadows; build shows diffuse interior ambient lighting."
+          "Camera station: Camera is placed inside the building pointing down at the front reception desk from behind an avatar; it should be placed outside at [-41, 1.5, 52] looking north along the approach walkway toward the entrance.",
+          "Building exterior: Entire exterior entrance pavilion is missing; should show the soaring dark metal canopy, large grey column, and two-story glass curtain wall facade.",
+          "Walkway and stairs: Missing foreground concrete stairs (4 risers), concrete cheek wall, steel pipe handrails, and the wide concrete approach path leading up to the main doors.",
+          "Site fixtures: Round pole-mounted walkway light fixture, blue university lawn sign, and deciduous trees flanking the path are missing.",
+          "Viewport artifacts: A player avatar head and Roblox chat interface elements ('es supported languages in chat') are obstructing the view."
         ]
       },
       {
@@ -56,14 +60,14 @@
         "materials": 2,
         "props": 1,
         "lighting": 1,
-        "overall": 2,
+        "overall": 1,
         "problems": [
-          "Lighting and time-of-day: reference is an iconic architectural twilight photo with warm interior lighting glowing through the glass and illuminated canopy soffits; build is captured in flat harsh daylight.",
-          "Duplicate capture: right image is an identical duplicate of the IMG_0364 close-up shot instead of an exterior wide-angle perspective from the eastern driveway.",
-          "Entrance canopy architecture: real structure features a dramatic soaring upward-sloping cantilever canopy with flush downlights; build has a thin horizontal awning.",
-          "Curtain wall and interior visibility: real building has continuous structural glass curtain wall displaying two illuminated levels (ground lobby and upper cardio mezzanine with equipment); build has red brick piers and dark glass.",
-          "Grand staircase and retaining wall missing: broad multi-tiered concrete stairs with metal handrails, concrete retaining wall with step lights, and curved asphalt driveway are completely absent.",
-          "Studio UI visible: capture includes Studio tabs ('TwentyHours.rbxl'), 'Clear' tool button, and cyan selection bounding outlines."
+          "Camera station & duplicate capture: The image is an identical duplicate of IMG_0364 taken right at the glass; it should be a wide architectural station at [-41, 2.2, 70] capturing the full entrance pavilion and south curtain wall wing.",
+          "Lighting & atmosphere: Rendered in flat midday daylight; it should be twilight/dusk with deep blue sky, warm interior illumination glowing through the glass, and downlights in the canopy soffit.",
+          "Canopy & south wing massing: Angled cantilever roof overhang, large structural column, and two-story south curtain wall wing extending to the right are missing from the composition.",
+          "Plaza & retaining walls: Wide tiered concrete entrance stairs with multiple handrails, low concrete retaining walls with recessed step lighting, and the adjacent asphalt access drive are missing.",
+          "Interior program: Ground floor shows an interior ping-pong table and front desk; the two-story curtain wall should reveal upper-level cardio fitness equipment overlooking the lobby with illuminated ceiling troffers.",
+          "Studio artifacts: Studio tabs, toolbar buttons, and selection outlines are captured in the frame."
         ]
       }
     ]
@@ -73,73 +77,76 @@
       {
         "image": "IMG_0358.jpg",
         "layout": 2,
-        "proportions": 3,
-        "materials": 4,
+        "proportions": 2,
+        "materials": 2,
         "props": 2,
-        "lighting": 5,
+        "lighting": 3,
         "overall": 2,
         "problems": [
-          "Camera is at the glass-curtain-wall entrance under the black canopy; the photo is from the public road looking at the standing-seam metal gym box, curved drive, and lawn berm ΓÇö pull the camera back to the street, frame the metal volume, and keep the glass entrance out of the shot.",
-          "Primary massing is a glazed grid with a wide red brick pier; the photo is a long low metal-clad hall with a brick/glass connector on the left ΓÇö model the standing-seam metal gym volume as the hero, with a shorter brick-and-glass hyphen, not the lobby facade.",
-          "Driveway, yellow double centerline, sidewalk, and lawn berm in front of the gym are missing; add a two-lane asphalt loop with curb, sidewalk, and a grass berm rising to the building.",
-          "Left-side brick/glass connector and distant metal wing are missing; add a lower brick-and-glass mass to the left of the metal hall, then a receding metal volume.",
-          "Trees along the ridge and right lawn are missing or replaced by one low blob tree under the canopy; place a row of mature deciduous trees behind/beside the metal hall and on the right lawn.",
-          "Canopy, red brick pier, and full-height mullioned glass belong to a different elevation; do not use this camera for IMG_0358."
+          "Camera is under the glass-entrance canopy looking at the curtain wall; it should be across the two-lane road looking at the long standing-seam metal gym volume.",
+          "Dominant mass is wrong: real is a low-slope grey standing-seam metal-clad gym with brick end walls; build shows a glass curtain wall, saturated-red brick piers, and a dark flat canopy.",
+          "Missing the curved asphalt drive, yellow double centerlines, concrete curb, and sidewalk that fill the foreground.",
+          "Missing the lawn berm in front of the gym, the mature trees flanking both ends of the metal volume, and the lower brick wing to the left.",
+          "Missing the distant parking lot on the left and the black lamp post on the right lawn.",
+          "Sky/lighting is clear saturated blue; this shot is overcast grey-white with soft even light on the metal cladding."
         ]
       },
       {
         "image": "IMG_0364.jpg",
         "layout": 5,
-        "proportions": 5,
-        "materials": 6,
+        "proportions": 4,
+        "materials": 5,
         "props": 3,
-        "lighting": 5,
-        "overall": 5,
+        "lighting": 4,
+        "overall": 4,
         "problems": [
-          "Camera is under the canopy looking along the glass wall; the photo is from the lawn looking at the full facade, canopy soffit, stairs, and planting ΓÇö back up onto the grass, center the glass wall, and include lawn in the foreground.",
-          "Foreground lawn, red shrub bed, and concrete stairs with bikes are missing; add a sloped lawn, a red planting strip at the glass, and a wide stair flight with bike racks on the right.",
-          "Black cantilever canopy exists but is cropped and too thin in the frame; extend a deep dark soffit across the glass, with a slim round column at the right stair.",
-          "Glass grid is present but mullion rhythm and red interior wall mass read heavier than the photo; match pane count to a finer curtain wall with more transparent lobby, less solid red fill.",
-          "Red brick pier is too wide and saturated vs the photoΓÇÖs narrower grey-brick/stone pier; slim the pier and use grey-tan masonry.",
-          "Doors sit as a small grey box in the glass; the photo has a recessed dark entry with double doors left of center ΓÇö place a dark framed vestibule at grade, not a floating grey door unit.",
-          "Bikes, stair rails, and red plantings are absent; add bike racks on the stair, simple metal rails, and a continuous red bed."
+          "Camera is too close and under the canopy; it should be back on the sloping lawn, ~40ΓÇô60 ft out, with grass filling the lower third of the frame.",
+          "Missing the large sloping lawn in the foreground and the burgundy/red shrub bed (low barberry-like planting) along the building base.",
+          "Missing the concrete stair flight on the right with metal railings and the bike racks holding ~8ΓÇô10 bikes.",
+          "Canopy is too thin and does not read as a deep dark cantilever; the real fascia is a continuous dark metal plane that extends well past the glass.",
+          "Canopy column should be a dark slender post under that overhang; build has a thin light-grey pole.",
+          "Facade inserts thick saturated-red brick piers that break the glass into bays; the real elevation is a continuous dark-mullion curtain wall with thinner, darker verticals.",
+          "Interior is too bright and lobby-like (white walls, white reception desk, trash can, gym gear clearly visible); through the real glass it should read darker and more receded.",
+          "Missing the trees behind and beside the entrance; sky should be overcast grey, not clear blue."
         ]
       },
       {
         "image": "WEB_entrance_1.jpg",
         "layout": 1,
         "proportions": 2,
-        "materials": 4,
+        "materials": 3,
         "props": 2,
-        "lighting": 4,
+        "lighting": 3,
         "overall": 2,
         "problems": [
-          "Build is shot from inside the lobby looking out; the photo is the exterior approach path, lamp, stairs, and full glass facade ΓÇö move the camera outside onto the walkway, facing the canopy.",
-          "Exterior composition is missing: lamp post on the left, concrete walk, two stair flights, paired white square columns, black canopy, and glass wall ΓÇö rebuild that sequence in one exterior shot.",
-          "White reception desk with monitors is an interior prop that should not dominate this pair; hide or leave it only as a faint interior through the glass.",
-          "Site is empty grey ground with cartoon trees; the photo has a paved walk, dormant lawn, bikes at the stair, and a tall lamp ΓÇö add walk, lawn, lamp, and bike cluster.",
-          "Mullioned glass exists but as a side window, not the full-width curtain wall under the canopy; the facade should be a dark glass grid spanning between two white columns.",
-          "Canopy mass and white square columns are not in frame; add a deep black roof plane supported by two tall white piers at the entry.",
-          "Foreground stair with metal handrail on a concrete cheek wall is missing; add a short stair with tubular rail matching the photoΓÇÖs right rail."
+          "Camera is inside the lobby looking out through glass; it should be on the exterior concrete walkway, several steps down, facing the full entrance.",
+          "Missing the foreground concrete stairs and the tubular silver handrail on the right of the walk.",
+          "Missing the wide plaza and the split stair up to the doors.",
+          "Missing the two large light-grey/white square canopy columns (~2ΓÇô3 ft square) standing in front of the glass.",
+          "Missing the deep dark cantilevered roof plane that is the dominant mass of this view.",
+          "Missing the grey standing-seam metal gym volume on the left of the entrance pavilion.",
+          "Missing the tall black lamp post on the left lawn, bike racks/bikes at the plaza, the blue lawn sign, and the sandwich boards on the right.",
+          "Ground beyond the glass is a flat grey void with two cartoon trees; it should be concrete plaza, dormant lawn, and stairs."
         ]
       },
       {
         "image": "WEB_entrance_2.jpg",
-        "layout": 4,
+        "layout": 5,
         "proportions": 4,
-        "materials": 5,
+        "materials": 4,
         "props": 3,
-        "lighting": 3,
-        "overall": 4,
+        "lighting": 2,
+        "overall": 3,
         "problems": [
-          "Camera is a tight daytime under-canopy view along the glass; the photo is a dusk three-quarter of the whole pavilion ΓÇö pull back, include the full black roof, plaza stairs, and sky.",
-          "Monumental black hip/cantilever roof is the photoΓÇÖs main mass; the build only shows a thin soffit strip ΓÇö extrude a deep dark roof that reads as a solid wedge over the glass.",
-          "Central white square column in the glass plane is missing or replaced by a thin grey pole; add a large white pier centered in the curtain wall.",
-          "Wide plaza stair with dual metal rails and a landing is missing; add a full-width stair, cheek walls, and paired rails to the doors.",
-          "Warm dusk interior lighting (ceiling cans, glowing glass, uplights on the column) is missing; the build is flat daylight ΓÇö add evening interior glow and soffit downlights.",
-          "Glass is a coarse grid with large red/white interior panels; the photo is a fine curtain wall revealing gym equipment and lit ceiling ΓÇö denser mullions, more transparent interior.",
-          "Side elevation of repeating glass bays recedes too far as a long wing; the photoΓÇÖs right side is a shorter dark mass under the same roof ΓÇö shorten the wing and wrap the dark roof.",
-          "Entry doors should be a centered/slightly-left glass vestibule at the stair head, not a small grey door unit in the glass."
+          "Camera is too close and under the canopy in daytime; it should be back on the plaza at dusk, showing the full glowing glass box and the dark roof wedge.",
+          "Roof mass is wrong: real is a large dark floating wedge with a deep soffit; build canopy is a thin slab.",
+          "Canopy support should be one large light-grey square column centered on the doors, not a thin grey pole plus red brick piers in the wall.",
+          "Glass should be a continuous dark-mullion curtain wall wrapping the corner; thick saturated-red brick piers should not punch through it. Side brick, if any, should be muted tan/brown.",
+          "Missing the plaza stairs with two parallel metal railings leading to the centered glass double doors.",
+          "Missing the grid of recessed can lights in the canopy soffit and the warm facade uplights at the base.",
+          "Lighting mood is the defining miss: real is blue-hour exterior with warm interior gym light making the glass glow; build is flat daytime with cool white interiors.",
+          "Interior through the glass should read as an open rec/gym with a ceiling light grid; build shows a bright white lobby and desk.",
+          "Missing the tree mass on the left and the receding side elevationΓÇÖs depth."
         ]
       }
     ]

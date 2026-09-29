@@ -1,0 +1,890 @@
+{
+  "grok": {
+    "results": [
+      {
+        "image": "acoustic_ceiling.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 5,
+        "props": 6,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "ceiling should read as 2x2 (or 2x4) acoustic tiles with a visible T-grid/reveal; build is one unbroken field with only a faint bevel at the panel edge",
+          "tile color should be cool light grey (slightly dingy/white); build is a warmer beige-grey",
+          "surface should be fibrous/pitted acoustic texture with mild staining along the joint; build is a uniform fine speckle",
+          "horizontal mid-panel seam and joint shadow in the photo are missing; add a recessed grid line and slight value drop at the reveal"
+        ]
+      },
+      {
+        "image": "bleacher_gold.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "gold bleachers should be stacked telescopic benches with rounded nosing and dark gaps between rows; build is a flat color fill with no bench geometry",
+          "bench paint should be bright mustard/school-bus gold like the plank faces; build is a muddy brown-ochre",
+          "grey steel telescopic undercarriage visible at the right of the benches is missing",
+          "small manufacturer labels on the bench ends are missing; add faint dark stamps on the plank ends",
+          "each plank face is a shallow rectangle ~2.5ΓÇô3 in tall with a bullnose front; build has no edge profile or self-shadowing"
+        ]
+      },
+      {
+        "image": "bleacher_green.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 6,
+        "props": 3,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "green bleachers should be stacked dark-green telescopic planks with recessed black gaps between rows; build is a featureless dark field",
+          "gold/brass end hardware (or manufacturer plates) on the right of two plank faces is missing",
+          "plank nosing should be a rounded front edge catching a thin highlight; build has no profile",
+          "color is in the right dark forest/black-green family but needs the slat rhythm of the gold bleachers, just in green"
+        ]
+      },
+      {
+        "image": "brick.jpg",
+        "layout": 6,
+        "proportions": 6,
+        "materials": 5,
+        "props": 3,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "brick hue should be dark burgundy/brown-red; build is too orange/salmon",
+          "mortar should be light grey-white and relatively thin; build uses dark brown mortar that flattens the contrast",
+          "white painted jamb/return occupies the right ~40% of the photo and is missing from the build",
+          "brick faces in the photo are more uniform and less weathered; reduce the blotchy staining and dark pits on the texture",
+          "photo is a brick wall meeting a deep white opening; build is an all-over brick fill with no opening"
+        ]
+      },
+      {
+        "image": "carpet_tile.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 3,
+        "props": 2,
+        "lighting": 4,
+        "overall": 3,
+        "problems": [
+          "photo shows a medium warm-grey carpet/floor with a thick black bullnose/transition and a white band above; build is a charcoal 2x2 hard-tile grid",
+          "carpet-tile seams should be nearly invisible 24 in modules; build has a high-contrast plus-shaped grout on two huge squares",
+          "color should be mid grey, not near-black charcoal",
+          "black rounded nosing and white base/band are missing; those are the dominant props in the crop",
+          "surface should be low-pile/matte fiber, not a smooth tile with grout lines"
+        ]
+      },
+      {
+        "image": "ceramic_floor_tile.jpg",
+        "layout": 7,
+        "proportions": 5,
+        "materials": 6,
+        "props": 4,
+        "lighting": 5,
+        "overall": 6,
+        "problems": [
+          "grout should be thin and close to the beige tile color; build grout is too wide and too blue-grey",
+          "several build tiles have pink/peach blotches that are not in the photo; keep a more even beige-sand field",
+          "tile color should be a cooler dusty beige; build is slightly warmer/peach",
+          "grey metal threshold/base (and black circular object) at the top of the photo is missing",
+          "photo tiles read larger relative to grout (higher tile:grout ratio); tighten joints toward ~1/8 in"
+        ]
+      },
+      {
+        "image": "ceramic_tile.jpg",
+        "layout": 7,
+        "proportions": 5,
+        "materials": 4,
+        "props": 8,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "grout should be bright white and fairly wide as in the wall photo; build uses thin dark taupe grout",
+          "tile finish should be slightly glossy beige ceramic; build is matte and chalky",
+          "tile color should be a warmer tan-beige; build is paler/cooler",
+          "grid is the right square-tile idea but the grout color swap (whiteΓåÆbrown) is the main material miss"
+        ]
+      },
+      {
+        "image": "court_gold_paint.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 7,
+        "props": 2,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "this crop is gold bleacher plank faces with dark gaps and grey steel at right; build is only a flat gold fill",
+          "gold hue is close (slightly more saturated/yellow than the dusty ochre planks); pull ~5ΓÇô10% toward the photoΓÇÖs duller mustard",
+          "rounded bench nosing, inter-row shadow gaps, and steel undercarriage are missing",
+          "embossed labels on the plank ends are missing"
+        ]
+      },
+      {
+        "image": "court_green_paint.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 6,
+        "props": 4,
+        "lighting": 4,
+        "overall": 5,
+        "problems": [
+          "court green should be darker hunter/forest with a black undertone; build is a brighter mid green",
+          "worn white court marking (scuffed letter/line remnant) in the photo is missing; add a degraded white paint patch if this is the same spot",
+          "painted floor should have scuffs and a slight sheen; build is a perfectly uniform matte fill",
+          "specular streaking from the glossy paint in the photo is absent"
+        ]
+      },
+      {
+        "image": "door_paint.jpg",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "door leaf should be warm greige/taupe painted hollow-metal, not a cool charcoal field",
+          "stainless kick plate (~8 in high) across the bottom of the door is missing",
+          "satin-chrome lever handle on the left stile is missing",
+          "painted frame, beige walls, and glossy floor with the doorΓÇÖs reflection are missing",
+          "finish should be semi-gloss paint on a door, not a dead-flat grey swatch"
+        ]
+      },
+      {
+        "image": "door_wood.jpg",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "wood door in the photo is a pale honey/beige leaf in a grey frame; build is a full-bleed dark orange oak grain",
+          "grain should be almost invisible at this distance; build uses heavy illustrated cathedral oak",
+          "cubicle partition (grey fabric, black post), wall thermostat, and ceiling lights in the photo are missing",
+          "door should sit as a framed opening in a white wall, occupying a minority of the view, not a wall of stained wood"
+        ]
+      },
+      {
+        "image": "glass.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 2,
+        "props": 2,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "glass in the photo is dark tinted/reflective (near-black lower pane, bright sky/wash above); build is opaque pale mint/aqua",
+          "surface should read as transparent or highly reflective dark glass, not a pastel solid",
+          "faint vertical mullion/joint in the dark pane is missing",
+          "horizontal split (bright upper / dark lower) is missing; glass should pick up the environment, not a fixed ice-blue color"
+        ]
+      },
+      {
+        "image": "gypsum.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 7,
+        "props": 2,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "photo is a white gypsum wall with a curved/bullnose corner and a vertical metal frame; build is a flat off-white fill",
+          "aluminum/stainless vertical trim with visible fasteners on the right is missing",
+          "grey roll-up/slat door in the background left is missing",
+          "color is close (slightly cooler/greyer than the warm off-white wall); keep warm white and add soft overhead shadowing",
+          "gypsum should show a slight orange-peel under raking light, not a perfectly even fill"
+        ]
+      },
+      {
+        "image": "maple.jpg",
+        "layout": 7,
+        "proportions": 7,
+        "materials": 6,
+        "props": 8,
+        "lighting": 6,
+        "overall": 7,
+        "problems": [
+          "maple should be paler cream/blond; build is too yellow-orange",
+          "board grain should be clean maple strip with even 2.25 in boards; build has blotchier oak-like grain and grey-blue specks/knots not in the photo",
+          "dark seams between strips in the photo are weaker in the build; keep parallel strip joints more readable",
+          "tone down the orange and the distressed streaks toward a gym-maple blond"
+        ]
+      },
+      {
+        "image": "metal_panel.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 3,
+        "props": 2,
+        "lighting": 4,
+        "overall": 2,
+        "problems": [
+          "ribs should run vertically (standing-seam/corrugated wall); build runs them horizontally",
+          "color should be light galvanized silver-grey; build is charcoal",
+          "profile should be fine vertical corrugation ~1ΓÇô2 in on center; build is wide flat bands ~12 in apart",
+          "small dark louver/vent near the top of the wall is missing",
+          "recessed darker corrugated bay at lower right is missing; facade is an L-shaped panel field, not a flat siding swatch"
+        ]
+      },
+      {
+        "image": "mosaic_green.jpg",
+        "layout": 3,
+        "proportions": 2,
+        "materials": 4,
+        "props": 8,
+        "lighting": 5,
+        "overall": 3,
+        "problems": [
+          "tesserae should be ~1 in squares in a dense grid with thin white grout; build uses ~4ΓÇô6 in green squares on a wide pale field",
+          "pattern should be a nearly full mosaic, not a sparse checker with large grout/field dominating",
+          "real mix is tight grey-green and dark-green tiles; build isolates a few green and dirty-grey squares",
+          "grout should be thin white, not a pale-green sea that reads as the main surface"
+        ]
+      },
+      {
+        "image": "mullion_aluminum.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 5,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "photo is a dark bronze/black storefront: wide vertical mullions, a horizontal transom, and glass infill; build is a brushed-grey sheet",
+          "mullions should be rectangular hollow extrusions ~4ΓÇô6 in wide, near-black/dark bronze, not a fine horizontal-brush texture",
+          "glass infill showing the gym beyond is missing",
+          "light wood-look floor and white wall on the left of the photo are missing",
+          "anodized aluminum should read as smooth dark extrusion, not mill-finish brushed sheet"
+        ]
+      },
+      {
+        "image": "painted_cmu.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 5,
+        "props": 8,
+        "lighting": 5,
+        "overall": 4,
+        "problems": [
+          "wall should be painted 8x16 CMU with mainly visible horizontal bed joints; build is a small-unit running-bond brick pattern",
+          "block face should be ~8 in tall by ~16 in long; build units are brick-sized (~2.25x8 in)",
+          "joints in the photo are shallow and paint-filled; build has high-contrast grey grout",
+          "color should be warmer off-white; build is a cooler grey-beige",
+          "use stacked CMU courses, not a brick bond"
+        ]
+      },
+      {
+        "image": "porcelain_tile.jpg",
+        "layout": 8,
+        "proportions": 7,
+        "materials": 6,
+        "props": 8,
+        "lighting": 5,
+        "overall": 7,
+        "problems": [
+          "half-offset plank layout is correct; keep it",
+          "tile faces should have warm beige mottling/clouding; build is a flat even taupe per tile",
+          "grout is close but photo grout is a bit darker with eased tile edges catching light; add a slight edge bevel/highlight",
+          "overall color should shift slightly warmer/beige and less cool grey"
+        ]
+      },
+      {
+        "image": "precast.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 5,
+        "props": 3,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "precast should be fine exposed-aggregate (small pebble sparkle), not blotchy stucco stains",
+          "color should be cooler grey-beige; build is too brown/tan",
+          "metal coping/cap flashing along the top of the wall is missing",
+          "yellow pipes and sky above the parapet are missing from this camera",
+          "replace the plaster-stain texture with a uniform sandy aggregate"
+        ]
+      },
+      {
+        "image": "racquetball_wood.jpg",
+        "layout": 6,
+        "proportions": 6,
+        "materials": 6,
+        "props": 8,
+        "lighting": 6,
+        "overall": 6,
+        "problems": [
+          "this is the same maple-strip floor as the maple pair; boards should read as parallel ~2.25 in maple strips with dark seams",
+          "build grain is short/choppy veneer noise rather than long continuous strip grain",
+          "tone is slightly too yellow; target the photoΓÇÖs pale blond",
+          "strengthen the board joints so it matches gym maple, not plywood"
+        ]
+      },
+      {
+        "image": "rubber.jpg",
+        "layout": 3,
+        "proportions": 4,
+        "materials": 4,
+        "props": 3,
+        "lighting": 2,
+        "overall": 3,
+        "problems": [
+          "floor should be a light warm beige with high-gloss overhead-light reflections; build is a dead-matte medium taupe",
+          "color is too dark and brown; lift it toward the photoΓÇÖs pale beige-grey",
+          "grey column/base and black mat corner in the photo are missing",
+          "if this is rubber athletic flooring, add a fine EPDM speckle; the photo also supports a polished rubber/linoleum read, which still needs strong specularity"
+        ]
+      },
+      {
+        "image": "sealed_concrete.jpg",
+        "layout": 3,
+        "proportions": 4,
+        "materials": 5,
+        "props": 6,
+        "lighting": 5,
+        "overall": 4,
+        "problems": [
+          "slab should have dark control joints (the photoΓÇÖs triangle/grid of sawcuts); build has none",
+          "color should be warm tan/buff; build is too grey",
+          "texture should be fine sandy aggregate with small pits; build is large-scale blotchy staining (same language as the precast swatch)",
+          "add the joint layout at sidewalk-panel scale before relying on the noise texture"
+        ]
+      },
+      {
+        "image": "sign_paint.jpg",
+        "layout": 1,
+        "proportions": 2,
+        "materials": 5,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "photo is a bank of dark green steel lockers, not a flat sign-paint fill; build has no locker geometry",
+          "each door needs a 6-slot louver at the top, vertical seams, and a recessed nameplate slot",
+          "latch holes/hardware on the doors are missing",
+          "green should be greyer/slate (locker enamel); build is a more saturated emerald",
+          "if this material is wall sign paint, the reference crop is lockers ΓÇö match the lockers or recrop the reference"
+        ]
+      },
+      {
+        "image": "stainless.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 5,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "photo is a white-grey louver/rail of ~1.5ΓÇô2 in slats with open gaps; build is a flat brushed-stainless sheet",
+          "vertical stile/post dividing the louver bays is missing",
+          "voids between slats should show the dark interior and the round light fixture behind",
+          "metal color should be a slightly warmer white-grey; build is cooler stainless",
+          "this fixture is a 3D grille, not a sheet-metal swatch"
+        ]
+      },
+      {
+        "image": "steel.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 1,
+        "props": 2,
+        "lighting": 3,
+        "overall": 1,
+        "problems": [
+          "photo is a white/off-white inside corner (painted steel or gypsum); build is charcoal/near-black",
+          "if this location is steel, it should be painted white to match the RAC, not mill-scale dark steel",
+          "inside-corner geometry and the soft shadow in the photo are missing",
+          "no metal sheen, fasteners, or plate edges are present on either side ΓÇö the build color does not match this crop at all"
+        ]
+      },
+      {
+        "image": "terrazzo.jpg",
+        "layout": 5,
+        "proportions": 4,
+        "materials": 4,
+        "props": 7,
+        "lighting": 3,
+        "overall": 4,
+        "problems": [
+          "terrazzo chips should be a dense fine peppering of small aggregate; build chips are too large, too sparse, and cartoon-angular",
+          "matrix should be medium grey-beige; build is too light/cream",
+          "finish should be highly polished with pools of overhead-light reflection; build is matte",
+          "chip mix should include mixed fine stone colors, not only grey polygons on cream"
+        ]
+      },
+      {
+        "image": "turf.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 4,
+        "props": 8,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "turf should have mixed green blades plus tan thatch; build is a flat olive fill with no fiber texture",
+          "color is too dark olive; the photo is a lighter mixed green with brown worn patches",
+          "add a fine grass-fiber texture even at Roblox fidelity; a solid color does not read as turf",
+          "include the lighter/tan worn patches visible in the lower photo"
+        ]
+      },
+      {
+        "image": "vinyl.jpg",
+        "layout": 8,
+        "proportions": 7,
+        "materials": 6,
+        "props": 8,
+        "lighting": 5,
+        "overall": 7,
+        "problems": [
+          "half-offset rectangular plank layout matches the photo (same crop as porcelain_tile)",
+          "tile/plank faces should have warm mottling; build is a flat even taupe",
+          "shift color slightly warmer/beige and darken grout a notch to match the photo",
+          "if this is sheet vinyl rather than plank tile, drop the grout grid and use a large-format mottled sheet; the photo itself is grouted planks, so the grid is defensible"
+        ]
+      },
+      {
+        "image": "wood_cap_rail.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 2,
+        "lighting": 4,
+        "overall": 3,
+        "problems": [
+          "wood should be a thin pale-blond cap (~1.5ΓÇô2 in wide) on a grey metal rail; build is a full wall of medium oak grain",
+          "cap color should be light maple/honey with almost no grain at this distance; build is dark orange cathedral oak",
+          "white/grey metal rail body, highlight on the metal top edge, and pickets/louvers below are missing",
+          "model a slender blond cap on the existing metal rail rather than applying a stained-oak material to the whole surface"
+        ]
+      }
+    ]
+  },
+  "gpt": null,
+  "gemini": {
+    "results": [
+      {
+        "image": "acoustic_ceiling.jpg",
+        "layout": 5,
+        "proportions": 5,
+        "materials": 6,
+        "props": 4,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "Ceiling finish is a uniform flat light grey stippled plane; should show fine-fissured mineral fiber acoustic tile texture with subtle tonality variation.",
+          "Missing suspension T-bar grid lines and panel edge reveals; real installation shows modular 2x2 or 2x4 acoustic ceiling tiles."
+        ]
+      },
+      {
+        "image": "bleacher_gold.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 1,
+        "lighting": 4,
+        "overall": 2,
+        "problems": [
+          "Bleachers are rendered as a flat solid color swatch; should be horizontal stepped telescopic bleacher tiers with distinct reveal shadow grooves between rows.",
+          "Color is dark mustard/caramel gold; should be brighter collegiate athletic gold enamel.",
+          "Missing row/seat numbering labels and brass latch hardware visible on bleacher face."
+        ]
+      },
+      {
+        "image": "bleacher_green.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 5,
+        "props": 1,
+        "lighting": 4,
+        "overall": 2,
+        "problems": [
+          "Bleachers are shown as a flat solid color plane; should be horizontal tiered telescopic bleacher seating with dark shadow reveal gaps between rows.",
+          "Color is near-black charcoal; should be deep collegiate forest green with a slight satin sheen.",
+          "Missing brass/gold hardware latches and tier row markings."
+        ]
+      },
+      {
+        "image": "brick.jpg",
+        "layout": 6,
+        "proportions": 6,
+        "materials": 5,
+        "props": 4,
+        "lighting": 5,
+        "overall": 5,
+        "problems": [
+          "Mortar joints are thick and flat pinkish-tan; should be clean, recessed off-white/light grey mortar joints.",
+          "Brick color is uniform reddish-terracotta; should feature varied dark ironspot and warm brown accent bricks in running bond.",
+          "Missing adjacent white door frame/trim casing visible along the right edge of the brick wall."
+        ]
+      },
+      {
+        "image": "carpet_tile.jpg",
+        "layout": 4,
+        "proportions": 5,
+        "materials": 4,
+        "props": 3,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "Carpet is a flat, dark charcoal plane; should be heathered medium-dark grey linear loop pile with subtle directional ribbing.",
+          "Missing black vinyl cove baseboard and threshold transition visible in the reference photo."
+        ]
+      },
+      {
+        "image": "ceramic_floor_tile.jpg",
+        "layout": 7,
+        "proportions": 8,
+        "materials": 7,
+        "props": 5,
+        "lighting": 6,
+        "overall": 7,
+        "problems": [
+          "Tile color has a warm yellowish-beige cast; real floor tiles are a cooler, neutral light taupe/grey.",
+          "Grout joints are light grey; should be slightly darker grey for clearer tile boundary definition.",
+          "Missing stainless steel cove base trim and dark threshold transition visible at the edge of the real photo."
+        ]
+      },
+      {
+        "image": "ceramic_tile.jpg",
+        "layout": 4,
+        "proportions": 3,
+        "materials": 5,
+        "props": 4,
+        "lighting": 5,
+        "overall": 4,
+        "problems": [
+          "Tile aspect ratio is square (1:1); should be vertically oriented rectangular subway tiles (~1:2 or 1:3 vertical stack bond).",
+          "Grout lines are thin dark grey; real tiles feature crisp, defined off-white/cream grout lines.",
+          "Surface finish is flat matte; should have a semi-gloss glazed ceramic sheen with soft light reflections."
+        ]
+      },
+      {
+        "image": "court_gold_paint.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Build is an isolated solid yellow-gold color swatch; should be painted athletic court line boundaries applied over maple gym flooring.",
+          "Surface is flat and matte; should have high-gloss athletic polyurethane clearcoat.",
+          "Reference photo displays bleachers rather than painted court lines; align reference pairing with actual gym floor markings."
+        ]
+      },
+      {
+        "image": "court_green_paint.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 5,
+        "props": 2,
+        "lighting": 3,
+        "overall": 4,
+        "problems": [
+          "Surface finish is completely matte; real court paint has a high-gloss polyurethane floor finish with bright specular reflections from overhead lighting.",
+          "Missing painted white court boundary line and stencil scuff marks shown in the real reference.",
+          "Green paint lacks subtle wood grain texture telegraphing from underlying maple boards."
+        ]
+      },
+      {
+        "image": "door_paint.jpg",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Door paint color is dark charcoal/slate grey; real door is painted a warm light taupe/olive-grey.",
+          "Build is a flat color swatch; should be a full door assembly with hollow-metal door frame, stainless steel lever handle, and kick plate.",
+          "Missing floor threshold and reflective floor surface."
+        ]
+      },
+      {
+        "image": "door_wood.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 3,
+        "props": 2,
+        "lighting": 4,
+        "overall": 3,
+        "problems": [
+          "Wood species and stain are dark caramel/brown oak with prominent horizontal grain; real door is smooth blonde/honey maple with subtle, fine vertical grain.",
+          "Missing hollow-metal door frame/jamb, lever hardware, and foreground partition."
+        ]
+      },
+      {
+        "image": "glass.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 3,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "Build is a solid pale cyan/light blue swatch; real exterior glazing is dark charcoal/black tinted architectural reflective glass.",
+          "Missing the horizon line dividing the overcast sky from the dark curtain wall/spandrel glass below.",
+          "Zero specular reflectivity or window mullion framing."
+        ]
+      },
+      {
+        "image": "gypsum.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 6,
+        "props": 2,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "Build is a flat monochrome grey-white swatch; fails to reproduce the 3D corridor geometry, descending stairway, and ceiling soffit.",
+          "Missing full-height stainless steel corner guard on the corridor wall corner.",
+          "Lighting lacks directional wall wash gradient and corner ambient occlusion."
+        ]
+      },
+      {
+        "image": "maple.jpg",
+        "layout": 7,
+        "proportions": 7,
+        "materials": 8,
+        "props": 6,
+        "lighting": 6,
+        "overall": 7,
+        "problems": [
+          "Plank lengths in texture are relatively short with frequent staggered butt joints; sports maple flooring uses long continuous planks (~4-8 ft).",
+          "Surface finish lacks high-gloss polyurethane sports coating and directional sheen from overhead gym lighting.",
+          "Texture is aligned horizontally; reference photo shows diagonal perspective orientation."
+        ]
+      },
+      {
+        "image": "metal_panel.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 3,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Panel orientation is horizontal; real building exterior is vertical standing-seam / ribbed metal siding.",
+          "Color is dark charcoal grey; real siding is light cool grey/off-white.",
+          "Missing rectangular dark exhaust louver near the parapet and dark horizontal coiling garage door below."
+        ]
+      },
+      {
+        "image": "mosaic_green.jpg",
+        "layout": 4,
+        "proportions": 2,
+        "materials": 3,
+        "props": 3,
+        "lighting": 4,
+        "overall": 3,
+        "problems": [
+          "Tile scale is 5x-8x too large; real wall is composed of dense ~1x1 inch micro-mosaic glass tiles.",
+          "Pattern is a coarse checkerboard grid of green rectangles; real mosaic is a randomized blend of sage, olive, grey, and charcoal glass tiles with thin grout joints.",
+          "Grout lines are excessively wide relative to tile dimensions."
+        ]
+      },
+      {
+        "image": "mullion_aluminum.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Build is a solid dark charcoal swatch; fails to model 3D extruded aluminum storefront mullion profiles or glass lites.",
+          "Missing adjacent white drywall, glass reflections, and floor plane visible in the reference view.",
+          "Finish should be dark bronze/black anodized architectural aluminum with subtle satin sheen."
+        ]
+      },
+      {
+        "image": "painted_cmu.jpg",
+        "layout": 4,
+        "proportions": 3,
+        "materials": 4,
+        "props": 3,
+        "lighting": 4,
+        "overall": 3,
+        "problems": [
+          "Unit scale and proportions are modular face brick (~2.25x8 inches); should be standard 8x16 inch concrete masonry units (CMU).",
+          "Joint detailing shows standard brick mortar joints; should feature deep horizontal raked shadow lines and flush painted vertical joints.",
+          "Texture lacks the porous, heavy-bodied painted masonry texture of real painted CMU."
+        ]
+      },
+      {
+        "image": "porcelain_tile.jpg",
+        "layout": 8,
+        "proportions": 8,
+        "materials": 8,
+        "props": 7,
+        "lighting": 7,
+        "overall": 8,
+        "problems": [
+          "Tile surface is uniformly flat grey-beige; real porcelain tiles exhibit subtle natural stone mottling and shade variation between tiles.",
+          "Grout joints are sharp and slightly light; real floor has slightly darker grey cementitious grout.",
+          "Surface lacks the soft directional light reflection seen on the real floor."
+        ]
+      },
+      {
+        "image": "precast.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 5,
+        "props": 2,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "Concrete texture is smooth troweled/form-cast with mottling; real precast panel has an exposed-aggregate sandblasted sandy finish.",
+          "Missing metal parapet coping/flashing cap at the roof edge.",
+          "Missing yellow rooftop safety ladder/railing visible against the sky."
+        ]
+      },
+      {
+        "image": "racquetball_wood.jpg",
+        "layout": 6,
+        "proportions": 5,
+        "materials": 7,
+        "props": 5,
+        "lighting": 6,
+        "overall": 6,
+        "problems": [
+          "Plank boards in texture appear narrow and short; racquetball flooring uses standard ~2.25 inch tongue-and-groove maple strips.",
+          "Texture is viewed top-down orthogonally; reference photo is an angled perspective view.",
+          "Finish is matte; racquetball maple requires a smooth satin athletic finish with subtle floor reflection."
+        ]
+      },
+      {
+        "image": "rubber.jpg",
+        "layout": 3,
+        "proportions": 3,
+        "materials": 4,
+        "props": 2,
+        "lighting": 3,
+        "overall": 3,
+        "problems": [
+          "Build is a flat matte solid grey swatch; real athletic rubber floor has a smooth calendared surface with soft specular sheen reflecting overhead fixtures.",
+          "Color is cool grey; real flooring has a warmer taupe/greige tone.",
+          "Missing background props and transitions (black rubber equipment mat and trash can base)."
+        ]
+      },
+      {
+        "image": "sealed_concrete.jpg",
+        "layout": 4,
+        "proportions": 4,
+        "materials": 5,
+        "props": 3,
+        "lighting": 4,
+        "overall": 4,
+        "problems": [
+          "Texture resembles vertical form-finished concrete; real surface is horizontal exterior broom-finished flatwork slab with fine linear brushing.",
+          "Missing tooled/saw-cut contraction control joints dividing the concrete slabs.",
+          "Color is cool grey; real weathered exterior concrete is a warmer sun-bleached tan/grey."
+        ]
+      },
+      {
+        "image": "sign_paint.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Build is a flat solid forest green swatch; fails to model 3D gym locker geometry (doors, ventilation louvers, recessed handle pockets, and seams).",
+          "Finish is flat matte; real painted metal lockers have a semi-gloss baked enamel finish with vertical edge highlights.",
+          "Missing locker number plates and latch hardware."
+        ]
+      },
+      {
+        "image": "stainless.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Build is a flat uniform grey swatch; fails to reproduce the stainless steel guardrail assembly (horizontal rails, vertical posts, and wood top cap).",
+          "Material lacks directional #4 brushed metallic grain and specular highlights.",
+          "Missing white wall curb, wood cap rail, and fitness center background."
+        ]
+      },
+      {
+        "image": "steel.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 2,
+        "props": 1,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "Color is dark charcoal/black; real structural column enclosure is painted off-white/light grey.",
+          "Build is a flat 2D swatch; fails to model the 90-degree inside corner geometry and soft corner shadow gradient.",
+          "Finish should be interior latex eggshell/matte paint over drywall, not dark industrial steel."
+        ]
+      },
+      {
+        "image": "terrazzo.jpg",
+        "layout": 6,
+        "proportions": 5,
+        "materials": 5,
+        "props": 5,
+        "lighting": 4,
+        "overall": 5,
+        "problems": [
+          "Aggregate chips are sparse dark triangles on a light cream ground; real terrazzo has densely packed fine neutral aggregate in a warm grey-brown matrix.",
+          "Surface finish is matte; real polished terrazzo has a high-gloss, mirror-like specular reflection of overhead lights.",
+          "Base binder color should be darkened to match the warm taupe/grey field of the reference photo."
+        ]
+      },
+      {
+        "image": "turf.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 3,
+        "props": 1,
+        "lighting": 2,
+        "overall": 2,
+        "problems": [
+          "Build is a flat solid olive-green color plane; completely lacks grass blade geometry, pile texture, or organic variation.",
+          "Color is uniform dull olive; real lawn turf has natural vibrant green and lime tones with sunlit highlights.",
+          "Surface has zero depth, displacement, or blade definition."
+        ]
+      },
+      {
+        "image": "vinyl.jpg",
+        "layout": 8,
+        "proportions": 8,
+        "materials": 7,
+        "props": 7,
+        "lighting": 7,
+        "overall": 7,
+        "problems": [
+          "Tile texture is uniform flat grey-beige; real tile surface has subtle natural stone clouding and tone variation.",
+          "Grout joints are sharp uniform lines; real floor has slightly softer cementitious grout recesses.",
+          "Finish is matte; real floor tile has a gentle satin sheen with soft ambient light reflection."
+        ]
+      },
+      {
+        "image": "wood_cap_rail.jpg",
+        "layout": 2,
+        "proportions": 2,
+        "materials": 4,
+        "props": 1,
+        "lighting": 3,
+        "overall": 2,
+        "problems": [
+          "Build is a flat horizontal oak plank swatch; fails to model the 3D angled wood cap rail mounted on the metal balustrade.",
+          "Wood species is caramel oak with coarse dark grain; real cap rail is smooth blonde/honey maple with fine tight grain.",
+          "Missing metal balusters, white parapet wall, and gym interior in background."
+        ]
+      }
+    ]
+  }
+}

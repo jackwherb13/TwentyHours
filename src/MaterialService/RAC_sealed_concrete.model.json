@@ -2,7 +2,7 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "Concrete",
-    "ColorMap": "rbxassetid://74678894630315",
+    "ColorMap": "rbxassetid://118939598501809",
     "StudsPerTile": 8,
     "Name": "RAC_sealed_concrete",
     "NormalMap": "rbxassetid://126520269594823",

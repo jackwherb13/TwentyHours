@@ -2,10 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "Marble",
-    "ColorMap": "rbxassetid://128512379779770",
+    "ColorMap": "rbxassetid://135542603987924",
     "StudsPerTile": 4,
     "Name": "RAC_porcelain_tile",
-    "NormalMap": "rbxassetid://101716124313140",
-    "RoughnessMap": "rbxassetid://101731058983269"
+    "NormalMap": "rbxassetid://132467663009224",
+    "RoughnessMap": "rbxassetid://104376880127220"
   }
 }

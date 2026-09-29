@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "image": "overlay_full.jpg",
+      "layout": 3,
+      "proportions": 4,
+      "materials": 5,
+      "props": 3,
+      "lighting": 6,
+      "overall": 3,
+      "problems": [
+        "Patriot Circle roadway alignment: The traced double yellow centerline and flanking white lines are shifted ~25-35 ft south into the roadside grass berm instead of following the paved asphalt roadway.",
+        "Campus Drive curvature: Campus Drive west of the RAC is traced with coarse straight polyline segments cutting through the curbed teardrop median island and roadside lawn rather than following the physical road curvature.",
+        "East service road alignment: The yellow and white linework east and northeast of the RAC cuts straight across tree canopies and dirt/service areas instead of following the actual paved service drive and curb edges.",
+        "Roundabout center island and entry lines: The north approach centerline cuts through the northern curb and terminates inside the central circular grass mound; approach lines must terminate at the circulating roadway perimeter.",
+        "Roundabout splitter islands and controls: Splitter islands are rendered as small crude circles rather than elongated triangular curbed dividers with pedestrian refuges, and stop bars are placed at entrances instead of MUTCD yield shark-tooth triangles.",
+        "Mason Pond Drive east approach: Centerline and bike lane striping drift south of the curving asphalt pavement onto the grass slope east of the roundabout.",
+        "South parking lot (Lot K) stall alignment: Uniform 9 ft stall pitch is out of phase with actual painted striping visible on the ground, causing lines to slice through parked vehicles; easternmost and southernmost parking bays are entirely unstriped.",
+        "Parking lot island placement: Tan rectangular island boundary boxes are misalignedΓÇöseveral overlap active parking stalls or are displaced from actual curbed tree planters, while others are missing entirely."
+      ]
+    },
+    {
+      "image": "overlay_lot_roundabout.jpg",
+      "layout": 3,
+      "proportions": 4,
+      "materials": 4,
+      "props": 3,
+      "lighting": 6,
+      "overall": 3,
+      "problems": [
+        "Patriot Circle misaligned with pavement: Double yellow centerline and flanking white edge lines run directly across the landscaped grass berm and pedestrian walkway ~30 ft south of the asphalt travel lanes.",
+        "Roundabout center island bisected: The northern approach centerline penetrates deep into the center circular island; the central landscaped island should have no lane markings crossing its interior.",
+        "Roundabout circulating lanes: Circulating lane markings are broken and non-concentric with the physical curb and truck apron; outer entry and exit lane guidance markings are missing.",
+        "Splitter islands and yield markings: Splitter islands are represented as tiny circular loops rather than shaped curbed triangular islands; entry control uses solid transverse stop bars instead of yield shark-tooth markings.",
+        "Lot K parking stall phase error: Overlaid white stall lines do not match existing stall striping on the asphalt, intersecting parked cars and straddling parking bays.",
+        "Tree island outlines: Overlaid tan rectangular island boundaries do not align with the actual curbed landscape planters; the northern central island is completely omitted and another box sits in the middle of a drive aisle.",
+        "Missing parking bays: The entire eastern access aisle bay and the southern perimeter row along the tree line lack stall striping.",
+        "ADA stall detailing: Accessible spaces at the east end of the northern row lack standard painted blue field backgrounds, accessible wheelchair symbols, and diagonal hatched access aisles."
+      ]
+    },
+    {
+      "image": "overlay_campus_dr.jpg",
+      "layout": 2,
+      "proportions": 3,
+      "materials": 4,
+      "props": 2,
+      "lighting": 6,
+      "overall": 2,
+      "problems": [
+        "Campus Drive roadway alignment: Traced white edge lines and yellow centerline are rigid, straight vertical lines running through turf and cutting straight through the teardrop-shaped curbed grass median island.",
+        "Under-segmented road curvature: Campus Drive is represented with coarse straight segments that fail to follow the smooth horizontal curve of the asphalt roadway.",
+        "Campus Drive / Patriot Circle south junction: Linework features an abrupt sharp kink at the south end rather than a smooth sweeping horizontal curve and radius return into Patriot Circle.",
+        "Campus Drive crosswalk alignment: The dotted white crosswalk is drawn perpendicular to the misaligned straight vector, failing to align with the actual painted continental/ladder crosswalk and ADA sidewalk ramps.",
+        "RAC west pedestrian paths: The winding concrete sidewalk connecting the RAC west entrance and loading area to Campus Drive is completely missing from the site linework.",
+        "RAC loading dock and service access: The paved service apron, curb returns, and delivery access west of the RAC gymnasium wall are entirely unmapped."
+      ]
+    }
+  ]
+}
+

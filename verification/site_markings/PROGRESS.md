@@ -11,3 +11,4 @@
 12:10 teardrop bypass; zebras not stall-hash; Lot K -4.5 ft; island pads 32x20; omit lawn walks
 12:20 service apron on tan court; geometry 0; 1352 parts - overlay_*.jpg regenerated
 13:00 campus north + patriot west; pond ENE on asphalt; mulch-fill islands; x_lot=-402; 1528 parts 0 issues
+13:25 campus +12 ft east onto asphalt; island r=30; drop east-aisle ladder; yard tight to gym; 1488 parts 0 issues

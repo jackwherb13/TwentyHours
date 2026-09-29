@@ -18,7 +18,12 @@ function Floors.build(parent: Instance, level: Blueprint.Level, site: Blueprint.
 		if room.type == "void" then
 			continue
 		end
-		local finish = if room.type == "racquetball" then "racquetball_wood" else room.floorMaterial
+		local finish = room.floorMaterial
+		if room.type == "racquetball" then
+			finish = "racquetball_wood"
+		elseif (room.type == "locker" or room.type == "restroom") and finish == "ceramic_tile" then
+			finish = "ceramic_floor_tile"
+		end
 		local group = Geometry.folder(parent, room.id)
 		for _, r in Geometry.rectangles(room.polygon, holes) do
 			Parts.box(

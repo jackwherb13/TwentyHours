@@ -2,10 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "SmoothPlastic",
-    "ColorMap": "rbxassetid://134234081683536",
+    "ColorMap": "rbxassetid://137016261479465",
     "StudsPerTile": 4,
     "Name": "RAC_vinyl",
-    "NormalMap": "rbxassetid://101716124313140",
-    "RoughnessMap": "rbxassetid://135656615742126"
+    "NormalMap": "rbxassetid://132467663009224",
+    "RoughnessMap": "rbxassetid://71157329938638"
   }
 }

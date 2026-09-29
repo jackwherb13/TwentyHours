@@ -1,6 +1,96 @@
 {
-  "status": "PASS",
-  "fails": [],
+  "status": "FAIL",
+  "fails": [
+    "L1 entry, recreation, stair, trophy, gym, athletic route: no route LOW_ENTRANCE -> 1:lobby",
+    "Unreachable competition_gym",
+    "Unreachable south_gym",
+    "Unreachable office_ne_1",
+    "Unreachable office_ne_2",
+    "Unreachable office_ne_3",
+    "Unreachable office_ne_4",
+    "Unreachable office_ne_5",
+    "Unreachable office_ne_reception",
+    "Unreachable restroom_ne_w",
+    "Unreachable restroom_ne_m",
+    "Unreachable fitness_north",
+    "Unreachable lobby",
+    "Unreachable lobby_north",
+    "Unreachable fitness_center",
+    "Unreachable weight_room",
+    "Unreachable corridor_gym_east",
+    "Unreachable corridor_entry_link",
+    "Unreachable glazed_recreation",
+    "Unreachable stair_main",
+    "Unreachable fitness_annex",
+    "Unreachable south_vestibule",
+    "Unreachable corridor_entry_south",
+    "Unreachable corridor_south_link",
+    "Unreachable thin_link",
+    "Unreachable athletic_corridor",
+    "Unreachable training_room",
+    "Unreachable nutrition_vestibule",
+    "Unreachable locker_volleyball",
+    "Unreachable volleyball_washroom",
+    "Unreachable locker_general_w",
+    "Unreachable locker_general_m",
+    "Unreachable storage_athletic",
+    "Unreachable corridor_main",
+    "Unreachable team_support",
+    "Unreachable stair_second",
+    "Unreachable training_store",
+    "Unreachable west_link",
+    "Unreachable corridor_office",
+    "Unreachable stair_west",
+    "Unreachable office_w1",
+    "Unreachable office_w2",
+    "Unreachable office_w3",
+    "Unreachable mechanical_sw",
+    "Unreachable corridor_service",
+    "Unreachable corridor_ne",
+    "Unreachable corridor_wide",
+    "Unreachable coach_head",
+    "Unreachable coach_west",
+    "Unreachable coach_west_n",
+    "Unreachable coach_suite",
+    "Unreachable coach_north",
+    "Unreachable coach_east_s",
+    "Unreachable coach_east_m",
+    "Unreachable coach_east_n",
+    "Unreachable gym_foyer",
+    "Unreachable corridor_locker_west",
+    "Unreachable office_ne_1",
+    "Unreachable office_ne_2",
+    "Unreachable office_ne_3",
+    "Unreachable office_ne_4",
+    "Unreachable office_ne_5",
+    "Unreachable office_ne_reception",
+    "Unreachable restroom_ne_w",
+    "Unreachable restroom_ne_m",
+    "Unreachable fitness_north",
+    "Unreachable stair_main",
+    "Unreachable cardio_gallery",
+    "Unreachable cardio_south",
+    "Unreachable main_stair_landing",
+    "Unreachable corridor_l2_overlook",
+    "Unreachable team_meeting",
+    "Unreachable team_offices",
+    "Unreachable corridor_l2",
+    "Unreachable stair_second",
+    "Unreachable athletic_upper",
+    "Unreachable upper_store",
+    "Unreachable racquetball_1",
+    "Unreachable racquetball_2",
+    "Unreachable office_l2_w1",
+    "Unreachable office_l2_w2",
+    "Unreachable court_gallery",
+    "Unreachable stair_west",
+    "Unreachable mechanical_l2",
+    "Unreachable upper_service",
+    "Unreachable basketball_approach",
+    "Unreachable corridor_ne",
+    "Unreachable cage_gym",
+    "Unreachable balcony"
+  ],
   "warnings": [
     "Room graph is not a Roblox physics walk. Current production builder emits straight stair envelopes; see stair_details.json.",
     "Overlook-to-cross-concourse requires a return along the east gallery in this drawing fit; exact turn unresolved.",
@@ -29,7 +119,6 @@
         "1:locker_volleyball"
       ],
       "resolvedRoute": [
-        "LOW_ENTRANCE",
         "1:lobby",
         "1:south_vestibule",
         "1:stair_main",
@@ -136,21 +225,7 @@
   "portals": [
     {
       "level": 1,
-      "wall": "l1_w006",
-      "point": [
-        -97.0,
-        -57.0
-      ],
-      "rooms": [
-        "1:south_gym",
-        "1:corridor_south_link"
-      ],
-      "kind": "door",
-      "width": 6.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w010",
+      "wall": "l1_w011",
       "point": [
         -53.0,
         -270.75
@@ -164,7 +239,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w011",
+      "wall": "l1_w012",
       "point": [
         -28.0,
         -270.75
@@ -178,7 +253,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w011",
+      "wall": "l1_w012",
       "point": [
         -28.0,
         -249.25
@@ -192,7 +267,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w014",
+      "wall": "l1_w015",
       "point": [
         -47.0,
         -203.75
@@ -206,7 +281,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w018",
+      "wall": "l1_w019",
       "point": [
         -66.5,
         -171.0
@@ -220,7 +295,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w018",
+      "wall": "l1_w019",
       "point": [
         -66.5,
         -54.0
@@ -234,7 +309,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w019",
+      "wall": "l1_w021",
       "point": [
         -10.0,
         -8.0
@@ -248,21 +323,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w022",
-      "point": [
-        -1.0,
-        -27.0
-      ],
-      "rooms": [
-        "1:lobby",
-        "1:glazed_recreation"
-      ],
-      "kind": "opening",
-      "width": 6.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w025",
+      "wall": "l1_w023",
       "point": [
         -5.0,
         -139.5
@@ -276,7 +337,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w026",
+      "wall": "l1_w024",
       "point": [
         -40.0,
         -118.25
@@ -290,7 +351,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w027",
+      "wall": "l1_w025",
       "point": [
         -78.5,
         -178.0
@@ -304,7 +365,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w028",
+      "wall": "l1_w026",
       "point": [
         -78.5,
         -152.0
@@ -318,7 +379,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w028",
+      "wall": "l1_w026",
       "point": [
         -78.5,
         -142.0
@@ -332,7 +393,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w029",
+      "wall": "l1_w027",
       "point": [
         -78.5,
         -86.5
@@ -346,7 +407,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w030",
+      "wall": "l1_w029",
       "point": [
         -5.0,
         -64.0
@@ -360,24 +421,10 @@
     },
     {
       "level": 1,
-      "wall": "l1_w030",
-      "point": [
-        -5.0,
-        -41.0
-      ],
-      "rooms": [
-        "1:fitness_annex",
-        "1:glazed_recreation"
-      ],
-      "kind": "opening",
-      "width": 10.0
-    },
-    {
-      "level": 1,
       "wall": "l1_w031",
       "point": [
         -78.5,
-        -34.0
+        -35.0
       ],
       "rooms": [
         "1:stair_main",
@@ -391,14 +438,14 @@
       "wall": "l1_w037",
       "point": [
         -78.5,
-        -57.0
+        -58.25
       ],
       "rooms": [
         "1:corridor_south_link",
         "1:corridor_entry_south"
       ],
       "kind": "opening",
-      "width": 8.0
+      "width": 7.5
     },
     {
       "level": 1,
@@ -654,7 +701,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w074",
+      "wall": "l1_w073",
       "point": [
         -181.5,
         -279.5
@@ -668,7 +715,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w074",
+      "wall": "l1_w073",
       "point": [
         -94.5,
         -279.5
@@ -682,7 +729,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w075",
+      "wall": "l1_w074",
       "point": [
         -136.0,
         -186.0
@@ -693,6 +740,20 @@
       ],
       "kind": "opening",
       "width": 113.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w077",
+      "point": [
+        -149.5,
+        -62.0
+      ],
+      "rooms": [
+        "1:south_gym",
+        "1:team_support"
+      ],
+      "kind": "door",
+      "width": 6.0
     },
     {
       "level": 1,
@@ -822,21 +883,35 @@
     },
     {
       "level": 1,
-      "wall": "l1_w095",
+      "wall": "l1_w093",
       "point": [
-        -4.0,
-        0.0
+        2.5,
+        -36.0
       ],
       "rooms": [
-        null,
-        "1:lobby"
+        "1:lobby",
+        "1:glazed_recreation"
       ],
-      "kind": "door",
+      "kind": "opening",
       "width": 6.0
     },
     {
       "level": 1,
-      "wall": "l1_w096",
+      "wall": "l1_w094",
+      "point": [
+        -41.0,
+        0.0
+      ],
+      "rooms": [
+        null,
+        "1:south_vestibule"
+      ],
+      "kind": "door",
+      "width": 12.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w095",
       "point": [
         -1.25,
         -124.0
@@ -850,7 +925,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w097",
+      "wall": "l1_w096",
       "point": [
         -53.5,
         -124.0
@@ -864,7 +939,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w099",
+      "wall": "l1_w098",
       "point": [
         -72.5,
         -80.0
@@ -878,7 +953,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w100",
+      "wall": "l1_w099",
       "point": [
         -53.5,
         -80.0
@@ -892,7 +967,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w102",
+      "wall": "l1_w101",
       "point": [
         -72.5,
         -132.5
@@ -906,245 +981,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w103",
-      "point": [
-        -1.5,
-        -80.0
-      ],
-      "rooms": [
-        "1:glazed_recreation",
-        "1:coach_suite"
-      ],
-      "kind": "door",
-      "width": 4.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w104",
-      "point": [
-        -88.0,
-        -52.0
-      ],
-      "rooms": [
-        "1:stair_main",
-        "1:corridor_south_link"
-      ],
-      "kind": "opening",
-      "width": 8.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w105",
-      "point": [
-        -88.0,
-        -16.0
-      ],
-      "rooms": [
-        "1:south_vestibule",
-        "1:stair_main"
-      ],
-      "kind": "opening",
-      "width": 12.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w105",
-      "point": [
-        -72.5,
-        -16.0
-      ],
-      "rooms": [
-        "1:south_vestibule",
-        "1:corridor_entry_south"
-      ],
-      "kind": "opening",
-      "width": 10.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w106",
-      "point": [
-        -23.5,
-        -48.0
-      ],
-      "rooms": [
-        "1:fitness_annex",
-        "1:corridor_wide"
-      ],
-      "kind": "opening",
-      "width": 24.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w108",
-      "point": [
-        -26.5,
-        -16.0
-      ],
-      "rooms": [
-        "1:south_vestibule",
-        "1:fitness_annex"
-      ],
-      "kind": "opening",
-      "width": 12.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w111",
-      "point": [
-        -136.0,
-        -170.0
-      ],
-      "rooms": [
-        "1:gym_foyer",
-        "1:thin_link"
-      ],
-      "kind": "opening",
-      "width": 113.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w116",
-      "point": [
-        -210.75,
-        -160.0
-      ],
-      "rooms": [
-        "1:locker_volleyball",
-        "1:nutrition_vestibule"
-      ],
-      "kind": "door",
-      "width": 3.5
-    },
-    {
-      "level": 1,
-      "wall": "l1_w122",
-      "point": [
-        -145.5,
-        -92.5
-      ],
-      "rooms": [
-        "1:corridor_main",
-        "1:locker_general_w"
-      ],
-      "kind": "door",
-      "width": 4.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w122",
-      "point": [
-        -116.25,
-        -92.5
-      ],
-      "rooms": [
-        "1:corridor_main",
-        "1:storage_athletic"
-      ],
-      "kind": "door",
-      "width": 3.5
-    },
-    {
-      "level": 1,
-      "wall": "l1_w125",
-      "point": [
-        -145.5,
-        -80.0
-      ],
-      "rooms": [
-        "1:team_support",
-        "1:corridor_main"
-      ],
-      "kind": "door",
-      "width": 6.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w128",
-      "point": [
-        -322.5,
-        -92.5
-      ],
-      "rooms": [
-        "1:west_link",
-        "1:stair_second"
-      ],
-      "kind": "door",
-      "width": 4.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w131",
-      "point": [
-        -307.0,
-        -80.0
-      ],
-      "rooms": [
-        "1:corridor_office",
-        "1:west_link"
-      ],
-      "kind": "opening",
-      "width": 6.0
-    },
-    {
-      "level": 1,
-      "wall": "l1_w132",
-      "point": [
-        -331.25,
-        -70.0
-      ],
-      "rooms": [
-        "1:office_w1",
-        "1:corridor_office"
-      ],
-      "kind": "door",
-      "width": 3.5
-    },
-    {
-      "level": 1,
-      "wall": "l1_w132",
-      "point": [
-        -305.25,
-        -70.0
-      ],
-      "rooms": [
-        "1:office_w2",
-        "1:corridor_office"
-      ],
-      "kind": "door",
-      "width": 3.5
-    },
-    {
-      "level": 1,
-      "wall": "l1_w132",
-      "point": [
-        -281.25,
-        -70.0
-      ],
-      "rooms": [
-        "1:office_w3",
-        "1:corridor_office"
-      ],
-      "kind": "door",
-      "width": 3.5
-    },
-    {
-      "level": 1,
-      "wall": "l1_w136",
-      "point": [
-        -252.75,
-        -62.0
-      ],
-      "rooms": [
-        "1:mechanical_sw",
-        "1:corridor_service"
-      ],
-      "kind": "door",
-      "width": 3.5
-    },
-    {
-      "level": 1,
-      "wall": "l1_w138",
+      "wall": "l1_w102",
       "point": [
         -34.25,
         -80.0
@@ -1158,7 +995,245 @@
     },
     {
       "level": 1,
-      "wall": "l1_w141",
+      "wall": "l1_w102",
+      "point": [
+        -1.5,
+        -80.0
+      ],
+      "rooms": [
+        "1:glazed_recreation",
+        "1:coach_suite"
+      ],
+      "kind": "door",
+      "width": 4.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w103",
+      "point": [
+        -92.0,
+        -54.0
+      ],
+      "rooms": [
+        "1:stair_main",
+        "1:corridor_south_link"
+      ],
+      "kind": "opening",
+      "width": 8.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w104",
+      "point": [
+        -88.0,
+        -16.0
+      ],
+      "rooms": [
+        "1:south_vestibule",
+        "1:stair_main"
+      ],
+      "kind": "opening",
+      "width": 12.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w104",
+      "point": [
+        -72.5,
+        -16.0
+      ],
+      "rooms": [
+        "1:south_vestibule",
+        "1:corridor_entry_south"
+      ],
+      "kind": "opening",
+      "width": 10.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w105",
+      "point": [
+        -26.5,
+        -48.0
+      ],
+      "rooms": [
+        "1:fitness_annex",
+        "1:corridor_wide"
+      ],
+      "kind": "opening",
+      "width": 24.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w106",
+      "point": [
+        -26.5,
+        -16.0
+      ],
+      "rooms": [
+        "1:south_vestibule",
+        "1:fitness_annex"
+      ],
+      "kind": "opening",
+      "width": 12.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w110",
+      "point": [
+        -136.0,
+        -170.0
+      ],
+      "rooms": [
+        "1:gym_foyer",
+        "1:thin_link"
+      ],
+      "kind": "opening",
+      "width": 113.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w115",
+      "point": [
+        -210.75,
+        -160.0
+      ],
+      "rooms": [
+        "1:locker_volleyball",
+        "1:nutrition_vestibule"
+      ],
+      "kind": "door",
+      "width": 3.5
+    },
+    {
+      "level": 1,
+      "wall": "l1_w121",
+      "point": [
+        -145.5,
+        -92.5
+      ],
+      "rooms": [
+        "1:corridor_main",
+        "1:locker_general_w"
+      ],
+      "kind": "door",
+      "width": 4.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w121",
+      "point": [
+        -116.25,
+        -92.5
+      ],
+      "rooms": [
+        "1:corridor_main",
+        "1:storage_athletic"
+      ],
+      "kind": "door",
+      "width": 3.5
+    },
+    {
+      "level": 1,
+      "wall": "l1_w124",
+      "point": [
+        -145.5,
+        -80.0
+      ],
+      "rooms": [
+        "1:team_support",
+        "1:corridor_main"
+      ],
+      "kind": "door",
+      "width": 6.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w127",
+      "point": [
+        -322.5,
+        -92.5
+      ],
+      "rooms": [
+        "1:west_link",
+        "1:stair_second"
+      ],
+      "kind": "door",
+      "width": 4.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w130",
+      "point": [
+        -307.0,
+        -80.0
+      ],
+      "rooms": [
+        "1:corridor_office",
+        "1:west_link"
+      ],
+      "kind": "opening",
+      "width": 6.0
+    },
+    {
+      "level": 1,
+      "wall": "l1_w131",
+      "point": [
+        -331.25,
+        -70.0
+      ],
+      "rooms": [
+        "1:office_w1",
+        "1:corridor_office"
+      ],
+      "kind": "door",
+      "width": 3.5
+    },
+    {
+      "level": 1,
+      "wall": "l1_w131",
+      "point": [
+        -305.25,
+        -70.0
+      ],
+      "rooms": [
+        "1:office_w2",
+        "1:corridor_office"
+      ],
+      "kind": "door",
+      "width": 3.5
+    },
+    {
+      "level": 1,
+      "wall": "l1_w131",
+      "point": [
+        -281.25,
+        -70.0
+      ],
+      "rooms": [
+        "1:office_w3",
+        "1:corridor_office"
+      ],
+      "kind": "door",
+      "width": 3.5
+    },
+    {
+      "level": 1,
+      "wall": "l1_w135",
+      "point": [
+        -252.75,
+        -62.0
+      ],
+      "rooms": [
+        "1:mechanical_sw",
+        "1:corridor_service"
+      ],
+      "kind": "door",
+      "width": 3.5
+    },
+    {
+      "level": 1,
+      "wall": "l1_w140",
       "point": [
         -34.25,
         -112.0
@@ -1172,7 +1247,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w142",
+      "wall": "l1_w141",
       "point": [
         -13.25,
         -112.0
@@ -1186,7 +1261,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w143",
+      "wall": "l1_w142",
       "point": [
         5.75,
         -112.0
@@ -1200,7 +1275,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w144",
+      "wall": "l1_w143",
       "point": [
         5.75,
         -96.0
@@ -1214,7 +1289,7 @@
     },
     {
       "level": 1,
-      "wall": "l1_w147",
+      "wall": "l1_w146",
       "point": [
         -302.0,
         -301.0
@@ -1343,7 +1418,7 @@
       "wall": "l2_w008",
       "point": [
         -78.5,
-        -46.0
+        -47.0
       ],
       "rooms": [
         "2:stair_main",
@@ -1354,7 +1429,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w020",
+      "wall": "l2_w019",
       "point": [
         -78.5,
         -299.5
@@ -1368,7 +1443,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w021",
+      "wall": "l2_w020",
       "point": [
         -78.5,
         -86.5
@@ -1382,7 +1457,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w029",
+      "wall": "l2_w028",
       "point": [
         -205.5,
         -136.25
@@ -1396,7 +1471,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w031",
+      "wall": "l2_w030",
       "point": [
         -98.5,
         -299.5
@@ -1410,7 +1485,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w037",
+      "wall": "l2_w036",
       "point": [
         -345.0,
         -41.0
@@ -1424,7 +1499,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w040",
+      "wall": "l2_w039",
       "point": [
         -285.0,
         -37.25
@@ -1438,7 +1513,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w041",
+      "wall": "l2_w040",
       "point": [
         -351.5,
         -102.5
@@ -1452,7 +1527,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w047",
+      "wall": "l2_w046",
       "point": [
         -16.25,
         -237.0
@@ -1466,7 +1541,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w049",
+      "wall": "l2_w048",
       "point": [
         -46.25,
         -224.0
@@ -1480,7 +1555,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w050",
+      "wall": "l2_w049",
       "point": [
         -55.75,
         -212.0
@@ -1494,7 +1569,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w057",
+      "wall": "l2_w056",
       "point": [
         -71.5,
         -80.0
@@ -1508,7 +1583,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w058",
+      "wall": "l2_w057",
       "point": [
         -34.5,
         -80.0
@@ -1522,7 +1597,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w059",
+      "wall": "l2_w058",
       "point": [
         -26.5,
         -48.0
@@ -1536,7 +1611,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w064",
+      "wall": "l2_w063",
       "point": [
         -199.5,
         -92.5
@@ -1550,7 +1625,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w064",
+      "wall": "l2_w063",
       "point": [
         -164.5,
         -92.5
@@ -1564,7 +1639,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w065",
+      "wall": "l2_w064",
       "point": [
         -122.25,
         -92.5
@@ -1578,7 +1653,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w066",
+      "wall": "l2_w065",
       "point": [
         -342.0,
         -92.5
@@ -1592,7 +1667,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w066",
+      "wall": "l2_w065",
       "point": [
         -322.5,
         -92.5
@@ -1606,7 +1681,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w069",
+      "wall": "l2_w068",
       "point": [
         -335.25,
         -80.0
@@ -1620,7 +1695,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w069",
+      "wall": "l2_w068",
       "point": [
         -315.25,
         -80.0
@@ -1634,7 +1709,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w070",
+      "wall": "l2_w069",
       "point": [
         -295.0,
         -80.0
@@ -1648,7 +1723,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w072",
+      "wall": "l2_w071",
       "point": [
         -345.5,
         -132.5
@@ -1662,7 +1737,7 @@
     },
     {
       "level": 2,
-      "wall": "l2_w077",
+      "wall": "l2_w076",
       "point": [
         -295.0,
         -48.0

@@ -4,8 +4,8 @@
     "BaseMaterial": "Metal",
     "StudsPerTile": 4,
     "Name": "RAC_mullion_aluminum",
-    "ColorMap": "rbxassetid://130989339814482",
-    "NormalMap": "rbxassetid://130950894419275",
-    "RoughnessMap": "rbxassetid://81465425122790"
+    "ColorMap": "rbxassetid://79237438772328",
+    "NormalMap": "rbxassetid://96715336119497",
+    "RoughnessMap": "rbxassetid://120577523437453"
   }
 }

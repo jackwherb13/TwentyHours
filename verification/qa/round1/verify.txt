@@ -1,19 +1,963 @@
-PASS  stylua --check
-FAIL  selene
-warning[shadowing]: shadowing variable `marker`
-    ┌─ src\ReplicatedStorage\RAC\Build\Tags.luau:127:17
-    │
- 71 │ local function marker(parent: Instance, name: string, pos: Vector3, color: Color3): Part
-    │                ------ previously defined here
-    ·
-127 │     local function marker(name: string, x: number, z: number): Attachment
-    │                    ^^^^^^
+FAIL  stylua --check
+Diff in src\ReplicatedStorage\RAC\Materials.luau:
+1        |---!strict
+2        |--- One stud = one foot. Local PNG paths are provenance, never Roblox content IDs.
+3        |--- Template: docs/MATERIALS_TEMPLATE.md. Builder parts use only these keys.
+4        |-local MaterialService = game:GetService("MaterialService")
+5        |-
+6        |-export type MaterialDefinition = {
+7        |-	base: Enum.Material,
+8        |-	color: Color3,
+9        |-	texture: string?,
+10       |-	normal: string?,
+11       |-	roughnessMap: string?,
+12       |-	studsPerTile: number,
+13       |-	roughness: number,
+14       |-	assetId: string?,
+15       |-	normalAssetId: string?,
+16       |-	roughnessAssetId: string?,
+17       |-}
+18       |-
+19       |-local definitions: { [string]: MaterialDefinition } = {
+20       |-	maple = {
+21       |-		base = Enum.Material.WoodPlanks,
+22       |-		color = Color3.fromRGB(220, 196, 164),
+23       |-		texture = "art/materials/pbr/maple_color.png",
+24       |-		normal = "art/materials/pbr/maple_normal.png",
+25       |-		roughnessMap = "art/materials/pbr/maple_roughness.png",
+26       |-		studsPerTile = 8,
+27       |-		roughness = 0.12,
+28       |-		assetId = "rbxassetid://115680050081537",
+29       |-		normalAssetId = "rbxassetid://109560427488914",
+30       |-		roughnessAssetId = "rbxassetid://81939913346542",
+31       |-	},
+32       |-	racquetball_wood = {
+33       |-		base = Enum.Material.WoodPlanks,
+34       |-		color = Color3.fromRGB(228, 208, 176),
+35       |-		texture = "art/materials/pbr/racquetball_wood_color.png",
+36       |-		normal = "art/materials/pbr/racquetball_wood_normal.png",
+37       |-		roughnessMap = "art/materials/pbr/racquetball_wood_roughness.png",
+38       |-		studsPerTile = 8,
+39       |-		roughness = 0.28,
+40       |-		assetId = "rbxassetid://88316057526797",
+41       |-		normalAssetId = "rbxassetid://135637467228533",
+42       |-		roughnessAssetId = "rbxassetid://135017228687636",
+43       |-	},
+44       |-	terrazzo = {
+45       |-		base = Enum.Material.Concrete,
+46       |-		color = Color3.fromRGB(214, 210, 202),
+47       |-		texture = "art/materials/pbr/terrazzo_color.png",
+48       |-		normal = "art/materials/pbr/terrazzo_normal.png",
+49       |-		roughnessMap = "art/materials/pbr/terrazzo_roughness.png",
+50       |-		studsPerTile = 6,
+51       |-		roughness = 0.14,
+52       |-		assetId = "rbxassetid://121202771874633",
+53       |-		normalAssetId = "rbxassetid://137724133031138",
+54       |-		roughnessAssetId = "rbxassetid://105749773553007",
+55       |-	},
+56       |-	porcelain_tile = {
+57       |-		base = Enum.Material.Marble,
+58       |-		color = Color3.fromRGB(204, 198, 188),
+59       |-		texture = "art/materials/pbr/porcelain_tile_color.png",
+60       |-		normal = "art/materials/pbr/porcelain_tile_normal.png",
+61       |-		roughnessMap = "art/materials/pbr/porcelain_tile_roughness.png",
+62       |-		studsPerTile = 4,
+63       |-		roughness = 0.22,
+64       |-		assetId = "rbxassetid://135542603987924",
+65       |-		normalAssetId = "rbxassetid://132467663009224",
+66       |-		roughnessAssetId = "rbxassetid://104376880127220",
+67       |-	},
+68       |-	carpet_tile = {
+69       |-		base = Enum.Material.Fabric,
+70       |-		color = Color3.fromRGB(68, 67, 66),
+71       |-		texture = "art/materials/pbr/carpet_tile_color.png",
+72       |-		normal = "art/materials/pbr/carpet_tile_normal.png",
+73       |-		roughnessMap = "art/materials/pbr/carpet_tile_roughness.png",
+74       |-		studsPerTile = 4,
+75       |-		roughness = 0.95,
+76       |-		assetId = "rbxassetid://126209511063633",
+77       |-		normalAssetId = "rbxassetid://114587835134293",
+78       |-		roughnessAssetId = "rbxassetid://71963222800584",
+79       |-	},
+80       |-	rubber = {
+81       |-		base = Enum.Material.Rubber,
+82       |-		color = Color3.fromRGB(173, 164, 148),
+83       |-		texture = "art/materials/pbr/rubber_color.png",
+84       |-		normal = "art/materials/pbr/rubber_normal.png",
+85       |-		roughnessMap = "art/materials/pbr/rubber_roughness.png",
+86       |-		studsPerTile = 4,
+87       |-		roughness = 0.9,
+88       |-		assetId = "rbxassetid://93777295951772",
+89       |-		normalAssetId = "rbxassetid://89419544766877",
+90       |-		roughnessAssetId = "rbxassetid://85867308593380",
+91       |-	},
+92       |-	turf = {
+93       |-		base = Enum.Material.Grass,
+94       |-		color = Color3.fromRGB(77, 84, 47),
+95       |-		texture = "art/materials/pbr/turf_color.png",
+96       |-		normal = "art/materials/pbr/turf_normal.png",
+97       |-		roughnessMap = "art/materials/pbr/turf_roughness.png",
+98       |-		studsPerTile = 4,
+99       |-		roughness = 0.9,
+100      |-		assetId = "rbxassetid://110434921324962",
+101      |-		normalAssetId = "rbxassetid://84763308048041",
+102      |-		roughnessAssetId = "rbxassetid://106388111640017",
+103      |-	},
+104      |-	sealed_concrete = {
+105      |-		base = Enum.Material.Concrete,
+106      |-		color = Color3.fromRGB(184, 180, 172),
+107      |-		texture = "art/materials/pbr/sealed_concrete_color.png",
+108      |-		normal = "art/materials/pbr/sealed_concrete_normal.png",
+109      |-		roughnessMap = "art/materials/pbr/sealed_concrete_roughness.png",
+110      |-		studsPerTile = 8,
+111      |-		roughness = 0.32,
+112      |-		assetId = "rbxassetid://118939598501809",
+113      |-		normalAssetId = "rbxassetid://126520269594823",
+114      |-		roughnessAssetId = "rbxassetid://97810093348285",
+115      |-	},
+116      |-	ceramic_tile = {
+117      |-		base = Enum.Material.CeramicTiles,
+118      |-		color = Color3.fromRGB(232, 224, 210),
+119      |-		texture = "art/materials/pbr/ceramic_tile_color.png",
+120      |-		normal = "art/materials/pbr/ceramic_tile_normal.png",
+121      |-		roughnessMap = "art/materials/pbr/ceramic_tile_roughness.png",
+122      |-		studsPerTile = 2,
+123      |-		roughness = 0.22,
+124      |-		assetId = "rbxassetid://126184103626009",
+125      |-		normalAssetId = "rbxassetid://109023032528121",
+126      |-		roughnessAssetId = "rbxassetid://121074020038747",
+127      |-	},
+128      |-	ceramic_floor_tile = {
+129      |-		base = Enum.Material.CeramicTiles,
+130      |-		color = Color3.fromRGB(196, 180, 160),
+131      |-		texture = "art/materials/pbr/ceramic_floor_tile_color.png",
+132      |-		normal = "art/materials/pbr/ceramic_floor_tile_normal.png",
+133      |-		roughnessMap = "art/materials/pbr/ceramic_floor_tile_roughness.png",
+134      |-		studsPerTile = 2,
+135      |-		roughness = 0.28,
+136      |-		assetId = "rbxassetid://132181993186941",
+137      |-		normalAssetId = "rbxassetid://108452738502579",
+138      |-		roughnessAssetId = "rbxassetid://75346132703728",
+139      |-	},
+140      |-	vinyl = {
+141      |-		base = Enum.Material.SmoothPlastic,
+142      |-		color = Color3.fromRGB(184, 176, 164),
+143      |-		texture = "art/materials/pbr/vinyl_color.png",
+144      |-		normal = "art/materials/pbr/vinyl_normal.png",
+145      |-		roughnessMap = "art/materials/pbr/vinyl_roughness.png",
+146      |-		studsPerTile = 4,
+147      |-		roughness = 0.4,
+148      |-		assetId = "rbxassetid://137016261479465",
+149      |-		normalAssetId = "rbxassetid://132467663009224",
+150      |-		roughnessAssetId = "rbxassetid://71157329938638",
+151      |-	},
+152      |-	painted_cmu = {
+153      |-		base = Enum.Material.Concrete,
+154      |-		color = Color3.fromRGB(210, 206, 200),
+155      |-		texture = "art/materials/pbr/painted_cmu_color.png",
+156      |-		normal = "art/materials/pbr/painted_cmu_normal.png",
+157      |-		roughnessMap = "art/materials/pbr/painted_cmu_roughness.png",
+158      |-		studsPerTile = 8,
+159      |-		roughness = 0.7,
+160      |-		assetId = "rbxassetid://73914010132661",
+161      |-		normalAssetId = "rbxassetid://74529868373378",
+162      |-		roughnessAssetId = "rbxassetid://125304131314342",
+163      |-	},
+164      |-	brick = {
+165      |-		base = Enum.Material.Brick,
+166      |-		color = Color3.fromRGB(120, 84, 68),
+167      |-		texture = "art/materials/pbr/brick_color.png",
+168      |-		normal = "art/materials/pbr/brick_normal.png",
+169      |-		roughnessMap = "art/materials/pbr/brick_roughness.png",
+170      |-		studsPerTile = 4,
+171      |-		roughness = 0.9,
+172      |-		assetId = "rbxassetid://71061751380163",
+173      |-		normalAssetId = "rbxassetid://106108670193376",
+174      |-		roughnessAssetId = "rbxassetid://81739995864834",
+175      |-	},
+176      |-	gypsum = {
+177      |-		base = Enum.Material.Plaster,
+178      |-		color = Color3.fromRGB(220, 220, 222),
+179      |-		texture = "art/materials/pbr/gypsum_color.png",
+180      |-		normal = "art/materials/pbr/gypsum_normal.png",
+181      |-		roughnessMap = "art/materials/pbr/gypsum_roughness.png",
+182      |-		studsPerTile = 8,
+183      |-		roughness = 0.8,
+184      |-		assetId = "rbxassetid://83085234647184",
+185      |-		normalAssetId = "rbxassetid://105148116380465",
+186      |-		roughnessAssetId = "rbxassetid://79559158963357",
+187      |-	},
+188      |-	glass = {
+189      |-		base = Enum.Material.Glass,
+190      |-		color = Color3.fromRGB(208, 225, 224),
+191      |-		texture = nil,
+192      |-		normal = nil,
+193      |-		roughnessMap = nil,
+194      |-		studsPerTile = 4,
+195      |-		roughness = 0.08,
+196      |-		assetId = nil,
+197      |-		normalAssetId = nil,
+198      |-		roughnessAssetId = nil,
+199      |-	},
+200      |-	metal_panel = {
+201      |-		base = Enum.Material.Metal,
+202      |-		color = Color3.fromRGB(82, 86, 90),
+203      |-		texture = "art/materials/pbr/metal_panel_color.png",
+204      |-		normal = "art/materials/pbr/metal_panel_normal.png",
+205      |-		roughnessMap = "art/materials/pbr/metal_panel_roughness.png",
+206      |-		studsPerTile = 4,
+207      |-		roughness = 0.4,
+208      |-		assetId = "rbxassetid://133381470193221",
+209      |-		normalAssetId = "rbxassetid://130950894419275",
+210      |-		roughnessAssetId = "rbxassetid://78997218462553",
+211      |-	},
+212      |-	precast = {
+213      |-		base = Enum.Material.Concrete,
+214      |-		color = Color3.fromRGB(184, 170, 156),
+215      |-		texture = "art/materials/pbr/precast_color.png",
+216      |-		normal = "art/materials/pbr/precast_normal.png",
+217      |-		roughnessMap = "art/materials/pbr/precast_roughness.png",
+218      |-		studsPerTile = 8,
+219      |-		roughness = 0.8,
+220      |-		assetId = "rbxassetid://140362294900296",
+221      |-		normalAssetId = "rbxassetid://126520269594823",
+222      |-		roughnessAssetId = "rbxassetid://103731185018538",
+223      |-	},
+224      |-	acoustic_ceiling = {
+225      |-		base = Enum.Material.Plaster,
+226      |-		color = Color3.fromRGB(232, 230, 226),
+227      |-		texture = "art/materials/pbr/acoustic_ceiling_color.png",
+228      |-		normal = "art/materials/pbr/acoustic_ceiling_normal.png",
+229      |-		roughnessMap = "art/materials/pbr/acoustic_ceiling_roughness.png",
+230      |-		studsPerTile = 2,
+231      |-		roughness = 0.95,
+232      |-		assetId = "rbxassetid://74504063907005",
+233      |-		normalAssetId = "rbxassetid://96924420037546",
+234      |-		roughnessAssetId = "rbxassetid://110866543862913",
+235      |-	},
+236      |-	mosaic_green = {
+237      |-		base = Enum.Material.CeramicTiles,
+238      |-		color = Color3.fromRGB(168, 176, 162),
+239      |-		texture = "art/materials/pbr/mosaic_green_color.png",
+240      |-		normal = "art/materials/pbr/mosaic_green_normal.png",
+241      |-		roughnessMap = "art/materials/pbr/mosaic_green_roughness.png",
+242      |-		studsPerTile = 2,
+243      |-		roughness = 0.2,
+244      |-		assetId = "rbxassetid://116682509188652",
+245      |-		normalAssetId = "rbxassetid://77153283278015",
+246      |-		roughnessAssetId = "rbxassetid://116139697584259",
+247      |-	},
+248      |-	steel = {
+249      |-		base = Enum.Material.Metal,
+250      |-		color = Color3.fromRGB(48, 50, 52),
+251      |-		texture = "art/materials/pbr/steel_color.png",
+252      |-		normal = "art/materials/pbr/steel_normal.png",
+253      |-		roughnessMap = "art/materials/pbr/steel_roughness.png",
+254      |-		studsPerTile = 4,
+255      |-		roughness = 0.45,
+256      |-		assetId = "rbxassetid://124080354635515",
+257      |-		normalAssetId = "rbxassetid://130950894419275",
+258      |-		roughnessAssetId = "rbxassetid://74843447803064",
+259      |-	},
+260      |-	mullion_aluminum = {
+261      |-		base = Enum.Material.Metal,
+262      |-		color = Color3.fromRGB(48, 50, 54),
+263      |-		texture = "art/materials/pbr/mullion_aluminum_color.png",
+264      |-		normal = "art/materials/pbr/mullion_aluminum_normal.png",
+265      |-		roughnessMap = "art/materials/pbr/mullion_aluminum_roughness.png",
+266      |-		studsPerTile = 4,
+267      |-		roughness = 0.32,
+268      |-		assetId = "rbxassetid://79237438772328",
+269      |-		normalAssetId = "rbxassetid://96715336119497",
+270      |-		roughnessAssetId = "rbxassetid://120577523437453",
+271      |-	},
+272      |-	stainless = {
+273      |-		base = Enum.Material.Metal,
+274      |-		color = Color3.fromRGB(180, 184, 186),
+275      |-		texture = "art/materials/pbr/stainless_color.png",
+276      |-		normal = "art/materials/pbr/stainless_normal.png",
+277      |-		roughnessMap = "art/materials/pbr/stainless_roughness.png",
+278      |-		studsPerTile = 2,
+279      |-		roughness = 0.22,
+280      |-		assetId = "rbxassetid://91470726429340",
+281      |-		normalAssetId = "rbxassetid://110244039569304",
+282      |-		roughnessAssetId = "rbxassetid://134128261887917",
+283      |-	},
+284      |-	door_wood = {
+285      |-		base = Enum.Material.Wood,
+286      |-		color = Color3.fromRGB(122, 87, 48),
+287      |-		texture = "art/materials/pbr/door_wood_color.png",
+288      |-		normal = "art/materials/pbr/door_wood_normal.png",
+289      |-		roughnessMap = "art/materials/pbr/door_wood_roughness.png",
+290      |-		studsPerTile = 4,
+291      |-		roughness = 0.55,
+292      |-		assetId = "rbxassetid://75146815085481",
+293      |-		normalAssetId = "rbxassetid://87900524753415",
+294      |-		roughnessAssetId = "rbxassetid://133171298613584",
+295      |-	},
+296      |-	door_paint = {
+297      |-		base = Enum.Material.SmoothPlastic,
+298      |-		color = Color3.fromRGB(76, 81, 86),
+299      |-		texture = "art/materials/pbr/door_paint_color.png",
+300      |-		normal = "art/materials/pbr/door_paint_normal.png",
+301      |-		roughnessMap = "art/materials/pbr/door_paint_roughness.png",
+302      |-		studsPerTile = 4,
+303      |-		roughness = 0.5,
+304      |-		assetId = "rbxassetid://136989871078767",
+305      |-		normalAssetId = "rbxassetid://133238565681457",
+306      |-		roughnessAssetId = "rbxassetid://83553921069270",
+307      |-	},
+308      |-	wood_cap_rail = {
+309      |-		base = Enum.Material.Wood,
+310      |-		color = Color3.fromRGB(58, 48, 40),
+311      |-		texture = "art/materials/pbr/wood_cap_rail_color.png",
+312      |-		normal = "art/materials/pbr/wood_cap_rail_normal.png",
+313      |-		roughnessMap = "art/materials/pbr/wood_cap_rail_roughness.png",
+314      |-		studsPerTile = 4,
+315      |-		roughness = 0.5,
+316      |-		assetId = "rbxassetid://92874150765104",
+317      |-		normalAssetId = "rbxassetid://87900524753415",
+318      |-		roughnessAssetId = "rbxassetid://122408873463919",
+319      |-	},
+320      |-	court_green_paint = {
+321      |-		base = Enum.Material.SmoothPlastic,
+322      |-		color = Color3.fromRGB(28, 70, 40),
+323      |-		texture = "art/materials/pbr/court_green_paint_color.png",
+324      |-		normal = "art/materials/pbr/court_green_paint_normal.png",
+325      |-		roughnessMap = "art/materials/pbr/court_green_paint_roughness.png",
+326      |-		studsPerTile = 8,
+327      |-		roughness = 0.18,
+328      |-		assetId = "rbxassetid://130890933128176",
+329      |-		normalAssetId = "rbxassetid://85560496249540",
+330      |-		roughnessAssetId = "rbxassetid://102368861586649",
+331      |-	},
+332      |-	court_gold_paint = {
+333      |-		base = Enum.Material.SmoothPlastic,
+334      |-		color = Color3.fromRGB(214, 172, 44),
+335      |-		texture = "art/materials/pbr/court_gold_paint_color.png",
+336      |-		normal = "art/materials/pbr/court_gold_paint_normal.png",
+337      |-		roughnessMap = "art/materials/pbr/court_gold_paint_roughness.png",
+338      |-		studsPerTile = 8,
+339      |-		roughness = 0.2,
+340      |-		assetId = "rbxassetid://81202424403635",
+341      |-		normalAssetId = "rbxassetid://133238565681457",
+342      |-		roughnessAssetId = "rbxassetid://113811037210637",
+343      |-	},
+344      |-	bleacher_green = {
+345      |-		base = Enum.Material.SmoothPlastic,
+346      |-		color = Color3.fromRGB(30, 35, 31),
+347      |-		texture = "art/materials/pbr/bleacher_green_color.png",
+348      |-		normal = "art/materials/pbr/bleacher_green_normal.png",
+349      |-		roughnessMap = "art/materials/pbr/bleacher_green_roughness.png",
+350      |-		studsPerTile = 4,
+351      |-		roughness = 0.55,
+352      |-		assetId = "rbxassetid://94239505522923",
+353      |-		normalAssetId = "rbxassetid://85560496249540",
+354      |-		roughnessAssetId = "rbxassetid://79872805115337",
+355      |-	},
+356      |-	bleacher_gold = {
+357      |-		base = Enum.Material.SmoothPlastic,
+358      |-		color = Color3.fromRGB(160, 108, 32),
+359      |-		texture = "art/materials/pbr/bleacher_gold_color.png",
+360      |-		normal = "art/materials/pbr/bleacher_gold_normal.png",
+361      |-		roughnessMap = "art/materials/pbr/bleacher_gold_roughness.png",
+362      |-		studsPerTile = 4,
+363      |-		roughness = 0.5,
+364      |-		assetId = "rbxassetid://86868049965059",
+365      |-		normalAssetId = "rbxassetid://133238565681457",
+366      |-		roughnessAssetId = "rbxassetid://83553921069270",
+367      |-	},
+368      |-	sign_paint = {
+369      |-		base = Enum.Material.SmoothPlastic,
+370      |-		color = Color3.fromRGB(0, 70, 36),
+371      |-		texture = "art/materials/pbr/sign_paint_color.png",
+372      |-		normal = "art/materials/pbr/sign_paint_normal.png",
+373      |-		roughnessMap = "art/materials/pbr/sign_paint_roughness.png",
+374      |-		studsPerTile = 4,
+375      |-		roughness = 0.4,
+376      |-		assetId = "rbxassetid://74747854863990",
+377      |-		normalAssetId = "rbxassetid://85560496249540",
+378      |-		roughnessAssetId = "rbxassetid://128889279786109",
+379      |-	},
+380      |-}
+381      |-
+382      |-local function ensureVariant(key: string): string?
+383      |-	local definition = definitions[key]
+384      |-	local assetId = definition.assetId
+385      |-	if assetId == nil or assetId == "" then
+386      |-		return nil
+387      |-	end
+388      |-	local variantName = "RAC_" .. key
+389      |-	local existing = MaterialService:FindFirstChild(variantName)
+390      |-	assert(existing == nil or existing:IsA("MaterialVariant"), "RAC material name collision: " .. variantName)
+391      |-	local variant: MaterialVariant
+392      |-	if existing and existing:IsA("MaterialVariant") then
+393      |-		variant = existing
+394      |-	else
+395      |-		variant = Instance.new("MaterialVariant")
+396      |-		variant.Name = variantName
+397      |-	end
+398      |-	variant.BaseMaterial = definition.base
+399      |-	variant.ColorMap = assetId
+400      |-	if definition.normalAssetId and definition.normalAssetId ~= "" then
+401      |-		variant.NormalMap = definition.normalAssetId
+402      |-	end
+403      |-	if definition.roughnessAssetId and definition.roughnessAssetId ~= "" then
+404      |-		variant.RoughnessMap = definition.roughnessAssetId
+405      |-	end
+406      |-	variant.StudsPerTile = definition.studsPerTile
+407      |-	variant:SetAttribute("RACRoughness", definition.roughness)
+408      |-	variant.Parent = MaterialService
+409      |-	return variantName
+410      |-end
+411      |-
+412      |-local function install()
+413      |-	for key in definitions do
+414      |-		ensureVariant(key)
+415      |-	end
+416      |-end
+417      |-
+418      |-local function apply(part: BasePart, key: string)
+419      |-	local definition = definitions[key]
+420      |-	assert(definition ~= nil, "Unknown RAC material: " .. key)
+421      |-	part.Material = definition.base
+422      |-	part.MaterialVariant = ""
+423      |-	part.Color = definition.color
+424      |-	part:SetAttribute("RACMaterial", key)
+425      |-	part:SetAttribute("RACTexturePath", definition.texture)
+426      |-	part:SetAttribute("RACStudsPerTile", definition.studsPerTile)
+427      |-	part:SetAttribute("RACRoughness", definition.roughness)
+428      |-	if key == "maple" or key == "racquetball_wood" then
+429      |-		part.Reflectance = 0.38
+430      |-	elseif key == "terrazzo" or key == "court_green_paint" or key == "court_gold_paint" then
+431      |-		part.Reflectance = 0.22
+432      |-	elseif key == "porcelain_tile" or key == "ceramic_tile" or key == "mosaic_green" then
+433      |-		part.Reflectance = 0.14
+434      |-	elseif key == "sealed_concrete" or key == "stainless" then
+435      |-		part.Reflectance = 0.1
+436      |-	else
+437      |-		part.Reflectance = 0
+438      |-	end
+439      |-	ensureVariant(key)
+440      |-	if definition.assetId ~= nil and definition.assetId ~= "" then
+441      |-		part.MaterialVariant = "RAC_" .. key
+442      |-	end
+443      |-end
+444      |-
+445      |-return {
+446      |-	maple = definitions.maple,
+447      |-	racquetball_wood = definitions.racquetball_wood,
+448      |-	terrazzo = definitions.terrazzo,
+449      |-	porcelain_tile = definitions.porcelain_tile,
+450      |-	carpet_tile = definitions.carpet_tile,
+451      |-	rubber = definitions.rubber,
+452      |-	turf = definitions.turf,
+453      |-	sealed_concrete = definitions.sealed_concrete,
+454      |-	ceramic_tile = definitions.ceramic_tile,
+455      |-	ceramic_floor_tile = definitions.ceramic_floor_tile,
+456      |-	vinyl = definitions.vinyl,
+457      |-	painted_cmu = definitions.painted_cmu,
+458      |-	brick = definitions.brick,
+459      |-	gypsum = definitions.gypsum,
+460      |-	glass = definitions.glass,
+461      |-	metal_panel = definitions.metal_panel,
+462      |-	precast = definitions.precast,
+463      |-	acoustic_ceiling = definitions.acoustic_ceiling,
+464      |-	mosaic_green = definitions.mosaic_green,
+465      |-	steel = definitions.steel,
+466      |-	mullion_aluminum = definitions.mullion_aluminum,
+467      |-	stainless = definitions.stainless,
+468      |-	door_wood = definitions.door_wood,
+469      |-	door_paint = definitions.door_paint,
+470      |-	wood_cap_rail = definitions.wood_cap_rail,
+471      |-	court_green_paint = definitions.court_green_paint,
+472      |-	court_gold_paint = definitions.court_gold_paint,
+473      |-	bleacher_green = definitions.bleacher_green,
+474      |-	bleacher_gold = definitions.bleacher_gold,
+475      |-	sign_paint = definitions.sign_paint,
+476      |-	apply = apply,
+477      |-	install = install,
+478      |-}
+    1    |+--!strict
+    2    |+-- One stud = one foot. Local PNG paths are provenance, never Roblox content IDs.
+    3    |+-- Template: docs/MATERIALS_TEMPLATE.md. Builder parts use only these keys.
+    4    |+local MaterialService = game:GetService("MaterialService")
+    5    |+
+    6    |+export type MaterialDefinition = {
+    7    |+	base: Enum.Material,
+    8    |+	color: Color3,
+    9    |+	texture: string?,
+    10   |+	normal: string?,
+    11   |+	roughnessMap: string?,
+    12   |+	studsPerTile: number,
+    13   |+	roughness: number,
+    14   |+	assetId: string?,
+    15   |+	normalAssetId: string?,
+    16   |+	roughnessAssetId: string?,
+    17   |+}
+    18   |+
+    19   |+local definitions: { [string]: MaterialDefinition } = {
+    20   |+	maple = {
+    21   |+		base = Enum.Material.WoodPlanks,
+    22   |+		color = Color3.fromRGB(220, 196, 164),
+    23   |+		texture = "art/materials/pbr/maple_color.png",
+    24   |+		normal = "art/materials/pbr/maple_normal.png",
+    25   |+		roughnessMap = "art/materials/pbr/maple_roughness.png",
+    26   |+		studsPerTile = 8,
+    27   |+		roughness = 0.12,
+    28   |+		assetId = "rbxassetid://115680050081537",
+    29   |+		normalAssetId = "rbxassetid://109560427488914",
+    30   |+		roughnessAssetId = "rbxassetid://81939913346542",
+    31   |+	},
+    32   |+	racquetball_wood = {
+    33   |+		base = Enum.Material.WoodPlanks,
+    34   |+		color = Color3.fromRGB(228, 208, 176),
+    35   |+		texture = "art/materials/pbr/racquetball_wood_color.png",
+    36   |+		normal = "art/materials/pbr/racquetball_wood_normal.png",
+    37   |+		roughnessMap = "art/materials/pbr/racquetball_wood_roughness.png",
+    38   |+		studsPerTile = 8,
+    39   |+		roughness = 0.28,
+    40   |+		assetId = "rbxassetid://88316057526797",
+    41   |+		normalAssetId = "rbxassetid://135637467228533",
+    42   |+		roughnessAssetId = "rbxassetid://135017228687636",
+    43   |+	},
+    44   |+	terrazzo = {
+    45   |+		base = Enum.Material.Concrete,
+    46   |+		color = Color3.fromRGB(214, 210, 202),
+    47   |+		texture = "art/materials/pbr/terrazzo_color.png",
+    48   |+		normal = "art/materials/pbr/terrazzo_normal.png",
+    49   |+		roughnessMap = "art/materials/pbr/terrazzo_roughness.png",
+    50   |+		studsPerTile = 6,
+    51   |+		roughness = 0.14,
+    52   |+		assetId = "rbxassetid://121202771874633",
+    53   |+		normalAssetId = "rbxassetid://137724133031138",
+    54   |+		roughnessAssetId = "rbxassetid://105749773553007",
+    55   |+	},
+    56   |+	porcelain_tile = {
+    57   |+		base = Enum.Material.Marble,
+    58   |+		color = Color3.fromRGB(204, 198, 188),
+    59   |+		texture = "art/materials/pbr/porcelain_tile_color.png",
+    60   |+		normal = "art/materials/pbr/porcelain_tile_normal.png",
+    61   |+		roughnessMap = "art/materials/pbr/porcelain_tile_roughness.png",
+    62   |+		studsPerTile = 4,
+    63   |+		roughness = 0.22,
+    64   |+		assetId = "rbxassetid://135542603987924",
+    65   |+		normalAssetId = "rbxassetid://132467663009224",
+    66   |+		roughnessAssetId = "rbxassetid://104376880127220",
+    67   |+	},
+    68   |+	carpet_tile = {
+    69   |+		base = Enum.Material.Fabric,
+    70   |+		color = Color3.fromRGB(68, 67, 66),
+    71   |+		texture = "art/materials/pbr/carpet_tile_color.png",
+    72   |+		normal = "art/materials/pbr/carpet_tile_normal.png",
+    73   |+		roughnessMap = "art/materials/pbr/carpet_tile_roughness.png",
+    74   |+		studsPerTile = 4,
+    75   |+		roughness = 0.95,
+    76   |+		assetId = "rbxassetid://126209511063633",
+    77   |+		normalAssetId = "rbxassetid://114587835134293",
+    78   |+		roughnessAssetId = "rbxassetid://71963222800584",
+    79   |+	},
+    80   |+	rubber = {
+    81   |+		base = Enum.Material.Rubber,
+    82   |+		color = Color3.fromRGB(173, 164, 148),
+    83   |+		texture = "art/materials/pbr/rubber_color.png",
+    84   |+		normal = "art/materials/pbr/rubber_normal.png",
+    85   |+		roughnessMap = "art/materials/pbr/rubber_roughness.png",
+    86   |+		studsPerTile = 4,
+    87   |+		roughness = 0.9,
+    88   |+		assetId = "rbxassetid://93777295951772",
+    89   |+		normalAssetId = "rbxassetid://89419544766877",
+    90   |+		roughnessAssetId = "rbxassetid://85867308593380",
+    91   |+	},
+    92   |+	turf = {
+    93   |+		base = Enum.Material.Grass,
+    94   |+		color = Color3.fromRGB(77, 84, 47),
+    95   |+		texture = "art/materials/pbr/turf_color.png",
+    96   |+		normal = "art/materials/pbr/turf_normal.png",
+    97   |+		roughnessMap = "art/materials/pbr/turf_roughness.png",
+    98   |+		studsPerTile = 4,
+    99   |+		roughness = 0.9,
+    100  |+		assetId = "rbxassetid://110434921324962",
+    101  |+		normalAssetId = "rbxassetid://84763308048041",
+    102  |+		roughnessAssetId = "rbxassetid://106388111640017",
+    103  |+	},
+    104  |+	sealed_concrete = {
+    105  |+		base = Enum.Material.Concrete,
+    106  |+		color = Color3.fromRGB(184, 180, 172),
+    107  |+		texture = "art/materials/pbr/sealed_concrete_color.png",
+    108  |+		normal = "art/materials/pbr/sealed_concrete_normal.png",
+    109  |+		roughnessMap = "art/materials/pbr/sealed_concrete_roughness.png",
+    110  |+		studsPerTile = 8,
+    111  |+		roughness = 0.32,
+    112  |+		assetId = "rbxassetid://118939598501809",
+    113  |+		normalAssetId = "rbxassetid://126520269594823",
+    114  |+		roughnessAssetId = "rbxassetid://97810093348285",
+    115  |+	},
+    116  |+	ceramic_tile = {
+    117  |+		base = Enum.Material.CeramicTiles,
+    118  |+		color = Color3.fromRGB(232, 224, 210),
+    119  |+		texture = "art/materials/pbr/ceramic_tile_color.png",
+    120  |+		normal = "art/materials/pbr/ceramic_tile_normal.png",
+    121  |+		roughnessMap = "art/materials/pbr/ceramic_tile_roughness.png",
+    122  |+		studsPerTile = 2,
+    123  |+		roughness = 0.22,
+    124  |+		assetId = "rbxassetid://126184103626009",
+    125  |+		normalAssetId = "rbxassetid://109023032528121",
+    126  |+		roughnessAssetId = "rbxassetid://121074020038747",
+    127  |+	},
+    128  |+	ceramic_floor_tile = {
+    129  |+		base = Enum.Material.CeramicTiles,
+    130  |+		color = Color3.fromRGB(196, 180, 160),
+    131  |+		texture = "art/materials/pbr/ceramic_floor_tile_color.png",
+    132  |+		normal = "art/materials/pbr/ceramic_floor_tile_normal.png",
+    133  |+		roughnessMap = "art/materials/pbr/ceramic_floor_tile_roughness.png",
+    134  |+		studsPerTile = 2,
+    135  |+		roughness = 0.28,
+    136  |+		assetId = "rbxassetid://132181993186941",
+    137  |+		normalAssetId = "rbxassetid://108452738502579",
+    138  |+		roughnessAssetId = "rbxassetid://75346132703728",
+    139  |+	},
+    140  |+	vinyl = {
+    141  |+		base = Enum.Material.SmoothPlastic,
+    142  |+		color = Color3.fromRGB(184, 176, 164),
+    143  |+		texture = "art/materials/pbr/vinyl_color.png",
+    144  |+		normal = "art/materials/pbr/vinyl_normal.png",
+    145  |+		roughnessMap = "art/materials/pbr/vinyl_roughness.png",
+    146  |+		studsPerTile = 4,
+    147  |+		roughness = 0.4,
+    148  |+		assetId = "rbxassetid://137016261479465",
+    149  |+		normalAssetId = "rbxassetid://132467663009224",
+    150  |+		roughnessAssetId = "rbxassetid://71157329938638",
+    151  |+	},
+    152  |+	painted_cmu = {
+    153  |+		base = Enum.Material.Concrete,
+    154  |+		color = Color3.fromRGB(210, 206, 200),
+    155  |+		texture = "art/materials/pbr/painted_cmu_color.png",
+    156  |+		normal = "art/materials/pbr/painted_cmu_normal.png",
+    157  |+		roughnessMap = "art/materials/pbr/painted_cmu_roughness.png",
+    158  |+		studsPerTile = 8,
+    159  |+		roughness = 0.7,
+    160  |+		assetId = "rbxassetid://73914010132661",
+    161  |+		normalAssetId = "rbxassetid://74529868373378",
+    162  |+		roughnessAssetId = "rbxassetid://125304131314342",
+    163  |+	},
+    164  |+	brick = {
+    165  |+		base = Enum.Material.Brick,
+    166  |+		color = Color3.fromRGB(120, 84, 68),
+    167  |+		texture = "art/materials/pbr/brick_color.png",
+    168  |+		normal = "art/materials/pbr/brick_normal.png",
+    169  |+		roughnessMap = "art/materials/pbr/brick_roughness.png",
+    170  |+		studsPerTile = 4,
+    171  |+		roughness = 0.9,
+    172  |+		assetId = "rbxassetid://71061751380163",
+    173  |+		normalAssetId = "rbxassetid://106108670193376",
+    174  |+		roughnessAssetId = "rbxassetid://81739995864834",
+    175  |+	},
+    176  |+	gypsum = {
+    177  |+		base = Enum.Material.Plaster,
+    178  |+		color = Color3.fromRGB(220, 220, 222),
+    179  |+		texture = "art/materials/pbr/gypsum_color.png",
+    180  |+		normal = "art/materials/pbr/gypsum_normal.png",
+    181  |+		roughnessMap = "art/materials/pbr/gypsum_roughness.png",
+    182  |+		studsPerTile = 8,
+    183  |+		roughness = 0.8,
+    184  |+		assetId = "rbxassetid://83085234647184",
+    185  |+		normalAssetId = "rbxassetid://105148116380465",
+    186  |+		roughnessAssetId = "rbxassetid://79559158963357",
+    187  |+	},
+    188  |+	glass = {
+    189  |+		base = Enum.Material.Glass,
+    190  |+		color = Color3.fromRGB(208, 225, 224),
+    191  |+		texture = nil,
+    192  |+		normal = nil,
+    193  |+		roughnessMap = nil,
+    194  |+		studsPerTile = 4,
+    195  |+		roughness = 0.08,
+    196  |+		assetId = nil,
+    197  |+		normalAssetId = nil,
+    198  |+		roughnessAssetId = nil,
+    199  |+	},
+    200  |+	metal_panel = {
+    201  |+		base = Enum.Material.Metal,
+    202  |+		color = Color3.fromRGB(82, 86, 90),
+    203  |+		texture = "art/materials/pbr/metal_panel_color.png",
+    204  |+		normal = "art/materials/pbr/metal_panel_normal.png",
+    205  |+		roughnessMap = "art/materials/pbr/metal_panel_roughness.png",
+    206  |+		studsPerTile = 4,
+    207  |+		roughness = 0.4,
+    208  |+		assetId = "rbxassetid://133381470193221",
+    209  |+		normalAssetId = "rbxassetid://130950894419275",
+    210  |+		roughnessAssetId = "rbxassetid://78997218462553",
+    211  |+	},
+    212  |+	precast = {
+    213  |+		base = Enum.Material.Concrete,
+    214  |+		color = Color3.fromRGB(184, 170, 156),
+    215  |+		texture = "art/materials/pbr/precast_color.png",
+    216  |+		normal = "art/materials/pbr/precast_normal.png",
+    217  |+		roughnessMap = "art/materials/pbr/precast_roughness.png",
+    218  |+		studsPerTile = 8,
+    219  |+		roughness = 0.8,
+    220  |+		assetId = "rbxassetid://140362294900296",
+    221  |+		normalAssetId = "rbxassetid://126520269594823",
+    222  |+		roughnessAssetId = "rbxassetid://103731185018538",
+    223  |+	},
+    224  |+	acoustic_ceiling = {
+    225  |+		base = Enum.Material.Plaster,
+    226  |+		color = Color3.fromRGB(232, 230, 226),
+    227  |+		texture = "art/materials/pbr/acoustic_ceiling_color.png",
+    228  |+		normal = "art/materials/pbr/acoustic_ceiling_normal.png",
+    229  |+		roughnessMap = "art/materials/pbr/acoustic_ceiling_roughness.png",
+    230  |+		studsPerTile = 2,
+    231  |+		roughness = 0.95,
+    232  |+		assetId = "rbxassetid://74504063907005",
+    233  |+		normalAssetId = "rbxassetid://96924420037546",
+    234  |+		roughnessAssetId = "rbxassetid://110866543862913",
+    235  |+	},
+    236  |+	mosaic_green = {
+    237  |+		base = Enum.Material.CeramicTiles,
+    238  |+		color = Color3.fromRGB(168, 176, 162),
+    239  |+		texture = "art/materials/pbr/mosaic_green_color.png",
+    240  |+		normal = "art/materials/pbr/mosaic_green_normal.png",
+    241  |+		roughnessMap = "art/materials/pbr/mosaic_green_roughness.png",
+    242  |+		studsPerTile = 2,
+    243  |+		roughness = 0.2,
+    244  |+		assetId = "rbxassetid://116682509188652",
+    245  |+		normalAssetId = "rbxassetid://77153283278015",
+    246  |+		roughnessAssetId = "rbxassetid://116139697584259",
+    247  |+	},
+    248  |+	steel = {
+    249  |+		base = Enum.Material.Metal,
+    250  |+		color = Color3.fromRGB(48, 50, 52),
+    251  |+		texture = "art/materials/pbr/steel_color.png",
+    252  |+		normal = "art/materials/pbr/steel_normal.png",
+    253  |+		roughnessMap = "art/materials/pbr/steel_roughness.png",
+    254  |+		studsPerTile = 4,
+    255  |+		roughness = 0.45,
+    256  |+		assetId = "rbxassetid://124080354635515",
+    257  |+		normalAssetId = "rbxassetid://130950894419275",
+    258  |+		roughnessAssetId = "rbxassetid://74843447803064",
+    259  |+	},
+    260  |+	mullion_aluminum = {
+    261  |+		base = Enum.Material.Metal,
+    262  |+		color = Color3.fromRGB(48, 50, 54),
+    263  |+		texture = "art/materials/pbr/mullion_aluminum_color.png",
+    264  |+		normal = "art/materials/pbr/mullion_aluminum_normal.png",
+    265  |+		roughnessMap = "art/materials/pbr/mullion_aluminum_roughness.png",
+    266  |+		studsPerTile = 4,
+    267  |+		roughness = 0.32,
+    268  |+		assetId = "rbxassetid://79237438772328",
+    269  |+		normalAssetId = "rbxassetid://96715336119497",
+    270  |+		roughnessAssetId = "rbxassetid://120577523437453",
+    271  |+	},
+    272  |+	stainless = {
+    273  |+		base = Enum.Material.Metal,
+    274  |+		color = Color3.fromRGB(180, 184, 186),
+    275  |+		texture = "art/materials/pbr/stainless_color.png",
+    276  |+		normal = "art/materials/pbr/stainless_normal.png",
+    277  |+		roughnessMap = "art/materials/pbr/stainless_roughness.png",
+    278  |+		studsPerTile = 2,
+    279  |+		roughness = 0.22,
+    280  |+		assetId = "rbxassetid://91470726429340",
+    281  |+		normalAssetId = "rbxassetid://110244039569304",
+    282  |+		roughnessAssetId = "rbxassetid://134128261887917",
+    283  |+	},
+    284  |+	door_wood = {
+    285  |+		base = Enum.Material.Wood,
+    286  |+		color = Color3.fromRGB(122, 87, 48),
+    287  |+		texture = "art/materials/pbr/door_wood_color.png",
+    288  |+		normal = "art/materials/pbr/door_wood_normal.png",
+    289  |+		roughnessMap = "art/materials/pbr/door_wood_roughness.png",
+    290  |+		studsPerTile = 4,
+    291  |+		roughness = 0.55,
+    292  |+		assetId = "rbxassetid://75146815085481",
+    293  |+		normalAssetId = "rbxassetid://87900524753415",
+    294  |+		roughnessAssetId = "rbxassetid://133171298613584",
+    295  |+	},
+    296  |+	door_paint = {
+    297  |+		base = Enum.Material.SmoothPlastic,
+    298  |+		color = Color3.fromRGB(76, 81, 86),
+    299  |+		texture = "art/materials/pbr/door_paint_color.png",
+    300  |+		normal = "art/materials/pbr/door_paint_normal.png",
+    301  |+		roughnessMap = "art/materials/pbr/door_paint_roughness.png",
+    302  |+		studsPerTile = 4,
+    303  |+		roughness = 0.5,
+    304  |+		assetId = "rbxassetid://136989871078767",
+    305  |+		normalAssetId = "rbxassetid://133238565681457",
+    306  |+		roughnessAssetId = "rbxassetid://83553921069270",
+    307  |+	},
+    308  |+	wood_cap_rail = {
+    309  |+		base = Enum.Material.Wood,
+    310  |+		color = Color3.fromRGB(58, 48, 40),
+    311  |+		texture = "art/materials/pbr/wood_cap_rail_color.png",
+    312  |+		normal = "art/materials/pbr/wood_cap_rail_normal.png",
+    313  |+		roughnessMap = "art/materials/pbr/wood_cap_rail_roughness.png",
+    314  |+		studsPerTile = 4,
+    315  |+		roughness = 0.5,
+    316  |+		assetId = "rbxassetid://92874150765104",
+    317  |+		normalAssetId = "rbxassetid://87900524753415",
+    318  |+		roughnessAssetId = "rbxassetid://122408873463919",
+    319  |+	},
+    320  |+	court_green_paint = {
+    321  |+		base = Enum.Material.SmoothPlastic,
+    322  |+		color = Color3.fromRGB(28, 70, 40),
+    323  |+		texture = "art/materials/pbr/court_green_paint_color.png",
+    324  |+		normal = "art/materials/pbr/court_green_paint_normal.png",
+    325  |+		roughnessMap = "art/materials/pbr/court_green_paint_roughness.png",
+    326  |+		studsPerTile = 8,
+    327  |+		roughness = 0.18,
+    328  |+		assetId = "rbxassetid://130890933128176",
+    329  |+		normalAssetId = "rbxassetid://85560496249540",
+    330  |+		roughnessAssetId = "rbxassetid://102368861586649",
+    331  |+	},
+    332  |+	court_gold_paint = {
+    333  |+		base = Enum.Material.SmoothPlastic,
+    334  |+		color = Color3.fromRGB(214, 172, 44),
+    335  |+		texture = "art/materials/pbr/court_gold_paint_color.png",
+    336  |+		normal = "art/materials/pbr/court_gold_paint_normal.png",
+    337  |+		roughnessMap = "art/materials/pbr/court_gold_paint_roughness.png",
+    338  |+		studsPerTile = 8,
+    339  |+		roughness = 0.2,
+    340  |+		assetId = "rbxassetid://81202424403635",
+    341  |+		normalAssetId = "rbxassetid://133238565681457",
+    342  |+		roughnessAssetId = "rbxassetid://113811037210637",
+    343  |+	},
+    344  |+	bleacher_green = {
+    345  |+		base = Enum.Material.SmoothPlastic,
+    346  |+		color = Color3.fromRGB(30, 35, 31),
+    347  |+		texture = "art/materials/pbr/bleacher_green_color.png",
+    348  |+		normal = "art/materials/pbr/bleacher_green_normal.png",
+    349  |+		roughnessMap = "art/materials/pbr/bleacher_green_roughness.png",
+    350  |+		studsPerTile = 4,
+    351  |+		roughness = 0.55,
+    352  |+		assetId = "rbxassetid://94239505522923",
+    353  |+		normalAssetId = "rbxassetid://85560496249540",
+    354  |+		roughnessAssetId = "rbxassetid://79872805115337",
+    355  |+	},
+    356  |+	bleacher_gold = {
+    357  |+		base = Enum.Material.SmoothPlastic,
+    358  |+		color = Color3.fromRGB(160, 108, 32),
+    359  |+		texture = "art/materials/pbr/bleacher_gold_color.png",
+    360  |+		normal = "art/materials/pbr/bleacher_gold_normal.png",
+    361  |+		roughnessMap = "art/materials/pbr/bleacher_gold_roughness.png",
+    362  |+		studsPerTile = 4,
+    363  |+		roughness = 0.5,
+    364  |+		assetId = "rbxassetid://86868049965059",
+    365  |+		normalAssetId = "rbxassetid://133238565681457",
+    366  |+		roughnessAssetId = "rbxassetid://83553921069270",
+    367  |+	},
+    368  |+	sign_paint = {
+    369  |+		base = Enum.Material.SmoothPlastic,
+    370  |+		color = Color3.fromRGB(0, 70, 36),
+    371  |+		texture = "art/materials/pbr/sign_paint_color.png",
+    372  |+		normal = "art/materials/pbr/sign_paint_normal.png",
+    373  |+		roughnessMap = "art/materials/pbr/sign_paint_roughness.png",
+    374  |+		studsPerTile = 4,
+    375  |+		roughness = 0.4,
+    376  |+		assetId = "rbxassetid://74747854863990",
+    377  |+		normalAssetId = "rbxassetid://85560496249540",
+    378  |+		roughnessAssetId = "rbxassetid://128889279786109",
+    379  |+	},
+    380  |+}
+    381  |+
+    382  |+local function ensureVariant(key: string): string?
+    383  |+	local definition = definitions[key]
+    384  |+	local assetId = definition.assetId
+    385  |+	if assetId == nil or assetId == "" then
+    386  |+		return nil
+    387  |+	end
+    388  |+	local variantName = "RAC_" .. key
+    389  |+	local existing = MaterialService:FindFirstChild(variantName)
+    390  |+	assert(existing == nil or existing:IsA("MaterialVariant"), "RAC material name collision: " .. variantName)
+    391  |+	local variant: MaterialVariant
+    392  |+	if existing and existing:IsA("MaterialVariant") then
+    393  |+		variant = existing
+    394  |+	else
+    395  |+		variant = Instance.new("MaterialVariant")
+    396  |+		variant.Name = variantName
+    397  |+	end
+    398  |+	variant.BaseMaterial = definition.base
+    399  |+	variant.ColorMap = assetId
+    400  |+	if definition.normalAssetId and definition.normalAssetId ~= "" then
+    401  |+		variant.NormalMap = definition.normalAssetId
+    402  |+	end
+    403  |+	if definition.roughnessAssetId and definition.roughnessAssetId ~= "" then
+    404  |+		variant.RoughnessMap = definition.roughnessAssetId
+    405  |+	end
+    406  |+	variant.StudsPerTile = definition.studsPerTile
+    407  |+	variant:SetAttribute("RACRoughness", definition.roughness)
+    408  |+	variant.Parent = MaterialService
+    409  |+	return variantName
+    410  |+end
+    411  |+
+    412  |+local function install()
+    413  |+	for key in definitions do
+    414  |+		ensureVariant(key)
+    415  |+	end
+    416  |+end
+    417  |+
+    418  |+local function apply(part: BasePart, key: string)
+    419  |+	local definition = definitions[key]
+    420  |+	assert(definition ~= nil, "Unknown RAC material: " .. key)
+    421  |+	part.Material = definition.base
+    422  |+	part.MaterialVariant = ""
+    423  |+	part.Color = definition.color
+    424  |+	part:SetAttribute("RACMaterial", key)
+    425  |+	part:SetAttribute("RACTexturePath", definition.texture)
+    426  |+	part:SetAttribute("RACStudsPerTile", definition.studsPerTile)
+    427  |+	part:SetAttribute("RACRoughness", definition.roughness)
+    428  |+	if key == "maple" or key == "racquetball_wood" then
+    429  |+		part.Reflectance = 0.38
+    430  |+	elseif key == "terrazzo" or key == "court_green_paint" or key == "court_gold_paint" then
+    431  |+		part.Reflectance = 0.22
+    432  |+	elseif key == "porcelain_tile" or key == "ceramic_tile" or key == "mosaic_green" then
+    433  |+		part.Reflectance = 0.14
+    434  |+	elseif key == "sealed_concrete" or key == "stainless" then
+    435  |+		part.Reflectance = 0.1
+    436  |+	else
+    437  |+		part.Reflectance = 0
+    438  |+	end
+    439  |+	ensureVariant(key)
+    440  |+	if definition.assetId ~= nil and definition.assetId ~= "" then
+    441  |+		part.MaterialVariant = "RAC_" .. key
+    442  |+	end
+    443  |+end
+    444  |+
+    445  |+return {
+    446  |+	maple = definitions.maple,
+    447  |+	racquetball_wood = definitions.racquetball_wood,
+    448  |+	terrazzo = definitions.terrazzo,
+    449  |+	porcelain_tile = definitions.porcelain_tile,
+    450  |+	carpet_tile = definitions.carpet_tile,
+    451  |+	rubber = definitions.rubber,
+    452  |+	turf = definitions.turf,
+    453  |+	sealed_concrete = definitions.sealed_concrete,
+    454  |+	ceramic_tile = definitions.ceramic_tile,
+    455  |+	ceramic_floor_tile = definitions.ceramic_floor_tile,
+    456  |+	vinyl = definitions.vinyl,
+    457  |+	painted_cmu = definitions.painted_cmu,
+    458  |+	brick = definitions.brick,
+    459  |+	gypsum = definitions.gypsum,
+    460  |+	glass = definitions.glass,
+    461  |+	metal_panel = definitions.metal_panel,
+    462  |+	precast = definitions.precast,
+    463  |+	acoustic_ceiling = definitions.acoustic_ceiling,
+    464  |+	mosaic_green = definitions.mosaic_green,
+    465  |+	steel = definitions.steel,
+    466  |+	mullion_aluminum = definitions.mullion_aluminum,
+    467  |+	stainless = definitions.stainless,
+    468  |+	door_wood = definitions.door_wood,
+    469  |+	door_paint = definitions.door_paint,
+    470  |+	wood_cap_rail = definitions.wood_cap_rail,
+    471  |+	court_green_paint = definitions.court_green_paint,
+    472  |+	court_gold_paint = definitions.court_gold_paint,
+    473  |+	bleacher_green = definitions.bleacher_green,
+    474  |+	bleacher_gold = definitions.bleacher_gold,
+    475  |+	sign_paint = definitions.sign_paint,
+    476  |+	apply = apply,
+    477  |+	install = install,
+    478  |+}
 
-Results:
-0 errors
-1 warnings
-0 parse errors
-
+PASS  selene
 PASS  rojo build
 PASS  blueprint geometry
 PASS  blueprint schema
@@ -26,4 +970,4 @@ PASS  material template
 PASS  perf budgets and walkable surfaces
 PASS  luau-lsp analyze
 
-VERIFY FAILED: selene
+VERIFY FAILED: stylua --check

@@ -3,232 +3,290 @@
     "file": "art/materials/pbr/maple_color.png",
     "normal": "art/materials/pbr/maple_normal.png",
     "roughness": "art/materials/pbr/maple_roughness.png",
-    "assetId": "rbxassetid://115379168184321",
+    "assetId": "rbxassetid://115680050081537",
     "baseMaterial": "WoodPlanks",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://109560427488914",
+    "roughnessAssetId": "rbxassetid://81939913346542"
   },
   "racquetball_wood": {
     "file": "art/materials/pbr/racquetball_wood_color.png",
     "normal": "art/materials/pbr/racquetball_wood_normal.png",
     "roughness": "art/materials/pbr/racquetball_wood_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://88316057526797",
     "baseMaterial": "WoodPlanks",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://135637467228533",
+    "roughnessAssetId": "rbxassetid://135017228687636"
   },
   "terrazzo": {
     "file": "art/materials/pbr/terrazzo_color.png",
     "normal": "art/materials/pbr/terrazzo_normal.png",
     "roughness": "art/materials/pbr/terrazzo_roughness.png",
-    "assetId": "rbxassetid://82792157361684",
+    "assetId": "rbxassetid://121202771874633",
     "baseMaterial": "Concrete",
-    "studsPerTile": 6
+    "studsPerTile": 6,
+    "normalAssetId": "rbxassetid://137724133031138",
+    "roughnessAssetId": "rbxassetid://105749773553007"
   },
   "porcelain_tile": {
     "file": "art/materials/pbr/porcelain_tile_color.png",
     "normal": "art/materials/pbr/porcelain_tile_normal.png",
     "roughness": "art/materials/pbr/porcelain_tile_roughness.png",
-    "assetId": "rbxassetid://139851902641009",
+    "assetId": "rbxassetid://135542603987924",
     "baseMaterial": "Marble",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://132467663009224",
+    "roughnessAssetId": "rbxassetid://104376880127220"
   },
   "carpet_tile": {
     "file": "art/materials/pbr/carpet_tile_color.png",
     "normal": "art/materials/pbr/carpet_tile_normal.png",
     "roughness": "art/materials/pbr/carpet_tile_roughness.png",
-    "assetId": "rbxassetid://112971278288310",
+    "assetId": "rbxassetid://126209511063633",
     "baseMaterial": "Fabric",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://114587835134293",
+    "roughnessAssetId": "rbxassetid://71963222800584"
   },
   "rubber": {
     "file": "art/materials/pbr/rubber_color.png",
     "normal": "art/materials/pbr/rubber_normal.png",
     "roughness": "art/materials/pbr/rubber_roughness.png",
-    "assetId": "rbxassetid://77770454739238",
+    "assetId": "rbxassetid://93777295951772",
     "baseMaterial": "Rubber",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://89419544766877",
+    "roughnessAssetId": "rbxassetid://85867308593380"
   },
   "turf": {
     "file": "art/materials/pbr/turf_color.png",
     "normal": "art/materials/pbr/turf_normal.png",
     "roughness": "art/materials/pbr/turf_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://110434921324962",
     "baseMaterial": "Grass",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://84763308048041",
+    "roughnessAssetId": "rbxassetid://106388111640017"
   },
   "sealed_concrete": {
     "file": "art/materials/pbr/sealed_concrete_color.png",
     "normal": "art/materials/pbr/sealed_concrete_normal.png",
     "roughness": "art/materials/pbr/sealed_concrete_roughness.png",
-    "assetId": "rbxassetid://132402981008958",
+    "assetId": "rbxassetid://118939598501809",
     "baseMaterial": "Concrete",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://126520269594823",
+    "roughnessAssetId": "rbxassetid://97810093348285"
   },
   "ceramic_tile": {
     "file": "art/materials/pbr/ceramic_tile_color.png",
     "normal": "art/materials/pbr/ceramic_tile_normal.png",
     "roughness": "art/materials/pbr/ceramic_tile_roughness.png",
-    "assetId": "rbxassetid://100222343892181",
+    "assetId": "rbxassetid://126184103626009",
     "baseMaterial": "CeramicTiles",
-    "studsPerTile": 2
+    "studsPerTile": 2,
+    "normalAssetId": "rbxassetid://109023032528121",
+    "roughnessAssetId": "rbxassetid://121074020038747"
   },
   "ceramic_floor_tile": {
     "file": "art/materials/pbr/ceramic_floor_tile_color.png",
     "normal": "art/materials/pbr/ceramic_floor_tile_normal.png",
     "roughness": "art/materials/pbr/ceramic_floor_tile_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://132181993186941",
     "baseMaterial": "CeramicTiles",
-    "studsPerTile": 2
+    "studsPerTile": 2,
+    "normalAssetId": "rbxassetid://108452738502579",
+    "roughnessAssetId": "rbxassetid://75346132703728"
   },
   "vinyl": {
     "file": "art/materials/pbr/vinyl_color.png",
     "normal": "art/materials/pbr/vinyl_normal.png",
     "roughness": "art/materials/pbr/vinyl_roughness.png",
-    "assetId": "rbxassetid://82792157361684",
+    "assetId": "rbxassetid://137016261479465",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://132467663009224",
+    "roughnessAssetId": "rbxassetid://71157329938638"
   },
   "painted_cmu": {
     "file": "art/materials/pbr/painted_cmu_color.png",
     "normal": "art/materials/pbr/painted_cmu_normal.png",
     "roughness": "art/materials/pbr/painted_cmu_roughness.png",
-    "assetId": "rbxassetid://127160626359077",
+    "assetId": "rbxassetid://73914010132661",
     "baseMaterial": "Concrete",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://74529868373378",
+    "roughnessAssetId": "rbxassetid://125304131314342"
   },
   "brick": {
     "file": "art/materials/pbr/brick_color.png",
     "normal": "art/materials/pbr/brick_normal.png",
     "roughness": "art/materials/pbr/brick_roughness.png",
-    "assetId": "rbxassetid://102625076659678",
+    "assetId": "rbxassetid://71061751380163",
     "baseMaterial": "Brick",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://106108670193376",
+    "roughnessAssetId": "rbxassetid://81739995864834"
   },
   "gypsum": {
     "file": "art/materials/pbr/gypsum_color.png",
     "normal": "art/materials/pbr/gypsum_normal.png",
     "roughness": "art/materials/pbr/gypsum_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://83085234647184",
     "baseMaterial": "Plaster",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://105148116380465",
+    "roughnessAssetId": "rbxassetid://79559158963357"
   },
   "metal_panel": {
     "file": "art/materials/pbr/metal_panel_color.png",
     "normal": "art/materials/pbr/metal_panel_normal.png",
     "roughness": "art/materials/pbr/metal_panel_roughness.png",
-    "assetId": "rbxassetid://74124851272829",
+    "assetId": "rbxassetid://119546250161432",
     "baseMaterial": "Metal",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://130950894419275",
+    "roughnessAssetId": "rbxassetid://78997218462553"
   },
   "precast": {
     "file": "art/materials/pbr/precast_color.png",
     "normal": "art/materials/pbr/precast_normal.png",
     "roughness": "art/materials/pbr/precast_roughness.png",
-    "assetId": "rbxassetid://132402981008958",
+    "assetId": "rbxassetid://140362294900296",
     "baseMaterial": "Concrete",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://126520269594823",
+    "roughnessAssetId": "rbxassetid://103731185018538"
   },
   "acoustic_ceiling": {
     "file": "art/materials/pbr/acoustic_ceiling_color.png",
     "normal": "art/materials/pbr/acoustic_ceiling_normal.png",
     "roughness": "art/materials/pbr/acoustic_ceiling_roughness.png",
-    "assetId": "rbxassetid://125104498841691",
+    "assetId": "rbxassetid://74504063907005",
     "baseMaterial": "Plaster",
-    "studsPerTile": 2
+    "studsPerTile": 2,
+    "normalAssetId": "rbxassetid://96924420037546",
+    "roughnessAssetId": "rbxassetid://110866543862913"
   },
   "mosaic_green": {
     "file": "art/materials/pbr/mosaic_green_color.png",
     "normal": "art/materials/pbr/mosaic_green_normal.png",
     "roughness": "art/materials/pbr/mosaic_green_roughness.png",
-    "assetId": "rbxassetid://138590772740153",
+    "assetId": "rbxassetid://116682509188652",
     "baseMaterial": "CeramicTiles",
-    "studsPerTile": 2
+    "studsPerTile": 2,
+    "normalAssetId": "rbxassetid://77153283278015",
+    "roughnessAssetId": "rbxassetid://116139697584259"
   },
   "steel": {
     "file": "art/materials/pbr/steel_color.png",
     "normal": "art/materials/pbr/steel_normal.png",
     "roughness": "art/materials/pbr/steel_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://124080354635515",
     "baseMaterial": "Metal",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://130950894419275",
+    "roughnessAssetId": "rbxassetid://74843447803064"
   },
   "mullion_aluminum": {
     "file": "art/materials/pbr/mullion_aluminum_color.png",
     "normal": "art/materials/pbr/mullion_aluminum_normal.png",
     "roughness": "art/materials/pbr/mullion_aluminum_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://79237438772328",
     "baseMaterial": "Metal",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://96715336119497",
+    "roughnessAssetId": "rbxassetid://120577523437453"
   },
   "stainless": {
     "file": "art/materials/pbr/stainless_color.png",
     "normal": "art/materials/pbr/stainless_normal.png",
     "roughness": "art/materials/pbr/stainless_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://91470726429340",
     "baseMaterial": "Metal",
-    "studsPerTile": 2
+    "studsPerTile": 2,
+    "normalAssetId": "rbxassetid://110244039569304",
+    "roughnessAssetId": "rbxassetid://134128261887917"
   },
   "door_wood": {
     "file": "art/materials/pbr/door_wood_color.png",
     "normal": "art/materials/pbr/door_wood_normal.png",
     "roughness": "art/materials/pbr/door_wood_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://75146815085481",
     "baseMaterial": "Wood",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://87900524753415",
+    "roughnessAssetId": "rbxassetid://133171298613584"
   },
   "door_paint": {
     "file": "art/materials/pbr/door_paint_color.png",
     "normal": "art/materials/pbr/door_paint_normal.png",
     "roughness": "art/materials/pbr/door_paint_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://136989871078767",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://133238565681457",
+    "roughnessAssetId": "rbxassetid://83553921069270"
   },
   "wood_cap_rail": {
     "file": "art/materials/pbr/wood_cap_rail_color.png",
     "normal": "art/materials/pbr/wood_cap_rail_normal.png",
     "roughness": "art/materials/pbr/wood_cap_rail_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://92874150765104",
     "baseMaterial": "Wood",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://87900524753415",
+    "roughnessAssetId": "rbxassetid://122408873463919"
   },
   "court_green_paint": {
     "file": "art/materials/pbr/court_green_paint_color.png",
     "normal": "art/materials/pbr/court_green_paint_normal.png",
     "roughness": "art/materials/pbr/court_green_paint_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://130890933128176",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://85560496249540",
+    "roughnessAssetId": "rbxassetid://102368861586649"
   },
   "court_gold_paint": {
     "file": "art/materials/pbr/court_gold_paint_color.png",
     "normal": "art/materials/pbr/court_gold_paint_normal.png",
     "roughness": "art/materials/pbr/court_gold_paint_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://81202424403635",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 8
+    "studsPerTile": 8,
+    "normalAssetId": "rbxassetid://133238565681457",
+    "roughnessAssetId": "rbxassetid://113811037210637"
   },
   "bleacher_green": {
     "file": "art/materials/pbr/bleacher_green_color.png",
     "normal": "art/materials/pbr/bleacher_green_normal.png",
     "roughness": "art/materials/pbr/bleacher_green_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://94239505522923",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://85560496249540",
+    "roughnessAssetId": "rbxassetid://79872805115337"
   },
   "bleacher_gold": {
     "file": "art/materials/pbr/bleacher_gold_color.png",
     "normal": "art/materials/pbr/bleacher_gold_normal.png",
     "roughness": "art/materials/pbr/bleacher_gold_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://86868049965059",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://133238565681457",
+    "roughnessAssetId": "rbxassetid://83553921069270"
   },
   "sign_paint": {
     "file": "art/materials/pbr/sign_paint_color.png",
     "normal": "art/materials/pbr/sign_paint_normal.png",
     "roughness": "art/materials/pbr/sign_paint_roughness.png",
-    "assetId": "",
+    "assetId": "rbxassetid://74747854863990",
     "baseMaterial": "SmoothPlastic",
-    "studsPerTile": 4
+    "studsPerTile": 4,
+    "normalAssetId": "rbxassetid://85560496249540",
+    "roughnessAssetId": "rbxassetid://128889279786109"
   }
 }

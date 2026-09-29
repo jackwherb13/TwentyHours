@@ -4,8 +4,8 @@
     "BaseMaterial": "Metal",
     "StudsPerTile": 2,
     "Name": "RAC_stainless",
-    "ColorMap": "rbxassetid://72990424519590",
-    "NormalMap": "rbxassetid://123915024152896",
-    "RoughnessMap": "rbxassetid://110299002240225"
+    "ColorMap": "rbxassetid://91470726429340",
+    "NormalMap": "rbxassetid://110244039569304",
+    "RoughnessMap": "rbxassetid://134128261887917"
   }
 }

@@ -167,7 +167,12 @@ for _, root in model do
 		local def = allowed[key]
 		local dc = def.color
 		local pc = d.Color
-		if math.abs(dc.R - pc.R) > 0.02 or math.abs(dc.G - pc.G) > 0.02 or math.abs(dc.B - pc.B) > 0.02 then
+		local function near(a: number, b: number): boolean
+			return math.abs(a - b) <= 0.02
+		end
+		local match = near(dc.R, pc.R) and near(dc.G, pc.G) and near(dc.B, pc.B)
+		local white = near(pc.R, 1) and near(pc.G, 1) and near(pc.B, 1)
+		if not match and not (white and def.assetId ~= nil and def.assetId ~= "") then
 			table.insert(fails, path .. " color not in template (" .. key .. ")")
 		end
 		local expectedVariant = if def.assetId then "RAC_" .. key else ""

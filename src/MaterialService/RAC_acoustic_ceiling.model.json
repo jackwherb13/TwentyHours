@@ -2,10 +2,10 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "Plaster",
-    "ColorMap": "rbxassetid://117197068985658",
+    "ColorMap": "rbxassetid://74504063907005",
     "StudsPerTile": 2,
     "Name": "RAC_acoustic_ceiling",
-    "NormalMap": "rbxassetid://116430134125086",
-    "RoughnessMap": "rbxassetid://115085183374551"
+    "NormalMap": "rbxassetid://96924420037546",
+    "RoughnessMap": "rbxassetid://110866543862913"
   }
 }

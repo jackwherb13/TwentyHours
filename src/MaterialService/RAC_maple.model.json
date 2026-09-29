@@ -2,7 +2,7 @@
   "className": "MaterialVariant",
   "properties": {
     "BaseMaterial": "WoodPlanks",
-    "ColorMap": "rbxassetid://70913626816049",
+    "ColorMap": "rbxassetid://115680050081537",
     "StudsPerTile": 8,
     "Name": "RAC_maple",
     "NormalMap": "rbxassetid://109560427488914",
