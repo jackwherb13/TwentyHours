@@ -38,6 +38,26 @@ visually faithful to the real building. Gameplay is intentionally simple for now
   `verification/<milestone>/<photo>.png`, and compared against `reference/photos/<photo>.jpg`. Record a
   pass/fail + notes per station in `verification/<milestone>/REPORT.md`.
 
+## Fast iteration pipeline (no Studio GUI, no manual import)
+- Build OFFLINE with Lune into `places/build.rbxm` (the whole RAC model). `rojo serve preview.project.json --port 34872`
+  is running and the TwentyHours Studio place is connected, so Studio shows the new build within seconds of the file
+  changing. Never import models by hand; never place parts one MCP call at a time.
+- Geometry QA on the built parts: `lune run tools/check_geometry.luau places/build.rbxm blueprint` - intersecting walls,
+  z-fighting coplanar faces, floating parts, degenerate/sliver parts (< 0.01 ft), small wall gaps, walls blocking doors.
+  Must report 0 issues. Props get the same check via places/props_preview.rbxm (runs in verify.ps1).
+- Use the Studio MCP only for what needs a real render or physics: screen_capture from photo stations, playtests,
+  character_navigation walkthroughs, uploading textures.
+
+## "Does it look like the RAC?" gates (all build milestones)
+1. Logic: `python tools/verify_blueprint.py` also checks that every room is reachable through real doors from the
+   entrance (L1) or a stair (L2) and that no door opens into the same space on both sides. Zero FAIL lines.
+2. Photo pairs: for every reference photo of the spaces in your milestone, set the Studio camera to its station in
+   `blueprint/photo_stations.json` (eye level ~5.2 ft, same heading/FOV), `screen_capture`, then
+   `python tools/side_by_side.py reference/photos/<IMG>.jpg <capture>.png verification/<milestone>/pairs/<IMG>.jpg`.
+3. Judges: the loop runs `pwsh tools/judge.ps1` — ChatGPT and Gemini independently score every pair 1-10 (plan overlays
+   for M1). Anything < 8 from either judge comes back to you with their exact problem list. Fix all of it.
+   You can run the judge yourself before finishing to save a round trip.
+
 ## Reporting
 End every task with: what changed (files), verify.ps1 result, Studio console result, screenshots taken, known gaps.
 Never claim something passed that you did not run.

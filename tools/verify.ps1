@@ -32,6 +32,12 @@ if (Test-Path tests) {
 	}
 }
 
+if (Test-Path places/props_preview.rbxm) {
+	Step 'prop geometry (z-fight, slivers, floating)' { lune run tools/check_geometry.luau places/props_preview.rbxm none }
+}
+if ((Test-Path places/build.rbxm) -and (Test-Path blueprint/level1.json) -and ((Get-Item places/build.rbxm).LastWriteTime -gt (Get-Item blueprint/level1.json).LastWriteTime)) {
+	Step 'building geometry (intersections, gaps, blocked doors)' { lune run tools/check_geometry.luau places/build.rbxm blueprint }
+}
 if (Test-Path tools/globalTypes.d.luau) {
 	rojo sourcemap default.project.json -o sourcemap.json 2>&1 | Out-Null
 	Step 'luau-lsp analyze' {

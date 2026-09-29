@@ -82,6 +82,19 @@ $($m.Text)
 			continue
 		}
 		Log "$id attempt ${attempt}: verify passed"
+		$judgeImgs = @(); $judgeMode = 'photo'
+		if (Test-Path "verification/$id/pairs") { $judgeImgs = @(Get-ChildItem "verification/$id/pairs" -Filter *.jpg | ForEach-Object FullName) }
+		elseif (Test-Path "verification/$id") { $judgeImgs = @(Get-ChildItem "verification/$id" -Filter 'overlay_*.png' | ForEach-Object FullName); $judgeMode = 'plan' }
+		if ($judgeImgs.Count) {
+			$j = pwsh -NoProfile -File tools/judge.ps1 -Images $judgeImgs -Out "verification/$id/judgement.json" -Mode $judgeMode 2>&1 | Out-String
+			$j | Out-File (Join-Path $state "$id.judge$attempt.txt") -Encoding utf8
+			if ($LASTEXITCODE -ne 0) {
+				Log "$id attempt ${attempt}: cross-model judge FAILED"
+				$prompt = "Independent judges (ChatGPT + Gemini) compared your work with the real RAC and scored it below 8/10. Fix EVERY problem they list, regenerate the images, and update verification/$id/REPORT.md.`n`n$($j.Substring([Math]::Max(0, $j.Length - 8000)))"
+				continue
+			}
+			Log "$id attempt ${attempt}: cross-model judge passed"
+		}
 		if (Test-Path tools/render_plan.py) { python tools/render_plan.py "verification/$id/packet.png" 2>&1 | Out-Null; Log "$id packet: verification/$id/packet.png" }
 
 		$auditSchema = '{"type":"object","properties":{"verdict":{"type":"string","enum":["PASS","FAIL"]},"problems":{"type":"array","items":{"type":"string"}}},"required":["verdict","problems"]}'

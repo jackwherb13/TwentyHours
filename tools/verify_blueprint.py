@@ -141,8 +141,80 @@ def check_level(name):
 	print(f"{name}: {len(rooms)} rooms, {len(walls)} walls, {aligned / total:.0%} axis-aligned, {n_ov} overlaps")
 
 
+def point_in(poly, x, z):
+	inside = False
+	n = len(poly)
+	for i in range(n):
+		(x1, z1), (x2, z2) = poly[i], poly[(i + 1) % n]
+		if (z1 > z) != (z2 > z) and x < (x2 - x1) * (z - z1) / (z2 - z1) + x1:
+			inside = not inside
+	return inside
+
+
+def room_at(rooms, x, z):
+	for r in rooms:
+		if point_in(r["polygon"], x, z):
+			return r["id"]
+	return "OUTSIDE"
+
+
+NEEDS_ACCESS = {"gym", "corridor", "lobby", "office", "fitness", "locker", "restroom", "racquetball", "storage", "support", "stair"}
+
+
+def check_connectivity(name):
+	"""Logic check: build a room graph from door/opening entries and require every occupiable room to be reachable
+	from outside (L1) or from a stair (L2). Catches sealed rooms, missing doors, and doors that open into walls."""
+	path = BP / f"{name}.json"
+	if not path.exists():
+		return
+	d = json.loads(path.read_text())
+	rooms = [r for r in d.get("rooms", []) if r.get("type") not in ("void",)]
+	edges: dict[str, set[str]] = {r["id"]: set() for r in rooms}
+	edges["OUTSIDE"] = set()
+	dead = 0
+	for w in d.get("walls", []):
+		(ax, az), (bx, bz) = w["a"], w["b"]
+		length = math.dist(w["a"], w["b"])
+		if length == 0:
+			continue
+		ux, uz = (bx - ax) / length, (bz - az) / length
+		nx, nz = -uz, ux
+		for o in w.get("openings", []):
+			if o.get("type") not in ("door", "opening"):
+				continue
+			m = o.get("offset", 0) + o.get("width", 3) / 2
+			cx, cz = ax + ux * m, az + uz * m
+			off = w.get("thickness", 0.67) / 2 + 1.0
+			r1 = room_at(rooms, cx + nx * off, cz + nz * off)
+			r2 = room_at(rooms, cx - nx * off, cz - nz * off)
+			if r1 == r2:
+				dead += 1
+				if dead <= 5:
+					fails.append(f"{name}: door on wall {w.get('id')} at offset {o.get('offset')} has the same space ({r1}) on both sides")
+				continue
+			edges[r1].add(r2)
+			edges[r2].add(r1)
+	start = ["OUTSIDE"] if name == "level1" else [r["id"] for r in rooms if r.get("type") == "stair"]
+	if not start:
+		fails.append(f"{name}: no stair rooms - upper level unreachable")
+		return
+	seen, todo = set(start), list(start)
+	while todo:
+		for nxt in edges.get(todo.pop(), ()):
+			if nxt not in seen:
+				seen.add(nxt)
+				todo.append(nxt)
+	cut = [r["id"] for r in rooms if r.get("type") in NEEDS_ACCESS and r["id"] not in seen]
+	for rid in cut[:15]:
+		fails.append(f"{name}: room {rid} is not reachable through any door from {'the entrance' if name == 'level1' else 'a stair'}")
+	if name == "level1" and not edges["OUTSIDE"]:
+		fails.append("level1: no exterior doors - building has no entrance")
+	print(f"{name}: {len(seen) - (1 if name == 'level1' else 0)}/{len(rooms)} rooms reachable, {dead} dead doors")
+
+
 for level in ("level1", "level2"):
 	check_level(level)
+	check_connectivity(level)
 if not (BP / "site.json").exists():
 	fails.append("site: missing site.json")
 elif "trueNorthDeg" not in json.loads((BP / "site.json").read_text()):

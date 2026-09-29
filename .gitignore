@@ -13,3 +13,5 @@ ServerPackages/
 reference/*.png
 reference/*.jpg
 verification/**/*.png
+places/*.rbxm
+verification/judge-test/
