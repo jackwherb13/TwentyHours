@@ -30,3 +30,5 @@ in the service yard - only where photos/logic say.
 ## Pass 6: Clean-up and consistency
 Remove stray/duplicated/floating parts, fix z-fighting, align everything to the terrain, check sight lines from every exterior photo station,
 performance check (total parts within spec), final exterior photo-match on every station.
+
+Note for pass 2: judge the campus with pwsh tools/judge.ps1 -Mode plan -Task "Each image compares our low-detail campus massing (neighbour buildings, fields, lots, decks) with satellite/ortho imagery of the same area around GMU's RAC. Judge footprint registration, sizes, shapes (e.g. EagleBank Arena octagon), heights and colours." ... Fix registration issues listed in verification/campus/judgement.json.

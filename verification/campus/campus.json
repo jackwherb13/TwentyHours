@@ -1,0 +1,46 @@
+{
+  "buildingCount": 22,
+  "names": [
+    "Harris Theatre",
+    "Eagle Bank Arena",
+    "Robinson Hall A Wing",
+    "West Pe Module",
+    "Unnamed",
+    "Mason Global Center",
+    "Finley Building",
+    "Thompson Hall",
+    "Mason Hall",
+    "Fine Arts Building",
+    "Krug Hall",
+    "Student Union I",
+    "Aquia Building",
+    "East Building",
+    "Unnamed",
+    "Performing Arts Building",
+    "Center For The Arts",
+    "Unnamed",
+    "West Building",
+    "Field House",
+    "Parking Deck - Mason Pond",
+    "Parking Deck - Mason Pond"
+  ],
+  "fieldCount": 6,
+  "roadPatches": 280,
+  "coarse": {
+    "x0": -880.0,
+    "z0": -640.0,
+    "step": 16.0,
+    "nx": 112,
+    "nz": 128
+  },
+  "fine": {
+    "x0": -418.5249,
+    "z0": -580.0041,
+    "step": 4.0,
+    "nx": 200,
+    "nz": 200
+  },
+  "heightMin": -46.215371330375035,
+  "heightMax": 30.768848959120646,
+  "blendCells": 2500
+}

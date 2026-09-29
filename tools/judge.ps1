@@ -8,6 +8,8 @@ param(
 	[Parameter(Mandatory)] [string]$Out,
 	[ValidateSet('photo', 'plan')] [string]$Mode = 'photo',
 	[int]$MinScore = 8,
+	# Optional task description overriding the built-in photo/plan instructions (e.g. campus massing vs satellite).
+	[string]$Task,
 	# `pwsh -File judge.ps1 -Images a b c` splits the list; collect the stragglers as more images.
 	[Parameter(ValueFromRemainingArguments)] [string[]]$MoreImages
 )
@@ -28,6 +30,7 @@ University's RAC. Judge whether every room is in the right place with the right 
 the drawing has them, and the layout is architecturally logical (circulation works, no impossible rooms).
 '@
 }
+if ($Task) { $task = $Task }
 $prompt = @"
 You are a strict architectural reviewer. $task
 For EACH image return an entry. Scores are 1-10 (10 = indistinguishable in that aspect). Be specific and actionable in

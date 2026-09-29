@@ -1,0 +1,53 @@
+{
+  "grok": {
+    "results": [
+      {
+        "image": "plan_comparison.png",
+        "layout": 5,
+        "proportions": 5,
+        "materials": 4,
+        "props": 6,
+        "lighting": 7,
+        "overall": 5,
+        "problems": [
+          "This sheet is a campus aerial vs massing overlay, not a RAC interior floor plan (colored rooms, black walls) on the architect drawing; the RAC itself has no room overlay so room placement, door locations, and wall alignment cannot be verified.",
+          "West rec/aquatic volume (tan): the large rectangle sits on the west building, but a second tan box juts north into the drive/parking; that north bar should follow the satellite footprint (shorter, aligned to the north wall of the existing roof) and not cover asphalt.",
+          "East grey mass with internal walls: footprint is too square and sits too far NE of the real building; rotate and stretch it to the satellite roof (longer NEΓÇôSW bar, courtyard notch) so exterior walls coincide with the dark roof edge.",
+          "Gold/tan rectangle south of the grey mass: a simple box over a more articulated satellite roof; match the stepped/offset wings of the existing building instead of one rectangle.",
+          "NW tan patch by the tennis courts: covers court/parking area; there is no building there on the ortho ΓÇö delete it or move it onto the small real structure west of the courts.",
+          "Football field green overlay: field is present but the overlay rectangle is smaller/offset vs the white-lined field on the left; match sidelines, end zones, and the north track/bleacher edge.",
+          "SE pond and tree massing are unmodeled (fine) but the large white angular slab at bottom-right overshoots the hexagonal/octagonal building into lawn; shrink to the actual roof polygon.",
+          "Materials: overlays are flat tan/grey CAD fills with no brick, metal roof, or court color of the RAC/rec buildings; at this scale use satellite-matching roof materials (dark membrane on RAC, light metal on west rec) if the goal is visual match.",
+          "Props: parking stall cars and trees are leftover ortho, not modeled; if this is a massing check, strip or dim the satellite so false buildings (NW tan, extra north bar) are obvious.",
+          "Doors/entries cannot be judged: no door ticks on any overlay; west rec main entry faces the east parking lot, RAC entries face the central green/roundabout ΓÇö add those if this is meant as an architectural plan check.",
+          "Circulation at campus scale is plausible (roads/roundabout remain) but the west tan north bar blocks the drive aisle between the rec building and the north lot ΓÇö pull that volume back.",
+          "RAC core (center-north dark roof) is the building that should carry the colored-room floor plan; it is still raw aerial with no walls ΓÇö overlay the RAC plan here, registered to the roof outline, before scoring interior rooms."
+        ]
+      }
+    ]
+  },
+  "gemini": {
+    "results": [
+      {
+        "image": "plan_comparison.png",
+        "layout": 2,
+        "proportions": 3,
+        "materials": 1,
+        "props": 1,
+        "lighting": 1,
+        "overall": 2,
+        "problems": [
+          "Global coordinate registration: the entire campus massing layer on the right panel is shifted and misaligned relative to the NAIP orthophoto underlay (e.g. EagleBank Arena is shifted ~150 ft southeast, athletic field is shifted southwest). Recalculate origin offset and coordinate rotation between the RAC local frame and NAIP EPSG:4326/UTM projection so all footprints align directly over the aerial imagery.",
+          "RAC building massing: the central Recreation and Athletic Complex (RAC) has no geometry or outline rendered on the right panel, leaving the primary building footprint completely empty on the ortho. Add the RAC footprint/massing block in the campus builder output.",
+          "EagleBank Arena (Patriot Center): the octagonal building massing is placed shifted southeast into the woods/margin at the bottom right corner, ~150-200 ft off from the actual octagonal arena roof visible in the ortho. Translate the arena geometry northwest to center exactly on the arena footprint.",
+          "RAC synthetic turf field: the green field rectangle at the top-center is offset southwest, cutting into the roadway and tree line. Re-align the field polygon to match the white perimeter markings and green turf field visible on the orthophoto.",
+          "Outdoor courts (upper-left): two green court rectangles and an adjacent tan massing are placed over the active parking lot rows west of the RAC. Shift and rotate courts north/northwest to match the actual outdoor basketball/tennis court complex.",
+          "Parking Lot K phantom building: a large tan L-shaped building massing is rendered directly across parking stalls and aisles in the main lot south of the RAC/west of Mason Pond where no structure exists. Remove this building polygon or re-register it to its true geographic location (Field House / West PE module).",
+          "Mason Pond Parking Deck and northeast academic core: the grey multi-level garage massing and tan academic building blocks (Center for the Arts, Robinson Hall, etc.) on the middle/upper right are shifted northwest into access roads and landscaped lawns. Re-register these blocks to sit squarely on their respective roof footprints on the ortho.",
+          "Materials, props, and lighting: massings are unlit flat color fills (tan, grey, green) with no 3D height, roof parapets, mechanical penthouses, realistic materials, road surface geometry, or site lighting."
+        ]
+      }
+    ]
+  },
+  "gpt": null
+}
