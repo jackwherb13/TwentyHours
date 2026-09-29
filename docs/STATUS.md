@@ -1,7 +1,9 @@
 # 20 Hour Weeks — RAC build status board
 
 Maintained by the manager (Claude). One place to see what's done, what's running, and what's open.
-Last updated: 2026-09-29 08:45
+Last updated: 2026-09-29 08:50
+
+Recently done: open L1 lobby + open L2 cardio area (treadmills, heavy bag, rail) - lobby-open job, 08:44
 
 ## Pipeline (in order)
 1. Structure QA loop (`tools/qa-loop.ps1`) — independent Grok reviewer walks docs/WALKTHROUGH.md in Studio + exterior photo pairs +
@@ -14,8 +16,8 @@ Last updated: 2026-09-29 08:45
 | Agent | Job | Owns |
 |---|---|---|
 | QA reviewer (Grok) | round 2 review | read-only |
-| lobby-open (Grok) | open L2 cardio area (no brick partition, treadmills, punching bag, rail); open L1 lobby | blueprint lobby areas |
-| less-brick (Grok) | queued after lobby-open: interior brick only where photos show it | wall materials |
+| architect-grok | QA round 2 fixes + Gemini structural review + less interior brick | blueprint/ |
+| exterior-grok | QA round 2 exterior fixes (27 items) | Site/ |
 | site-markings (Grok) | aerial + street-level references; trace and build lane/stall/crosswalk markings, curbs, islands | Site/Markings/ |
 | gemini-layout (Antigravity) | spatial review of plan vs walkthrough → coordinate fixes | docs/reviews/GEMINI_LAYOUT_REVIEW.md |
 

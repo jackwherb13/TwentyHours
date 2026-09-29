@@ -82,17 +82,35 @@ function TerrainBuilder.build(terrain: Terrain): { [string]: number }
 						local z = origin.Z + (iz - 0.5) * resolution
 						local h = Heightfield.height(x, z)
 						local material = materialAt(x, z)
-						-- Roof-classified lidar inside the footprint was growing grass through floors.
+						-- Roof lidar inside the footprint must not become the floor, and the
+						-- perimeter has to meet Level 1 or the lobby reads as floating.
 						if insidePad(x, z) then
-							h = math.min(h, -1.5)
+							h = -0.4
 							material = 3
 						else
-							-- Entrance centered on the south door (x=-41, z=0), yaw −90.
-							-- local +X is world +Z. Concrete only under the stair and the east ramp.
-							local lx = z
-							local lz = -41 - x
-							if lx > -1 and lx < 42 and lz > -26 and lz < 24 then
+							local skirt = false
+							for _, dist in { 8, 16 } do
+								for k = 0, 7 do
+									local a = k * math.pi / 4
+									if insidePad(x + math.cos(a) * dist, z + math.sin(a) * dist) then
+										h = math.max(h, if dist == 8 then -0.8 else -2.0)
+										skirt = true
+										break
+									end
+								end
+								if skirt then
+									break
+								end
+							end
+							-- South walk: the stair toe and the road that meets it sit just below L1.
+							if x > -78 and x < 4 and z > -2 and z < 48 then
+								h = math.max(h, -4.0)
 								material = 3
+							elseif x > -90 and x < 20 and z > 48 and z < 78 then
+								h = math.max(h, -6.5)
+								if material == 1 then
+									material = 2
+								end
 							end
 						end
 						local fill = math.clamp((h - bottom) / resolution, 0, 1)

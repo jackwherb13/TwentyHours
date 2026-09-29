@@ -1278,10 +1278,10 @@
         -5.0,
         -48.0
       ],
-      "thickness": 0.67,
-      "height": 12.5,
-      "material": "brick",
-      "exterior": true,
+      "thickness": 0.25,
+      "height": 3.5,
+      "material": "glass",
+      "exterior": false,
       "openings": []
     },
     {
@@ -2177,8 +2177,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 20.0,
-          "width": 20.0,
+          "offset": 1.0,
+          "width": 57.5,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -2206,8 +2206,8 @@
       "openings": [
         {
           "type": "opening",
-          "offset": 12.0,
-          "width": 8.0,
+          "offset": 1.0,
+          "width": 30.5,
           "sill": 0,
           "head": 9,
           "connection": [
@@ -3471,7 +3471,7 @@
       "kind": "upright_bike",
       "at": [
         -36.0,
-        -22.0
+        -40.0
       ],
       "rotation": 180,
       "room": "cardio_south"
@@ -3481,7 +3481,7 @@
       "kind": "upright_bike",
       "at": [
         -28.0,
-        -22.0
+        -40.0
       ],
       "rotation": 180,
       "room": "cardio_south"
@@ -3491,7 +3491,7 @@
       "kind": "upright_bike",
       "at": [
         -20.0,
-        -22.0
+        -40.0
       ],
       "rotation": 180,
       "room": "cardio_south"
@@ -3520,8 +3520,8 @@
       "id": "l2_tread_1",
       "kind": "treadmill",
       "at": [
-        -16.0,
-        -120.0
+        -12.0,
+        -88.0
       ],
       "rotation": 270,
       "room": "cardio_gallery"
@@ -3530,8 +3530,8 @@
       "id": "l2_tread_2",
       "kind": "treadmill",
       "at": [
-        -16.0,
-        -108.0
+        -12.0,
+        -96.0
       ],
       "rotation": 270,
       "room": "cardio_gallery"
@@ -3540,17 +3540,177 @@
       "id": "l2_tread_3",
       "kind": "treadmill",
       "at": [
-        -16.0,
+        -12.0,
+        -104.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_4",
+      "kind": "treadmill",
+      "at": [
+        -12.0,
+        -112.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_5",
+      "kind": "treadmill",
+      "at": [
+        -12.0,
+        -120.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_6",
+      "kind": "treadmill",
+      "at": [
+        -12.0,
+        -128.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_7",
+      "kind": "treadmill",
+      "at": [
+        -12.0,
+        -136.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_8",
+      "kind": "treadmill",
+      "at": [
+        -12.0,
+        -144.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_9",
+      "kind": "treadmill",
+      "at": [
+        -20.0,
+        -88.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_10",
+      "kind": "treadmill",
+      "at": [
+        -20.0,
         -96.0
       ],
       "rotation": 270,
       "room": "cardio_gallery"
     },
     {
+      "id": "l2_tread_11",
+      "kind": "treadmill",
+      "at": [
+        -20.0,
+        -104.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_12",
+      "kind": "treadmill",
+      "at": [
+        -20.0,
+        -112.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_13",
+      "kind": "treadmill",
+      "at": [
+        -20.0,
+        -120.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_14",
+      "kind": "treadmill",
+      "at": [
+        -20.0,
+        -128.0
+      ],
+      "rotation": 270,
+      "room": "cardio_gallery"
+    },
+    {
+      "id": "l2_tread_s1",
+      "kind": "treadmill",
+      "at": [
+        -16.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_tread_s2",
+      "kind": "treadmill",
+      "at": [
+        -24.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_tread_s3",
+      "kind": "treadmill",
+      "at": [
+        -32.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_tread_s4",
+      "kind": "treadmill",
+      "at": [
+        -40.0,
+        -22.0
+      ],
+      "rotation": 180,
+      "room": "cardio_south"
+    },
+    {
+      "id": "l2_heavy_bag",
+      "kind": "heavy_bag",
+      "at": [
+        -48.0,
+        -92.0
+      ],
+      "rotation": 90,
+      "room": "cardio_gallery"
+    },
+    {
       "id": "l2_climb_1",
       "kind": "stair_climber",
       "at": [
-        -24.0,
+        -32.0,
         -120.0
       ],
       "rotation": 270,
@@ -3991,6 +4151,18 @@
       "b": [
         -10.0,
         -16.0
+      ],
+      "kind": "horizontal_rail"
+    },
+    {
+      "id": "gallery_rail_e",
+      "a": [
+        -5.0,
+        -154.5
+      ],
+      "b": [
+        -5.0,
+        -48.0
       ],
       "kind": "horizontal_rail"
     },

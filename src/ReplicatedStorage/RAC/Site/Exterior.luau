@@ -50,8 +50,8 @@ function Exterior.build(parent: Instance, site: any)
 	end
 	-- Foot of the flight is one landing plus the treads south of the glass. Count risers from that lidar sample.
 	local probeX = e.landingDepth + e.risers * run + 4
-	-- Photos show one flight of about 8–10 risers. The top stays at FFE 0.
-	local n = math.clamp(math.round(-groundAt(probeX, 0) / rise), 8, 10)
+	-- Top of the flight is the glass threshold (L1). The toe sits on the raised south walk, not in a pit.
+	local n = math.clamp(math.round(-groundAt(probeX, 0) / rise), 4, 7)
 	local drop = n * rise
 	local function walkY(lx: number): number
 		if lx <= e.landingDepth then
@@ -240,16 +240,14 @@ function Exterior.build(parent: Instance, site: any)
 	end
 
 	local canopy = P.folder(entrance, "Canopy")
-	local depth = e.canopyDepth
-	-- World X = entrance.x - local Z. Cover the south glass (about x=-97..10), not only the door.
-	local coverWest = if e.coverWest ~= nil then e.coverWest else e.x - e.canopyWidth / 2
-	local coverEast = if e.coverEast ~= nil then e.coverEast else e.x + e.canopyWidth / 2
-	local zWest, zEast = e.x - coverWest, e.x - coverEast
-	-- Grey soffit at ~25 ft. The charcoal wedge dies to a 0.3 ft lip at the street.
-	local soffit = 24.8
-	local tip = 0.3
-	-- Deep enough that a three-quarter view reads as a knife-edge wedge, not a flat awning.
-	local canopyRise = 12
+	-- South glass only (x=-97..10). A 32 ft deep, 12 ft thick wedge was a roof over the lawn.
+	local depth = 18
+	local southWest, southEast = -97, 10
+	local zWest, zEast = e.x - southWest, e.x - southEast
+	-- Curtain head is 30 ft. The soffit sits just above it, and the whole wedge is under 2 ft.
+	local soffit = 30.5
+	local tip = 0.35
+	local canopyRise = 1.35
 	local function spanCanopy(z0: number, z1: number)
 		if z1 < z0 then
 			z0, z1 = z1, z0
@@ -273,7 +271,7 @@ function Exterior.build(parent: Instance, site: any)
 			true
 		)
 		plate.Material = Enum.Material.SmoothPlastic
-		plate.Color = Color3.fromRGB(168, 170, 166)
+		plate.Color = Color3.fromRGB(32, 34, 36)
 		plate.Reflectance = 0
 		canopyWedge(
 			canopy,
@@ -289,71 +287,34 @@ function Exterior.build(parent: Instance, site: any)
 	end
 	local lo, hi = math.min(zWest, zEast), math.max(zWest, zEast)
 	spanCanopy(lo, hi)
-	-- East return over the corner glass. Yaw -90 maps local -Z to world +X, so the tip points east.
-	local projection = math.max(12, e.returnCanopyDepth)
-	local cornerX = if e.glassCorner then e.glassCorner[1] else e.x + width / 2
-	local cornerLocalZ = e.x - cornerX
-	local cornerPlate = P.box(
-		canopy,
-		"CanopySoffit",
-		Vector3.new(28, tip, projection),
-		CFrame.fromMatrix(
-			Vector3.new(-6, soffit + tip / 2, cornerLocalZ - projection / 2),
-			Vector3.new(1, 0, 0),
-			Vector3.new(0, 1, 0),
-			Vector3.new(0, 0, 1)
-		),
-		"dark",
-		true
-	)
-	cornerPlate.Material = Enum.Material.SmoothPlastic
-	cornerPlate.Color = Color3.fromRGB(168, 170, 166)
-	cornerPlate.Reflectance = 0
-	canopyWedge(
-		canopy,
-		"CornerCanopy",
-		Vector3.new(28, canopyRise, projection),
-		CFrame.fromMatrix(
-			Vector3.new(-6, soffit + tip + canopyRise / 2 + 0.02, cornerLocalZ - projection / 2),
-			Vector3.new(1, 0, 0),
-			Vector3.new(0, 1, 0),
-			Vector3.new(0, 0, 1)
-		)
-	)
-	-- Square charcoal pier on the door axis, and one at the glass corner.
+	-- Dark square piers, one on the door and one at the east end of the south glass.
 	local columnHeight = soffit - 0.2
-	for _, at in { Vector3.new(3.4, 0, 0), Vector3.new(3.6, 0, cornerLocalZ - 1.8) } do
+	local eastColumnZ = e.x - southEast
+	for _, at in { Vector3.new(3.2, 0, 0), Vector3.new(3.2, 0, eastColumnZ + 2.2) } do
 		local column = P.box(
 			canopy,
 			"SupportColumn",
-			Vector3.new(3.4, columnHeight, 3.4),
+			Vector3.new(2.4, columnHeight, 2.4),
 			CFrame.new(at.X, columnHeight / 2 + 0.06, at.Z),
 			"dark",
 			true
 		)
 		column.Material = Enum.Material.SmoothPlastic
-		column.Color = Color3.fromRGB(214, 214, 208)
+		column.Color = Color3.fromRGB(28, 30, 32)
 		column.Reflectance = 0
 	end
-	local function soffitLamp(lx: number, lz: number)
-		local bulb =
-			P.box(canopy, "SoffitLamp", Vector3.new(0.45, 0.08, 0.45), CFrame.new(lx, soffit - 0.12, lz), "metal")
-		bulb.Material = Enum.Material.Neon
-		bulb.Color = Color3.fromRGB(255, 236, 210)
-		local light = Instance.new("PointLight")
-		light.Brightness = 0.55
-		light.Range = 14
-		light.Color = Color3.fromRGB(255, 236, 210)
-		light.Parent = bulb
-	end
-	for lz = lo + 6, hi - 6, 8 do
-		for _, lx in { depth * 0.22, depth * 0.5, depth * 0.78 } do
-			soffitLamp(lx, lz)
-		end
-	end
-	for lx = -14, 2, 8 do
-		for lz = cornerLocalZ - 4, cornerLocalZ - projection + 4, -8 do
-			soffitLamp(lx, lz)
+	-- A few dark recesses, not a white neon ceiling.
+	for lz = lo + 8, hi - 8, 14 do
+		for _, lx in { depth * 0.35, depth * 0.7 } do
+			local mark = P.box(
+				canopy,
+				"SoffitMark",
+				Vector3.new(0.35, 0.04, 0.35),
+				CFrame.new(lx, soffit - 0.04, lz),
+				"dark"
+			)
+			mark.Color = Color3.fromRGB(18, 18, 18)
+			mark.Material = Enum.Material.SmoothPlastic
 		end
 	end
 	-- Red bed along the glass, clear of the door pair at the stair center.
