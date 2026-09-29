@@ -2,15 +2,18 @@
 # The builder (Grok) never grades its own work.
 # Usage: pwsh tools/judge.ps1 -Images verification/M3/pairs/*.jpg -Out verification/M3/judgement.json [-Mode photo|plan]
 # Exit 1 if any image scores < MinScore from either judge.
+[CmdletBinding(PositionalBinding = $false)]
 param(
 	[Parameter(Mandatory)] [string[]]$Images,
 	[Parameter(Mandatory)] [string]$Out,
 	[ValidateSet('photo', 'plan')] [string]$Mode = 'photo',
-	[int]$MinScore = 8
+	[int]$MinScore = 8,
+	# `pwsh -File judge.ps1 -Images a b c` splits the list; collect the stragglers as more images.
+	[Parameter(ValueFromRemainingArguments)] [string[]]$MoreImages
 )
 $root = Split-Path $PSScriptRoot -Parent
 Set-Location $root
-$files = $Images | ForEach-Object { Get-ChildItem $_ } | ForEach-Object { $_.FullName }
+$files = @($Images) + @($MoreImages) | Where-Object { $_ } | ForEach-Object { $_ -split ',' } | ForEach-Object { Get-ChildItem $_ } | ForEach-Object { $_.FullName }
 
 $task = if ($Mode -eq 'photo') {
 	@'
