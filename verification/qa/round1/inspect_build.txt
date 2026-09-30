@@ -1,0 +1,8 @@
+root Model RAC children [36m8[0m
+LIGHTING_FOLDER parent RAC children [36m94[0m
+RAC.LobbySpawn | SpawnLocation pos=(5.00,0.20,-8.00) size=(4.00,0.30,4.00) mat=Enum.Material.SmoothPlastic var= color=0.77,0.75,0.71 collide=true query=true
+C:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\verification/qa/round1/inspect_build:106: attempt to index nil with 'Material'
+[Stack Begin]
+    Script 'C:\Users\dnage\dev\github.com\jackwherb13\TwentyHours\verification/qa/round1/inspect_build', Line 106
+[Stack End]
+

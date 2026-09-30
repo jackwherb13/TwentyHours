@@ -5,7 +5,7 @@
     "roughness": "art/materials/pbr/maple_roughness.png",
     "assetId": "rbxassetid://91544688527461",
     "baseMaterial": "WoodPlanks",
-    "studsPerTile": 6,
+    "studsPerTile": 8,
     "normalAssetId": "rbxassetid://109560427488914",
     "roughnessAssetId": "rbxassetid://81939913346542",
     "sha256": {
@@ -22,7 +22,12 @@
     "baseMaterial": "WoodPlanks",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://135637467228533",
-    "roughnessAssetId": "rbxassetid://135017228687636"
+    "roughnessAssetId": "rbxassetid://135017228687636",
+    "sha256": {
+      "file": "e4a98ff3e546cb85291dc9f4978a544687154c20a9fc104c0c1624a306638adc",
+      "normal": "0cc1eb49e0ab14f1578890272ca40ee36fefdd294deff1c6418ae734a7b2ef24",
+      "roughness": "5a9c7136acfbcf74b05b955f159b8cacfef28735e951eec2d93bab1cbe6a6e29"
+    }
   },
   "terrazzo": {
     "file": "art/materials/pbr/terrazzo_color.png",
@@ -32,7 +37,12 @@
     "baseMaterial": "Concrete",
     "studsPerTile": 6,
     "normalAssetId": "rbxassetid://137724133031138",
-    "roughnessAssetId": "rbxassetid://105749773553007"
+    "roughnessAssetId": "rbxassetid://105749773553007",
+    "sha256": {
+      "file": "930acb294dd27b8cb58be75bb637cdb17d771877ec06fceffd76f99bce629c14",
+      "normal": "a0334757113b0df7c156721b5655147adee5e2acfee1f878d00fa9e1446d409c",
+      "roughness": "2b20186c87cfcc1bbe31ecf4d7474c864f6b0117f57e268ae795a5cba5d28437"
+    }
   },
   "porcelain_tile": {
     "file": "art/materials/pbr/porcelain_tile_color.png",
@@ -42,7 +52,12 @@
     "baseMaterial": "Marble",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://132467663009224",
-    "roughnessAssetId": "rbxassetid://104376880127220"
+    "roughnessAssetId": "rbxassetid://104376880127220",
+    "sha256": {
+      "file": "3e3ff1094ad6bda8d6f91da94662b6cb37d8ec28e25f0e87444bfdfb723fca97",
+      "normal": "4aa9261f5ec44c41891864385034b0c01300ead908fd717efb78ee1b0109f0ef",
+      "roughness": "71a8b480a784bfaadbd2821b00d1a4f8760e330882817912ecb65e41c5937476"
+    }
   },
   "carpet_tile": {
     "file": "art/materials/pbr/carpet_tile_color.png",
@@ -52,7 +67,12 @@
     "baseMaterial": "Fabric",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://114587835134293",
-    "roughnessAssetId": "rbxassetid://71963222800584"
+    "roughnessAssetId": "rbxassetid://71963222800584",
+    "sha256": {
+      "file": "8b4447c0910b684443ba0dcb61874dc38066db5cf03637d9e7fe2321f5b0c0ea",
+      "normal": "ce8bf0c5221eab7823ad5791d5b8b65cf1dea60e368e4e02265b8ba95d1d1634",
+      "roughness": "6ec47f18aff57db07ac51f79ed39964eb5ffcde24515d5871b53befac71482b1"
+    }
   },
   "rubber": {
     "file": "art/materials/pbr/rubber_color.png",
@@ -62,7 +82,12 @@
     "baseMaterial": "Rubber",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://89419544766877",
-    "roughnessAssetId": "rbxassetid://85867308593380"
+    "roughnessAssetId": "rbxassetid://85867308593380",
+    "sha256": {
+      "file": "8dd86c525a7b974b7d212f742e787ca49865bb12a0ec2c27c9fdfc17bc4b862c",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "a5531d9c5b661ea1a63ab0b42c5459001478e3f9260bf76a2aff0235d960862a"
+    }
   },
   "turf": {
     "file": "art/materials/pbr/turf_color.png",
@@ -72,7 +97,12 @@
     "baseMaterial": "Grass",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://84763308048041",
-    "roughnessAssetId": "rbxassetid://106388111640017"
+    "roughnessAssetId": "rbxassetid://106388111640017",
+    "sha256": {
+      "file": "7ffdb7224672132cf0e02ecc1dd9adcaa447663c325f64f1897d3a57d306dfa6",
+      "normal": "e9f66b754acc0f6c6cbb1b49686fb14fcab2cdc7794a4a008affcd1823a0e334",
+      "roughness": "cc6e949e584d7934aa9ee4f243dec9a7c43e676ab04e6a5f8e0481aec6ba855c"
+    }
   },
   "sealed_concrete": {
     "file": "art/materials/pbr/sealed_concrete_color.png",
@@ -82,7 +112,12 @@
     "baseMaterial": "Concrete",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://126520269594823",
-    "roughnessAssetId": "rbxassetid://97810093348285"
+    "roughnessAssetId": "rbxassetid://97810093348285",
+    "sha256": {
+      "file": "c122ae88b16d0f43086384dca0556659afffc041337ee449f1d00a96f9123d4f",
+      "normal": "0536b974ad689a7d025f7950c0d13416736e8700531b412c6be1f28b78c5669f",
+      "roughness": "68d75b7e36a64dd9b820c7a2af461b2664085d858e1922828a6922251abcc477"
+    }
   },
   "ceramic_tile": {
     "file": "art/materials/pbr/ceramic_tile_color.png",
@@ -92,7 +127,12 @@
     "baseMaterial": "CeramicTiles",
     "studsPerTile": 2,
     "normalAssetId": "rbxassetid://109023032528121",
-    "roughnessAssetId": "rbxassetid://121074020038747"
+    "roughnessAssetId": "rbxassetid://121074020038747",
+    "sha256": {
+      "file": "4deff9a3ffbaa68d7fab1b89d3c4296cf37cb6f922fbade7092f71b1a27c701a",
+      "normal": "a40d93cde2cdb506fe414fd9b59049d577679dd05ccacaf95d837a0771ddbe1a",
+      "roughness": "a1a4a238f591ba1d947d5d7a9352e57a2c90d1d4c139323b916b14b29300841a"
+    }
   },
   "ceramic_floor_tile": {
     "file": "art/materials/pbr/ceramic_floor_tile_color.png",
@@ -102,7 +142,12 @@
     "baseMaterial": "CeramicTiles",
     "studsPerTile": 2,
     "normalAssetId": "rbxassetid://108452738502579",
-    "roughnessAssetId": "rbxassetid://75346132703728"
+    "roughnessAssetId": "rbxassetid://75346132703728",
+    "sha256": {
+      "file": "f7c589243aaa202228bef198299f51cc75e7c7aefa46111da3f1ca44691e2cf2",
+      "normal": "04612a4ac22e01d48f587083e6cf5cd12c57f8e763ccf73da8bb387c4011a7f0",
+      "roughness": "3edc25ec6b13de31a3455c66972ff9aa0370c4f872670c8f146a35f503723020"
+    }
   },
   "vinyl": {
     "file": "art/materials/pbr/vinyl_color.png",
@@ -112,7 +157,12 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://132467663009224",
-    "roughnessAssetId": "rbxassetid://71157329938638"
+    "roughnessAssetId": "rbxassetid://71157329938638",
+    "sha256": {
+      "file": "c1132dbe005d33b05d97f2be735671365e1a36855caeac8cc034f838ccffd436",
+      "normal": "7d3359cc82a2589dbecec28909ceb41af66341dec5e851713a9bb9d722de1e6e",
+      "roughness": "3704c2784089608ac3ea43bb95c010336079f90428db34398b39c6a0999d11c0"
+    }
   },
   "painted_cmu": {
     "file": "art/materials/pbr/painted_cmu_color.png",
@@ -122,7 +172,12 @@
     "baseMaterial": "Concrete",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://74529868373378",
-    "roughnessAssetId": "rbxassetid://125304131314342"
+    "roughnessAssetId": "rbxassetid://125304131314342",
+    "sha256": {
+      "file": "38424a4fdd3e664e2f681a2f9176a40ae1ab947f71758cdfc7c0bff4329eb3ea",
+      "normal": "048e6bf2d539c74679a6950d7f6c3dd70d5740a23946c83c028f9bf2bbfdcd0a",
+      "roughness": "6377bfff0f733bb5ced8685f9e65a7a89732f145a716c56fd5b431cc04331d94"
+    }
   },
   "brick": {
     "file": "art/materials/pbr/brick_color.png",
@@ -132,7 +187,12 @@
     "baseMaterial": "Brick",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://106108670193376",
-    "roughnessAssetId": "rbxassetid://81739995864834"
+    "roughnessAssetId": "rbxassetid://81739995864834",
+    "sha256": {
+      "file": "364628ecd7f6f11fda474f86212718c98d2d09ae0aade41c08335e391428a437",
+      "normal": "26270e4fd2946706e92df188f79cca4185169e132694870d8d65f12f7a59e657",
+      "roughness": "771d7faedeb1faa76e215047194d7c9f8dd4e9a4062a1473a8cd0bedf7b1758d"
+    }
   },
   "gypsum": {
     "file": "art/materials/pbr/gypsum_color.png",
@@ -142,7 +202,12 @@
     "baseMaterial": "Plaster",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://105148116380465",
-    "roughnessAssetId": "rbxassetid://79559158963357"
+    "roughnessAssetId": "rbxassetid://79559158963357",
+    "sha256": {
+      "file": "62a4bc53bd4b844ac2e1459e243711f2cec3c62df7639a4adccdccf1541be9ee",
+      "normal": "d7b71c8e2718956372a2a8397abce04fa1a61faa573b358dd2c1766549068cb2",
+      "roughness": "f42829a611a5fd4d01dc532a5fd9a96f7b3ef5721000ed29909ce01b0b025aa5"
+    }
   },
   "metal_panel": {
     "file": "art/materials/pbr/metal_panel_color.png",
@@ -152,7 +217,12 @@
     "baseMaterial": "Metal",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://130950894419275",
-    "roughnessAssetId": "rbxassetid://78997218462553"
+    "roughnessAssetId": "rbxassetid://78997218462553",
+    "sha256": {
+      "file": "d2b6c363684eaaeba052fe4125a84283f3e50bb67308ab20bae271873429ff52",
+      "normal": "81f55772f476cfaecdbb940183f02905d8186a5fbe0c0eb0f27c7dce26694967",
+      "roughness": "52f5c2494e92210f8855d8dda5e8b633c76e8589e39456868c2521b75736c72a"
+    }
   },
   "precast": {
     "file": "art/materials/pbr/precast_color.png",
@@ -162,7 +232,12 @@
     "baseMaterial": "Concrete",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://126520269594823",
-    "roughnessAssetId": "rbxassetid://103731185018538"
+    "roughnessAssetId": "rbxassetid://103731185018538",
+    "sha256": {
+      "file": "5afca5235e0ad53416cbbe047be7b8f94578a281f058b116b79bb007b9aa9b52",
+      "normal": "8db853f46a2fa5697ef8d99f1d3e5746b363ff871ed4227f9892eb0dfdc9d8fb",
+      "roughness": "c464da5e5a2b383ad8e71b5c56f8e5aa726d61aa5e161f480e9bc04b2089dd65"
+    }
   },
   "acoustic_ceiling": {
     "file": "art/materials/pbr/acoustic_ceiling_color.png",
@@ -172,7 +247,12 @@
     "baseMaterial": "Plaster",
     "studsPerTile": 2,
     "normalAssetId": "rbxassetid://96924420037546",
-    "roughnessAssetId": "rbxassetid://110866543862913"
+    "roughnessAssetId": "rbxassetid://110866543862913",
+    "sha256": {
+      "file": "8842093d205e2a5abe2a81ebc9e79ac73b95aaec8d9e8a321e6ac85c7a530c93",
+      "normal": "58a0e73a229b8ce1bfdbaf9ffbe0e6c4c54edf3403933c1c8fc7fc0d1d8bd159",
+      "roughness": "6ec47f18aff57db07ac51f79ed39964eb5ffcde24515d5871b53befac71482b1"
+    }
   },
   "mosaic_green": {
     "file": "art/materials/pbr/mosaic_green_color.png",
@@ -182,7 +262,12 @@
     "baseMaterial": "CeramicTiles",
     "studsPerTile": 2,
     "normalAssetId": "rbxassetid://77153283278015",
-    "roughnessAssetId": "rbxassetid://116139697584259"
+    "roughnessAssetId": "rbxassetid://116139697584259",
+    "sha256": {
+      "file": "bd97385780fba2a6343d432649af87bcedc699cd8a77ec1f010faf395f114fa3",
+      "normal": "d9e902923f2e7a3f89363d7e11f345972781d5927dea4f626e00f29434c2f53e",
+      "roughness": "825c30b13129e3f38307eab610d755743b2683763a4b2d01b83567b03bb16ed6"
+    }
   },
   "steel": {
     "file": "art/materials/pbr/steel_color.png",
@@ -192,7 +277,12 @@
     "baseMaterial": "Metal",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://130950894419275",
-    "roughnessAssetId": "rbxassetid://74843447803064"
+    "roughnessAssetId": "rbxassetid://74843447803064",
+    "sha256": {
+      "file": "3b1a20dc45ee6a74fa4e093c5c742d11891ebfc615b5abd744a189038addb980",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "e06669fe7be418d29189d3da2937334ba14bd67b942e3d408e6d92c89855017e"
+    }
   },
   "mullion_aluminum": {
     "file": "art/materials/pbr/mullion_aluminum_color.png",
@@ -202,7 +292,12 @@
     "baseMaterial": "Metal",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://96715336119497",
-    "roughnessAssetId": "rbxassetid://120577523437453"
+    "roughnessAssetId": "rbxassetid://120577523437453",
+    "sha256": {
+      "file": "6f90ad26557b0789de13ead59b140f38b953bece6cd7fb441b8d0c1ac3231b34",
+      "normal": "e6bc6818092c495ee2dfd3e8d2918a0eec251af04dc6fd99e804e1e6d4f3efad",
+      "roughness": "4bab9cced0149330f396e40fa17ed2bb788fa028f38be46ecf0fb64152d36d12"
+    }
   },
   "stainless": {
     "file": "art/materials/pbr/stainless_color.png",
@@ -212,7 +307,12 @@
     "baseMaterial": "Metal",
     "studsPerTile": 2,
     "normalAssetId": "rbxassetid://110244039569304",
-    "roughnessAssetId": "rbxassetid://134128261887917"
+    "roughnessAssetId": "rbxassetid://134128261887917",
+    "sha256": {
+      "file": "ef02c18bb4832a30031000e329ab5ed1a5f9e0533f98e63eac0a6389e4129fac",
+      "normal": "e6bc6818092c495ee2dfd3e8d2918a0eec251af04dc6fd99e804e1e6d4f3efad",
+      "roughness": "1389c2703f9ceebe43516e3482f35f496dcdc0ae9438b9f775150451ccdec757"
+    }
   },
   "door_wood": {
     "file": "art/materials/pbr/door_wood_color.png",
@@ -222,7 +322,12 @@
     "baseMaterial": "Wood",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://87900524753415",
-    "roughnessAssetId": "rbxassetid://133171298613584"
+    "roughnessAssetId": "rbxassetid://133171298613584",
+    "sha256": {
+      "file": "cffe11e35a665e4ba7c7fc4c96ebc157646ccf1f778b01a23719783e4fb1cc35",
+      "normal": "0a5f8dcd75d7657728e35ffb01650d2fd03ee7b40076b2d78c69376e07573a32",
+      "roughness": "12c60c2393a6640a1ac6a6f8c5d600ccc8c4e8bfb2bd7aed2fe82affceaeb19e"
+    }
   },
   "door_paint": {
     "file": "art/materials/pbr/door_paint_color.png",
@@ -232,7 +337,12 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://133238565681457",
-    "roughnessAssetId": "rbxassetid://83553921069270"
+    "roughnessAssetId": "rbxassetid://83553921069270",
+    "sha256": {
+      "file": "f3d79cf104d92e001c88491510f9ea5a207da21291328fb5b8b5f0f688185ffc",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "28a5cf3b1ae39fffc834a2b5b1264cfe60a3bb0824681c8e753f1252a4e835b1"
+    }
   },
   "wood_cap_rail": {
     "file": "art/materials/pbr/wood_cap_rail_color.png",
@@ -242,7 +352,12 @@
     "baseMaterial": "Wood",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://87900524753415",
-    "roughnessAssetId": "rbxassetid://122408873463919"
+    "roughnessAssetId": "rbxassetid://122408873463919",
+    "sha256": {
+      "file": "4f536931521ebcee0eeb439e9a523d3e53362632166276fe4a514607a96a80bc",
+      "normal": "2267ebf843243defb293ac25fbcfeda9d10f6cab9cf8ec1f8552f86869dbda10",
+      "roughness": "12c60c2393a6640a1ac6a6f8c5d600ccc8c4e8bfb2bd7aed2fe82affceaeb19e"
+    }
   },
   "court_green_paint": {
     "file": "art/materials/pbr/court_green_paint_color.png",
@@ -252,7 +367,12 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://85560496249540",
-    "roughnessAssetId": "rbxassetid://102368861586649"
+    "roughnessAssetId": "rbxassetid://102368861586649",
+    "sha256": {
+      "file": "e3fe574404730ee979d10f3de4205203b3a75f709a76a2bff86759da913b2d80",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "5a9c7136acfbcf74b05b955f159b8cacfef28735e951eec2d93bab1cbe6a6e29"
+    }
   },
   "court_gold_paint": {
     "file": "art/materials/pbr/court_gold_paint_color.png",
@@ -262,7 +382,12 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 8,
     "normalAssetId": "rbxassetid://133238565681457",
-    "roughnessAssetId": "rbxassetid://113811037210637"
+    "roughnessAssetId": "rbxassetid://113811037210637",
+    "sha256": {
+      "file": "7767419cf2cf67e7170bb7210677f05620907486dc919e3fd6abe93a8b3a9c85",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "cb7ac08eeeef7851115131c277dc5c9c3ab99af9aa01ef5765be222e36022351"
+    }
   },
   "bleacher_green": {
     "file": "art/materials/pbr/bleacher_green_color.png",
@@ -272,7 +397,12 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://85560496249540",
-    "roughnessAssetId": "rbxassetid://79872805115337"
+    "roughnessAssetId": "rbxassetid://79872805115337",
+    "sha256": {
+      "file": "ec91354e1080e39207842c1337ec39243b418f2260657a9b1cba416cdbbb7e98",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "e25da7050074874e6e18729f3549a2aeff1d948452dab81cba229724a0ed10ed"
+    }
   },
   "bleacher_gold": {
     "file": "art/materials/pbr/bleacher_gold_color.png",
@@ -282,7 +412,12 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://133238565681457",
-    "roughnessAssetId": "rbxassetid://83553921069270"
+    "roughnessAssetId": "rbxassetid://83553921069270",
+    "sha256": {
+      "file": "60826abb4f62ff0bd34734d1b09390ba15b599a088e072ebb0775e5aef34d8c8",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "c38672df15510c82c532ec228e43e4dd3936412f98895dcbbe88f2e027d87f49"
+    }
   },
   "sign_paint": {
     "file": "art/materials/pbr/sign_paint_color.png",
@@ -292,6 +427,11 @@
     "baseMaterial": "SmoothPlastic",
     "studsPerTile": 4,
     "normalAssetId": "rbxassetid://85560496249540",
-    "roughnessAssetId": "rbxassetid://128889279786109"
+    "roughnessAssetId": "rbxassetid://128889279786109",
+    "sha256": {
+      "file": "c7bcf3ae38891aaa679c1d4b202c8f04158eb0a9fc54533703526935c58ee5ae",
+      "normal": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+      "roughness": "52f5c2494e92210f8855d8dda5e8b633c76e8589e39456868c2521b75736c72a"
+    }
   }
 }

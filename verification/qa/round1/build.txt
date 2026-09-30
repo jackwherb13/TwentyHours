@@ -1,0 +1,2 @@
+Walkthrough check: PASS; 0 failures
+[RAC Perf] parts 19060->19060 collide 4110->3367 touch 19060->3552 query 19060->6999 shadow 11023->8826 groups 39

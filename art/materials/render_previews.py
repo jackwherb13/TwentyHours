@@ -63,14 +63,12 @@ def main() -> None:
         arr = np.zeros((1024, 1024, 3), np.float32)
         arr[:] = rgb
         if key == "glass":
-            yy = np.linspace(0, 1, 1024).reshape(1024, 1, 1)
-            sky = np.array([164, 200, 232], np.float32)
-            ground = np.array([140, 176, 210], np.float32)
-            arr = sky * (1 - yy) + ground * yy
-            for i in range(120, 1024, 160):
-                arr[i : i + 6, :, :] *= 0.45
-            for j in range(140, 1024, 200):
-                arr[:, j : j + 6, :] *= 0.45
+            import sys
+
+            sys.path.insert(0, str(Path(__file__).resolve().parent))
+            from iterate_maps import glass_preview
+
+            arr = glass_preview()
         elif tm:
             raw = tm.group(1).strip().rstrip(",")
             if raw.startswith('"'):

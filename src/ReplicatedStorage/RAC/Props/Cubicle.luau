@@ -302,7 +302,7 @@ function Cubicle.build(cf: CFrame, _opts: { [string]: any }?): Model
 	b:box(
 		"MonitorScreen2",
 		Vector3.new(1.4, 0.9, 0.06),
-		Kit.at(retDeskX + 0.9, deskH + 0.85, retDeskZ + 0.5),
+		Kit.at(retDeskX + 0.55, deskH + 0.85, retDeskZ + 0.5),
 		Color3.fromRGB(176, 206, 224),
 		Enum.Material.SmoothPlastic
 	)

@@ -19,7 +19,7 @@ local ROOM_TYPES = {
 }
 local FLOORS = {
 	maple = true, terrazzo = true, porcelain_tile = true, carpet_tile = true, rubber = true,
-	sealed_concrete = true, ceramic_tile = true, vinyl = true,
+	sealed_concrete = true, ceramic_tile = true, vinyl = true, racquetball_wood = true,
 }
 local CEILINGS = { act_2x2 = true, act_2x4 = true, gypsum = true, open_joist = true, none = true }
 local WALL_MATS = { painted_cmu = true, brick = true, gypsum = true, glass = true, metal_panel = true, precast = true }

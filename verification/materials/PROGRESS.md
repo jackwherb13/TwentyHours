@@ -10,3 +10,4 @@
 14:50 rebuild - PASS 24960 parts; check_materials PASS; verify.ps1 PASS
 15:10 judge - pairs regenerated; gemini porcelain 8; most others 2-7 (geometry complaints on material-only crops; gym lighting dark)
 16:40 iterate - stacked CMU, vertical metal, 1in mosaic, strip maple, white painted steel, pale door wood, greige door paint; recropped swatches to material-only; pairs regenerated; verify.ps1 PASS
+18:45 iterate - recropped leftover assembly swatches (bleacher gold/green, lockers, glass, precast, court gold, ceramic floor); rebuilt PBR for 2.25 in maple, dense mosaic, stacked CMU, standing-seam metal, pale door wood, painted steel, hunter sign green; pairs regenerated at verification/materials/pairs/*.jpg; verify.ps1 PASS; Studio closed so new maps could not be re-uploaded this turn

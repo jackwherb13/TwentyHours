@@ -267,14 +267,16 @@ local KEY_ROWS = {
 
 local function digitFor(name)
 	local row, col = string.match(name, "^KeypadBtn_(%d)_(%d)$")
-	if not row then
+	local rowN = if row then tonumber(row) else nil
+	local colN = if col then tonumber(col) else nil
+	if rowN == nil or colN == nil then
 		return nil
 	end
-	local line = KEY_ROWS[tonumber(row)]
+	local line = KEY_ROWS[rowN]
 	if not line then
 		return nil
 	end
-	return line[tonumber(col)]
+	return line[colN]
 end
 
 local function onDigit(model, digit)

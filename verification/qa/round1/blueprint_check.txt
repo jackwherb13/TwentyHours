@@ -1,0 +1,5 @@
+level1: 61 rooms, 148 walls, 100% axis-aligned, 0 overlaps
+level1: 60/61 rooms reachable, 0 dead doors
+level2: 34 rooms, 107 walls, 100% axis-aligned, 0 overlaps
+level2: 33/34 rooms reachable, 0 dead doors
+stairs: 3 checked

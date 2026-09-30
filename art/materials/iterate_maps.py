@@ -28,7 +28,7 @@ COLORS = {
     "turf": (80, 82, 50),
     "sealed_concrete": (208, 198, 180),
     "ceramic_tile": (168, 154, 128),
-    "ceramic_floor_tile": (142, 132, 118),
+    "ceramic_floor_tile": (168, 158, 144),
     "vinyl": (176, 166, 154),
     "painted_cmu": (200, 196, 188),
     "brick": (110, 68, 56),
@@ -185,6 +185,7 @@ def maple_strips(target, n: int = 43, seed: int = 5) -> tuple[np.ndarray, np.nda
     rng = np.random.default_rng(seed)
     t = np.array(target, np.float32)
     img = np.zeros((SIZE, SIZE, 3), np.float32)
+    img[:] = t
     height = np.ones((SIZE, SIZE), np.float32)
     rough = np.full((SIZE, SIZE), ROUGH["maple"] * 255.0, np.float32)
     bh = SIZE / n
@@ -207,12 +208,13 @@ def maple_strips(target, n: int = 43, seed: int = 5) -> tuple[np.ndarray, np.nda
             sl += rng.normal(0, 0.6, sl.shape)
             img[y0:y1, x:x1] = sl
             if x > 0:
-                img[y0:y1, x : x + 1] *= 0.93
-                height[y0:y1, x : x + 1] = 0.80
+                img[y0:y1, x : x + 1] *= 0.96
+                height[y0:y1, x : x + 1] = 0.86
             x = x1
         seam = int(round(i * bh))
-        img[seam] *= 0.93
-        height[seam] = 0.76
+        src = min(SIZE - 1, seam + 1)
+        img[seam] = img[src] * 0.94
+        height[seam] = 0.82
         yy = np.linspace(0, 1, max(1, y1 - y0))[:, None, None]
         img[y0:y1] += (0.5 - np.abs(yy - 0.42)) * 3.0
     return np.clip(img, 0, 255), height, rough
@@ -447,8 +449,8 @@ def aggregate(target, std: float = 9.0) -> tuple[np.ndarray, np.ndarray, np.ndar
     img = np.zeros((SIZE, SIZE, 3), np.float32)
     img[:] = t
     img += rng.normal(0, std, img.shape)
-    n = 140000
-    grit = rng.normal(0, 18, (n, 3))
+    n = 240000
+    grit = rng.normal(0, 22, (n, 3))
     img[rng.integers(0, SIZE, n), rng.integers(0, SIZE, n)] = np.clip(t + grit, 0, 255)
     height = 0.80 + rng.random((SIZE, SIZE)).astype(np.float32) * 0.20
     rough = np.full((SIZE, SIZE), 0.78 * 255.0, np.float32)
@@ -750,7 +752,7 @@ def main() -> None:
     write_set("rubber", c, h, r, 2.0)
     c, h, r = sawcut_concrete(COLORS["sealed_concrete"])
     write_set("sealed_concrete", c, h, r, 4.0)
-    c, h, r = aggregate(COLORS["precast"], 8.0)
+    c, h, r = aggregate(COLORS["precast"], 11.0)
     write_set("precast", c, h, r, 5.0)
     c, h, r = turf_from_src(COLORS["turf"])
     write_set("turf", c, h, r, 6.0)
@@ -758,7 +760,7 @@ def main() -> None:
     write_set("carpet_tile", c, h, r, 3.0)
     c, h, r = square_tile(COLORS["ceramic_tile"], (248, 248, 244), n=6, gw=9, tile_std=1.2, grout_dark=False)
     write_set("ceramic_tile", c, h, r, 4.0)
-    c, h, r = square_tile(COLORS["ceramic_floor_tile"], (160, 156, 148), n=5, gw=5, tile_std=1.4, grout_dark=True)
+    c, h, r = square_tile(COLORS["ceramic_floor_tile"], (150, 144, 134), n=5, gw=4, tile_std=1.1, grout_dark=True)
     write_set("ceramic_floor_tile", c, h, r, 4.0)
     c, h, r = brick_running(COLORS["brick"])
     write_set("brick", c, h, r, 5.0)

@@ -249,7 +249,9 @@ local function interiorFinish(level: Blueprint.Level, wall: Blueprint.Wall): str
 		return "gypsum"
 	end
 	-- Racquetball side walls stay white. The glass back wall already returned above.
-	if touchesRacquet and not wall.exterior and wall.material ~= "glass" then
+	-- Copy the material so a ~= "glass" check does not narrow the field for the brick tests.
+	local material: string = wall.material
+	if touchesRacquet and not wall.exterior and material ~= "glass" then
 		return "gypsum"
 	end
 	if chosen and chosen ~= "brick" then

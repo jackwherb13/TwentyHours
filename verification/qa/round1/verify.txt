@@ -1,0 +1,16 @@
+PASS  stylua --check
+PASS  selene
+PASS  rojo build
+PASS  blueprint geometry
+PASS  blueprint schema
+PASS  test build.spec.luau
+PASS  test props.spec.luau
+PASS  prop geometry (z-fight, slivers, floating)
+PASS  building geometry (intersections, gaps, blocked doors)
+PASS  material spec
+PASS  material template
+PASS  PBR maps uploaded (disk == Roblox asset)
+PASS  perf budgets and walkable surfaces
+PASS  luau-lsp analyze
+
+VERIFY PASSED

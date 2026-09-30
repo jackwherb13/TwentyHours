@@ -1,0 +1,161 @@
+root Model RAC children [36m8[0m
+LIGHTING_FOLDER parent RAC class Folder children [36m94[0m MasterMode normal
+RAC.LobbySpawn | SpawnLocation pos=(5.00,0.20,-8.00) size=(4.00,0.30,4.00) mat=Enum.Material.SmoothPlastic var= color=0.769,0.753,0.706 collide=true query=true tags=RACSpawn racMat=nil racZone=nil
+FRONTDESK RAC.Props.1.FrontDesk children [36m25[0m len [33mnil[0m
+RAC.Props.1.FrontDesk.FrontCounter | Part pos=(0.00,3.60,-10.30) size=(20.00,0.16,1.15) mat=Enum.Material.SmoothPlastic var= color=0.961,0.961,0.949 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Props.1.FrontDesk.LeftReturn | Part pos=(9.65,1.82,-13.80) size=(0.70,3.60,6.10) mat=Enum.Material.SmoothPlastic var= color=0.961,0.961,0.949 collide=true query=true tags= racMat=nil racZone=nil
+STAIRLINK_ATTR RAC.Levels.1.Stairs.stair_west
+STAIRLINK_ATTR RAC.Levels.1.Stairs.stair_second
+STAIRLINK_ATTR RAC.Levels.1.Stairs.stair_main
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-26.15,24.42,-177.24)
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-28.85,24.42,-27.76)
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-36.85,24.42,-27.76)
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-17.85,24.42,-19.76)
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-34.85,24.42,-137.76)
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-42.85,24.42,-137.76)
+TREADMILL RAC.Props.2.treadmill_group.Treadmill bottom=19.94 pos=(-50.85,24.42,-137.76)
+TREADMILL RAC.Props.1.treadmill_group.Treadmill bottom=-0.06 pos=(-27.15,4.42,-177.24)
+TREADMILL RAC.Props.1.treadmill_group.Treadmill bottom=-0.06 pos=(-0.24,4.42,-60.85)
+TREADMILL RAC.Props.1.treadmill_group.Treadmill bottom=-0.06 pos=(1.76,4.42,-72.85)
+FOUNTAIN RAC.Props.1.water_fountain_group.WaterFountain bottom=-0.00 top=5.27 pos=(-100.25,4.55,-182.28)
+FOUNTAIN RAC.Props.1.water_fountain_group.WaterFountain bottom=-0.00 top=5.27 pos=(-209.75,4.55,-157.72)
+RAC.Props.1.FrontDesk.FrontCounter | Part pos=(0.00,3.60,-10.30) size=(20.00,0.16,1.15) mat=Enum.Material.SmoothPlastic var= color=0.961,0.961,0.949 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Levels.2.Floors.cage_gym.Slab | Part pos=(-265.00,19.75,-112.50) size=(80.00,0.50,40.00) mat=Enum.Material.WoodPlanks var=RAC_maple color=0.996,0.996,0.996 collide=true query=true tags= racMat=maple racZone=nil
+RAC.Levels.2.Floors.cage_gym.Slab | Part pos=(-288.25,19.75,-176.25) size=(126.50,0.50,87.50) mat=Enum.Material.WoodPlanks var=RAC_maple color=0.996,0.996,0.996 collide=true query=true tags= racMat=maple racZone=nil
+RAC.Levels.1.Floors.gym_foyer.Slab | Part pos=(-136.00,-0.25,-155.25) size=(115.00,0.50,45.50) mat=Enum.Material.WoodPlanks var=RAC_maple color=0.996,0.996,0.996 collide=true query=true tags= racMat=maple racZone=nil
+RAC.Levels.1.Floors.south_gym.Slab | Part pos=(-166.75,-0.25,15.50) size=(139.50,0.50,63.00) mat=Enum.Material.WoodPlanks var=RAC_maple color=0.996,0.996,0.996 collide=true query=true tags= racMat=maple racZone=nil
+RAC.Levels.1.Floors.south_gym.Slab | Part pos=(-183.25,-0.25,-28.00) size=(106.50,0.50,24.00) mat=Enum.Material.WoodPlanks var=RAC_maple color=0.996,0.996,0.996 collide=true query=true tags= racMat=maple racZone=nil
+RAC.Levels.1.Floors.south_gym.Slab | Part pos=(-166.75,-0.25,-51.00) size=(139.50,0.50,22.00) mat=Enum.Material.WoodPlanks var=RAC_maple color=0.996,0.996,0.996 collide=true query=true tags= racMat=maple racZone=nil
+LOCKED RAC.Levels.2.Walls.l2_w078.Opening_1.DoorSingle OffLimits true KeypadCode nil DoorLink true tags RACDoor,RACDoor,RACDoor
+LOCKED RAC.Levels.2.Walls.l2_w071.Opening_1.DoorSingle OffLimits true KeypadCode nil DoorLink true tags RACDoor,RACDoor,RACDoor
+LOCKED RAC.Levels.1.Walls.l1_w048.Opening_2.DoorSingle OffLimits nil KeypadCode 15234 DoorLink true tags RACDoor,RACDoor,RACDoor
+RAC.Site.Context.GroundSlab.ExteriorDetails.ServiceYard.DumpsterBody | Part pos=(-204.50,1.77,-260.00) size=(7.20,4.20,3.60) mat=Enum.Material.Metal var= color=0.114,0.251,0.180 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.ServiceYard.DumpsterBody | Part pos=(-204.50,1.77,-246.00) size=(7.20,4.20,3.60) mat=Enum.Material.Metal var= color=0.114,0.251,0.180 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.RampRun | Part pos=(14.75,-3.39,18.43) size=(5.20,0.34,24.41) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.ApronSlab | Part pos=(-0.00,-6.64,32.20) size=(4.00,0.45,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_11 | Part pos=(-0.00,-6.71,29.13) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_10 | Part pos=(-0.00,-6.12,26.99) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_9 | Part pos=(-0.00,-5.54,24.85) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_8 | Part pos=(-0.00,-4.96,22.71) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_7 | Part pos=(-0.00,-4.38,20.57) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_6 | Part pos=(-0.00,-3.79,18.43) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_5 | Part pos=(-0.00,-3.21,16.28) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_4 | Part pos=(-0.00,-2.62,14.14) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_3 | Part pos=(-0.00,-2.04,12.00) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_2 | Part pos=(-0.00,-1.46,9.86) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.StairTread_1 | Part pos=(-0.00,-0.88,7.72) size=(2.14,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.LandingSlab | Part pos=(-0.00,-0.29,3.65) size=(6.00,0.58,22.00) mat=Enum.Material.Concrete var= color=0.580,0.573,0.541 collide=true query=true tags= racMat=nil racZone=nil
+PATHMOD RAC.Levels.2.Walls.l2_w078.Opening_1.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w077.Opening_2.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w077.Opening_1.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w076.Opening_2.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w076.Opening_1.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w071.Opening_2.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w071.Opening_1.DoorSingle.PathfindingModifier PassThrough true Label Door
+PATHMOD RAC.Levels.2.Walls.l2_w068.Opening_1.DoorSingle.PathfindingModifier PassThrough true Label Door
+RAC.Site.Context.GroundSlab.Campus.Fields.f1447803645.TurfSlab | Part pos=(-1214.32,-4.50,-372.41) size=(504.74,0.35,305.41) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f131599754.TurfSlab | Part pos=(-609.58,26.24,-161.92) size=(70.32,0.35,48.78) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f131599748.TurfSlab | Part pos=(-662.77,26.81,-178.55) size=(72.77,0.35,50.20) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f120716043.TurfSlab | Part pos=(-482.16,9.14,-648.33) size=(78.74,0.35,36.86) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f120716042.TurfSlab | Part pos=(-533.84,9.74,-627.11) size=(78.74,0.35,36.86) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f1447803645.TurfSlab | Part pos=(-1214.32,-4.50,-372.41) size=(504.74,0.35,305.41) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f233194670.TurfSlab | Part pos=(-1540.00,-19.48,-947.21) size=(361.86,0.35,197.57) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.Campus.Fields.f131599754.TurfSlab | Part pos=(-609.58,26.24,-161.92) size=(70.32,0.35,48.78) mat=Enum.Material.Grass var= color=0.243,0.439,0.204 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.RACLetterSign.RACLetters | Part pos=(8.40,16.00,1.15) size=(0.08,12.00,2.00) mat=Enum.Material.SmoothPlastic var= color=0.973,0.973,0.965 collide=false query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.Canopy.SupportColumn | Part pos=(7.60,12.05,1.85) size=(1.45,24.20,1.45) mat=Enum.Material.SmoothPlastic var= color=0.125,0.133,0.141 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.Canopy.SupportColumn | Part pos=(-8.20,12.05,1.85) size=(1.45,24.20,1.45) mat=Enum.Material.SmoothPlastic var= color=0.125,0.133,0.141 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.Canopy.ReturnCanopy | Part pos=(13.25,24.35,-5.65) size=(12.70,0.30,5.50) mat=Enum.Material.SmoothPlastic var= color=0.078,0.086,0.094 collide=true query=true tags= racMat=nil racZone=nil
+RAC.Site.Context.GroundSlab.ExteriorDetails.Entrance.Canopy.TaperedCanopy | WedgePart pos=(1.90,24.98,6.40) size=(11.00,1.55,28.20) mat=Enum.Material.SmoothPlastic var= color=0.078,0.086,0.094 collide=true query=true tags= racMat=nil racZone=nil
+COUNTS
+Attachment [36m6[0m
+Folder [36m925[0m
+Model [36m444[0m
+Part [36m24878[0m
+PathfindingModifier [36m189[0m
+PointLight [36m27[0m
+ProximityPrompt [36m66[0m
+SpawnLocation [36m4[0m
+SpecialMesh [36m80[0m
+SpotLight [36m389[0m
+StringValue [36m94[0m
+SurfaceGui [36m40[0m
+SurfaceLight [36m40[0m
+TextLabel [36m40[0m
+WedgePart [36m1[0m
+SUMMARY
+instances [36m27223[0m parts [36m24883[0m colliders [36m5713[0m
+lights [36m456[0m spot [36m389[0m point [36m27[0m surface [36m40[0m
+zoneAttr RAC_Zone [36m209[0m GetTags Zone [36m209[0m GetTags RACZone [36m95[0m
+lightingFolder [33mtrue[0m lightingKids [36m94[0m MasterMode normal
+pathMods [36m189[0m pathLinks [36m0[0m
+doors single [36m66[0m double [36m12[0m keypadModel [36m0[0m locked [36m3[0m offLimits [36m2[0m keypadCodeAttr [36m1[0m
+mapleParts [36m7[0m mapleVariant [36m7[0m mapleWhite [36m7[0m slabMaple [36m7[0m
+courtGreen [36m6[0m courtGold [36m200[0m brickParts [36m122[0m grassParts [36m11[0m
+tinyNoCollideStairs [36m260[0m treadCollide [36m113[0m treadNoCollide [36m0[0m treadMinTopY [36m-6.416664123535156[0m
+trees pine [36m20[0m shade [36m60[0m dumpsters [36m2[0m
+fountains [36m2[0m treadmills [36m12[0m cubicles [36m6[0m frontDesks [36m1[0m
+CHILDREN
+CHILD Levels Folder [36m2[0m
+CHILD Props Folder [36m2[0m
+CHILD Lighting Folder [36m94[0m
+CHILD LobbySpawn SpawnLocation [36m0[0m
+CHILD Site Folder [36m3[0m
+CHILD Zones Folder [36m95[0m
+CHILD Spawns Folder [36m3[0m
+CHILD CoachVillainPatrolPoints Folder [36m43[0m
+ZONES [36m95[0m
+ZONE competition_gym Model id competition_gym level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE south_gym Model id south_gym level 1 RAC_Zone true tags RACZone,Zone vols [36m3[0m
+ZONE office_ne_1 Model id office_ne_1 level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE office_ne_2 Model id office_ne_2 level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE office_ne_3 Model id office_ne_3 level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE office_ne_4 Model id office_ne_4 level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE office_ne_5 Model id office_ne_5 level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE office_ne_reception Model id office_ne_reception level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE restroom_ne_w Model id restroom_ne_w level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE restroom_ne_m Model id restroom_ne_m level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE fitness_north Model id fitness_north level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE lobby Model id lobby level 1 RAC_Zone true tags RACZone,Zone vols [36m3[0m
+ZONE stair_main Model id stair_main level 1 RAC_Zone true tags RACZone,Zone vols [36m2[0m
+ZONE training_room Model id training_room level 1 RAC_Zone true tags RACZone,Zone vols [36m1[0m
+ZONE stair_main Model id stair_main level 2 RAC_Zone true tags RACZone,Zone vols [36m2[0m
+ZONE cage_gym Model id cage_gym level 2 RAC_Zone true tags RACZone,Zone vols [36m2[0m
+DOOR RAC.Levels.2.Walls.l2_w078.Opening_1.DoorSingle locked=true code=nil off=true clearAttr=0 solidLeaf=3 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.2.Walls.l2_w077.Opening_2.DoorSingle locked=false code=nil off=nil clearAttr=3 solidLeaf=0 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.2.Walls.l2_w077.Opening_1.DoorSingle locked=false code=nil off=nil clearAttr=3 solidLeaf=0 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.2.Walls.l2_w076.Opening_2.DoorSingle locked=false code=nil off=nil clearAttr=3 solidLeaf=0 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.2.Walls.l2_w076.Opening_1.DoorSingle locked=false code=nil off=nil clearAttr=3 solidLeaf=0 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.2.Walls.l2_w071.Opening_2.DoorSingle locked=false code=nil off=nil clearAttr=3 solidLeaf=0 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.2.Walls.l2_w071.Opening_1.DoorSingle locked=true code=nil off=true clearAttr=0 solidLeaf=3 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+DOOR RAC.Levels.1.Walls.l1_w048.Opening_2.DoorSingle locked=true code=15234 off=nil clearAttr=0 solidLeaf=3 solidOther=7 tags=RACDoor,RACDoor,RACDoor pfmod=true
+STAIR_GROUP RAC.Levels.1.Stairs.stair_main linkAttr true tags RACStair
+RAC.Levels.1.Stairs.stair_main.main_turn | Part pos=(6.00,9.80,-49.50) size=(8.00,0.40,7.00) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_a.Tread_17 | Part pos=(6.00,9.94,-45.57) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_a.Tread_16 | Part pos=(6.00,9.35,-44.72) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_a.Tread_15 | Part pos=(6.00,8.76,-43.87) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_b.Tread_5 | Part pos=(-1.84,12.88,-49.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_b.Tread_4 | Part pos=(-0.99,12.29,-49.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_b.Tread_3 | Part pos=(-0.13,11.70,-49.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_b.Tread_2 | Part pos=(0.72,11.12,-49.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_main.main_b.Tread_1 | Part pos=(1.57,10.53,-49.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+STAIR_TREADS stair_main [36m34[0m
+STAIR_GROUP RAC.Levels.1.Stairs.stair_second linkAttr true tags RACStair
+RAC.Levels.1.Stairs.stair_second.second_a.Tread_17 | Part pos=(-335.07,9.94,-119.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_a.Tread_16 | Part pos=(-334.22,9.35,-119.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_a.Tread_15 | Part pos=(-333.37,8.76,-119.00) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_b.Tread_5 | Part pos=(-339.50,12.88,-111.16) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_b.Tread_4 | Part pos=(-339.50,12.29,-112.01) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_b.Tread_3 | Part pos=(-339.50,11.70,-112.87) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_b.Tread_2 | Part pos=(-339.50,11.12,-113.72) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_second.second_b.Tread_1 | Part pos=(-339.50,10.53,-114.57) size=(8.00,0.12,0.85) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+STAIR_TREADS stair_second [36m34[0m
+STAIR_GROUP RAC.Levels.1.Stairs.stair_west linkAttr true tags RACStair
+RAC.Levels.1.Stairs.stair_west.west_a.Tread_17 | Part pos=(-351.00,9.94,-62.47) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_a.Tread_16 | Part pos=(-351.00,9.35,-63.41) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_a.Tread_15 | Part pos=(-351.00,8.76,-64.35) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_b.Tread_5 | Part pos=(-351.00,12.88,-49.76) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_b.Tread_4 | Part pos=(-351.00,12.29,-50.71) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_b.Tread_3 | Part pos=(-351.00,11.70,-51.65) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_b.Tread_2 | Part pos=(-351.00,11.12,-52.59) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+RAC.Levels.1.Stairs.stair_west.west_b.Tread_1 | Part pos=(-351.00,10.53,-53.53) size=(6.00,0.12,0.94) mat=Enum.Material.Concrete var=RAC_sealed_concrete color=0.996,0.996,0.996 collide=true query=true tags= racMat=sealed_concrete racZone=nil
+STAIR_TREADS stair_west [36m34[0m
