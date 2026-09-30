@@ -1,7 +1,30 @@
 # 20 Hour Weeks — RAC build status board
 
 Maintained by the manager (Claude). One place to see what's done, what's running, and what's open.
-Last updated: 2026-09-29 16:30
+Last updated: 2026-09-29 20:10
+
+## PAUSED (user, 2026-09-29 20:10) - resume when the 3D scan arrives
+Nothing is running: all Grok agents, QA/realism loops, the materials loop and Rojo were stopped on purpose.
+
+State at pause:
+- `main` = last verified build (verify.ps1 PASSED, 0 geometry issues, 24,883 parts). Both round-1 fixers finished: exterior (door-centred
+  stair, tapered canopy, roads/lots on lidar with stall paint, real tree shapes, dumpster yard) and building (maple planks, lighting,
+  gym envelope, coaches' glass, public lockers). Neither was re-checked by a QA reviewer (Studio was down).
+- Known wrong, top priority: the L1 lobby must be ONE open hall with the desk ~25-30 ft in under the balcony
+  (docs/reviews/USER-2026-09-29-1905-lobby-open.md, WALKTHROUGH "Lobby is one open space"). The architect had started this when paused;
+  its unverified edits are on branch `wip/lobby-open-2026-09-29` (not merged).
+- Materials: every map on disk matches its uploaded asset; judge scores 1-7 (most need another pass). Prompt ready: .grok-loop/agents/materials-fresh.txt.
+- Room spec for 27 spaces: docs/ROOM_REFERENCES.md (+70 images in reference/web/rooms/, git-ignored).
+- Astra (Codex) usage resets 2026-10-04 19:55.
+
+Resume plan with the scan:
+1. Put the scan in reference/scan/ (git-ignored). Align it to the blueprint frame (origin = south entrance threshold, 1 stud = 1 ft,
+   +X east, -Z north, L2 = +20 ft) using the entrance door and two building corners.
+2. Derive the L1/L2 walls, openings, stair and slab edges from the scan; it replaces the photo/walkthrough estimates for geometry
+   (the walkthrough still decides names, signage and the route order). Rebuild blueprint/ from it, starting with the lobby.
+3. Add a scan-vs-build deviation check to verify.ps1 (e.g. wall positions within 1 ft) as ground truth for QA.
+4. Restart: `pwsh tools/detach.ps1 -Name rojo -Command "rojo serve preview.project.json --port 34872"`, open "20 Hour Weeks" in Studio
+   (sign in yourself), then the QA loop (tools/qa-loop.ps1) and the materials loop.
 
 **Restart note:** the pipeline now runs detached (tools/detach.ps1; logs .grok-loop/detached/) so it survives Claude Code sessions ending. Studio: '20 Hour Weeks' (placeId 100200567955206), Rojo on :34872.
 
