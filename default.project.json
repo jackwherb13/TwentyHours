@@ -13,7 +13,15 @@
       "RAC": {
         "$path": "src/ReplicatedStorage/RAC",
         "$ignoreUnknownInstances": true
+      },
+      "Characters": {
+        "$className": "Folder",
+        "$path": "src/ReplicatedStorage/Characters"
       }
+    },
+    "PluginDebugService": {
+      "$className": "PluginDebugService",
+      "$path": "src/PluginDebugService"
     },
     "ServerScriptService": {
       "$className": "ServerScriptService",
