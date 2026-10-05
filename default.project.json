@@ -13,6 +13,9 @@
       "RAC": {
         "$path": "src/ReplicatedStorage/RAC",
         "$ignoreUnknownInstances": true
+      },
+      "Characters": {
+        "$path": "assets/characters"
       }
     },
     "ServerScriptService": {
