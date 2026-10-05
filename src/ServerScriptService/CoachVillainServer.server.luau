@@ -73,15 +73,6 @@ local ChaseStarted = remotes:WaitForChild("ChaseStarted")
 local ChaseEnded = remotes:WaitForChild("ChaseEnded")
 local CatchStarted = remotes:WaitForChild("CatchStarted")
 
--- ReplaceCharacter swaps Jay's body in before this runs. If that script is
--- present it sets CharacterSwapReady once the new body is in place (or
--- immediately when the trainer model has not been imported yet).
-do
-	local deadline = os.clock() + 8
-	while not ReplicatedStorage:GetAttribute("CharacterSwapReady") and os.clock() < deadline do
-		task.wait(0.05)
-	end
-end
 local model = workspace:FindFirstChild("Jay")
 if model == nil then
 	return
@@ -96,9 +87,7 @@ humanoid.JumpPower = 50
 humanoid.AutoJumpEnabled = true
 humanoid.BreakJointsOnDeath = false
 humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-if not model:GetAttribute("StJBody") then
-	humanoid.HipHeight = 4.045 -- was 0, which sank him into the floor while pathing
-end
+humanoid.HipHeight = 4.045 -- was 0, which sank him into the floor while pathing
 
 -- RACBuild runs in a separate Script and may not be finished yet; poll briefly for the main
 -- entrance so Jay can be placed outside the building instead of wherever he was left sitting.

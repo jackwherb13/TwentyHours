@@ -1,4 +1,5 @@
--- Swaps the coach (Workspace.Jay, and any model named Dan) for the ST·J trainer.
+-- Swaps every character model named Dan for the ST·J trainer.
+-- Jay, the coach, is left alone.
 --
 -- Rojo syncs assets/characters/StJTrainer.rbxm into ReplicatedStorage.Characters.
 -- That file is produced once in Studio: Avatar > Import 3D on
@@ -6,13 +7,12 @@
 -- Save to File, and commit it as assets/characters/StJTrainer.rbxm.
 -- Rojo cannot import an FBX; it can only sync the saved model.
 --
--- The instance keeps its name, so CoachVillainServer still finds "Jay".
--- Scripts, prompts, sounds, attributes and tags on the old model are kept.
+-- Dan keeps his name. Scripts, prompts, sounds, attributes and tags are kept.
 
 local CollectionService = game:GetService("CollectionService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local TARGET_NAMES = { Jay = true, Dan = true }
+local TARGET_NAME = "Dan"
 local SWAPPED_TAG = "StJTrainerSwapped"
 
 local BODY_PARTS = {
@@ -100,16 +100,11 @@ local function feetOffset(model)
 	return size.Y / 2 + (cf.Position.Y - model:GetPivot().Position.Y)
 end
 
-local function ready()
-	ReplicatedStorage:SetAttribute("CharacterSwapReady", true)
-end
-
 local characters = ReplicatedStorage:FindFirstChild("Characters")
 local template = characters and characters:FindFirstChild("StJTrainer")
 if template == nil or not template:IsA("Model") then
 	warn("[ReplaceCharacter] ReplicatedStorage.Characters.StJTrainer is missing. " ..
 		"Import assets/source/StJTrainer.fbx in Studio and save it as assets/characters/StJTrainer.rbxm.")
-	ready()
 	return
 end
 
@@ -188,14 +183,12 @@ local function swap(old)
 end
 
 for _, inst in workspace:GetDescendants() do
-	if TARGET_NAMES[inst.Name] then
+	if inst.Name == TARGET_NAME then
 		swap(inst)
 	end
 end
 workspace.DescendantAdded:Connect(function(inst)
-	if TARGET_NAMES[inst.Name] then
+	if inst.Name == TARGET_NAME then
 		task.defer(swap, inst)
 	end
 end)
-
-ready()
