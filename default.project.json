@@ -15,8 +15,13 @@
         "$ignoreUnknownInstances": true
       },
       "Characters": {
-        "$path": "assets/characters"
+        "$className": "Folder",
+        "$path": "src/ReplicatedStorage/Characters"
       }
+    },
+    "PluginDebugService": {
+      "$className": "PluginDebugService",
+      "$path": "src/PluginDebugService"
     },
     "ServerScriptService": {
       "$className": "ServerScriptService",
